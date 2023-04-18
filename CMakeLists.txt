@@ -1,0 +1,146 @@
+# Set CMAKE Version, Define Project
+cmake_minimum_required (VERSION 3.1...3.21)
+
+
+# Set Configuration Options
+option(ENABLE_BACKWARD "Build BG With Backward to provide some stack trace information or not" ON)
+
+
+# Set Non-User Changable Configuration Data (Used during build process )
+option (USE_SUPERBUILD "Whether or not a superbuild should be invoked" ON) # You probably don't want to change this one - used internally
+
+
+# Set Dirs
+set(LIB_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty")
+set(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source")
+set(BIN_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Binaries")
+set(CMAKE_UTIL_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/Utils")
+set(CMAKE_BUILD_UTILS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/BuildUtils")
+set(CMAKE_FIND_UTILS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/FindUtils")
+set(CMAKE_SCRIPTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake/Scripts")
+set(CMAKE_UTILS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake")
+set(CMAKE_ASSETS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/EditorAssets")
+set(PROJECT_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+
+
+
+
+
+
+
+
+# Superbuild Configuration
+if (USE_SUPERBUILD)
+
+  project (SUPERBUILD NONE)
+
+  # Add Superbuild Runner
+  include(${CMAKE_UTILS_DIR}/SuperBuildMaster.cmake)
+  return()
+else()
+
+  project(
+      "BrainGenix-API"
+      VERSION "0.0.1"
+      LANGUAGES CXX
+  )
+
+endif()
+
+
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+# Superbuild Configuration
+message(STATUS "Superbuild Configuration:")
+
+include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
+
+
+# Include Util CMake Scripts
+include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)
+include(${CMAKE_UTIL_DIR}/SetBinaryDir.cmake)
+include(${CMAKE_UTIL_DIR}/DisableTargetWarnings.cmake)
+
+# Run Configuration Tools
+include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
+include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
+include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
+
+
+# Add LIBRARY INTERFACE SUBDIRECTORIES
+BGBuildLogger(${Green} "Configuring Library Interfaces")
+
+add_subdirectory(${SRC_DIR}/Interface/Library/MeshOptimizerInterface)
+message(STATUS "Configured MeshOptimizer Interface")
+# add_subdirectory(${SRC_DIR}/Interface/Library/LuaInterface)
+# message(STATUS "Configured Lua Interface")
+
+BGBuildLogger(${BoldGreen} "Finished Configuring Library Interfaces")
+
+
+# ADD STRUCT INTERFACE SUBDIRECTORIES
+BGBuildLogger(${Green} "Configuring Structure Interfaces")
+
+BGBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
+
+
+# ADD INTERNAL SUBDIRECTORIES
+BGBuildLogger(${Green} "Configuring Internal Libraries")
+
+add_subdirectory(${SRC_DIR}/Internal/LoggingSystem)
+message(STATUS "Configured Internal Library 'LoggingSystem'")
+add_subdirectory(${SRC_DIR}/Internal/OpenGLLoggingSystem)
+message(STATUS "Configured Internal Library 'OpenGLLoggingSystem'")
+add_subdirectory(${SRC_DIR}/Internal/ArgumentParser)
+message(STATUS "Configured Internal Library 'ArgumentParser'")
+add_subdirectory(${SRC_DIR}/Internal/GPURequest)
+message(STATUS "Configured Internal Library 'GPURequest'")
+add_subdirectory(${SRC_DIR}/Internal/HardwareInformation)
+message(STATUS "Configured Internal Library 'HardwareInformation'")
+add_subdirectory(${SRC_DIR}/Internal/InputOutputSubsystem)
+message(STATUS "Configured Internal Library 'InputOutputSubsystem'")
+add_subdirectory(${SRC_DIR}/Internal/ExternalModelLoader)
+message(STATUS "Configured Internal Library 'ExternalModelLoader'")
+add_subdirectory(${SRC_DIR}/Internal/ModelImporter)
+message(STATUS "Configured Internal Library 'ModelImporter'")
+add_subdirectory(${SRC_DIR}/Internal/LocalConfigLoader)
+message(STATUS "Configured Internal Library 'LocalConfigLoader'")
+add_subdirectory(${SRC_DIR}/Internal/GetExecutablePath)
+message(STATUS "Configured Internal Library 'GetExecutablePath'")
+
+
+BGBuildLogger(${BoldGreen} "Finished Configuring Internal Libraries")
+
+
+# Once we have core subdirs, we can populate this - for now i've commented it out.
+
+# # ADD CORE SUBDIRECTORIES
+# BGBuildLogger(${Green} "Configuring Core Subsystems")
+# add_subdirectory(${SRC_DIR}/Core/Writers/ERS_ProjectWriter)
+# BGBuildLogger(${BoldGreen} "Finished Configuring Core Subsystems")
+
+
+# Configure Sources
+set(MAIN_SOURCES
+    ${SRC_DIR}/Main.cpp
+    ${BACKWARD_ENABLE}
+)
+
+
+# Create Main Executable
+include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
+
+
+target_link_libraries(${PROJECT_NAME}
+
+)
+
+
+# Run Configuration On EditorAssetBundle
+include(${CMAKE_SCRIPTS_DIR}/EditorAssetsBundle/EditorAssetsBundle.cmake)
+
+

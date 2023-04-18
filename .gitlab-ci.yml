@@ -35,7 +35,7 @@ stages:          # List of stages for jobs, and their order of execution
 
 # Main build for compiling the main project executable.
 Main Build:
-  image: "$DOCKER_REGISTRY/ers_build_linux_ubuntu_2204:latest"
+  image: "$DOCKER_REGISTRY/api_build_linux_ubuntu_2204:latest"
   tags:
    - linux
   stage: Build
@@ -50,7 +50,7 @@ Main Build:
 
 # Generates Doxygen Docs And Adds Them To Archive
 Generate Documentation:
-  image: "$DOCKER_REGISTRY/ers_generate_docs_image:latest"
+  image: "$DOCKER_REGISTRY/api_generate_docs_image:latest"
   stage: Build
   tags:
     - linux
@@ -67,7 +67,7 @@ Generate Documentation:
 
 # Ensure BG compiles on ubuntu 23.04
 Ubuntu 23.04 Build:
-  image: "$DOCKER_REGISTRY/ers_build_linux_ubuntu_2304:latest"
+  image: "$DOCKER_REGISTRY/api_build_linux_ubuntu_2304:latest"
   tags:
    - linux
   stage: Platform Build Testing
@@ -81,7 +81,7 @@ Ubuntu 23.04 Build:
 
 # Ensure BG compiles on ubuntu 22.04
 Ubuntu 22.04 Build:
-  image: "$DOCKER_REGISTRY/ers_build_linux_ubuntu_2204:latest"
+  image: "$DOCKER_REGISTRY/api_build_linux_ubuntu_2204:latest"
   tags:
    - linux
   stage: Platform Build Testing
@@ -95,7 +95,7 @@ Ubuntu 22.04 Build:
 
 # Ensure BG compiles on ubuntu 20.04
 Ubuntu 20.04 Build:
-  image: "$DOCKER_REGISTRY/ers_build_linux_ubuntu_2004:latest"
+  image: "$DOCKER_REGISTRY/api_build_linux_ubuntu_2004:latest"
   tags:
    - linux
   stage: Platform Build Testing
@@ -111,7 +111,7 @@ Ubuntu 20.04 Build:
 
 # Ensure BG compiles on debian 11
 Debian 11 Build:
-  image: "$DOCKER_REGISTRY/ers_build_linux_debian_11:latest"
+  image: "$DOCKER_REGISTRY/api_build_linux_debian_11:latest"
   tags:
    - linux
   stage: Platform Build Testing
@@ -125,7 +125,7 @@ Debian 11 Build:
 
 # Ensure BG compiles on debian 10
 Debian 10 Build:
-  image: "$DOCKER_REGISTRY/ers_build_linux_debian_11:latest"
+  image: "$DOCKER_REGISTRY/api_build_linux_debian_11:latest"
   tags:
    - linux
   stage: Platform Build Testing

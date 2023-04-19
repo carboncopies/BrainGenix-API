@@ -92,14 +92,10 @@ BGBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
 
 
 # Configure Sources
-set(MAIN_SOURCES
-    ${SRC_DIR}/Core/Main.cpp
-    ${SRC_DIR}/Core/Main.h
-    ${BACKWARD_ENABLE}
-)
+set(MAIN_SOURCES ${SRC_DIR}/Core/Main.cpp ${SRC_DIR}/Core/Main.h ${BACKWARD_ENABLE})
 
 
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
-target_link_libraries(${PROJECT_NAME}
-)
+target_link_libraries(${PROJECT_NAME})
+target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)

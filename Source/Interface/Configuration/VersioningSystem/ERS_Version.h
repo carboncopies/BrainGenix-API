@@ -4,5 +4,4 @@
 
 #pragma once
 
-
-#define ERS_COMPILE_TIME_STAMP "${COMPILE_TIME_STAMP}"  // Timestamp when build was made
+#define VERSION "0.0.1"

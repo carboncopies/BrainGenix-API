@@ -4,4 +4,5 @@
 
 #pragma once
 
-#define VERSION "${CMAKE_PROJECT_VERSION}"
+
+#define COMPILE_TIME_STAMP "${COMPILE_TIME_STAMP}"  // Timestamp when build was made

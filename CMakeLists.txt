@@ -71,16 +71,6 @@ include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 
-# Add LIBRARY INTERFACE SUBDIRECTORIES
-BGBuildLogger(${Green} "Configuring Library Interfaces")
-
-add_subdirectory(${SRC_DIR}/Interface/Library/MeshOptimizerInterface)
-message(STATUS "Configured MeshOptimizer Interface")
-# add_subdirectory(${SRC_DIR}/Interface/Library/LuaInterface)
-# message(STATUS "Configured Lua Interface")
-
-BGBuildLogger(${BoldGreen} "Finished Configuring Library Interfaces")
-
 
 # ADD STRUCT INTERFACE SUBDIRECTORIES
 BGBuildLogger(${Green} "Configuring Structure Interfaces")

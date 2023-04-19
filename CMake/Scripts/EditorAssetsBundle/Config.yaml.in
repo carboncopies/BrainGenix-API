@@ -1,34 +1,3 @@
-# Set Window Configuration Parameters #
-WindowEnabled: True
-WindowWidth: 1920
-WindowHeight: 1080
-WindowTitle: "BrainGenix-API"
-
-# System Settings
-ShowEditorDebugMenu: True
-EnableLogFile: True
-LogFilePathPrefix: Log  # Note that BG will add the date/time and extension to this
-
-# Database Loading Settings #
-UseDatabaseLoading: False
-DatabaseHost: "127.0.0.1" # FIX ME
-DatabasePort: 1 # FIX ME
-DatabaseUser: "" # FIX ME
-DatabaseName: "" # FIX ME
-DatabasePassword: "" # FIX ME
-
-# File Loading Params
-DefaultProjectDirectory: "${DEFAULT_PROJECT_DIRECTORY}" # NOTE: PATH MUST END WITH A "/"
-
-# Memory Settings
-OverrideRAM: False
-RAMSizeBytes: 42949672960
-RAMMarginBytes: 4294967296
-
-OverrideVRAM: False
-VRAMSizeBytes: 10737418240
-VRAMMarginBytes: 1073741824
-
 # Set Logger Configuration Parameters #
 EnablePrintOutput: True
 EnableDatabaseOutput: False
@@ -65,7 +34,3 @@ LogLevelNames:
     8: Warning
     9: Severe
     10: Fatal
-
-
-# System Information Refresh Rate
-SystemDynamicInformationRefreshRate: 5.0 # Set times per second to refresh dynamic info

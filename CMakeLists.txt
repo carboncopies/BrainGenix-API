@@ -103,9 +103,3 @@ set(MAIN_SOURCES
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
 target_link_libraries(${PROJECT_NAME}
 )
-
-
-# Run Configuration On EditorAssetBundle
-include(${CMAKE_SCRIPTS_DIR}/EditorAssetsBundle/EditorAssetsBundle.cmake)
-
-

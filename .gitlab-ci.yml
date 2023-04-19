@@ -43,7 +43,7 @@ Main Build:
     - cd CI/Pipelines/MainBuild
     - bash Run.sh $NUMBER_THREADS
   artifacts:
-    name: "Build_BrainGenix-ERS_$CI_COMMIT_SHORT_SHA"
+    name: "Build_BrainGenix-API_$CI_COMMIT_SHORT_SHA"
     paths:
       - Binaries/
 

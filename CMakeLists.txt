@@ -88,35 +88,12 @@ BGBuildLogger(${Green} "Configuring Structure Interfaces")
 BGBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
 
 
-# ADD INTERNAL SUBDIRECTORIES
-BGBuildLogger(${Green} "Configuring Internal Libraries")
-
-add_subdirectory(${SRC_DIR}/Internal/LoggingSystem)
-message(STATUS "Configured Internal Library 'LoggingSystem'")
-add_subdirectory(${SRC_DIR}/Internal/OpenGLLoggingSystem)
-message(STATUS "Configured Internal Library 'OpenGLLoggingSystem'")
-add_subdirectory(${SRC_DIR}/Internal/ArgumentParser)
-message(STATUS "Configured Internal Library 'ArgumentParser'")
-add_subdirectory(${SRC_DIR}/Internal/GPURequest)
-message(STATUS "Configured Internal Library 'GPURequest'")
-add_subdirectory(${SRC_DIR}/Internal/HardwareInformation)
-message(STATUS "Configured Internal Library 'HardwareInformation'")
-add_subdirectory(${SRC_DIR}/Internal/InputOutputSubsystem)
-message(STATUS "Configured Internal Library 'InputOutputSubsystem'")
-add_subdirectory(${SRC_DIR}/Internal/ExternalModelLoader)
-message(STATUS "Configured Internal Library 'ExternalModelLoader'")
-add_subdirectory(${SRC_DIR}/Internal/ModelImporter)
-message(STATUS "Configured Internal Library 'ModelImporter'")
-add_subdirectory(${SRC_DIR}/Internal/LocalConfigLoader)
-message(STATUS "Configured Internal Library 'LocalConfigLoader'")
-add_subdirectory(${SRC_DIR}/Internal/GetExecutablePath)
-message(STATUS "Configured Internal Library 'GetExecutablePath'")
-
-
-BGBuildLogger(${BoldGreen} "Finished Configuring Internal Libraries")
-
-
 # Once we have core subdirs, we can populate this - for now i've commented it out.
+
+
+# # ADD INTERNAL SUBDIRECTORIES
+# BGBuildLogger(${Green} "Configuring Internal Libraries")
+# BGBuildLogger(${BoldGreen} "Finished Configuring Internal Libraries")
 
 # # ADD CORE SUBDIRECTORIES
 # BGBuildLogger(${Green} "Configuring Core Subsystems")
@@ -126,17 +103,15 @@ BGBuildLogger(${BoldGreen} "Finished Configuring Internal Libraries")
 
 # Configure Sources
 set(MAIN_SOURCES
-    ${SRC_DIR}/Main.cpp
+    ${SRC_DIR}/Core/Main.cpp
+    ${SRC_DIR}/Core/Main.h
     ${BACKWARD_ENABLE}
 )
 
 
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
-
-
 target_link_libraries(${PROJECT_NAME}
-
 )
 
 

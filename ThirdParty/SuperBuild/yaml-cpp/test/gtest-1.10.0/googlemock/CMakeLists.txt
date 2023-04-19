@@ -1,4 +1,4 @@
-########################################################################
+################################################################
 # Note: CMake support is community-based. The maintainers do not use CMake
 # internally.
 #
@@ -26,7 +26,7 @@ if (COMMAND pre_project_set_up_hermetic_build)
   pre_project_set_up_hermetic_build()
 endif()
 
-########################################################################
+################################################################
 #
 # Project-wide settings
 
@@ -78,7 +78,7 @@ set(gmock_build_include_dirs
   "${gtest_SOURCE_DIR}")
 include_directories(${gmock_build_include_dirs})
 
-########################################################################
+################################################################
 #
 # Defines the gmock & gmock_main libraries.  User tests should link
 # with one of them.
@@ -115,12 +115,12 @@ if (DEFINED CMAKE_VERSION AND NOT "${CMAKE_VERSION}" VERSION_LESS "2.8.11")
     "$<INSTALL_INTERFACE:$<INSTALL_PREFIX>/${CMAKE_INSTALL_INCLUDEDIR}>")
 endif()
 
-########################################################################
+################################################################
 #
 # Install rules
 install_project(gmock gmock_main)
 
-########################################################################
+################################################################
 #
 # Google Mock's own tests.
 #

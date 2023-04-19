@@ -21,10 +21,10 @@ echo "[BG BUILD SYSTEM] - Detected Platform To Be '${Machine}'"
 echo "[BG BUILD SYSTEM] - Running Binary"
 if [ ${Machine} == "Linux" ]
 then
-    ./BrainGenix-BG
+    ./BrainGenix-API
 elif ${Machine} == "Mac"
 then
-    open BrainGenix-BG.app
+    open BrainGenix-API.app
 else
     echo "Unknown Platform, Cannot Run Executable"
 fi

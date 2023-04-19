@@ -53,9 +53,9 @@ if (${COMPILER_IS_NVCC})
   set(CMAKE_CXX_EXTENSIONS OFF)
 endif()
 
-###############################################################################
+#######################################################################
 # COMPILER FLAGS
-###############################################################################
+#######################################################################
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_COMPILER_IS_GNUCXX)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
@@ -65,9 +65,9 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang" OR CMAKE_COMPILER_IS_GNUCXX)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 endif()
 
-###############################################################################
+#######################################################################
 # BACKWARD OBJECT
-###############################################################################
+#######################################################################
 
 add_library(backward_object OBJECT backward.cpp)
 target_compile_definitions(backward_object PRIVATE ${BACKWARD_DEFINITIONS})
@@ -76,9 +76,9 @@ set(BACKWARD_ENABLE $<TARGET_OBJECTS:backward_object> CACHE STRING
 	"Link with this object to setup backward automatically")
 
 
-###############################################################################
+#######################################################################
 # BACKWARD LIBRARY (Includes backward.cpp)
-###############################################################################
+#######################################################################
 option(BACKWARD_SHARED "Build dynamic backward-cpp shared lib" OFF)
 
 if(BACKWARD_SHARED)
@@ -88,9 +88,9 @@ add_library(backward ${libtype} backward.cpp)
 target_compile_definitions(backward PUBLIC ${BACKWARD_DEFINITIONS})
 target_include_directories(backward PUBLIC ${BACKWARD_INCLUDE_DIRS})
 
-###############################################################################
+#######################################################################
 # TESTS
-###############################################################################
+#######################################################################
 
 if(BACKWARD_TESTS)
 	enable_testing()

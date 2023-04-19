@@ -2,6 +2,4 @@
 // This file is part of the BrainGenix-API Unified API Endpoint //
 //=============================================================//
 
-#pragma once
-
-#define ERS_VERSION "${CMAKE_PROJECT_VERSION}"
+#include <CompileTimeStamp.h>

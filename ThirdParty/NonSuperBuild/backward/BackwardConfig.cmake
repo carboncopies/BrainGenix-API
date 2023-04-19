@@ -20,9 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-###############################################################################
+#######################################################################
 # OPTIONS
-###############################################################################
+#######################################################################
 
 set(STACK_WALKING_UNWIND TRUE CACHE BOOL
 	"Use compiler's unwind API")
@@ -49,9 +49,9 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR AND NOT DEFINED BACKWARD_T
 else()
 	set(BACKWARD_TESTS OFF CACHE BOOL "Enable tests")
 endif()
-###############################################################################
+#######################################################################
 # CONFIGS
-###############################################################################
+#######################################################################
 include(FindPackageHandleStandardArgs)
 
 if (STACK_WALKING_LIBUNWIND)

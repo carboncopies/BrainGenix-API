@@ -1,4 +1,4 @@
-########################################################################
+################################################################
 # Note: CMake support is community-based. The maintainers do not use CMake
 # internally.
 #
@@ -33,7 +33,7 @@ if (COMMAND pre_project_set_up_hermetic_build)
   pre_project_set_up_hermetic_build()
 endif()
 
-########################################################################
+################################################################
 #
 # Project-wide settings
 
@@ -117,7 +117,7 @@ set(gtest_build_include_dirs
   "${gtest_SOURCE_DIR}")
 include_directories(${gtest_build_include_dirs})
 
-########################################################################
+################################################################
 #
 # Defines the gtest & gtest_main libraries.  User tests should link
 # with one of them.
@@ -140,12 +140,12 @@ if (DEFINED CMAKE_VERSION AND NOT "${CMAKE_VERSION}" VERSION_LESS "2.8.11")
 endif()
 target_link_libraries(gtest_main PUBLIC gtest)
 
-########################################################################
+################################################################
 #
 # Install rules
 install_project(gtest gtest_main)
 
-########################################################################
+################################################################
 #
 # Samples on how to link user tests with gtest or gtest_main.
 #
@@ -166,7 +166,7 @@ if (gtest_build_samples)
   cxx_executable(sample10_unittest samples gtest)
 endif()
 
-########################################################################
+################################################################
 #
 # Google Test's own tests.
 #

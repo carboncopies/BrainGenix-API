@@ -2,7 +2,7 @@
 WindowEnabled: True
 WindowWidth: 1920
 WindowHeight: 1080
-WindowTitle: "BrainGenix-BG"
+WindowTitle: "BrainGenix-API"
 
 # System Settings
 ShowEditorDebugMenu: True

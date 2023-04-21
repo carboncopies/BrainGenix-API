@@ -10,16 +10,19 @@ set(LIB_SOURCE_DIR ${LIB_DIR}/SuperBuild/restbed)
 # First part of two, build the library if we're currently doing so
 if (USE_SUPERBUILD)
 
-
-
     # Add To Dependencies
     list (APPEND DEPENDENCIES ThirdParty_${TARGET_NAME})
+
+    # copy src to build dir
+    message(STATUS "Copying Source Dir For ${TARGET_NAME} To Build Dir")
+    file(COPY ${LIB_SOURCE_DIR}/restbed DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Source/Restbed)
+    message(STATUS "Done Copying ${TARGET_NAME}")
 
     # Create External Project
     message(STATUS "Configuring Library ${TARGET_NAME}")
     ExternalProject_Add (ThirdParty_${TARGET_NAME}
 
-        SOURCE_DIR ${LIB_SOURCE_DIR}
+        SOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Source/Restbed
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ThirdParty_${TARGET_NAME}/
         PATCH_COMMAND cd dependency/openssl && ./config && make -j && cd ../.. && cmake .
 

@@ -14,17 +14,17 @@ if (USE_SUPERBUILD)
     list (APPEND DEPENDENCIES ThirdParty_${TARGET_NAME})
 
     # copy src to build dir
-    message(STATUS "Copying Source Dir For ${TARGET_NAME} To Build Dir")
-    file(COPY ${LIB_SOURCE_DIR}/restbed DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Source/Restbed)
-    message(STATUS "Done Copying ${TARGET_NAME}")
+    # message(STATUS "Copying Source Dir For ${TARGET_NAME} To Build Dir")
+    # file(COPY ${LIB_SOURCE_DIR}/restbed DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Source/Restbed)
+    # message(STATUS "Done Copying ${TARGET_NAME}")
 
     # Create External Project
     message(STATUS "Configuring Library ${TARGET_NAME}")
     ExternalProject_Add (ThirdParty_${TARGET_NAME}
 
-        SOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Source/Restbed
+        SOURCE_DIR ${LIB_SOURCE_DIR}
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ThirdParty_${TARGET_NAME}/
-        PATCH_COMMAND cd dependency/openssl && ./config && make -j && cd ../.. && cmake .
+        # PATCH_COMMAND cd dependency/openssl && ./config && make -j && cd ../.. && cmake .
 
     )
     message(STATUS "Finished Configuring Library ${TARGET_NAME}")

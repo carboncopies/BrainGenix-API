@@ -13,6 +13,5 @@ set (EXTRA_CMAKE_ARGS)
 # include(${CMAKE_UTILS_DIR}/SuperBuilds/Boost.cmake)
 
 include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
-include(${CMAKE_UTILS_DIR}/SuperBuilds/Restbed.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/API.cmake)
 

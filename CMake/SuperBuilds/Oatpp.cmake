@@ -37,13 +37,18 @@ else()
 
     option (${oatpp_DIR} "Location Of ${TARGET_NAME} Build (Used In Superbuild Process)")
 
-    message(STATUS "FreeImage Install Directory: ${oatpp_DIR}")
-    FILE(GLOB_RECURSE Includes ${oatpp_DIR}*/*.h)
-    FILE(GLOB_RECURSE Libs ${oatpp_DIR}*/*.a)
-    message(STATUS ${Includes})
-    add_library(oatpp ${Includes})
-    target_link_libraries(oatpp ${Libs})
-    set_target_properties(oatpp PROPERTIES LINKER_LANGUAGE CXX)
-    target_include_directories(oatpp PUBLIC ${oatpp_DIR}/include)
+    set(OATPP_CONFIG_DIR ${oatpp_DIR}/lib/cmake/oatpp-1.3.0/)
+
+
+    find_package(oatpp REQUIRED PATHS ${OATPP_CONFIG_DIR})
+
+    # message(STATUS "FreeImage Install Directory: ${oatpp_DIR}")
+    # FILE(GLOB_RECURSE Includes ${oatpp_DIR}*/*.h)
+    # FILE(GLOB_RECURSE Libs ${oatpp_DIR}*/*.a)
+    # message(STATUS ${Includes})
+    # add_library(oatpp ${Includes})
+    # target_link_libraries(oatpp ${Libs})
+    # set_target_properties(oatpp PROPERTIES LINKER_LANGUAGE CXX)
+    # target_include_directories(oatpp PUBLIC ${oatpp_DIR}/include)
 
 endif()

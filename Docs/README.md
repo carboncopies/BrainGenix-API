@@ -46,6 +46,8 @@ Response:
 
 
 ## Compartments
+
+### BS - Create
 URI: `/NES/Compartment/BS/Create?`
 Request:
     Required Params:
@@ -61,7 +63,9 @@ Response:
 
 
 ## Connections
-URI `/NES/Connection/Compartment/Staple/Create?`
+
+### Staple - Create
+URI `/NES/Connection/Staple/Create?`
 Request:
     Required Params:
         - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment whos data will be copied to the destination.
@@ -71,3 +75,48 @@ Request:
 Response:
     - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
     - (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+
+### Receptor - Create
+URI `/NES/Connection/Receptor/Create?`
+Request:
+    Required Params:
+        - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment with presynaptic spike.
+        - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving postsynaptic activity.
+        - (float) `Conductance_nS=` Conductance from source to destination in nanoSiemens.
+        - (float) `TimeConstant_ms=` Postsynaptic potential time constant in milliseconds.
+        - (vec3) `ReceptorLocation_nm=` (X,Y,Z) World space location of the receptor's base (where it intersects the compartment).
+    Optional Params:
+        - (string) `Name=` Optional name of the connection.
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+    - (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+
+
+
+## Tools
+
+### DAC - Create
+URI `/NES/Tools/PatchClampDAC/Create?`
+Request:
+    RequiredParams:
+        - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving DAC output.
+        - (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the DAC's connection in nanometers.
+    Optional Params:
+        - (string) `Name=` Optional name of the DAC.
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+    - (bgPatchClampDACID) `ID=` ID of the resulting PatchClampDAC created here (if status indicates success, otherwise this is -1).
+
+
+### ADC - Create
+URI `/NES/Tools/PatchClampADC/Create?`
+Request:
+    RequiredParams:
+        - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment being read by the ADC output.
+        - (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the ADC's connection in nanometers.
+    Optional Params:
+        - (string) `Name=` Optional name of the ADC.
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+    - (bgPatchClampADCID) `ID=` ID of the resulting PatchClampADC created here (if status indicates success, otherwise this is -1).
+

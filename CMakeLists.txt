@@ -58,7 +58,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 message(STATUS "Superbuild Configuration:")
 
 include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
-
+include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP.cmake)
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)

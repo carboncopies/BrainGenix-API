@@ -38,10 +38,11 @@ else()
 
     option (${yaml-cpp_DIR} "Location Of yaml-cpp Build (Used In Superbuild Process)")
 
-    message(STATUS "FreeImage Install Directory: ${yaml-cpp_DIR}")
+    message(STATUS "${TARGET_NAME} Install Directory: ${yaml-cpp_DIR}")
+
     FILE(GLOB_RECURSE Includes ${yaml-cpp_DIR}*/*.h)
     FILE(GLOB_RECURSE Libs ${yaml-cpp_DIR}*/*.a)
-    message(STATUS ${Includes})
+
     add_library(yaml-cpp ${Includes})
     target_link_libraries(yaml-cpp ${Libs})
     set_target_properties(yaml-cpp PROPERTIES LINKER_LANGUAGE CXX)

@@ -35,12 +35,18 @@ else()
 
     option (${oatpp_DIR} "Location Of oatpp Build (Used In Superbuild Process)")
 
-    message(STATUS "FreeImage Install Directory: ${oatpp_DIR}")
-    FILE(GLOB_RECURSE Includes ${oatpp_DIR}*/*.h)
-    FILE(GLOB_RECURSE Libs ${oatpp_DIR}*/*.a)
-    message(STATUS ${Includes})
-    add_library(oatpp ${Includes})
-    target_link_libraries(oatpp ${Libs})
+    message(STATUS "${TARGET_NAME} Install Directory: ${oatpp_DIR}")
+
+    set(TARGET_INCLUDES_SEARCH_PATH ${oatpp_DIR}include/oatpp-1.3.0/oatpp/oatpp/*.hpp)
+    # set(TARGET_LIBS_SEARCH_PATH ${oatpp_DIR}lib/oatpp-1.3.0/liboatpp.a)
+    message(STATUS "${TARGET_NAME} Include Search Path ${TARGET_INCLUDES_SEARCH_PATH}")
+    # message(STATUS "${TARGET_NAME} Libs Search Path ${TARGET_LIBS_SEARCH_PATH}")
+    FILE(GLOB_RECURSE TARGET_INCLUDES ${TARGET_INCLUDES_SEARCH_PATH})
+    # FILE(GLOB_RECURSE Libs ${TARGET_LIBS_SEARCH_PATH})
+    set(TARGET_LIBS ${oatpp_DIR}lib/oatpp-1.3.0/liboatpp.a)
+
+    add_library(oatpp ${TARGET_INCLUDES})
+    target_link_libraries(oatpp ${TARGET_LIBS})
     set_target_properties(oatpp PROPERTIES LINKER_LANGUAGE CXX)
     target_include_directories(oatpp PUBLIC ${oatpp_DIR}/include)
 

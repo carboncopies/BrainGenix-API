@@ -97,5 +97,5 @@ set(MAIN_SOURCES ${SRC_DIR}/Core/Main.cpp ${SRC_DIR}/Core/Main.h ${BACKWARD_ENAB
 
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
-target_link_libraries(${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME} yaml-cpp oatpp)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)

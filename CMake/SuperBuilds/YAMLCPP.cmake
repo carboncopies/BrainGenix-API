@@ -36,7 +36,7 @@ if (USE_SUPERBUILD)
 # Run second part of build, create target/find library we built in the above superbuild target
 else()
 
-    option (${yaml-cpp_DIR} "Location Of yaml-cpp Build (Used In Superbuild Process)")
+    option(yaml-cpp_DIR "Location Of yaml-cpp Build (Used In Superbuild Process)")
 
     message(STATUS "${TARGET_NAME} Install Directory: ${yaml-cpp_DIR}")
 

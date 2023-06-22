@@ -14,5 +14,6 @@ set (EXTRA_CMAKE_ARGS)
 
 include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP.cmake)
+include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Swagger.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/API.cmake)
 

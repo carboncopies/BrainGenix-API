@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: db-pass
+    ports:
+      - 5432:5432
+
+  test:
+    build: .
+    depends_on:
+      - postgres
+

@@ -36,7 +36,6 @@ if (USE_SUPERBUILD)
 else()
 
     option(oatpp-postgresql_INSTALL_DIR "Location Of oatpp-postgresql Build (Used In Superbuild Process)")
-
     message(STATUS "${TARGET_NAME} Install Directory: ${oatpp-postgresql_DIR}")
 
 

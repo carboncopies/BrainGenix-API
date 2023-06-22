@@ -37,7 +37,6 @@ if (USE_SUPERBUILD)
 else()
 
     option(yaml-cpp_INSTALL_DIR "Location Of yaml-cpp Build (Used In Superbuild Process)")
-
     message(STATUS "${TARGET_NAME} Install Directory: ${yaml-cpp_INSTALL_DIR}")
 
 

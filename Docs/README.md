@@ -184,3 +184,21 @@ Request:
         - (float) `Runtime_ms=` Number of milliseconds to simulate.
 Response:
     - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+
+### Simulation - Record All
+URI `/NES/Simulation/RecordAll?`
+Request:
+    RequiredParams:
+        - (bgSimulationID) `SimulationID=` ID of simulation to record.
+        - (float) `MaxRecordTime_ms=` Maximum number of milliseconds to record. -1 to record forever. 0 to disable/abort.
+Response:
+    - (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
+
+### Simulation - Get Recording
+URI `/NES/Simulation/GetRecording?`
+Request:
+    RequiredParams:
+        - (bgSimulationID) `SimulationID=` ID of simulation to record.
+Response:
+    - (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
+    - (JSON blob) `Recording=` JSON blob containing recorded data of all objects.

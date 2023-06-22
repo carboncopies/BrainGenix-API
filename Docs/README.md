@@ -1,5 +1,11 @@
 # API Design Spec
 
+Note: Every API call below, except the Simulation/Create call, must also receive
+the parameters:
+
+- (bgSimulationID) `SimulationID=` Simulation ID number.
+- (AuthKey) `AuthKey=` Authorization key.
+
 ## Shapes
 
 ### Sphere - Create

@@ -13,7 +13,7 @@
 
 *Optional Params*:  
 
- - (string) `Name=` Optional name of the sphere.
+- (string) `Name=` Optional name of the sphere.
 
 **Response**:  
 
@@ -26,10 +26,10 @@
 **Request**:  
 *Required Params*:  
 
- - (float) `Point1Radius_nm=` The radius at the cylinder's first point.
- - (vec3) `Point1Position_nm=` First endpoint of the cylinder's axis.
- - (float) `Point2Radius_nm=` The radius at the cylinder's second point.
- - (vec3) `Point2Position_nm=` Second endpoint of the cylinder's axis.
+- (float) `Point1Radius_nm=` The radius at the cylinder's first point.
+- (vec3) `Point1Position_nm=` First endpoint of the cylinder's axis.
+- (float) `Point2Radius_nm=` The radius at the cylinder's second point.
+- (vec3) `Point2Position_nm=` Second endpoint of the cylinder's axis.
 
 *Optional Params*:  
 
@@ -37,8 +37,8 @@
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
 
 ### Box - Create
 
@@ -46,18 +46,18 @@
 **Request**:  
 *Required Params*:  
 
-        - (vec3) `CenterPosition_nm=` Position of the center of the box in world space coordinates.
-        - (vec3) `Dimensions_nm=` (X,Y,Z) dimensions of the box in nm.
-        - (vec3) `Rotation_rad=` (X,Y,Z) rotation of the box in radians.
+- (vec3) `CenterPosition_nm=` Position of the center of the box in world space coordinates.
+- (vec3) `Dimensions_nm=` (X,Y,Z) dimensions of the box in nm.
+- (vec3) `Rotation_rad=` (X,Y,Z) rotation of the box in radians.
 
 *Optional Params*:  
 
-        - (string) `Name=` Optional name of the box.
+- (string) `Name=` Optional name of the box.
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
 
 ## Compartments
 
@@ -67,19 +67,19 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgShapeID) `ShapeID=` ID of an NES Shape.
-        - (float) `MembranePotential_mV=` Membrane potential of the compartment in millivolts.
-        - (float) `SpikeThreshold_mV=` Action potential spike threshold of the compartment in millivolts.
-        - (float) `DecayTime_ms=` (tau_ahp) After hyperpolarization time constant in milliseconds.
+- (bgShapeID) `ShapeID=` ID of an NES Shape.
+- (float) `MembranePotential_mV=` Membrane potential of the compartment in millivolts.
+- (float) `SpikeThreshold_mV=` Action potential spike threshold of the compartment in millivolts.
+- (float) `DecayTime_ms=` (tau_ahp) After hyperpolarization time constant in milliseconds.
 
 *Optional Params*:  
 
-        - (string) `Name=` Optional name of the compartment.
+- (string) `Name=` Optional name of the compartment.
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (bgCompartmentID) `ID=` ID of the resulting compartment created here (if status indicates success, otherwise this is -1).
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgCompartmentID) `ID=` ID of the resulting compartment created here (if status indicates success, otherwise this is -1).
 
 ## Connections
 
@@ -89,17 +89,17 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment whos data will be copied to the destination.
-        - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment whos data will be overwritten with the source.
+- (bgCompartmentID) `SourceCompartmentID=` ID of the compartment whos data will be copied to the destination.
+- (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment whos data will be overwritten with the source.
 
 *Optional Params*:  
 
-        - (string) `Name=` Optional name of the staple (clippy?).
+- (string) `Name=` Optional name of the staple (clippy?).
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
 
 ### Receptor - Create
 
@@ -107,20 +107,20 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment with presynaptic spike.
-        - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving postsynaptic activity.
-        - (float) `Conductance_nS=` Conductance from source to destination in nanoSiemens.
-        - (float) `TimeConstant_ms=` Postsynaptic potential time constant in milliseconds.
-        - (vec3) `ReceptorLocation_nm=` (X,Y,Z) World space location of the receptor's base (where it intersects the compartment).
+- (bgCompartmentID) `SourceCompartmentID=` ID of the compartment with presynaptic spike.
+- (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving postsynaptic activity.
+- (float) `Conductance_nS=` Conductance from source to destination in nanoSiemens.
+- (float) `TimeConstant_ms=` Postsynaptic potential time constant in milliseconds.
+- (vec3) `ReceptorLocation_nm=` (X,Y,Z) World space location of the receptor's base (where it intersects the compartment).
 
 *Optional Params*:  
 
-        - (string) `Name=` Optional name of the connection.
+- (string) `Name=` Optional name of the connection.
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
 
 ## Tools
 
@@ -130,17 +130,17 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving DAC output.
-        - (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the DAC's connection in nanometers.
+- (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving DAC output.
+- (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the DAC's connection in nanometers.
 
 *Optional Params*:  
 
-        - (string) `Name=` Optional name of the DAC.
+- (string) `Name=` Optional name of the DAC.
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (bgPatchClampDACID) `ID=` ID of the resulting PatchClampDAC created here (if status indicates success, otherwise this is -1).
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgPatchClampDACID) `ID=` ID of the resulting PatchClampDAC created here (if status indicates success, otherwise this is -1).
 
 ### DAC - Set Output List
 
@@ -148,15 +148,13 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgPatchClampDACID) `TargetDAC=` ID of the DAC being configured.
-        - (float list) `DACVoltages_mV=` List of voltages to be played back by the DAC.
-        - (float) `Timestep_ms=` Simulation time for which each step in the DACVoltages is replayed. 
+- (bgPatchClampDACID) `TargetDAC=` ID of the DAC being configured.
+- (float list) `DACVoltages_mV=` List of voltages to be played back by the DAC.
+- (float) `Timestep_ms=` Simulation time for which each step in the DACVoltages is replayed. 
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-
-
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
 ### ADC - Create
 
@@ -164,17 +162,17 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment being read by the ADC output.
-        - (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the ADC's connection in nanometers.
+- (bgCompartmentID) `SourceCompartmentID=` ID of the compartment being read by the ADC output.
+- (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the ADC's connection in nanometers.
 
 *Optional Params*:  
 
-        - (string) `Name=` Optional name of the ADC.
+- (string) `Name=` Optional name of the ADC.
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (bgPatchClampADCID) `ID=` ID of the resulting PatchClampADC created here (if status indicates success, otherwise this is -1).
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgPatchClampADCID) `ID=` ID of the resulting PatchClampADC created here (if status indicates success, otherwise this is -1).
 
 ### ADC - Set Sample Rate
 
@@ -182,12 +180,12 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgPatchClampADCID) `TargetADC=` ID of the ADC being configured.
-        - (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds. 
+- (bgPatchClampADCID) `TargetADC=` ID of the ADC being configured.
+- (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds. 
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
 ### ADC - Get Recorded Data
 
@@ -195,13 +193,13 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgPatchClampADCID) `TargetADC=` ID of the ADC being read.
+- (bgPatchClampADCID) `TargetADC=` ID of the ADC being read.
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (float list) `RecordedData_mV=` List of voltages recorded by the ADC.
-    - (float) `Timestep_ms=` Gets the sample timestep rate for the ADC in milliseconds. 
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (float list) `RecordedData_mV=` List of voltages recorded by the ADC.
+- (float) `Timestep_ms=` Gets the sample timestep rate for the ADC in milliseconds. 
 
 ## Simulation
 
@@ -211,12 +209,12 @@
 **Request**:  
 *Required Params*:  
 
-        - (string) `SimulationName=` Set the name of your simulation. Probably bob. 
+- (string) `SimulationName=` Set the name of your simulation. Probably bob. 
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-    - (bgSimulationID) `SimulationID` ID of the simulation created. Returns -1 on fail.
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgSimulationID) `SimulationID` ID of the simulation created. Returns -1 on fail.
 
 ### Simulation - Reset
 
@@ -224,11 +222,11 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgSimulationID) `SimulationID=` ID of the simulation to reset. 
+- (bgSimulationID) `SimulationID=` ID of the simulation to reset. 
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
 ### Simulation - Run For
 
@@ -236,12 +234,12 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgSimulationID) `SimulationID=` ID of the simulation to run.
-        - (float) `Runtime_ms=` Number of milliseconds to simulate.
+- (bgSimulationID) `SimulationID=` ID of the simulation to run.
+- (float) `Runtime_ms=` Number of milliseconds to simulate.
 
 **Response**:  
 
-    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
 ### Simulation - Record All
 
@@ -249,12 +247,12 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgSimulationID) `SimulationID=` ID of simulation to record.
-        - (float) `MaxRecordTime_ms=` Maximum number of milliseconds to record. -1 to record forever. 0 to disable/abort.
+- (bgSimulationID) `SimulationID=` ID of simulation to record.
+- (float) `MaxRecordTime_ms=` Maximum number of milliseconds to record. -1 to record forever. 0 to disable/abort.
 
 **Response**:  
 
-    - (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
+- (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
 
 ### Simulation - Get Recording
 
@@ -262,9 +260,9 @@
 **Request**:  
 *Required Params*:  
 
-        - (bgSimulationID) `SimulationID=` ID of simulation to record.
+- (bgSimulationID) `SimulationID=` ID of simulation to record.
 
 **Response**:  
 
-    - (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
-    - (JSON blob) `Recording=` JSON blob containing recorded data of all objects.
+- (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
+- (JSON blob) `Recording=` JSON blob containing recorded data of all objects.

@@ -107,6 +107,17 @@ Response:
     - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
     - (bgPatchClampDACID) `ID=` ID of the resulting PatchClampDAC created here (if status indicates success, otherwise this is -1).
 
+### DAC - Set Output List
+URI `/NES/Tools/PatchClampDAC/SetOutputList?`
+Request:
+    RequiredParams:
+        - (bgPatchClampDACID) `TargetDAC=` ID of the DAC being configured.
+        - (float list) `DACVoltages_mV=` List of voltages to be played back by the DAC.
+        - (float) `Timestep_ms=` Simulation time for which each step in the DACVoltages is replayed. 
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+
+
 
 ### ADC - Create
 URI `/NES/Tools/PatchClampADC/Create?`
@@ -120,3 +131,56 @@ Response:
     - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
     - (bgPatchClampADCID) `ID=` ID of the resulting PatchClampADC created here (if status indicates success, otherwise this is -1).
 
+
+### ADC - Set Sample Rate
+URI `/NES/Tools/PatchClampADC/SetSampleRate?`
+Request:
+    RequiredParams:
+        - (bgPatchClampADCID) `TargetADC=` ID of the ADC being configured.
+        - (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds. 
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+
+
+### ADC - Get Recorded Data
+URI `/NES/Tools/PatchClampADC/GetRecordedData?`
+Request:
+    RequiredParams:
+        - (bgPatchClampADCID) `TargetADC=` ID of the ADC being read.
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+    - (float list) `RecordedData_mV=` List of voltages recorded by the ADC.
+    - (float) `Timestep_ms=` Gets the sample timestep rate for the ADC in milliseconds. 
+
+
+
+
+## Simulation
+
+### Simulation - Create
+URI `/NES/Simulation/Create?`
+Request:
+    RequiredParams:
+        - (string) `SimulationName=` Set the name of your simulation. Probably bob. 
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+    - (bgSimulationID) `SimulationID` ID of the simulation created. Returns -1 on fail.
+
+
+### Simulation - Reset
+URI `/NES/Simulation/Reset?`
+Request:
+    RequiredParams:
+        - (bgSimulationID) `SimulationID=` ID of the simulation to reset. 
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+
+
+### Simulation - Run For
+URI `/NES/Simulation/RunFor?`
+Request:
+    RequiredParams:
+        - (bgSimulationID) `SimulationID=` ID of the simulation to run.
+        - (float) `Runtime_ms=` Number of milliseconds to simulate.
+Response:
+    - (bgStatus) `StatusCode=` Enum indicating the status of this API call.

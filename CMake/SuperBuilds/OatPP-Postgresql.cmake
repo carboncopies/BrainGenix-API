@@ -41,7 +41,7 @@ else()
 
 
     # Set configuration for oatpp-postgresql package to be found using find_package
-    set(oatpp-Postgresql_DIR ${oatpp-postgresql_INSTALL_DIR}/lib/cmake/oatpp-postgresql-1.3.0/)
+    set(oatpp-postgresql_DIR ${oatpp-postgresql_INSTALL_DIR}/lib/cmake/oatpp-postgresql-1.3.0/)
 
     # Now do the find_package stuff like normal (from the oatpp-postgresql github example)
     find_package(oatpp-postgresql  1.3.0 REQUIRED)

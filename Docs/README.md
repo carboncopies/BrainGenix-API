@@ -5,14 +5,15 @@
 ## Shapes
 
 ### Sphere - Create
-URI: `/NES/Geometry/Shape/Sphere/Create?`
-Request:
-    Required Params:
+
+URI: `/NES/Geometry/Shape/Sphere/Create?`  
+Request:  
+    Required Params:  
         - (float) `Radius_nm=` The radius of the sphere in nanometers.
         - (vec3) `Center_nm=` Position of the center of the sphere in nanometers. Given as a list containing the three x,y,z coordinates.
-    Optional Params:
+    Optional Params:  
         - (string) `Name=` Optional name of the sphere.
-Response:
+Response:  
     - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
     - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
 

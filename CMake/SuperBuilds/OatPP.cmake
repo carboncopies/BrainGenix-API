@@ -3,7 +3,7 @@
 
 # Configuration Parameters
 set(TARGET_NAME OatPP)
-set(LIB_SOURCE_DIR ${LIB_DIR}/SuperBuild/oatpp)
+set(LIB_SOURCE_DIR ${LIB_DIR}/SuperBuild/oatpp-1.3.0)
 
 
 # First part of two, build the library if we're currently doing so
@@ -48,6 +48,6 @@ else()
     add_library(oatpp ${TARGET_INCLUDES})
     target_link_libraries(oatpp ${TARGET_LIBS})
     set_target_properties(oatpp PROPERTIES LINKER_LANGUAGE CXX)
-    target_include_directories(oatpp PUBLIC ${oatpp_DIR}/include)
+    target_include_directories(oatpp PUBLIC ${oatpp_DIR}/include/oatpp-1.3.0/oatpp/)
 
 endif()

@@ -1,5 +1,13 @@
 # Install Compiler Tools
-sudo apt install git wget cmake g++ -y
+COMPILER_DEPS="git wget cmake g++"
 
 # Backward Deps
-sudo apt install binutils-dev libunwind-dev libdwarf-dev libdw-dev -y
+BACKWARD_DEPS="binutils-dev libunwind-dev libdwarf-dev libdw-dev"
+
+# Oatpp-Postgresql Dependencies
+OATPP_POSTGRESQL_DEPS="libpostgresql-ocaml-dev"
+
+# Install Everything
+INSTALL_COMMAND="sudo apt install $OATPP_POSTGRESQL_DEPS $BACKWARD_DEPS $COMPILER_DEPS -y"
+echo "Running Install Command: $INSTALL_COMMAND"
+$INSTALL_COMMAND

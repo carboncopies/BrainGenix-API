@@ -2,15 +2,12 @@
 
 
 # Configuration Parameters
-set(TARGET_NAME YAMLCPP)
-set(LIB_SOURCE_DIR ${LIB_DIR}/SuperBuild/yaml-cpp)
-
+set(TARGET_NAME OatPP)
+set(LIB_SOURCE_DIR ${LIB_DIR}/SuperBuild/oatpp)
 
 
 # First part of two, build the library if we're currently doing so
 if (USE_SUPERBUILD)
-
-
 
     # Add To Dependencies
     list (APPEND DEPENDENCIES ThirdParty_${TARGET_NAME})
@@ -28,7 +25,7 @@ if (USE_SUPERBUILD)
 
     message(STATUS "Adding CMake Path Argument")
     list (APPEND EXTRA_CMAKE_ARGS
-      -Dyaml-cpp_DIR=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ThirdParty_${TARGET_NAME}/  
+      -Doatpp_DIR=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ThirdParty_${TARGET_NAME}/  
     )
     message(STATUS "Added CMake Path Argument")
 
@@ -36,15 +33,15 @@ if (USE_SUPERBUILD)
 # Run second part of build, create target/find library we built in the above superbuild target
 else()
 
-    option (${yaml-cpp_DIR} "Location Of yaml-cpp Build (Used In Superbuild Process)")
+    option (${oatpp_DIR} "Location Of oatpp Build (Used In Superbuild Process)")
 
-    message(STATUS "FreeImage Install Directory: ${yaml-cpp_DIR}")
-    FILE(GLOB_RECURSE Includes ${yaml-cpp_DIR}*/*.h)
-    FILE(GLOB_RECURSE Libs ${yaml-cpp_DIR}*/*.a)
+    message(STATUS "FreeImage Install Directory: ${oatpp_DIR}")
+    FILE(GLOB_RECURSE Includes ${oatpp_DIR}*/*.h)
+    FILE(GLOB_RECURSE Libs ${oatpp_DIR}*/*.a)
     message(STATUS ${Includes})
-    add_library(yaml-cpp ${Includes})
-    target_link_libraries(yaml-cpp ${Libs})
-    set_target_properties(yaml-cpp PROPERTIES LINKER_LANGUAGE CXX)
-    target_include_directories(yaml-cpp PUBLIC ${yaml-cpp_DIR}/include)
+    add_library(oatpp ${Includes})
+    target_link_libraries(oatpp ${Libs})
+    set_target_properties(oatpp PROPERTIES LINKER_LANGUAGE CXX)
+    target_include_directories(oatpp PUBLIC ${oatpp_DIR}/include)
 
 endif()

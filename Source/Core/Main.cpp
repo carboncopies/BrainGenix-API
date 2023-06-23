@@ -24,7 +24,7 @@ void get_method_handler( const shared_ptr< Session > session )
 }
 int main(int NumArguments, char** ArguemntValues) {
     auto resource = make_shared< Resource >( );
-    resource->set_path( "/resource" );
+    resource->set_path( "/hello" );
     resource->set_method_handler( "GET", get_method_handler );
     
     auto settings = make_shared< Settings >( );

@@ -7,7 +7,14 @@ the parameters:
 - (AuthKey) `AuthKey=` Authorization key.
 
 
+# Enums
 
+## bgStatus  
+ - `0` Success
+ - `500` Downstream Gateway Unavailable
+
+
+# Routes  
 
 ## Shapes
 

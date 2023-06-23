@@ -18,6 +18,9 @@ ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args)
         ("Config,c", boost::program_options::value<std::string>(&_Config.ConfigFilePath)->default_value("API.cfg"), "Path To Config File")
         ;
     
+    // add host cli option
+    // add port cli option
+
     boost::program_options::options_description CommandLineOptions;
     CommandLineOptions.add(Generic);
 

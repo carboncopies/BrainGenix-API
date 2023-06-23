@@ -24,10 +24,10 @@ the parameters:
 
 - (string) `Name=` Optional name of the sphere.
 
-**Response**: Type: `bgResponse_ShapeCreate`  
+**Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
+- (bgShapeID) `ShapeID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
 
 
 ### Cylinder - Create
@@ -45,10 +45,10 @@ the parameters:
 
 - (string) `Name=` Optional name of the cylinder.
 
-**Response**: Type: `bgResponse_ShapeCreate`  
+**Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
+- (bgShapeID) `ShapeID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
 
 
 ### Box - Create
@@ -65,10 +65,10 @@ the parameters:
 
 - (string) `Name=` Optional name of the box.
 
-**Response**: Type: `bgResponse_ShapeCreate`   
+**Response**:    
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
+- (bgShapeID) `ShapeID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
 
 
 
@@ -89,10 +89,10 @@ the parameters:
 
 - (string) `Name=` Optional name of the compartment.
 
-**Response**: Type: `bgReponse_CompartmentsCreate`   
+**Response**:   
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgCompartmentID) `ID=` ID of the resulting compartment created here (if status indicates success, otherwise this is -1).
+- (bgCompartmentID) `CompartmentID=` ID of the resulting compartment created here (if status indicates success, otherwise this is -1).
 
 
 
@@ -114,7 +114,7 @@ the parameters:
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+- (bgConnectionID) `ConnectionID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
 
 
 ### Receptor - Create
@@ -136,7 +136,7 @@ the parameters:
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+- (bgConnectionID) `ConnectionID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
 
 
 
@@ -144,7 +144,7 @@ the parameters:
 
 ### DAC - Create
 
-**URI** `/NES/Tools/PatchClampDAC/Create?`  
+**URI** `/NES/Tool/PatchClampDAC/Create?`  
 **Request**:  
 *Required Params*:  
 
@@ -158,11 +158,12 @@ the parameters:
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgPatchClampDACID) `ID=` ID of the resulting PatchClampDAC created here (if status indicates success, otherwise this is -1).
+- (bgPatchClampDACID) `PatchClampDACID=` ID of the resulting PatchClampDAC created here (if status indicates success, otherwise this is -1).
+
 
 ### DAC - Set Output List
 
-**URI** `/NES/Tools/PatchClampDAC/SetOutputList?`  
+**URI** `/NES/Tool/PatchClampDAC/SetOutputList?`  
 **Request**:  
 *Required Params*:  
 
@@ -174,9 +175,10 @@ the parameters:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
+
 ### ADC - Create
 
-**URI** `/NES/Tools/PatchClampADC/Create?`  
+**URI** `/NES/Tool/PatchClampADC/Create?`  
 **Request**:  
 *Required Params*:  
 
@@ -190,11 +192,12 @@ the parameters:
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgPatchClampADCID) `ID=` ID of the resulting PatchClampADC created here (if status indicates success, otherwise this is -1).
+- (bgPatchClampADCID) `PatchClampADCID=` ID of the resulting PatchClampADC created here (if status indicates success, otherwise this is -1).
+
 
 ### ADC - Set Sample Rate
 
-**URI** `/NES/Tools/PatchClampADC/SetSampleRate?`  
+**URI** `/NES/Tool/PatchClampADC/SetSampleRate?`  
 **Request**:  
 *Required Params*:  
 
@@ -205,9 +208,10 @@ the parameters:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
+
 ### ADC - Get Recorded Data
 
-**URI** `/NES/Tools/PatchClampADC/GetRecordedData?`  
+**URI** `/NES/Tool/PatchClampADC/GetRecordedData?`  
 **Request**:  
 *Required Params*:  
 

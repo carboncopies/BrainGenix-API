@@ -3,15 +3,14 @@
 //==============================================================//
 
 /*
-    Description: This is the main file of the system.
+    Description: This header file includes the header files of all other data transfer objects used by oat++. 
     Additional Notes: None
-    Date Created: 2021-11-01
+    Date Created: 2023-06-22
 */
 
 #pragma once
 
 // Standard Libraries (BG convention: use <> instead of "")
-#include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <oatpp/web/server/HttpConnectionHandler.hpp>
@@ -22,7 +21,3 @@
 #include <oatpp/core/macro/codegen.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
-
-
-
-int main(int NumArguments, char** ArguemntValues);

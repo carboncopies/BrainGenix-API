@@ -28,10 +28,6 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
 
 
-
-
-
-
 project(
     "BrainGenix-API"
     VERSION "0.0.1"
@@ -39,18 +35,13 @@ project(
 )
 
 
-
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-# Superbuild Configuration
-message(STATUS "Superbuild Configuration:")
-
 # Add Libraries
 find_package(unofficial-restbed CONFIG REQUIRED)
 find_package(yaml-cpp CONFIG REQUIRED)
-
 
 
 # Include Util CMake Scripts

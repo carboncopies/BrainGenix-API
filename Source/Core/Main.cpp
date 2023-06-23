@@ -11,27 +11,39 @@
 
 #include <Main.h>
 
-using namespace std;
-using namespace restbed;
 
-void get_method_handler( const shared_ptr< Session > session )
+
+void get_method_handler( const std::shared_ptr< restbed::Session > session )
 {
     const auto& request = session->get_request( );
     
-    const string body = "Hello, " + request->get_path_parameter( "name" );
-    session->close( OK, body, { { "Content-Length", ::to_string( body.size( ) ) } } );
+
+    std::string name;
+    std::string default_value="undefined";
+    name = request->get_query_parameter("name", default_value );
+
+    // const string body = "Hello, " + request->get_path_parameter( "name" );
+    std::string body = "";
+    std::cout<<name<<std::endl;
+    if (name == "undefined") {
+      body = "{StatusCode=400}";
+    }else{
+      body = "{Statuscode=500}";
+    }
+    
+    session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
 }
 
 int main(int NumArguments, char** ArguemntValues) {
-    auto resource = make_shared< Resource >( );
-    resource->set_path( "/test/{name: .*}" );
+    auto resource = std::make_shared< restbed::Resource >( );
+    resource->set_path( "/test" );
     resource->set_method_handler( "GET", get_method_handler );
     
-    auto settings = make_shared< Settings >( );
+    auto settings = std::make_shared< restbed::Settings >( );
     settings->set_port( 8000 );
     settings->set_default_header( "Connection", "close" );
     
-    Service service;
+    restbed::Service service;
     service.publish( resource );
     service.start( settings );
     

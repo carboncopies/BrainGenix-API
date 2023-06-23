@@ -40,8 +40,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 # Add Libraries
+message(STATUS "Finding restbed Package")
 find_package(unofficial-restbed CONFIG REQUIRED)
+
+message(STATUS "Finding yaml-cpp Package")
 find_package(yaml-cpp CONFIG REQUIRED)
+
+message(STATUS "Finding boost Package")
+set(Boost_NO_WARN_NEW_VERSIONS 1)
+find_package(Boost REQUIRED COMPONENTS program_options)
 
 
 # Include Util CMake Scripts

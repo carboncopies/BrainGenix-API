@@ -31,23 +31,12 @@ set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE
 
 
 
-# # Superbuild Configuration
-# if (USE_SUPERBUILD)
 
-#   project (SUPERBUILD NONE)
-
-#   # Add Superbuild Runner
-#   include(${CMAKE_UTILS_DIR}/SuperBuildMaster.cmake)
-#   return()
-# else()
-
-  project(
-      "BrainGenix-API"
-      VERSION "0.0.1"
-      LANGUAGES CXX
-  )
-
-# endif()
+project(
+    "BrainGenix-API"
+    VERSION "0.0.1"
+    LANGUAGES CXX
+)
 
 
 
@@ -58,18 +47,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Superbuild Configuration
 message(STATUS "Superbuild Configuration:")
 
-# include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
-# include(${CMAKE_UTILS_DIR}/SuperBuilds/evpp.cmake)
-# include(${CMAKE_UTILS_DIR}/SuperBuilds/cpp-httplib.cmake)
-# include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP.cmake)
-# include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Swagger.cmake)
-# include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Postgresql.cmake)
-
-
+# Add Libraries
 find_package(unofficial-restbed CONFIG REQUIRED)
 find_package(yaml-cpp CONFIG REQUIRED)
-
-
 
 
 
@@ -82,13 +62,6 @@ include(${CMAKE_UTIL_DIR}/DisableTargetWarnings.cmake)
 include(${CMAKE_SCRIPTS_DIR}/VersioningSystem/VersioningSystem.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
-
-
-
-# ADD STRUCT INTERFACE SUBDIRECTORIES
-BGBuildLogger(${Green} "Configuring Structure Interfaces")
-
-BGBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
 
 
 add_subdirectory(${SOURCE_DIR}/Core)

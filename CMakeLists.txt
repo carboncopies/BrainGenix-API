@@ -91,4 +91,4 @@ BGBuildLogger(${Green} "Configuring Structure Interfaces")
 BGBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
 
 
-add_subdirectory()(${SOURCE_DIR}/Core)
+add_subdirectory(${SOURCE_DIR}/Core)

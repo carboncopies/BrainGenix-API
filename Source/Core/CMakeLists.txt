@@ -23,5 +23,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     yaml-cpp
     unofficial::restbed::restbed
     Boost::program_options
+
+    VersioningSystem
+    CompileTimeStamp
+    CompilePlatformInfo
     )
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)

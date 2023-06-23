@@ -21,6 +21,11 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/Config.h>
 
+#include <CompilePlatformInfo.h>
+#include <CompileTimeStamp.h>
+#include <Version.h>
+
+
 
 namespace BG {
 namespace API {

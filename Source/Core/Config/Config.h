@@ -29,8 +29,7 @@ namespace Config {
  * 
  */
 struct Config {
-    std::string ConfigFilePath = "API.cfg";
-
+    std::string ConfigFilePath; /**Path to program's configuration file*/
 };
 
 

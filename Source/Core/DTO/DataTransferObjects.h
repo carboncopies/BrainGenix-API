@@ -38,6 +38,8 @@ class MessageDto : public oatpp::DTO {
 
 /* TODO - Add more DTOs here */
 
+
+
 /**
  * Reponse Format For /NES/Geometry/Shape/_ALL_/Create
 */
@@ -45,7 +47,8 @@ class bgReponse_Shape_ALL_Create : public oatpp::DTO {
   DTO_INIT(bgReponse_Shape_ALL_Create, DTO)
   DTO_FIELD(Int32, StatusCode);        // Enum indicating the status of this API call.
   DTO_FIELD(Int64, ShapeID);           // ID of the resulting shape created here (if status indicates success, otherwise this is -1).
-}
+};
+
 
 /**
  * Reponse Format For /NES/Compartment/_ALL_/Create
@@ -54,7 +57,8 @@ class bgReponse_Compartment_ALL_Create : public oatpp::DTO {
   DTO_INIT(bgReponse_Compartment_ALL_Create, DTO)
   DTO_FIELD(Int32, StatusCode);        // Enum indicating the status of this API call.
   DTO_FIELD(Int64, CompartmentID);     // ID of the resulting compartment created here (if status indicates success, otherwise this is -1).
-}
+};
+
 
 /**
  * Reponse Format For /NES/Connection/_ALL_/Create
@@ -63,7 +67,8 @@ class bgReponse_Connection_ALL_Create : public oatpp::DTO {
   DTO_INIT(bgReponse_Connection_ALL_Create, DTO)
   DTO_FIELD(Int32, StatusCode);        // Enum indicating the status of this API call.
   DTO_FIELD(Int64, ConnectionID);      // ID of the resulting connection created here (if status indicates success, otherwise this is -1).
-}
+};
+
 
 /**
  * Reponse Format For /NES/Tool/PatchClampDAC/Create
@@ -72,7 +77,7 @@ class bgReponse_Tool_PatchClampDAC_Create : public oatpp::DTO {
   DTO_INIT(bgReponse_Tool_PatchClampDAC_Create, DTO)
   DTO_FIELD(Int32, StatusCode);        // Enum indicating the status of this API call.
   DTO_FIELD(Int64, PatchClampDACID);   // ID of the resulting PatchClampDAC created here (if status indicates success, otherwise this is -1).
-}
+};
 
 /**
  * Reponse Format For /NES/Tool/PatchClampDAC/SetOutputList
@@ -80,7 +85,7 @@ class bgReponse_Tool_PatchClampDAC_Create : public oatpp::DTO {
 class bgReponse_Tool_PatchClampDAC_SetOutputList : public oatpp::DTO {
   DTO_INIT(bgReponse_Tool_PatchClampDAC_SetOutputList, DTO)
   DTO_FIELD(Int32, StatusCode);        // Enum indicating the status of this API call.
-}
+};
 
 /**
  * Reponse Format For /NES/Tool/PatchClampADC/Create
@@ -89,7 +94,7 @@ class bgReponse_Tool_PatchClampADC_Create : public oatpp::DTO {
   DTO_INIT(bgReponse_Tool_PatchClampADC_Create, DTO)
   DTO_FIELD(Int32, StatusCode);        // Enum indicating the status of this API call.
   DTO_FIELD(Int64, PatchClampADCID);   // ID of the resulting PatchClampADC created here (if status indicates success, otherwise this is -1).
-}
+};
 
 /**
  * Reponse Format For /NES/Tool/PatchClampADC/SetSampleRate
@@ -97,17 +102,17 @@ class bgReponse_Tool_PatchClampADC_Create : public oatpp::DTO {
 class bgReponse_Tool_PatchClampADC_SetSampleRate : public oatpp::DTO {
   DTO_INIT(bgReponse_Tool_PatchClampADC_SetSampleRate, DTO)
   DTO_FIELD(Int32, StatusCode);        // Enum indicating the status of this API call.
-}
+};
 
 /**
  * Reponse Format For /NES/Tool/PatchClampADC/GetRecordedData
 */
-class bgReponse_Tool_PatchClampADC_Create : public oatpp::DTO {
-  DTO_INIT(bgReponse_Tool_PatchClampADC_Create, DTO)
+class bgReponse_Tool_PatchClampADC_GetRecordedData : public oatpp::DTO {
+  DTO_INIT(bgReponse_Tool_PatchClampADC_GetRecordedData, DTO)
   DTO_FIELD(Int32, StatusCode);              // Enum indicating the status of this API call.
-  DTO_FIELD(Vector<float>, RecordedData_mV); // List of voltages recorded by the ADC.
-  DTO_FIELD(float32, Timestep_ms);           // Gets the sample timestep rate for the ADC in milliseconds. 
-}
+  DTO_FIELD(Vector<Float32>, RecordedData_mV); // List of voltages recorded by the ADC.
+  DTO_FIELD(Float32, Timestep_ms);           // Gets the sample timestep rate for the ADC in milliseconds. 
+};
 
 
 /**
@@ -116,8 +121,44 @@ class bgReponse_Tool_PatchClampADC_Create : public oatpp::DTO {
 class bgReponse_Simulation_Create : public oatpp::DTO {
   DTO_INIT(bgReponse_Simulation_Create, DTO)
   DTO_FIELD(Int32, StatusCode);              // Enum indicating the status of this API call.
-  DTO_FIELD(Int64, SimulationID);           // Gets the sample timestep rate for the ADC in milliseconds. 
-}
+  DTO_FIELD(Int64, SimulationID);            // ID of the simulation created. Returns -1 on fail.
+};
+
+/**
+ * Reponse Format For /NES/Simulation/Reset
+*/
+class bgReponse_Simulation_Reset : public oatpp::DTO {
+  DTO_INIT(bgReponse_Simulation_Reset, DTO)
+  DTO_FIELD(Int32, StatusCode);              // Enum indicating the status of this API call.
+};
+
+/**
+ * Reponse Format For /NES/Simulation/RunFor
+*/
+class bgReponse_Simulation_RunFor : public oatpp::DTO {
+  DTO_INIT(bgReponse_Simulation_RunFor, DTO)
+  DTO_FIELD(Int32, StatusCode);              // Enum indicating the status of this API call.
+};
+
+/**
+ * Reponse Format For /NES/Simulation/RecordAll
+*/
+class bgReponse_Simulation_RecordAll : public oatpp::DTO {
+  DTO_INIT(bgReponse_Simulation_RecordAll, DTO)
+  DTO_FIELD(Int32, StatusCode);              // Enum indicating the status of this API call.
+};
+
+/**
+ * Reponse Format For /NES/Simulation/GetRecording
+*/
+class bgReponse_Simulation_GetRecording : public oatpp::DTO {
+  DTO_INIT(bgReponse_Simulation_GetRecording, DTO)
+  DTO_FIELD(Int32, StatusCode);              // Enum indicating the status of this API call.
+  DTO_FIELD(String, Recording);              // JSON blob containing recorded data of all objects.
+};
+
+
+
 
 
 /* End DTO code-generation */

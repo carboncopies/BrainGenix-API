@@ -21,6 +21,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/Config.h>
 
+
 namespace BG {
 namespace API {
 namespace Config {
@@ -35,7 +36,24 @@ class ArgumentParser {
 
 public:
 
-   ArgumentParser();
+    /**
+     * @brief Construct a new Argument Parser object
+     * Takes in a reference to a config struct (to be populated with config data).
+     * Also takes the number of args, and the arg char array pointer themselves.
+     * 
+     * @param _Config 
+     * @param _NumArguments 
+     * @param _Args 
+     */
+    ArgumentParser(Config& _Config, int _NumArguments, char** _Args);
+
+    /**
+     * @brief Destroy the Argument Parser object
+     * This is probably called after using the constructor.
+     * We keep this as a class since it might need to stick around for the application lifetime in the future.
+     * 
+     */
+    ~ArgumentParser();
 
 };
 

@@ -5,6 +5,14 @@
 set(MAIN_SOURCES 
   ${SRC_DIR}/Core/Main.cpp
   ${SRC_DIR}/Core/Main.h
+
+  ${SRC_DIR}/Core/Config/ConfigurationManager.cpp
+  ${SRC_DIR}/Core/Config/ConfigurationManager.h
+  ${SRC_DIR}/Core/Config/ArgumentHandler.cpp
+  ${SRC_DIR}/Core/Config/ArgumentHandler.h
+  ${SRC_DIR}/Core/Config/Config.cpp
+  ${SRC_DIR}/Core/Config/Config.h
+
   ${BACKWARD_ENABLE}
   )
 

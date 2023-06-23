@@ -14,11 +14,8 @@
 #include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <oatpp/network/Server.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <ApplicationComponent.h>
-#include <Controller/APIController.h>
 
 
 int main(int NumArguments, char** ArguemntValues);

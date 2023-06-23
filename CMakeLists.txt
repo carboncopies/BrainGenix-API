@@ -91,28 +91,4 @@ BGBuildLogger(${Green} "Configuring Structure Interfaces")
 BGBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
 
 
-# Once we have core subdirs, we can populate this - for now i've commented it out.
-
-
-# # ADD INTERNAL SUBDIRECTORIES
-# BGBuildLogger(${Green} "Configuring Internal Libraries")
-# BGBuildLogger(${BoldGreen} "Finished Configuring Internal Libraries")
-
-# # ADD CORE SUBDIRECTORIES
-# BGBuildLogger(${Green} "Configuring Core Subsystems")
-# add_subdirectory(${SRC_DIR}/Core/Writers/ERS_ProjectWriter)
-# BGBuildLogger(${BoldGreen} "Finished Configuring Core Subsystems")
-
-
-# Configure Sources
-set(MAIN_SOURCES 
-  ${SRC_DIR}/Core/Main.cpp
-  ${SRC_DIR}/Core/Main.h
-  ${BACKWARD_ENABLE}
-  )
-
-
-# Create Main Executable
-include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
-target_link_libraries(${PROJECT_NAME} PRIVATE yaml-cpp unofficial::restbed::restbed)
-target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
+add_subdirectory()(${SOURCE_DIR}/Core)

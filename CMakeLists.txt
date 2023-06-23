@@ -94,10 +94,22 @@ BGBuildLogger(${BoldGreen} "Finished Configuring Structure Interfaces")
 
 
 # Configure Sources
-set(MAIN_SOURCES ${SRC_DIR}/Core/Main.cpp ${SRC_DIR}/Core/Main.h ${BACKWARD_ENABLE})
+set(MAIN_SOURCES 
+  ${SRC_DIR}/Core/Main.cpp
+  ${SRC_DIR}/Core/Main.h
+  ${SRC_DIR}/Core/ApplicationComponent.cpp
+  ${SRC_DIR}/Core/ApplicationComponent.h
+  ${SRC_DIR}/Core/DTO/DataTransferObjects.cpp
+  ${SRC_DIR}/Core/DTO/DataTransferObjects.h
+  ${SRC_DIR}/Core/Controller/APIController.cpp
+  ${SRC_DIR}/Core/Controller/APIController.h
+  ${BACKWARD_ENABLE}
+  )
 
 
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
 target_link_libraries(${PROJECT_NAME} yaml-cpp oatpp::oatpp oatpp::oatpp-swagger oatpp::oatpp-postgresql)
+
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
+# target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core/DTO)

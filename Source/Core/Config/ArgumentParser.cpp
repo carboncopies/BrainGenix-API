@@ -1,7 +1,11 @@
 #include <Config/ArgumentParser.h>
 
 
-BG::API::Config::ArgumentParser(Config& _Config, int _NumArguments, char** _Args) {
+namespace BG {
+namespace API {
+namespace Config {
+
+ArgumentParser(Config& _Config, int _NumArguments, char** _Args) {
 
 
     // Declare Command Line Options
@@ -51,6 +55,11 @@ BG::API::Config::ArgumentParser(Config& _Config, int _NumArguments, char** _Args
 }
 
 
-BG::API::Config::~ArgumentHandler() {
+~ArgumentParser() {
 
 }
+
+
+}; // Close Namespace Config
+}; // Close Namespace API
+}; // Close Namespace BG

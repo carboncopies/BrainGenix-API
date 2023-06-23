@@ -19,7 +19,7 @@
 #include <boost/program_options.hpp>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Config/ArgumentHandler.h>
+#include <Config/ArgumentParser.h>
 #include <Config/Config.h>
 
 

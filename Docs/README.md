@@ -65,6 +65,8 @@ the parameters:
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
 
+
+
 ## Compartments
 
 ### BS - Create
@@ -86,6 +88,8 @@ the parameters:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgCompartmentID) `ID=` ID of the resulting compartment created here (if status indicates success, otherwise this is -1).
+
+
 
 ## Connections
 
@@ -127,6 +131,8 @@ the parameters:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+
+
 
 ## Tools
 
@@ -206,6 +212,8 @@ the parameters:
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (float list) `RecordedData_mV=` List of voltages recorded by the ADC.
 - (float) `Timestep_ms=` Gets the sample timestep rate for the ADC in milliseconds. 
+
+
 
 ## Simulation
 

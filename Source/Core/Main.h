@@ -26,4 +26,4 @@
 /**
  * Main function.
 */
-int main(int NumArguments, char** ArguemntValues);
+int main(int NumArguments, char** ArgumentValues);

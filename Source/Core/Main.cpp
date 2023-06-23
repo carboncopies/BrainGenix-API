@@ -34,7 +34,7 @@ void get_method_handler( const std::shared_ptr< restbed::Session > session )
     session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
 }
 
-int main(int NumArguments, char** ArguemntValues) {
+int main(int NumArguments, char** ArgumentValues) {
 
     // Startup With Config Manager, Will Read Args And Config File, Then Parse Into Config Struct
     BG::API::Config::Manager ConfigManager(NumArguments, ArgumentValues);

@@ -5,7 +5,7 @@ namespace BG {
 namespace API {
 namespace Config {
 
-ArgumentParser(Config& _Config, int _NumArguments, char** _Args) {
+ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args) {
 
 
     // Declare Command Line Options
@@ -43,19 +43,19 @@ ArgumentParser(Config& _Config, int _NumArguments, char** _Args) {
     }
     if (ArgMap.count("CompilePlatformInfo")) {
         std::string Info = "Compile Platform Information:\n    ";
-        Info += "Target OS: " + TARGET_OS_NAME + "\n    ";
-        Info += "Target OS Version: " + TARGET_OS_VERSION + "\n    ";
-        Info += "Target Arch: " + TARGET_PROCESSOR + "\n    ";
-        Info += "Host OS: " + HOST_OS_NAME + "\n    ";
-        Info += "Host OS Version: " + HOST_OS_VERSION + "\n    ";
-        Info += "Host Arch: " + HOST_PROCESSOR + "\n";
+        Info += std::string("Target OS: ") + TARGET_OS_NAME + "\n    ";
+        Info += std::string("Target OS Version: ") + TARGET_OS_VERSION + "\n    ";
+        Info += std::string("Target Arch: ") + TARGET_PROCESSOR + "\n    ";
+        Info += std::string("Host OS: ") + HOST_OS_NAME + "\n    ";
+        Info += std::string("Host OS Version: ") + HOST_OS_VERSION + "\n    ";
+        Info += std::string("Host Arch: ") + HOST_PROCESSOR + "\n";
         std::cout<<Info;
         exit(0);
     }
 }
 
 
-~ArgumentParser() {
+ArgumentParser::~ArgumentParser() {
 
 }
 

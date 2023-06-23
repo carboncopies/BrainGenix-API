@@ -13,6 +13,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <iterator>
 
 // Third-Party Libraries (BG convention: use <> instead of "")

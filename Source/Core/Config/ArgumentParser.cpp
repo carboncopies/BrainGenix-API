@@ -15,8 +15,7 @@ ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args)
         ("Version,v", "Print BG-API Server Version")
         ("CompileTimeStamp,q", "Print BG-API Compile Date Timestamp")
         ("CompilePlatformInfo,w", "Print BG-API Compile Platform Information")
-        ("Version,v", "Print BG-API Server Version")
-        ("Config,c", boost::program_options::value<std::string>(_Config.ConfigFilePath)->default_value("API.cfg"), "Path To Config File")
+        ("Config,c", boost::program_options::value<std::string>(&_Config.ConfigFilePath)->default_value("API.cfg"), "Path To Config File")
         ;
     
     boost::program_options::options_description CommandLineOptions;

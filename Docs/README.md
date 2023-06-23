@@ -11,6 +11,7 @@ the parameters:
 
 ## bgStatus  
  - `0` Success
+ - `400` Invalid Parameters Passed
  - `500` Downstream Gateway Unavailable
 
 

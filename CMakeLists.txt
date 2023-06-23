@@ -58,10 +58,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 message(STATUS "Superbuild Configuration:")
 
 include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
-include(${CMAKE_UTILS_DIR}/SuperBuilds/cpp-httplib.cmake)
-include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP.cmake)
-include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Swagger.cmake)
-include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Postgresql.cmake)
+include(${CMAKE_UTILS_DIR}/SuperBuilds/evpp.cmake)
+# include(${CMAKE_UTILS_DIR}/SuperBuilds/cpp-httplib.cmake)
+# include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP.cmake)
+# include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Swagger.cmake)
+# include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Postgresql.cmake)
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)
@@ -104,7 +105,7 @@ set(MAIN_SOURCES
 
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
-target_link_libraries(${PROJECT_NAME} yaml-cpp httplib)
+target_link_libraries(${PROJECT_NAME} yaml-cpp evpp::evpp)
 #oatpp::oatpp oatpp::oatpp-swagger oatpp::oatpp-postgresql
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 # target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core/DTO)

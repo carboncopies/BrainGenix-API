@@ -18,14 +18,14 @@ if (USE_SUPERBUILD)
 
         SOURCE_DIR ${LIB_SOURCE_DIR}
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ThirdParty_${TARGET_NAME}/
-                   -Dcpp-httplib_BUILD_TESTS:BOOL=OFF
+                  #  -Dcpp-httplib_BUILD_TESTS:BOOL=OFF
 
     )
     message(STATUS "Finished Configuring Library ${TARGET_NAME}")
 
     message(STATUS "Adding CMake Path Argument")
     list (APPEND EXTRA_CMAKE_ARGS
-      -Dcpp-httplib_INSTALL_DIR=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ThirdParty_${TARGET_NAME}/  
+      -Dhttplib_INSTALL_DIR=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ThirdParty_${TARGET_NAME}/  
     )
     message(STATUS "Added CMake Path Argument")
 
@@ -33,12 +33,12 @@ if (USE_SUPERBUILD)
 # Run second part of build, create target/find library we built in the above superbuild target
 else()
 
-    option(cpp-httplib_INSTALL_DIR "Location Of cpp-httplib Build (Used In Superbuild Process)")
+    option(httplib_INSTALL_DIR "Location Of cpp-httplib Build (Used In Superbuild Process)")
     message(STATUS "${TARGET_NAME} Install Directory: ${cpp-httplib_INSTALL_DIR}")
 
 
     # Set configuration for cpp-httplib package to be found using find_package
-    set(httplib_DIR ${cpp-httplib_INSTALL_DIR}/lib/cmake/httplib/)
+    set(httplib_DIR ${httplib_INSTALL_DIR}/lib/cmake/httplib/)
 
     # Now do the find_package stuff like normal (from the cpp-httplib-swagger github example)
     find_package(httplib REQUIRED)
@@ -48,7 +48,7 @@ else()
       message(FATAL_ERROR "Could not find httplib")
     endif()
 
-    include_directories(${cpp-httplib_INCLUDE_DIRS})
+    include_directories(${httplib_INCLUDE_DIRS})
 
     # Great, now this can be linked to via httplib, and all headers/libs are taken care of by the above code
 

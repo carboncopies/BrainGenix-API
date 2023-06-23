@@ -14,32 +14,28 @@
 using namespace std;
 using namespace restbed;
 
-void post_method_handler( const shared_ptr< Session > session )
+void get_method_handler( const shared_ptr< Session > session )
 {
-    const auto request = session->get_request( );
-
-    int content_length = request->get_header( "Content-Length", 0 );
-
-    session->fetch( content_length, [ ]( const shared_ptr< Session > session, const Bytes & body )
-    {
-        fprintf( stdout, "%.*s\n", ( int ) body.size( ), body.data( ) );
-        session->close( OK, "Hello, World!", { { "Content-Length", "13" } } );
-    } );
+    stringstream id;
+    id << ::this_thread::get_id( );
+    auto body = String::format( "Hello From Thread %s\n", id.str( ).data( ) );
+    
+    session->close( OK, body, { { "Content-Length", ::to_string( body.length( ) ) } } );
 }
-
 int main(int NumArguments, char** ArguemntValues) {
-  auto resource = make_shared< Resource >( );
-  resource->set_path( "/resource" );
-  resource->set_method_handler( "POST", post_method_handler );
-
-  auto settings = make_shared< Settings >( );
-  settings->set_port( 1984 );
-  settings->set_default_header( "Connection", "close" );
-
-  Service service;
-  service.publish( resource );
-  service.start( settings );
-
-  return EXIT_SUCCESS;
+    auto resource = make_shared< Resource >( );
+    resource->set_path( "/resource" );
+    resource->set_method_handler( "GET", get_method_handler );
+    
+    auto settings = make_shared< Settings >( );
+    settings->set_port( 8000 );
+    settings->set_worker_limit( 4 );
+    settings->set_default_header( "Connection", "close" );
+    
+    Service service;
+    service.publish( resource );
+    service.start( settings );
+    
+    return EXIT_SUCCESS;
 }
 

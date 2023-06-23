@@ -7,7 +7,7 @@ option(ENABLE_BACKWARD "Build BG With Backward to provide some stack trace infor
 
 
 # Set Non-User Changable Configuration Data (Used during build process )
-option (USE_SUPERBUILD "Whether or not a superbuild should be invoked" ON) # You probably don't want to change this one - used internally
+# option (USE_SUPERBUILD "Whether or not a superbuild should be invoked" ON) # You probably don't want to change this one - used internally
 
 
 # Set Dirs
@@ -24,21 +24,22 @@ set(PROJECT_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 
+# Setup vcpkg script with CMake (note: should be placed before project() call)
+set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
 
 
 
 
 
+# # Superbuild Configuration
+# if (USE_SUPERBUILD)
 
-# Superbuild Configuration
-if (USE_SUPERBUILD)
+#   project (SUPERBUILD NONE)
 
-  project (SUPERBUILD NONE)
-
-  # Add Superbuild Runner
-  include(${CMAKE_UTILS_DIR}/SuperBuildMaster.cmake)
-  return()
-else()
+#   # Add Superbuild Runner
+#   include(${CMAKE_UTILS_DIR}/SuperBuildMaster.cmake)
+#   return()
+# else()
 
   project(
       "BrainGenix-API"
@@ -46,7 +47,7 @@ else()
       LANGUAGES CXX
   )
 
-endif()
+# endif()
 
 
 
@@ -57,8 +58,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Superbuild Configuration
 message(STATUS "Superbuild Configuration:")
 
-include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
-include(${CMAKE_UTILS_DIR}/SuperBuilds/evpp.cmake)
+# include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
+# include(${CMAKE_UTILS_DIR}/SuperBuilds/evpp.cmake)
 # include(${CMAKE_UTILS_DIR}/SuperBuilds/cpp-httplib.cmake)
 # include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP.cmake)
 # include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Swagger.cmake)

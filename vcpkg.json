@@ -1,0 +1,9 @@
+{
+  "name": "BrainGenix-API",
+  "version-string": "0.0.1",
+  "license": "AGPL3",
+  "dependencies": [
+    "restbed",
+    "yaml-cpp"
+  ]
+}

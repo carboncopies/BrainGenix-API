@@ -18,7 +18,8 @@ if (USE_SUPERBUILD)
 
         SOURCE_DIR ${LIB_SOURCE_DIR}
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_CURRENT_BINARY_DIR}/Dependencies/Install/ThirdParty_${TARGET_NAME}/
-                  #  -Devpp_BUILD_TESTS:BOOL=OFF
+                   -DDISABLE_EVPP_TESTS:BOOL=ON
+                   -DCMAKE_BENCHMARK_TESTING:BOOL=OFF
 
     )
     message(STATUS "Finished Configuring Library ${TARGET_NAME}")

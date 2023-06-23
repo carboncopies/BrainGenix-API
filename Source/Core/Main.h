@@ -14,7 +14,6 @@
 #include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <httplib.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 

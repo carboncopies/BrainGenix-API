@@ -25,7 +25,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 
 # Setup vcpkg script with CMake (note: should be placed before project() call)
-set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
+set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE STRING "Vcpkg toolchain file")
 
 
 
@@ -51,7 +51,7 @@ set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/
 
 
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
@@ -106,7 +106,7 @@ set(MAIN_SOURCES
 
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
-target_link_libraries(${PROJECT_NAME} yaml-cpp evpp::evpp)
+target_link_libraries(${PROJECT_NAME} yaml-cpp restbed::restbed)
 #oatpp::oatpp oatpp::oatpp-swagger oatpp::oatpp-postgresql
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 # target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core/DTO)

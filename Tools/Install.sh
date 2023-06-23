@@ -8,7 +8,7 @@ BACKWARD_DEPS="binutils-dev libunwind-dev libdwarf-dev libdw-dev"
 VCPKG_DEPS="curl zip unzip tar"
 
 # Install Everything
-INSTALL_COMMAND="sudo apt install $BACKWARD_DEPS $COMPILER_DEPS -y"
+INSTALL_COMMAND="sudo apt install $VCPKG_DEPS $BACKWARD_DEPS $COMPILER_DEPS -y"
 echo "Running Install Command: $INSTALL_COMMAND"
 $INSTALL_COMMAND
 

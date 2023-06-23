@@ -65,6 +65,14 @@ message(STATUS "Superbuild Configuration:")
 # include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Swagger.cmake)
 # include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Postgresql.cmake)
 
+
+find_package(unofficial-restbed CONFIG REQUIRED)
+find_package(yaml-cpp CONFIG REQUIRED)
+
+
+
+
+
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)
 include(${CMAKE_UTIL_DIR}/SetBinaryDir.cmake)
@@ -106,7 +114,5 @@ set(MAIN_SOURCES
 
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
-target_link_libraries(${PROJECT_NAME} yaml-cpp restbed::restbed)
-#oatpp::oatpp oatpp::oatpp-swagger oatpp::oatpp-postgresql
+target_link_libraries(${PROJECT_NAME} PRIVATE yaml-cpp unofficial::restbed::restbed)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
-# target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core/DTO)

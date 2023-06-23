@@ -62,7 +62,7 @@ fi
 
 # Build Files
 echo "[BG BUILD HELPER] - Building, Please Wait. This may take some time"
-cmake --build . -j $1 --target API
+cmake --build . -j $1
 
 
 # Run Program

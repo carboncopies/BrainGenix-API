@@ -58,6 +58,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 message(STATUS "Superbuild Configuration:")
 
 include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
+include(${CMAKE_UTILS_DIR}/SuperBuilds/cpp-httplib.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Swagger.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Postgresql.cmake)

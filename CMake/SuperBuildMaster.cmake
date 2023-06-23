@@ -13,6 +13,7 @@ set (EXTRA_CMAKE_ARGS)
 # include(${CMAKE_UTILS_DIR}/SuperBuilds/Boost.cmake)
 
 include(${CMAKE_UTILS_DIR}/SuperBuilds/YAMLCPP.cmake)
+include(${CMAKE_UTILS_DIR}/SuperBuilds/cpp-httplib.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Swagger.cmake)
 include(${CMAKE_UTILS_DIR}/SuperBuilds/OatPP-Postgresql.cmake)

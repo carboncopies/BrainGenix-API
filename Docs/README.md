@@ -238,7 +238,8 @@ the parameters:
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgSimulationID) `SimulationID` ID of the simulation created. Returns -1 on fail.
+- (bgSimulationID) `SimulationID=` ID of the simulation created. Returns -1 on fail.
+
 
 ### Simulation - Reset
 
@@ -251,6 +252,7 @@ the parameters:
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+
 
 ### Simulation - Run For
 
@@ -265,6 +267,7 @@ the parameters:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
+
 ### Simulation - Record All
 
 **URI** `/NES/Simulation/RecordAll?`  
@@ -277,6 +280,7 @@ the parameters:
 **Response**:  
 
 - (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
+
 
 ### Simulation - Get Recording
 

@@ -110,6 +110,15 @@ class bgReponse_Tool_PatchClampADC_Create : public oatpp::DTO {
 }
 
 
+/**
+ * Reponse Format For /NES/Simulation/Create
+*/
+class bgReponse_Simulation_Create : public oatpp::DTO {
+  DTO_INIT(bgReponse_Simulation_Create, DTO)
+  DTO_FIELD(Int32, StatusCode);              // Enum indicating the status of this API call.
+  DTO_FIELD(Int64, SimulationID);           // Gets the sample timestep rate for the ADC in milliseconds. 
+}
+
 
 /* End DTO code-generation */
 #include OATPP_CODEGEN_END(DTO)

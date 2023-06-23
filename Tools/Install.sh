@@ -4,8 +4,8 @@ COMPILER_DEPS="git wget cmake g++"
 # Backward Deps
 BACKWARD_DEPS="binutils-dev libunwind-dev libdwarf-dev libdw-dev"
 
-# # evpp Dependencies
-# EVPP_DEPS="libevent-dev libgoogle-glog-dev libboost-dev google-mock libgflags-dev "
+# vcpkg Dependencies
+VCPKG_DEPS="curl zip unzip tar"
 
 # Install Everything
 INSTALL_COMMAND="sudo apt install $BACKWARD_DEPS $COMPILER_DEPS -y"

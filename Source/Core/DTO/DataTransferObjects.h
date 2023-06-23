@@ -48,10 +48,10 @@ class bgReponse_ShapeCreate : public oatpp::DTO {
 }
 
 /**
- * Reponse Format For /NES/Compartments/BS/Create
+ * Reponse Format For /NES/Compartments/_ALL_/Create
 */
-class bgReponse_CompartmentsBSCreate : public oatpp::DTO {
-  DTO_INIT(bgReponse_CompartmentsBSCreate, DTO)
+class bgReponse_CompartmentsCreate : public oatpp::DTO {
+  DTO_INIT(bgReponse_CompartmentsCreate, DTO)
   DTO_FIELD(Int32, bgStatus);         // Enum indicating the status of this API call.
   DTO_FIELD(Int64, bgCompartmentID);  // ID of the resulting compartment created here (if status indicates success, otherwise this is -1).
 }

@@ -6,6 +6,9 @@ the parameters:
 - (bgSimulationID) `SimulationID=` Simulation ID number.
 - (AuthKey) `AuthKey=` Authorization key.
 
+
+
+
 ## Shapes
 
 ### Sphere - Create
@@ -26,6 +29,7 @@ the parameters:
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
 
+
 ### Cylinder - Create
 
 **URI**: `/NES/Geometry/Shape/Cylinder/Create?`  
@@ -45,6 +49,7 @@ the parameters:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
+
 
 ### Box - Create
 
@@ -84,7 +89,7 @@ the parameters:
 
 - (string) `Name=` Optional name of the compartment.
 
-**Response**:  
+**Response**: Type: `bgReponse_CompartmentsCreate`   
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgCompartmentID) `ID=` ID of the resulting compartment created here (if status indicates success, otherwise this is -1).
@@ -110,6 +115,7 @@ the parameters:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgConnectionID) `ID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+
 
 ### Receptor - Create
 

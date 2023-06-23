@@ -38,5 +38,14 @@ class MessageDto : public oatpp::DTO {
 
 /* TODO - Add more DTOs here */
 
+/**
+ * Reponse Format For CreateShape
+*/
+class bgReponse_ShapeCreate : public oatpp::DTO {
+  DTO_INIT(bgReponse_ShapeCreate, DTO)
+  DTO_FIELD(Int32, bgStatus);   // Enum indicating the status of this API call.
+  DTO_FIELD(Int64, bgShapeID);  // ID of the resulting shape created here (if status indicates success, otherwise this is -1).
+}
+
 /* End DTO code-generation */
 #include OATPP_CODEGEN_END(DTO)

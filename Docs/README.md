@@ -21,7 +21,7 @@ the parameters:
 
 - (string) `Name=` Optional name of the sphere.
 
-**Response**:  
+**Response**: Type: `bgResponse_ShapeCreate`  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
@@ -41,7 +41,7 @@ the parameters:
 
 - (string) `Name=` Optional name of the cylinder.
 
-**Response**:  
+**Response**: Type: `bgResponse_ShapeCreate`  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).
@@ -60,7 +60,7 @@ the parameters:
 
 - (string) `Name=` Optional name of the box.
 
-**Response**:  
+**Response**: Type: `bgResponse_ShapeCreate`   
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (bgShapeID) `ID=` ID of the resulting shape created here (if status indicates success, otherwise this is -1).

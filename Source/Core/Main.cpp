@@ -16,20 +16,19 @@ using namespace restbed;
 
 void get_method_handler( const shared_ptr< Session > session )
 {
-    stringstream id;
-    id << ::this_thread::get_id( );
-    auto body = String::format( "Hello From Thread %s\n", id.str( ).data( ) );
+    const auto& request = session->get_request( );
     
-    session->close( OK, body, { { "Content-Length", ::to_string( body.length( ) ) } } );
+    const string body = "Hello, " + request->get_path_parameter( "name" );
+    session->close( OK, body, { { "Content-Length", ::to_string( body.size( ) ) } } );
 }
+
 int main(int NumArguments, char** ArguemntValues) {
     auto resource = make_shared< Resource >( );
-    resource->set_path( "/hello" );
+    resource->set_path( "/test/{name: .*}" );
     resource->set_method_handler( "GET", get_method_handler );
     
     auto settings = make_shared< Settings >( );
     settings->set_port( 8000 );
-    settings->set_worker_limit( 4 );
     settings->set_default_header( "Connection", "close" );
     
     Service service;

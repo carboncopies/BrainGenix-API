@@ -55,4 +55,4 @@ include(${CMAKE_SCRIPTS_DIR}/CompilePlatformInfo/CompilePlatformInfo.cmake)
 include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 
-add_subdirectory(${SOURCE_DIR}/Core)
+add_subdirectory(${SRC_DIR}/Core)

@@ -49,3 +49,8 @@ BG::API::Config::ArgumentParser(Config& _Config, int _NumArguments, char** _Args
         exit(0);
     }
 }
+
+
+BG::API::Config::~ArgumentHandler() {
+
+}

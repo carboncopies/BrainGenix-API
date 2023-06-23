@@ -20,7 +20,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/ArgumentHandler.h>
-
+#include <Config/Config.h>
 
 
 
@@ -35,6 +35,10 @@ namespace Config {
  * which is given to the rest of the system. This class manages creating and owning that config struct.
  */
 class Manager {
+
+private:
+
+    Config Config_; /**Configuration struct instance, owned by this class and given to others as needed*/
 
 public:
 

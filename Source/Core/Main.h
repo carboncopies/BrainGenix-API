@@ -20,8 +20,7 @@
 #include <restbed>
 
 // Internal Libraries (BG convention: use <> instead of "")
-
-
+#include <Config/ConfigurationManager.h>
 
 
 /**

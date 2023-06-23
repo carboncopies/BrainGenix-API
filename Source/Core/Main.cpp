@@ -35,6 +35,11 @@ void get_method_handler( const std::shared_ptr< restbed::Session > session )
 }
 
 int main(int NumArguments, char** ArguemntValues) {
+
+    // Startup With Config Manager, Will Read Args And Config File, Then Parse Into Config Struct
+    BG::API::Config::Manager ConfigManager(NumArguments, ArgumentValues);
+
+
     auto resource = std::make_shared< restbed::Resource >( );
     resource->set_path( "/test" );
     resource->set_method_handler( "GET", get_method_handler );

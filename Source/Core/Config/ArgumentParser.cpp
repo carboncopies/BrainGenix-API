@@ -15,12 +15,11 @@ ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args)
         ("Version,v", "Print BG-API Server Version")
         ("CompileTimeStamp,q", "Print BG-API Compile Date Timestamp")
         ("CompilePlatformInfo,w", "Print BG-API Compile Platform Information")
+        ("Port, p", boost::program_options::value<int>(&_Config.PortNumber)->default_value(8000), "Port Number Of The Service")
+        ("Host, o", boost::program_options::value<std::string>(&_Config.Host)->default_value("0.0.0.0"), "Host That The Service Binds To")
         ("Config,c", boost::program_options::value<std::string>(&_Config.ConfigFilePath)->default_value("API.cfg"), "Path To Config File")
         ;
     
-    // add host cli option
-    // add port cli option
-
     boost::program_options::options_description CommandLineOptions;
     CommandLineOptions.add(Generic);
 

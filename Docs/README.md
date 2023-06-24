@@ -60,6 +60,22 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 
 
+## Authentication
+
+### GetToken
+
+**URI**: `/Auth/GetToken`  
+**Request**:  
+*Required Params*:  
+ - (string) `Username=` Username for your account.  
+ - (string) `Password=` Password for your account.  
+
+**Response**:  
+ - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+ - (string) `Token=` If your username/password are valid, then the token will be returned.  
+
+
+
 ## Shapes
 
 ### Sphere - Create

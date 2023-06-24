@@ -30,9 +30,12 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
     Auth_GetToken_ = std::make_shared<Resource::Auth::GetToken::Route>(&_Server, _Service); 
 
-    NES_Geometry_Shape_Box_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Box::Create::Route>(&_Server, _Service);
-    NES_Geometry_Shape_Cylinder_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Cylinder::Create::Route>(&_Server, _Service);
     NES_Geometry_Shape_Sphere_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Sphere::Create::Route>(&_Server, _Service);
+    NES_Geometry_Shape_Cylinder_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Cylinder::Create::Route>(&_Server, _Service);
+    NES_Geometry_Shape_Box_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Box::Create::Route>(&_Server, _Service);
+
+    NES_Compartment_BS_Create_ = std::make_shared<Resource::NES::Compartment::BS::Create::Route>(&_Server, _Service);
+    
     NES_Simulation_Create_ = std::make_shared<Resource::NES::Simulation::Create::Route>(&_Server, _Service);
     NES_Simulation_Reset_ = std::make_shared<Resource::NES::Simulation::Reset::Route>(&_Server, _Service);
     NES_Simulation_RunFor_ = std::make_shared<Resource::NES::Simulation::RunFor::Route>(&_Server, _Service);

@@ -38,14 +38,20 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NotFound.h
   ${SRC_DIR}/Core/Resource/Forbidden.cpp
   ${SRC_DIR}/Core/Resource/Forbidden.h
+
   ${SRC_DIR}/Core/Resource/Auth/GetToken.cpp
   ${SRC_DIR}/Core/Resource/Auth/GetToken.h
+
   ${SRC_DIR}/Core/Resource/NES/BoxCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/BoxCreate.h
   ${SRC_DIR}/Core/Resource/NES/CylinderCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/CylinderCreate.h
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.h
+
+  ${SRC_DIR}/Core/Resource/NES/BSCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/BSCreate.h
+
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.h
   ${SRC_DIR}/Core/Resource/NES/SimulationReset.cpp

@@ -18,19 +18,27 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <restbed>
 
+#include <nlohmann/json.hpp>
+
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Server/Server.h>
+
+#include <Util/ParamCheck.h>
+#include <Util/RestbedHelpers.h>
 
 
 namespace BG {
 namespace API {
 namespace Resource {
 
-namespace Hello {
+namespace NES {
+namespace Compartment {
+namespace BS {
+namespace Create {
 
 
 /**
- * @brief Provides the code to handle the /Hello route for the API.
+ * @brief Provides the code to handle route for the API.
  * 
  * @param _Server 
  * @param _Session 
@@ -40,6 +48,9 @@ class Route {
 private:
 
     Server::Server *Server_; /**Copy of the server struct*/
+
+    std::vector<std::string> OptionalParams_; /**List of optional parameters*/
+    std::vector<std::string> RequiredParams_; /**List of required parameters*/
 
 public:
 
@@ -68,6 +79,9 @@ public:
 };
 
 
+}; // Close Namespace
+}; // Close Namespace
+}; // Close Namespace
 }; // Close Namespace
 
 }; // Close Namespace Resource

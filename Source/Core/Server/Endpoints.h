@@ -33,6 +33,10 @@
 #include <Resource/NES/BoxCreate.h>
 #include <Resource/NES/CylinderCreate.h>
 #include <Resource/NES/SphereCreate.h>
+
+#include <Resource/NES/BSCreate.h>
+
+
 #include <Resource/NES/SimulationCreate.h>
 #include <Resource/NES/SimulationReset.h>
 #include <Resource/NES/SimulationRunFor.h>
@@ -58,9 +62,12 @@ private:
 
     std::shared_ptr<Resource::Auth::GetToken::Route> Auth_GetToken_;
 
-    std::shared_ptr<Resource::NES::Geometry::Shape::Box::Create::Route> NES_Geometry_Shape_Box_Create_;
-    std::shared_ptr<Resource::NES::Geometry::Shape::Cylinder::Create::Route> NES_Geometry_Shape_Cylinder_Create_;
     std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::Create::Route> NES_Geometry_Shape_Sphere_Create_;
+    std::shared_ptr<Resource::NES::Geometry::Shape::Cylinder::Create::Route> NES_Geometry_Shape_Cylinder_Create_;
+    std::shared_ptr<Resource::NES::Geometry::Shape::Box::Create::Route> NES_Geometry_Shape_Box_Create_;
+
+    std::shared_ptr<Resource::NES::Compartment::BS::Create::Route> NES_Compartment_BS_Create_;
+    
     std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
     std::shared_ptr<Resource::NES::Simulation::Reset::Route> NES_Simulation_Reset_;
     std::shared_ptr<Resource::NES::Simulation::RunFor::Route> NES_Simulation_RunFor_;

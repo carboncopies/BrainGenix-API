@@ -12,6 +12,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
+#include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <restbed>
@@ -31,7 +32,37 @@ namespace Route {
  * @param _Server 
  * @param _Session 
  */
-void Hello(Server::Server &_Server, const std::shared_ptr<restbed::Session> _Session);
+class Hello {
+    
+private:
+
+    Server::Server *Server_; /**Copy of the server struct*/
+
+public:
+
+    /**
+     * @brief Construct a new route object
+     * This function registers the routecallback method as a route for the path specified in the descriptor for this class.
+     * 
+     * @param _Server 
+     * @param _Session 
+     */
+    Hello(Server::Server *_Server, restbed::Service &_Service);
+
+    /**
+     * @brief Destroy the Hello object
+     * 
+     */
+    ~Hello();
+
+
+    /**
+     * @brief This is the route callback used.
+     * 
+     */
+    void RouteCallback(const std::shared_ptr<restbed::Session> _Session);
+
+};
 
 
 }; // Close Namespace Route

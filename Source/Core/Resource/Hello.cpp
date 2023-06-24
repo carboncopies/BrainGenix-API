@@ -29,7 +29,7 @@ Route::~Route() {
 void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Server_->TotalQueries++;
 
-    std::string Body = "https://www.youtube.com/watch?v=dQw4w9WgXcQ\nGet Rickrolled.";
+    std::string Body = "https://www.youtube.com/watch?v=dQw4w9WgXcQ\nGet Rickrolled lol.";
     _Session->close( restbed::OK, Body, { { "Content-Length", std::to_string( Body.size( ) ) } } );
 }
 

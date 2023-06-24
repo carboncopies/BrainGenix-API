@@ -43,7 +43,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Util/Types.cpp
   ${SRC_DIR}/Core/Util/Types.h
-
+  ${SRC_DIR}/Core/Util/ParamCheck.cpp
+  ${SRC_DIR}/Core/Util/ParamCheck.h
 
   ${BACKWARD_ENABLE}
   )

@@ -14,6 +14,13 @@ namespace Create {
 Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
 
+  // Setup List Of Params
+  RequiredParams_.push_back("Radius_nm");
+  RequiredParams_.push_back("Center_nm");
+  
+  OptionalParams_.push_back("Name");
+
+
   // Setup Callback
   auto Callback(std::bind(&Route::RouteCallback, this, std::placeholders::_1));
 
@@ -22,6 +29,7 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   RouteResource->set_path("/NES/Geometry/Shape/Sphere/Create");
   RouteResource->set_method_handler("GET", Callback);
   _Service.publish(RouteResource);
+
 
 }
 

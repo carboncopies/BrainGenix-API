@@ -23,6 +23,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Server/Server.h>
 
+#include <Util/ParamCheck.h>
+
 
 namespace BG {
 namespace API {
@@ -46,6 +48,9 @@ class Route {
 private:
 
     Server::Server *Server_; /**Copy of the server struct*/
+
+    std::vector<std::string> OptionalParams_; /**List of optional parameters*/
+    std::vector<std::string> RequiredParams_; /**List of required parameters*/
 
 public:
 

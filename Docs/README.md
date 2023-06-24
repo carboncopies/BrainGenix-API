@@ -6,6 +6,8 @@ the parameters:
 - (bgSimulationID) `SimulationID=` Simulation ID number.
 - (AuthKey) `AuthKey=` Authorization key.
 
+Note: On a nonsuccess status code, other parameters are *not* guarenteed to be provided. Always check the status code first.
+
 
 # Enums
 

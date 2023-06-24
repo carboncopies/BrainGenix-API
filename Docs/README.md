@@ -35,8 +35,8 @@ the parameters:
 *Required Params*:  
 
 **Response**:  
- - (string) `SystemState=` String indicating the current state of the service. Can be "Healthy", "Degraded", "Failed".
- - (bgServiceStatus) `ServiceStateNES=` Enum indicating the state of the NES Service. Shows more detail than the above quick reference data.
+ - (string) `SystemState=` String indicating the current state of the service. Can be "Healthy", "Degraded", "Failed".  
+ - (bgServiceStatus) `ServiceStateNES=` Enum indicating the state of the NES Service. Shows more detail than the above quick reference data.  
 
 
 ## Shapes

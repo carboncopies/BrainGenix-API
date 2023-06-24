@@ -40,7 +40,7 @@ set(MAIN_SOURCES
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
 target_link_libraries(${PROJECT_NAME} PRIVATE 
-    yaml-cpp
+    rapidjson
     unofficial::restbed::restbed
     Boost::program_options
 

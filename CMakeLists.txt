@@ -43,8 +43,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 message(STATUS "Finding restbed Package")
 find_package(unofficial-restbed CONFIG REQUIRED)
 
-message(STATUS "Finding yaml-cpp Package")
-find_package(yaml-cpp CONFIG REQUIRED)
+message(STATUS "Finding RapidJSON Package")
+find_package(RapidJSON CONFIG REQUIRED)
 
 message(STATUS "Finding boost Package")
 set(Boost_NO_WARN_NEW_VERSIONS 1)

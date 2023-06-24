@@ -31,7 +31,18 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
     Server_->TotalQueries++;
 
-    std::string Body = std::string("{\"Version\": \"") + VERSION + "\"}";
+    // Build Response
+    rapidjson::Document ResponseJSON;
+    ResponseJSON.SetObject();
+    ResponseJSON.AddMember("Version", VERSION, ResponseJSON.GetAllocator());
+
+
+    // Stringify JSON
+    rapidjson::StringBuffer StrBuf;
+    rapidjson::PrettyWriter<rapidjson::StringBuffer> Writer(StrBuf);
+    ResponseJSON.Accept(Writer);
+    std::string Body = StrBuf.GetString();
+    
     
     // Return 'Body' String As JSON
     _Session->close(restbed::OK, Body,

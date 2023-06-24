@@ -17,6 +17,9 @@
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <restbed>
+#include <rapidjson/document.h>
+#include <rapidjson/prettywriter.h>
+
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Server/Server.h>

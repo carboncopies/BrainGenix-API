@@ -16,7 +16,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - `1` General Failure
  - `2` Invalid Parameters Passed
  - `3` Downstream Gateway Unavailable
- - `4` Unauthorized/insufficent permissions
+ - `4` Unauthorized/invaid token/no token provided
 
 ## bgServiceStatus
  - `0` Healthy

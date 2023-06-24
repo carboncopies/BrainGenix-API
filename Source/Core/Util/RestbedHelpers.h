@@ -32,6 +32,15 @@ namespace Util {
  */
 void SendInvalidParamResponse(restbed::Session* _Session);
 
+/**
+ * @brief Simple auth check, need to fix this later to use the database or something...
+ * 
+ * @param _Request 
+ * @return true 
+ * @return false 
+ */
+bool IsAuthorized(const restbed::Request* _Request);
+
 
 }; // Close Namespace Util
 }; // Close Namespace API

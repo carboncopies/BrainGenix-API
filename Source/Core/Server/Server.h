@@ -28,9 +28,9 @@ namespace Server {
  * 
  */
 enum APIState {
-    Healthy,
-    Degraded,
-    Failed
+    API_Healthy,
+    API_Degraded,
+    API_Failed
 };
 
 /**
@@ -38,10 +38,10 @@ enum APIState {
  * 
  */
 enum NESState {
-    Healthy,
-    Unreachable,
-    NotConfigured,
-    UnknownFailure
+    NES_Healthy,
+    NES_Unreachable,
+    NES_NotConfigured,
+    NES_UnknownFailure
 };
 
 
@@ -55,9 +55,9 @@ enum NESState {
  */
 struct Server {
 
-    std::atomic<int> TotalQueries; /**Test attribute that keeps track of total number of hits the api gets*/
-    std::atomic<APIState> APIState; /**Enum showing the overall system status*/
-    std::atomic<NESState> NESState; /**Enum showing the NES system status*/
+    std::atomic<int> TotalQueries = 0; /**Test attribute that keeps track of total number of hits the api gets*/
+    std::atomic<APIState> APIState = API_Healthy; /**Enum showing the overall system status*/
+    std::atomic<NESState> NESState = NES_Healthy; /**Enum showing the NES system status*/
 
 };
 

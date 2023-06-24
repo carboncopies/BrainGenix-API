@@ -48,32 +48,20 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
       return;
     }
 
-    // Set Defaults
-    float InvalidRadius_nm = -1;
-    std::string InvalidCenter_nm = "undefined";
+    // Auth Check
 
+    
 
     // Get Params
-    float Radius_nm = Request->get_query_parameter("Radius_nm", InvalidRadius_nm);
-    std::string Center_nm = Request->get_query_parameter("Center_nm", InvalidCenter_nm);
+    float Radius_nm = Request->get_query_parameter("Radius_nm", -1);
+    std::string Center_nm = Request->get_query_parameter("Center_nm", "");
     std::string Name = Request->get_query_parameter("Name", "undefined");
-
-    // Validate Input
-    bool IsInputValid = true;
-    IsInputValid &= (Radius_nm != InvalidRadius_nm);
-    IsInputValid &= (Center_nm != InvalidCenter_nm);
-
 
 
     // Build Response
     nlohmann::json Response;
-    if (IsInputValid) {
-      Response["StatusCode"] = 3;
-      Response["ShapeID"] = -1;
-    } else {
-      Response["StatusCode"] = 2;
-      Response["ShapeID"] = -1;
-    }
+    Response["StatusCode"] = 3;
+    Response["ShapeID"] = -1;
 
     // Return Response String As JSON
     std::string Body = Response.dump();

@@ -22,6 +22,7 @@
 
 #include <Resource/Hello.h>
 #include <Resource/Version.h>
+#include <Resource/Status.h>
 
 
 namespace BG {
@@ -35,6 +36,7 @@ private:
     // Keep a list of resources below, so they stay in scope
     std::shared_ptr<Resource::Hello::Route> Hello_;
     std::shared_ptr<Resource::Diagnostic::Version::Route> Diagnostic_Version_;
+    std::shared_ptr<Resource::Diagnostic::Status::Route> Diagnostic_Status_;
 
 public:
 

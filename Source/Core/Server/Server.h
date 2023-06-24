@@ -23,6 +23,28 @@ namespace BG {
 namespace API {
 namespace Server {
 
+/**
+ * @brief Enum that provides overall system state codes
+ * 
+ */
+enum APIState {
+    Healthy,
+    Degraded,
+    Failed
+};
+
+/**
+ * @brief Enum for NES system status
+ * 
+ */
+enum NESState {
+    Healthy,
+    Unreachable,
+    NotConfigured,
+    UnknownFailure
+};
+
+
 
 /**
  * @brief This struct is passed into the callback for each of the resource handlers,
@@ -34,6 +56,8 @@ namespace Server {
 struct Server {
 
     std::atomic<int> TotalQueries; /**Test attribute that keeps track of total number of hits the api gets*/
+    std::atomic<APIState> APIState; /**Enum showing the overall system status*/
+    std::atomic<NESState> NESState; /**Enum showing the NES system status*/
 
 };
 

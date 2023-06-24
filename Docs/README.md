@@ -16,6 +16,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - `1` General Failure
  - `2` Invalid Parameters Passed
  - `3` Downstream Gateway Unavailable
+ - `4` Unauthorized/insufficent permissions
 
 ## bgServiceStatus
  - `0` Healthy
@@ -72,7 +73,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 **Response**:  
  - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
- - (string) `Token=` If your username/password are valid, then the token will be returned.  
+ - (string) `AuthKey=` If your username/password are valid, then the token will be returned.  
 
 
 

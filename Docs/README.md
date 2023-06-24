@@ -15,6 +15,8 @@ the parameters:
  - `500` Downstream Gateway Unavailable
 
 
+
+
 # Routes  
 
 ## Diagnostic  
@@ -28,6 +30,7 @@ the parameters:
 **Response**:  
  - (string) `https://www.youtube.com/watch?v=dQw4w9WgXcQ` It's a rickroll lul.  
 
+
 ### Status
 
 **URI**: `/Diagnostic/Status`  
@@ -37,6 +40,7 @@ the parameters:
 **Response**:  
  - (string) `SystemState=` String indicating the current state of the service. Can be "Healthy", "Degraded", "Failed".  
  - (bgServiceStatus) `ServiceStateNES=` Enum indicating the state of the NES Service. Shows more detail than the above quick reference data.  
+
 
 
 ## Shapes

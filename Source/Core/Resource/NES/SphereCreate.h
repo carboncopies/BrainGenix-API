@@ -18,6 +18,8 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <restbed>
 
+#include <nlohmann/json.hpp>
+
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Server/Server.h>
 
@@ -34,7 +36,7 @@ namespace Create {
 
 
 /**
- * @brief Provides the code to handle the /Hello route for the API.
+ * @brief Provides the code to handle route for the API.
  * 
  * @param _Server 
  * @param _Session 
@@ -72,6 +74,7 @@ public:
 };
 
 
+}; // Close Namespace
 }; // Close Namespace
 }; // Close Namespace
 }; // Close Namespace

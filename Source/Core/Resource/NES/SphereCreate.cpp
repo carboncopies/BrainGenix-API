@@ -40,8 +40,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Build Response
     nlohmann::json Response;
-    Response["StatusCode"] = 1;
-    Response["ShapeID"] = -1
+    Response["StatusCode"] = 3;
+    Response["ShapeID"] = -1;
 
 
     // Return Response String As JSON

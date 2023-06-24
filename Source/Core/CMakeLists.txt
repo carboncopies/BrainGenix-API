@@ -38,7 +38,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NotFound.h
   ${SRC_DIR}/Core/Resource/Forbidden.cpp
   ${SRC_DIR}/Core/Resource/Forbidden.h
-
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.h
 

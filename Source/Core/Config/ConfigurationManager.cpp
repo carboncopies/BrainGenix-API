@@ -25,7 +25,7 @@ Manager::~Manager() {
 
 
 
-Config& GetConfig() {
+Config& Manager::GetConfig() {
     return Config_;
 }
 

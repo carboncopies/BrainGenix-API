@@ -12,8 +12,13 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
+#include <string>
+#include <memory>
+#include <cstdlib>
+#include <functional>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <restbed>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/Config.h>
@@ -33,6 +38,23 @@ namespace Server {
  */
 class Controller {
 
+private:
+
+    std::shared_ptr<restbed::Settings> Settings_; /**Shared pointer to settings object, used when starting server. Populated in constructor*/
+    restbed::Service Service_; /**Service created by constructor, then started with StartService method*/
+    std::string foo_ = "foo";
+    /**
+     * @brief Creates a restbed settings object from the user configuration struct.
+     * 
+     * @param _Config 
+     * @return std::shared_ptr<restbed::Settings> 
+     */
+    std::shared_ptr<restbed::Settings> ConfigureServer(Config::Config &_Config);
+
+    
+
+    void TestHandler(const std::shared_ptr<restbed::Session> session);
+
 public:
 
     /**
@@ -49,6 +71,13 @@ public:
      * 
      */
     ~Controller();
+
+
+    /**
+     * @brief Starts the server. Blocks until server stops. (assume forever).
+     * 
+     */
+    void StartService();
 
 };
 

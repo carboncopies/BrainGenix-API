@@ -36,7 +36,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/Status.h
   ${SRC_DIR}/Core/Resource/NotFound.cpp
   ${SRC_DIR}/Core/Resource/NotFound.h
-  
+  ${SRC_DIR}/Core/Resource/Forbidden.cpp
+  ${SRC_DIR}/Core/Resource/Forbidden.h
+
   ${BACKWARD_ENABLE}
   )
 

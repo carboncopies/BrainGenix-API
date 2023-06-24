@@ -32,7 +32,7 @@ class EndpointManager {
 private:
 
     // Keep a list of resources below, so they stay in scope
-    std::shared_ptr<Resource::Hello> Hello_;
+    std::shared_ptr<Resource::Hello::Route> Hello_;
 
 public:
 

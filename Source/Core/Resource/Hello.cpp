@@ -5,38 +5,35 @@ namespace BG {
 namespace API {
 namespace Resource {
 
+namespace Hello {
 
-Hello::Hello(Server::Server *_Server, restbed::Service &_Service) {
-
-  // Copy Server Ref To Local Attribs
+Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
 
-  auto resource = std::make_shared<restbed::Resource>();
-  resource->set_path("/Hello");
+  // Setup Callback
+  auto Callback(std::bind(&Route::RouteCallback, this, std::placeholders::_1));
 
-
-  auto Callback(std::bind(&Hello::RouteCallback, this, std::placeholders::_1));
-
-  resource->set_method_handler("GET", Callback);
-  _Service.publish(resource);
-}
-
-
-Hello::~Hello() {
+  // Register This Route With Server
+  std::shared_ptr<restbed::Resource> RouteResource = std::make_shared<restbed::Resource>();
+  RouteResource->set_path("/Hello");
+  RouteResource->set_method_handler("GET", Callback);
+  _Service.publish(RouteResource);
 
 }
 
+Route::~Route() {
 
-void Hello::RouteCallback(const std::shared_ptr<restbed::Session> session) {
+}
 
-    
-    const auto& request = session->get_request( );
+
+void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
+    const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
     
     std::string name;
     std::string default_value="undefined";
-    name = request->get_query_parameter("name", default_value );
+    name = Request->get_query_parameter("name", default_value );
 
-    // const string body = "Hello, " + request->get_path_parameter( "name" );
+    // const string body = "Route, " + Request->get_path_parameter( "name" );
     std::string body = "";
     std::cout<<name<<std::endl;
     if (name == "undefined") {
@@ -45,8 +42,10 @@ void Hello::RouteCallback(const std::shared_ptr<restbed::Session> session) {
       body = "{Statuscode=500}";
     }
     
-    session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
+    _Session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
 }
+
+}; // Close Namespace
 
 }; // Close Namespace Resource
 }; // Close Namespace API

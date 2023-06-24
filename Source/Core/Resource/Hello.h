@@ -26,13 +26,16 @@ namespace BG {
 namespace API {
 namespace Resource {
 
+namespace Hello {
+
+
 /**
  * @brief Provides the code to handle the /Hello route for the API.
  * 
  * @param _Server 
  * @param _Session 
  */
-class Hello {
+class Route {
     
 private:
 
@@ -47,13 +50,13 @@ public:
      * @param _Server 
      * @param _Session 
      */
-    Hello(Server::Server *_Server, restbed::Service &_Service);
+    Route(Server::Server *_Server, restbed::Service &_Service);
 
     /**
-     * @brief Destroy the Hello object
+     * @brief Destroy the Route object
      * 
      */
-    ~Hello();
+    ~Route();
 
 
     /**
@@ -64,6 +67,8 @@ public:
 
 };
 
+
+}; // Close Namespace
 
 }; // Close Namespace Resource
 }; // Close Namespace API

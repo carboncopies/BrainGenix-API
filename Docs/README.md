@@ -23,12 +23,22 @@ the parameters:
 
 ### Hello  
 
-**URI**: `/Diagnostic/Hello`  
+**URI**: `/Hello`  
 **Request**:  
 *Required Params*:  
 
 **Response**:  
  - (string) `https://www.youtube.com/watch?v=dQw4w9WgXcQ` It's a rickroll lul.  
+
+
+### Version  
+
+**URI**: `/Diagnostic/Version`  
+**Request**:  
+*Required Params*:  
+
+**Response**:  
+ - (string) `Version=` Returns string containing the version of this server.  
 
 
 ### Status

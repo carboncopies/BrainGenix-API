@@ -10,8 +10,12 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigurationManager.h
   ${SRC_DIR}/Core/Config/ArgumentParser.cpp
   ${SRC_DIR}/Core/Config/ArgumentParser.h
+  ${SRC_DIR}/Core/Config/ConfigFileParser.cpp
+  ${SRC_DIR}/Core/Config/ConfigFileParser.h
   ${SRC_DIR}/Core/Config/Config.cpp
   ${SRC_DIR}/Core/Config/Config.h
+  ${SRC_DIR}/Core/Config/ConfigDefaults.cpp
+  ${SRC_DIR}/Core/Config/ConfigDefaults.h
 
   ${BACKWARD_ENABLE}
   )

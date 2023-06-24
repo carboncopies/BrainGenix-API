@@ -21,6 +21,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/Config.h>
+#include <Config/ConfigDefaults.h>
 
 #include <CompilePlatformInfo.h>
 #include <CompileTimeStamp.h>

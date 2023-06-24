@@ -20,6 +20,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/ArgumentParser.h>
+#include <Config/ConfigFileParser.h>
 #include <Config/Config.h>
 
 

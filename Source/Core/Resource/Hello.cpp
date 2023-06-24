@@ -28,14 +28,15 @@ Route::~Route() {
 
 void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
-    
+    Server_->TotalQueries++;
+
     std::string name;
     std::string default_value="undefined";
     name = Request->get_query_parameter("name", default_value );
 
     // const string body = "Route, " + Request->get_path_parameter( "name" );
     std::string body = "";
-    std::cout<<name<<std::endl;
+    std::cout<<Server_->TotalQueries<<std::endl;
     if (name == "undefined") {
       body = "{StatusCode=400}";
     }else{

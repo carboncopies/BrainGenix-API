@@ -42,20 +42,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     }
 
     // Build JSON Response
-    rapidjson::Document ResponseJSON;
-    ResponseJSON.SetObject();
-    ResponseJSON.AddMember("SystemState", OverallState.c_str(), ResponseJSON.GetAllocator());
-    // ResponseJSON.AddMember("ServiceStateNES", (int)Server_->NESState, ResponseJSON.GetAllocator());
+    nlohmann::json Response;
+    Response["SystemState"] = OverallState;
+    Response["ServiceStateNES"] = (int)Server_->NESState;
 
-
-    // Stringify JSON
-    rapidjson::StringBuffer StrBuf;
-    rapidjson::PrettyWriter<rapidjson::StringBuffer> Writer(StrBuf);
-    ResponseJSON.Accept(Writer);
-    std::string Body = StrBuf.GetString();
-    
-    
-    // Return 'Body' String As JSON
+    // Return Response String As JSON
+    std::string Body = Response.dump();
     _Session->close(restbed::OK, Body,
       {
         {"Content-Length", std::to_string(Body.size())},

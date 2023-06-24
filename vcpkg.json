@@ -5,6 +5,6 @@
   "dependencies": [
     "restbed",
     "boost-program-options",
-    "rapidjson"
+    "nlohmann-json"
   ]
 }

@@ -18,8 +18,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <restbed>
 
-#include <rapidjson/document.h>
-#include <rapidjson/prettywriter.h>
+#include <nlohmann/json.hpp>
 
 
 // Internal Libraries (BG convention: use <> instead of "")

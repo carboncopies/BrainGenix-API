@@ -42,7 +42,7 @@ set(MAIN_SOURCES
 # Create Main Executable
 include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
 target_link_libraries(${PROJECT_NAME} PRIVATE 
-    rapidjson
+    nlohmann_json::nlohmann_json
     unofficial::restbed::restbed
     Boost::program_options
 

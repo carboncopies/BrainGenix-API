@@ -17,6 +17,28 @@ the parameters:
 
 # Routes  
 
+## Diagnostic  
+
+### Hello  
+
+**URI**: `/Diagnostic/Hello`  
+**Request**:  
+*Required Params*:  
+
+**Response**:  
+ - (string) `https://www.youtube.com/watch?v=dQw4w9WgXcQ` It's a rickroll lul.  
+
+### Status
+
+**URI**: `/Diagnostic/Status`  
+**Request**:  
+*Required Params*:  
+
+**Response**:  
+ - (string) `SystemState=` String indicating the current state of the service. Can be "Healthy", "Degraded", "Failed".
+ - (bgServiceStatus) `ServiceStateNES=` Enum indicating the state of the NES Service. Shows more detail than the above quick reference data.
+
+
 ## Shapes
 
 ### Sphere - Create

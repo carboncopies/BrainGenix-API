@@ -42,7 +42,6 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     }
 
     // We'd do the database stuff here but that's not yet implemented so....
-
     // -----------------------------------------------------------------------
     // FIXME: ADD DATABASE CODE HERE TO CHECK THIS IN THE DB! ALSO ADD IT TO THE AUTH-HANDLER (add feature flags! (like cloudflare))
     // -----------------------------------------------------------------------

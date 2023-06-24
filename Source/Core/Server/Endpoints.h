@@ -20,11 +20,15 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Server/Server.h>
 
+
 #include <Resource/NotFound.h>
 #include <Resource/Forbidden.h>
+
 #include <Resource/Hello.h>
 #include <Resource/Version.h>
 #include <Resource/Status.h>
+
+#include <Resource/Auth/GetToken.h>
 
 #include <Resource/NES/SphereCreate.h>
 
@@ -44,6 +48,8 @@ private:
     std::shared_ptr<Resource::Hello::Route> Hello_;
     std::shared_ptr<Resource::Diagnostic::Version::Route> Diagnostic_Version_;
     std::shared_ptr<Resource::Diagnostic::Status::Route> Diagnostic_Status_;
+
+    std::shared_ptr<Resource::Auth::GetToken::Route> Auth_GetToken_;
 
     std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::Create::Route> NES_Geometry_Shape_Sphere_Create_;
 

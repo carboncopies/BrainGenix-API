@@ -27,6 +27,8 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     Diagnostic_Version_ = std::make_shared<Resource::Diagnostic::Version::Route>(&_Server, _Service);
     Diagnostic_Status_ = std::make_shared<Resource::Diagnostic::Status::Route>(&_Server, _Service);
 
+    Auth_GetToken_ = std::make_shared<Resource::Auth::GetToken::Route>(&_Server, _Service); 
+
     NES_Geometry_Shape_Sphere_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Sphere::Create::Route>(&_Server, _Service);
     
 

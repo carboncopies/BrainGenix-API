@@ -32,6 +32,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/Hello.h
   ${SRC_DIR}/Core/Resource/Version.cpp
   ${SRC_DIR}/Core/Resource/Version.h
+  ${SRC_DIR}/Core/Resource/Status.cpp
+  ${SRC_DIR}/Core/Resource/Status.h
 
   ${BACKWARD_ENABLE}
   )

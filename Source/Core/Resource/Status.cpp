@@ -1,4 +1,4 @@
-#include <Resource/Version.h>
+#include <Resource/Status.h>
 
 
 namespace BG {
@@ -33,19 +33,19 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Setup Response
     std::string OverallState = "";
-    if (Server_->APIState == Server::API_HEALTHY){
+    if (Server_->APIState == Server::SERVICE_HEALTHY){
       OverallState = "Healthy";
-    } else if (Server->APIState == Server::API_DEGRADED) {
-      OverallState = "Degraded";
-    } else if (Server->APIState == Server::API_FAILED) {
+    } else if (Server_->APIState == Server::SERVICE_FAILED) {
       OverallState = "Failed";
+    } else {
+      OverallState = "Degraded";
     }
 
     // Build JSON Response
     rapidjson::Document ResponseJSON;
     ResponseJSON.SetObject();
-    ResponseJSON.AddMember("SystemState", OverallState, ResponseJSON.GetAllocator());
-    ResponseJSON.AddMember("ServiceStateNES", Server_->NESState, ResponseJSON.GetAllocator());
+    ResponseJSON.AddMember("SystemState", OverallState.c_str(), ResponseJSON.GetAllocator());
+    // ResponseJSON.AddMember("ServiceStateNES", (int)Server_->NESState, ResponseJSON.GetAllocator());
 
 
     // Stringify JSON

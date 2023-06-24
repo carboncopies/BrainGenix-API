@@ -62,14 +62,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["AuthKey"] = "MyVerySecureToken";
 
 
-    // Return Response String As JSON
-    std::string Body = Response.dump();
-    _Session->close(restbed::OK, Body,
-      {
-        {"Content-Length", std::to_string(Body.size())},
-        {"Content-Type", "application/json"}
-      }
-    );
+    Util::SendJSON(_Session.get(), &Response);
 }
 
 }; // Close Namespace

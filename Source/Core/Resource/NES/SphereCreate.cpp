@@ -62,19 +62,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     std::string Name = Request->get_query_parameter("Name", "undefined");
 
 
-    // Build Response
+    // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 3;
     Response["ShapeID"] = -1;
 
-    // Return Response String As JSON
-    std::string Body = Response.dump();
-    _Session->close(restbed::OK, Body,
-      {
-        {"Content-Length", std::to_string(Body.size())},
-        {"Content-Type", "application/json"}
-      }
-    );
+    Util::SendJSON(_Session.get(), &Response);
 }
 
 }; // Close Namespace

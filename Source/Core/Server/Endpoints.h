@@ -32,6 +32,10 @@
 
 #include <Resource/NES/SphereCreate.h>
 #include <Resource/NES/SimulationCreate.h>
+#include <Resource/NES/SimulationReset.h>
+#include <Resource/NES/SimulationRunFor.h>
+#include <Resource/NES/SimulationRecordAll.h>
+#include <Resource/NES/SimulationGetRecording.h>
 
 
 namespace BG {
@@ -54,6 +58,10 @@ private:
 
     std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::Create::Route> NES_Geometry_Shape_Sphere_Create_;
     std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
+    std::shared_ptr<Resource::NES::Simulation::Reset::Route> NES_Simulation_Reset_;
+    std::shared_ptr<Resource::NES::Simulation::RunFor::Route> NES_Simulation_RunFor_;
+    std::shared_ptr<Resource::NES::Simulation::RecordAll::Route> NES_Simulation_RecordAll_;
+    std::shared_ptr<Resource::NES::Simulation::GetRecording::Route> NES_Simulation_GetRecording_;
 
 public:
 

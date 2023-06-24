@@ -44,6 +44,15 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.h
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.h
+  ${SRC_DIR}/Core/Resource/NES/SimulationReset.cpp
+  ${SRC_DIR}/Core/Resource/NES/SimulationReset.h
+  ${SRC_DIR}/Core/Resource/NES/SimulationRunFor.cpp
+  ${SRC_DIR}/Core/Resource/NES/SimulationRunFor.h
+  ${SRC_DIR}/Core/Resource/NES/SimulationRecordAll.cpp
+  ${SRC_DIR}/Core/Resource/NES/SimulationRecordAll.h
+  ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.cpp
+  ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.h
+
 
   ${SRC_DIR}/Core/Util/Types.cpp
   ${SRC_DIR}/Core/Util/Types.h

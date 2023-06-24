@@ -26,6 +26,8 @@
 #include <Resource/Version.h>
 #include <Resource/Status.h>
 
+#include <Resource/NES/SphereCreate.h>
+
 
 namespace BG {
 namespace API {
@@ -38,9 +40,12 @@ private:
     // Keep a list of resources below, so they stay in scope
     std::shared_ptr<Resource::NotFound::Route> NotFound_;
     std::shared_ptr<Resource::Forbidden::Route> Forbidden_;
+
     std::shared_ptr<Resource::Hello::Route> Hello_;
     std::shared_ptr<Resource::Diagnostic::Version::Route> Diagnostic_Version_;
     std::shared_ptr<Resource::Diagnostic::Status::Route> Diagnostic_Status_;
+
+    std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::Create::Route> NES_Geometry_Shape_Sphere_Create_;
 
 public:
 

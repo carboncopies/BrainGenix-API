@@ -24,7 +24,7 @@
 #include <Config/Config.h>
 #include <Server/Server.h>
 
-#include <Resource/Endpoints.h>
+#include <Server/Endpoints.h>
 
 
 
@@ -48,6 +48,8 @@ private:
     restbed::Service Service_; /**Service created by constructor, then started with StartService method*/
     Server Server_; /**Instance of the server struct, used to pass data to callbacks for restbed*/
     // std::string foo_ = "foo";
+
+    EndpointManager EndpointManager_; /**Class that manages the endpoint resources (Creating them, destroying, etc.)*/
 
     /**
      * @brief Creates a restbed settings object from the user configuration struct.

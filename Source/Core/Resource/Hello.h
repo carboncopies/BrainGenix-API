@@ -24,7 +24,6 @@
 namespace BG {
 namespace API {
 namespace Resource {
-namespace Route {
 
 /**
  * @brief Provides the code to handle the /Hello route for the API.
@@ -65,7 +64,6 @@ public:
 };
 
 
-}; // Close Namespace Route
 }; // Close Namespace Resource
 }; // Close Namespace API
 }; // Close Namespace BG

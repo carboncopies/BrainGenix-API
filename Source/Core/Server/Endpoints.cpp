@@ -3,18 +3,28 @@
 
 namespace BG {
 namespace API {
-namespace Resource {
+namespace Server {
 
 
-void AddRoutes(restbed::Service &_Service, Server::Server &_Server) {
+EndpointManager::EndpointManager() {
+
+}
+
+
+EndpointManager::~EndpointManager() {
+    
+}
+
+
+void EndpointManager::AddRoutes(restbed::Service &_Service, Server::Server &_Server) {
 
     // Add Hello Route
-    Route::Hello Hello(&_Server, _Service);
+    Resource::Hello Hello(&_Server, _Service);
     
 
 }
 
 
-}; // Close Namespace Resource
+}; // Close Namespace Server
 }; // Close Namespace API
 }; // Close Namespace BG

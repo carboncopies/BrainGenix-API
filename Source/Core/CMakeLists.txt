@@ -20,18 +20,16 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.cpp
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
   
-  
+
   ${SRC_DIR}/Core/Server/Controller.cpp
   ${SRC_DIR}/Core/Server/Controller.h
   ${SRC_DIR}/Core/Server/Server.cpp
   ${SRC_DIR}/Core/Server/Server.h
+  ${SRC_DIR}/Core/Server/Endpoints.cpp
+  ${SRC_DIR}/Core/Server/Endpoints.h
 
-
-  ${SRC_DIR}/Core/Resource/Endpoints.cpp
-  ${SRC_DIR}/Core/Resource/Endpoints.h
-
-  ${SRC_DIR}/Core/Resource/Route/Hello.cpp
-  ${SRC_DIR}/Core/Resource/Route/Hello.h
+  ${SRC_DIR}/Core/Resource/Hello.cpp
+  ${SRC_DIR}/Core/Resource/Hello.h
 
 
   ${BACKWARD_ENABLE}

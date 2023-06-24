@@ -1,10 +1,9 @@
-#include <Resource/Route/Hello.h>
+#include <Resource/Hello.h>
 
 
 namespace BG {
 namespace API {
 namespace Resource {
-namespace Route {
 
 
 Hello::Hello(Server::Server *_Server, restbed::Service &_Service) {
@@ -49,7 +48,6 @@ void Hello::RouteCallback(const std::shared_ptr<restbed::Session> session) {
     session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
 }
 
-}; // Close Namespace Route
 }; // Close Namespace Resource
 }; // Close Namespace API
 }; // Close Namespace BG

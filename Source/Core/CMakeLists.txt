@@ -41,6 +41,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.h
 
+  ${SRC_DIR}/Core/Util/Types.cpp
+  ${SRC_DIR}/Core/Util/Types.h
+
+
   ${BACKWARD_ENABLE}
   )
 

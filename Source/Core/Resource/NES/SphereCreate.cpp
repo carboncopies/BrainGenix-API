@@ -34,15 +34,32 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
     Server_->TotalQueries++;
 
-    // std::string name;
-    // std::string default_value="undefined";
-    // name = Request->get_query_parameter("name", default_value );
+    // Set Defaults
+    float InvalidRadius_nm = -1;
+    std::string InvalidCenter_nm = "undefined";
+
+
+    // Get Params
+    float Radius_nm = Request->get_query_parameter("Radius_nm", InvalidRadius_nm);
+    std::string Center_nm = Request->get_query_parameter("Center_nm", InvalidCenter_nm);
+    std::string Name = Request->get_query_parameter("Name", "undefined");
+
+    // Validate Input
+    bool IsInputValid = true;
+    IsInputValid &= (Radius_nm != InvalidRadius_nm);
+    IsInputValid &= (Center_nm != InvalidCenter_nm);
+
+
 
     // Build Response
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
-    Response["ShapeID"] = -1;
-
+    if (IsInputValid) {
+      Response["StatusCode"] = 3;
+      Response["ShapeID"] = -1;
+    } else {
+      Response["StatusCode"] = 2;
+      Response["ShapeID"] = -1;
+    }
 
     // Return Response String As JSON
     std::string Body = Response.dump();

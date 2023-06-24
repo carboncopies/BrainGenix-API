@@ -17,22 +17,13 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Util/Types.h>
 
 namespace BG {
 namespace API {
 namespace Server {
 
-/**
- * @brief Enum showing system state codes.
- * 
- */
-enum ServiceStatus {
-    SERVICE_HEALTHY,
-    SERVICE_DEGRADED,
-    SERVICE_FAILED,
-    SERVICE_NOT_CONFIGURED
-};
+
 
 
 
@@ -46,8 +37,8 @@ enum ServiceStatus {
 struct Server {
 
     std::atomic<int> TotalQueries = 0; /**Test attribute that keeps track of total number of hits the api gets*/
-    std::atomic<ServiceStatus> APIState = SERVICE_HEALTHY; /**Enum showing the overall system status*/
-    std::atomic<ServiceStatus> NESState = SERVICE_NOT_CONFIGURED; /**Enum showing the NES system status*/
+    std::atomic<bgServiceStatus> APIState = SERVICE_HEALTHY; /**Enum showing the overall system status*/
+    std::atomic<bgServiceStatus> NESState = SERVICE_NOT_CONFIGURED; /**Enum showing the NES system status*/
 
 };
 

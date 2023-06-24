@@ -24,24 +24,14 @@ namespace API {
 namespace Server {
 
 /**
- * @brief Enum that provides overall system state codes
+ * @brief Enum showing system state codes.
  * 
  */
-enum APIState {
-    API_Healthy,
-    API_Degraded,
-    API_Failed
-};
-
-/**
- * @brief Enum for NES system status
- * 
- */
-enum NESState {
-    NES_Healthy,
-    NES_Unreachable,
-    NES_NotConfigured,
-    NES_UnknownFailure
+enum ServiceStatus {
+    SERVICE_HEALTHY,
+    SERVICE_DEGRADED,
+    SERVICE_FAILED,
+    SERVICE_NOT_CONFIGURED
 };
 
 
@@ -56,8 +46,8 @@ enum NESState {
 struct Server {
 
     std::atomic<int> TotalQueries = 0; /**Test attribute that keeps track of total number of hits the api gets*/
-    std::atomic<APIState> APIState = API_Healthy; /**Enum showing the overall system status*/
-    std::atomic<NESState> NESState = NES_Healthy; /**Enum showing the NES system status*/
+    std::atomic<ServiceStatus> APIState = SERVICE_HEALTHY; /**Enum showing the overall system status*/
+    std::atomic<ServiceStatus> NESState = SERVICE_NOT_CONFIGURED; /**Enum showing the NES system status*/
 
 };
 

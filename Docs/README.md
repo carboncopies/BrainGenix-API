@@ -14,7 +14,11 @@ the parameters:
  - `400` Invalid Parameters Passed
  - `500` Downstream Gateway Unavailable
 
-
+## bgServiceStatus
+ - `0` Healthy
+ - `1` Degraded
+ - `2` Failed
+ - `3` Not Configured
 
 
 # Routes  

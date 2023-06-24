@@ -15,6 +15,7 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
 
   // Setup List Of Params
+  RequiredParams_.push_back("SimulationID");
   RequiredParams_.push_back("Point1Radius_nm");
   RequiredParams_.push_back("Point1Position_nm");
   RequiredParams_.push_back("Point2Radius_nm");

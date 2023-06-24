@@ -42,6 +42,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
     Server_->TotalQueries++;
 
+    // Check Parameters, Early Out If Invalid
+    if (!Util::HasRequiredParams(Request.get(), &RequiredParams_)) {
+      Util::SendInvalidParamResponse(_Session.get());
+      return;
+    }
+
     // Set Defaults
     float InvalidRadius_nm = -1;
     std::string InvalidCenter_nm = "undefined";

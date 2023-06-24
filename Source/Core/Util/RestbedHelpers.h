@@ -3,7 +3,7 @@
 //==============================================================//
 
 /*
-    Description: This file provides helper utils for validating required parameters.
+    Description: This file provides helper utils for managing restbed requests/responses.
     Additional Notes: None
     Date Created: 2023-06-24
 */
@@ -24,15 +24,13 @@ namespace BG {
 namespace API {
 namespace Util {
 
+
 /**
- * @brief Handy little helper function to check if the request has a set list of required parameters.
+ * @brief Helper to quickly send back status code 2 failure (invalid parameters passed)
  * 
- * @param _Request 
- * @param _RequiredParams 
- * @return true 
- * @return false 
+ * @param _Session 
  */
-bool HasRequiredParams(const restbed::Request* _Request, std::vector<std::string>* _RequiredParams);
+void SendInvalidParamResponse(restbed::Session* _Session);
 
 
 }; // Close Namespace Util

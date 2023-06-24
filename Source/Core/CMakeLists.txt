@@ -45,6 +45,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/Types.h
   ${SRC_DIR}/Core/Util/ParamCheck.cpp
   ${SRC_DIR}/Core/Util/ParamCheck.h
+  ${SRC_DIR}/Core/Util/RestbedHelpers.cpp
+  ${SRC_DIR}/Core/Util/RestbedHelpers.h
 
   ${BACKWARD_ENABLE}
   )

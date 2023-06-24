@@ -33,9 +33,9 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Setup Response
     std::string OverallState = "";
-    if (Server_->APIState == Server::SERVICE_HEALTHY){
+    if (Server_->APIState == BG::SERVICE_HEALTHY){
       OverallState = "Healthy";
-    } else if (Server_->APIState == Server::SERVICE_FAILED) {
+    } else if (Server_->APIState == BG::SERVICE_FAILED) {
       OverallState = "Failed";
     } else {
       OverallState = "Degraded";

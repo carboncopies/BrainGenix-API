@@ -24,6 +24,7 @@
 #include <Server/Server.h>
 
 #include <Util/ParamCheck.h>
+#include <Util/RestbedHelpers.h>
 
 
 namespace BG {

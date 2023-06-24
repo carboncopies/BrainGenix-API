@@ -1,9 +1,15 @@
 #include <Resource/Route/Hello.h>
 
 
+namespace BG {
+namespace API {
+namespace Resource {
+namespace Route {
 
 
-void HelloRoute(const std::shared_ptr<restbed::Session> session) {
+void Hello(Server::Server &_Server, const std::shared_ptr<restbed::Session> session) {
+
+    
     const auto& request = session->get_request( );
     
     std::string name;
@@ -21,3 +27,8 @@ void HelloRoute(const std::shared_ptr<restbed::Session> session) {
     
     session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
 }
+
+}; // Close Namespace Route
+}; // Close Namespace Resource
+}; // Close Namespace API
+}; // Close Namespace BG

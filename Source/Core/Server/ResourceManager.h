@@ -21,6 +21,8 @@
 #include <restbed>
 
 // Internal Libraries (BG convention: use <> instead of "")
+#include <Resource/Route/Endpoints.h>
+
 #include <Config/Config.h>
 #include <Server/Server.h>
 
@@ -40,6 +42,7 @@ class ResourceManager {
 private:
 
     Server Server_; /**Instance of the server struct, used to pass data to callbacks for restbed*/
+    std::vector<std::shared_ptr<restbed::Resource>> Resources_ /**List of resources that have been added to the service*/
 
 public:
 

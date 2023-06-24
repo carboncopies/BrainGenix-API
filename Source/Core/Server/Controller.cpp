@@ -1,26 +1,6 @@
 #include <Server/Controller.h>
 
 
-void get_method_handler( const std::shared_ptr<restbed::Session> session )
-{
-    const auto& request = session->get_request( );
-    
-
-    std::string name;
-    std::string default_value="undefined";
-    name = request->get_query_parameter("name", default_value );
-
-    // const string body = "Hello, " + request->get_path_parameter( "name" );
-    std::string body = "";
-    std::cout<<name<<std::endl;
-    if (name == "undefined") {
-      body = "{StatusCode=400}";
-    }else{
-      body = "{Statuscode=500}";
-    }
-    
-    session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
-}
 
 
 namespace BG {
@@ -28,43 +8,46 @@ namespace API {
 namespace Server {
 
 
-void Controller::TestHandler(const std::shared_ptr<restbed::Session> session ) {
-    const auto& request = session->get_request( );
+// void Controller::TestHandler(const std::shared_ptr<restbed::Session> session ) {
+//     const auto& request = session->get_request( );
     
-    std::cout<<foo_<<std::endl; //callback testing
+//     std::cout<<foo_<<std::endl; //callback testing
 
-    std::string name;
-    std::string default_value="undefined";
-    name = request->get_query_parameter("name", default_value );
+//     std::string name;
+//     std::string default_value="undefined";
+//     name = request->get_query_parameter("name", default_value );
 
-    // const string body = "Hello, " + request->get_path_parameter( "name" );
-    std::string body = "";
-    std::cout<<name<<std::endl;
-    if (name == "undefined") {
-      body = "{StatusCode=400}";
-    }else{
-      body = "{Statuscode=500}";
-    }
+//     // const string body = "Hello, " + request->get_path_parameter( "name" );
+//     std::string body = "";
+//     std::cout<<name<<std::endl;
+//     if (name == "undefined") {
+//       body = "{StatusCode=400}";
+//     }else{
+//       body = "{Statuscode=500}";
+//     }
     
-    session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
-}
+//     session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
+// }
 
 
 Controller::Controller(Config::Config &_Config) {
 
-    // Create Routes
-    auto resource = std::make_shared< restbed::Resource >( );
-    resource->set_path( "/test" );
+    // // Create Routes
+    // auto resource = std::make_shared< restbed::Resource >( );
+    // resource->set_path( "/test" );
 
 
-    auto Callback(std::bind(&Controller::TestHandler, this, std::placeholders::_1));
+    // auto Callback(std::bind(&Controller::TestHandler, this, std::placeholders::_1));
 
-    resource->set_method_handler( "GET", Callback);
+    // resource->set_method_handler( "GET", Callback);
+    // Service_.publish(resource);
     
     // Configure Settings Object
     Settings_ = ConfigureServer(_Config);
 
-    Service_.publish(resource);
+    // Add Routes
+    Resource::AddRoutes(Service_, Server_);
+
 }
 
 Controller::~Controller() {

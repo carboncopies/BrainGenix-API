@@ -6,7 +6,13 @@ namespace API {
 namespace Server {
 
 
-ResourceManager::ResourceManager() {
+ResourceManager::ResourceManager(restbed::Service &_Service, Config::Config &_Config) {
+
+    // Setup Our Server Struct
+    Server_.TotalQueries = 0;
+
+    // Create Resources
+
 
 }
 

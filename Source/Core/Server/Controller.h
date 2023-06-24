@@ -22,6 +22,10 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/Config.h>
+#include <Server/Server.h>
+
+#include <Resource/Endpoints.h>
+
 
 
 namespace BG {
@@ -42,7 +46,9 @@ private:
 
     std::shared_ptr<restbed::Settings> Settings_; /**Shared pointer to settings object, used when starting server. Populated in constructor*/
     restbed::Service Service_; /**Service created by constructor, then started with StartService method*/
-    std::string foo_ = "foo";
+    Server Server_; /**Instance of the server struct, used to pass data to callbacks for restbed*/
+    // std::string foo_ = "foo";
+
     /**
      * @brief Creates a restbed settings object from the user configuration struct.
      * 
@@ -78,6 +84,8 @@ public:
      * 
      */
     void StartService();
+
+
 
 };
 

@@ -28,10 +28,10 @@ namespace Route {
 /**
  * @brief Provides the code to handle the /Hello route for the API.
  * 
- * @param _Session 
  * @param _Server 
+ * @param _Session 
  */
-void HelloRoute(const std::shared_ptr<restbed::Session> _Session, Server::Server &_Server);
+void Hello(Server::Server &_Server, const std::shared_ptr<restbed::Session> _Session);
 
 
 }; // Close Namespace Route

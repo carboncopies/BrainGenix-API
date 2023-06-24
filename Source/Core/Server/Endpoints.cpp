@@ -16,6 +16,7 @@ EndpointManager::~EndpointManager() {
 }
 
 
+
 void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
     // Add Defualt Routes (not found/forbidden, etc.)

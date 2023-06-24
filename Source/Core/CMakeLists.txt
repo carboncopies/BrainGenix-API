@@ -42,6 +42,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/Auth/GetToken.h
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.h
+  ${SRC_DIR}/Core/Resource/NES/SimulationCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/SimulationCreate.h
 
   ${SRC_DIR}/Core/Util/Types.cpp
   ${SRC_DIR}/Core/Util/Types.h

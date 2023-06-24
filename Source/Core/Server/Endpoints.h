@@ -31,6 +31,7 @@
 #include <Resource/Auth/GetToken.h>
 
 #include <Resource/NES/SphereCreate.h>
+#include <Resource/NES/SimulationCreate.h>
 
 
 namespace BG {
@@ -52,6 +53,7 @@ private:
     std::shared_ptr<Resource::Auth::GetToken::Route> Auth_GetToken_;
 
     std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::Create::Route> NES_Geometry_Shape_Sphere_Create_;
+    std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
 
 public:
 

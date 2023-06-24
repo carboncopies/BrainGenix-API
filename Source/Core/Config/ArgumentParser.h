@@ -38,6 +38,11 @@ namespace Config {
  * 
  * @details This class is given a configuration object from the configuration manager where it populates any supported arguments.
  * From there, the data is then passed back to the config manager for populating with config file data through another class.
+ * Note that any arguments (if set) will override configuration file options.
+ * 
+ * For example, if you set the port number to 5000 in the config file, but call the program with an argument setting 
+ * the port number to 6000, the program will bind to port 6000 since that's an argument.
+ *  
  */
 class ArgumentParser {
 

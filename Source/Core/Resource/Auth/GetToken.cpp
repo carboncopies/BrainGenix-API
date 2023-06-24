@@ -37,14 +37,30 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Check Parameters, Early Out If Invalid
     if (!Util::HasRequiredParams(Request.get(), &RequiredParams_)) {
-      Util::SendInvalidParamResponse(_Session.get());
+      Util::SendCode(_Session.get(), 2);
       return;
+    }
+
+    // We'd do the database stuff here but that's not yet implemented so....
+
+    // -----------------------------------------------------------------------
+    // FIXME: ADD DATABASE CODE HERE TO CHECK THIS IN THE DB! ALSO ADD IT TO THE AUTH-HANDLER (add feature flags! (like cloudflare))
+    // -----------------------------------------------------------------------
+    std::string Username = Request->get_query_parameter("Username", "");
+    std::string Password = Request->get_query_parameter("Password", "");
+    if (Username != "Admonishing") {
+      Util::SendCode(_Session.get(), 4);
+      return;
+    }
+    if (Password != "Instruction") {
+      Util::SendCode(_Session.get(), 4);
     }
 
 
     // Build Response
     nlohmann::json Response;
     Response["StatusCode"] = 0;
+    Response["AuthKey"] = "MyVerySecureToken";
 
 
     // Return Response String As JSON

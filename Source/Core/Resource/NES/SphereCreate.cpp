@@ -44,11 +44,15 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Check Parameters, Early Out If Invalid
     if (!Util::HasRequiredParams(Request.get(), &RequiredParams_)) {
-      Util::SendInvalidParamResponse(_Session.get());
+      Util::SendCode(_Session.get(), 2);
       return;
     }
 
     // Auth Check
+    if (!Util::IsAuthorized(Request.get())) {
+      Util::SendCode(_Session.get(), 4);
+      return;
+    }
 
     
 

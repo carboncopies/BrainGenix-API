@@ -5,8 +5,9 @@ namespace BG {
 namespace API {
 namespace Util {
 
-void SendInvalidParamResponse(restbed::Session* _Session) {
-    std::string Body = "{\"StatusCode\":2}";
+
+void SendCode(restbed::Session* _Session, int _Code) {
+    std::string Body = std::string("{\"StatusCode\":") + std::to_string(_Code) + "}";
     _Session->close(restbed::OK, Body,
       {
         {"Content-Length", std::to_string(Body.size())},
@@ -16,6 +17,17 @@ void SendInvalidParamResponse(restbed::Session* _Session) {
 }
 
 
+void SendJSON(restbed::Session* _Session, nlohmann::json* _Response) {
+    // Return Response String As JSON
+    std::string Body = _Response->dump();
+    _Session->close(restbed::OK, Body,
+      {
+        {"Content-Length", std::to_string(Body.size())},
+        {"Content-Type", "application/json"}
+      }
+    );
+}
+
 bool IsAuthorized(const restbed::Request* _Request) {
 
   // Check that the AuthKey is present
@@ -24,7 +36,7 @@ bool IsAuthorized(const restbed::Request* _Request) {
   }
 
   // Now Check Token
-  std::string Token = Request->get_query_parameter("AuthKey", "");
+  std::string Token = _Request->get_query_parameter("AuthKey", "");
   if (Token == "MyVerySecureToken") {
     return true;
   } else {

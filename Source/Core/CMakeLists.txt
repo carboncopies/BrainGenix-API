@@ -40,6 +40,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/Forbidden.h
   ${SRC_DIR}/Core/Resource/Auth/GetToken.cpp
   ${SRC_DIR}/Core/Resource/Auth/GetToken.h
+  ${SRC_DIR}/Core/Resource/NES/BoxCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/BoxCreate.h
   ${SRC_DIR}/Core/Resource/NES/CylinderCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/CylinderCreate.h
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.cpp

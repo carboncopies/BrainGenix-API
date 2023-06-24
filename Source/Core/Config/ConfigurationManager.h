@@ -58,6 +58,13 @@ public:
      */
     ~Manager();
 
+    /**
+     * @brief Returns a reference to the configuration struct.
+     * 
+     * @return Config& 
+     */
+    Config& GetConfig();
+
 };
 
 }; // Close Namespace Config

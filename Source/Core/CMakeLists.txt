@@ -16,6 +16,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/Config.h
   ${SRC_DIR}/Core/Config/ConfigDefaults.cpp
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
+  
+  ${SRC_DIR}/Core/Server/Controller.cpp
+  ${SRC_DIR}/Core/Server/Controller.h
 
   ${BACKWARD_ENABLE}
   )

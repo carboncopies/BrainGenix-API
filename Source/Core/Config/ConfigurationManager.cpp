@@ -24,6 +24,12 @@ Manager::~Manager() {
 }
 
 
+
+Config& GetConfig() {
+    return Config_;
+}
+
+
 }; // Close Namespace Config
 }; // Close Namespace API
 }; // Close Namespace BG

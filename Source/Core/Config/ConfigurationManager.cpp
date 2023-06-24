@@ -15,7 +15,7 @@ Manager::Manager(int _NumArgs, char** _Args) {
 
     // Now Load Configuration File
     ConfigFileParser ConfigParser(Config_);
-    ConfigParser.~ConfigParser();
+    ConfigParser.~ConfigFileParser();
 
 }
 

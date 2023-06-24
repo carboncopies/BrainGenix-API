@@ -14,8 +14,8 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     // Declare Config File Options (note that )
     boost::program_options::options_description FileOptions("Config File Options");
     FileOptions.add_options()
-        ("Port", boost::program_options::value<int>(&LocalCfg.PortNumber)->default_value(CONFIG_DEFAULT_PORT_NUMBER), "Port Number Of The Service")
-        ("Host", boost::program_options::value<std::string>(&LocalCfg.Host)->default_value(CONFOG_DEFAULT_HOST), "Host That The Service Binds To")
+        ("Network.Service.Port", boost::program_options::value<int>(&LocalCfg.PortNumber)->default_value(CONFIG_DEFAULT_PORT_NUMBER), "Port Number Of The Service")
+        ("Network.Service.Host", boost::program_options::value<std::string>(&LocalCfg.Host)->default_value(CONFIG_DEFAULT_HOST), "Host That The Service Binds To")
         ;
     
     boost::program_options::options_description ConfigFileOptions;
@@ -27,7 +27,7 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     // Open Configuration File, Parse
     std::ifstream ConfigFileStream(_Config.ConfigFilePath.c_str());
     if (!ConfigFileStream) {
-        std::cerr<<"[FATAL] Cannot Open Configuration File At `"<<_Config.ConfigFilePath"`.\nAborting.\n";
+        std::cerr<<"[FATAL] Cannot Open Configuration File At `"<<_Config.ConfigFilePath<<"`.\nAborting.\n";
         exit(1);
     } else {
         store(parse_config_file(ConfigFileStream, ConfigFileOptions), Cfg);

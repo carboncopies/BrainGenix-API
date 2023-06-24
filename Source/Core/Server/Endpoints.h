@@ -12,6 +12,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
+#include <memory>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <restbed>
@@ -30,7 +31,8 @@ class EndpointManager {
 
 private:
 
-    std::vector<std::unique_ptr<void>> Routes_; /**List containing void pointers to all of the route classes*/
+    // Keep a list of resources below, so they stay in scope
+    std::shared_ptr<Resource::Hello> Hello_;
 
 public:
 
@@ -53,7 +55,7 @@ public:
      * 
      * @param _Server 
      */
-    void AddRoutes(restbed::Service &_Service, Server::Server &_Server);
+    void AddRoutes(restbed::Service &_Service, Server &_Server);
 
 
 };

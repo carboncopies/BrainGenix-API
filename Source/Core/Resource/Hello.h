@@ -13,6 +13,7 @@
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
 #include <iostream>
+#include <functional>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <restbed>

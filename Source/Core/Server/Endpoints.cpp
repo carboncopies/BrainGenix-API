@@ -1,4 +1,4 @@
-#include <Resource/Endpoints.h>
+#include <Server/Endpoints.h>
 
 
 namespace BG {
@@ -16,10 +16,10 @@ EndpointManager::~EndpointManager() {
 }
 
 
-void EndpointManager::AddRoutes(restbed::Service &_Service, Server::Server &_Server) {
+void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
     // Add Hello Route
-    Resource::Hello Hello(&_Server, _Service);
+    Hello_ = std::make_shared<Resource::Hello>(&_Server, _Service);
     
 
 }

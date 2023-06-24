@@ -9,7 +9,7 @@ ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args)
 
 
     // Declare Command Line Options
-    boost::program_options::options_description Generic("Generic Options");
+    boost::program_options::options_description Generic("CLI Options");
     Generic.add_options()
         ("Help,h", "Show Help Message")
         ("Version,v", "Print BG-API Server Version")

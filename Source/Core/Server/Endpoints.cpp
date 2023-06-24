@@ -18,8 +18,9 @@ EndpointManager::~EndpointManager() {
 
 void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
-    // Add Hello Route
+    // Add Routes
     Hello_ = std::make_shared<Resource::Hello::Route>(&_Server, _Service);
+    Diagnostic_Version_ = std::make_shared<Resource::Diagnostic::Version::Route>(&_Server, _Service);
     
 
 }

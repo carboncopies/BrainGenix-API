@@ -76,6 +76,10 @@ void Controller::StartService() {
     Service_.start(Settings_);
 }
 
+Server* Controller::GetServerStruct() {
+    return &Server_;
+}
+
 
 }; // Close Namespace Server
 }; // Close Namespace API

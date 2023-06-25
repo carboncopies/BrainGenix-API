@@ -83,6 +83,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h
 
+  ${SRC_DIR}/Core/RPC/ClientManager.cpp
+  ${SRC_DIR}/Core/RPC/ClientManager.h
 
   ${SRC_DIR}/Core/Util/Types.cpp
   ${SRC_DIR}/Core/Util/Types.h

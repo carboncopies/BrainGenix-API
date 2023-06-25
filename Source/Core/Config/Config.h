@@ -36,6 +36,7 @@ struct Config {
 
     int NESPortNumber;          /**Port number to connect to the upstream NES service on*/
     std::string NESHost;        /**Host of the upstream NES service*/
+    int NESTimeout_ms;          /**Set the timeout for the upstream NES service in milliseconds*/
 };
 
 

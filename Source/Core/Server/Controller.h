@@ -87,7 +87,12 @@ public:
      */
     void StartService();
 
-
+    /**
+     * @brief Get the Server Struct object
+     * 
+     * @return Server* 
+     */
+    Server* GetServerStruct();
 
 };
 

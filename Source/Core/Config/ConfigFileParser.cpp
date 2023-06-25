@@ -18,6 +18,7 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
         ("Network.Service.Host", boost::program_options::value<std::string>(&LocalCfg.Host)->default_value(CONFIG_DEFAULT_HOST), "Host That The Service Binds To")
         ("Network.NES.Port", boost::program_options::value<int>(&LocalCfg.NESPortNumber)->default_value(CONFIG_DEFAULT_NES_PORT_NUMBER), "NES Service Port Number")
         ("Network.NES.Host", boost::program_options::value<std::string>(&LocalCfg.NESHost)->default_value(CONFIG_DEFAULT_NES_HOST), "NES Host To Connect To")
+        ("Network.NES.Timeout_ms", boost::program_options::value<int>(&LocalCfg.NESTimeout_ms)->default_value(CONFIG_DEFAULT_NES_TIMEOUT_MS), "NES Host To Connect To")
         ;
     
     boost::program_options::options_description ConfigFileOptions;
@@ -49,6 +50,11 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     if (_Config.NESHost == CONFIG_DEFAULT_NES_HOST) {
         _Config.NESHost = LocalCfg.NESHost;
     }
+    if (_Config.NESTimeout_ms == CONFIG_DEFAULT_NES_TIMEOUT_MS) {
+        _Config.NESTimeout_ms = LocalCfg.NESTimeout_ms;
+    }
+
+
 
 }
 

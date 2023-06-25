@@ -14,13 +14,14 @@
 #include <iostream>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-
-#include <rpc/client.h>
+// #include <rpc/client.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/ConfigurationManager.h>
 #include <Server/Controller.h>
 #include <Logger/LoggingSystem.h>
+
+#include <RPC/ClientManager.h>
 
 #include <Logger/Config.h>
 

@@ -79,10 +79,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.h
 
-  ${SRC_DIR}/Shared/Logger/Config.cpp
-  ${SRC_DIR}/Shared/Logger/Config.h
-  ${SRC_DIR}/Shared/Logger/LoggingSystem.cpp
-  ${SRC_DIR}/Shared/Logger/LoggingSystem.h
+  # ${SRC_DIR}/Shared/Logger/Config.cpp
+  # ${SRC_DIR}/Shared/Logger/Config.h
+  # ${SRC_DIR}/Shared/Logger/LoggingSystem.cpp
+  # ${SRC_DIR}/Shared/Logger/LoggingSystem.h
 
 
   ${SRC_DIR}/Core/Util/Types.cpp
@@ -94,6 +94,10 @@ set(MAIN_SOURCES
 
   ${BACKWARD_ENABLE}
   )
+
+
+# Include Shared Libs
+include(${SRC_DIR}/Shared/Logger/Logger.cmake)
 
 
 # Create Main Executable

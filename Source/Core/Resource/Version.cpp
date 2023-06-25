@@ -33,6 +33,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Build Response
     nlohmann::json Response;
+    Response["StatusCode"] = 0;
     Response["Version"] = VERSION;
 
 

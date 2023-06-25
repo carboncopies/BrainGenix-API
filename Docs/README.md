@@ -46,6 +46,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 **Response**:  
+ - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
  - (string) `Version=` Returns string containing the version of this server.  
 
 
@@ -56,6 +57,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 **Response**:  
+ - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
  - (string) `SystemState=` String indicating the current state of the service. Can be "Healthy", "Degraded", "Failed".  
  - (bgServiceStatus) `ServiceStateNES=` Enum indicating the state of the NES Service. Shows more detail than the above quick reference data.  
 

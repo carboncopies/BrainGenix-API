@@ -43,6 +43,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Build JSON Response
     nlohmann::json Response;
+    Response["StatusCode"] = 0;
     Response["SystemState"] = OverallState;
     Response["ServiceStateNES"] = (int)Server_->NESState;
 

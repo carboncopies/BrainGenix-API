@@ -41,6 +41,10 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
     NES_Tool_PatchClampDAC_Create_ = std::make_shared<Resource::NES::Tool::PatchClampDAC::Create::Route>(&_Server, _Service);
     NES_Tool_PatchClampDAC_SetOutputList_ = std::make_shared<Resource::NES::Tool::PatchClampDAC::SetOutputList::Route>(&_Server, _Service);
+
+    NES_Tool_PatchClampADC_Create_ = std::make_shared<Resource::NES::Tool::PatchClampADC::Create::Route>(&_Server, _Service);
+    NES_Tool_PatchClampADC_SetSampleRate_ = std::make_shared<Resource::NES::Tool::PatchClampADC::SetSampleRate::Route>(&_Server, _Service);
+    NES_Tool_PatchClampADC_GetRecordedData_ = std::make_shared<Resource::NES::Tool::PatchClampADC::GetRecordedData::Route>(&_Server, _Service);
     
     NES_Simulation_Create_ = std::make_shared<Resource::NES::Simulation::Create::Route>(&_Server, _Service);
     NES_Simulation_Reset_ = std::make_shared<Resource::NES::Simulation::Reset::Route>(&_Server, _Service);

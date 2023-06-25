@@ -61,6 +61,12 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/PatchClampDACCreate.h
   ${SRC_DIR}/Core/Resource/NES/PatchClampDACSetOutputList.cpp
   ${SRC_DIR}/Core/Resource/NES/PatchClampDACSetOutputList.h
+  ${SRC_DIR}/Core/Resource/NES/PatchClampADCCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/PatchClampADCCreate.h
+  ${SRC_DIR}/Core/Resource/NES/PatchClampADCSetSampleRate.cpp
+  ${SRC_DIR}/Core/Resource/NES/PatchClampADCSetSampleRate.h
+  ${SRC_DIR}/Core/Resource/NES/PatchClampADCGetRecordedData.cpp
+  ${SRC_DIR}/Core/Resource/NES/PatchClampADCGetRecordedData.h
 
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.h

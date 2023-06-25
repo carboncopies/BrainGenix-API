@@ -41,6 +41,9 @@
 
 #include <Resource/NES/PatchClampDACCreate.h>
 #include <Resource/NES/PatchClampDACSetOutputList.h>
+#include <Resource/NES/PatchClampADCCreate.h>
+#include <Resource/NES/PatchClampADCSetSampleRate.h>
+#include <Resource/NES/PatchClampADCGetRecordedData.h>
 
 
 #include <Resource/NES/SimulationCreate.h>
@@ -79,6 +82,10 @@ private:
     
     std::shared_ptr<Resource::NES::Tool::PatchClampDAC::Create::Route> NES_Tool_PatchClampDAC_Create_;
     std::shared_ptr<Resource::NES::Tool::PatchClampDAC::SetOutputList::Route> NES_Tool_PatchClampDAC_SetOutputList_;
+
+    std::shared_ptr<Resource::NES::Tool::PatchClampADC::Create::Route> NES_Tool_PatchClampADC_Create_;
+    std::shared_ptr<Resource::NES::Tool::PatchClampADC::SetSampleRate::Route> NES_Tool_PatchClampADC_SetSampleRate_;
+    std::shared_ptr<Resource::NES::Tool::PatchClampADC::GetRecordedData::Route> NES_Tool_PatchClampADC_GetRecordedData_;
 
     std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
     std::shared_ptr<Resource::NES::Simulation::Reset::Route> NES_Simulation_Reset_;

@@ -39,6 +39,10 @@
 #include <Resource/NES/StapleCreate.h>
 #include <Resource/NES/ReceptorCreate.h>
 
+#include <Resource/NES/PatchClampDACCreate.h>
+#include <Resource/NES/PatchClampDACSetOutputList.h>
+
+
 #include <Resource/NES/SimulationCreate.h>
 #include <Resource/NES/SimulationReset.h>
 #include <Resource/NES/SimulationRunFor.h>
@@ -73,6 +77,9 @@ private:
     std::shared_ptr<Resource::NES::Connection::Staple::Create::Route> NES_Connection_Staple_Create_;
     std::shared_ptr<Resource::NES::Connection::Receptor::Create::Route> NES_Connection_Receptor_Create_;
     
+    std::shared_ptr<Resource::NES::Tool::PatchClampDAC::Create::Route> NES_Tool_PatchClampDAC_Create_;
+    std::shared_ptr<Resource::NES::Tool::PatchClampDAC::SetOutputList::Route> NES_Tool_PatchClampDAC_SetOutputList_;
+
     std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
     std::shared_ptr<Resource::NES::Simulation::Reset::Route> NES_Simulation_Reset_;
     std::shared_ptr<Resource::NES::Simulation::RunFor::Route> NES_Simulation_RunFor_;

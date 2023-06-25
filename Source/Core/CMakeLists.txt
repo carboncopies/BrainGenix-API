@@ -57,6 +57,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/ReceptorCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/ReceptorCreate.h
 
+  ${SRC_DIR}/Core/Resource/NES/PatchClampDACCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/PatchClampDACCreate.h
+  ${SRC_DIR}/Core/Resource/NES/PatchClampDACSetOutputList.cpp
+  ${SRC_DIR}/Core/Resource/NES/PatchClampDACSetOutputList.h
 
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.h

@@ -16,6 +16,8 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     FileOptions.add_options()
         ("Network.Service.Port", boost::program_options::value<int>(&LocalCfg.PortNumber)->default_value(CONFIG_DEFAULT_PORT_NUMBER), "Port Number Of The Service")
         ("Network.Service.Host", boost::program_options::value<std::string>(&LocalCfg.Host)->default_value(CONFIG_DEFAULT_HOST), "Host That The Service Binds To")
+        ("Network.NES.Port", boost::program_options::value<int>(&LocalCfg.NESPortNumber)->default_value(CONFIG_DEFAULT_NES_PORT_NUMBER), "NES Service Port Number")
+        ("Network.NES.Host", boost::program_options::value<std::string>(&LocalCfg.NESHost)->default_value(CONFIG_DEFAULT_NES_HOST), "NES Host To Connect To")
         ;
     
     boost::program_options::options_description ConfigFileOptions;
@@ -41,7 +43,12 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     if (_Config.Host == CONFIG_DEFAULT_HOST) {
         _Config.Host = LocalCfg.Host;
     }
-
+    if (_Config.NESPortNumber == CONFIG_DEFAULT_NES_PORT_NUMBER) {
+        _Config.NESPortNumber = LocalCfg.NESPortNumber;
+    }
+    if (_Config.NESHost == CONFIG_DEFAULT_NES_HOST) {
+        _Config.NESHost = LocalCfg.NESHost;
+    }
 
 }
 

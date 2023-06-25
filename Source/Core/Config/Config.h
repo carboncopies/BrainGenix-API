@@ -30,8 +30,12 @@ namespace Config {
  */
 struct Config {
     std::string ConfigFilePath; /**Path to program's configuration file*/
+
     int PortNumber;             /**Sets the port number that the service is running on.*/
     std::string Host;           /**Sets the host that the service binds to*/
+
+    int NESPortNumber;          /**Port number to connect to the upstream NES service on*/
+    std::string NESHost;        /**Host of the upstream NES service*/
 };
 
 

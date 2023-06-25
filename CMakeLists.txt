@@ -50,6 +50,9 @@ message(STATUS "Finding boost Package")
 set(Boost_NO_WARN_NEW_VERSIONS 1)
 find_package(Boost REQUIRED COMPONENTS program_options)
 
+message(STATUS "Finding rpclib Package")
+find_package(rpclib CONFIG REQUIRED)
+
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)

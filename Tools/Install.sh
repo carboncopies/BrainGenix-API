@@ -5,7 +5,7 @@ COMPILER_DEPS="git wget cmake g++"
 BACKWARD_DEPS="binutils-dev libunwind-dev libdwarf-dev libdw-dev"
 
 # vcpkg Dependencies
-VCPKG_DEPS="curl zip unzip tar pkg-config autoconf"
+VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 
 # Install Everything
 INSTALL_COMMAND="sudo apt install $VCPKG_DEPS $BACKWARD_DEPS $COMPILER_DEPS -y"

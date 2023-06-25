@@ -5,6 +5,7 @@
   "dependencies": [
     "restbed",
     "boost-program-options",
-    "nlohmann-json"
+    "nlohmann-json",
+    "rpclib"
   ]
 }

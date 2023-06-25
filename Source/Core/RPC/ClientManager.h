@@ -46,6 +46,16 @@ private:
 
     std::unique_ptr<::rpc::client> NESClient_; /**Client to upstream NES Service*/
 
+    /**
+     * @brief Attempts to connect to the NES client. On failure, returns false.
+     * NOTE: THE NES CLIENT MAY NOT BE USED IF THIS FAILS. IF THIS FAILS, THE CLIENT WILL BE SET TO NULL!
+     * DO NOT USE IT IF IT IS NULL - for obvious reasons.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool ConnectNES();
+
 public:
 
     /**

@@ -32,7 +32,7 @@ namespace BG {
         SERVICE_HEALTHY,
         SERVICE_DEGRADED,
         SERVICE_FAILED,
-        SERVICE_NOT_CONFIGURED
+        SERVICE_CONFIG_ERR
     };
 
 

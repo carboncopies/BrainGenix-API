@@ -38,7 +38,7 @@ struct Server {
 
     std::atomic<int> TotalQueries = 0; /**Test attribute that keeps track of total number of hits the api gets*/
     std::atomic<bgServiceStatus> APIState = SERVICE_HEALTHY; /**Enum showing the overall system status*/
-    std::atomic<bgServiceStatus> NESState = SERVICE_NOT_CONFIGURED; /**Enum showing the NES system status*/
+    std::atomic<bgServiceStatus> NESState = SERVICE_CONFIG_ERR; /**Enum showing the NES system status*/
 
 };
 

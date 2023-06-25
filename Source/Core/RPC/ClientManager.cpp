@@ -34,7 +34,8 @@ bool Manager::ConnectNES() {
     std::cout<<"Connecting to NES with timeout_ms of: "<<NESTimeout_ms<<std::endl;
 
     try {
-        NESClient_ = std::make_unique<::rpc::client>(NESHost, NESPort);
+        std::cout<<NESHost.c_str()<<std::endl;
+        NESClient_ = std::make_unique<::rpc::client>(NESHost.c_str(), NESPort);
     } catch (std::system_error& e) {
         std::cout<<"ERR: Cannot find NES host (authoritative)\n";
         Server_->NESState = SERVICE_CONFIG_ERR;
@@ -48,6 +49,10 @@ bool Manager::ConnectNES() {
         NESVersion = NESClient_->call("GetVersion").as<std::string>();
     } catch (::rpc::timeout& e) {
         std::cout<<"ERR: NES Connection timed out!\n";
+        Server_->NESState = SERVICE_FAILED;
+        return false;
+    } catch (::rpc::rpc_error& e) {
+        std::cout<<"ERR: NES remote returned unexpected result\n";
         Server_->NESState = SERVICE_FAILED;
         return false;
     }

@@ -35,6 +35,9 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     NES_Geometry_Shape_Box_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Box::Create::Route>(&_Server, _Service);
 
     NES_Compartment_BS_Create_ = std::make_shared<Resource::NES::Compartment::BS::Create::Route>(&_Server, _Service);
+
+    NES_Connection_Staple_Create_ = std::make_shared<Resource::NES::Connection::Staple::Create::Route>(&_Server, _Service);
+    NES_Connection_Receptor_Create_ = std::make_shared<Resource::NES::Connection::Receptor::Create::Route>(&_Server, _Service);
     
     NES_Simulation_Create_ = std::make_shared<Resource::NES::Simulation::Create::Route>(&_Server, _Service);
     NES_Simulation_Reset_ = std::make_shared<Resource::NES::Simulation::Reset::Route>(&_Server, _Service);

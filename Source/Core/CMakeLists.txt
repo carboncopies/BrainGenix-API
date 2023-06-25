@@ -52,6 +52,12 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/BSCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/BSCreate.h
 
+  ${SRC_DIR}/Core/Resource/NES/StapleCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/StapleCreate.h
+  ${SRC_DIR}/Core/Resource/NES/ReceptorCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/ReceptorCreate.h
+
+
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.h
   ${SRC_DIR}/Core/Resource/NES/SimulationReset.cpp

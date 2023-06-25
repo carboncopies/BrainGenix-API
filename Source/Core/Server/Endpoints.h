@@ -36,6 +36,8 @@
 
 #include <Resource/NES/BSCreate.h>
 
+#include <Resource/NES/StapleCreate.h>
+#include <Resource/NES/ReceptorCreate.h>
 
 #include <Resource/NES/SimulationCreate.h>
 #include <Resource/NES/SimulationReset.h>
@@ -67,6 +69,9 @@ private:
     std::shared_ptr<Resource::NES::Geometry::Shape::Box::Create::Route> NES_Geometry_Shape_Box_Create_;
 
     std::shared_ptr<Resource::NES::Compartment::BS::Create::Route> NES_Compartment_BS_Create_;
+
+    std::shared_ptr<Resource::NES::Connection::Staple::Create::Route> NES_Connection_Staple_Create_;
+    std::shared_ptr<Resource::NES::Connection::Receptor::Create::Route> NES_Connection_Receptor_Create_;
     
     std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
     std::shared_ptr<Resource::NES::Simulation::Reset::Route> NES_Simulation_Reset_;

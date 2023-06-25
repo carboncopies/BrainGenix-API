@@ -56,6 +56,10 @@ find_package(rpclib CONFIG REQUIRED)
 message(STATUS "Finding spdlog Package")
 find_package(spdlog CONFIG REQUIRED)
 
+message(STATUS "Finding libmariadb Package")
+find_package(unofficial-libmariadb CONFIG REQUIRED)
+
+
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)

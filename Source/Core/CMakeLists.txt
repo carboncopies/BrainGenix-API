@@ -79,10 +79,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.h
 
-  # ${SRC_DIR}/Shared/Logger/Config.cpp
-  # ${SRC_DIR}/Shared/Logger/Config.h
-  # ${SRC_DIR}/Shared/Logger/LoggingSystem.cpp
-  # ${SRC_DIR}/Shared/Logger/LoggingSystem.h
+
+  ${SRC_DIR}/Core/Database/DBManager.cpp
+  ${SRC_DIR}/Core/Database/DBManager.h
 
 
   ${SRC_DIR}/Core/Util/Types.cpp
@@ -108,6 +107,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Boost::program_options
     rpclib::rpc
     spdlog::spdlog
+    unofficial::libmariadb
 
     VersioningSystem
     CompileTimeStamp

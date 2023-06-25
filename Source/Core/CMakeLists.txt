@@ -79,6 +79,11 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.h
 
+  ${SRC_DIR}/Shared/Logger/Config.cpp
+  ${SRC_DIR}/Shared/Logger/Config.h
+  ${SRC_DIR}/Shared/Logger/LoggingSystem.cpp
+  ${SRC_DIR}/Shared/Logger/LoggingSystem.h
+
 
   ${SRC_DIR}/Core/Util/Types.cpp
   ${SRC_DIR}/Core/Util/Types.h
@@ -98,9 +103,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     unofficial::restbed::restbed
     Boost::program_options
     rpclib::rpc
+    spdlog::spdlog
 
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo
     )
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
+target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Shared)

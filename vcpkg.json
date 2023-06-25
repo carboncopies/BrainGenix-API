@@ -6,6 +6,7 @@
     "restbed",
     "boost-program-options",
     "nlohmann-json",
-    "rpclib"
+    "rpclib",
+    "spdlog"
   ]
 }

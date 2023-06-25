@@ -21,6 +21,12 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Config::Manager ConfigManager(NumArguments, ArgumentValues);
     BG::API::Config::Config& SystemConfiguration = ConfigManager.GetConfig();
 
+    // Setup Logger Here
+    BG::Shared::Logger::Config Config;
+    BG::Shared::Logger::Logger Logger(Config);
+    
+
+    // Test RPC Stuff
     rpc::client c("127.0.0.1", 8001);
 
     for (unsigned int i = 0; i < 10000000; i++) {

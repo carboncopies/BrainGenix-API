@@ -53,6 +53,9 @@ find_package(Boost REQUIRED COMPONENTS program_options)
 message(STATUS "Finding rpclib Package")
 find_package(rpclib CONFIG REQUIRED)
 
+message(STATUS "Finding spdlog Package")
+find_package(spdlog CONFIG REQUIRED)
+
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)

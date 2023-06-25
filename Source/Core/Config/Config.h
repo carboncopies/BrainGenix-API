@@ -17,7 +17,7 @@
 // Third-Party Libraries (BG convention: use <> instead of "")
 
 // Internal Libraries (BG convention: use <> instead of "")
-
+#include <Config/ConfigDefaults.h>
 
 
 namespace BG {
@@ -29,14 +29,14 @@ namespace Config {
  * 
  */
 struct Config {
-    std::string ConfigFilePath; /**Path to program's configuration file*/
+    std::string ConfigFilePath = CONFIG_DEFAULT_CFG_FILE_PATH;  /**Path to program's configuration file*/
 
-    int PortNumber;             /**Sets the port number that the service is running on.*/
-    std::string Host;           /**Sets the host that the service binds to*/
+    int PortNumber = CONFIG_DEFAULT_PORT_NUMBER;                /**Sets the port number that the service is running on.*/
+    std::string Host = CONFIG_DEFAULT_HOST;                     /**Sets the host that the service binds to*/
 
-    int NESPortNumber;          /**Port number to connect to the upstream NES service on*/
-    std::string NESHost;        /**Host of the upstream NES service*/
-    int NESTimeout_ms;          /**Set the timeout for the upstream NES service in milliseconds*/
+    int NESPortNumber = CONFIG_DEFAULT_NES_PORT_NUMBER;         /**Port number to connect to the upstream NES service on*/
+    std::string NESHost = CONFIG_DEFAULT_NES_HOST;              /**Host of the upstream NES service*/
+    int NESTimeout_ms = CONFIG_DEFAULT_NES_TIMEOUT_MS;          /**Set the timeout for the upstream NES service in milliseconds*/
 };
 
 

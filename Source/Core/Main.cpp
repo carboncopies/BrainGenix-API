@@ -12,7 +12,18 @@
 #include <Main.h>
 
 
+// todo:
+/**
 
+write api spec internally from gateway to nes itself
+implement verison headers and verification, etc.
+
+
+delegate - add system to automatically detect dropped connections and try and re-establish a link
+delegate - replace std::cout statements with logger calls once prishita writes the logging system
+
+ * 
+ */
 
 
 int main(int NumArguments, char** ArgumentValues) {

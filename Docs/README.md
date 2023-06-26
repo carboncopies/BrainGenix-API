@@ -378,7 +378,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 - (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
 - (bool) `IsSimulating=` Is simulating true/false.
-- (float) `RealWorldTimeRemaining_ms=` Float containing number of milliseconds estimated to be remaining in real-world time.
+- (float) `RealWorldTimeRemaining_ms=` Float containing number of milliseconds estimated to be remaining in real-world time until current run call completes.
 - (float) `RealWorldTimeElapsed_ms=` Float containing number of milliseconds elapsed since simulation started in real-world time measured since start of last run call.
 - (float) `InSimulationTime_ms=` Float containing number of in-simulation milliseconds elapsed since last reset call.
 - (float) `InSimulationTimeRemaining_ms=` Float containing number of milliseconds remaining in-simulation until run call is complete.

@@ -31,12 +31,12 @@ int main(int NumArguments, char** ArgumentValues) {
     // Setup Logger Here
     BG::Shared::Logger::Config LoggerConfig;
     BG::Shared::Logger::Logger Logger(LoggerConfig);
-    
 
     // Setup Server
     BG::API::Server::Controller ServerController(SystemConfiguration);
-
     BG::API::Server::Server* Server = ServerController.GetServerStruct();
+
+    // Setup Upstream API Connection Handler
     BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server);
 
     // Start Server

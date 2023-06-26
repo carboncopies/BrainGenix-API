@@ -36,8 +36,8 @@ Each route will be described in this format:
 
 # Routes
 
-## GetVersion
-**Route**: `GetVersion`  
+## GetAPIVersion
+**Route**: `GetAPIVersion`  
 **Request**:  
 *Required Params*:  
 

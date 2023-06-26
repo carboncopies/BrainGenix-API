@@ -364,3 +364,20 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 - (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
 - (JSON blob) `Recording=` JSON blob containing recorded data of all objects.
+
+
+### Simulation - Get Status
+
+**URI** `/NES/Simulation/GetStatus?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to get the run status of.
+
+**Response**:  
+
+- (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
+- (bool) `IsSimulating=` Is simulating true/false.
+- (float) `EstimatedTimeRemaining_s=` Float containing number of seconds estimated to be remaining.
+- (float) `TimeElapsed_s=` Float containing number of seconds elapsed since simulation started.
+- (float) `PercentComplete=` Estimated percentage for completion.

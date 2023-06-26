@@ -378,6 +378,6 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 - (bsStatus) `StatusCode=` Enum indicating the status of this APi call.
 - (bool) `IsSimulating=` Is simulating true/false.
-- (float) `EstimatedTimeRemaining_s=` Float containing number of seconds estimated to be remaining.
-- (float) `TimeElapsed_s=` Float containing number of seconds elapsed since simulation started.
+- (float) `EstimatedTimeRemaining_ms=` Float containing number of milliseconds estimated to be remaining.
+- (float) `TimeElapsed_ms=` Float containing number of milliseconds elapsed since simulation started.
 - (float) `PercentComplete=` Estimated percentage for completion.

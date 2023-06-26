@@ -72,6 +72,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationCreate.h
   ${SRC_DIR}/Core/Resource/NES/SimulationReset.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationReset.h
+  ${SRC_DIR}/Core/Resource/NES/SimulationGetStatus.cpp
+  ${SRC_DIR}/Core/Resource/NES/SimulationGetStatus.h
   ${SRC_DIR}/Core/Resource/NES/SimulationRunFor.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationRunFor.h
   ${SRC_DIR}/Core/Resource/NES/SimulationRecordAll.cpp

@@ -49,6 +49,7 @@
 #include <Resource/NES/SimulationCreate.h>
 #include <Resource/NES/SimulationReset.h>
 #include <Resource/NES/SimulationRunFor.h>
+#include <Resource/NES/SimulationGetStatus.h>
 #include <Resource/NES/SimulationRecordAll.h>
 #include <Resource/NES/SimulationGetRecording.h>
 
@@ -89,6 +90,7 @@ private:
 
     std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
     std::shared_ptr<Resource::NES::Simulation::Reset::Route> NES_Simulation_Reset_;
+    std::shared_ptr<Resource::NES::Simulation::GetStatus::Route> NES_Simulation_GetStatus_;
     std::shared_ptr<Resource::NES::Simulation::RunFor::Route> NES_Simulation_RunFor_;
     std::shared_ptr<Resource::NES::Simulation::RecordAll::Route> NES_Simulation_RecordAll_;
     std::shared_ptr<Resource::NES::Simulation::GetRecording::Route> NES_Simulation_GetRecording_;

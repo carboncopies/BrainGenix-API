@@ -86,6 +86,10 @@ bool Manager::RunVersionCheckNES() {
         std::cout<<"ERR: NES remote returned RPC error\n";
         Server_->NESState = SERVICE_FAILED;
         return false;
+    } catch (std::system_error& e) {
+        std::cout<<"ERR: Cannot talk to NES host\n";
+        Server_->NESState = SERVICE_CONFIG_ERR;
+        return false;
     }
 
     if (NESVersion != "2023.06.25") {

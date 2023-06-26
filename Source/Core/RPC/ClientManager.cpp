@@ -49,7 +49,6 @@ bool Manager::ConnectNES() {
     std::cout<<"Connecting to NES with timeout_ms of: "<<NESTimeout_ms<<std::endl;
 
     try {
-        std::cout<<NESHost.c_str()<<std::endl;
         NESClient_ = std::make_unique<::rpc::client>(NESHost.c_str(), NESPort);
     } catch (std::system_error& e) {
         std::cout<<"ERR: Cannot find NES host (authoritative)\n";

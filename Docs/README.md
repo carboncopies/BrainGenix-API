@@ -380,4 +380,4 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (bool) `IsSimulating=` Is simulating true/false.
 - (float) `EstimatedTimeRemaining_ms=` Float containing number of milliseconds estimated to be remaining in real-world time.
 - (float) `TimeElapsed_ms=` Float containing number of milliseconds elapsed since simulation started.
-- (float) `PercentComplete=` Estimated percentage for completion.
+- (float) `PercentComplete=` Estimated percentage complete based on in-simulation time.

@@ -15,6 +15,8 @@
 #include <vector>
 #include <iostream>
 #include <memory>
+#include <thread>
+#include <chrono>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <rpc/client.h>
@@ -44,6 +46,9 @@ private:
     Config::Config* Config_; /**Pointer to the configuration instance*/
     Server::Server* Server_; /**Pointer to server struct, this class updates upstream status info*/
 
+    bool RequestThreadsExit_; /**Used to signal to threads that they should exit*/
+    std::thread ConnectionManagerNES_; /**Thread running the NES connection manager*/
+
     std::unique_ptr<::rpc::client> NESClient_; /**Client to upstream NES Service*/
 
     /**
@@ -56,7 +61,23 @@ private:
      */
     bool ConnectNES();
 
+    /**
+     * @brief This function is run in another thread and checks/reconnects/updates info/connection data about the NES client.
+     * 
+     */
+    void ConnectionManagerNES();
+
+    /**
+     * @brief Uses the client to run a version check, updates the server status afterwards.
+     * Returns true whenever everything is good, false if degraded/failed/otherwise.
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool RunVersionCheckNES();
+
 public:
+
 
     /**
      * @brief Create an RPC client manager, used to talk to upstream services

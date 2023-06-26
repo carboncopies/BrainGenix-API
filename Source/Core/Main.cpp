@@ -54,7 +54,7 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Server::Controller ServerController(SystemConfiguration);
 
     BG::API::Server::Server* Server = ServerController.GetServerStruct();
-    BG::API::RPC::Manager(&SystemConfiguration, Server);
+    BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server);
 
     // Start Server
     ServerController.StartService();

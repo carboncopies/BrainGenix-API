@@ -10,13 +10,28 @@ Manager::Manager(Config::Config* _Config, Server::Server* _Server) {
     Config_ = _Config;
     Server_ = _Server;
 
-    // Connect to nes service
+    // Initialize Thread Signal
+    RequestThreadsExit_ = false;
+
+    // Connect to nes service, start managing service
+    std::cout<<"Starting NES Client\n";
     ConnectNES();
+    std::cout<<"Starting NES Client Manager Thread\n";
+    ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
 
 
 }
 
 Manager::~Manager() {
+
+    // Signal to threads to stop
+    std::cout<<"Requesting manager threads exit\n";
+    RequestThreadsExit_ = true;
+
+    // Join Threads
+    std::cout<<"Joining NES manager thread\n";
+    ConnectionManagerNES_.join();
+
 
 }
 
@@ -44,33 +59,67 @@ bool Manager::ConnectNES() {
     NESClient_->set_timeout(NESTimeout_ms);
 
     // Call GetVersion On Remote - allows us to check that versions match, but also ensures the connection is ready
+    return RunVersionCheckNES();
+
+
+
+}
+
+bool Manager::RunVersionCheckNES() {
+
+    // Update our internal status of how the connection is doing
+    ::rpc::client::connection_state NESStatus = NESClient_->get_connection_state();
+    if (NESStatus != ::rpc::client::connection_state::connected) {
+        Server_->NESState = SERVICE_FAILED;
+    } else {
+        Server_->NESState = SERVICE_HEALTHY;
+    }
+
+    // Check Version again (used as a heartbeat 'isAlive' check)
     std::string NESVersion = "undefined";
     try {
-        NESVersion = NESClient_->call("GetVersion").as<std::string>();
+        NESVersion = NESClient_->call("GetAPIVersion").as<std::string>();
     } catch (::rpc::timeout& e) {
         std::cout<<"ERR: NES Connection timed out!\n";
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (::rpc::rpc_error& e) {
-        std::cout<<"ERR: NES remote returned unexpected result\n";
+        std::cout<<"ERR: NES remote returned RPC error\n";
         Server_->NESState = SERVICE_FAILED;
         return false;
-    }
-    
-    if (NESVersion != VERSION) {
-        std::cout<<"WARNING: NES/API Version Mismatch! This might make stuff break. NES "<<NESVersion<<" API "<<VERSION<<std::endl;
-        Server_->NESState = SERVICE_DEGRADED;
     }
 
-    // Finally, Update our internal status of how the connection is doing
-    ::rpc::client::connection_state NESStatus = NESClient_->get_connection_state();
-    if (NESStatus != ::rpc::client::connection_state::connected) {
-        Server_->NESState = SERVICE_FAILED;
+    if (NESVersion != "2023.06.25") {
+        std::cout<<"WARNING: NES/API Version Mismatch! This might make stuff break. NES "<<NESVersion<<" API "<<"2023.06.25"<<std::endl;
+        Server_->NESState = SERVICE_VERSION_MISMATCH;
         return false;
-    } else {
-        Server_->NESState = SERVICE_HEALTHY;
-        return true;
     }
+    return true;
+
+
+}
+
+void Manager::ConnectionManagerNES() {
+
+    std::cout<<"Started NES Manager Thread\n";
+
+    // Enter loop
+    while (!RequestThreadsExit_) {
+
+        // Check Version
+        bool IsHealthy = RunVersionCheckNES();
+
+        // // If not healthy, re-establish connection, retry stuff... For now, nothing...
+        // if (!IsHealthy) {
+        //     NESClient_.reset();
+        // }
+
+        // Wait 1000ms before polling again
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+    }
+
+    std::cout<<"Exiting NES Manager Thread\n";
 
 }
 

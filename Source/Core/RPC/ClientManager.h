@@ -61,11 +61,11 @@ private:
      */
     bool ConnectNES();
 
-    /**
-     * @brief This function is run in another thread and checks/reconnects/updates info/connection data about the NES client.
-     * 
-     */
-    void ConnectionManagerNES();
+    // /**
+    //  * @brief This function is run in another thread and checks/reconnects/updates info/connection data about the NES client.
+    //  * 
+    //  */
+    // void ConnectionManagerNES();
 
     /**
      * @brief Uses the client to run a version check, updates the server status afterwards.

@@ -70,6 +70,7 @@ public:
      * The controller will setup the server based on the provided config pointer's data.
      * 
      * @param _Config 
+     * @param _Manager RPC Manager instance ptr
      */
     Controller(Config::Config &_Config);
 

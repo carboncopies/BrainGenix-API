@@ -55,10 +55,24 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     std::string Name = Request->get_query_parameter("SimulationName", "");
 
 
+    // Upstream Query
+    nlohmann::json UpstreamQuery;
+    UpstreamQuery["Name"] = Name;
+
+    std::string UpstreamResponseStr = "";
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Simulation/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      Util::SendCode(_Session.get(), 1);
+      return;
+    }
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+
+
+
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
-    Response["SimulationID"] = -1;
+    Response["StatusCode"] = 0;
+    Response["SimulationID"] = UpstreamResponse["SimulationID"].template get<int>();
 
     Util::SendJSON(_Session.get(), &Response);
 }

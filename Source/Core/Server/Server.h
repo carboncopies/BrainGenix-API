@@ -15,9 +15,11 @@
 #include <atomic>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <rpc/client.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Util/Types.h>
+
 
 namespace BG {
 namespace API {
@@ -39,6 +41,8 @@ struct Server {
     std::atomic<int> TotalQueries = 0; /**Test attribute that keeps track of total number of hits the api gets*/
     std::atomic<bgServiceStatus> APIState = SERVICE_HEALTHY; /**Enum showing the overall system status*/
     std::atomic<bgServiceStatus> NESState = SERVICE_CONFIG_ERR; /**Enum showing the NES system status*/
+
+    ::rpc::client* NESClient; /**Pointer to RPC client service for nes*/
 
 };
 

@@ -45,6 +45,7 @@ Controller::Controller(Config::Config &_Config) {
     // Configure Settings Object
     Settings_ = ConfigureServer(_Config);
 
+
     // Add Routes
     EndpointManager_ = EndpointManager();
     EndpointManager_.AddRoutes(Service_, Server_);

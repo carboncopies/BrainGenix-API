@@ -25,6 +25,8 @@
 
 #include <Util/ParamCheck.h>
 #include <Util/RestbedHelpers.h>
+#include <Util/RPCHelpers.h>
+
 
 
 namespace BG {

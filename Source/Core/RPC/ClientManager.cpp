@@ -19,6 +19,9 @@ Manager::Manager(Config::Config* _Config, Server::Server* _Server) {
     // std::cout<<"Starting NES Client Manager Thread\n";
     // ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
 
+    // Populate Server Struct
+    Server_->NESClient = NESClient_.get();
+
 
 }
 
@@ -76,8 +79,24 @@ bool Manager::RunVersionCheckNES() {
 
     // Check Version again (used as a heartbeat 'isAlive' check)
     std::string NESVersion = "undefined";
+    bool Status = NESQueryJSON("GetAPIVersion", &NESVersion);
+    if (!Status) {
+        return false;
+    }
+
+    if (NESVersion != "2023.06.25") {
+        std::cout<<"WARNING: NES/API Version Mismatch! This might make stuff break. NES "<<NESVersion<<" API "<<"2023.06.25"<<std::endl;
+        Server_->NESState = SERVICE_VERSION_MISMATCH;
+        return false;
+    }
+    return true;
+
+
+}
+
+bool Manager::NESQueryJSON(std::string _Route, std::string* _Result) {
     try {
-        NESVersion = NESClient_->call("GetAPIVersion").as<std::string>();
+        (*_Result) = NESClient_->call(_Route.c_str()).as<std::string>();
     } catch (::rpc::timeout& e) {
         std::cout<<"ERR: NES Connection timed out!\n";
         Server_->NESState = SERVICE_FAILED;
@@ -91,15 +110,24 @@ bool Manager::RunVersionCheckNES() {
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
+}
 
-    if (NESVersion != "2023.06.25") {
-        std::cout<<"WARNING: NES/API Version Mismatch! This might make stuff break. NES "<<NESVersion<<" API "<<"2023.06.25"<<std::endl;
-        Server_->NESState = SERVICE_VERSION_MISMATCH;
+bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result) {
+    try {
+        (*_Result) = NESClient_->call(_Route.c_str(), _Query).as<std::string>();
+    } catch (::rpc::timeout& e) {
+        std::cout<<"ERR: NES Connection timed out!\n";
+        Server_->NESState = SERVICE_FAILED;
+        return false;
+    } catch (::rpc::rpc_error& e) {
+        std::cout<<"ERR: NES remote returned RPC error\n";
+        Server_->NESState = SERVICE_FAILED;
+        return false;
+    } catch (std::system_error& e) {
+        std::cout<<"ERR: Cannot talk to NES host\n";
+        Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
-    return true;
-
-
 }
 
 // void Manager::ConnectionManagerNES() {

@@ -94,6 +94,21 @@ public:
      */
     ~Manager();
 
+    
+    /**
+     * @brief Queries the given route on the NES server with the given json.
+     * Populates the result std::string ptr with the response.
+     * Returns false on fail (client error/server issue), otherwise true.
+     * 
+     * @param _Route 
+     * @param _Query
+     * @param _Result 
+     * @return true 
+     * @return false 
+     */
+    bool NESQueryJSON(std::string _Route, std::string* _Result);
+    bool NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result);
+
 };
 
 

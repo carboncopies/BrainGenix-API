@@ -94,6 +94,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/ParamCheck.h
   ${SRC_DIR}/Core/Util/RestbedHelpers.cpp
   ${SRC_DIR}/Core/Util/RestbedHelpers.h
+  ${SRC_DIR}/Core/Util/RPCHelpers.cpp
+  ${SRC_DIR}/Core/Util/RPCHelpers.h
 
   ${BACKWARD_ENABLE}
   )

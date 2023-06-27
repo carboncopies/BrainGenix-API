@@ -36,7 +36,11 @@ Each route will be described in this format:
 
 # Routes
 
-## GetAPIVersion
+
+
+## Diagnostic
+ 
+### GetAPIVersion
 **Route**: `GetAPIVersion`  
 **Request**:  
 *Required Params*:  
@@ -48,7 +52,7 @@ Each route will be described in this format:
  - The two versions *must* match, if they do not, the connection will be terminated with an error indicating a version mismatch. This route is usually called during intiailisation to ensure the client is talking to the server and they understand what's going on.
 
 
-## Echo
+### Echo
 **Route**: `Echo`  
 **Request**:  
 *Required Params*: 
@@ -61,7 +65,10 @@ Each route will be described in this format:
  - This route is used for debugging and ensuring that the server is still happy and alive.
 
 
-## Simulation - Create
+
+## Simulation  
+
+### Simulation - Create
 **Route**: `Simulation/Create`  
 **Request**:  
 *Required Params*: 
@@ -72,3 +79,20 @@ Each route will be described in this format:
 
 **Notes**  
  - None.
+
+
+### Sphere - Create
+**Route**: `Geometry/Shape/Sphere/Create`  
+**Request**:  
+*Required Params*:  
+- (float) `Radius_nm=` The radius of the sphere in nanometers.
+- (float) `CenterPosX_nm=` Position of the center's X coord of the sphere in nanometers.
+- (float) `CenterPosY_nm=` Position of the center's Y coord of the sphere in nanometers.
+- (float) `CenterPosZ_nm=` Position of the center's Z coord of the sphere in nanometers.
+
+*Optional Params*:  
+- (string) `Name=` Optional name of the sphere.
+
+**Response**:  
+- (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).
+

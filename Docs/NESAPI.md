@@ -89,8 +89,6 @@ Each route will be described in this format:
 - (float) `CenterPosX_nm=` Position of the center's X coord of the sphere in nanometers.
 - (float) `CenterPosY_nm=` Position of the center's Y coord of the sphere in nanometers.
 - (float) `CenterPosZ_nm=` Position of the center's Z coord of the sphere in nanometers.
-
-*Optional Params*:  
 - (string) `Name=` Optional name of the sphere.
 
 **Response**:  

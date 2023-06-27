@@ -59,3 +59,16 @@ Each route will be described in this format:
 
 **Notes**  
  - This route is used for debugging and ensuring that the server is still happy and alive.
+
+
+## Simulation - Create
+**Route**: `Simulation/Create`  
+**Request**:  
+*Required Params*: 
+ - (std::string) `Name` Name of your simulation.
+
+**Response**:  
+ - (int) `SimulationID` ID is greater than 0 on success, otherwise -1 on fail.
+
+**Notes**  
+ - None.

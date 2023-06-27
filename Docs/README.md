@@ -47,7 +47,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 **Response**:  
  - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
- - (string) `Version=` Returns string containing the version of this server.  
+ - (string) `Version=` Returns string containing the version of the API server.  
 
 
 ### Status

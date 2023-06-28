@@ -39,8 +39,28 @@ Each route will be described in this format:
  - `1` Invalid Simulation ID
 
 
+# Implementation Status (API Side)
 
-# Implementation Status
+ - [x] Simulation Create
+ - [ ] Simulation Reset
+ - [ ] Simulation RunFor
+ - [ ] Simulation RecordAll
+ - [ ] Simulation GetRecording
+ - [ ] Simulation GetStatus
+ - [x] Shapes SphereCreate
+ - [x] Shapes CylinderCreate
+ - [ ] Shapes BoxCreate
+ - [ ] Compartments BSCreate
+ - [ ] Connections StapleCreate
+ - [ ] Connections ReceptorCreate
+ - [ ] Tools DACCreate
+ - [ ] Tools DACSetOutputList
+ - [ ] Tools ADCCreate
+ - [ ] Tools ADCSetSampleRate
+ - [ ] Tools ADCGetRecordedData
+
+
+# Implementation Status (NES Side)
 
  - [x] Simulation Create
  - [ ] Simulation Reset

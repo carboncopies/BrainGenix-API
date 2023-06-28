@@ -329,67 +329,67 @@ Each route will be described in this format:
 **Route**: `Tool/PatchClampDAC/Create`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this is being created.  
-- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment receiving DAC output.
-- (float) `ClampPosX_nm` X world space coordinate in nanometers.
-- (float) `ClampPosY_nm` Y world space coordinate in nanometers.
-- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.
-- (string) `Name` Name of the DAC, defaults to 'undefined'.
+- (int) `SimulationID` ID of the simulation where this is being created.   
+- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment receiving DAC output.  
+- (float) `ClampPosX_nm` X world space coordinate in nanometers.  
+- (float) `ClampPosY_nm` Y world space coordinate in nanometers.  
+- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.  
+- (string) `Name` Name of the DAC, defaults to 'undefined'.  
 
 **Response**:  
 - (bgPatchClampDACID) `PatchClampDACID` ID of the resulting DAC created here (-1 on fail).  
-- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 
 
 ### DAC - Set Output List
 **Route**: `Tool/PatchClampDAC/SetOutputList`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this is being modified.  
-- (bgPatchClampDACID) `PatchClampDACID` ID of the target dac to be modified.
-- (float list) `DACVoltages_mV` JSON formatted list of voltages to be played back by the DAC.
-- (float) `Timestep_ms` Simulation time for which each step in the DACVoltages is replayed. 
+- (int) `SimulationID` ID of the simulation where this is being modified.   
+- (bgPatchClampDACID) `PatchClampDACID` ID of the target dac to be modified.  
+- (float list) `DACVoltages_mV` JSON formatted list of voltages to be played back by the DAC.  
+- (float) `Timestep_ms` Simulation time for which each step in the DACVoltages is replayed.   
 
 **Response**:  
-- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 
 
 ### ADC - Create
 **Route**: `Tool/PatchClampADC/Create`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this is being created.  
-- (bgCompartmentID) `SourceCompartmentID` ID of the compartment being read by the ADC output.
-- (float) `ClampPosX_nm` X world space coordinate in nanometers.
-- (float) `ClampPosY_nm` Y world space coordinate in nanometers.
-- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.
-- (string) `Name` Name of the DAC, defaults to 'undefined'.
-
+- (int) `SimulationID` ID of the simulation where this is being created.   
+- (bgCompartmentID) `SourceCompartmentID` ID of the compartment being read by the ADC output.  
+- (float) `ClampPosX_nm` X world space coordinate in nanometers.  
+- (float) `ClampPosY_nm` Y world space coordinate in nanometers.    
+- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.  
+- (string) `Name` Name of the DAC, defaults to 'undefined'.  
+    
 **Response**:  
-- (bgShapeID) `PatchClampADCID` ID of the resulting ADC created here (-1 on fail).  
-- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (bgShapeID) `PatchClampADCID` ID of the resulting ADC created here (-1 on fail).    
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 
 
 ### ADC - Set Sample Rate
 **Route**: `Tool/PatchClampADC/SetSampleRate`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this is being modified.  
-- (bgPatchClampADCID) `TargetADC` ID of the ADC being configured.
-- (float) `Timestep_m=` Sets the sample timestep rate for the ADC in milliseconds. 
+- (int) `SimulationID` ID of the simulation where this is being modified.   
+- (bgPatchClampADCID) `TargetADC` ID of the ADC being configured.  
+- (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds.   
 
 **Response**:  
-- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 
 
 ### ADC - Get Recorded Data
 **Route**: `Tool/PatchClampADC/GetRecordedData`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this is being modified.  
-- (bgPatchClampADCID) `TargetADC` ID of the ADC being configured.
+- (int) `SimulationID` ID of the simulation where this is being modified.   
+- (bgPatchClampADCID) `TargetADC` ID of the ADC being configured.  
 
 **Response**:  
-- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
-- (string) `RecordedData_mV` JSON formatted list of voltages recorded by the ADC.
-- (float) `Timestep_ms` Gets the sample timestep rate for the ADC in milliseconds. 
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
+- (string) `RecordedData_mV` JSON formatted list of voltages recorded by the ADC.  
+- (float) `Timestep_ms` Gets the sample timestep rate for the ADC in milliseconds.   

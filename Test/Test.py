@@ -1,6 +1,7 @@
 import requests
 import json
 
+
 NumSims = 10
 NumShapes = 50
 
@@ -43,4 +44,10 @@ for _ in range(NumIters):
         r = requests.get(f"http://localhost:8000/NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID=0&ShapeID={x}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
         print(r.content)
 
+    # Test create Staple
+    PyList = [1,2,3]
+    MYLIST = json.dumps(PyList)
+    for x in range(NumShapes):
+        r = requests.get(f"http://localhost:8000/NES/Connection/Staple/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&DestinationCompartmentID={x}")
+        print(r.content)
 

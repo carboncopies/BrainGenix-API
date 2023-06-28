@@ -274,14 +274,14 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being created.  
-- (float) `ShapeID` ID of the shape which sets the size of this shape.
+- (bgShapeID) `ShapeID` ID of the shape which sets the size of this shape.
 - (float) `MembranePotential_mV` Membrane potential of the compartment in millivolts.
 - (float) `SpikeThreshold_mV` Action potential spike threshold of the compartment in millivolts.
 - (float) `DecayTime_ms` (tau_ahp) After hyperpolarization time constant in milliseconds.
 - (string) `Name` Name of the BallStick compartment, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `CompartmentID` ID of the resulting compartment created here (-1 on fail).  
+- (bgCompartmentID) `CompartmentID` ID of the resulting compartment created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
@@ -299,7 +299,7 @@ Each route will be described in this format:
 - (string) `Name` Name of the Staple, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  
+- (bgConnectionID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
@@ -318,7 +318,7 @@ Each route will be described in this format:
 - (string) `Name` Name of the Receptor, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  
+- (bgConnectionID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
@@ -337,7 +337,7 @@ Each route will be described in this format:
 - (string) `Name` Name of the DAC, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `PatchClampDACID` ID of the resulting DAC created here (-1 on fail).  
+- (bgPatchClampDACID) `PatchClampDACID` ID of the resulting DAC created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
@@ -346,7 +346,7 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being modified.  
-- (int) `PatchClampDACID` ID of the target dac to be modified.
+- (bgPatchClampDACID) `PatchClampDACID` ID of the target dac to be modified.
 - (float list) `DACVoltages_mV` JSON formatted list of voltages to be played back by the DAC.
 - (float) `Timestep_ms` Simulation time for which each step in the DACVoltages is replayed. 
 

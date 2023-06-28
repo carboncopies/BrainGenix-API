@@ -58,17 +58,33 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     }
 
     
+    // Get Params, Build Upstream Query
+    nlohmann::json UpstreamQuery;
+    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", -1);
+    UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
+    
+    UpstreamQuery["ShapeID"] = Request->get_query_parameter("ShapeID", -1);
+    UpstreamQuery["MembranePotential_mV"] = Request->get_query_parameter("MembranePotential_mV", 0.0f);
+    UpstreamQuery["SpikeThreshold_mV"] = Request->get_query_parameter("SpikeThreshold_mV", 0.0f);
+    UpstreamQuery["DecayTime_ms"] = Request->get_query_parameter("DecayTime_ms", 0.0f);
 
-    // Get Params
-    // float Radius_nm = Request->get_query_parameter("Radius_nm", -1);
-    // std::string Center_nm = Request->get_query_parameter("Center_nm", "");
-    // std::string Name = Request->get_query_parameter("Name", "undefined");
+
+    std::string UpstreamResponseStr = "";
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Compartment/BS/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      Util::SendCode(_Session.get(), 3);
+      return;
+    }
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+
 
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
-    Response["CompartmentID"] = -1;
+    Response["StatusCode"] = 0;
+    Response["CompartmentID"] = UpstreamResponse["CompartmentID"].template get<int>();
+
+    std::cout<<"Creating BallStick Compartment with ID "<<Response["CompartmentID"]<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

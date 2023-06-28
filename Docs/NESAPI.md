@@ -258,3 +258,16 @@ Each route will be described in this format:
 
 **Response**:  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+
+### ADC - Get Recorded Data
+**Route**: `Tool/PatchClampADC/GetRecordedData`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this is being modified.  
+- (bgPatchClampADCID) `TargetADC` ID of the ADC being configured.
+
+**Response**:  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (string) `RecordedData_mV` JSON formatted list of voltages recorded by the ADC.
+- (float) `Timestep_ms` Gets the sample timestep rate for the ADC in milliseconds. 

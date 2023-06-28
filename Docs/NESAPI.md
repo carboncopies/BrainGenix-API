@@ -106,7 +106,7 @@ Each route will be described in this format:
 **Route**: `Geometry/Shape/Cylinder/Create`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this sphere is being created.  
+- (int) `SimulationID` ID of the simulation where this cylinder is being created.  
 - (float) `Point1Radius_nm` The radius of the first point in nanometers.  
 - (float) `Point1PosX_nm` Position of the first point center's X coord of the sphere in nanometers.  
 - (float) `Point1PosY_nm` Position of the first point center's Y coord of the sphere in nanometers.  
@@ -115,6 +115,27 @@ Each route will be described in this format:
 - (float) `Point2PosX_nm` Position of the second point center's X coord of the sphere in nanometers.  
 - (float) `Point2PosY_nm` Position of the second point center's Y coord of the sphere in nanometers.  
 - (float) `Point2PosZ_nm` Position of the second point center's Z coord of the sphere in nanometers.  
+- (string) `Name` Name of the sphere, defaults to 'undefined'.
+
+**Response**:  
+- (bgShapeID) `ShapeID` ID of the resulting shape created here (-1 on fail).  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+
+### Box - Create
+**Route**: `Geometry/Shape/Box/Create`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this box is being created.  
+- (float) `CenterPosX_nm` Position of the center x coord.
+- (float) `CenterPosY_nm` Position of the center y coord.
+- (float) `CenterPosZ_nm` Position of the center z coord.
+- (float) `ScaleX_nm` Scale of the x axis of the box.
+- (float) `ScaleY_nm` Scale of the y axis of the box.
+- (float) `ScaleZ_nm` Scale of the z axis of the box.
+- (float) `RotationX_rad` Euler angle of the X axis in radians.
+- (float) `RotationY_rad` Euler angle of the Y axis in radians.
+- (float) `RotationZ_rad` Euler angle of the Z axis in radians.
 - (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  

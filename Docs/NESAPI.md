@@ -112,4 +112,5 @@ Each route will be described in this format:
 - (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).  
+- (bgShapeID) `ShapeID` ID of the resulting shape created here (-1 on fail).  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.

@@ -51,19 +51,39 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     
 
-    // Get Params
-    // std::string Name = Request->get_query_parameter("SimulationID", "");
+
+    // Get Params, Build Upstream Query
+    nlohmann::json UpstreamQuery;
+    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", -1);
+
+
+    std::string UpstreamResponseStr = "";
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Simulation/GetStatus", UpstreamQuery.dump(), &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      Util::SendCode(_Session.get(), 3);
+      return;
+    }
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+
 
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
-    Response["IsSimulating"] = false;
-    Response["RealWorldTimeRemaining_ms"] = 0.0;
-    Response["RealWorldTimeElapsed_ms"] = 0.0;
-    Response["InSimulationTime_ms"] = 0.0;
-    Response["InSimulationTimeRemaining_ms"] = 0.0;
-    Response["PercentComplete"] = 0.0;
+    Response["StatusCode"] = 0;
+    Response["IsSimulating"] = UpstreamResponse["IsSimulating"];
+    Response["RealWorldTimeRemaining_ms"] = UpstreamResponse["RealWorldTimeRemaining_ms"];
+    Response["RealWorldTimeElapsed_ms"] = UpstreamResponse["RealWorldTimeElapsed_ms"];
+    Response["InSimulationTime_ms"] = UpstreamResponse["InSimulationTime_ms"];
+    Response["InSimulationTimeRemaining_ms"] = UpstreamResponse["InSimulationTimeRemaining_ms"];
+    Response["PercentComplete"] = UpstreamResponse["PercentComplete"];
+
+    std::cout<<"Getting Status For Simulation With ID "<<Request->get_query_parameter("SimulationID", -1)<<std::endl;
+
+    Util::SendJSON(_Session.get(), &Response);
+
+    // Build Response And Send
+    nlohmann::json Response;
+
 
     Util::SendJSON(_Session.get(), &Response);
 }

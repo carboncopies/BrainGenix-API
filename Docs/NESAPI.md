@@ -129,6 +129,20 @@ Each route will be described in this format:
  - None.
 
 
+### Simulation - GetRecording
+**Route**: `Simulation/GetRecording`  
+**Request**:  
+*Required Params*: 
+- (int) `SimulationID` ID of the simulation being run. 
+
+**Response**:  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (string) `Recording` JSON blob containing recorded data of all objects.
+
+**Notes**  
+ - None.
+
+
 
 ## Shapes
 

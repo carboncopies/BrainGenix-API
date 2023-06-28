@@ -56,16 +56,32 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     
 
-    // Get Params
-    // float Radius_nm = Request->get_query_parameter("Radius_nm", -1);
-    // std::string Center_nm = Request->get_query_parameter("Center_nm", "");
-    // std::string Name = Request->get_query_parameter("Name", "undefined");
+    // Get Params, Build Upstream Query
+    nlohmann::json UpstreamQuery;
+    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", -1);
+    UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
+    
+    UpstreamQuery["DestinationCompartmentID"] = Request->get_query_parameter("DestinationCompartmentID", -1);
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("ClampLocation_nm", "[0, 0, 0]"), "ClampPos");
+
+
+
+    std::string UpstreamResponseStr = "";
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Tool/PatchClampDAC/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      Util::SendCode(_Session.get(), 3);
+      return;
+    }
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+
 
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
-    Response["PatchClampDACID"] = -1;
+    Response["StatusCode"] = 0;
+    Response["PatchClampDACID"] = UpstreamResponse["PatchClampDACID"].template get<int>();
+
+    std::cout<<"Creating PatchClampDAC with ID "<<Response["PatchClampDACID"]<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

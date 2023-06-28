@@ -25,6 +25,32 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - `3` Not Configured
 
 
+# Implementation Status
+ - [ ] Diagnostic Hello
+ - [ ] Diagnostic Version
+ - [ ] Diagnostic Status
+
+ - [ ] Authentication GetToken
+
+ - [ ] NES Simulation Create
+ - [ ] NES Simulation Reset
+ - [ ] NES Simulation RunFor
+ - [ ] NES Simulation RecordAll
+ - [ ] NES Simulation GetRecording
+ - [ ] NES Simulation GetStatus
+ - [ ] NES Shapes SphereCreate
+ - [ ] NES Shapes CylinderCreate
+ - [ ] NES Shapes BoxCreate
+ - [ ] NES Compartments BSCreate
+ - [ ] NES Connections StapleCreate
+ - [ ] NES Connections ReceptorCreate
+ - [ ] NES Tools DACCreate
+ - [ ] NES Tools DACSetOutputList
+ - [ ] NES Tools ADCCreate
+ - [ ] NES Tools ADCSetSampleRate
+ - [ ] NES Tools ADCGetRecordedData
+
+
 # Routes  
 
 ## Diagnostic  

@@ -81,11 +81,6 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     Util::SendJSON(_Session.get(), &Response);
 
-    // Build Response And Send
-    nlohmann::json Response;
-
-
-    Util::SendJSON(_Session.get(), &Response);
 }
 
 }; // Close Namespace

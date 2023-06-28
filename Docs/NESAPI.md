@@ -51,7 +51,7 @@ Each route will be described in this format:
  - [x] Shapes CylinderCreate
  - [x] Shapes BoxCreate
  - [x] Compartments BSCreate
- - [ ] Connections StapleCreate
+ - [x] Connections StapleCreate
  - [ ] Connections ReceptorCreate
  - [ ] Tools DACCreate
  - [ ] Tools DACSetOutputList

@@ -63,7 +63,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
     
     UpstreamQuery["SourceCompartmentID"] = Request->get_query_parameter("SourceCompartmentID", -1);
-    UpstreamQuery["DestinationCompartmentID"] = Request->get_query_parameter("DestinationCompartmentID", 0.0f);
+    UpstreamQuery["DestinationCompartmentID"] = Request->get_query_parameter("DestinationCompartmentID", -1);
 
 
     std::string UpstreamResponseStr = "";

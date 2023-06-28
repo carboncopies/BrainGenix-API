@@ -52,13 +52,27 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     
 
-    // Get Params
-    // std::string Name = Request->get_query_parameter("SimulationID", "");
+    // Get Params, Build Upstream Query
+    nlohmann::json UpstreamQuery;
+    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", -1);
+    UpstreamQuery["MaxRecordTime_ms"] = Request->get_query_parameter("MaxRecordTime_ms", 0.0f);
+    
+
+    std::string UpstreamResponseStr = "";
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Simulation/RecordAll", UpstreamQuery.dump(), &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      Util::SendCode(_Session.get(), 3);
+      return;
+    }
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+
 
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
+    Response["StatusCode"] = 0;
+
+    std::cout<<"Setting RecordAll Data For Simulation With ID "<<Request->get_query_parameter("SimulationID", -1)<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

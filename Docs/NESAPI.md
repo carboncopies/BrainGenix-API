@@ -217,3 +217,15 @@ Each route will be described in this format:
 **Response**:  
 - (bgShapeID) `PatchClampDACID` ID of the resulting DAC created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+### DAC - Set Output List
+**Route**: `Tool/PatchClampDAC/SetOutputList`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this is being modified.  
+- (int) `PatchClampDACID` ID of the target dac to be modified.
+- (float list) `DACVoltages_mV` JSON formatted list of voltages to be played back by the DAC.
+- (float) `Timestep_ms` Simulation time for which each step in the DACVoltages is replayed. 
+
+**Response**:  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.

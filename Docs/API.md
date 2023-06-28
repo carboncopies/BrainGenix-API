@@ -175,15 +175,13 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **URI**: `/NES/Compartment/BS/Create?`  
 **Request**:  
 *Required Params*:  
-
-- (bgShapeID) `ShapeID=` ID of an NES Shape.
-- (float) `MembranePotential_mV=` Membrane potential of the compartment in millivolts.
-- (float) `SpikeThreshold_mV=` Action potential spike threshold of the compartment in millivolts.
-- (float) `DecayTime_ms=` (tau_ahp) After hyperpolarization time constant in milliseconds.
+- (bgShapeID) `ShapeID=` ID of an NES Shape.   
+- (float) `MembranePotential_mV=` Membrane potential of the compartment in millivolts.  
+- (float) `SpikeThreshold_mV=` Action potential spike threshold of the compartment in millivolts.  
+- (float) `DecayTime_ms=` (tau_ahp) After hyperpolarization time constant in milliseconds.  
 
 *Optional Params*:  
-
-- (string) `Name=` Optional name of the compartment.
+- (string) `Name=` Optional name of the compartment.  
 
 **Response**:   
 

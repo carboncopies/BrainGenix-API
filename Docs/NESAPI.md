@@ -273,16 +273,16 @@ Each route will be described in this format:
 **Route**: `Compartment/BS/Create`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this is being created.  
-- (bgShapeID) `ShapeID` ID of the shape which sets the size of this shape.
-- (float) `MembranePotential_mV` Membrane potential of the compartment in millivolts.
-- (float) `SpikeThreshold_mV` Action potential spike threshold of the compartment in millivolts.
-- (float) `DecayTime_ms` (tau_ahp) After hyperpolarization time constant in milliseconds.
-- (string) `Name` Name of the BallStick compartment, defaults to 'undefined'.
+- (int) `SimulationID` ID of the simulation where this is being created.   
+- (bgShapeID) `ShapeID` ID of the shape which sets the size of this shape.  
+- (float) `MembranePotential_mV` Membrane potential of the compartment in millivolts.  
+- (float) `SpikeThreshold_mV` Action potential spike threshold of the compartment in millivolts.  
+- (float) `DecayTime_ms` (tau_ahp) After hyperpolarization time constant in milliseconds.  
+- (string) `Name` Name of the BallStick compartment, defaults to 'undefined'.  
 
-**Response**:  
-- (bgCompartmentID) `CompartmentID` ID of the resulting compartment created here (-1 on fail).  
-- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+**Response**:   
+- (bgCompartmentID) `CompartmentID` ID of the resulting compartment created here (-1 on fail).   
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 
 
 
@@ -294,13 +294,13 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being created.  
-- (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.
-- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
-- (string) `Name` Name of the Staple, defaults to 'undefined'.
+- (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.  
+- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.  
+- (string) `Name` Name of the Staple, defaults to 'undefined'.  
 
 **Response**:  
-- (bgConnectionID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  
-- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (bgConnectionID) `ConnectionID` ID of the resulting connection created here (-1 on fail).   
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 
 
 ### Receptor - Create
@@ -308,14 +308,14 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being created.  
-- (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.
-- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
-- (float) `Conductance_nS` Conductance from source to destination in nanoSiemens.
-- (float) `TimeConstant_ms` Postsynaptic potential time constant in milliseconds.
-- (float) `ReceptorPosX_nm` X world space coordinate in nanometers.
-- (float) `ReceptorPosY_nm` Y world space coordinate in nanometers.
-- (float) `ReceptorPosZ_nm` Z world space coordinate in nanometers.
-- (string) `Name` Name of the Receptor, defaults to 'undefined'.
+- (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.  
+- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.  
+- (float) `Conductance_nS` Conductance from source to destination in nanoSiemens.  
+- (float) `TimeConstant_ms` Postsynaptic potential time constant in milliseconds.   
+- (float) `ReceptorPosX_nm` X world space coordinate in nanometers.  
+- (float) `ReceptorPosY_nm` Y world space coordinate in nanometers.   
+- (float) `ReceptorPosZ_nm` Z world space coordinate in nanometers.  
+- (string) `Name` Name of the Receptor, defaults to 'undefined'.  
 
 **Response**:  
 - (bgConnectionID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  

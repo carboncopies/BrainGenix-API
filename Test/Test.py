@@ -36,5 +36,11 @@ for _ in range(NumIters):
         r = requests.get(f"http://localhost:8000/NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_nm={MYLIST}&Dimensions_nm={MYLIST}&Rotation_rad={MYLIST}")
         print(r.content)
 
+    # Test create BS Compartment
+    PyList = [1,2,3]
+    MYLIST = json.dumps(PyList)
+    for x in range(NumShapes):
+        r = requests.get(f"http://localhost:8000/NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID=0&ShapeID={x}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
+        print(r.content)
 
 

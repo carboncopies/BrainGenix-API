@@ -73,6 +73,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     nlohmann::json Response;
     Response["StatusCode"] = 0;
     Response["SimulationID"] = UpstreamResponse["SimulationID"].template get<int>();
+    
+    std::cout<<"Creating Simulation with ID "<<Response["SimulationID"]<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

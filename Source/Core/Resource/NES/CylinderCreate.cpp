@@ -59,16 +59,40 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     
 
-    // Get Params
-    // float Radius_nm = Request->get_query_parameter("Radius_nm", -1);
-    // std::string Center_nm = Request->get_query_parameter("Center_nm", "");
-    // std::string Name = Request->get_query_parameter("Name", "undefined");
+    // Get Params, Build Upstream Query
+    nlohmann::json UpstreamQuery;
+    
+    nlohmann::json Point1Position_nm = nlohmann::json::parse(Request->get_query_parameter("Point1Position_nm", "[0, 0, 0]"));
+    nlohmann::json Point2Position_nm = nlohmann::json::parse(Request->get_query_parameter("Point2Position_nm", "[0, 0, 0]"));
+
+    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
+    UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
+    UpstreamQuery["Point1Radius_nm"] = Request->get_query_parameter("Point1Radius_nm", -1);
+    UpstreamQuery["Point2Radius_nm"] = Request->get_query_parameter("Point2Radius_nm", -1);
+    UpstreamQuery["Point1PosX_nm"] = Point1Position_nm[0].template get<float>();
+    UpstreamQuery["Point1PosX_nm"] = Point1Position_nm[1].template get<float>();
+    UpstreamQuery["Point1PosX_nm"] = Point1Position_nm[2].template get<float>();
+    UpstreamQuery["Point2PosX_nm"] = Point2Position_nm[0].template get<float>();
+    UpstreamQuery["Point2PosX_nm"] = Point2Position_nm[1].template get<float>();
+    UpstreamQuery["Point2PosX_nm"] = Point2Position_nm[2].template get<float>();
+
+
+    std::string UpstreamResponseStr = "";
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Cylinder/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      Util::SendCode(_Session.get(), 3);
+      return;
+    }
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+
 
 
     // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 3;
-    Response["ShapeID"] = -1;
+    Response["ShapeID"] = UpstreamResponse["ShapeID"].template get<int>();
+
+    std::cout<<"Creating Cylinder with ID "<<Response["ShapeID"]<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

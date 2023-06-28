@@ -95,3 +95,21 @@ Each route will be described in this format:
 **Response**:  
 - (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).  
 
+
+### Cylinder - Create
+**Route**: `Geometry/Shape/Cylinder/Create`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this sphere is being created.  
+- (float) `Point1Radius_nm` The radius of the first point in nanometers.  
+- (float) `Point1CenterPosX_nm` Position of the first point center's X coord of the sphere in nanometers.  
+- (float) `Point1CenterPosY_nm` Position of the first point center's Y coord of the sphere in nanometers.  
+- (float) `Point1CenterPosZ_nm` Position of the first point center's Z coord of the sphere in nanometers.  
+- (float) `Point2Radius_nm` The radius of the second point in nanometers.  
+- (float) `Point2CenterPosX_nm` Position of the second point center's X coord of the sphere in nanometers.  
+- (float) `Point2CenterPosY_nm` Position of the second point center's Y coord of the sphere in nanometers.  
+- (float) `Point2CenterPosZ_nm` Position of the second point center's Z coord of the sphere in nanometers.  
+- (string) `Name` Name of the sphere, defaults to 'undefined'.
+
+**Response**:  
+- (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).  

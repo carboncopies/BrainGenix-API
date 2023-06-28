@@ -42,14 +42,14 @@ Each route will be described in this format:
 
 # Implementation Status
 
- - [ ] Simulation Create
+ - [x] Simulation Create
  - [ ] Simulation Reset
  - [ ] Simulation RunFor
  - [ ] Simulation RecordAll
  - [ ] Simulation GetRecording
  - [ ] Simulation GetStatus
- - [ ] Shapes SphereCreate
- - [ ] Shapes CylinderCreate
+ - [x] Shapes SphereCreate
+ - [x] Shapes CylinderCreate
  - [ ] Shapes BoxCreate
  - [ ] Compartments BSCreate
  - [ ] Connections StapleCreate

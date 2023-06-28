@@ -67,10 +67,14 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     
     UpstreamQuery["SourceCompartmentID"] = Request->get_query_parameter("SourceCompartmentID", -1);
     UpstreamQuery["DestinationCompartmentID"] = Request->get_query_parameter("DestinationCompartmentID", -1);
+    UpstreamQuery["Conductance_nS"] = Request->get_query_parameter("Conductance_nS", 0.0f);
+    UpstreamQuery["TimeConstant_ms"] = Request->get_query_parameter("TimeConstant_ms", 0.0f);
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("ReceptorLocation_nm", "[0, 0, 0]"), "ReceptorPos");
+
 
 
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Connection/Staple/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Connection/Receptor/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
     if (!UpstreamStatus) {
       Util::SendCode(_Session.get(), 3);
       return;

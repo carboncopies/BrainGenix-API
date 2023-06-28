@@ -101,6 +101,20 @@ Each route will be described in this format:
  - None.
 
 
+### Simulation - Run For
+**Route**: `Simulation/RunFor`  
+**Request**:  
+*Required Params*: 
+- (int) `SimulationID` ID of the simulation being run. 
+- (float) `Runtime_ms` Number of milliseconds to simulate.
+
+**Response**:  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+**Notes**  
+ - None.
+
+
 
 ## Shapes
 

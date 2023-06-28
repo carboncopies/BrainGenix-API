@@ -82,9 +82,27 @@ Each route will be described in this format:
 
 **Response**:  
  - (int) `SimulationID` ID is greater than 0 on success, otherwise -1 on fail.
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 **Notes**  
  - None.
+
+
+### Simulation - Reset
+**Route**: `Simulation/Reset`  
+**Request**:  
+*Required Params*: 
+- (int) `SimulationID` ID of the simulation being reset. 
+
+**Response**:  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+**Notes**  
+ - None.
+
+
+
+## Shapes
 
 
 ### Sphere - Create
@@ -100,6 +118,7 @@ Each route will be described in this format:
 
 **Response**:  
 - (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
 ### Cylinder - Create

@@ -208,7 +208,7 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being created.  
-- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
+- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment receiving DAC output.
 - (float) `ClampPosX_nm` X world space coordinate in nanometers.
 - (float) `ClampPosY_nm` Y world space coordinate in nanometers.
 - (float) `ClampPosZ_nm` Z world space coordinate in nanometers.
@@ -217,6 +217,7 @@ Each route will be described in this format:
 **Response**:  
 - (bgShapeID) `PatchClampDACID` ID of the resulting DAC created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
 
 ### DAC - Set Output List
 **Route**: `Tool/PatchClampDAC/SetOutputList`  
@@ -228,4 +229,20 @@ Each route will be described in this format:
 - (float) `Timestep_ms` Simulation time for which each step in the DACVoltages is replayed. 
 
 **Response**:  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+
+### ADC - Create
+**Route**: `Tool/PatchClampADC/Create`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this is being created.  
+- (bgCompartmentID) `SourceCompartmentID` ID of the compartment being read by the ADC output.
+- (float) `ClampPosX_nm` X world space coordinate in nanometers.
+- (float) `ClampPosY_nm` Y world space coordinate in nanometers.
+- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.
+- (string) `Name` Name of the DAC, defaults to 'undefined'.
+
+**Response**:  
+- (bgShapeID) `PatchClampADCID` ID of the resulting ADC created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.

@@ -141,3 +141,51 @@ Each route will be described in this format:
 **Response**:  
 - (bgShapeID) `ShapeID` ID of the resulting shape created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+
+
+## Compartments
+
+### BS - Create
+**Route**: `Compartment/BS/Create`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this box is being created.  
+- (float) `ShapeID` ID of the shape which sets the size of this shape.
+- (float) `MembranePotential_mV` Membrane potential of the compartment in millivolts.
+- (float) `SpikeThreshold_mV` Action potential spike threshold of the compartment in millivolts.
+- (float) `DecayTime_ms` (tau_ahp) After hyperpolarization time constant in milliseconds.
+- (string) `Name` Name of the sphere, defaults to 'undefined'.
+
+**Response**:  
+- (bgShapeID) `CompartmentID` ID of the resulting shape created here (-1 on fail).  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+
+## Connections
+
+### Staple - Create
+**Route**: `Connection/Staple/Create`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this box is being created.  
+- (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.
+- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
+- (string) `Name` Name of the sphere, defaults to 'undefined'.
+
+**Response**:  
+- (bgShapeID) `ConnectionID` ID of the resulting shape created here (-1 on fail).  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+### Staple - Create
+**Route**: `Connection/Staple/Create`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this box is being created.  
+- (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.
+- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
+- (string) `Name` Name of the sphere, defaults to 'undefined'.
+
+**Response**:  
+- (bgShapeID) `ConnectionID` ID of the resulting shape created here (-1 on fail).  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.

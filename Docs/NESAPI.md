@@ -32,6 +32,12 @@ Each route will be described in this format:
  - some notes about the route here, these *may* be included.  
 
 
+# Enums
+
+## StatusCode  
+ - `0` Success
+ - `1` Invalid Simulation ID
+
 
 
 # Routes

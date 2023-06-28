@@ -5,7 +5,7 @@ import json
 NumSims = 10
 NumShapes = 50
 
-NumIters = 1000
+NumIters = 1
 
 
 

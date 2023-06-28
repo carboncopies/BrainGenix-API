@@ -58,9 +58,9 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Get Params, Build Upstream Query
     nlohmann::json UpstreamQuery;
-    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
+    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", -1);
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
-    UpstreamQuery["SourceCompartmentID"] = Request->get_query_parameter("SourceCompartmentID", 0);
+    UpstreamQuery["SourceCompartmentID"] = Request->get_query_parameter("SourceCompartmentID", -1);
 
     Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("ClampLocation_nm", "[0, 0, 0]"), "ClampPos");
 

@@ -53,17 +53,30 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     
 
-    // Get Params
-    // float Radius_nm = Request->get_query_parameter("Radius_nm", -1);
-    // std::string Center_nm = Request->get_query_parameter("Center_nm", "");
-    // std::string Name = Request->get_query_parameter("Name", "undefined");
+
+    // Get Params, Build Upstream Query
+    nlohmann::json UpstreamQuery;
+    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", -1);
+    UpstreamQuery["TargetADC"] = Request->get_query_parameter("TargetADC", -1);
+
+
+    std::string UpstreamResponseStr = "";
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Tool/PatchClampADC/GetRecordedData", UpstreamQuery.dump(), &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      Util::SendCode(_Session.get(), 3);
+      return;
+    }
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+
 
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
-    Response["RecordedData_mV"] = "{}";
-    Response["Timestep_ms"] = -1;
+    Response["StatusCode"] = 0;
+    Response["RecordedData_mV"] = UpstreamResponse["RecordedData_mV"].template get<std::string>();
+    Response["Timestep_ms"] = UpstreamResponse["Timestep_ms"].template get<float>();
+
+    std::cout<<"Getting Recorded PatchClampADC Data On ID "<<Request->get_query_parameter("TargetADC", -1)<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

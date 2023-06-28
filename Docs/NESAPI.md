@@ -42,22 +42,22 @@ Each route will be described in this format:
 # Implementation Status (API Side)
 
  - [x] Simulation Create
- - [ ] Simulation Reset
- - [ ] Simulation RunFor
- - [ ] Simulation RecordAll
- - [ ] Simulation GetRecording
- - [ ] Simulation GetStatus
+ - [x] Simulation Reset
+ - [x] Simulation RunFor
+ - [x] Simulation RecordAll
+ - [x] Simulation GetRecording
+ - [x] Simulation GetStatus
  - [x] Shapes SphereCreate
  - [x] Shapes CylinderCreate
  - [x] Shapes BoxCreate
  - [x] Compartments BSCreate
  - [x] Connections StapleCreate
- - [ ] Connections ReceptorCreate
- - [ ] Tools DACCreate
- - [ ] Tools DACSetOutputList
- - [ ] Tools ADCCreate
- - [ ] Tools ADCSetSampleRate
- - [ ] Tools ADCGetRecordedData
+ - [x] Connections ReceptorCreate
+ - [x] Tools DACCreate
+ - [x] Tools DACSetOutputList
+ - [x] Tools ADCCreate
+ - [x] Tools ADCSetSampleRate
+ - [x] Tools ADCGetRecordedData
 
 
 # Implementation Status (NES Side)

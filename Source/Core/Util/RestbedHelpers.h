@@ -51,7 +51,6 @@ void SendCode(restbed::Session* _Session, int _Code);
 void SendJSON(restbed::Session* _Session, nlohmann::json* _Response);
 
 
-
 /**
  * @brief Simple auth check, need to fix this later to use the database or something...
  * 
@@ -60,6 +59,18 @@ void SendJSON(restbed::Session* _Session, nlohmann::json* _Response);
  * @return false 
  */
 bool IsAuthorized(const restbed::Request* _Request);
+
+/**
+ * @brief Helper to populate a 3 dimensional vector
+ * 
+ * @param _Vector 
+ * @param _NamePrefix 
+ * @param _Input 
+ * @return true 
+ * @return false 
+ */
+void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, std::string _Units="nm");
+void SetVec3(float* _Vector, std::string _Input);
 
 
 }; // Close Namespace Util

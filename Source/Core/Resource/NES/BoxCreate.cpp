@@ -58,16 +58,33 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     
 
-    // Get Params
-    // float Radius_nm = Request->get_query_parameter("Radius_nm", -1);
-    // std::string Center_nm = Request->get_query_parameter("Center_nm", "");
-    // std::string Name = Request->get_query_parameter("Name", "undefined");
+    // Get Params, Build Upstream Query
+    nlohmann::json UpstreamQuery;
+    
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CenterPosition_nm", "[0, 0, 0]"), "CenterPos");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Dimensions_nm", "[0, 0, 0]"), "Scale");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Rotation_nm", "[0, 0, 0]"), "Rotation", "rad");
+
+    UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
+    UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
+
+
+    std::string UpstreamResponseStr = "";
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Box/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      Util::SendCode(_Session.get(), 3);
+      return;
+    }
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+
 
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
-    Response["ShapeID"] = -1;
+    Response["StatusCode"] = 0;
+    Response["ShapeID"] = UpstreamResponse["ShapeID"].template get<int>();
+
+    std::cout<<"Creating Box with ID "<<Response["ShapeID"]<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

@@ -89,7 +89,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 3;
+    Response["StatusCode"] = 0;
     Response["ShapeID"] = UpstreamResponse["ShapeID"].template get<int>();
 
     std::cout<<"Creating Cylinder with ID "<<Response["ShapeID"]<<std::endl;

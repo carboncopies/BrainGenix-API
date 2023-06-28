@@ -56,6 +56,6 @@ for _ in range(NumIters):
     PyList = [1,2,3]
     MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"http://localhost:8000/NES/Connection/Receptor/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&DestinationCompartmentID={x}&Conductance_nS=0.0&TimeConstant_ms=0.0&ReceptorLocation_nm={MYLIST}")
+        r = requests.get(f"http://localhost:8000/NES/Connection/Receptor/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&DestinationCompartmentID={x}&Conductance_nS=0.0&TimeConstant_ns=0.0&ReceptorLocation_nm={MYLIST}")
         print(r.content)
 

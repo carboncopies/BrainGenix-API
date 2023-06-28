@@ -51,3 +51,11 @@ for _ in range(NumIters):
         r = requests.get(f"http://localhost:8000/NES/Connection/Staple/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&DestinationCompartmentID={x}")
         print(r.content)
 
+
+    # Test create Receptor
+    PyList = [1,2,3]
+    MYLIST = json.dumps(PyList)
+    for x in range(NumShapes):
+        r = requests.get(f"http://localhost:8000/NES/Connection/Receptor/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&DestinationCompartmentID={x}&Conductance_nS=0.0&TimeConstant_ms=0.0&ReceptorLocation_nm={MYLIST}")
+        print(r.content)
+

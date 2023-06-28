@@ -85,12 +85,13 @@ Each route will be described in this format:
 **Route**: `Geometry/Shape/Sphere/Create`  
 **Request**:  
 *Required Params*:  
-- (float) `Radius_nm=` The radius of the sphere in nanometers.
-- (float) `CenterPosX_nm=` Position of the center's X coord of the sphere in nanometers.
-- (float) `CenterPosY_nm=` Position of the center's Y coord of the sphere in nanometers.
-- (float) `CenterPosZ_nm=` Position of the center's Z coord of the sphere in nanometers.
-- (string) `Name=` Optional name of the sphere.
+- (int) `SimulationID` ID of the simulation where this sphere is being created.  
+- (float) `Radius_nm` The radius of the sphere in nanometers.  
+- (float) `CenterPosX_nm` Position of the center's X coord of the sphere in nanometers.  
+- (float) `CenterPosY_nm` Position of the center's Y coord of the sphere in nanometers.  
+- (float) `CenterPosZ_nm` Position of the center's Z coord of the sphere in nanometers.  
+- (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).
+- (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).  
 

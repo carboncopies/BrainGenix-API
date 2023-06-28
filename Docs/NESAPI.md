@@ -40,8 +40,31 @@ Each route will be described in this format:
 
 
 
-# Routes
+# Implementation Status
 
+ - [ ] Simulation Create
+ - [ ] Simulation Reset
+ - [ ] Simulation RunFor
+ - [ ] Simulation RecordAll
+ - [ ] Simulation GetRecording
+ - [ ] Simulation GetStatus
+ - [ ] Shapes SphereCreate
+ - [ ] Shapes CylinderCreate
+ - [ ] Shapes BoxCreate
+ - [ ] Compartments BSCreate
+ - [ ] Connections StapleCreate
+ - [ ] Connections ReceptorCreate
+ - [ ] Tools DACCreate
+ - [ ] Tools DACSetOutputList
+ - [ ] Tools ADCCreate
+ - [ ] Tools ADCSetSampleRate
+ - [ ] Tools ADCGetRecordedData
+ 
+
+
+
+
+# Routes
 
 
 ## Diagnostic

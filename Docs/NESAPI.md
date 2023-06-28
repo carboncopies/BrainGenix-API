@@ -142,6 +142,23 @@ Each route will be described in this format:
 **Notes**  
  - None.
 
+### Simulation - GetStatus
+**Route**: `Simulation/GetStatus`  
+**Request**:  
+*Required Params*: 
+- (int) `SimulationID` ID of the simulation being run. 
+
+**Response**:  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (bool) `IsSimulating` Is simulating true/false.
+- (float) `RealWorldTimeRemaining_ms` Float containing number of milliseconds estimated to be remaining in real-world time until current run call completes.
+- (float) `RealWorldTimeElapsed_ms` Float containing number of milliseconds elapsed since simulation started in real-world time measured since start of last run call.
+- (float) `InSimulationTime_ms` Float containing number of in-simulation milliseconds elapsed since last reset call.
+- (float) `InSimulationTimeRemaining_ms` Float containing number of milliseconds remaining in-simulation until run call is complete.
+- (float) `PercentComplete` Estimated percentage complete based on in-simulation time.
+
+**Notes**  
+ - None.
 
 
 ## Shapes

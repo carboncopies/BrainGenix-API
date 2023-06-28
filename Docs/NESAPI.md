@@ -136,7 +136,7 @@ Each route will be described in this format:
 - (float) `RotationX_rad` Euler angle of the X axis in radians.
 - (float) `RotationY_rad` Euler angle of the Y axis in radians.
 - (float) `RotationZ_rad` Euler angle of the Z axis in radians.
-- (string) `Name` Name of the sphere, defaults to 'undefined'.
+- (string) `Name` Name of the Box, defaults to 'undefined'.
 
 **Response**:  
 - (bgShapeID) `ShapeID` ID of the resulting shape created here (-1 on fail).  
@@ -146,42 +146,46 @@ Each route will be described in this format:
 
 ## Compartments
 
+
 ### BS - Create
 **Route**: `Compartment/BS/Create`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this box is being created.  
+- (int) `SimulationID` ID of the simulation where this is being created.  
 - (float) `ShapeID` ID of the shape which sets the size of this shape.
 - (float) `MembranePotential_mV` Membrane potential of the compartment in millivolts.
 - (float) `SpikeThreshold_mV` Action potential spike threshold of the compartment in millivolts.
 - (float) `DecayTime_ms` (tau_ahp) After hyperpolarization time constant in milliseconds.
-- (string) `Name` Name of the sphere, defaults to 'undefined'.
+- (string) `Name` Name of the BallStick compartment, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `CompartmentID` ID of the resulting shape created here (-1 on fail).  
+- (bgShapeID) `CompartmentID` ID of the resulting compartment created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
+
 ## Connections
+
 
 ### Staple - Create
 **Route**: `Connection/Staple/Create`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this box is being created.  
+- (int) `SimulationID` ID of the simulation where this is being created.  
 - (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.
 - (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
-- (string) `Name` Name of the sphere, defaults to 'undefined'.
+- (string) `Name` Name of the Staple, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `ConnectionID` ID of the resulting shape created here (-1 on fail).  
+- (bgShapeID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
 
 ### Receptor - Create
 **Route**: `Connection/Receptor/Create`  
 **Request**:  
 *Required Params*:  
-- (int) `SimulationID` ID of the simulation where this box is being created.  
+- (int) `SimulationID` ID of the simulation where this is being created.  
 - (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.
 - (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
 - (float) `Conductance_nS` Conductance from source to destination in nanoSiemens.
@@ -189,8 +193,27 @@ Each route will be described in this format:
 - (float) `ReceptorPosX_nm` X world space coordinate in nanometers.
 - (float) `ReceptorPosY_nm` Y world space coordinate in nanometers.
 - (float) `ReceptorPosZ_nm` Z world space coordinate in nanometers.
-- (string) `Name` Name of the sphere, defaults to 'undefined'.
+- (string) `Name` Name of the Receptor, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `ConnectionID` ID of the resulting shape created here (-1 on fail).  
+- (bgShapeID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+
+
+## Tools
+
+### DAC - Create
+**Route**: `Tool/PatchClampDAC/Create`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this is being created.  
+- (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
+- (float) `ClampPosX_nm` X world space coordinate in nanometers.
+- (float) `ClampPosY_nm` Y world space coordinate in nanometers.
+- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.
+- (string) `Name` Name of the DAC, defaults to 'undefined'.
+
+**Response**:  
+- (bgShapeID) `PatchClampDACID` ID of the resulting DAC created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.

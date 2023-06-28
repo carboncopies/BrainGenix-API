@@ -318,7 +318,7 @@ Each route will be described in this format:
 - (string) `Name` Name of the Receptor, defaults to 'undefined'.  
 
 **Response**:  
-- (bgConnectionID) `ConnectionID` ID of the resulting connection created here (-1 on fail).  
+- (bgConnectionID) `ReceptorID` ID of the resulting connection created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 

@@ -86,9 +86,9 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 0;
-    Response["ConnectionID"] = UpstreamResponse["ConnectionID"].template get<int>();
+    Response["ReceptorID"] = UpstreamResponse["ReceptorID"].template get<int>();
 
-    std::cout<<"Creating Receptor Connection with ID "<<Response["ConnectionID"]<<std::endl;
+    std::cout<<"Creating Receptor Connection with ID "<<Response["ReceptorID"]<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

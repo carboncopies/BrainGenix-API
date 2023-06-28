@@ -49,8 +49,8 @@ Each route will be described in this format:
  - [ ] Simulation GetStatus
  - [x] Shapes SphereCreate
  - [x] Shapes CylinderCreate
- - [ ] Shapes BoxCreate
- - [ ] Compartments BSCreate
+ - [x] Shapes BoxCreate
+ - [x] Compartments BSCreate
  - [ ] Connections StapleCreate
  - [ ] Connections ReceptorCreate
  - [ ] Tools DACCreate

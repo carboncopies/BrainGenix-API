@@ -208,7 +208,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgConnectionID) `ConnectionID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+- (bgConnectionID) `StapleID=` ID of the resulting staple connection created here (if status indicates success, otherwise this is -1).
 
 
 ### Receptor - Create
@@ -230,7 +230,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgConnectionID) `ConnectionID=` ID of the resulting connection created here (if status indicates success, otherwise this is -1).
+- (bgConnectionID) `RecptorID=` ID of the resulting receptor connection created here (if status indicates success, otherwise this is -1).
 
 
 

@@ -177,13 +177,18 @@ Each route will be described in this format:
 - (bgShapeID) `ConnectionID` ID of the resulting shape created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
-### Staple - Create
-**Route**: `Connection/Staple/Create`  
+### Receptor - Create
+**Route**: `Connection/Receptor/Create`  
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this box is being created.  
 - (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.
 - (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.
+- (float) `Conductance_nS` Conductance from source to destination in nanoSiemens.
+- (float) `TimeConstant_ms` Postsynaptic potential time constant in milliseconds.
+- (float) `ReceptorPosX_nm` X world space coordinate in nanometers.
+- (float) `ReceptorPosY_nm` Y world space coordinate in nanometers.
+- (float) `ReceptorPosZ_nm` Z world space coordinate in nanometers.
 - (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  

@@ -246,3 +246,15 @@ Each route will be described in this format:
 **Response**:  
 - (bgShapeID) `PatchClampADCID` ID of the resulting ADC created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+
+### ADC - Set Sample Rate
+**Route**: `Tool/PatchClampADC/SetSampleRate`  
+**Request**:  
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation where this is being modified.  
+- (bgPatchClampADCID) `TargetADC` ID of the ADC being configured.
+- (float) `Timestep_m=` Sets the sample timestep rate for the ADC in milliseconds. 
+
+**Response**:  
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.

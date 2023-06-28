@@ -88,7 +88,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 - (float) `Radius_nm=` The radius of the sphere in nanometers.
-- (vec3) `Center_nm=` Position of the center of the sphere in nanometers. Given as a list containing the three x,y,z coordinates.
+- (vec3) `Center_nm=` Position of the center of the sphere in nanometers. Given as a json formatted list containing the three x,y,z coordinates.
 
 *Optional Params*:  
 
@@ -238,7 +238,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 - (bgPatchClampDACID) `TargetDAC=` ID of the DAC being configured.
-- (float list) `DACVoltages_mV=` List of voltages to be played back by the DAC.
+- (float list) `DACVoltages_mV=` JSON formatted list of voltages to be played back by the DAC.
 - (float) `Timestep_ms=` Simulation time for which each step in the DACVoltages is replayed. 
 
 **Response**:  
@@ -290,7 +290,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (float list) `RecordedData_mV=` List of voltages recorded by the ADC.
+- (float list) `RecordedData_mV=` JSON formatted list of voltages recorded by the ADC.
 - (float) `Timestep_ms=` Gets the sample timestep rate for the ADC in milliseconds. 
 
 

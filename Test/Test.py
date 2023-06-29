@@ -79,3 +79,8 @@ for _ in range(NumIters):
     for x in range(NumShapes):
         r = requests.get(f"http://localhost:8000/NES/Tool/PatchClampADC/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&ClampLocation_nm={MYLIST}")
         print(r.content)
+
+    # Test PatchClampADC SetSampleRate
+    for x in range(NumShapes):
+        r = requests.get(f"http://localhost:8000/NES/Tool/PatchClampADC/SetSampleRate?AuthKey=MyVerySecureToken&SimulationID=0&TargetADC={x}&Timestep_ms={x}.0")
+        print(r.content)

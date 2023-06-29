@@ -296,7 +296,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 - (bgPatchClampADCID) `TargetADC=` ID of the ADC being configured.
-- (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds. 
+- (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds. (Note that this route implicitly clears the ADC, if it had any data that will be erased.)
 
 **Response**:  
 

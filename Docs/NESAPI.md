@@ -148,8 +148,8 @@ Each route will be described in this format:
 ### Simulation - Run For
 **Route**: `Simulation/RunFor`  
 **Request**:  
-*Required Params*: 
-- (int) `SimulationID` ID of the simulation being run. 
+*Required Params*:  
+- (int) `SimulationID` ID of the simulation being run.  
 - (float) `Runtime_ms` Number of milliseconds to simulate.
 
 **Response**:  

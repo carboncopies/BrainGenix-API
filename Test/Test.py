@@ -11,14 +11,19 @@ NumIters = 1000
 
 for _ in range(NumIters):
 
-    # Test Create Simulation
+    # Test Simulation Create
     for x in range(10):
-        r = requests.get("http://localhost:8000/NES/Simulation/Create?AuthKey=MyVerySecureToken&SimulationName=mySim")
+        r = requests.get(f"http://localhost:8000/NES/Simulation/Create?AuthKey=MyVerySecureToken&SimulationName=mySim")
         print(r.content)
 
-    # Test Reset Simulation
+    # Test Simulation Reset
     for x in range(10):
-        r = requests.get("http://localhost:8000/NES/Simulation/Reset?AuthKey=MyVerySecureToken&SimulationID={x}")
+        r = requests.get(f"http://localhost:8000/NES/Simulation/Reset?AuthKey=MyVerySecureToken&SimulationID={x}")
+        print(r.content)
+
+    # Test Simulation RunFor
+    for x in range(10):
+        r = requests.get(f"http://localhost:8000/NES/Simulation/RunFor?AuthKey=MyVerySecureToken&SimulationID={x}&Runtime_ms={x}.0")
         print(r.content)
 
     # Test create sphere

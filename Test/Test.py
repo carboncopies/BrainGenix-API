@@ -26,6 +26,12 @@ for _ in range(NumIters):
         r = requests.get(f"http://localhost:8000/NES/Simulation/RunFor?AuthKey=MyVerySecureToken&SimulationID={x}&Runtime_ms={x}.0")
         print(r.content)
 
+    # Test Simulation RecordAll
+    for x in range(10):
+        r = requests.get(f"http://localhost:8000/NES/Simulation/RecordAll?AuthKey=MyVerySecureToken&SimulationID={x}&MaxRecordTime_ms={x}.0")
+        print(r.content)
+
+
     # Test create sphere
     PyList = [1,2,3]
     MYLIST = json.dumps(PyList)

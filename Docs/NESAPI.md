@@ -162,9 +162,9 @@ Each route will be described in this format:
 ### Simulation - RecordAll
 **Route**: `Simulation/RecordAll`  
 **Request**:  
-*Required Params*: 
-- (int) `SimulationID` ID of the simulation being run. 
-- (float) `MaxRecordTime_ms` Maximum number of milliseconds to record. -1 to record forever. 0 to disable/abort.
+*Required Params*:   
+- (int) `SimulationID` ID of the simulation being run.  
+- (float) `MaxRecordTime_ms` Maximum number of milliseconds to record. -1 to record forever. 0 to disable/abort.  
 
 **Response**:  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.

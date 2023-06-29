@@ -3,6 +3,7 @@ import json
 
 
 BaseURI = "http://api.braingenix.org:8000/"
+BaseURI = "http://localhost:8000/"
 
 NumSims = 10
 NumShapes = 50
@@ -10,13 +11,13 @@ NumShapes = 50
 NumIters = 10000
 
 
+# Test Simulation Create
+for x in range(10):
+    r = requests.get(f"{BaseURI}NES/Simulation/Create?AuthKey=MyVerySecureToken&SimulationName=mySim")
+    print("Sim/Create", r.content)
+
 
 for _ in range(NumIters):
-
-    # Test Simulation Create
-    for x in range(10):
-        r = requests.get(f"{BaseURI}NES/Simulation/Create?AuthKey=MyVerySecureToken&SimulationName=mySim")
-        print("Sim/Create", r.content)
 
     # Test Simulation Reset
     for x in range(10):

@@ -387,7 +387,7 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being modified.   
-- (bgPatchClampADCID) `TargetADC` ID of the ADC being configured.  
+- (bgPatchClampADCID) `PatchClampADCID` ID of the ADC being configured.  
 
 **Response**:  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  

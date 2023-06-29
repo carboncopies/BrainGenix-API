@@ -37,6 +37,7 @@ Each route will be described in this format:
 ## StatusCode  
  - `0` Success
  - `1` Invalid Simulation ID
+ - `2` Invalid Other ID (could be shape/dac/adc/staple/etc...)
 
 
 # Implementation Status (API Side)

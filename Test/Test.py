@@ -31,6 +31,11 @@ for _ in range(NumIters):
         r = requests.get(f"http://localhost:8000/NES/Simulation/RecordAll?AuthKey=MyVerySecureToken&SimulationID={x}&MaxRecordTime_ms={x}.0")
         print(r.content)
 
+    # Test Simulation GetRecording
+    for x in range(10):
+        r = requests.get(f"http://localhost:8000/NES/Simulation/GetRecording?AuthKey=MyVerySecureToken&SimulationID={x}")
+        print(r.content)
+
 
     # Test create sphere
     PyList = [1,2,3]

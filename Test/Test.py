@@ -66,3 +66,9 @@ for _ in range(NumIters):
         r = requests.get(f"http://localhost:8000/NES/Tool/PatchClampDAC/Create?AuthKey=MyVerySecureToken&SimulationID=0&DestinationCompartmentID={x}&ClampLocation_nm={MYLIST}")
         print(r.content)
 
+    # Test PatchClampDAC SetOutputList
+    PyList = list(range(10))
+    MYLIST = json.dumps(PyList)
+    for x in range(NumShapes):
+        r = requests.get(f"http://localhost:8000/NES/Tool/PatchClampDAC/SetOutputList?AuthKey=MyVerySecureToken&SimulationID=0&TargetDAC={x}&Timestep_ms=0.1&DACVoltages_mV={MYLIST}")
+        print(r.content)

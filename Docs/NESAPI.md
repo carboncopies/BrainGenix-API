@@ -375,7 +375,7 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being modified.   
-- (bgPatchClampADCID) `TargetADC` ID of the ADC being configured.  
+- (bgPatchClampADCID) `PatchClampADCID` ID of the ADC being configured.  
 - (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds.   
 
 **Response**:  

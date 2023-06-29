@@ -59,7 +59,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Get Params, Build Upstream Query
     nlohmann::json UpstreamQuery;
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", -1);
-    UpstreamQuery["TargetADC"] = Request->get_query_parameter("TargetADC", -1);
+    UpstreamQuery["PatchClampDACID"] = Request->get_query_parameter("TargetADC", -1);
 
 
     std::string UpstreamResponseStr = "";

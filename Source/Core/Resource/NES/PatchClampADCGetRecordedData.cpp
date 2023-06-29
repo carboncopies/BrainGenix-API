@@ -73,7 +73,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 0;
-    Response["RecordedData_mV"] = UpstreamResponse["RecordedData_mV"].template get<std::string>();
+    Response["RecordedData_mV"] = UpstreamResponse["RecordedData_mV"];
     Response["Timestep_ms"] = UpstreamResponse["Timestep_ms"].template get<float>();
 
     std::cout<<"Getting Recorded PatchClampADC Data On ID "<<Request->get_query_parameter("TargetADC", -1)<<std::endl;

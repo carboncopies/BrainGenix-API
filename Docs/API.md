@@ -179,8 +179,8 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (float) `MembranePotential_mV=` Membrane potential of the compartment in millivolts.  
 - (float) `SpikeThreshold_mV=` Action potential spike threshold of the compartment in millivolts.  
 - (float) `DecayTime_ms=` (tau_ahp) After hyperpolarization time constant in milliseconds.  
-- (float) `RestingPotential_mV=` To be documented.  
-- (float) `AfterHyperpolarizationAmplitude_mV=` to be documented.  
+- (float) `RestingPotential_mV=` To be documented.     - needs implementation!  
+- (float) `AfterHyperpolarizationAmplitude_mV=` to be documented.       - needs implementation!  
 
 *Optional Params*:  
 - (string) `Name=` Optional name of the compartment.  

@@ -84,8 +84,13 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 **Response**:  
  - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
- - (string) `SystemState=` String indicating the current state of the service. Can be "Healthy", "Degraded", "Failed".  
- - (bgServiceStatus) `ServiceStateNES=` Enum indicating the state of the NES Service. Shows more detail than the above quick reference data.  
+ - (string) `SystemState=` String indicating the current state of the service. Can be "Healthy", "Degraded", "Failed". 
+ - (bgServiceStatus) `ServiceStateAPI=` Enum indicating the state of the API Service.  
+ - (bgServiceStatus) `ServiceStateAPIDB=` Enum indicating the state of the API Database Service.  
+ - (bgServiceStatus) `ServiceStateNES=` Enum indicating the state of the NES Service.  
+ - (bgServiceStatus) `ServiceStateERS=` Enum indicating the state of the ERS Service.  
+ - (bgServiceStatus) `ServiceStateSTS=` Enum indicating the state of the STS Service.  
+
 
 
 

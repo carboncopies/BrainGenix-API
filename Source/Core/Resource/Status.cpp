@@ -33,12 +33,16 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Setup Response
     std::string OverallState = "";
+    int SystemState = 3;
     if (Server_->APIState == BG::SERVICE_HEALTHY){
       OverallState = "Healthy";
+      SystemState = 0;
     } else if (Server_->APIState == BG::SERVICE_FAILED) {
       OverallState = "Failed";
+      SystemState = 2;
     } else {
       OverallState = "Degraded";
+      SystemState = 1;
     }
 
     // Build JSON Response
@@ -46,6 +50,10 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["SystemState"] = OverallState;
     Response["ServiceStateNES"] = (int)Server_->NESState;
+    Response["ServiceStateAPI"] = SystemState;
+    Response["ServiceStateAPIDB"] = 3; // not yet configured
+    Response["ServiceStateERS"] = 3; // not yet configured
+    Response["ServiceStateSTS"] = 3; // not yet configured
 
     // Return Response String As JSON
     std::string Body = Response.dump();

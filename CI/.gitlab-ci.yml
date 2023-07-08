@@ -1,6 +1,6 @@
 # Set some global variables
 variables:
-  PROJECT_NAME: "SceneManager"
+  PROJECT_NAME: "BrainGenix-API"
   PLATFORM_BUILD_PREAMBLE: "$PROJECT_NAME_$CI_COMMIT_SHORT_SHA"
   GIT_SUBMODULE_STRATEGY: recursive
   

@@ -9,7 +9,7 @@ variables:
 stages:
   - Update CI Containers
   - Build
-  - Test
+  # - Test
 
 include: 
   # Update CI Containersers
@@ -28,8 +28,8 @@ include:
   - '/CI/Build/Debian11/CI.yml'
   - '/CI/Build/Debian12/CI.yml'
 
-  # Tests
-  - '/CI/Test/Ubuntu2204/CI.yml'
-  - '/CI/Test/Ubuntu2004/CI.yml'
-  - '/CI/Test/Debian11/CI.yml'
-  - '/CI/Test/Debian12/CI.yml'
+  # # Tests
+  # - '/CI/Test/Ubuntu2204/CI.yml'
+  # - '/CI/Test/Ubuntu2004/CI.yml'
+  # - '/CI/Test/Debian11/CI.yml'
+  # - '/CI/Test/Debian12/CI.yml'

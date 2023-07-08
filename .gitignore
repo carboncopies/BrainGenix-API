@@ -1,13 +1,11 @@
 # Ignore Build Data #
-Build/
-Binaries/
-build/
-binaries/
-bin/
-Build-Tools/
-Source/Shaders/SPIR-V/
-.vs/
-.vscode/
+/Build/
+/Binaries/
+/build/
+/binaries/
+/bin/
+/.vs/
+/.vscode/
 .DS_Store
 Binaries.tar.gz
 

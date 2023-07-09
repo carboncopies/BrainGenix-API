@@ -37,19 +37,6 @@ class Logger {
 private:
     Config Config_; /**Local copy of the logging configuration struct*/
 
-    try
-    {
-        auto logger = spdlog::basic_logger_mt("basic_logger", "logs/basic-log.txt");
-    }
-    catch (const spdlog::spdlog_ex &ex)
-    {
-        std::cout << "Log init failed: " << ex.what() << std::endl;
-    }
-
-    auto console = spdlog::stdout_color_mt("console");
-    auto err_logger = spdlog::stderr_color_mt("stderr");
-    spdlog::get("console")->info("loggers can be retrieved from a global registry using the spdlog::get(logger_name)");
-
 public:
 
     /**
@@ -58,8 +45,8 @@ public:
      * 
      * @param _Config 
      */
-    Logger(Config _Config);
 
+    Logger(Config _Config);
     /**
      * @brief Destroy the Logger object
      * 
@@ -67,8 +54,11 @@ public:
     ~Logger();
 
 
-    // Now add the logging methods here where users can pass in std::string, const char*, etc. and set the log severity
-
+     /**
+     * @brief Method to pass in std::string, const char*, etc. and set the log severity
+     *
+     */
+     bool Log(std::string _Message, int _LogLevel);
 
 };
 

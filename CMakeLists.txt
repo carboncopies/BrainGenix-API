@@ -73,3 +73,15 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 
 add_subdirectory(${SRC_DIR}/Core)
+
+# CPack Information
+install(TARGETS ${PROJECT_NAME}
+    COMPONENT linapp
+    RUNTIME DESTINATION "/home/"
+    LIBRARY DESTINATION "/home/"
+    DESTINATION "/home/"
+)
+
+SET(CPACK_GENERATOR "DEB")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Carboncopies Foundation") #required
+INCLUDE(CPack)

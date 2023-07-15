@@ -4,6 +4,7 @@ echo "[BG BUILD SYSTEM] - Cleaning Build"
 cd ..
 echo "[BG BUILD SYSTEM] - Removing Build Directory"
 rm -rf Build/
+rm -rf Artifacts/
 echo "[BG BUILD SYSTEM] - Cleaning CMake Cache"
 rm -rf build/
 echo "[BG BUILD SYSTEM] - Deleting Artifacts"

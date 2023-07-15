@@ -4,6 +4,7 @@
 /build/
 /binaries/
 /bin/
+/Artifacts
 /.vs/
 /.vscode/
 .DS_Store

@@ -76,12 +76,15 @@ add_subdirectory(${SRC_DIR}/Core)
 
 # Set Install Targets
 install(TARGETS ${PROJECT_NAME}
-    COMPONENT BrainGenix-API
+    COMPONENT Release
     RUNTIME DESTINATION "/usr/bin/"
     LIBRARY DESTINATION ${INSTALL_PREFIX}
     DESTINATION ${INSTALL_PREFIX}
 )
-install(FILES "${SRC_DIR}/Data/API.cfg" DESTINATION ${INSTALL_PREFIX})
+install(FILES "${SRC_DIR}/Data/API.cfg"
+    DESTINATION ${INSTALL_PREFIX}
+    COMPONENT Release
+)
 
 
 

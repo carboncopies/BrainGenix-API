@@ -77,15 +77,12 @@ add_subdirectory(${SRC_DIR}/Core)
 # Set Install Targets
 install(TARGETS ${PROJECT_NAME}
     COMPONENT BrainGenix-API
-    RUNTIME DESTINATION ${INSTALL_PREFIX}
+    RUNTIME DESTINATION "/usr/bin/"
     LIBRARY DESTINATION ${INSTALL_PREFIX}
     DESTINATION ${INSTALL_PREFIX}
 )
 install(FILES "${SRC_DIR}/Data/API.cfg" DESTINATION ${INSTALL_PREFIX})
 
-# Setup Symlink For Executable
-execute_process(COMMAND ln -s ${INSTALL_PREFIX} BrainGenix-API)
-install(FILES ${CMAKE_BINARY_DIR}/BrainGenix-API DESTINATION /usr/bin/BrainGenix-API)
 
 
 # CPack Information

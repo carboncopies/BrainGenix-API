@@ -17,10 +17,8 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 
-
-
-
-#define CONFIG_DEFAULT_CFG_FILE_PATH "API.cfg"
+#define CONFIG_DEFAULT_CFG_FILE_PATH1 "API.cfg"
+#define CONFIG_DEFAULT_CFG_FILE_PATH2 "/etc/BrainGenix/API/API.cfg"
 #define CONFIG_DEFAULT_PORT_NUMBER 8000
 #define CONFIG_DEFAULT_HOST "0.0.0.0"
 #define CONFIG_DEFAULT_NES_PORT_NUMBER 8001

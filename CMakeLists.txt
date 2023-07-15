@@ -4,7 +4,7 @@ cmake_minimum_required (VERSION 3.1...3.21)
 
 # Set Configuration Options
 option(ENABLE_BACKWARD "Build BG With Backward to provide some stack trace information or not" ON)
-option(INSTALL_PREFIX "Set the path which the API will be installed in" "/etc/BrainGenix/API")
+set(INSTALL_PREFIX "/etc/BrainGenix/API")
 
 # Set Non-User Changable Configuration Data (Used during build process )
 # option (USE_SUPERBUILD "Whether or not a superbuild should be invoked" ON) # You probably don't want to change this one - used internally

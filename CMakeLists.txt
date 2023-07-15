@@ -87,6 +87,11 @@ install(FILES "${SRC_DIR}/Data/API.cfg"
     DESTINATION ${INSTALL_PREFIX}
     COMPONENT Release
 )
+message(STATUS "Installing Unit File To '/etc/systemd/system'")
+install(FILES "${SRC_DIR}/Data/BrainGenix-API.service"
+    DESTINATION "/etc/systemd/system/"
+    COMPONENT Release
+)
 
 
 

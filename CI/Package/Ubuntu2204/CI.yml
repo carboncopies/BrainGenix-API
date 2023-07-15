@@ -1,4 +1,4 @@
-Ubuntu_2204_Build:
+Ubuntu_2204_Package:
   image: "${CI_REGISTRY_IMAGE}:build_ubuntu2204"
   tags:
    - linux

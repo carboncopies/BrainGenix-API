@@ -1,4 +1,4 @@
-Ubuntu_2004_Build:
+Ubuntu_2004_Package:
   image: "${CI_REGISTRY_IMAGE}:build_ubuntu2004"
   tags:
    - linux

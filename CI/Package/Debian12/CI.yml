@@ -1,4 +1,4 @@
-Debian_12_Build:
+Debian_12_Package:
   image: "${CI_REGISTRY_IMAGE}:build_debian12"
   tags:
    - linux

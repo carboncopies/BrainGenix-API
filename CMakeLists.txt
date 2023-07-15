@@ -4,7 +4,7 @@ cmake_minimum_required (VERSION 3.1...3.21)
 
 # Set Configuration Options
 option(ENABLE_BACKWARD "Build BG With Backward to provide some stack trace information or not" ON)
-
+option(INSTALL_PREFIX "Set the path which the API will be installed in" "/etc/BrainGenix/API")
 
 # Set Non-User Changable Configuration Data (Used during build process )
 # option (USE_SUPERBUILD "Whether or not a superbuild should be invoked" ON) # You probably don't want to change this one - used internally
@@ -74,14 +74,21 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 add_subdirectory(${SRC_DIR}/Core)
 
-# CPack Information
+# Set Install Targets
 install(TARGETS ${PROJECT_NAME}
-    COMPONENT linapp
-    RUNTIME DESTINATION "/home/"
-    LIBRARY DESTINATION "/home/"
-    DESTINATION "/home/"
+    COMPONENT BrainGenix-API
+    RUNTIME DESTINATION ${INSTALL_PREFIX}
+    LIBRARY DESTINATION ${INSTALL_PREFIX}
+    DESTINATION ${INSTALL_PREFIX}
 )
+install(FILES "${SRC_DIR}/Data/API.cfg" DESTINATION ${INSTALL_PREFIX})
 
+# Setup Symlink For Executable
+execute_process(COMMAND ln -s ${INSTALL_PREFIX} BrainGenix-API)
+install(FILES ${CMAKE_BINARY_DIR}/BrainGenix-API DESTINATION /usr/bin/BrainGenix-API)
+
+
+# CPack Information
 SET(CPACK_GENERATOR "DEB")
 SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Carboncopies Foundation") #required
 INCLUDE(CPack)

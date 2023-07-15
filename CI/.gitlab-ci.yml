@@ -9,6 +9,7 @@ variables:
 stages:
   - Update CI Containers
   - Build
+  - Package
   # - Test
 
 include: 
@@ -28,8 +29,17 @@ include:
   - '/CI/Build/Debian11/CI.yml'
   - '/CI/Build/Debian12/CI.yml'
 
+
   # # Tests
   # - '/CI/Test/Ubuntu2204/CI.yml'
   # - '/CI/Test/Ubuntu2004/CI.yml'
   # - '/CI/Test/Debian11/CI.yml'
   # - '/CI/Test/Debian12/CI.yml'
+
+
+  # Package Stage
+  - '/CI/Package/Ubuntu2204/CI.yml'
+  - '/CI/Package/Ubuntu2004/CI.yml'
+  # - '/CI/Docs/Drawio/CI.yml' Disabled for now since this uses Electron which is a pain in the ass.
+  - '/CI/Package/Debian11/CI.yml'
+  - '/CI/Package/Debian12/CI.yml'

@@ -97,5 +97,7 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-API.service"
 
 # CPack Information
 SET(CPACK_GENERATOR "DEB")
-SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Carboncopies Foundation") #required
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Carboncopies Foundation")
+set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA
+    "${SRC_DIR}/Data/prerm;${SRC_DIR}/Data/postrm;${SRC_DIR}/Data/postinst")
 INCLUDE(CPack)

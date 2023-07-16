@@ -1,6 +1,3 @@
-[submodule "Sandbox/PromethiusCPPTest"]
-	path = Sandbox/PromethiusCPPTest
-	url = https://gitlab.braingenix.org/carboncopies/BrainGenix/Sandbox/PromethiusCPPTest
 [submodule "ThirdParty/vcpkg"]
 	path = ThirdParty/vcpkg
 	url = https://github.com/microsoft/vcpkg

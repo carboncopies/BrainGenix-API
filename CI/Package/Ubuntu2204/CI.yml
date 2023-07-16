@@ -6,6 +6,8 @@ Ubuntu_2204_Package:
   script:
     - cd Tools
     - bash Package.sh
+  dependencies: 
+    - Ubuntu_2204_Build
   artifacts:
     paths:
       - Artifacts/

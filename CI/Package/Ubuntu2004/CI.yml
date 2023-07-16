@@ -16,4 +16,4 @@ Ubuntu_2004_Package:
         - Source/**/*
         - CMake/**/*
         - ThirdParty/**/*
-        - CI/**/*
+        - CI/Package/**/*

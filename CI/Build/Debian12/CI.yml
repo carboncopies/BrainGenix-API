@@ -16,4 +16,4 @@ Debian_12_Build:
         - Source/**/*
         - CMake/**/*
         - ThirdParty/**/*
-        - CI/**/*
+        - CI/Build/**/*

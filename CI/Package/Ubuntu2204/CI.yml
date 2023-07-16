@@ -16,4 +16,4 @@ Ubuntu_2204_Package:
         - Source/**/*
         - CMake/**/*
         - ThirdParty/**/*
-        - CI/**/*
+        - CI/Package/**/*

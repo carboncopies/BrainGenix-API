@@ -16,4 +16,4 @@ Debian_12_Package:
         - Source/**/*
         - CMake/**/*
         - ThirdParty/**/*
-        - CI/**/*
+        - CI/Package/**/*

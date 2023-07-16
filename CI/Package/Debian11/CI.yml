@@ -16,4 +16,4 @@ Debian_11_Package:
         - Source/**/*
         - CMake/**/*
         - ThirdParty/**/*
-        - CI/**/*
+        - CI/Package/**/*

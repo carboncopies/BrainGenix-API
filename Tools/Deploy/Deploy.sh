@@ -5,13 +5,13 @@
 
 # echo "Unzipping Artifacts"
 
-echo "Finding Current Package Version"
+echo "-- Finding Current Package Version"
 DEBIAN_FRONTEND=noninteractive
 cd $Artifacts && PackageVar=$(find -type f -name 'BrainGenix-API*.*.deb');
 echo "Found API Package At $PackageVar"
 
-echo "Uninstalling Current Package"
+echo "-- Uninstalling Current Package"
 sudo apt remove braingenix-api -y
 
-echo "Installing New Package"
+echo "-- Installing New Package"
 sudo apt install $PackageVar -y

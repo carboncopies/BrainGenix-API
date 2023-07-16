@@ -16,4 +16,9 @@ Deploy_Prod:
     paths:
     - public
   only:
-  - master
+    - master
+    changes:
+      - Source/**/*
+      - CMake/**/*
+      - ThirdParty/**/*
+      - CI/**/*

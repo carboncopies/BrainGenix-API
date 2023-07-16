@@ -1,10 +1,7 @@
 #!/bin/bash
 
 
-# Update Repo, Build Package
-echo "-- Updating Repo"
-git pull
-
+# Build Program, Build Package
 echo "-- Building Project/Package"
 cd Tools
 bash Build.sh

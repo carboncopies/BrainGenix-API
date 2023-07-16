@@ -6,7 +6,7 @@
 # echo "Unzipping Artifacts"
 
 echo "Finding Current Package Version"
-ls Artifacts/
+DEBIAN_FRONTEND=noninteractive
 cd $Artifacts && PackageVar=$(find -type f -name 'BrainGenix-API*.*.deb');
 echo "Found API Package At $PackageVar"
 

@@ -24,6 +24,7 @@
 #include <Resource/NotFound.h>
 #include <Resource/Forbidden.h>
 
+#include <Resource/Root.h>
 #include <Resource/Hello.h>
 #include <Resource/Version.h>
 #include <Resource/Status.h>
@@ -66,6 +67,7 @@ private:
     std::shared_ptr<Resource::NotFound::Route> NotFound_;
     std::shared_ptr<Resource::Forbidden::Route> Forbidden_;
 
+    std::shared_ptr<Resource::Root::Route> Root_;
     std::shared_ptr<Resource::Hello::Route> Hello_;
     std::shared_ptr<Resource::Diagnostic::Version::Route> Diagnostic_Version_;
     std::shared_ptr<Resource::Diagnostic::Status::Route> Diagnostic_Status_;

@@ -28,6 +28,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Server/Endpoints.cpp
   ${SRC_DIR}/Core/Server/Endpoints.h
 
+  ${SRC_DIR}/Core/Resource/Root.cpp
+  ${SRC_DIR}/Core/Resource/Root.h
   ${SRC_DIR}/Core/Resource/Hello.cpp
   ${SRC_DIR}/Core/Resource/Hello.h
   ${SRC_DIR}/Core/Resource/Version.cpp

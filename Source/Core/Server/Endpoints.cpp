@@ -24,6 +24,7 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     Forbidden_ = std::make_shared<Resource::Forbidden::Route>(&_Server, _Service);
 
     // Add Routes
+    Root_ = std::make_shared<Resource::Root::Route>(&_Server, _Service);
     Hello_ = std::make_shared<Resource::Hello::Route>(&_Server, _Service);
     Diagnostic_Version_ = std::make_shared<Resource::Diagnostic::Version::Route>(&_Server, _Service);
     Diagnostic_Status_ = std::make_shared<Resource::Diagnostic::Status::Route>(&_Server, _Service);

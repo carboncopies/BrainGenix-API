@@ -12,11 +12,12 @@ Deploy_Prod:
     - chmod 644 ~/.ssh/known_hosts
   script:
     - ssh $SSH_USER@$VM_IPADDRESS "hostname && echo 'Welcome!!!' > welcome.txt"
-  artifacts:
-    paths:
-    - public
+  # artifacts:
+  #   paths:
+  #   - public
   only:
-    - master
+    branches:
+      - master
     changes:
       - Source/**/*
       - CMake/**/*

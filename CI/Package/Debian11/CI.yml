@@ -6,6 +6,8 @@ Debian_11_Package:
   script:
     - cd Tools
     - bash Package.sh
+  dependencies: 
+    - Debian_11_Build
   artifacts:
     paths:
       - Artifacts/

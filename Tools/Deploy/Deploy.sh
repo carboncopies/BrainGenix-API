@@ -11,7 +11,7 @@ cd $Artifacts && PackageVar=$(find -type f -name 'BrainGenix-API*.*.deb');
 echo "Found API Package At $PackageVar"
 
 echo "Uninstalling Current Package"
-sudo apt remove braingenix-api
+sudo apt remove braingenix-api -y
 
 echo "Installing New Package"
-sudo apt install $PackageVar
+sudo apt install $PackageVar -y

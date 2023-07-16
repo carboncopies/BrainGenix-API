@@ -16,4 +16,4 @@ Deploy_Prod:
   #   paths:
   #   - public
   only:
-      - master
+    - master

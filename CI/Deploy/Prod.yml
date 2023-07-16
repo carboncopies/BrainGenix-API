@@ -11,7 +11,7 @@ Deploy_Prod:
     - ssh-keyscan $VM_IPADDRESS >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - ssh $SSH_USER@$VM_IPADDRESS "sudo bash ~/BrainGenix-API/Tools/Deploy/Deploy.sh -S"
+    - ssh $SSH_USER@$VM_IPADDRESS "cd ~/BrainGenix-API && sudo bash Tools/Deploy/Deploy.sh -S"
   dependencies: 
     - Ubuntu_2204_Package
   only:

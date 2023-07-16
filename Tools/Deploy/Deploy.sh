@@ -12,8 +12,8 @@ echo "Found API Package At $PackageVar"
 echo "-- Setting Noninteractive Mode For APT"
 DEBIAN_FRONTEND=noninteractive
 
-echo "-- Uninstalling Current Package"
-sudo --preserve-env apt remove braingenix-api -y
+# echo "-- Uninstalling Current Package"
+# sudo --preserve-env apt remove braingenix-api -y
 
 echo "-- Installing New Package"
-sudo --preserve-env apt install $PackageVar -y
+sudo --preserve-env apt install $PackageVar -y --reinstall

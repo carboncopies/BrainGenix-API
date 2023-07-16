@@ -10,6 +10,7 @@ stages:
   - Update CI Containers
   - Build
   - Package
+  - Deploy
   # - Test
 
 include: 
@@ -42,3 +43,16 @@ include:
   # - '/CI/Package/Ubuntu2004/CI.yml'
   - '/CI/Package/Debian11/CI.yml'
   - '/CI/Package/Debian12/CI.yml'
+
+
+
+  # TODO: Packaging Tets here
+
+  # TODO: Staging here
+
+  # TODO: Staging Tests here
+
+
+
+  # Deploy To Prod
+  - '/CI/Deploy/Prod.yml'

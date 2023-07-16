@@ -1,7 +1,6 @@
 #include <Logger/LoggingSystem.h>
 
 
-
 namespace BG {
 namespace Shared {
 namespace Logger {

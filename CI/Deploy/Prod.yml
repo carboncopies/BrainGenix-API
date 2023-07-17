@@ -15,4 +15,4 @@ Deploy_Prod:
   dependencies: 
     - Ubuntu_2204_Package
   only:
-    - master
+    - prod

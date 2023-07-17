@@ -110,6 +110,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string* _Result) {
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
+    return true;
 }
 
 bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result) {
@@ -128,6 +129,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
+    return true;
 }
 
 // void Manager::ConnectionManagerNES() {

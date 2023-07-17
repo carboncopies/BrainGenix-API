@@ -3,7 +3,7 @@ import json
 
 
 BaseURI = "http://api.braingenix.org:8000/"
-# BaseURI = "http://localhost:8000/"
+BaseURI = "http://localhost:8000/"
 
 NumSims = 10
 NumShapes = 50

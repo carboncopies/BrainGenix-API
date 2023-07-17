@@ -18,7 +18,7 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   RequiredParams_.push_back("SourceCompartmentID");
   RequiredParams_.push_back("DestinationCompartmentID");
   RequiredParams_.push_back("Conductance_nS");
-  RequiredParams_.push_back("TimeConstant_ns");
+  RequiredParams_.push_back("TimeConstant_ms");
   RequiredParams_.push_back("ReceptorLocation_nm");
 
 

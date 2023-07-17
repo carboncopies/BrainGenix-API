@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Setup Unit Service
+echo "[INFO] Setting Up Systemd Service For BrainGenix-API"
 systemctl daemon-reload
 systemctl enable BrainGenix-API
 systemctl start BrainGenix-API
+
+# Copy Config From Defualt To Live Dir, No Not Overwrite If Exists
+echo "[INFO] Setting Up Config File For BrainGenix-API At '/etc/BrainGenix/API/API.cfg'"
+cp /etc/BrainGenix/API/Default/API.cfg /etc/BrainGenix/API/API.cfg --no-clobber

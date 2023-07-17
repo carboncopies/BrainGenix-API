@@ -61,7 +61,6 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     std::string UpstreamResponseStr = "";
     bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Simulation/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
-    std::cout<<UpstreamResponseStr<<std::endl;
     if (!UpstreamStatus) {
       Util::SendCode(_Session.get(), 1);
       return;

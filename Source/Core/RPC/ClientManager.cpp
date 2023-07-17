@@ -69,6 +69,11 @@ bool Manager::ConnectNES() {
 
 bool Manager::RunVersionCheckNES() {
 
+    // Run a query to force it to connect (or fail)
+    std::string Temp;
+    NESQueryJSON("GetAPIVersion", &Temp);
+    
+
     // Update our internal status of how the connection is doing
     ::rpc::client::connection_state NESStatus = NESClient_->get_connection_state();
     if (NESStatus != ::rpc::client::connection_state::connected) {

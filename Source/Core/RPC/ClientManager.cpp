@@ -69,11 +69,18 @@ bool Manager::ConnectNES() {
 
 bool Manager::RunVersionCheckNES() {
 
+    // Run a query to force it to connect (or fail)
+    std::string Temp;
+    NESQueryJSON("GetAPIVersion", &Temp);
+    
+
     // Update our internal status of how the connection is doing
     ::rpc::client::connection_state NESStatus = NESClient_->get_connection_state();
     if (NESStatus != ::rpc::client::connection_state::connected) {
+        std::cout<<"[ERR ] Unable to connect to NES service"<<std::endl;
         Server_->NESState = SERVICE_FAILED;
     } else {
+        std::cout<<"[INFO] NES RPC Connection Successful"<<std::endl;
         Server_->NESState = SERVICE_HEALTHY;
     }
 
@@ -81,6 +88,7 @@ bool Manager::RunVersionCheckNES() {
     std::string NESVersion = "undefined";
     bool Status = NESQueryJSON("GetAPIVersion", &NESVersion);
     if (!Status) {
+        std::cout<<"[ERR ] Failed To Get NES API Version String"<<std::endl;
         return false;
     }
 

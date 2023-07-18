@@ -16,8 +16,8 @@ Manager::Manager(Config::Config* _Config, Server::Server* _Server) {
     // Connect to nes service, start managing service
     std::cout<<"Starting NES Client\n";
     ConnectNES();
-    // std::cout<<"Starting NES Client Manager Thread\n";
-    // ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
+    std::cout<<"Starting NES Client Manager Thread\n";
+    ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
 
     // Populate Server Struct
     Server_->NESClient = NESClient_.get();
@@ -31,9 +31,9 @@ Manager::~Manager() {
     std::cout<<"Requesting manager threads exit\n";
     RequestThreadsExit_ = true;
 
-    // // Join Threads
-    // std::cout<<"Joining NES manager thread\n";
-    // ConnectionManagerNES_.join();
+    // Join Threads
+    std::cout<<"Joining NES manager thread\n";
+    ConnectionManagerNES_.join();
 
 
 }
@@ -63,8 +63,6 @@ bool Manager::ConnectNES() {
     // Call GetVersion On Remote - allows us to check that versions match, but also ensures the connection is ready
     return RunVersionCheckNES();
 
-
-
 }
 
 bool Manager::RunVersionCheckNES() {
@@ -80,7 +78,7 @@ bool Manager::RunVersionCheckNES() {
         std::cout<<"[ERR ] Unable to connect to NES service"<<std::endl;
         Server_->NESState = SERVICE_FAILED;
     } else {
-        std::cout<<"[INFO] NES RPC Connection Successful"<<std::endl;
+        std::cout<<"[INFO] NES RPC Connection SERVICE_HEALTHY"<<std::endl;
         Server_->NESState = SERVICE_HEALTHY;
     }
 
@@ -140,29 +138,31 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
     return true;
 }
 
-// void Manager::ConnectionManagerNES() {
+void Manager::ConnectionManagerNES() {
 
-//     std::cout<<"Started NES Manager Thread\n";
+    std::cout<<"Started NES Manager Thread\n";
 
-//     // Enter loop
-//     while (!RequestThreadsExit_) {
+    // Enter loop
+    while (!RequestThreadsExit_) {
 
-//         // Check Version
-//         bool IsHealthy = RunVersionCheckNES();
+        // Check Version
+        bool IsHealthy = RunVersionCheckNES();
 
-//         // // If not healthy, re-establish connection, retry stuff... For now, nothing...
-//         // if (!IsHealthy) {
-//         //     NESClient_.reset();
-//         // }
+        // If not healthy, re-establish connection, retry stuff... For now, nothing...
+        if (!IsHealthy) {
+            if (!ConnectNES()) {
+                std::cout<<"[ERR ] Failed To Reconnect To NES Service!"<<std::endl;
+            }
+        }
 
-//         // Wait 1000ms before polling again
-//         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        // Wait 1000ms before polling again
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
-//     }
+    }
 
-//     std::cout<<"Exiting NES Manager Thread\n";
+    std::cout<<"Exiting NES Manager Thread\n";
 
-// }
+}
 
 }; // Close Namespace DB
 }; // Close Namespace API

@@ -74,6 +74,7 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 add_subdirectory(${SRC_DIR}/Core)
 
+
 # Set Install Targets
 message(STATUS "Install Prefix Set To '${INSTALL_PREFIX}'")
 message(STATUS "Executable Will Be Installed To '/usr/bin'")
@@ -83,10 +84,19 @@ install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${INSTALL_PREFIX}
     DESTINATION ${INSTALL_PREFIX}
 )
+
+message(STATUS "Adding Configuration File To ${INSTALL_PREFIX}/API.cfg")
 install(FILES "${SRC_DIR}/Data/API.cfg"
-    DESTINATION ${INSTALL_PREFIX}
-    COMPONENT Release
+    DESTINATION ${INSTALL_PREFIX}/Default
+    COMPONENT Config
 )
+# install(CODE "
+#     if (NOT EXISTS \"${INSTALL_PREFIX}/API.cfg\")
+#         file(INSTALL \"${INSTALL_PREFIX}/API-Default.cfg\" DESTINATION \"${INSTALL_PREFIX}/API.cfg\")
+#     endif() "
+#     COMPONENT Config
+# )
+
 message(STATUS "Installing Unit File To '/etc/systemd/system'")
 install(FILES "${SRC_DIR}/Data/BrainGenix-API.service"
     DESTINATION "/etc/systemd/system/"
@@ -98,6 +108,6 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-API.service"
 # CPack Information
 SET(CPACK_GENERATOR "DEB")
 SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Carboncopies Foundation")
-set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${SRC_DIR}/Data/prerm;${SRC_DIR}/Data/postrm;${SRC_DIR}/Data/postinst")
+set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${SRC_DIR}/Data/prerm;${SRC_DIR}/Data/postrm;${SRC_DIR}/Data/postinst;${SRC_DIR}/Data/conffiles")
 SET(CPACK_OUTPUT_FILE_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/Artifacts)
 INCLUDE(CPack)

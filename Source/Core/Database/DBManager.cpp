@@ -5,7 +5,7 @@ namespace BG {
 namespace API {
 namespace DB {
 
-Manager::Manager()
+Manager::Manager(){
     : driver_(nullptr), connection_(nullptr), statement_(nullptr), result_(nullptr) {
     try {
         driver_ = get_driver_instance();
@@ -15,6 +15,7 @@ Manager::Manager()
     } catch (sql::SQLException& e) {
         // Handle the connection error if needed.
     }
+}
 }
 
 Manager::~Manager() {

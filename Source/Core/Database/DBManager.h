@@ -46,6 +46,12 @@ public:
      */
     ~Manager();
 
+private:
+    sql::Driver* driver_;
+    sql::Connection* connection_;
+    sql::Statement* statement_;
+    sql::ResultSet* result_;
+
 };
 
 

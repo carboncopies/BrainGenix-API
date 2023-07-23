@@ -8,7 +8,7 @@ namespace Logger {
 
 Logger::Logger(Config _Config) {
     Config_ = _Config;
-
+    spdlog::logger logger;
     try
     {
         logger = spdlog::basic_logger_mt("basic_logger", "logs/basic-log.txt");
@@ -18,8 +18,8 @@ Logger::Logger(Config _Config) {
         std::cout << "Log init failed: " << ex.what() << std::endl;
     }
 
-    console = spdlog::stdout_color_mt("console");
-    err_logger = spdlog::stderr_color_mt("stderr");
+    auto console = spdlog::stdout_color_mt("console");
+    auto err_logger = spdlog::stderr_color_mt("stderr");
     spdlog::get("console")->info("loggers can be retrieved from a global registry using the spdlog::get(logger_name)");
 
     spdlog::info("Test");
@@ -33,8 +33,23 @@ Logger::~Logger() {
 bool Logger::Log(std::string _Message, int _LogLevel){
     std::cout << "Class method to set log severity" << std::endl;
 
+    if(_LogLevel==0){
+    spdlog::debug(_Message);
+    }
+    else if(_LogLevel==1){
     spdlog::info(_Message);
-    spdlog::set_level(_LogLevel); // Set global log level
+    }
+    else if(_LogLevel==2){
+    spdlog::warn(_Message);
+    }
+    else if(_LogLevel==3){
+    spdlog::error(_Message);
+    }
+    else if(_LogLevel==4){
+    spdlog::critical(_Message);
+    }
+
+return true;
 
 }
 

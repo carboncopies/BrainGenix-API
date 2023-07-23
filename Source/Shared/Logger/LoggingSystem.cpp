@@ -31,8 +31,10 @@ Logger::~Logger() {
 }
 
 bool Logger::Log(std::string _Message, int _LogLevel){
+    std::cout << "Class method to set log severity" << std::endl;
 
-std:cout << "Class method to set log severity" << std::endl;
+    spdlog::info(_Message);
+    spdlog::set_level(_LogLevel); // Set global log level
 
 }
 

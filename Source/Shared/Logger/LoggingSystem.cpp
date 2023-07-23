@@ -8,7 +8,7 @@ namespace Logger {
 
 Logger::Logger(Config _Config) {
     Config_ = _Config;
-    spdlog::logger logger;
+    auto logger;
     try
     {
         logger = spdlog::basic_logger_mt("basic_logger", "logs/basic-log.txt");

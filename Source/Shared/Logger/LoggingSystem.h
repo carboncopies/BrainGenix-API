@@ -13,6 +13,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <iostream>
+#include <memory>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <spdlog/spdlog.h>
@@ -37,6 +38,8 @@ class Logger {
 
 private:
     Config Config_; /**Local copy of the logging configuration struct*/
+
+    std::shared_ptr<spdlog::logger> Logger_;
 
 public:
 

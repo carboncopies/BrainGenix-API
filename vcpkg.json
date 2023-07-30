@@ -9,6 +9,6 @@
     "rpclib",
     "spdlog",
     "libmariadb",
-    "my-connector-cpp"
+    "mysql-connector-cpp"
   ]
 }

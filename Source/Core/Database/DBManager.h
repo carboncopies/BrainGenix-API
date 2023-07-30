@@ -15,7 +15,14 @@
 #include <vector>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+// vcpkg: look for sql conenctors
 #include <mysql.h>
+#include <mysql_driver.h> // For MySQL Connector/C++
+#include <mysql_connection.h> // For MySQL Connector/C++
+#include <cppconn/driver.h> // For MySQL Connector/C++
+#include <cppconn/connection.h> // For MySQL Connector/C++
+#include <cppconn/statement.h> // For MySQL Connector/C++
+#include <cppconn/resultset.h> // For MySQL Connector/C++
 
 // Internal Libraries (BG convention: use <> instead of "")
 

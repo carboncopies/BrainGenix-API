@@ -116,6 +116,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     rpclib::rpc
     spdlog::spdlog
     unofficial::libmariadb
+    unofficial::mysql-connector-cpp::connector
 
     VersioningSystem
     CompileTimeStamp

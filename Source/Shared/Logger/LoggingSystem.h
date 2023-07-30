@@ -12,9 +12,13 @@
 
 
 // Standard Libraries (BG convention: use <> instead of "")
+#include <iostream>
+#include <memory>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <spdlog/spdlog.h>
+#include <spdlog/sinks/basic_file_sink.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Logger/Config.h>
@@ -35,6 +39,8 @@ class Logger {
 private:
     Config Config_; /**Local copy of the logging configuration struct*/
 
+    std::shared_ptr<spdlog::logger> Logger_;
+
 public:
 
     /**
@@ -43,8 +49,8 @@ public:
      * 
      * @param _Config 
      */
-    Logger(Config _Config);
 
+    Logger(Config _Config);
     /**
      * @brief Destroy the Logger object
      * 
@@ -52,8 +58,11 @@ public:
     ~Logger();
 
 
-    // Now add the logging methods here where users can pass in std::string, const char*, etc. and set the log severity
-
+     /**
+     * @brief Method to pass in std::string, const char*, etc. and set the log severity
+     *
+     */
+     bool Log(std::string _Message, int _LogLevel);
 
 };
 

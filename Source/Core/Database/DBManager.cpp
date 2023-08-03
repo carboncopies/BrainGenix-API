@@ -1,5 +1,5 @@
 #include <Database/DBManager.h>
-
+#include <mysqlx/xdevapi.h>
 
 namespace BG {
 namespace API {

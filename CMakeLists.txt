@@ -60,7 +60,7 @@ message(STATUS "Finding libmariadb Package")
 find_package(unofficial-libmariadb CONFIG REQUIRED)
 
 message(STATUS "Finding my-sql-connector Package")
-find_package(my-sql-connector CONFIG REQUIRED)
+find_package(unofficial-mysql-connector-cpp CONFIG REQUIRED)
 
 
 

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# on mac platform, skip lines 3-35
+# on a Mac OS X platform, skip lines 3-35
+if [ "$(uname)" != "Darwin" ]; then
 
 # Detect if running as root
 APT_COMMAND_PREFIX=""
@@ -32,6 +33,7 @@ VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 INSTALL_COMMAND="$APT_COMMAND_PREFIX apt install $VCPKG_DEPS $BACKWARD_DEPS $COMPILER_DEPS -y"
 echo "Running Install Command: $INSTALL_COMMAND"
 $INSTALL_COMMAND || exit 1
+fi
 
 # Update Submodules
 echo "Updating Submodules"

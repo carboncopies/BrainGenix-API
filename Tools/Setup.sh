@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# on mac platform, skip lines 3-35
+
 # Detect if running as root
 APT_COMMAND_PREFIX=""
 echo "Detecting If Script Running As root"

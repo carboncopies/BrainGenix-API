@@ -227,7 +227,8 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment with presynaptic spike.
 - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving postsynaptic activity.
 - (float) `Conductance_nS=` Conductance from source to destination in nanoSiemens.
-- (float) `TimeConstant_ms=` Postsynaptic potential time constant in milliseconds.
+- (float) `RiseTimeConstant_ms=` Postsynaptic potential rise time constant in milliseconds.
+- (float) `DecayTimeConstant_ms=` Postsynaptic potential decay time constant in milliseconds.
 - (vec3) `ReceptorLocation_nm=` (X,Y,Z) World space location of the receptor's base (where it intersects the compartment).
 
 *Optional Params*:  

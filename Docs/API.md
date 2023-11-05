@@ -414,3 +414,16 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (float) `InSimulationTime_ms=` Float containing number of in-simulation milliseconds elapsed since last reset call.
 - (float) `InSimulationTimeRemaining_ms=` Float containing number of milliseconds remaining in-simulation until run call is complete.
 - (float) `PercentComplete=` Estimated percentage complete based on in-simulation time.
+
+
+### Simulation - BuildMesh
+
+**URI** `/NES/Simulation/BuildMesh?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to build a mesh from
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.

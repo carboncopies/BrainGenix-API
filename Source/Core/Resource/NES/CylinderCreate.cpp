@@ -16,10 +16,10 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("Point1Radius_nm");
-  RequiredParams_.push_back("Point1Position_nm");
-  RequiredParams_.push_back("Point2Radius_nm");
-  RequiredParams_.push_back("Point2Position_nm");
+  RequiredParams_.push_back("Point1Radius_um");
+  RequiredParams_.push_back("Point1Position_um");
+  RequiredParams_.push_back("Point2Radius_um");
+  RequiredParams_.push_back("Point2Position_um");
 
   OptionalParams_.push_back("Name");
 
@@ -62,19 +62,19 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Get Params, Build Upstream Query
     nlohmann::json UpstreamQuery;
     
-    nlohmann::json Point1Position_nm = nlohmann::json::parse(Request->get_query_parameter("Point1Position_nm", "[0, 0, 0]"));
-    nlohmann::json Point2Position_nm = nlohmann::json::parse(Request->get_query_parameter("Point2Position_nm", "[0, 0, 0]"));
+    nlohmann::json Point1Position_um = nlohmann::json::parse(Request->get_query_parameter("Point1Position_um", "[0, 0, 0]"));
+    nlohmann::json Point2Position_um = nlohmann::json::parse(Request->get_query_parameter("Point2Position_um", "[0, 0, 0]"));
 
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
-    UpstreamQuery["Point1Radius_nm"] = Request->get_query_parameter("Point1Radius_nm", -1);
-    UpstreamQuery["Point2Radius_nm"] = Request->get_query_parameter("Point2Radius_nm", -1);
-    UpstreamQuery["Point1PosX_nm"] = Point1Position_nm[0].template get<float>();
-    UpstreamQuery["Point1PosY_nm"] = Point1Position_nm[1].template get<float>();
-    UpstreamQuery["Point1PosZ_nm"] = Point1Position_nm[2].template get<float>();
-    UpstreamQuery["Point2PosX_nm"] = Point2Position_nm[0].template get<float>();
-    UpstreamQuery["Point2PosY_nm"] = Point2Position_nm[1].template get<float>();
-    UpstreamQuery["Point2PosZ_nm"] = Point2Position_nm[2].template get<float>();
+    UpstreamQuery["Point1Radius_um"] = Request->get_query_parameter("Point1Radius_um", -1);
+    UpstreamQuery["Point2Radius_um"] = Request->get_query_parameter("Point2Radius_um", -1);
+    UpstreamQuery["Point1PosX_um"] = Point1Position_um[0].template get<float>();
+    UpstreamQuery["Point1PosY_um"] = Point1Position_um[1].template get<float>();
+    UpstreamQuery["Point1PosZ_um"] = Point1Position_um[2].template get<float>();
+    UpstreamQuery["Point2PosX_um"] = Point2Position_um[0].template get<float>();
+    UpstreamQuery["Point2PosY_um"] = Point2Position_um[1].template get<float>();
+    UpstreamQuery["Point2PosZ_um"] = Point2Position_um[2].template get<float>();
 
 
     std::string UpstreamResponseStr = "";

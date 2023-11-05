@@ -137,10 +137,10 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (float) `Point1Radius_nm=` The radius at the cylinder's first point.
-- (vec3) `Point1Position_nm=` First endpoint of the cylinder's axis.
-- (float) `Point2Radius_nm=` The radius at the cylinder's second point.
-- (vec3) `Point2Position_nm=` Second endpoint of the cylinder's axis.
+- (float) `Point1Radius_um=` The radius at the cylinder's first point.
+- (vec3) `Point1Position_um=` First endpoint of the cylinder's axis.
+- (float) `Point2Radius_um=` The radius at the cylinder's second point.
+- (vec3) `Point2Position_um=` Second endpoint of the cylinder's axis.
 
 *Optional Params*:  
 
@@ -158,8 +158,8 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (vec3) `CenterPosition_nm=` Position of the center of the box in world space coordinates.
-- (vec3) `Dimensions_nm=` (X,Y,Z) dimensions of the box in nm.
+- (vec3) `CenterPosition_um=` Position of the center of the box in world space coordinates.
+- (vec3) `Dimensions_um=` (X,Y,Z) dimensions of the box in nm.
 - (vec3) `Rotation_rad=` (X,Y,Z) rotation of the box in radians.
 
 *Optional Params*:  
@@ -228,7 +228,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving postsynaptic activity.
 - (float) `Conductance_nS=` Conductance from source to destination in nanoSiemens.
 - (float) `TimeConstant_ms=` Postsynaptic potential time constant in milliseconds.
-- (vec3) `ReceptorLocation_nm=` (X,Y,Z) World space location of the receptor's base (where it intersects the compartment).
+- (vec3) `ReceptorLocation_um=` (X,Y,Z) World space location of the receptor's base (where it intersects the compartment).
 
 *Optional Params*:  
 
@@ -250,7 +250,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving DAC output.
-- (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the DAC's connection in nanometers.
+- (vec3) `ClampLocation_um=` (X,Y,Z) World space location of the DAC's connection in micrometers.
 
 *Optional Params*:  
 
@@ -284,7 +284,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment being read by the ADC output.
-- (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the ADC's connection in nanometers.
+- (vec3) `ClampLocation_um=` (X,Y,Z) World space location of the ADC's connection in micrometers.
 
 *Optional Params*:  
 

@@ -229,10 +229,10 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this sphere is being created.  
-- (float) `Radius_nm` The radius of the sphere in nanometers.  
-- (float) `CenterPosX_nm` Position of the center's X coord of the sphere in nanometers.  
-- (float) `CenterPosY_nm` Position of the center's Y coord of the sphere in nanometers.  
-- (float) `CenterPosZ_nm` Position of the center's Z coord of the sphere in nanometers.  
+- (float) `Radius_um` The radius of the sphere in micrometers.  
+- (float) `CenterPosX_um` Position of the center's X coord of the sphere in micrometers.  
+- (float) `CenterPosY_um` Position of the center's Y coord of the sphere in micrometers.  
+- (float) `CenterPosZ_um` Position of the center's Z coord of the sphere in micrometers.  
 - (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  
@@ -245,14 +245,14 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this cylinder is being created.  
-- (float) `Point1Radius_nm` The radius of the first point in nanometers.  
-- (float) `Point1PosX_nm` Position of the first point center's X coord of the sphere in nanometers.  
-- (float) `Point1PosY_nm` Position of the first point center's Y coord of the sphere in nanometers.  
-- (float) `Point1PosZ_nm` Position of the first point center's Z coord of the sphere in nanometers.  
-- (float) `Point2Radius_nm` The radius of the second point in nanometers.  
-- (float) `Point2PosX_nm` Position of the second point center's X coord of the sphere in nanometers.  
-- (float) `Point2PosY_nm` Position of the second point center's Y coord of the sphere in nanometers.  
-- (float) `Point2PosZ_nm` Position of the second point center's Z coord of the sphere in nanometers.  
+- (float) `Point1Radius_um` The radius of the first point in micrometers.  
+- (float) `Point1PosX_um` Position of the first point center's X coord of the sphere in micrometers.  
+- (float) `Point1PosY_um` Position of the first point center's Y coord of the sphere in micrometers.  
+- (float) `Point1PosZ_um` Position of the first point center's Z coord of the sphere in micrometers.  
+- (float) `Point2Radius_um` The radius of the second point in micrometers.  
+- (float) `Point2PosX_um` Position of the second point center's X coord of the sphere in micrometers.  
+- (float) `Point2PosY_um` Position of the second point center's Y coord of the sphere in micrometers.  
+- (float) `Point2PosZ_um` Position of the second point center's Z coord of the sphere in micrometers.  
 - (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  
@@ -265,12 +265,12 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this box is being created.    
-- (float) `CenterPosX_nm` Position of the center x coord.  
-- (float) `CenterPosY_nm` Position of the center y coord.  
-- (float) `CenterPosZ_nm` Position of the center z coord.  
-- (float) `ScaleX_nm` Scale of the x axis of the box.  
-- (float) `ScaleY_nm` Scale of the y axis of the box.  
-- (float) `ScaleZ_nm` Scale of the z axis of the box.  
+- (float) `CenterPosX_um` Position of the center x coord.  
+- (float) `CenterPosY_um` Position of the center y coord.  
+- (float) `CenterPosZ_um` Position of the center z coord.  
+- (float) `ScaleX_um` Scale of the x axis of the box.  
+- (float) `ScaleY_um` Scale of the y axis of the box.  
+- (float) `ScaleZ_um` Scale of the z axis of the box.  
 - (float) `RotationX_rad` Euler angle of the X axis in radians.  
 - (float) `RotationY_rad` Euler angle of the Y axis in radians.  
 - (float) `RotationZ_rad` Euler angle of the Z axis in radians.  
@@ -328,9 +328,9 @@ Each route will be described in this format:
 - (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.  
 - (float) `Conductance_nS` Conductance from source to destination in nanoSiemens.  
 - (float) `TimeConstant_ms` Postsynaptic potential time constant in milliseconds.   
-- (float) `ReceptorPosX_nm` X world space coordinate in nanometers.  
-- (float) `ReceptorPosY_nm` Y world space coordinate in nanometers.   
-- (float) `ReceptorPosZ_nm` Z world space coordinate in nanometers.  
+- (float) `ReceptorPosX_um` X world space coordinate in micrometers.  
+- (float) `ReceptorPosY_um` Y world space coordinate in micrometers.   
+- (float) `ReceptorPosZ_um` Z world space coordinate in micrometers.  
 - (string) `Name` Name of the Receptor, defaults to 'undefined'.  
 
 **Response**:  
@@ -347,9 +347,9 @@ Each route will be described in this format:
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being created.   
 - (bgCompartmentID) `DestinationCompartmentID` ID of the compartment receiving DAC output.  
-- (float) `ClampPosX_nm` X world space coordinate in nanometers.  
-- (float) `ClampPosY_nm` Y world space coordinate in nanometers.  
-- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.  
+- (float) `ClampPosX_um` X world space coordinate in micrometers.  
+- (float) `ClampPosY_um` Y world space coordinate in micrometers.  
+- (float) `ClampPosZ_um` Z world space coordinate in micrometers.  
 - (string) `Name` Name of the DAC, defaults to 'undefined'.  
 
 **Response**:  
@@ -376,9 +376,9 @@ Each route will be described in this format:
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being created.   
 - (bgCompartmentID) `SourceCompartmentID` ID of the compartment being read by the ADC output.  
-- (float) `ClampPosX_nm` X world space coordinate in nanometers.  
-- (float) `ClampPosY_nm` Y world space coordinate in nanometers.    
-- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.  
+- (float) `ClampPosX_um` X world space coordinate in micrometers.  
+- (float) `ClampPosY_um` Y world space coordinate in micrometers.    
+- (float) `ClampPosZ_um` Z world space coordinate in micrometers.  
 - (string) `Name` Name of the DAC, defaults to 'undefined'.  
     
 **Response**:  

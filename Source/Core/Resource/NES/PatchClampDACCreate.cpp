@@ -16,7 +16,7 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
   RequiredParams_.push_back("DestinationCompartmentID");
-  RequiredParams_.push_back("ClampLocation_nm");
+  RequiredParams_.push_back("ClampLocation_um");
 
   OptionalParams_.push_back("Name");
 
@@ -62,7 +62,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
     
     UpstreamQuery["DestinationCompartmentID"] = Request->get_query_parameter("DestinationCompartmentID", -1);
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("ClampLocation_nm", "[0, 0, 0]"), "ClampPos");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("ClampLocation_um", "[0, 0, 0]"), "ClampPos");
 
 
 

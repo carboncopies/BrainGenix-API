@@ -1,12 +1,13 @@
 import requests
 import json
+import random
 
 
 # BaseURI = "http://api.braingenix.org/"
 BaseURI = "http://localhost:8000/"
 
 NumSims = 1
-NumShapes = 1
+NumShapes = 10
 
 NumIters = 1
 
@@ -45,10 +46,10 @@ for _ in range(NumIters):
         print("Sim/GetStatus", r.content)
 
     # Test create sphere
-    PyList = [1,2,3]
-    MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=5.2&Center_um={MYLIST}")
+        PyList = [random.randint(-10,10)/4, random.randint(-10,10)/4, random.randint(-10,10)/4]
+        MYLIST = json.dumps(PyList)
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.2&Center_um={MYLIST}")
         print("Shape/Sphere/Create", r.content)
 
     # # Test create cylinder
@@ -66,8 +67,6 @@ for _ in range(NumIters):
     #     print("Shape/Box/Create",r.content)
 
     # Test create BS Compartment
-    PyList = [1,2,3]
-    MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
         r = requests.get(f"{BaseURI}NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID=0&ShapeID={x}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
         print("Compartment/BS/Create",r.content)

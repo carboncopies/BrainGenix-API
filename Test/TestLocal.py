@@ -12,7 +12,7 @@ NumIters = 1
 
 
 # Test Simulation Create
-for x in range(10):
+for x in range(NumSims):
     r = requests.get(f"{BaseURI}NES/Simulation/Create?AuthKey=MyVerySecureToken&SimulationName=mySim")
     print("Sim/Create", r.content)
 

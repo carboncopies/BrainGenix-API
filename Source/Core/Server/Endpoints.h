@@ -53,6 +53,7 @@
 #include <Resource/NES/SimulationGetStatus.h>
 #include <Resource/NES/SimulationRecordAll.h>
 #include <Resource/NES/SimulationGetRecording.h>
+#include <Resource/NES/SimulationBuildMesh.h>
 
 
 namespace BG {
@@ -90,12 +91,13 @@ private:
     std::shared_ptr<Resource::NES::Tool::PatchClampADC::SetSampleRate::Route> NES_Tool_PatchClampADC_SetSampleRate_;
     std::shared_ptr<Resource::NES::Tool::PatchClampADC::GetRecordedData::Route> NES_Tool_PatchClampADC_GetRecordedData_;
 
-    std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
-    std::shared_ptr<Resource::NES::Simulation::Reset::Route> NES_Simulation_Reset_;
-    std::shared_ptr<Resource::NES::Simulation::GetStatus::Route> NES_Simulation_GetStatus_;
-    std::shared_ptr<Resource::NES::Simulation::RunFor::Route> NES_Simulation_RunFor_;
-    std::shared_ptr<Resource::NES::Simulation::RecordAll::Route> NES_Simulation_RecordAll_;
+    std::shared_ptr<Resource::NES::Simulation::Create::Route>       NES_Simulation_Create_;
+    std::shared_ptr<Resource::NES::Simulation::Reset::Route>        NES_Simulation_Reset_;
+    std::shared_ptr<Resource::NES::Simulation::GetStatus::Route>    NES_Simulation_GetStatus_;
+    std::shared_ptr<Resource::NES::Simulation::RunFor::Route>       NES_Simulation_RunFor_;
+    std::shared_ptr<Resource::NES::Simulation::RecordAll::Route>    NES_Simulation_RecordAll_;
     std::shared_ptr<Resource::NES::Simulation::GetRecording::Route> NES_Simulation_GetRecording_;
+    std::shared_ptr<Resource::NES::Simulation::BuildMesh::Route>    NES_Simulation_BuildMesh_;
 
 public:
 

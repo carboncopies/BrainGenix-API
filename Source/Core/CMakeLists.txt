@@ -82,7 +82,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationRecordAll.h
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.h
-
+  ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.cpp
+  ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.h
 
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h

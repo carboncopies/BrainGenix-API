@@ -63,7 +63,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     
     Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CenterPosition_um", "[0, 0, 0]"), "CenterPos");
     Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Dimensions_um", "[0, 0, 0]"), "Scale");
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Rotation_um", "[0, 0, 0]"), "Rotation", "rad");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Rotation_rad", "[0, 0, 0]"), "Rotation", "rad");
 
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");

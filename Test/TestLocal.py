@@ -47,16 +47,17 @@ for _ in range(NumIters):
 
     # Test create sphere
     for x in range(NumShapes):
-        PyList = [random.randint(-10,10)/4, random.randint(-10,10)/4, random.randint(-10,10)/4]
+        PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
         MYLIST = json.dumps(PyList)
         r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.2&Center_um={MYLIST}")
         print("Shape/Sphere/Create", r.content)
 
     # Test create Box
-    PyList = [1,2,3]
-    MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={MYLIST}&Rotation_rad={MYLIST}")
+        PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
+        MYLIST = json.dumps(PyList)
+        Scale = json.dumps([0.8, 0.9, 1.0])
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Scale}&Rotation_rad={MYLIST}")
         print("Shape/Box/Create",r.content)
 
     # # Test create cylinder

@@ -1,4 +1,4 @@
-# NES Internal API Version 2023.06.25
+# NES Internal API Version 2023.11.04
 
 # About
 This API spec dictates how the API gateway internally communicates with the NES subsystem. **This document does NOT describe the API that is front-facing and interacted with by users. This ONLY describes the internal API used to connect between the gateway and upstream service**  

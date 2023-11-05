@@ -422,8 +422,8 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (bgSimulationID) `SimulationID=` ID of simulation to build a mesh from
+- (bgSimulationID) `SimulationID=` ID of simulation to build a mesh from  
 
 **Response**:  
 
-- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  

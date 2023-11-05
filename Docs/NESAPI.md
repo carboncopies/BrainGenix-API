@@ -205,6 +205,20 @@ Each route will be described in this format:
  - None.
 
 
+### Simulation - BuildMesh  
+
+**URI** `Simulation/BuildMesh`  
+**Request**:  
+*Required Params*:  
+
+- (int) `SimulationID=` ID of simulation to build a mesh from  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+
 
 ## Shapes
 

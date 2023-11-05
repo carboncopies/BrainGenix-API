@@ -16,8 +16,8 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("Radius_nm");
-  RequiredParams_.push_back("Center_nm");
+  RequiredParams_.push_back("Radius_um");
+  RequiredParams_.push_back("Center_um");
   
   OptionalParams_.push_back("Name");
 
@@ -59,21 +59,21 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
 
     // Get Params
-    float Radius_nm = Request->get_query_parameter("Radius_nm", -1);
-    nlohmann::json Center_nm = nlohmann::json::parse(Request->get_query_parameter("Center_nm", "[0, 0, 0]"));
-    float CenterPosX_nm = Center_nm[0].template get<float>();
-    float CenterPosY_nm = Center_nm[1].template get<float>();
-    float CenterPosZ_nm = Center_nm[2].template get<float>();
-    int SimulationID = Request->get_query_parameter("SimulationID", 0);
+    float Radius_um = Request->get_query_parameter("Radius_um", -1);
+    nlohmann::json Center_um = nlohmann::json::parse(Request->get_query_parameter("Center_um", "[0, 0, 0]"));
+    float CenterPosX_um = Center_um[0].template get<float>();
+    float CenterPosY_um = Center_um[1].template get<float>();
+    float CenterPosZ_um = Center_um[2].template get<float>();
+    int SimulationID = Request->get_query_parameter("SimulationID", -1);
     std::string Name = Request->get_query_parameter("Name", "undefined");
 
 
     // Upstream Query
     nlohmann::json UpstreamQuery;
-    UpstreamQuery["Radius_nm"] = Radius_nm;
-    UpstreamQuery["CenterPosX_nm"] = CenterPosX_nm;
-    UpstreamQuery["CenterPosY_nm"] = CenterPosY_nm;
-    UpstreamQuery["CenterPosZ_nm"] = CenterPosZ_nm;
+    UpstreamQuery["Radius_um"] = Radius_um;
+    UpstreamQuery["CenterPosX_um"] = CenterPosX_um;
+    UpstreamQuery["CenterPosY_um"] = CenterPosY_um;
+    UpstreamQuery["CenterPosZ_um"] = CenterPosZ_um;
     UpstreamQuery["Name"] = Name;
     UpstreamQuery["SimulationID"] = SimulationID;
 

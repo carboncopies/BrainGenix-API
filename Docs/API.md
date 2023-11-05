@@ -118,8 +118,8 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (float) `Radius_nm=` The radius of the sphere in nanometers.
-- (vec3) `Center_nm=` Position of the center of the sphere in nanometers. Given as a json formatted list containing the three x,y,z coordinates.
+- (float) `Radius_um=` The radius of the sphere in micrometers.
+- (vec3) `Center_um=` Position of the center of the sphere in micrometers. Given as a json formatted list containing the three x,y,z coordinates.
 
 *Optional Params*:  
 

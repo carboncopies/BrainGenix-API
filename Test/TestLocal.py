@@ -1,15 +1,26 @@
 import requests
 import json
 import random
+import argparse
+
+
+# Handle Arguments for Host, Port, etc
+Parser = argparse.ArgumentParser(description="BrainGenix-API Simple Python Test Script")
+Parser.add_argument("-Host", default="localhost", type=str, help="Host to connect to")
+Parser.add_argument("-Port", default=8000, type=int, help="Port number to connect to")
+Parser.add_argument("--NumSims", default=1, type=int, help="Number of simulations to create")
+Parser.add_argument("--NumShapes", default=1000, type=int, help="Number of shapes to create")
+Parser.add_argument("--NumIters", default=1, type=int, help="Number of iterations to generate")
+Args = Parser.parse_args()
+
 
 
 # BaseURI = "http://api.braingenix.org/"
-BaseURI = "http://localhost:8000/"
+BaseURI = f"http://{Args.Host}:{Args.Port}/"
 
-NumSims = 1
-NumShapes = 100000
-
-NumIters = 1
+NumSims = Args.NumSims
+NumShapes = Args.NumShapes
+NumIters = Args.NumIters
 
 
 # Test Simulation Create

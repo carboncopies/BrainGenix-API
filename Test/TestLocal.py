@@ -7,7 +7,7 @@ import random
 BaseURI = "http://localhost:8000/"
 
 NumSims = 1
-NumShapes = 1000
+NumShapes = 100000
 
 NumIters = 1
 

@@ -212,11 +212,11 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 
-- (int) `SimulationID=` ID of simulation to build a mesh from  
+- (int) `SimulationID` ID of simulation to build a mesh from  
 
 **Response**:  
 
-- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
 
 
 
@@ -236,7 +236,7 @@ Each route will be described in this format:
 - (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).  
+- (bgShapeID) `ShapeID` ID of the resulting shape created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
@@ -392,7 +392,7 @@ Each route will be described in this format:
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being modified.   
 - (bgPatchClampADCID) `PatchClampADCID` ID of the ADC being configured.  
-- (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds.   
+- (float) `Timestep_ms` Sets the sample timestep rate for the ADC in milliseconds.   
 
 **Response**:  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
@@ -409,3 +409,99 @@ Each route will be described in this format:
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 - (string) `RecordedData_mV` JSON formatted list of voltages recorded by the ADC.  
 - (float) `Timestep_ms` Gets the sample timestep rate for the ADC in milliseconds.   
+
+
+
+
+## VSDA
+
+### VSDA - EM - Initialize
+
+**URI** `VSDA/EM/Initialize`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the electron microscope renderer from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - SetupMicroscope
+
+**URI** `VSDA/EM/SetupMicroscope`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (float) `PixelResolution_nm` Number of nanometers of resolution for each pixel.  
+- (int) `ImageWidth_px` Set the width of the image in pixels.  
+- (int) `ImageHeight_px` Set the height of the image in pixels.  
+- (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
+- (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - DefineScanRegion
+
+**URI** `VSDA/EM/DefineScanRegion`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (vec3) `Point1_um` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
+- (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (bgScanRegionID) `ScanRegionID` ID of the resulting scan region. Can be used to later get the image stack once generated.  
+
+
+### VSDA - EM - QueueRenderOperation
+
+**URI** `VSDA/EM/QueueRenderOperation`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID` ID of the scan region to be rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - GetRenderStatus
+
+**URI** `VSDA/EM/GetRenderStatus`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID` ID of the scan region to have it's status checked.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (bgRenderStatus) `RenderStatus` Enum indicating status of the renderer.  
+
+
+### VSDA - EM - GetImageStack
+
+**URI** `VSDA/EM/GetImageStack`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID` ID of the scan region to get the image stack for. Note: The stack must have finished being rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (Base64String) `ImageData` String containing base64 encoded image data.    
+

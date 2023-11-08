@@ -40,6 +40,12 @@ Each route will be described in this format:
  - `2` Invalid Other ID (could be shape/dac/adc/staple/etc...)
  - `999` General Failure
 
+## bgRenderStatus
+ - `0` Ready
+ - `1` Compressing
+ - `2` Rendering
+ - `3` Not Yet Rendered
+
 
 # Implementation Status (API Side)
 

@@ -24,6 +24,12 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - `2` Failed
  - `3` Not Configured
 
+## bgRenderStatus
+ - `0` Ready
+ - `1` Compressing
+ - `2` Rendering
+ - `3` Not Yet Rendered
+
 
 # Implementation Status
  - [x] Diagnostic Hello

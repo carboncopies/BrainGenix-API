@@ -422,8 +422,102 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (bgSimulationID) `SimulationID=` ID of simulation to build a mesh from  
+- (bgSimulationID) `SimulationID=` ID of simulation to build a mesh from.  
 
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+
+
+
+### VSDA - EM - Initialize
+
+**URI** `/NES/VSDA/EM/Initialize?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the electron microscope renderer from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - SetupMicroscope
+
+**URI** `/NES/VSDA/EM/SetupMicroscope?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (float) `PixelResolution_nm=` Number of nanometers of resolution for each pixel.  
+- (int) `ImageWidth_px=` Set the width of the image in pixels.  
+- (int) `ImageHeight_px=` Set the height of the image in pixels.  
+- (float) `SliceThickness_nm=` Set the thickness of each slice in nanometers.  
+- (float) `ScanRegionOverlap_percent=` Set the overlap for the resulting image stacks.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - DefineScanRegion
+
+**URI** `/NES/VSDA/EM/DefineScanRegion?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (vec3) `Point1_um=` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
+- (vec3) `Point2_um=` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgScanRegionID) `ScanRegionID=` ID of the resulting scan region. Can be used to later get the image stack once generated.  
+
+
+### VSDA - EM - QueueRenderOperation
+
+**URI** `/NES/VSDA/EM/QueueRenderOperation?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID=` ID of the scan region to be rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - GetRenderStatus
+
+**URI** `/NES/VSDA/EM/GetRenderStatus?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID=` ID of the scan region to have it's status checked.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgRenderStatus) `RenderStatus=` Enum indicating status of the renderer.  
+
+
+### VSDA - EM - GetImageStack
+
+**URI** `/NES/VSDA/EM/GetImageStack?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID=` ID of the scan region to get the image stack for. Note: The stack must have finished being rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (Base64String) `ImageData=` String containing base64 encoded image data.    

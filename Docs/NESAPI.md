@@ -47,48 +47,6 @@ Each route will be described in this format:
  - `3` Not Yet Rendered
 
 
-# Implementation Status (API Side)
-
- - [x] Simulation Create
- - [x] Simulation Reset
- - [x] Simulation RunFor
- - [x] Simulation RecordAll
- - [x] Simulation GetRecording
- - [x] Simulation GetStatus
- - [x] Shapes SphereCreate
- - [x] Shapes CylinderCreate
- - [x] Shapes BoxCreate
- - [x] Compartments BSCreate
- - [x] Connections StapleCreate
- - [x] Connections ReceptorCreate
- - [x] Tools DACCreate
- - [x] Tools DACSetOutputList
- - [x] Tools ADCCreate
- - [x] Tools ADCSetSampleRate
- - [x] Tools ADCGetRecordedData
-
-
-# Implementation Status (NES Side)
-
- - [x] Simulation Create
- - [ ] Simulation Reset
- - [ ] Simulation RunFor
- - [ ] Simulation RecordAll
- - [ ] Simulation GetRecording
- - [ ] Simulation GetStatus
- - [x] Shapes SphereCreate
- - [x] Shapes CylinderCreate
- - [ ] Shapes BoxCreate
- - [ ] Compartments BSCreate
- - [ ] Connections StapleCreate
- - [ ] Connections ReceptorCreate
- - [ ] Tools DACCreate
- - [ ] Tools DACSetOutputList
- - [ ] Tools ADCCreate
- - [ ] Tools ADCSetSampleRate
- - [ ] Tools ADCGetRecordedData
- 
-
 
 
 

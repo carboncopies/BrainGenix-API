@@ -55,6 +55,8 @@
 #include <Resource/NES/SimulationGetRecording.h>
 #include <Resource/NES/SimulationBuildMesh.h>
 
+#include <Resource/NES/VSDA/EMInitialize.h>
+
 
 namespace BG {
 namespace API {
@@ -98,6 +100,8 @@ private:
     std::shared_ptr<Resource::NES::Simulation::RecordAll::Route>    NES_Simulation_RecordAll_;
     std::shared_ptr<Resource::NES::Simulation::GetRecording::Route> NES_Simulation_GetRecording_;
     std::shared_ptr<Resource::NES::Simulation::BuildMesh::Route>    NES_Simulation_BuildMesh_;
+
+    std::shared_ptr<Resource::NES::VSDA::EM::Initialize::Route>     NES_VSDA_EM_Initialize_;
 
 public:
 

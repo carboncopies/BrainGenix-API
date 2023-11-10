@@ -85,6 +85,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.h
 
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.h
+
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h
 

@@ -31,30 +31,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - `3` Not Yet Rendered
 
 
-# Implementation Status
- - [x] Diagnostic Hello
- - [x] Diagnostic Version
- - [x] Diagnostic Status
 
- - [x] Authentication GetToken
- 
- - [x] NES Simulation Create
- - [x] NES Simulation Reset
- - [x] NES Simulation RunFor
- - [x] NES Simulation RecordAll
- - [x] NES Simulation GetRecording
- - [x] NES Simulation GetStatus
- - [x] NES Shapes SphereCreate
- - [x] NES Shapes CylinderCreate
- - [x] NES Shapes BoxCreate
- - [x] NES Compartments BSCreate
- - [x] NES Connections StapleCreate
- - [x] NES Connections ReceptorCreate
- - [x] NES Tools DACCreate
- - [x] NES Tools DACSetOutputList
- - [x] NES Tools ADCCreate
- - [x] NES Tools ADCSetSampleRate
- - [x] NES Tools ADCGetRecordedData
 
 
 # Routes  

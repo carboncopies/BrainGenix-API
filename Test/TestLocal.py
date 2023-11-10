@@ -136,7 +136,13 @@ for _ in range(NumIters):
         r = requests.get(f"{BaseURI}NES/Simulation/BuildMesh?AuthKey=MyVerySecureToken&SimulationID={x}")
         print("Sim/BuildMesh", r.content)
 
+
     # Test VSDA EM Initialize
     for x in range(NumSims):
         r = requests.get(f"{BaseURI}NES/VSDA/EM/Initialize?AuthKey=MyVerySecureToken&SimulationID={x}")
         print("VSDA/EM/Initialize", r.content)
+
+    # Test VSDA EM SetupMicroscope
+    for x in range(NumSims):
+        r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
+        print("VSDA/EM/SetupMicroscope", r.content)

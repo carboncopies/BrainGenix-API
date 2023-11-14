@@ -57,6 +57,8 @@
 
 #include <Resource/NES/VSDA/EMInitialize.h>
 #include <Resource/NES/VSDA/EMSetupMicroscope.h>
+#include <Resource/NES/VSDA/EMGetImageStack.h>
+
 
 
 namespace BG {
@@ -104,6 +106,7 @@ private:
 
     std::shared_ptr<Resource::NES::VSDA::EM::Initialize::Route>     NES_VSDA_EM_Initialize_;
     std::shared_ptr<Resource::NES::VSDA::EM::SetupMicroscope::Route>     NES_VSDA_EM_SetupMicroscope_;
+    std::shared_ptr<Resource::NES::VSDA::EM::GetImageStack::Route>     NES_VSDA_EM_GetImageStack_;
 
 public:
 

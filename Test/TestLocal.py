@@ -146,3 +146,8 @@ for _ in range(NumIters):
     for x in range(NumSims):
         r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
         print("VSDA/EM/SetupMicroscope", r.content)
+
+    # Test VSDA EM GetImageStack
+    for x in range(NumSims):
+        r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImageStack?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=2")
+        print("VSDA/EM/GetImageStack", r.content)

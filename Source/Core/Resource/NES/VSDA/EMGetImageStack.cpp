@@ -86,10 +86,10 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
 }
 
-}; // Close Namespace
-}; // Close Namespace
-}; // Close Namespace
-}; // Close Namespace
+}; // Close Namespace GetImageStack
+}; // Close Namespace EM
+}; // Close Namespace VSDA
+}; // Close Namespace NES
 
 }; // Close Namespace Resource
 }; // Close Namespace API

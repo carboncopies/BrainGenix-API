@@ -57,6 +57,8 @@
 
 #include <Resource/NES/VSDA/EMInitialize.h>
 #include <Resource/NES/VSDA/EMSetupMicroscope.h>
+#include <Resource/NES/VSDA/EMDefineScanRegion.h>
+#include <Resource/NES/VSDA/EMQueueRenderOperation.h>
 
 
 namespace BG {
@@ -104,6 +106,8 @@ private:
 
     std::shared_ptr<Resource::NES::VSDA::EM::Initialize::Route>     NES_VSDA_EM_Initialize_;
     std::shared_ptr<Resource::NES::VSDA::EM::SetupMicroscope::Route>     NES_VSDA_EM_SetupMicroscope_;
+    std::shared_ptr<Resource::NES::VSDA::EM::DefineScanRegion::Route>    NES_VSDA_EM_DefineScanRegion_;
+    std::shared_ptr<Resource::NES::VSDA::EM::QueueRenderOperation::Route>    NES_VSDA_EM_QueueRenderOperation_;
 
 public:
 

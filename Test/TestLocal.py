@@ -146,3 +146,13 @@ for _ in range(NumIters):
     for x in range(NumSims):
         r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
         print("VSDA/EM/SetupMicroscope", r.content)
+
+    # Test VSDA EM DefineScanRegion
+    for x in range(NumSims):
+        r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={x}&Point1_um=(0,0,0)&Point2_um=(0,0,0)")
+        print("VSDA/EM/DefineScanRegion", r.content)
+
+    # Test VSDA EM SetupMicroscope
+    for x in range(NumSims):
+        r = requests.get(f"{BaseURI}NES/VSDA/EM/QueueRenderOperation?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=0")
+        print("VSDA/EM/QueueRenderOperation", r.content)

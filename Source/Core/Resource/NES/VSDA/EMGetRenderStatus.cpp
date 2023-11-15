@@ -77,18 +77,18 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 0;
+    Response["ScanRegID"] = 0;
     
     std::cout<<"VSDA EM GetRenderStatus Called With Sim ID: "<<SimID<<std::endl;
-    std::cout<<"VSDA EM GetRenderStatus Called With ScanRegionID:"<<ScanRegID<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 
 }
 
 }; // Close Namespace GetRenderStatus
-}; // Close Namespace
-}; // Close Namespace
-}; // Close Namespace
+}; // Close Namespace EM
+}; // Close Namespace VSDA
+}; // Close Namespace NES
 
 }; // Close Namespace Resource
 }; // Close Namespace API

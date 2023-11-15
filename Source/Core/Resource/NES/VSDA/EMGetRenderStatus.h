@@ -81,9 +81,9 @@ public:
 };
 
 }; // Close Namespace GetRenderStatus
-}; // Close Namespace
-}; // Close Namespace
-}; // Close Namespace
+}; // Close Namespace EM
+}; // Close Namespace VSDA
+}; // Close Namespace NES
 
 }; // Close Namespace Resource
 }; // Close Namespace API

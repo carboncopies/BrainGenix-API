@@ -77,13 +77,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 0;
+    Response["ImageData"]= "default_base64_value";
     
     std::cout<<"VSDA EM GetImageStack Called With Sim ID: "<<SimID<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
    
-    std::string ImageData_ = Response.value("ImageData", "");
-    std::cout << "VSDA EM GetImageStack Called with ImageData: " << ImageData_ << std::endl;
 
 }
 

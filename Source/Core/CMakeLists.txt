@@ -89,8 +89,13 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.cpp
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.cpp
+
+
+  ${SRC_DIR}/Core/Resource/NES/Debug/Debug.h
+  ${SRC_DIR}/Core/Resource/NES/Debug/Debug.cpp
+
   
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h

@@ -109,13 +109,10 @@ private:
 
     std::shared_ptr<Resource::NES::VSDA::EM::Initialize::Route>     NES_VSDA_EM_Initialize_;
     std::shared_ptr<Resource::NES::VSDA::EM::SetupMicroscope::Route>     NES_VSDA_EM_SetupMicroscope_;
-<<<<<<< Source/Core/Server/Endpoints.h
     std::shared_ptr<Resource::NES::VSDA::EM::GetImageStack::Route>     NES_VSDA_EM_GetImageStack_;
+    std::shared_ptr<Resource::NES::VSDA::EM::GetRenderStatus::Route>     NES_VSDA_EM_GetRenderStatus_;
 
     std::shared_ptr<Resource::NES::Debug::Route>     NES_Debug_;
-=======
-    std::shared_ptr<Resource::NES::VSDA::EM::GetRenderStatus::Route>     NES_VSDA_EM_GetRenderStatus_;
->>>>>>> Source/Core/Server/Endpoints.h
 
 public:
 

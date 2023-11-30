@@ -73,7 +73,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     nlohmann::json Response;
     Response["StatusCode"] = 0;
     
-    std::cout<<"Deubg called "<<SimID<<std::endl;
+    std::cout<<"Debug called "<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

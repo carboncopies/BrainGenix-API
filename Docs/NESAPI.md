@@ -469,3 +469,17 @@ Each route will be described in this format:
 - (bgStatus) `StatusCode` Enum indicating the status of this API call.  
 - (Base64String) `ImageData` String containing base64 encoded image data.    
 
+
+
+
+### Debug - DebugRoute
+
+**URI** `Debug`  
+**Request**:  
+*Required Params*:  
+
+- (JSON) `Query` JSON query that does soemthing - for debugging.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum that might do something or might not idk.  

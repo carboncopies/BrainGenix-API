@@ -93,6 +93,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.cpp
 
 
+  ${SRC_DIR}/Core/Resource/NES/Debug/Debug.h
+  ${SRC_DIR}/Core/Resource/NES/Debug/Debug.cpp
+
   
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h

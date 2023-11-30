@@ -58,6 +58,8 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     NES_VSDA_EM_Initialize_      = std::make_shared<Resource::NES::VSDA::EM::Initialize::Route>(&_Server, _Service);
     NES_VSDA_EM_SetupMicroscope_ = std::make_shared<Resource::NES::VSDA::EM::SetupMicroscope::Route>(&_Server, _Service);
     NES_VSDA_EM_GetImageStack_   = std::make_shared<Resource::NES::VSDA::EM::GetImageStack::Route>(&_Server, _Service);
+    
+    NES_Debug_   = std::make_shared<Resource::NES::Debug::Route>(&_Server, _Service);
 
 }
 

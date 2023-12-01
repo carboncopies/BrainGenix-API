@@ -56,13 +56,13 @@ for _ in range(NumIters):
         r = requests.get(f"{BaseURI}NES/Simulation/GetStatus?AuthKey=MyVerySecureToken&SimulationID={x}")
         print("Sim/GetStatus", r.content)
 
-    # # Test create sphere
-    # for x in range(NumShapes):
-    #     # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
-    #     PyList = [0,0,0]
-    #     MYLIST = json.dumps(PyList)
-    #     r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.0&Center_um={MYLIST}")
-    #     print("Shape/Sphere/Create", r.content)
+    # Test create sphere
+    for x in range(NumShapes):
+        # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
+        PyList = [0,0,4]
+        MYLIST = json.dumps(PyList)
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=3.0&Center_um={MYLIST}")
+        print("Shape/Sphere/Create", r.content)
 
     # Test create Box
     for x in range(NumShapes):
@@ -84,7 +84,7 @@ for _ in range(NumIters):
 
 
     # Test create BS Compartment
-    for x in range(NumShapes):
+    for x in range(NumShapes*2):
         r = requests.get(f"{BaseURI}NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID=0&ShapeID={x}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
         print("Compartment/BS/Create",r.content)
 
@@ -134,10 +134,10 @@ for _ in range(NumIters):
     #     r = requests.get(f"{BaseURI}NES/Tool/PatchClampADC/GetRecordedData?AuthKey=MyVerySecureToken&SimulationID=0&TargetADC={x}")
     #     print("Tool/PatchClampADC/GetRecordedData", r.content)
 
-    # Test Simulation BuildMesh
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/BuildMesh?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/BuildMesh", r.content)
+    # # Test Simulation BuildMesh
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/BuildMesh?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("Sim/BuildMesh", r.content)
 
 
     JSONParams = json.dumps(0.1)
@@ -159,12 +159,12 @@ for _ in range(NumIters):
     #     r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImageStack?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=2")
     #     print("VSDA/EM/GetImageStack", r.content)
 
-    # Test VSDA EM SetupMicroscope
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
-        print("VSDA/EM/SetupMicroscope", r.content)
+    # # Test VSDA EM SetupMicroscope
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
+    #     print("VSDA/EM/SetupMicroscope", r.content)
        
-    # Test VSDA EM GetRenderStatus
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/VSDA/EM/GetRenderStatus?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=1")
-        print("VSDA/EM/SetupMicroscope", r.content)
+    # # Test VSDA EM GetRenderStatus
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/GetRenderStatus?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=1")
+    #     print("VSDA/EM/SetupMicroscope", r.content)

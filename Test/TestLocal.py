@@ -69,8 +69,9 @@ for _ in range(NumIters):
         # PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
         PyList = [0, 0, 0]
         MYLIST = json.dumps(PyList)
+        Rotation = json.dumps([0.1,0,0])
         Dimensions = json.dumps([1, 1, 1])
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Dimensions}&Rotation_rad={MYLIST}")
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Dimensions}&Rotation_rad={Rotation}")
         print("Shape/Box/Create",r.content)
 
     # # Test create cylinder

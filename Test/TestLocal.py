@@ -56,21 +56,22 @@ for _ in range(NumIters):
         r = requests.get(f"{BaseURI}NES/Simulation/GetStatus?AuthKey=MyVerySecureToken&SimulationID={x}")
         print("Sim/GetStatus", r.content)
 
-    # Test create sphere
-    for x in range(NumShapes):
-        # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
-        PyList = [0,0,0]
-        MYLIST = json.dumps(PyList)
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.0&Center_um={MYLIST}")
-        print("Shape/Sphere/Create", r.content)
-
-    # # Test create Box
+    # # Test create sphere
     # for x in range(NumShapes):
-    #     PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
+    #     # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
+    #     PyList = [0,0,0]
     #     MYLIST = json.dumps(PyList)
-    #     Scale = json.dumps([0.8, 0.9, 1.0])
-    #     r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Scale}&Rotation_rad={MYLIST}")
-    #     print("Shape/Box/Create",r.content)
+    #     r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.0&Center_um={MYLIST}")
+    #     print("Shape/Sphere/Create", r.content)
+
+    # Test create Box
+    for x in range(NumShapes):
+        # PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
+        PyList = [0, 0, 0]
+        MYLIST = json.dumps(PyList)
+        Dimensions = json.dumps([1, 1, 1])
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Dimensions}&Rotation_rad={MYLIST}")
+        print("Shape/Box/Create",r.content)
 
     # # Test create cylinder
     # PyList = [1,2,3]
@@ -137,7 +138,9 @@ for _ in range(NumIters):
         r = requests.get(f"{BaseURI}NES/Simulation/BuildMesh?AuthKey=MyVerySecureToken&SimulationID={x}")
         print("Sim/BuildMesh", r.content)
 
-    r = requests.get(f"{BaseURI}NES/Debug?AuthKey=MyVerySecureToken&Query=\"\"")
+
+    JSONParams = json.dumps(0.1)
+    r = requests.get(f"{BaseURI}NES/Debug?AuthKey=MyVerySecureToken&Query={JSONParams}")
     print("Sim/Debug", r.content)
 
     # # Test VSDA EM Initialize

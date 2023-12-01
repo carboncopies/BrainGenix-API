@@ -58,18 +58,19 @@ for _ in range(NumIters):
 
     # Test create sphere
     for x in range(NumShapes):
-        PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
+        # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
+        PyList = [0,0,0]
         MYLIST = json.dumps(PyList)
         r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.0&Center_um={MYLIST}")
         print("Shape/Sphere/Create", r.content)
 
-    # Test create Box
-    for x in range(NumShapes):
-        PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
-        MYLIST = json.dumps(PyList)
-        Scale = json.dumps([0.8, 0.9, 1.0])
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Scale}&Rotation_rad={MYLIST}")
-        print("Shape/Box/Create",r.content)
+    # # Test create Box
+    # for x in range(NumShapes):
+    #     PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
+    #     MYLIST = json.dumps(PyList)
+    #     Scale = json.dumps([0.8, 0.9, 1.0])
+    #     r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Scale}&Rotation_rad={MYLIST}")
+    #     print("Shape/Box/Create",r.content)
 
     # # Test create cylinder
     # PyList = [1,2,3]
@@ -81,7 +82,7 @@ for _ in range(NumIters):
 
 
     # Test create BS Compartment
-    for x in range(NumShapes*2):
+    for x in range(NumShapes):
         r = requests.get(f"{BaseURI}NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID=0&ShapeID={x}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
         print("Compartment/BS/Create",r.content)
 

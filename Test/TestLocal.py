@@ -61,7 +61,7 @@ for _ in range(NumIters):
         # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
         PyList = [0,0,4]
         MYLIST = json.dumps(PyList)
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=3.0&Center_um={MYLIST}")
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.5&Center_um={MYLIST}")
         print("Shape/Sphere/Create", r.content)
 
     # Test create Box

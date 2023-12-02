@@ -63,7 +63,7 @@ for _ in range(NumIters):
     Offset = 0
     for x in range(NumShapes):
         # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
-        Positions = [[0,0,4], [0,6,3], [1,2,1], [4,1,2], [3,3,2], [5,1,3]]
+        Positions = [[0,0,4], [0,6,3], [1,2,1], [4,1,2], [3,3,2], [5,1,3], [7,6,2], [6,5,2], [7,6,4], [6,4,3]]
         for i in range(len(Positions)):
             DoneShapes+=1
             PyList = Positions[i]

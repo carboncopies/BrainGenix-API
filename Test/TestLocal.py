@@ -24,54 +24,65 @@ NumIters = Args.NumIters
 
 
 # Test Simulation Create
+SimID = 0
 for x in range(NumSims):
     r = requests.get(f"{BaseURI}NES/Simulation/Create?AuthKey=MyVerySecureToken&SimulationName=mySim")
     print("Sim/Create", r.content)
+    SimID = r.json()["SimulationID"]
 
 
 for _ in range(NumIters):
 
-    # Test Simulation Reset
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/Reset?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/Reset", r.content)
+    # # Test Simulation Reset
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/Reset?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("Sim/Reset", r.content)
 
-    # Test Simulation RunFor
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/RunFor?AuthKey=MyVerySecureToken&SimulationID={x}&Runtime_ms={x}.0")
-        print("Sim/RunFor", r.content)
+    # # Test Simulation RunFor
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/RunFor?AuthKey=MyVerySecureToken&SimulationID={x}&Runtime_ms={x}.0")
+    #     print("Sim/RunFor", r.content)
 
-    # Test Simulation RecordAll
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/RecordAll?AuthKey=MyVerySecureToken&SimulationID={x}&MaxRecordTime_ms={x}.0")
-        print("Sim/RecordAll", r.content)
+    # # Test Simulation RecordAll
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/RecordAll?AuthKey=MyVerySecureToken&SimulationID={x}&MaxRecordTime_ms={x}.0")
+    #     print("Sim/RecordAll", r.content)
 
-    # Test Simulation GetRecording
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/GetRecording?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/GetRecording", r.content)
+    # # Test Simulation GetRecording
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/GetRecording?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("Sim/GetRecording", r.content)
 
-    # Test Simulation GetStatus
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/GetStatus?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/GetStatus", r.content)
+    # # Test Simulation GetStatus
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/GetStatus?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("Sim/GetStatus", r.content)
 
     # Test create sphere
+    DoneShapes = 0
+    Offset = 0
     for x in range(NumShapes):
         # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
-        PyList = [0,0,4]
-        MYLIST = json.dumps(PyList)
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.5&Center_um={MYLIST}")
-        print("Shape/Sphere/Create", r.content)
+        Positions = [[0,0,4], [0,6,3], [1,2,1], [4,1,2]]
+        for i in range(len(Positions)):
+            DoneShapes+=1
+            PyList = Positions[i]
+            MYLIST = json.dumps(PyList)
+            r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Radius_um=1.5&Center_um={MYLIST}")
+            print("Shape/Sphere/Create", r.content)
+
+            if i == 0:
+                Offset = r.json()["ShapeID"]
 
     # Test create Box
     for x in range(NumShapes):
         # PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
+        DoneShapes+=1
         PyList = [0, 0, 0]
         MYLIST = json.dumps(PyList)
         Rotation = json.dumps([0.1,0,0])
         Dimensions = json.dumps([1, 1, 1])
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Dimensions}&Rotation_rad={Rotation}")
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&CenterPosition_um={MYLIST}&Dimensions_um={Dimensions}&Rotation_rad={Rotation}")
         print("Shape/Box/Create",r.content)
 
     # # Test create cylinder
@@ -84,8 +95,8 @@ for _ in range(NumIters):
 
 
     # Test create BS Compartment
-    for x in range(NumShapes*2):
-        r = requests.get(f"{BaseURI}NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID=0&ShapeID={x}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
+    for x in range(DoneShapes):
+        r = requests.get(f"{BaseURI}NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&ShapeID={x + Offset}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
         print("Compartment/BS/Create",r.content)
 
     # # Test create Staple

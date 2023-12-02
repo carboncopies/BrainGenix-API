@@ -151,9 +151,26 @@ for _ in range(NumIters):
     #     print("Sim/BuildMesh", r.content)
 
 
-    JSONParams = json.dumps(0.1)
-    r = requests.get(f"{BaseURI}NES/Debug?AuthKey=MyVerySecureToken&Query={JSONParams}")
-    print("Sim/Debug", r.content)
+    #--- Test Simulation VSDA Routes ---# 
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/Initialize?AuthKey=MyVerySecureToken&SimulationID={SimID}")
+    print("Sim/VSDA/EM/Initialize", r.content)
+
+
+    '''
+    - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+    - (float) `PixelResolution_nm` Number of nanometers of resolution for each pixel.  
+    - (int) `ImageWidth_px` Set the width of the image in pixels.  
+    - (int) `ImageHeight_px` Set the height of the image in pixels.  
+    - (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
+    - (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
+
+    '''
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
+    print("Sim/VSDA/EM/SetupMicroscope", r.content)
+
+    # JSONParams = json.dumps(0.1)
+    # r = requests.get(f"{BaseURI}NES/Debug?AuthKey=MyVerySecureToken&Query={JSONParams}")
+    # print("Sim/Debug", r.content)
 
     # # Test VSDA EM Initialize
     # for x in range(NumSims):

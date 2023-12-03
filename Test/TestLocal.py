@@ -203,6 +203,12 @@ for _ in range(NumIters):
     print("Sim/VSDA/EM/QueueRenderOperation", r.content)
 
 
+    '''
+    - (bgSimulationID) `SimulationID` ID of simulation to get the status for.  
+    '''
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/GetRenderStatus?AuthKey=MyVerySecureToken&SimulationID={SimID}")
+    print("Sim/VSDA/EM/GetRenderStatus", r.content)
+
 
 
     # JSONParams = json.dumps(0.1)

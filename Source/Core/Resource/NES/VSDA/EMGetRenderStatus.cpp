@@ -16,7 +16,6 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("ScanRegionID");
 
 
   // Setup Callback
@@ -56,13 +55,11 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Get Params
     int SimID = Request->get_query_parameter("SimulationID", -1);
-    int ScanRegID = Request->get_query_parameter("ScanRegionID", -1);
    
 
     // Upstream Query
     nlohmann::json UpstreamQuery;
     UpstreamQuery["SimulationID"] = SimID;
-    UpstreamQuery["ScanRegionID"] = ScanRegID;
     
     std::string UpstreamResponseStr = "";
     bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "VSDA/EM/GetRenderStatus", UpstreamQuery.dump(), &UpstreamResponseStr);
@@ -77,7 +74,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 0;
-    Response["ScanRegID"] = 0;
+    Response["ScanRegion"] = UpstreamResponse["ScanRegion"].get<int>();
     
     std::cout<<"VSDA EM GetRenderStatus Called With Sim ID: "<<SimID<<std::endl;
 

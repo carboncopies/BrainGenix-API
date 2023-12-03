@@ -9,7 +9,7 @@ Parser = argparse.ArgumentParser(description="BrainGenix-API Simple Python Test 
 Parser.add_argument("-Host", default="localhost", type=str, help="Host to connect to")
 Parser.add_argument("-Port", default=8000, type=int, help="Port number to connect to")
 Parser.add_argument("--NumSims", default=1, type=int, help="Number of simulations to create")
-Parser.add_argument("--NumShapes", default=1000, type=int, help="Number of shapes to create")
+Parser.add_argument("--NumShapes", default=1, type=int, help="Number of shapes to create")
 Parser.add_argument("--NumIters", default=1, type=int, help="Number of iterations to generate")
 Args = Parser.parse_args()
 
@@ -24,51 +24,65 @@ NumIters = Args.NumIters
 
 
 # Test Simulation Create
+SimID = 0
 for x in range(NumSims):
     r = requests.get(f"{BaseURI}NES/Simulation/Create?AuthKey=MyVerySecureToken&SimulationName=mySim")
     print("Sim/Create", r.content)
+    SimID = r.json()["SimulationID"]
 
 
 for _ in range(NumIters):
 
-    # Test Simulation Reset
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/Reset?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/Reset", r.content)
+    # # Test Simulation Reset
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/Reset?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("Sim/Reset", r.content)
 
-    # Test Simulation RunFor
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/RunFor?AuthKey=MyVerySecureToken&SimulationID={x}&Runtime_ms={x}.0")
-        print("Sim/RunFor", r.content)
+    # # Test Simulation RunFor
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/RunFor?AuthKey=MyVerySecureToken&SimulationID={x}&Runtime_ms={x}.0")
+    #     print("Sim/RunFor", r.content)
 
-    # Test Simulation RecordAll
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/RecordAll?AuthKey=MyVerySecureToken&SimulationID={x}&MaxRecordTime_ms={x}.0")
-        print("Sim/RecordAll", r.content)
+    # # Test Simulation RecordAll
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/RecordAll?AuthKey=MyVerySecureToken&SimulationID={x}&MaxRecordTime_ms={x}.0")
+    #     print("Sim/RecordAll", r.content)
 
-    # Test Simulation GetRecording
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/GetRecording?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/GetRecording", r.content)
+    # # Test Simulation GetRecording
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/GetRecording?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("Sim/GetRecording", r.content)
 
-    # Test Simulation GetStatus
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/GetStatus?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/GetStatus", r.content)
+    # # Test Simulation GetStatus
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/GetStatus?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("Sim/GetStatus", r.content)
 
     # Test create sphere
+    DoneShapes = 0
+    Offset = 0
     for x in range(NumShapes):
-        PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
-        MYLIST = json.dumps(PyList)
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=1.2&Center_um={MYLIST}")
-        print("Shape/Sphere/Create", r.content)
+        # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
+        Positions = [[0,0,4], [0,6,3], [1,2,1], [4,1,2], [3,3,2], [5,1,3], [7,6,2], [6,5,2], [7,6,4], [6,4,3]]
+        for i in range(len(Positions)):
+            DoneShapes+=1
+            PyList = Positions[i]
+            MYLIST = json.dumps(PyList)
+            r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Radius_um=1.5&Center_um={MYLIST}")
+            print("Shape/Sphere/Create", r.content)
+
+            if i == 0:
+                Offset = r.json()["ShapeID"]
 
     # Test create Box
     for x in range(NumShapes):
-        PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
+        # PyList = [random.randint(-40,40)/4, random.randint(-40,40)/4, random.randint(-40,40)/4]
+        DoneShapes+=1
+        PyList = [0, 0, 0]
         MYLIST = json.dumps(PyList)
-        Scale = json.dumps([0.8, 0.9, 1.0])
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={Scale}&Rotation_rad={MYLIST}")
+        Rotation = json.dumps([0.1,0,0])
+        Dimensions = json.dumps([1, 1, 1])
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&CenterPosition_um={MYLIST}&Dimensions_um={Dimensions}&Rotation_rad={Rotation}")
         print("Shape/Box/Create",r.content)
 
     # # Test create cylinder
@@ -81,8 +95,8 @@ for _ in range(NumIters):
 
 
     # Test create BS Compartment
-    for x in range(NumShapes*2):
-        r = requests.get(f"{BaseURI}NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID=0&ShapeID={x}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
+    for x in range(DoneShapes):
+        r = requests.get(f"{BaseURI}NES/Compartment/BS/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&ShapeID={x + Offset}&MembranePotential_mV=0.0&SpikeThreshold_mV=0.0&DecayTime_ms=0.0")
         print("Compartment/BS/Create",r.content)
 
     # # Test create Staple
@@ -131,16 +145,16 @@ for _ in range(NumIters):
     #     r = requests.get(f"{BaseURI}NES/Tool/PatchClampADC/GetRecordedData?AuthKey=MyVerySecureToken&SimulationID=0&TargetADC={x}")
     #     print("Tool/PatchClampADC/GetRecordedData", r.content)
 
-    # Test Simulation BuildMesh
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/BuildMesh?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/BuildMesh", r.content)
+    # # Test Simulation BuildMesh
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/Simulation/BuildMesh?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("Sim/BuildMesh", r.content)
 
 
-    # Test VSDA EM Initialize
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/VSDA/EM/Initialize?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("VSDA/EM/Initialize", r.content)
+    #--- Test Simulation VSDA Routes ---# 
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/Initialize?AuthKey=MyVerySecureToken&SimulationID={SimID}")
+    print("Sim/VSDA/EM/Initialize", r.content)
+
 
     # Test VSDA EM SetupMicroscope
     for x in range(NumSims):
@@ -155,4 +169,65 @@ for _ in range(NumIters):
     # Test VSDA EM SetupMicroscope
     for x in range(NumSims):
         r = requests.get(f"{BaseURI}NES/VSDA/EM/QueueRenderOperation?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=0")
-        print("VSDA/EM/QueueRenderOperation", r.content)
+
+
+    '''
+    - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+    - (float) `PixelResolution_nm` Number of nanometers of resolution for each pixel.  
+    - (int) `ImageWidth_px` Set the width of the image in pixels.  
+    - (int) `ImageHeight_px` Set the height of the image in pixels.  
+    - (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
+    - (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
+    '''
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
+    print("Sim/VSDA/EM/SetupMicroscope", r.content)
+
+
+
+    '''
+    - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+    - (vec3) `Point1_um` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
+    - (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+    '''
+    Point1 = json.dumps([0,0,0])
+    Point2 = json.dumps([9,8,5])
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1_um={Point1}&Point2_um={Point2}")
+    print("Sim/VSDA/EM/DefineScanRegion", r.content)
+
+
+
+
+
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
+    print("Sim/VSDA/EM/SetupMicroscope", r.content)
+
+
+    # JSONParams = json.dumps(0.1)
+    # r = requests.get(f"{BaseURI}NES/Debug?AuthKey=MyVerySecureToken&Query={JSONParams}")
+    # print("Sim/Debug", r.content)
+
+    # # Test VSDA EM Initialize
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/Initialize?AuthKey=MyVerySecureToken&SimulationID={x}")
+    #     print("VSDA/EM/Initialize", r.content)
+
+    # # Test VSDA EM SetupMicroscope
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
+    #     print("VSDA/EM/SetupMicroscope", r.content)
+
+    # # Test VSDA EM GetImageStack
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImageStack?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=2")
+    #     print("VSDA/EM/GetImageStack", r.content)
+
+    # # Test VSDA EM SetupMicroscope
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
+    #     print("VSDA/EM/SetupMicroscope", r.content)
+       
+    # # Test VSDA EM GetRenderStatus
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/GetRenderStatus?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=1")
+    #     print("VSDA/EM/SetupMicroscope", r.content)
+

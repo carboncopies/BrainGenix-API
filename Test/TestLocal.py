@@ -163,10 +163,29 @@ for _ in range(NumIters):
     - (int) `ImageHeight_px` Set the height of the image in pixels.  
     - (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
     - (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
-
     '''
     r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
     print("Sim/VSDA/EM/SetupMicroscope", r.content)
+
+
+
+    '''
+    - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+    - (vec3) `Point1_um` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
+    - (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+    '''
+    Point1 = json.dumps([0,0,0])
+    Point2 = json.dumps([9,8,5])
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1_um={Point1}&Point2_um={Point2}")
+    print("Sim/VSDA/EM/DefineScanRegion", r.content)
+
+
+
+
+
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
+    print("Sim/VSDA/EM/SetupMicroscope", r.content)
+
 
     # JSONParams = json.dumps(0.1)
     # r = requests.get(f"{BaseURI}NES/Debug?AuthKey=MyVerySecureToken&Query={JSONParams}")

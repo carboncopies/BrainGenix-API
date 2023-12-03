@@ -447,7 +447,6 @@ Each route will be described in this format:
 *Required Params*:  
 
 - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
-- (bgScanRegionID) `ScanRegionID` ID of the scan region to have it's status checked.  
 
 **Response**:  
 

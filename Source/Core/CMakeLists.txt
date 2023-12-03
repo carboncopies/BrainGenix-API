@@ -89,6 +89,11 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.cpp
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.h
+
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMDefineScanRegion.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMDefineScanRegion.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.cpp
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.h

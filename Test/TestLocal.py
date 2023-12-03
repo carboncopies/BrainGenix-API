@@ -156,19 +156,19 @@ for _ in range(NumIters):
     print("Sim/VSDA/EM/Initialize", r.content)
 
 
-    # Test VSDA EM SetupMicroscope
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
-        print("VSDA/EM/SetupMicroscope", r.content)
+    # # Test VSDA EM SetupMicroscope
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={x}&PixelResolution_nm=3&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=20&ScanRegionOverlap_percent=10")
+    #     print("VSDA/EM/SetupMicroscope", r.content)
 
-    # Test VSDA EM DefineScanRegion
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={x}&Point1_um=(0,0,0)&Point2_um=(0,0,0)")
-        print("VSDA/EM/DefineScanRegion", r.content)
+    # # Test VSDA EM DefineScanRegion
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={x}&Point1_um=(0,0,0)&Point2_um=(0,0,0)")
+    #     print("VSDA/EM/DefineScanRegion", r.content)
 
-    # Test VSDA EM SetupMicroscope
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/VSDA/EM/QueueRenderOperation?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=0")
+    # # Test VSDA EM SetupMicroscope
+    # for x in range(NumSims):
+    #     r = requests.get(f"{BaseURI}NES/VSDA/EM/QueueRenderOperation?AuthKey=MyVerySecureToken&SimulationID={x}&ScanRegionID=0")
 
 
     '''
@@ -183,7 +183,6 @@ for _ in range(NumIters):
     print("Sim/VSDA/EM/SetupMicroscope", r.content)
 
 
-
     '''
     - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
     - (vec3) `Point1_um` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
@@ -193,13 +192,17 @@ for _ in range(NumIters):
     Point2 = json.dumps([9,8,5])
     r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1_um={Point1}&Point2_um={Point2}")
     print("Sim/VSDA/EM/DefineScanRegion", r.content)
+    ScanRegionID = r.json()["ScanRegionID"]
 
 
+    '''
+    - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+    - (bgScanRegionID) `ScanRegionID` ID of the scan region to be rendered.  
+    '''
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/QueueRenderOperation?AuthKey=MyVerySecureToken&SimulationID={SimID}&ScanRegionID={ScanRegionID}")
+    print("Sim/VSDA/EM/QueueRenderOperation", r.content)
 
 
-
-    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
-    print("Sim/VSDA/EM/SetupMicroscope", r.content)
 
 
     # JSONParams = json.dumps(0.1)

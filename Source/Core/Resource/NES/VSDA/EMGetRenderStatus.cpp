@@ -74,7 +74,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 0;
-    Response["ScanRegion"] = UpstreamResponse["ScanRegion"].get<int>();
+    Response["RenderStatus"] = UpstreamResponse["RenderStatus"].get<int>();
     
     std::cout<<"VSDA EM GetRenderStatus Called With Sim ID: "<<SimID<<std::endl;
 

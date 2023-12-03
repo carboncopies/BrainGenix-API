@@ -41,11 +41,12 @@ Each route will be described in this format:
  - `999` General Failure
 
 ## bgRenderStatus
- - `0` Ready
- - `1` Compressing
- - `2` Rendering
- - `3` Not Yet Rendered
-
+ - `0` Not Initialized
+ - `1` Initialization Begin
+ - `2` Initialization Done
+ - `3` Render Requsted
+ - `4` Render Ready
+ - `5` Render Done
 
 
 

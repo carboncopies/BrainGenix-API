@@ -64,6 +64,8 @@ for _ in range(NumIters):
     for x in range(NumShapes):
         # PyList = [random.randint(5,5)/4, random.randint(5,5)/4, random.randint(5,5)/4]
         Positions = [[0,0,4], [0,6,3], [1,2,1], [4,1,2], [3,3,2], [5,1,3], [7,6,2], [6,5,2], [7,6,4], [6,4,3]]
+        for i in range(30):
+             Positions.append([random.randint(0,8), random.randint(0,8), random.randint(0,8)])
         for i in range(len(Positions)):
             DoneShapes+=1
             PyList = Positions[i]
@@ -188,8 +190,8 @@ for _ in range(NumIters):
     - (vec3) `Point1_um` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
     - (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
     '''
-    Point1 = json.dumps([0,0,0])
-    Point2 = json.dumps([9,8,5])
+    Point1 = json.dumps([-1,-1,-1])
+    Point2 = json.dumps([9,9,9])
     r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1_um={Point1}&Point2_um={Point2}")
     print("Sim/VSDA/EM/DefineScanRegion", r.content)
     ScanRegionID = r.json()["ScanRegionID"]

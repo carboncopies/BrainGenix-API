@@ -60,11 +60,11 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Get Params
     int SimID = Request->get_query_parameter("SimulationID", -1);
-    float PixelResolution_nm = Request->get_query_parameter("PixelResolution_nm", -1);
+    float PixelResolution_nm = Request->get_query_parameter("PixelResolution_nm", -1.0);
     int ImageWidth_px = Request->get_query_parameter("ImageWidth_px", -1);
     int ImageHeight_px = Request->get_query_parameter("ImageHeight_px", -1);
-    float SliceThickness_nm = Request->get_query_parameter("SliceThickness_nm", -1);
-    float ScanRegionOverlap_percent = Request->get_query_parameter("ScanRegionOverlap_percent", -1);
+    float SliceThickness_nm = Request->get_query_parameter("SliceThickness_nm", -1.0);
+    float ScanRegionOverlap_percent = Request->get_query_parameter("ScanRegionOverlap_percent", -1.0);
 
 
     // Upstream Query

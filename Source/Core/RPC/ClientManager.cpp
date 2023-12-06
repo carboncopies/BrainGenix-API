@@ -14,9 +14,10 @@ Manager::Manager(Config::Config* _Config, Server::Server* _Server,BG::Shared::Lo
 
     // Initialize Thread Signal
     RequestThreadsExit_ = false;
-    std::cout<<"Starting NES Client\n";
+    Logger_->Log("Starting NES Client\n", 1);
+   
     ConnectNES();
-    std::cout<<"Starting NES Client Manager Thread\n";
+        Logger_->Log("Starting NES Client Manager Thread\n",1);
     ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
 
     // Populate Server Struct
@@ -28,11 +29,11 @@ Manager::Manager(Config::Config* _Config, Server::Server* _Server,BG::Shared::Lo
 Manager::~Manager() {
 
     // Signal to threads to stop
-    std::cout<<"Requesting manager threads exit\n";
+    Logger_->Log("Requesting manager threads exit\n",1);
     RequestThreadsExit_ = true;
 
     // Join Threads
-    std::cout<<"Joining NES manager thread\n";
+    Logger_->Log("Joining NES manager thread\n",1);
     ConnectionManagerNES_.join();
 
 
@@ -47,14 +48,14 @@ bool Manager::ConnectNES() {
     int NESPort = Config_->NESPortNumber;
     int NESTimeout_ms = Config_->NESTimeout_ms;
     
-    std::cout<<"Connecting to NES on port: "<<NESPort<<std::endl;
-    std::cout<<"Connecting to NES on host: "<<NESHost<<std::endl;
-    std::cout<<"Connecting to NES with timeout_ms of: "<<NESTimeout_ms<<std::endl;
+    Logger_->Log("Connecting to NES on port: "+ std::to_string(NESPort)+'n',1);
+    Logger_->Log("Connecting to NES on host: "+ NESHost+'\n',1);
+    Logger_->Log("Connecting to NES with timeout_ms of: "+std::to_string (NESTimeout_ms)+'\n',1);
 
     try {
         NESClient_ = std::make_unique<::rpc::client>(NESHost.c_str(), NESPort);
     } catch (std::system_error& e) {
-        std::cout<<"ERR: Cannot find NES host (authoritative)\n";
+        Logger_->Log("ERR: Cannot find NES host (authoritative)\n",3);
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
@@ -75,10 +76,10 @@ bool Manager::RunVersionCheckNES() {
     // Update our internal status of how the connection is doing
     ::rpc::client::connection_state NESStatus = NESClient_->get_connection_state();
     if (NESStatus != ::rpc::client::connection_state::connected) {
-        std::cout<<"[ERR ] Unable to connect to NES service"<<std::endl;
+        Logger_->Log("[ERR ] Unable to connect to NES service"+'\n',3);
         Server_->NESState = SERVICE_FAILED;
     } else {
-        std::cout<<"[INFO] NES RPC Connection SERVICE_HEALTHY"<<std::endl;
+        Logger_->Log("[INFO] NES RPC Connection SERVICE_HEALTHY"+'\n',1);
         Server_->NESState = SERVICE_HEALTHY;
     }
 
@@ -86,12 +87,12 @@ bool Manager::RunVersionCheckNES() {
     std::string NESVersion = "undefined";
     bool Status = NESQueryJSON("GetAPIVersion", &NESVersion);
     if (!Status) {
-        std::cout<<"[ERR ] Failed To Get NES API Version String"<<std::endl;
+        Logger_->Log("[ERR ] Failed To Get NES API Version String"+'\n',1);
         return false;
     }
 
     if (NESVersion != "2023.11.29") {
-        std::cout<<"WARNING: NES/API Version Mismatch! This might make stuff break. NES "<<NESVersion<<" API "<<"2023.11.14"<<std::endl;
+        Logger_->Log("WARNING: NES/API Version Mismatch! This might make stuff break. NES "+NESVersion+" API "+"2023.11.14"+'\n',2);
         Server_->NESState = SERVICE_VERSION_MISMATCH;
         return false;
     }
@@ -104,15 +105,15 @@ bool Manager::NESQueryJSON(std::string _Route, std::string* _Result) {
     try {
         (*_Result) = NESClient_->call(_Route.c_str()).as<std::string>();
     } catch (::rpc::timeout& e) {
-        std::cout<<"ERR: NES Connection timed out!\n";
+        Logger_->Log("ERR: NES Connection timed out!\n",3);
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (::rpc::rpc_error& e) {
-        std::cout<<"ERR: NES remote returned RPC error\n";
+        Logger_->Log("ERR: NES remote returned RPC error\n",3);
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (std::system_error& e) {
-        std::cout<<"ERR: Cannot talk to NES host\n";
+        Logger_->Log("ERR: Cannot talk to NES host\n",3);
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
@@ -123,15 +124,15 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
     try {
         (*_Result) = NESClient_->call(_Route.c_str(), _Query).as<std::string>();
     } catch (::rpc::timeout& e) {
-        std::cout<<"ERR: NES Connection timed out!\n";
+        Logger_->Log("ERR: NES Connection timed out!\n",3);
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (::rpc::rpc_error& e) {
-        std::cout<<"ERR: NES remote returned RPC error\n";
+        Logger_->Log("ERR: NES remote returned RPC error\n",3);
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (std::system_error& e) {
-        std::cout<<"ERR: Cannot talk to NES host\n";
+        Logger_->Log("ERR: Cannot talk to NES host\n",3);
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
@@ -140,7 +141,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
 
 void Manager::ConnectionManagerNES() {
 
-    std::cout<<"Started NES Manager Thread\n";
+    Logger_->Log("Started NES Manager Thread\n",3);
 
     // Enter loop
     while (!RequestThreadsExit_) {
@@ -151,7 +152,7 @@ void Manager::ConnectionManagerNES() {
         // If not healthy, re-establish connection, retry stuff... For now, nothing...
         if (!IsHealthy) {
             if (!ConnectNES()) {
-                std::cout<<"[ERR ] Failed To Reconnect To NES Service!"<<std::endl;
+                Logger_->Log("[ERR ] Failed To Reconnect To NES Service!\n",3);
             }
         }
 
@@ -160,7 +161,7 @@ void Manager::ConnectionManagerNES() {
 
     }
 
-    std::cout<<"Exiting NES Manager Thread\n";
+    Logger_->Log("Exiting NES Manager Thread\n",1);
 
 }
 

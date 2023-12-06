@@ -9,7 +9,7 @@ namespace Logger {
 Logger::Logger(Config _Config) {
     Config_ = _Config;
     
-    Logger_ = spdlog::basic_logger_mt("basic_logger", "logs/basic-log.txt");
+    //Logger_ = spdlog::basic_logger_mt("basic_logger", "logs/basic-log.txt");
 
     // try
     // {

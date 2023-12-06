@@ -88,7 +88,7 @@ public:
      * @param _Config 
      * @param _Server 
      */
-    Manager(Config::Config* _Config, Server::Server* _Server, std::unique_ptr<BG::Shared::Logger::Config> LoggerConfig);
+    Manager(Config::Config* _Config, Server::Server* _Server, BG::Shared::Logger::Config LoggerConfig);
 
     /**
      * @brief Destroy the Manager object

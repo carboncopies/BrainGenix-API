@@ -30,6 +30,9 @@ int main(int NumArguments, char** ArgumentValues) {
 
     // Setup Logger Here
     BG::Shared::Logger::Config LoggerConfig;
+    LoggerConfig.LogfilePath = "logs/basic-log.txt";
+    LoggerConfig.LogfileSize = 2048;
+    LoggerConfig.MaxLogfiles = 10;
     BG::Shared::Logger::Logger Logger(LoggerConfig);
 
     // Setup Server
@@ -37,9 +40,9 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Server::Server* Server = ServerController.GetServerStruct();
 
     // Setup Upstream API Connection Handler
-    std::unique_ptr<BG::Shared::Logger::Config> LoggerConfigPtr = std::make_unique<BG::Shared::Logger::Config>(LoggerConfig);
-    BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server, std::move(LoggerConfigPtr));
-    //BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server,LoggerConfig);
+    //std::unique_ptr<BG::Shared::Logger::Config> LoggerConfigPtr = std::make_unique<BG::Shared::Logger::Config>(LoggerConfig);
+    //BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server, std::move(LoggerConfigPtr));
+    BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server,LoggerConfig);
 
     // Start Server
     ServerController.StartService();

@@ -39,7 +39,7 @@ class Logger {
 private:
     Config Config_; /**Local copy of the logging configuration struct*/
 
-    std::shared_ptr<spdlog::logger> Logger_;
+    //std::shared_ptr<spdlog::logger> Logger_;
 
 public:
 

@@ -6,10 +6,10 @@ namespace API {
 namespace RPC {
 
 
-Manager::Manager(Config::Config* _Config, Server::Server* _Server,std::unique_ptr<BG::Shared::Logger::Config> _LoggerConfig) {
+Manager::Manager(Config::Config* _Config, Server::Server* _Server,BG::Shared::Logger::Config _LoggerConfig) {
     Config_ = _Config;
     Server_ = _Server;
-    Logger_ = std::make_unique<BG::Shared::Logger::Logger>(*_LoggerConfig);
+    Logger_ = std::make_unique<BG::Shared::Logger::Logger>(_LoggerConfig);
 
 
     // Initialize Thread Signal

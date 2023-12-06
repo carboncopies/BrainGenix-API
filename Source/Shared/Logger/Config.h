@@ -13,6 +13,7 @@
 
 // Standard Libraries (BG convention: use <> instead of "")
 #include <string>
+#include <stdint.h>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 

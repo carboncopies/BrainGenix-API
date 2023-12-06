@@ -37,7 +37,9 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Server::Server* Server = ServerController.GetServerStruct();
 
     // Setup Upstream API Connection Handler
-    BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server);
+    std::unique_ptr<BG::Shared::Logger::Config> LoggerConfigPtr = std::make_unique<BG::Shared::Logger::Config>(LoggerConfig);
+    BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server, std::move(LoggerConfigPtr));
+    //BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server,LoggerConfig);
 
     // Start Server
     ServerController.StartService();

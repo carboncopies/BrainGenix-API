@@ -28,6 +28,7 @@
 #include <Config/Config.h>
 #include <Server/Server.h>
 #include <Util/Types.h>
+#include "../../Shared/Logger/LoggingSystem.h"
 
 
 namespace BG {
@@ -45,6 +46,7 @@ class Manager {
 private:
     Config::Config* Config_; /**Pointer to the configuration instance*/
     Server::Server* Server_; /**Pointer to server struct, this class updates upstream status info*/
+    std::unique_ptr<BG::Shared::Logger::Logger> Logger_; /**<Pointer To BG-Shared Logging System*/    // Connect to nes service, start managing service
 
     bool RequestThreadsExit_; /**Used to signal to threads that they should exit*/
     std::thread ConnectionManagerNES_; /**Thread running the NES connection manager*/
@@ -86,7 +88,7 @@ public:
      * @param _Config 
      * @param _Server 
      */
-    Manager(Config::Config* _Config, Server::Server* _Server);
+    Manager(Config::Config* _Config, Server::Server* _Server, std::unique_ptr<BG::Shared::Logger::Config> LoggerConfig);
 
     /**
      * @brief Destroy the Manager object

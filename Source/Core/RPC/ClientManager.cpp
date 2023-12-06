@@ -6,14 +6,14 @@ namespace API {
 namespace RPC {
 
 
-Manager::Manager(Config::Config* _Config, Server::Server* _Server) {
+Manager::Manager(Config::Config* _Config, Server::Server* _Server,std::unique_ptr<BG::Shared::Logger::Config> _LoggerConfig) {
     Config_ = _Config;
     Server_ = _Server;
+    Logger_ = std::make_unique<BG::Shared::Logger::Logger>(*_LoggerConfig);
+
 
     // Initialize Thread Signal
     RequestThreadsExit_ = false;
-
-    // Connect to nes service, start managing service
     std::cout<<"Starting NES Client\n";
     ConnectNES();
     std::cout<<"Starting NES Client Manager Thread\n";

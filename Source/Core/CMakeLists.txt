@@ -122,8 +122,7 @@ set(MAIN_SOURCES
   )
 
 
-# Include Shared Libs
-include(${SRC_DIR}/Shared/Logger/Logger.cmake)
+
 
 
 # Create Main Executable

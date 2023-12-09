@@ -135,6 +135,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     spdlog::spdlog
     unofficial::libmariadb
 
+    bg-common-logger
+
     VersioningSystem
     CompileTimeStamp
     CompilePlatformInfo

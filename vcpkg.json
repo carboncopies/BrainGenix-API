@@ -3,6 +3,7 @@
   "version-string": "0.0.1",
   "license": "AGPL-3.0-or-later",
   "dependencies": [
+    "yaml-cpp",
     "restbed",
     "boost-program-options",
     "nlohmann-json",

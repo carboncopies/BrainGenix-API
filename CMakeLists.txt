@@ -43,6 +43,9 @@ message(STATUS "Finding bg-common-logger Package")
 find_package(bg-common-logger CONFIG REQUIRED)
 
 # Add Libraries
+message(STATUS "Setting Up yaml-cpp Library")
+find_package(yaml-cpp CONFIG REQUIRED)
+
 message(STATUS "Finding restbed Package")
 find_package(unofficial-restbed CONFIG REQUIRED)
 

@@ -9,8 +9,8 @@ namespace Config {
 
 Manager::Manager(int _NumArgs, char** _Args) {
 
-    // Parse Arguments
-    ArgumentParser ArgParser(Config_, _NumArgs, _Args);
+    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger=std::make_unique<BG::Common::Logger::LoggingSystem>();    // Parse Arguments
+    ArgumentParser ArgParser(std::move(Logger),Config_, _NumArgs, _Args);
     ArgParser.~ArgumentParser();
 
     // Now Load Configuration File

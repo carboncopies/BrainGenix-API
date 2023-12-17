@@ -76,22 +76,33 @@ def create_boxes(SimID:int, DoneShapes:int)->int:
         DoneShapes+=1
         PyList = [0, 0, 0]
         MYLIST = json.dumps(PyList)
-        Rotation = json.dumps([0.1,0,0])
-        Dimensions = json.dumps([1, 1, 1])
+        Rotation = json.dumps([0,0,0.3])
+        Dimensions = json.dumps([2, 3, 2])
         r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&CenterPosition_um={MYLIST}&Dimensions_um={Dimensions}&Rotation_rad={Rotation}")
         print("Shape/Box/Create",r.content)
     return DoneShapes
 
 def create_cylinders(SimID:int, DoneShapes:int)->int:
     # Test create cylinder
+    MYLIST1 = json.dumps([0,0,0])
+    MYLIST2 = json.dumps([5,5,0])
+    radius1 = 1.0
+    radius2 = 0.1
+
+    # Let's put some cylinders at the ends to ensure the locations are correct.
+    r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Radius_um=1.5&Center_um={MYLIST1}")
+    print("Shape/Sphere/Create", r.content)
     DoneShapes+=1
-    PyList1 = [0,0,3]
-    PyList2 = [0,0,13]
-    MYLIST1 = json.dumps(PyList1)
-    MYLIST2 = json.dumps(PyList2)
+
+    r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Radius_um=1.5&Center_um={MYLIST2}")
+    print("Shape/Sphere/Create", r.content)
+    DoneShapes+=1
+
     #for x in range(NumShapes):
-    r = requests.get(f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1Radius_um=5.2&Point1Position_um={MYLIST1}&Point2Radius_um=8.2&Point2Position_um={MYLIST2}")
+    r = requests.get(f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1Radius_um={radius1}&Point1Position_um={MYLIST1}&Point2Radius_um={radius2}&Point2Position_um={MYLIST2}")
     print("Shape/Cylinder/Create",r.content)
+    DoneShapes+=1
+
     return DoneShapes
 
 def create_BS_compartments(SimID:int, Offset:int, DoneShapes:int):
@@ -256,11 +267,12 @@ for _ in range(NumIters):
 
     #activity_simulations_tests()
 
+    Offset=0
     DoneShapes=0
 
-    DoneShapes, Offset=create_spheres(SimID, DoneShapes)
+    #DoneShapes, Offset=create_spheres(SimID, DoneShapes)
 
-    DoneShapes=create_boxes(SimID, DoneShapes)
+    #DoneShapes=create_boxes(SimID, DoneShapes)
 
     DoneShapes=create_cylinders(SimID, DoneShapes)
 
@@ -271,8 +283,6 @@ for _ in range(NumIters):
     #create_recording_devices()
 
     #show_model(NumSims)
-
-    ### QUESTION: What does VSDA stand for??
 
     init_VSDA(SimID)
 

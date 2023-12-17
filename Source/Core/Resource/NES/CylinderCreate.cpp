@@ -67,8 +67,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
-    UpstreamQuery["Point1Radius_um"] = Request->get_query_parameter("Point1Radius_um", -1);
-    UpstreamQuery["Point2Radius_um"] = Request->get_query_parameter("Point2Radius_um", -1);
+    float Point1Radius_um = Request->get_query_parameter("Point1Radius_um", -1);
+    float Point2Radius_um = Request->get_query_parameter("Point2Radius_um", -1);
+    std::cout << "Point1Radius_um: " << Point1Radius_um << '\n';
+    std::cout << "Point2Radius_um: " << Point2Radius_um << '\n';
+    UpstreamQuery["Point1Radius_um"] = Point1Radius_um;
+    UpstreamQuery["Point2Radius_um"] = Point2Radius_um;
     UpstreamQuery["Point1PosX_um"] = Point1Position_um[0].template get<float>();
     UpstreamQuery["Point1PosY_um"] = Point1Position_um[1].template get<float>();
     UpstreamQuery["Point1PosZ_um"] = Point1Position_um[2].template get<float>();

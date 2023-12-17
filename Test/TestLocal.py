@@ -82,8 +82,9 @@ def create_boxes(SimID:int, DoneShapes:int)->int:
         print("Shape/Box/Create",r.content)
     return DoneShapes
 
-def create_cylinders(SimID:int):
+def create_cylinders(SimID:int, DoneShapes:int)->int:
     # Test create cylinder
+    DoneShapes+=1
     PyList1 = [0,0,3]
     PyList2 = [0,0,13]
     MYLIST1 = json.dumps(PyList1)
@@ -91,6 +92,7 @@ def create_cylinders(SimID:int):
     #for x in range(NumShapes):
     r = requests.get(f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1Radius_um=5.2&Point1Position_um={MYLIST1}&Point2Radius_um=8.2&Point2Position_um={MYLIST2}")
     print("Shape/Cylinder/Create",r.content)
+    return DoneShapes
 
 def create_BS_compartments(SimID:int, Offset:int, DoneShapes:int):
     # Test create BS Compartment
@@ -260,7 +262,7 @@ for _ in range(NumIters):
 
     DoneShapes=create_boxes(SimID, DoneShapes)
 
-    #create_cylinders(SimID)
+    DoneShapes=create_cylinders(SimID, DoneShapes)
 
     create_BS_compartments(SimID, Offset, DoneShapes)
 

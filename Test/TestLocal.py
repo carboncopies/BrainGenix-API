@@ -86,8 +86,8 @@ def create_cylinders(SimID:int, DoneShapes:int)->int:
     # Test create cylinder
     MYLIST1 = json.dumps([0,0,0])
     MYLIST2 = json.dumps([5,5,0])
-    radius1 = 1.0
-    radius2 = 0.1
+    radius1 = 0.4
+    radius2 = 0.2
 
     # Let's put some cylinders at the ends to ensure the locations are correct.
     r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Radius_um=1.5&Center_um={MYLIST1}")
@@ -99,7 +99,9 @@ def create_cylinders(SimID:int, DoneShapes:int)->int:
     DoneShapes+=1
 
     #for x in range(NumShapes):
-    r = requests.get(f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1Radius_um={radius1}&Point1Position_um={MYLIST1}&Point2Radius_um={radius2}&Point2Position_um={MYLIST2}")
+    getstr = f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1Radius_um={radius1}&Point1Position_um={MYLIST1}&Point2Radius_um={radius2}&Point2Position_um={MYLIST2}"
+    print("The get string: "+getstr)
+    r = requests.get(getstr)
     print("Shape/Cylinder/Create",r.content)
     DoneShapes+=1
 

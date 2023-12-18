@@ -59,7 +59,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
 
     // Get Params
-    float Radius_um = Request->get_query_parameter("Radius_um", -1);
+    float Radius_um = Request->get_query_parameter("Radius_um", -1.0);
     std::cout << "Sphere Radius_um: " << Radius_um << '\n';
     nlohmann::json Center_um = nlohmann::json::parse(Request->get_query_parameter("Center_um", "[0, 0, 0]"));
     float CenterPosX_um = Center_um[0].template get<float>();

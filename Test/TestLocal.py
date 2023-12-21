@@ -197,7 +197,7 @@ def scan_EM_2(SimID:int):
     - (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
     - (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
     '''
-    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.4&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
     print("Sim/VSDA/EM/SetupMicroscope", r.content)
 
 

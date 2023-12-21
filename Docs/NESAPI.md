@@ -467,7 +467,7 @@ Each route will be described in this format:
 **Response**:  
 
 - (bgStatus) `StatusCode` Enum indicating the status of this API call.  
-- (Base64String) `ImageData` String containing base64 encoded image data.    
+- (list) `RenderedImages` List of file paths that can be given to the VSDA EM GetImage Function one at a time to retrieve images.  
 
 
 

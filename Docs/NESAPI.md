@@ -470,6 +470,22 @@ Each route will be described in this format:
 - (list) `RenderedImages` List of file paths that can be given to the VSDA EM GetImage Function one at a time to retrieve images.  
 
 
+### VSDA - EM - GetImage
+
+**URI** `/NES/VSDA/EM/GetImage?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (string) `ImageHandle` String containing the image handle that needs to be grabbed from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (base64String) `ImageData` Base 64 encoded string containing the bytes of the file.  
+
+
+
 
 
 ### Debug - DebugRoute

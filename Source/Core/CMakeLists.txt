@@ -96,6 +96,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImage.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImage.cpp
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.cpp
 

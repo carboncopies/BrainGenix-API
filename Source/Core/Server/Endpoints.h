@@ -60,6 +60,7 @@
 #include <Resource/NES/VSDA/EMDefineScanRegion.h>
 #include <Resource/NES/VSDA/EMQueueRenderOperation.h>
 #include <Resource/NES/VSDA/EMGetImageStack.h>
+#include <Resource/NES/VSDA/EMGetImage.h>
 #include <Resource/NES/VSDA/EMGetRenderStatus.h>
 
 #include <Resource/NES/Debug/Debug.h>
@@ -114,6 +115,7 @@ private:
     std::shared_ptr<Resource::NES::VSDA::EM::DefineScanRegion::Route>       NES_VSDA_EM_DefineScanRegion_;
     std::shared_ptr<Resource::NES::VSDA::EM::QueueRenderOperation::Route>   NES_VSDA_EM_QueueRenderOperation_;
     std::shared_ptr<Resource::NES::VSDA::EM::GetImageStack::Route>          NES_VSDA_EM_GetImageStack_;
+    std::shared_ptr<Resource::NES::VSDA::EM::GetImage::Route>               NES_VSDA_EM_GetImage_;
     std::shared_ptr<Resource::NES::VSDA::EM::GetRenderStatus::Route>        NES_VSDA_EM_GetRenderStatus_;
 
     std::shared_ptr<Resource::NES::Debug::Route>     NES_Debug_;

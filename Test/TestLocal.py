@@ -245,7 +245,7 @@ def scan_EM_2(SimID:int):
         '''
         r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImage?AuthKey=MyVerySecureToken&SimulationID={SimID}&ImageHandle={ImageHandle}")
         print("Sim/VSDA/EM/GetImage (JSON omitted due to size)")
-        ImageData = bytes(r.json()["ImageData"])
+        ImageData = bytes(r.json()["ImageData"], 'utf-8')
         print(f"Saving Image As: '{ImageHandle.split('/')[1]}'")
 
         with open(ImageHandle.split("/")[1],"wb") as FileHandler:

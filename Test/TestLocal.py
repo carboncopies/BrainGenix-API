@@ -232,7 +232,7 @@ def scan_EM_2(SimID:int):
     '''
     - (bgSimulationID) `SimulationID` ID of simulation to get the ImageStack for.  
     '''
-    r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImageStack?AuthKey=MyVerySecureToken&SimulationID={SimID}")
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImageStack?AuthKey=MyVerySecureToken&SimulationID={SimID}&ScanRegionID={ScanRegionID}")
     print("Sim/VSDA/EM/GetImageStack", r.content)
 
 

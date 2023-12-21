@@ -2,6 +2,7 @@ import requests
 import json
 import random
 import argparse
+import time
 
 
 # Handle Arguments for Host, Port, etc
@@ -195,7 +196,7 @@ def scan_EM_2(SimID:int):
     - (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
     - (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
     '''
-    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.2&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
     print("Sim/VSDA/EM/SetupMicroscope", r.content)
 
 
@@ -221,8 +222,19 @@ def scan_EM_2(SimID:int):
     '''
     - (bgSimulationID) `SimulationID` ID of simulation to get the status for.  
     '''
-    r = requests.get(f"{BaseURI}NES/VSDA/EM/GetRenderStatus?AuthKey=MyVerySecureToken&SimulationID={SimID}")
-    print("Sim/VSDA/EM/GetRenderStatus", r.content)
+    StatusCode = 0
+    while (StatusCode != 5):
+        r = requests.get(f"{BaseURI}NES/VSDA/EM/GetRenderStatus?AuthKey=MyVerySecureToken&SimulationID={SimID}")
+        print("Sim/VSDA/EM/GetRenderStatus", r.content)
+        StatusCode = r.json()["RenderStatus"]
+        time.sleep(2)
+
+    '''
+    - (bgSimulationID) `SimulationID` ID of simulation to get the ImageStack for.  
+    '''
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImageStack?AuthKey=MyVerySecureToken&SimulationID={SimID}")
+    print("Sim/VSDA/EM/GetImageStack", r.content)
+
 
 def run_debug():
     JSONParams = json.dumps(0.1)

@@ -3,6 +3,7 @@ import json
 import random
 import argparse
 import time
+import base64
 
 
 # Handle Arguments for Host, Port, etc
@@ -243,7 +244,13 @@ def scan_EM_2(SimID:int):
         - (string) `ImageHandle` String containing the image handle that needs to be grabbed from. 
         '''
         r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImage?AuthKey=MyVerySecureToken&SimulationID={SimID}&ImageHandle={ImageHandle}")
-        print("Sim/VSDA/EM/GetImage", r.content)
+        print("Sim/VSDA/EM/GetImage (JSON omitted due to size)")
+        ImageData = r.json()["ImageData"]
+        print(f"Saving Image As: '{ImageHandle.split('/')[1]}'")
+
+        with open(ImageHandle.split("/")[1],"wb") as FileHandler:
+            FileHandler.write(base64.decodebytes(ImageData))
+
 
 
 def run_debug():

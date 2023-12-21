@@ -56,7 +56,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Get Params
     int SimID = Request->get_query_parameter("SimulationID", -1);
-    std::string ImageHandle = Request->get_query_parameter("ImageHandle", -1);
+    std::string ImageHandle = Request->get_query_parameter("ImageHandle", "");
     
 
     // Upstream Query

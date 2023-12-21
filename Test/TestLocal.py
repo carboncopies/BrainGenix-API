@@ -234,6 +234,16 @@ def scan_EM_2(SimID:int):
     '''
     r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImageStack?AuthKey=MyVerySecureToken&SimulationID={SimID}&ScanRegionID={ScanRegionID}")
     print("Sim/VSDA/EM/GetImageStack", r.content)
+    ImageHandles = r.json()["RenderedImages"]
+
+
+    for ImageHandle in ImageHandles:
+        '''
+        - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+        - (string) `ImageHandle` String containing the image handle that needs to be grabbed from. 
+        '''
+        r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImage?AuthKey=MyVerySecureToken&SimulationID={SimID}&ImageHandle={ImageHandle}")
+        print("Sim/VSDA/EM/GetImage", r.content)
 
 
 def run_debug():

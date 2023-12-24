@@ -69,7 +69,7 @@ def CreateCylinder(SimID:int, DoneShapes:int, Point1:list, Point2:list, Radius1:
 def create_cylinders(SimID:int, DoneShapes:int)->int:
 
     LetterH = [[0.25, 6.5, 0.0], [0.25, 8.5, 0.0]], [[1.25, 6.5, 0.0], [1.25, 8.5, 0.0]], [[0.25, 7.5, 0.0], [1.25, 7.5, 0.0]]
-    LetterA = [[1.5,0.5,0], [2.0,8.5,0]], [[2.0,8.5,0.0], [2.5,6.5,0.0]],[[1.75,7.5,0.0],[2.25,7.5,0.0]]
+    LetterA = [[1.5, 0.5, 0.0], [2.0, 8.5, 0.0]], [[2.0, 8.5, 0.0], [2.5, 6.5, 0.0]], [[1.75, 7.5, 0.0], [2.25, 7.5, 0.0]]
     
 
     Sections = [LetterH, LetterA]

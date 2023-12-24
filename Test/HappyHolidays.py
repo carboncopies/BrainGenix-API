@@ -52,7 +52,7 @@ def activity_simulations_tests():
         print("Sim/GetStatus", r.content)
 
 
-def CreateCylinder(SimID:int, DoneShapes:int, Point1:list, Point2:list, Radius1:float = 0.3, Radius2:float = 0.3):
+def CreateCylinder(SimID:int, DoneShapes:int, Point1:list, Point2:list, Radius1:float = 0.1, Radius2:float = 0.1):
 
     Point1JSON = json.dumps(Point1)
     Point2JSON = json.dumps(Point2)
@@ -68,11 +68,16 @@ def CreateCylinder(SimID:int, DoneShapes:int, Point1:list, Point2:list, Radius1:
 
 def create_cylinders(SimID:int, DoneShapes:int)->int:
 
-    LetterH = [[0.25, 6.5, 0.0], [0.25, 8.5, 0.0]], [[1.25, 6.5, 0.0], [1.25, 8.5, 0.0]], [[0.25, 7.5, 0.0], [1.25, 7.5, 0.0]]
-    LetterA = [[1.5, 0.5, 0.0], [2.0, 8.5, 0.0]], [[2.0, 8.5, 0.0], [2.5, 6.5, 0.0]], [[1.75, 7.5, 0.0], [2.25, 7.5, 0.0]]
+    
     
 
-    Sections = [LetterH, LetterA]
+    Sections = [
+        [[0.25, 6.5, 0.0], [0.25, 8.5, 0.0]], [[1.25, 6.5, 0.0], [1.25, 8.5, 0.0]], [[0.25, 7.5, 0.0], [1.25, 7.5, 0.0]], # Letter H
+        [[1.5, 6.5, 0.0], [2.0, 8.5, 0.0]],   [[2.0, 8.5, 0.0], [2.5, 6.5, 0.0]],   [[1.75, 7.5, 0.0], [2.25, 7.5, 0.0]], # Letter A
+        [], [], [] # Letter P
+    ]
+
+    print(Sections)
 
     for Section in Sections:
 

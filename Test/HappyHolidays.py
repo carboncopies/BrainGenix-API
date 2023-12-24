@@ -51,25 +51,36 @@ def activity_simulations_tests():
         r = requests.get(f"{BaseURI}NES/Simulation/GetStatus?AuthKey=MyVerySecureToken&SimulationID={x}")
         print("Sim/GetStatus", r.content)
 
-def create_cylinders(SimID:int, DoneShapes:int)->int:
-    # Test create cylinder
-    MYLIST1 = json.dumps([0,0,0])
-    MYLIST2 = json.dumps([5,5,0])
 
-    LetterH = json.dumps([0,0,0])
-    LetterA = json.dumps([0,0,0])
-    
-    radius1 = 0.4
-    radius2 = 0.2
+def CreateCylinder(SimID:int, DoneShapes:int, Point1:list, Point2:list, Radius1:float = 0.3, Radius2:float = 0.3):
 
-    #for x in range(NumShapes):
-    getstr = f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1Radius_um={radius1}&Point1Position_um={MYLIST1}&Point2Radius_um={radius2}&Point2Position_um={MYLIST2}"
-    print("The get string: "+getstr)
+    Point1JSON = json.dumps(Point1)
+    Point2JSON = json.dumps(Point2)
+
+    getstr = f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1Radius_um={Radius1}&Point1Position_um={Point1JSON}&Point2Radius_um={Radius2}&Point2Position_um={Point2JSON}"
     r = requests.get(getstr)
     print("Shape/Cylinder/Create",r.content)
+
     DoneShapes+=1
+    return DoneShapes
+
+
+
+def create_cylinders(SimID:int, DoneShapes:int)->int:
+
+    Sections = [[[0.5, 6.5, 0.2], [0.5, 8.5, 0.2]], [[1.5, 6.5, 0.2], [1.5, 8.5, 0.2]], [[0.5, 7.5, 0.2], [1.5, 7.5, 0.2]]]
+
+    for Section in Sections:
+
+        Point1 = Section[0]
+        Point2 = Section[1]
+
+        DoneShapes = CreateCylinder(SimID, DoneShapes, Point1, Point2)
+
 
     return DoneShapes
+
+
 
 def create_BS_compartments(SimID:int, Offset:int, DoneShapes:int):
     # Test create BS Compartment
@@ -149,7 +160,7 @@ def scan_EM_2(SimID:int):
     - (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
     '''
     Point1 = json.dumps([-1,-1,-1])
-    Point2 = json.dumps([9,9,5])
+    Point2 = json.dumps([9,9,0.7])
     r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1_um={Point1}&Point2_um={Point2}")
     print("Sim/VSDA/EM/DefineScanRegion", r.content)
     ScanRegionID = r.json()["ScanRegionID"]

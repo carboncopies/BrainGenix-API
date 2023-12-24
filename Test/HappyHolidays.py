@@ -68,7 +68,10 @@ def CreateCylinder(SimID:int, DoneShapes:int, Point1:list, Point2:list, Radius1:
 
 def create_cylinders(SimID:int, DoneShapes:int)->int:
 
-    Sections = [[[0.5, 6.5, 0.2], [0.5, 8.5, 0.2]], [[1.5, 6.5, 0.2], [1.5, 8.5, 0.2]], [[0.5, 7.5, 0.2], [1.5, 7.5, 0.2]]]
+    LetterH = [[0.25, 6.5, 0.0], [0.25, 8.5, 0.0]], [[1.25, 6.5, 0.0], [1.25, 8.5, 0.0]], [[0.25, 7.5, 0.0], [1.25, 7.5, 0.0]]
+    LetterA = [[]]
+
+    Sections = [LetterH, LetterA]
 
     for Section in Sections:
 
@@ -160,7 +163,7 @@ def scan_EM_2(SimID:int):
     - (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
     '''
     Point1 = json.dumps([-1,-1,-1])
-    Point2 = json.dumps([9,9,0.7])
+    Point2 = json.dumps([9,9,0.5])
     r = requests.get(f"{BaseURI}NES/VSDA/EM/DefineScanRegion?AuthKey=MyVerySecureToken&SimulationID={SimID}&Point1_um={Point1}&Point2_um={Point2}")
     print("Sim/VSDA/EM/DefineScanRegion", r.content)
     ScanRegionID = r.json()["ScanRegionID"]

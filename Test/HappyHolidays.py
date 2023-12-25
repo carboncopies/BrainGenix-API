@@ -88,7 +88,6 @@ def create_cylinders(SimID:int, DoneShapes:int)->int:
       # [[]] #Letter Y 
       # [[]] #Letter S
 
-
     ]
 
     print(Sections)

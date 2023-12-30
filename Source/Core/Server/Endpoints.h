@@ -63,7 +63,6 @@
 #include <Resource/NES/VSDA/EMGetImage.h>
 #include <Resource/NES/VSDA/EMGetRenderStatus.h>
 
-#include <Resource/NES/Debug/Debug.h>
 
 
 
@@ -118,7 +117,6 @@ private:
     std::shared_ptr<Resource::NES::VSDA::EM::GetImage::Route>               NES_VSDA_EM_GetImage_;
     std::shared_ptr<Resource::NES::VSDA::EM::GetRenderStatus::Route>        NES_VSDA_EM_GetRenderStatus_;
 
-    std::shared_ptr<Resource::NES::Debug::Route>     NES_Debug_;
 
 public:
 

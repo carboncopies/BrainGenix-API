@@ -83,7 +83,7 @@ def create_cylinders(SimID:int, DoneShapes:int)->int:
         [[1.25, 3.5,0.0],   [1.25,5.5,0.0]],  [[1.25,3.5,0.0],[1.75,3.5,0.0]],                                            #Letter L
         [[2.25, 3.41,0.0],[2.25,5.5,0.0]],                                                                                #Letter I 
         [[2.75,3.5,0.0],[2.75,5.5,0.0]], [[2.75,5.5,0.0],[3.25,4.5,0.0]], [[2.75,3.41,0.0],[3.25,4.5,0.0]],               #Letter D
-        [[3.50, 3.5, 0.0], [4.00, 5.5, 0.0]],  [[4.00, 5.5, 0.0], [4.5, 3.5, 0.0]],  [[3.5, 4.5, 0.0],[4.0, 4.5, 0.0]],   #Letter A
+        [[3.50, 3.5, 0.0], [4.00, 5.5, 0.0]],  [[4.00, 5.5, 0.0], [4.5, 3.5, 0.0]],  [[3.75, 4.5, 0.0],[4.25, 4.5, 0.0]],   #Letter A
         [[5.0,5.5,0.0],[5.25,4.5,0.0]], [[5.25,4.5,0.0],[5.5,5.5,0.0]], [[5.25,3.5,0.0],[5.25,4.5,0.0]],                  #Letter Y 
         [[6.25,5.5,0.0],[6.75,5.5,0.0]], [[6.25,5.5,0.0],[6.25,4.5,0.0]],[[6.25,4.5,0.0],[6.75,4.5,0.0]], [[6.75,4.5,0.0],[6.75,3.5,0.0]],[[6.25,3.5,0.0],[6.75,3.5,0.0]], #Letter S 
 
@@ -171,7 +171,7 @@ def scan_EM_2(SimID:int):
     - (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
     - (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
     '''
-    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.04&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
     print("Sim/VSDA/EM/SetupMicroscope", r.content)
 
 

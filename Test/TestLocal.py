@@ -17,7 +17,7 @@ Args = Parser.parse_args()
 
 
 
-# BaseURI = "http://api.braingenix.org/"
+#BaseURI = "http://api.braingenix.org/"
 BaseURI = f"http://{Args.Host}:{Args.Port}/"
 
 NumSims = Args.NumSims
@@ -162,11 +162,11 @@ def create_recording_devices():
         r = requests.get(f"{BaseURI}NES/Tool/PatchClampADC/GetRecordedData?AuthKey=MyVerySecureToken&SimulationID=0&TargetADC={x}")
         print("Tool/PatchClampADC/GetRecordedData", r.content)
 
-def show_model(NumSims:int):
-    # Test Simulation BuildMesh
-    for x in range(NumSims):
-        r = requests.get(f"{BaseURI}NES/Simulation/BuildMesh?AuthKey=MyVerySecureToken&SimulationID={x}")
-        print("Sim/BuildMesh", r.content)
+# def show_model(NumSims:int):
+#     # Test Simulation BuildMesh
+#     for x in range(NumSims):
+#         r = requests.get(f"{BaseURI}NES/Simulation/BuildMesh?AuthKey=MyVerySecureToken&SimulationID={x}")
+#         print("Sim/BuildMesh", r.content)
 
 def init_VSDA(SimID:int):
     #--- Test Simulation VSDA Routes ---# 
@@ -197,7 +197,7 @@ def scan_EM_2(SimID:int):
     - (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
     - (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
     '''
-    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=512&ImageHeight_px=512&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
+    r = requests.get(f"{BaseURI}NES/VSDA/EM/SetupMicroscope?AuthKey=MyVerySecureToken&SimulationID={SimID}&PixelResolution_nm=0.1&ImageWidth_px=4096&ImageHeight_px=4096&SliceThickness_nm=100&ScanRegionOverlap_percent=10")
     print("Sim/VSDA/EM/SetupMicroscope", r.content)
 
 
@@ -243,7 +243,7 @@ def scan_EM_2(SimID:int):
         - (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
         - (string) `ImageHandle` String containing the image handle that needs to be grabbed from. 
         '''
-        r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImage?AuthKey=MyVerySecureToken&SimulationID={SimID}&ImageHandle={ImageHandle}")
+        r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImage?AuthKey=MyVerySecureToken&SimulationID={SimID}&ImageHandle={ImageHandle}", timeout=999)
         print("Sim/VSDA/EM/GetImage (JSON omitted due to size)")
         ImageData = bytes(r.json()["ImageData"], 'utf-8')
         print(f"Saving Image As: '{ImageHandle.split('/')[1]}'")
@@ -253,10 +253,10 @@ def scan_EM_2(SimID:int):
 
 
 
-def run_debug():
-    JSONParams = json.dumps(0.1)
-    r = requests.get(f"{BaseURI}NES/Debug?AuthKey=MyVerySecureToken&Query={JSONParams}")
-    print("Sim/Debug", r.content)
+# def run_debug():
+#     JSONParams = json.dumps(0.1)
+#     r = requests.get(f"{BaseURI}NES/Debug?AuthKey=MyVerySecureToken&Query={JSONParams}")
+#     print("Sim/Debug", r.content)
 
 def scan_EM_3(NumSims:int):
     # Test VSDA EM Initialize

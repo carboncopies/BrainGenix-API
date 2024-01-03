@@ -120,8 +120,7 @@ set(MAIN_SOURCES
   )
 
 
-# Include Shared Libs
-include(${SRC_DIR}/Shared/Logger/Logger.cmake)
+
 
 
 # Create Main Executable
@@ -133,6 +132,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     rpclib::rpc
     spdlog::spdlog
     unofficial::libmariadb
+
+    bg-common-logger
 
     VersioningSystem
     CompileTimeStamp

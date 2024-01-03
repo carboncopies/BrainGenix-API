@@ -29,15 +29,14 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Config::Config& SystemConfiguration = ConfigManager.GetConfig();
 
     // Setup Logger Here
-    BG::Shared::Logger::Config LoggerConfig;
-    BG::Shared::Logger::Logger Logger(LoggerConfig);
+    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger=std::make_unique<BG::Common::Logger::LoggingSystem>();
 
     // Setup Server
     BG::API::Server::Controller ServerController(SystemConfiguration);
     BG::API::Server::Server* Server = ServerController.GetServerStruct();
 
     // Setup Upstream API Connection Handler
-    BG::API::RPC::Manager RPCManager(&SystemConfiguration, Server);
+    BG::API::RPC::Manager RPCManager(std::move(Logger),&SystemConfiguration, Server);
 
     // Start Server
     ServerController.StartService();

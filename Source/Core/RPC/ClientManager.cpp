@@ -93,7 +93,7 @@ bool Manager::RunVersionCheckNES() {
         return false;
     }
 
-    if (NESVersion != "2023.11.29") {
+    if (NESVersion != VERSION) {
         Logger_->Log("WARNING: NES/API Version Mismatch! This might make stuff break. NES "+NESVersion+" API "+"2023.11.14"+'\n',2);
         Server_->NESState = SERVICE_VERSION_MISMATCH;
         return false;

@@ -16,7 +16,7 @@ void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     // Filename.erase(std::remove(Filename.begin(), Filename.end(), ".."), Filename.end());
     // boost::erase_all(Filename, "..");
 
-    std::string FinalFilename = "/.well-known" + Filename;
+    std::string FinalFilename = "/.well-known/acme-challenge" + Filename;
     std::cout<<"[INFO] User Requested File From "<<FinalFilename<<std::endl;
     std::ifstream Filestream(FinalFilename, std::ifstream::in);
     

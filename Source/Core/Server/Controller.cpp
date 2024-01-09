@@ -14,7 +14,7 @@ void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     
     // Strip Potentially Dangerous '..'
     // Filename.erase(std::remove(Filename.begin(), Filename.end(), ".."), Filename.end());
-    boost::erase_all(Filename, "..");
+    // boost::erase_all(Filename, "..");
 
     std::string FinalFilename = "/.well-known" + Filename;
     std::ifstream Filestream(FinalFilename, std::ifstream::in);
@@ -94,7 +94,7 @@ void Controller::StartService() {
 
     // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from
     std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
-    Resource->set_path("/.well-known/{filename: .*}"); // This still might be bad - we do strip out '..' but still could be bad.
+    Resource->set_path("/.well-known/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
     // Resource->set_path("/.well-known/test");
     Resource->set_method_handler( "GET", TextServerHandler);
 

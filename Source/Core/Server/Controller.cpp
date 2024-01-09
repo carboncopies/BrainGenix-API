@@ -94,8 +94,7 @@ void Controller::StartService() {
 
     // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from
     std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
-    Resource->set_path("/.well-known/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
-    // Resource->set_path("/.well-known/test");
+    Resource->set_path("/.well-known/acme-challenge/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
     Resource->set_method_handler( "GET", TextServerHandler);
 
     Service_.publish(Resource);

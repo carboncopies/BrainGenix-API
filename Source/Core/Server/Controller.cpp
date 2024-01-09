@@ -60,8 +60,32 @@ Controller::~Controller() {
 
 std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config &_Config) {
 
+    // If We Have SSL Enabled, Use That
+
+    std::shared_ptr<restbed::SSLSettings> SSLSettings;
+
+    if (_Config.UseHTTPS) { 
+
+        // Generate URI Based On File Paths
+        std::string PrivateKeyURI = std::string("file://") + _Config.KeyFilePath;
+        std::string CertificateURI = std::string("file://") + _Config.CrtFilePath;
+        std::string DiffiehellmanURI = std::string("file://") + _Config.PemFilePath;
+        
+        // Setup SSL Settings
+        SSLSettings = std::make_shared<restbed::SSLSettings>();
+        SSLSettings->set_http_disabled(true);
+        SSLSettings->set_private_key(restbed::Uri(PrivateKeyURI));
+        SSLSettings->set_certificate(restbed::Uri(CertificateURI));
+        SSLSettings->set_temporary_diffie_hellman(restbed::Uri(DiffiehellmanURI));
+    }
+
     // Create Settings Shared Pointer
-    std::shared_ptr<restbed::Settings> Settings = std::make_shared<restbed::Settings>();
+    std::shared_ptr<restbed::Settings> Settings;
+    if (_Config.UseHTTPS) {
+        Settings = std::make_shared<restbed::Settings>(SSLSettings);
+    } else {
+        Settings = std::make_shared<restbed::Settings>();
+    }
 
     // Configure Settings Object
     Settings->set_port(_Config.PortNumber);

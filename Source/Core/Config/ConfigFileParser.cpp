@@ -18,7 +18,10 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
         ("Network.Service.Host", boost::program_options::value<std::string>(&LocalCfg.Host)->default_value(CONFIG_DEFAULT_HOST), "Host That The Service Binds To")
         ("Network.NES.Port", boost::program_options::value<int>(&LocalCfg.NESPortNumber)->default_value(CONFIG_DEFAULT_NES_PORT_NUMBER), "NES Service Port Number")
         ("Network.NES.Host", boost::program_options::value<std::string>(&LocalCfg.NESHost)->default_value(CONFIG_DEFAULT_NES_HOST), "NES Host To Connect To")
-        ("Network.NES.Timeout_ms", boost::program_options::value<int>(&LocalCfg.NESTimeout_ms)->default_value(CONFIG_DEFAULT_NES_TIMEOUT_MS), "NES Host To Connect To")
+        ("Network.NES.Timeout_ms", boost::program_options::value<int>(&LocalCfg.NESTimeout_ms)->default_value(CONFIG_DEFAULT_NES_TIMEOUT_MS), "NES Host To Connect To")        
+        ("Network.Service.UseHTTPS", boost::program_options::value<bool>(&LocalCfg.UseHTTPS)->default_value(CONFIG_DEFAULT_USE_HTTPS), "Enable or Disable HTTPS Support")
+        ("Network.Service.KeyFilePath", boost::program_options::value<std::string>(&LocalCfg.KeyFilePath)->default_value(""), "Optional Keyfile Path, Required When Using HTTPS")
+        ("Network.Service.CrtFilePath", boost::program_options::value<std::string>(&LocalCfg.CrtFilePath)->default_value(""), "Optional Certfile Path, Required When Using HTTPS")
         ;
     
     boost::program_options::options_description ConfigFileOptions;
@@ -60,8 +63,15 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     if (_Config.NESTimeout_ms == CONFIG_DEFAULT_NES_TIMEOUT_MS) {
         _Config.NESTimeout_ms = LocalCfg.NESTimeout_ms;
     }
-
-
+    if (_Config.UseHTTPS == CONFIG_DEFAULT_USE_HTTPS) {
+        _Config.UseHTTPS = LocalCfg.UseHTTPS;
+    }
+    if (_Config.KeyFilePath == "") {
+        _Config.KeyFilePath = LocalCfg.KeyFilePath;
+    }
+    if (_Config.CrtFilePath == "") {
+        _Config.CrtFilePath = LocalCfg.CrtFilePath;
+    }
 
 }
 

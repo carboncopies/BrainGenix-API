@@ -8,39 +8,28 @@ namespace API {
 namespace Server {
 
 
-// void Controller::TestHandler(const std::shared_ptr<restbed::Session> session ) {
-//     const auto& request = session->get_request( );
+void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
+    const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
+    std::string Filename = Request->get_path_parameter("filename");
     
-//     std::cout<<foo_<<std::endl; //callback testing
-
-//     std::string name;
-//     std::string default_value="undefined";
-//     name = request->get_query_parameter("name", default_value );
-
-//     // const string body = "Hello, " + request->get_path_parameter( "name" );
-//     std::string body = "";
-//     std::cout<<name<<std::endl;
-//     if (name == "undefined") {
-//       body = "{StatusCode=400}";
-//     }else{
-//       body = "{Statuscode=500}";
-//     }
+    std::ifstream Filestream("./" + Filename, std::ifstream::in);
     
-//     session->close( restbed::OK, body, { { "Content-Length", std::to_string( body.size( ) ) } } );
-// }
+    if (Filestream.is_open()) {
+        std::string Body = std::string(std::istreambuf_iterator<char>(Filestream), std::istreambuf_iterator<char>());
+        
+        const std::multimap<std::string, std::string> Headers {
+            {"Content-Type", "text/plain"},
+            {"Content-Length", std::to_string(Body.length())}
+        };
+        
+        _Session->close(restbed::OK, Body, Headers);
+    } else {
+        _Session->close(restbed::NOT_FOUND);
+    }
+}
 
 
 Controller::Controller(Config::Config &_Config) {
-
-    // // Create Routes
-    // auto resource = std::make_shared< restbed::Resource >( );
-    // resource->set_path( "/test" );
-
-
-    // auto Callback(std::bind(&Controller::TestHandler, this, std::placeholders::_1));
-
-    // resource->set_method_handler( "GET", Callback);
-    // Service_.publish(resource);
     
     // Configure Settings Object
     Settings_ = ConfigureServer(_Config);
@@ -77,14 +66,13 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config &_
         SSLSettings->set_private_key(restbed::Uri(PrivateKeyURI));
         SSLSettings->set_certificate(restbed::Uri(CertificateURI));
         SSLSettings->set_temporary_diffie_hellman(restbed::Uri(DiffiehellmanURI));
+
     }
 
     // Create Settings Shared Pointer
-    std::shared_ptr<restbed::Settings> Settings;
+    std::shared_ptr<restbed::Settings> Settings = std::make_shared<restbed::Settings>();
     if (_Config.UseHTTPS) {
-        Settings = std::make_shared<restbed::Settings>(SSLSettings);
-    } else {
-        Settings = std::make_shared<restbed::Settings>();
+        Settings->set_ssl_settings(SSLSettings);
     }
 
     // Configure Settings Object
@@ -98,6 +86,14 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config &_
 
 
 void Controller::StartService() {
+
+    // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from
+    std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
+    Resource->set_path("/.well-known/{filename: [a-z]*\\}");
+    Resource->set_method_handler( "GET", TextServerHandler);
+
+    Service_.publish(Resource);
+
     Service_.start(Settings_);
 }
 

@@ -19,7 +19,7 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   RequiredParams_.push_back("DestinationCompartmentID");
   RequiredParams_.push_back("Conductance_nS");
   RequiredParams_.push_back("TimeConstant_ms");
-  RequiredParams_.push_back("ReceptorLocation_nm");
+  RequiredParams_.push_back("ReceptorLocation_um");
 
 
   OptionalParams_.push_back("Name");
@@ -69,7 +69,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["DestinationCompartmentID"] = Request->get_query_parameter("DestinationCompartmentID", -1);
     UpstreamQuery["Conductance_nS"] = Request->get_query_parameter("Conductance_nS", 0.0f);
     UpstreamQuery["TimeConstant_ms"] = Request->get_query_parameter("TimeConstant_ms", 0.0f);
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("ReceptorLocation_nm", "[0, 0, 0]"), "ReceptorPos");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("ReceptorLocation_um", "[0, 0, 0]"), "ReceptorPos");
 
 
 

@@ -48,21 +48,21 @@ for _ in range(NumIters):
     PyList = [1,2,3]
     MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_nm=5.2&Center_nm={MYLIST}")
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Sphere/Create?AuthKey=MyVerySecureToken&SimulationID=0&Radius_um=5.2&Center_um={MYLIST}")
         print("Shape/Sphere/Create", r.content)
 
     # Test create cylinder
     PyList = [1,2,3]
     MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID=0&Point1Radius_nm=5.2&Point1Position_nm={MYLIST}&Point2Radius_nm=8.2&Point2Position_nm={MYLIST}")
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Cylinder/Create?AuthKey=MyVerySecureToken&SimulationID=0&Point1Radius_um=5.2&Point1Position_um={MYLIST}&Point2Radius_um=8.2&Point2Position_um={MYLIST}")
         print("Shape/Cylinder/Create",r.content)
 
     # Test create Box
     PyList = [1,2,3]
     MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_nm={MYLIST}&Dimensions_nm={MYLIST}&Rotation_rad={MYLIST}")
+        r = requests.get(f"{BaseURI}NES/Geometry/Shape/Box/Create?AuthKey=MyVerySecureToken&SimulationID=0&CenterPosition_um={MYLIST}&Dimensions_um={MYLIST}&Rotation_rad={MYLIST}")
         print("Shape/Box/Create",r.content)
 
     # Test create BS Compartment
@@ -84,14 +84,14 @@ for _ in range(NumIters):
     PyList = [1,2,3]
     MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"{BaseURI}NES/Connection/Receptor/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&DestinationCompartmentID={x}&Conductance_nS=0.0&TimeConstant_ns=0.0&ReceptorLocation_nm={MYLIST}")
+        r = requests.get(f"{BaseURI}NES/Connection/Receptor/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&DestinationCompartmentID={x}&Conductance_nS=0.0&TimeConstant_ns=0.0&ReceptorLocation_um={MYLIST}")
         print("Connection/Receptor/Create",r.content)
 
     # Test create PatchClampDAC
     PyList = [1,2,3]
     MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"{BaseURI}NES/Tool/PatchClampDAC/Create?AuthKey=MyVerySecureToken&SimulationID=0&DestinationCompartmentID={x}&ClampLocation_nm={MYLIST}")
+        r = requests.get(f"{BaseURI}NES/Tool/PatchClampDAC/Create?AuthKey=MyVerySecureToken&SimulationID=0&DestinationCompartmentID={x}&ClampLocation_um={MYLIST}")
         print("Tool/PatchClampDAC/Create", r.content)
 
     # Test PatchClampDAC SetOutputList
@@ -105,7 +105,7 @@ for _ in range(NumIters):
     PyList = [1,2,3]
     MYLIST = json.dumps(PyList)
     for x in range(NumShapes):
-        r = requests.get(f"{BaseURI}NES/Tool/PatchClampADC/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&ClampLocation_nm={MYLIST}")
+        r = requests.get(f"{BaseURI}NES/Tool/PatchClampADC/Create?AuthKey=MyVerySecureToken&SimulationID=0&SourceCompartmentID={x}&ClampLocation_um={MYLIST}")
         print("Tool/PatchClampADC/Create", r.content)
 
     # Test PatchClampADC SetSampleRate

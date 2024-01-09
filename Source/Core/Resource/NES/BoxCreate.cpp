@@ -16,8 +16,8 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("CenterPosition_nm");
-  RequiredParams_.push_back("Dimensions_nm");
+  RequiredParams_.push_back("CenterPosition_um");
+  RequiredParams_.push_back("Dimensions_um");
   RequiredParams_.push_back("Rotation_rad");
 
   OptionalParams_.push_back("Name");
@@ -61,9 +61,9 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Get Params, Build Upstream Query
     nlohmann::json UpstreamQuery;
     
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CenterPosition_nm", "[0, 0, 0]"), "CenterPos");
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Dimensions_nm", "[0, 0, 0]"), "Scale");
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Rotation_nm", "[0, 0, 0]"), "Rotation", "rad");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CenterPosition_um", "[0, 0, 0]"), "CenterPos");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Dimensions_um", "[0, 0, 0]"), "Scale");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Rotation_rad", "[0, 0, 0]"), "Rotation", "rad");
 
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");

@@ -26,7 +26,7 @@
 #include <CompilePlatformInfo.h>
 #include <CompileTimeStamp.h>
 #include <Version.h>
-
+#include <BG/Common/Logger/Logger.h>
 
 
 namespace BG {
@@ -46,18 +46,21 @@ namespace Config {
  */
 class ArgumentParser {
 
+private:
+    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger_ = nullptr; /**Pointer to instance of logging system*/
+
 public:
 
     /**
      * @brief Construct a new Argument Parser object
      * Takes in a reference to a config struct (to be populated with config data).
      * Also takes the number of args, and the arg char array pointer themselves.
-     * 
+     * @param _Logger
      * @param _Config 
      * @param _NumArguments 
      * @param _Args 
      */
-    ArgumentParser(Config& _Config, int _NumArguments, char** _Args);
+    ArgumentParser(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Config& _Config, int _NumArguments, char** _Args);
 
     /**
      * @brief Destroy the Argument Parser object

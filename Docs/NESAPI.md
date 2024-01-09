@@ -1,4 +1,4 @@
-# NES Internal API Version 2023.06.25
+# NES Internal API Version 2023.11.04
 
 # About
 This API spec dictates how the API gateway internally communicates with the NES subsystem. **This document does NOT describe the API that is front-facing and interacted with by users. This ONLY describes the internal API used to connect between the gateway and upstream service**  
@@ -38,49 +38,15 @@ Each route will be described in this format:
  - `0` Success
  - `1` Invalid Simulation ID
  - `2` Invalid Other ID (could be shape/dac/adc/staple/etc...)
+ - `999` General Failure
 
-
-# Implementation Status (API Side)
-
- - [x] Simulation Create
- - [x] Simulation Reset
- - [x] Simulation RunFor
- - [x] Simulation RecordAll
- - [x] Simulation GetRecording
- - [x] Simulation GetStatus
- - [x] Shapes SphereCreate
- - [x] Shapes CylinderCreate
- - [x] Shapes BoxCreate
- - [x] Compartments BSCreate
- - [x] Connections StapleCreate
- - [x] Connections ReceptorCreate
- - [x] Tools DACCreate
- - [x] Tools DACSetOutputList
- - [x] Tools ADCCreate
- - [x] Tools ADCSetSampleRate
- - [x] Tools ADCGetRecordedData
-
-
-# Implementation Status (NES Side)
-
- - [x] Simulation Create
- - [ ] Simulation Reset
- - [ ] Simulation RunFor
- - [ ] Simulation RecordAll
- - [ ] Simulation GetRecording
- - [ ] Simulation GetStatus
- - [x] Shapes SphereCreate
- - [x] Shapes CylinderCreate
- - [ ] Shapes BoxCreate
- - [ ] Compartments BSCreate
- - [ ] Connections StapleCreate
- - [ ] Connections ReceptorCreate
- - [ ] Tools DACCreate
- - [ ] Tools DACSetOutputList
- - [ ] Tools ADCCreate
- - [ ] Tools ADCSetSampleRate
- - [ ] Tools ADCGetRecordedData
- 
+## bgRenderStatus
+ - `0` Not Initialized
+ - `1` Initialization Begin
+ - `2` Initialization Done
+ - `3` Render Requsted
+ - `4` Render Ready
+ - `5` Render Done
 
 
 
@@ -205,6 +171,20 @@ Each route will be described in this format:
  - None.
 
 
+### Simulation - BuildMesh  
+
+**URI** `Simulation/BuildMesh`  
+**Request**:  
+*Required Params*:  
+
+- (int) `SimulationID` ID of simulation to build a mesh from  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+
+
+
 
 ## Shapes
 
@@ -214,14 +194,14 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this sphere is being created.  
-- (float) `Radius_nm` The radius of the sphere in nanometers.  
-- (float) `CenterPosX_nm` Position of the center's X coord of the sphere in nanometers.  
-- (float) `CenterPosY_nm` Position of the center's Y coord of the sphere in nanometers.  
-- (float) `CenterPosZ_nm` Position of the center's Z coord of the sphere in nanometers.  
+- (float) `Radius_um` The radius of the sphere in micrometers.  
+- (float) `CenterPosX_um` Position of the center's X coord of the sphere in micrometers.  
+- (float) `CenterPosY_um` Position of the center's Y coord of the sphere in micrometers.  
+- (float) `CenterPosZ_um` Position of the center's Z coord of the sphere in micrometers.  
 - (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  
-- (bgShapeID) `ShapeID=` ID of the resulting shape created here (-1 on fail).  
+- (bgShapeID) `ShapeID` ID of the resulting shape created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
@@ -230,14 +210,14 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this cylinder is being created.  
-- (float) `Point1Radius_nm` The radius of the first point in nanometers.  
-- (float) `Point1PosX_nm` Position of the first point center's X coord of the sphere in nanometers.  
-- (float) `Point1PosY_nm` Position of the first point center's Y coord of the sphere in nanometers.  
-- (float) `Point1PosZ_nm` Position of the first point center's Z coord of the sphere in nanometers.  
-- (float) `Point2Radius_nm` The radius of the second point in nanometers.  
-- (float) `Point2PosX_nm` Position of the second point center's X coord of the sphere in nanometers.  
-- (float) `Point2PosY_nm` Position of the second point center's Y coord of the sphere in nanometers.  
-- (float) `Point2PosZ_nm` Position of the second point center's Z coord of the sphere in nanometers.  
+- (float) `Point1Radius_um` The radius of the first point in micrometers.  
+- (float) `Point1PosX_um` Position of the first point center's X coord of the sphere in micrometers.  
+- (float) `Point1PosY_um` Position of the first point center's Y coord of the sphere in micrometers.  
+- (float) `Point1PosZ_um` Position of the first point center's Z coord of the sphere in micrometers.  
+- (float) `Point2Radius_um` The radius of the second point in micrometers.  
+- (float) `Point2PosX_um` Position of the second point center's X coord of the sphere in micrometers.  
+- (float) `Point2PosY_um` Position of the second point center's Y coord of the sphere in micrometers.  
+- (float) `Point2PosZ_um` Position of the second point center's Z coord of the sphere in micrometers.  
 - (string) `Name` Name of the sphere, defaults to 'undefined'.
 
 **Response**:  
@@ -250,12 +230,12 @@ Each route will be described in this format:
 **Request**:  
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this box is being created.    
-- (float) `CenterPosX_nm` Position of the center x coord.  
-- (float) `CenterPosY_nm` Position of the center y coord.  
-- (float) `CenterPosZ_nm` Position of the center z coord.  
-- (float) `ScaleX_nm` Scale of the x axis of the box.  
-- (float) `ScaleY_nm` Scale of the y axis of the box.  
-- (float) `ScaleZ_nm` Scale of the z axis of the box.  
+- (float) `CenterPosX_um` Position of the center x coord.  
+- (float) `CenterPosY_um` Position of the center y coord.  
+- (float) `CenterPosZ_um` Position of the center z coord.  
+- (float) `ScaleX_um` Scale of the x axis of the box.  
+- (float) `ScaleY_um` Scale of the y axis of the box.  
+- (float) `ScaleZ_um` Scale of the z axis of the box.  
 - (float) `RotationX_rad` Euler angle of the X axis in radians.  
 - (float) `RotationY_rad` Euler angle of the Y axis in radians.  
 - (float) `RotationZ_rad` Euler angle of the Z axis in radians.  
@@ -313,9 +293,9 @@ Each route will be described in this format:
 - (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.  
 - (float) `Conductance_nS` Conductance from source to destination in nanoSiemens.  
 - (float) `TimeConstant_ms` Postsynaptic potential time constant in milliseconds.   
-- (float) `ReceptorPosX_nm` X world space coordinate in nanometers.  
-- (float) `ReceptorPosY_nm` Y world space coordinate in nanometers.   
-- (float) `ReceptorPosZ_nm` Z world space coordinate in nanometers.  
+- (float) `ReceptorPosX_um` X world space coordinate in micrometers.  
+- (float) `ReceptorPosY_um` Y world space coordinate in micrometers.   
+- (float) `ReceptorPosZ_um` Z world space coordinate in micrometers.  
 - (string) `Name` Name of the Receptor, defaults to 'undefined'.  
 
 **Response**:  
@@ -332,9 +312,9 @@ Each route will be described in this format:
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being created.   
 - (bgCompartmentID) `DestinationCompartmentID` ID of the compartment receiving DAC output.  
-- (float) `ClampPosX_nm` X world space coordinate in nanometers.  
-- (float) `ClampPosY_nm` Y world space coordinate in nanometers.  
-- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.  
+- (float) `ClampPosX_um` X world space coordinate in micrometers.  
+- (float) `ClampPosY_um` Y world space coordinate in micrometers.  
+- (float) `ClampPosZ_um` Z world space coordinate in micrometers.  
 - (string) `Name` Name of the DAC, defaults to 'undefined'.  
 
 **Response**:  
@@ -361,9 +341,9 @@ Each route will be described in this format:
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being created.   
 - (bgCompartmentID) `SourceCompartmentID` ID of the compartment being read by the ADC output.  
-- (float) `ClampPosX_nm` X world space coordinate in nanometers.  
-- (float) `ClampPosY_nm` Y world space coordinate in nanometers.    
-- (float) `ClampPosZ_nm` Z world space coordinate in nanometers.  
+- (float) `ClampPosX_um` X world space coordinate in micrometers.  
+- (float) `ClampPosY_um` Y world space coordinate in micrometers.    
+- (float) `ClampPosZ_um` Z world space coordinate in micrometers.  
 - (string) `Name` Name of the DAC, defaults to 'undefined'.  
     
 **Response**:  
@@ -377,7 +357,7 @@ Each route will be described in this format:
 *Required Params*:  
 - (int) `SimulationID` ID of the simulation where this is being modified.   
 - (bgPatchClampADCID) `PatchClampADCID` ID of the ADC being configured.  
-- (float) `Timestep_ms=` Sets the sample timestep rate for the ADC in milliseconds.   
+- (float) `Timestep_ms` Sets the sample timestep rate for the ADC in milliseconds.   
 
 **Response**:  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
@@ -394,3 +374,113 @@ Each route will be described in this format:
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 - (string) `RecordedData_mV` JSON formatted list of voltages recorded by the ADC.  
 - (float) `Timestep_ms` Gets the sample timestep rate for the ADC in milliseconds.   
+
+
+
+
+## VSDA
+
+### VSDA - EM - Initialize
+
+**URI** `VSDA/EM/Initialize`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the electron microscope renderer from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - SetupMicroscope
+
+**URI** `VSDA/EM/SetupMicroscope`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (float) `PixelResolution_nm` Number of nanometers of resolution for each pixel.  
+- (int) `ImageWidth_px` Set the width of the image in pixels.  
+- (int) `ImageHeight_px` Set the height of the image in pixels.  
+- (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
+- (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - DefineScanRegion
+
+**URI** `VSDA/EM/DefineScanRegion`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (vec3) `Point1_um` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
+- (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (bgScanRegionID) `ScanRegionID` ID of the resulting scan region. Can be used to later get the image stack once generated.  
+
+
+### VSDA - EM - QueueRenderOperation
+
+**URI** `VSDA/EM/QueueRenderOperation`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID` ID of the scan region to be rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - GetRenderStatus
+
+**URI** `VSDA/EM/GetRenderStatus`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (bgRenderStatus) `RenderStatus` Enum indicating status of the renderer.  
+
+
+### VSDA - EM - GetImageStack
+
+**URI** `VSDA/EM/GetImageStack`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID` ID of the scan region to get the image stack for. Note: The stack must have finished being rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (list) `RenderedImages` List of file paths that can be given to the VSDA EM GetImage Function one at a time to retrieve images.  
+
+
+### VSDA - EM - GetImage
+
+**URI** `/NES/VSDA/EM/GetImage?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (string) `ImageHandle` String containing the image handle that needs to be grabbed from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (base64String) `ImageData` Base 64 encoded string containing the bytes of the file.  
+

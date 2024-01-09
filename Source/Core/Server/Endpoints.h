@@ -53,6 +53,17 @@
 #include <Resource/NES/SimulationGetStatus.h>
 #include <Resource/NES/SimulationRecordAll.h>
 #include <Resource/NES/SimulationGetRecording.h>
+#include <Resource/NES/SimulationBuildMesh.h>
+
+#include <Resource/NES/VSDA/EMInitialize.h>
+#include <Resource/NES/VSDA/EMSetupMicroscope.h>
+#include <Resource/NES/VSDA/EMDefineScanRegion.h>
+#include <Resource/NES/VSDA/EMQueueRenderOperation.h>
+#include <Resource/NES/VSDA/EMGetImageStack.h>
+#include <Resource/NES/VSDA/EMGetImage.h>
+#include <Resource/NES/VSDA/EMGetRenderStatus.h>
+
+
 
 
 namespace BG {
@@ -90,12 +101,22 @@ private:
     std::shared_ptr<Resource::NES::Tool::PatchClampADC::SetSampleRate::Route> NES_Tool_PatchClampADC_SetSampleRate_;
     std::shared_ptr<Resource::NES::Tool::PatchClampADC::GetRecordedData::Route> NES_Tool_PatchClampADC_GetRecordedData_;
 
-    std::shared_ptr<Resource::NES::Simulation::Create::Route> NES_Simulation_Create_;
-    std::shared_ptr<Resource::NES::Simulation::Reset::Route> NES_Simulation_Reset_;
-    std::shared_ptr<Resource::NES::Simulation::GetStatus::Route> NES_Simulation_GetStatus_;
-    std::shared_ptr<Resource::NES::Simulation::RunFor::Route> NES_Simulation_RunFor_;
-    std::shared_ptr<Resource::NES::Simulation::RecordAll::Route> NES_Simulation_RecordAll_;
+    std::shared_ptr<Resource::NES::Simulation::Create::Route>       NES_Simulation_Create_;
+    std::shared_ptr<Resource::NES::Simulation::Reset::Route>        NES_Simulation_Reset_;
+    std::shared_ptr<Resource::NES::Simulation::GetStatus::Route>    NES_Simulation_GetStatus_;
+    std::shared_ptr<Resource::NES::Simulation::RunFor::Route>       NES_Simulation_RunFor_;
+    std::shared_ptr<Resource::NES::Simulation::RecordAll::Route>    NES_Simulation_RecordAll_;
     std::shared_ptr<Resource::NES::Simulation::GetRecording::Route> NES_Simulation_GetRecording_;
+    std::shared_ptr<Resource::NES::Simulation::BuildMesh::Route>    NES_Simulation_BuildMesh_;
+
+    std::shared_ptr<Resource::NES::VSDA::EM::Initialize::Route>             NES_VSDA_EM_Initialize_;
+    std::shared_ptr<Resource::NES::VSDA::EM::SetupMicroscope::Route>        NES_VSDA_EM_SetupMicroscope_;
+    std::shared_ptr<Resource::NES::VSDA::EM::DefineScanRegion::Route>       NES_VSDA_EM_DefineScanRegion_;
+    std::shared_ptr<Resource::NES::VSDA::EM::QueueRenderOperation::Route>   NES_VSDA_EM_QueueRenderOperation_;
+    std::shared_ptr<Resource::NES::VSDA::EM::GetImageStack::Route>          NES_VSDA_EM_GetImageStack_;
+    std::shared_ptr<Resource::NES::VSDA::EM::GetImage::Route>               NES_VSDA_EM_GetImage_;
+    std::shared_ptr<Resource::NES::VSDA::EM::GetRenderStatus::Route>        NES_VSDA_EM_GetRenderStatus_;
+
 
 public:
 

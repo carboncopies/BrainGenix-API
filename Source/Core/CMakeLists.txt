@@ -82,8 +82,25 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationRecordAll.h
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationGetRecording.h
+  ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.cpp
+  ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.h
 
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.h
 
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMDefineScanRegion.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMDefineScanRegion.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImage.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImage.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.cpp
+  
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h
 
@@ -103,8 +120,7 @@ set(MAIN_SOURCES
   )
 
 
-# Include Shared Libs
-include(${SRC_DIR}/Shared/Logger/Logger.cmake)
+
 
 
 # Create Main Executable
@@ -116,6 +132,8 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     rpclib::rpc
     spdlog::spdlog
     unofficial::libmariadb
+
+    bg-common-logger
 
     VersioningSystem
     CompileTimeStamp

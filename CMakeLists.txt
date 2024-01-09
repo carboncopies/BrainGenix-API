@@ -30,7 +30,7 @@ set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE
 
 project(
     "BrainGenix-API"
-    VERSION "0.0.1"
+    VERSION "2024.01.09"
     LANGUAGES CXX
 )
 
@@ -38,8 +38,14 @@ project(
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Internal Deps
+message(STATUS "Finding bg-common-logger Package")
+find_package(bg-common-logger CONFIG REQUIRED)
 
 # Add Libraries
+message(STATUS "Setting Up yaml-cpp Library")
+find_package(yaml-cpp CONFIG REQUIRED)
+
 message(STATUS "Finding restbed Package")
 find_package(unofficial-restbed CONFIG REQUIRED)
 

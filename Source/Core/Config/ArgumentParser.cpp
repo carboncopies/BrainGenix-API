@@ -5,9 +5,9 @@ namespace BG {
 namespace API {
 namespace Config {
 
-ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args) {
+ArgumentParser::ArgumentParser(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Config& _Config, int _NumArguments, char** _Args) {
 
-
+    Logger_ = std::move(_Logger);
     // Declare Command Line Options
     boost::program_options::options_description Generic("CLI Options");
     Generic.add_options()
@@ -31,15 +31,17 @@ ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args)
 
     // Print Arguments
     if (ArgMap.count("Help")) {
-        std::cout<<Generic<<std::endl;
+        std::stringstream ss;
+        ss << Generic;
+        Logger_->Log(ss.str()+'\n',1);
         exit(0);
     }
     if (ArgMap.count("Version")) {
-        std::cout<<"Version: "<<VERSION<<std::endl;
+        Logger_->Log("Version: " VERSION +'\n',1);
         exit(0);
     }
     if (ArgMap.count("CompileTimeStamp")) {
-        std::cout<<"Compile Time Stamp: "<<COMPILE_TIME_STAMP<<std::endl;
+        Logger_->Log("Compile Time Stamp: " COMPILE_TIME_STAMP +'\n',1);
         exit(0);
     }
     if (ArgMap.count("CompilePlatformInfo")) {
@@ -50,7 +52,7 @@ ArgumentParser::ArgumentParser(Config& _Config, int _NumArguments, char** _Args)
         Info += std::string("Host OS: ") + HOST_OS_NAME + "\n    ";
         Info += std::string("Host OS Version: ") + HOST_OS_VERSION + "\n    ";
         Info += std::string("Host Arch: ") + HOST_PROCESSOR + "\n";
-        std::cout<<Info;
+        Logger_->Log(Info,1);
         exit(0);
     }
 }

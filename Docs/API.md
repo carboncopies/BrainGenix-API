@@ -24,31 +24,14 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - `2` Failed
  - `3` Not Configured
 
+## bgRenderStatus
+ - `0` Ready
+ - `1` Compressing
+ - `2` Rendering
+ - `3` Not Yet Rendered
 
-# Implementation Status
- - [x] Diagnostic Hello
- - [x] Diagnostic Version
- - [x] Diagnostic Status
 
- - [x] Authentication GetToken
- 
- - [x] NES Simulation Create
- - [x] NES Simulation Reset
- - [x] NES Simulation RunFor
- - [x] NES Simulation RecordAll
- - [x] NES Simulation GetRecording
- - [x] NES Simulation GetStatus
- - [x] NES Shapes SphereCreate
- - [x] NES Shapes CylinderCreate
- - [x] NES Shapes BoxCreate
- - [x] NES Compartments BSCreate
- - [x] NES Connections StapleCreate
- - [x] NES Connections ReceptorCreate
- - [x] NES Tools DACCreate
- - [x] NES Tools DACSetOutputList
- - [x] NES Tools ADCCreate
- - [x] NES Tools ADCSetSampleRate
- - [x] NES Tools ADCGetRecordedData
+
 
 
 # Routes  
@@ -118,8 +101,8 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (float) `Radius_nm=` The radius of the sphere in nanometers.
-- (vec3) `Center_nm=` Position of the center of the sphere in nanometers. Given as a json formatted list containing the three x,y,z coordinates.
+- (float) `Radius_um=` The radius of the sphere in micrometers.
+- (vec3) `Center_um=` Position of the center of the sphere in micrometers. Given as a json formatted list containing the three x,y,z coordinates.
 
 *Optional Params*:  
 
@@ -137,10 +120,10 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (float) `Point1Radius_nm=` The radius at the cylinder's first point.
-- (vec3) `Point1Position_nm=` First endpoint of the cylinder's axis.
-- (float) `Point2Radius_nm=` The radius at the cylinder's second point.
-- (vec3) `Point2Position_nm=` Second endpoint of the cylinder's axis.
+- (float) `Point1Radius_um=` The radius at the cylinder's first point.
+- (vec3) `Point1Position_um=` First endpoint of the cylinder's axis.
+- (float) `Point2Radius_um=` The radius at the cylinder's second point.
+- (vec3) `Point2Position_um=` Second endpoint of the cylinder's axis.
 
 *Optional Params*:  
 
@@ -158,8 +141,8 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (vec3) `CenterPosition_nm=` Position of the center of the box in world space coordinates.
-- (vec3) `Dimensions_nm=` (X,Y,Z) dimensions of the box in nm.
+- (vec3) `CenterPosition_um=` Position of the center of the box in world space coordinates.
+- (vec3) `Dimensions_um=` (X,Y,Z) dimensions of the box in nm.
 - (vec3) `Rotation_rad=` (X,Y,Z) rotation of the box in radians.
 
 *Optional Params*:  
@@ -228,7 +211,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving postsynaptic activity.
 - (float) `Conductance_nS=` Conductance from source to destination in nanoSiemens.
 - (float) `TimeConstant_ms=` Postsynaptic potential time constant in milliseconds.
-- (vec3) `ReceptorLocation_nm=` (X,Y,Z) World space location of the receptor's base (where it intersects the compartment).
+- (vec3) `ReceptorLocation_um=` (X,Y,Z) World space location of the receptor's base (where it intersects the compartment).
 
 *Optional Params*:  
 
@@ -250,7 +233,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 - (bgCompartmentID) `DestinationCompartmentID=` ID of the compartment receiving DAC output.
-- (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the DAC's connection in nanometers.
+- (vec3) `ClampLocation_um=` (X,Y,Z) World space location of the DAC's connection in micrometers.
 
 *Optional Params*:  
 
@@ -284,7 +267,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Required Params*:  
 
 - (bgCompartmentID) `SourceCompartmentID=` ID of the compartment being read by the ADC output.
-- (vec3) `ClampLocation_nm=` (X,Y,Z) World space location of the ADC's connection in nanometers.
+- (vec3) `ClampLocation_um=` (X,Y,Z) World space location of the ADC's connection in micrometers.
 
 *Optional Params*:  
 
@@ -414,3 +397,125 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (float) `InSimulationTime_ms=` Float containing number of in-simulation milliseconds elapsed since last reset call.
 - (float) `InSimulationTimeRemaining_ms=` Float containing number of milliseconds remaining in-simulation until run call is complete.
 - (float) `PercentComplete=` Estimated percentage complete based on in-simulation time.
+
+
+### Simulation - BuildMesh
+
+**URI** `/NES/Simulation/BuildMesh?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to build a mesh from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+
+## VSDA
+
+### VSDA - EM - Initialize
+
+**URI** `/NES/VSDA/EM/Initialize?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the electron microscope renderer from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - SetupMicroscope
+
+**URI** `/NES/VSDA/EM/SetupMicroscope?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (float) `PixelResolution_nm=` Number of nanometers of resolution for each pixel.  
+- (int) `ImageWidth_px=` Set the width of the image in pixels.  
+- (int) `ImageHeight_px=` Set the height of the image in pixels.  
+- (float) `SliceThickness_nm=` Set the thickness of each slice in nanometers.  
+- (float) `ScanRegionOverlap_percent=` Set the overlap for the resulting image stacks.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - DefineScanRegion
+
+**URI** `/NES/VSDA/EM/DefineScanRegion?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (vec3) `Point1_um=` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
+- (vec3) `Point2_um=` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgScanRegionID) `ScanRegionID=` ID of the resulting scan region. Can be used to later get the image stack once generated.  
+
+
+### VSDA - EM - QueueRenderOperation
+
+**URI** `/NES/VSDA/EM/QueueRenderOperation?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID=` ID of the scan region to be rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+### VSDA - EM - GetRenderStatus
+
+**URI** `/NES/VSDA/EM/GetRenderStatus?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID=` ID of the scan region to have it's status checked.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgRenderStatus) `RenderStatus=` Enum indicating status of the renderer.  
+
+
+### VSDA - EM - GetImageStack
+
+**URI** `/NES/VSDA/EM/GetImageStack?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `ScanRegionID=` ID of the scan region to get the image stack for. Note: The stack must have finished being rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (list) `RenderedImages=` List of file paths that can be given to the VSDA EM GetImage Function one at a time to retrieve images.  
+
+
+### VSDA - EM - GetImage
+
+**URI** `/NES/VSDA/EM/GetImage?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (string) `ImageHandle=` String containing the image handle that needs to be grabbed from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (base64String) `ImageData=` Base 64 encoded string containing the bytes of the file.  

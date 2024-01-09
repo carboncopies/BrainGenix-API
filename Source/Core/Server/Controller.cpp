@@ -17,6 +17,7 @@ void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     // boost::erase_all(Filename, "..");
 
     std::string FinalFilename = "/.well-known" + Filename;
+    std::cout<<"[INFO] User Requested File From "<<FinalFilename<<std::endl;
     std::ifstream Filestream(FinalFilename, std::ifstream::in);
     
     if (Filestream.is_open()) {

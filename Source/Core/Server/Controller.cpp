@@ -13,7 +13,8 @@ void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     std::string Filename = "/" + Request->get_path_parameter("filename");
     
     // Strip Potentially Dangerous '..'
-    Filename.erase(std::remove(Filename.begin(), Filename.end(), ".."), Filename.end());
+    // Filename.erase(std::remove(Filename.begin(), Filename.end(), ".."), Filename.end());
+    boost::erase_all(Filename, "..");
 
     std::string FinalFilename = "/.well-known" + Filename;
     std::ifstream Filestream(FinalFilename, std::ifstream::in);

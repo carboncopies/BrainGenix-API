@@ -10,9 +10,13 @@ namespace Server {
 
 void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
-    std::string Filename = Request->get_path_parameter("filename");
+    std::string Filename = "/" + Request->get_path_parameter("filename");
     
-    std::ifstream Filestream("./" + Filename, std::ifstream::in);
+    // Strip Potentially Dangerous '..'
+    Filename.erase(std::remove(Filename.begin(), Filename.end(), ".."), Filename.end());
+
+    std::string FinalFilename = "/.well-known" + Filename;
+    std::ifstream Filestream(FinalFilename, std::ifstream::in);
     
     if (Filestream.is_open()) {
         std::string Body = std::string(std::istreambuf_iterator<char>(Filestream), std::istreambuf_iterator<char>());
@@ -89,7 +93,8 @@ void Controller::StartService() {
 
     // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from
     std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
-    Resource->set_path("/.well-known/{^.*\\/.*.*$\\}");
+    Resource->set_path("/.well-known/{filename: .*}"); // This still might be bad - we do strip out '..' but still could be bad.
+    // Resource->set_path("/.well-known/test");
     Resource->set_method_handler( "GET", TextServerHandler);
 
     Service_.publish(Resource);

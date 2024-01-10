@@ -72,7 +72,9 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
 
         // Generate URI Based On File Paths
         std::string PrivateKeyURI = std::string("file://") + _Config.KeyFilePath;
+        std::cout<<"Loading Private Key From: "<<PrivateKeyURI<<std::endl;
         std::string CertificateURI = std::string("file://") + _Config.CrtFilePath;
+        std::cout<<"Loading Certificate From: "<<CertificateURI<<std::endl;
         // std::string DiffiehellmanURI = std::string("file://") + _Config.PemFilePath;
         
         // Setup SSL Settings

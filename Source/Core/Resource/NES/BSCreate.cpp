@@ -19,6 +19,8 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   RequiredParams_.push_back("MembranePotential_mV");
   RequiredParams_.push_back("SpikeThreshold_mV");
   RequiredParams_.push_back("DecayTime_ms");
+  RequiredParams_.push_back("RestingPotential_mV");
+  RequiredParams_.push_back("AfterHyperpolarizationAmplitude_mV");
 
 
   OptionalParams_.push_back("Name");
@@ -67,6 +69,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["MembranePotential_mV"] = Request->get_query_parameter("MembranePotential_mV", 0.0f);
     UpstreamQuery["SpikeThreshold_mV"] = Request->get_query_parameter("SpikeThreshold_mV", 0.0f);
     UpstreamQuery["DecayTime_ms"] = Request->get_query_parameter("DecayTime_ms", 0.0f);
+    UpstreamQuery["RestingPotential_mV"] = Request->get_query_parameter("RestingPotential_mV", 0.0f);
+    UpstreamQuery["AfterHyperpolarizationAmplitude_mV"] = Request->get_query_parameter("AfterHyperpolarizationAmplitude_mV", 0.0f);
 
 
     std::string UpstreamResponseStr = "";

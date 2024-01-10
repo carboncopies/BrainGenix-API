@@ -59,6 +59,8 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
     std::shared_ptr<restbed::SSLSettings> SSLSettings;
     if (_Config.UseHTTPS) { 
 
+        std::cout<<"Starting In HTTPS Mode, An Additional HTTP Service Will Be Run On Port 80 For Certbot Verification\n";
+
         // Generate URI Based On File Paths
         std::string PrivateKeyURI = std::string("file://") + _Config.KeyFilePath;
         std::string CertificateURI = std::string("file://") + _Config.CrtFilePath;

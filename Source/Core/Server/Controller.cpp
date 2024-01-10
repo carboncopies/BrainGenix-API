@@ -55,9 +55,6 @@ Controller::~Controller() {
 
 std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _Config) {
 
-    // Copy Struct Ref
-    Config_ = _Config;
-
     // If We Have SSL Enabled, Use That
     std::shared_ptr<restbed::SSLSettings> SSLSettings;
     if (_Config.UseHTTPS) { 

@@ -9,14 +9,6 @@ namespace Server {
 
 
 
-void service_error_handler( const int, const std::exception&, const std::shared_ptr< restbed::Session > session ) {
-    if ( session->is_open( ) )
-        session->close( 5000, "Custom Service Internal Server Error", { { "Content-Length", "36" } } );
-    else
-        fprintf( stderr, "Custom Service Internal Server Error\n" );
-}
-
-
 void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
     std::string Filename = "/" + Request->get_path_parameter("filename");
@@ -117,7 +109,6 @@ void Controller::StartService() {
 
     std::cout<<"Started Main Service\n";
     Service_.start(Settings_);
-    Service_.set_error_handler( service_error_handler );
 
 }
 

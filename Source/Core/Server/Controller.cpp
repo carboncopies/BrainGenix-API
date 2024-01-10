@@ -118,6 +118,7 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
 
 void Controller::StartService() {
 
+    std::cout<<"Started Main Service\n";
     Service_.start(Settings_);
     Service_.set_error_handler( service_error_handler );
 

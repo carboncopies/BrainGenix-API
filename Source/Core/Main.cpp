@@ -29,7 +29,7 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Config::Config& SystemConfiguration = ConfigManager.GetConfig();
 
     // Setup Logger Here
-    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger=std::make_unique<BG::Common::Logger::LoggingSystem>();
+    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger = std::make_unique<BG::Common::Logger::LoggingSystem>();
 
     // Setup Server
     BG::API::Server::Controller ServerController(SystemConfiguration);

@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <regex>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <restbed>

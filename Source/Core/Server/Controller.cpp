@@ -14,8 +14,8 @@ void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     std::string Filename = "/" + Request->get_path_parameter("filename");
     
     // Strip Potentially Dangerous '..'
-    // Filename.erase(std::remove(Filename.begin(), Filename.end(), ".."), Filename.end());
-    // boost::erase_all(Filename, "..");
+    std::regex ParentDirPattern("..");
+    Filename = std::regex_replace(Filename, ParentDirPattern, "");
 
     std::string FinalFilename = "/.well-known/acme-challenge" + Filename;
     std::cout<<"[INFO] User Requested File From "<<FinalFilename<<std::endl;
@@ -84,13 +84,9 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
     }
 
     // Configure Settings Object
-    if (_Config.UseHTTPS) {
-        Settings->set_port(80);
-    } else {
+    if (!_Config.UseHTTPS) {
         Settings->set_port(_Config.PortNumber);
-
     }
-    // Settings->set_bind_address(_Config.Host);
     Settings->set_default_header("Connection", "close");
 
     // Return Configured Settings Object

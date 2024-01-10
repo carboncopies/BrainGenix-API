@@ -87,7 +87,13 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
     if (!_Config.UseHTTPS) {
         Settings->set_port(_Config.PortNumber);
     }
-    Settings->set_default_header("Access-Control-Allow-Origin", "*");
+
+    // Set Timeout (Needs To Be Big For Downloading Large Images From Server)
+    std::chrono::milliseconds TimeoutDuration_ms(std::chrono::milliseconds::max());
+    Settings->set_connection_timeout(TimeoutDuration_ms);
+
+    // Set CORS Policy, Must Be Allowed, Otherwise API Status Page Doesn't Work Right
+    Settings->set_default_header("Access-Control-Allow-Origin", "*"); // We may want to restirct this later on, but since we don't know who's running this, best to leave it open or add a config option
 
     // Return Configured Settings Object
     return Settings;

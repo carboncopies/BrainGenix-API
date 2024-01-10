@@ -40,7 +40,7 @@ struct Config {
     bool UseHTTPS = CONFIG_DEFAULT_USE_HTTPS;                   /**Configure if we do or do not use SSL/HTTPS. Using it requires having a server key and crt file specified*/
     std::string KeyFilePath;                                    /**Path to the key file*/
     std::string CrtFilePath;                                    /**Path the the crt file*/
-    std::string PemFilePath;                                    /**Path to the pem file*/
+    // std::string PemFilePath;                                    /**Path to the pem file*/
 
     int NESPortNumber = CONFIG_DEFAULT_NES_PORT_NUMBER;         /**Port number to connect to the upstream NES service on*/
     std::string NESHost = CONFIG_DEFAULT_NES_HOST;              /**Host of the upstream NES service*/

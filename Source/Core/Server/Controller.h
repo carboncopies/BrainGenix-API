@@ -46,6 +46,10 @@ private:
 
     std::shared_ptr<restbed::Settings> Settings_; /**Shared pointer to settings object, used when starting server. Populated in constructor*/
     restbed::Service Service_; /**Service created by constructor, then started with StartService method*/
+    restbed::Service HTTPService_; /**Service optionally created when https is on, allows certbot to verify your domain with this*/
+
+    Config::Config& Config_; /**Instance of the config struct*/
+
     Server Server_; /**Instance of the server struct, used to pass data to callbacks for restbed*/
     // std::string foo_ = "foo";
 
@@ -72,7 +76,7 @@ public:
      * @param _Config 
      * @param _Manager RPC Manager instance ptr
      */
-    Controller(Config::Config &_Config);
+    Controller(Config::Config& _Config);
 
 
     /**

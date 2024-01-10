@@ -53,25 +53,42 @@ Controller::~Controller() {
 
 
 
-std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config &_Config) {
+std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _Config) {
+
+    // Copy Struct Ref
+    Config_ = _Config;
 
     // If We Have SSL Enabled, Use That
-
     std::shared_ptr<restbed::SSLSettings> SSLSettings;
-
     if (_Config.UseHTTPS) { 
 
         // Generate URI Based On File Paths
         std::string PrivateKeyURI = std::string("file://") + _Config.KeyFilePath;
         std::string CertificateURI = std::string("file://") + _Config.CrtFilePath;
-        std::string DiffiehellmanURI = std::string("file://") + _Config.PemFilePath;
+        // std::string DiffiehellmanURI = std::string("file://") + _Config.PemFilePath;
         
         // Setup SSL Settings
         SSLSettings = std::make_shared<restbed::SSLSettings>();
         SSLSettings->set_http_disabled(true);
+        SSLSettings->set_certificate_chain(restbed::Uri(CertificateURI));
         SSLSettings->set_private_key(restbed::Uri(PrivateKeyURI));
-        SSLSettings->set_certificate(restbed::Uri(CertificateURI));
-        SSLSettings->set_temporary_diffie_hellman(restbed::Uri(DiffiehellmanURI));
+        // SSLSettings->set_certificate(restbed::Uri(CertificateURI));
+        // SSLSettings->set_temporary_diffie_hellman(restbed::Uri(DiffiehellmanURI));
+
+
+        // Setup HTTP Service
+        std::shared_ptr<restbed::Settings> HTTPSettings = std::make_shared<restbed::Settings>();
+        HTTPSettings->set_port(80);
+        // HTTPSettings->set_bind_address(_Config.Host);
+        HTTPSettings->set_default_header("Connection", "close");
+
+        // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from (oh http service)
+        std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
+        Resource->set_path("/.well-known/acme-challenge/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
+        Resource->set_method_handler( "GET", TextServerHandler);
+
+        HTTPService_.publish(Resource);
+        HTTPService_.start(HTTPSettings);
 
     }
 
@@ -84,7 +101,7 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config &_
     // Configure Settings Object
     Settings->set_port(_Config.PortNumber);
     // Settings->set_bind_address(_Config.Host);
-    Settings->set_default_header( "Connection", "close" );
+    Settings->set_default_header("Connection", "close");
 
     // Return Configured Settings Object
     return Settings;
@@ -92,13 +109,6 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config &_
 
 
 void Controller::StartService() {
-
-    // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from
-    std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
-    Resource->set_path("/.well-known/acme-challenge/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
-    Resource->set_method_handler( "GET", TextServerHandler);
-
-    Service_.publish(Resource);
 
     Service_.start(Settings_);
 }

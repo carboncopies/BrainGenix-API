@@ -22,7 +22,7 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
         ("Network.Service.UseHTTPS", boost::program_options::value<bool>(&LocalCfg.UseHTTPS)->default_value(CONFIG_DEFAULT_USE_HTTPS), "Enable or Disable HTTPS Support")
         ("Network.Service.KeyFilePath", boost::program_options::value<std::string>(&LocalCfg.KeyFilePath)->default_value(""), "Optional Keyfile Path, Required When Using HTTPS")
         ("Network.Service.CrtFilePath", boost::program_options::value<std::string>(&LocalCfg.CrtFilePath)->default_value(""), "Optional Certfile Path, Required When Using HTTPS")
-        ("Network.Service.PemFilePath", boost::program_options::value<std::string>(&LocalCfg.PemFilePath)->default_value(""), "Optional Pemfile Path, Required When Using HTTPS")
+        // ("Network.Service.PemFilePath", boost::program_options::value<std::string>(&LocalCfg.PemFilePath)->default_value(""), "Optional Pemfile Path, Required When Using HTTPS")
         ;
     
     boost::program_options::options_description ConfigFileOptions;
@@ -73,9 +73,9 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     if (_Config.CrtFilePath == "") {
         _Config.CrtFilePath = LocalCfg.CrtFilePath;
     }
-    if (_Config.PemFilePath == "") {
-        _Config.PemFilePath = LocalCfg.PemFilePath;
-    }
+    // if (_Config.PemFilePath == "") {
+    //     _Config.PemFilePath = LocalCfg.PemFilePath;
+    // }
 }
 
 

@@ -87,7 +87,7 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
     if (!_Config.UseHTTPS) {
         Settings->set_port(_Config.PortNumber);
     }
-    Settings->set_default_header("Connection", "close");
+    Settings->set_default_header("Access-Control-Allow-Origin", "*");
 
     // Return Configured Settings Object
     return Settings;

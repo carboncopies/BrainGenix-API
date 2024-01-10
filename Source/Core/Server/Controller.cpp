@@ -83,23 +83,6 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
         SSLSettings->set_private_key(restbed::Uri(PrivateKeyURI));
         SSLSettings->set_port(_Config.PortNumber);
 
-
-        // Setup HTTP Service
-        std::shared_ptr<restbed::Settings> HTTPSettings = std::make_shared<restbed::Settings>();
-        HTTPSettings->set_port(80);
-        // HTTPSettings->set_bind_address(_Config.Host);
-        HTTPSettings->set_default_header("Connection", "close");
-
-        // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from (oh http service)
-        std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
-        Resource->set_path("/.well-known/acme-challenge/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
-        Resource->set_method_handler( "GET", TextServerHandler);
-
-        HTTPService_.publish(Resource);
-        HTTPService_.start(HTTPSettings);
-
-
-
     }
 
     // Create Settings Shared Pointer
@@ -109,9 +92,9 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
     }
 
     // Configure Settings Object
-    if (!_Config.UseHTTPS) {
-        // Settings->set_port(80);
-    // } else {
+    if (_Config.UseHTTPS) {
+        Settings->set_port(80);
+    } else {
         Settings->set_port(_Config.PortNumber);
 
     }
@@ -125,11 +108,11 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
 
 void Controller::StartService() {
 
-    // // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from (oh http service)
-    // std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
-    // Resource->set_path("/.well-known/acme-challenge/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
-    // Resource->set_method_handler( "GET", TextServerHandler);
-    // Service_.publish(Resource);
+    // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from (oh http service)
+    std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
+    Resource->set_path("/.well-known/acme-challenge/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
+    Resource->set_method_handler( "GET", TextServerHandler);
+    Service_.publish(Resource);
 
 
     std::cout<<"Started Main Service\n";

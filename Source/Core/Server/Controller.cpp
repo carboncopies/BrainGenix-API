@@ -96,7 +96,7 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
         Resource->set_method_handler( "GET", TextServerHandler);
 
         HTTPService_.publish(Resource);
-        HTTPService_.start(HTTPSettings);
+        // HTTPService_.start(HTTPSettings);
 
     }
 

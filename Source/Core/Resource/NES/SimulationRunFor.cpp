@@ -46,6 +46,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Auth Check
     if (!Util::IsAuthorized(Request.get())) {
+      std::cout<<"Unauthorized!!!!!\n";
       Util::SendCode(_Session.get(), 4);
       return;
     }

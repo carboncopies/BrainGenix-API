@@ -224,6 +224,51 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (bgConnectionID) `ReceptorID=` ID of the resulting receptor connection created here (if status indicates success, otherwise this is -1).
 
 
+### Neuron - Create **NEW**
+
+**URI** `/NES/Neuron/BSNeuron/Create?`  
+**Request**:  
+*Required Params*:  
+
+- (bgShapeID) `SomaID=` ID of the shape object for the soma of the neuron (e.g. a sphere).
+- (bgShapeID) `AxonID=` ID of the shape object for the axon of the neuron (e.g. a cylinder).
+- (float) `MembranePotential_mV=` Membrane potential set at time of construction.
+- (float) `RestingPotential_mV=` Membrane potential at rest.
+- (float) `SpikeThreshold_mV=` Membrane potential at which the neuron will fire an action potential.
+- (float) `DecayTime_ms=` Time constant for the decay of the after-hyperpolarization of the neuron.
+- (float) `AfterHyperpolarizationAmplitude_mV=` Amplitude of the after-hyperpolarization of the neuron.
+- (float) `PostsynapticPotentialRiseTime_ms=` Time constant of the rise-time of a post-synaptic potential arriving at the neuron.
+- (float) `PostsynapticPotentialDecayTime_ms=` Time constant of the decay-time of a post-synaptic potential arriving at the neuron.
+- (float) `PostsynapticPotentialAmplitude_mV=` Amplitude of a post-synaptic potential arriving at the neuron.
+
+*Optional Params*:  
+
+- (string) `Name=` Optional name of the neuron.
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgNeuronID) `NeuronID=` ID of the resulting neuron (if status indicates success, otherwise this is -1).
+
+
+Proposed Python client example (as shown in Python prototype code `BG_API.py`):
+
+```
+    Cfg = NES.Models.Neurons.BSNeuron.Configuration()
+    Cfg.Name = name
+    Cfg.SomaID = SomaID,
+    Cfg.AxonID = AxonID
+    Cfg.MembranePotential_mV = MembranePotential_mV
+    Cfg.RestingPotential_mV = RestingPotential_mV
+    Cfg.SpikeThreshold_mV = SpikeThreshold_mV
+    Cfg.DecayTime_ms = DecayTime_ms
+    Cfg.AfterHyperpolarizationAmplitude_mV = AfterHyperpolarizationAmplitude_mV
+    Cfg.PostsynapticPotentialRiseTime_ms = PostsynapticPotentialRiseTime_ms
+    Cfg.PostsynapticPotentialDecayTime_ms = PostsynapticPotentialDecayTime_ms
+    Cfg.PostsynapticPotentialAmplitude_mV = PostsynapticPotentialAmplitude_mV
+    neuron = Simulation.Sim.AddBSNeuron(Cfg)
+```
+
 
 ## Tools
 

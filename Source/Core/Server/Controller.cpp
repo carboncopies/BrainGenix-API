@@ -89,7 +89,7 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
     }
 
     // Set Timeout (Needs To Be Big For Downloading Large Images From Server)
-    std::chrono::milliseconds TimeoutDuration_ms(std::chrono::milliseconds::max());
+    std::chrono::milliseconds TimeoutDuration_ms(3600000); // 1 Hour
     Settings->set_connection_timeout(TimeoutDuration_ms);
 
     // Set CORS Policy, Must Be Allowed, Otherwise API Status Page Doesn't Work Right

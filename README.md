@@ -21,3 +21,17 @@ Once certbot generates it's certs, and verifies your ownership of whatever domai
 So at this point, you should have your config file point to the SSL cert and privatekey - now just set `UseHTTPS=false` to `UseHTTPS=true` and you should be good to go after restarting the service.
 
 Please note that all traffic will be automatically redirected to HTTPS, so make sure that your users are aware of this.
+
+# Running locally (e.g. to debug NES)
+
+1. Download the repo (or pull if already downloaded to ensure it is up to date).
+2. In ./Tools, build with ./Build (use ./Build 4 or so if the machine has limited threads or RAM).
+3. In ./Tools, use ./Run.sh to start the API.
+
+(If you are debugging NES then do the same thing with that repo.)
+
+For your client code, install the Python client with pip3 install pyBrainGenixClient,
+and in your code use host "localhost" and port "80" and configure UseHTTPS=False when
+instantiating the client object.
+
+Your code should now be able to communicate with the local NES and API servers.

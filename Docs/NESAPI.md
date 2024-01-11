@@ -38,6 +38,7 @@ Each route will be described in this format:
  - `0` Success
  - `1` Invalid Simulation ID
  - `2` Invalid Other ID (could be shape/dac/adc/staple/etc...)
+ - `5` Simulation Busy
  - `999` General Failure
 
 ## bgRenderStatus
@@ -259,6 +260,9 @@ Each route will be described in this format:
 - (float) `MembranePotential_mV` Membrane potential of the compartment in millivolts.  
 - (float) `SpikeThreshold_mV` Action potential spike threshold of the compartment in millivolts.  
 - (float) `DecayTime_ms` (tau_ahp) After hyperpolarization time constant in milliseconds.  
+- (float) `RestingPotential_mV` To be documented.  
+- (float) `AfterHyperpolarizationAmplitude_mV` to be documented.  
+
 - (string) `Name` Name of the BallStick compartment, defaults to 'undefined'.  
 
 **Response**:   

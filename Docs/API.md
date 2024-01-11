@@ -17,6 +17,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - `2` Invalid Parameters Passed
  - `3` Upstream Gateway Unavailable
  - `4` Unauthorized/invaid token/no token provided
+ - `5` Simulation Busy
 
 ## bgServiceStatus
  - `0` Healthy

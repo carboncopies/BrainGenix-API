@@ -435,6 +435,8 @@ Each route will be described in this format:
 - (int) `ImageHeight_px` Set the height of the image in pixels.  
 - (float) `SliceThickness_nm` Set the thickness of each slice in nanometers.  
 - (float) `ScanRegionOverlap_percent` Set the overlap for the resulting image stacks.  
+- (float) `MicroscopeFOV_deg` Sets the FOV of the microscope in degrees. This does not have an affect on the overall scan size, as that is accounted for with automatic positioning.
+- (int) `NumPixelsPerVoxel_px` Sets the size that voxels are shown in images in pixels.
 
 **Response**:  
 

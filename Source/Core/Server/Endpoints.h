@@ -40,6 +40,8 @@
 #include <Resource/NES/StapleCreate.h>
 #include <Resource/NES/ReceptorCreate.h>
 
+#include <Resource/NES/NeuronCreate.h>
+
 #include <Resource/NES/PatchClampDACCreate.h>
 #include <Resource/NES/PatchClampDACSetOutputList.h>
 #include <Resource/NES/PatchClampADCCreate.h>
@@ -94,6 +96,8 @@ private:
     std::shared_ptr<Resource::NES::Connection::Staple::Create::Route> NES_Connection_Staple_Create_;
     std::shared_ptr<Resource::NES::Connection::Receptor::Create::Route> NES_Connection_Receptor_Create_;
     
+    std::shared_ptr<Resource::NES::Neuron::BSNeuron::Create::Route> NES_Neuron_BSNeuron_Create;
+
     std::shared_ptr<Resource::NES::Tool::PatchClampDAC::Create::Route> NES_Tool_PatchClampDAC_Create_;
     std::shared_ptr<Resource::NES::Tool::PatchClampDAC::SetOutputList::Route> NES_Tool_PatchClampDAC_SetOutputList_;
 

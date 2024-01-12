@@ -539,6 +539,8 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgRenderStatus) `RenderStatus=` Enum indicating status of the renderer.  
 - (int) `CurrentSlice=` Int representing the current slice that the virtual microscope is on.
 - (int) `TotalSlices=` Int representing the total number of slices.
+- (int) `CurrentSliceImage=` Int representing the current image of this slice.
+- (int) `TotalSliceImages=` Int representing the total images on this slice.
 
 
 ### VSDA - EM - GetImageStack

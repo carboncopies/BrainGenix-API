@@ -21,6 +21,8 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   RequiredParams_.push_back("ImageHeight_px");
   RequiredParams_.push_back("SliceThickness_nm");
   RequiredParams_.push_back("ScanRegionOverlap_percent");
+  RequiredParams_.push_back("MicroscopeFOV_deg");
+  RequiredParams_.push_back("NumPixelsPerVoxel_px");
   
 
   // Setup Callback
@@ -65,6 +67,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     int ImageHeight_px = Request->get_query_parameter("ImageHeight_px", -1);
     float SliceThickness_nm = Request->get_query_parameter("SliceThickness_nm", -1.0);
     float ScanRegionOverlap_percent = Request->get_query_parameter("ScanRegionOverlap_percent", -1.0);
+    float MicroscopeFOV_deg = Request->get_query_parameter("MicroscopeFOV_deg", -1.0);
+    int NumPixelsPerVoxel_px = Request->get_query_parameter("NumPixelsPerVoxel_px", 1);
 
 
     // Upstream Query
@@ -75,6 +79,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["ImageHeight_px"] = ImageHeight_px;
     UpstreamQuery["SliceThickness_nm"] = SliceThickness_nm;
     UpstreamQuery["ScanRegionOverlap_percent"] = ScanRegionOverlap_percent;
+    UpstreamQuery["MicroscopeFOV_deg"] = MicroscopeFOV_deg;
+    UpstreamQuery["NumPixelsPerVoxel_px"] = NumPixelsPerVoxel_px;
 
 
     std::string UpstreamResponseStr = "";

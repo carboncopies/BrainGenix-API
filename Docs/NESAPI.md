@@ -307,6 +307,32 @@ Each route will be described in this format:
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
+## Neurons
+
+### BSNeuron - Create **NEW**
+
+**Route** `Neuron/BSNeuron/Create`  
+**Request**:  
+*Required Params*:  
+
+- (int) `SimulationID` ID of the simulation where this is being created.
+- (bgShapeID) `SomaID` ID of the shape object for the soma of the neuron (e.g. a sphere).
+- (bgShapeID) `AxonID` ID of the shape object for the axon of the neuron (e.g. a cylinder).
+- (float) `MembranePotential_mV` Membrane potential set at time of construction.
+- (float) `RestingPotential_mV` Membrane potential at rest.
+- (float) `SpikeThreshold_mV` Membrane potential at which the neuron will fire an action potential.
+- (float) `DecayTime_ms` Time constant for the decay of the after-hyperpolarization of the neuron.
+- (float) `AfterHyperpolarizationAmplitude_mV` Amplitude of the after-hyperpolarization of the neuron.
+- (float) `PostsynapticPotentialRiseTime_ms` Time constant of the rise-time of a post-synaptic potential arriving at the neuron.
+- (float) `PostsynapticPotentialDecayTime_ms` Time constant of the decay-time of a post-synaptic potential arriving at the neuron.
+- (float) `PostsynapticPotentialAmplitude_mV` Amplitude of a post-synaptic potential arriving at the neuron.
+- (string) `Name` Name of the neuron.
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+- (bgNeuronID) `NeuronID` ID of the resulting neuron (if status indicates success, otherwise this is -1).
+
 
 ## Tools
 

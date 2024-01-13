@@ -60,25 +60,26 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Get Params
     int SimID = Request->get_query_parameter("SimulationID", -1);
-    float PixelResolution_nm = Request->get_query_parameter("PixelResolution_nm", -1.0);
-    int ImageWidth_px = Request->get_query_parameter("ImageWidth_px", -1);
-    int ImageHeight_px = Request->get_query_parameter("ImageHeight_px", -1);
-    float SliceThickness_nm = Request->get_query_parameter("SliceThickness_nm", -1.0);
+    std::string CalciumIndicatorName = Request->get_query_parameter("CalciumIndicatorName", "");
+    float IndicatorRiseTime_ms = Request->get_query_parameter("IndicatorRiseTime_ms", -1.);
+    float IndicatorDecayTime_ms = Request->get_query_parameter("IndicatorDecayTime_ms", -1.);
+    float IndicatorInterval_ms = Request->get_query_parameter("IndicatorInterval_ms", -1.);
     float ScanRegionOverlap_percent = Request->get_query_parameter("ScanRegionOverlap_percent", -1.0);
     float MicroscopeFOV_deg = Request->get_query_parameter("MicroscopeFOV_deg", -1.0);
-    int NumPixelsPerVoxel_px = Request->get_query_parameter("NumPixelsPerVoxel_px", 1);
+    std::string VisibleComponentsListStr = Request->get_query_parameter("VisibleComponentsList", "");
+    std::vector<std::string> VisibleComponentsList = nlohmann::json(VisibleComponentsListStr).get<std::vector<std::string>>();
 
 
     // Upstream Query
     nlohmann::json UpstreamQuery;
-    UpstreamQuery["SimulationID"] = SimID;
-    UpstreamQuery["PixelResolution_nm"] = PixelResolution_nm;
-    UpstreamQuery["ImageWidth_px"] = ImageWidth_px;
-    UpstreamQuery["ImageHeight_px"] = ImageHeight_px;
-    UpstreamQuery["SliceThickness_nm"] = SliceThickness_nm;
+    UpstreamQuery["SimulationID"]              = SimID;
+    UpstreamQuery["CalciumIndicatorName"]      = CalciumIndicatorName;
+    UpstreamQuery["IndicatorRiseTime_ms"]      = IndicatorRiseTime_ms;
+    UpstreamQuery["IndicatorDecayTime_ms"]     = IndicatorDecayTime_ms;
+    UpstreamQuery["IndicatorInterval_ms"]      = IndicatorInterval_ms;
     UpstreamQuery["ScanRegionOverlap_percent"] = ScanRegionOverlap_percent;
-    UpstreamQuery["MicroscopeFOV_deg"] = MicroscopeFOV_deg;
-    UpstreamQuery["NumPixelsPerVoxel_px"] = NumPixelsPerVoxel_px;
+    UpstreamQuery["MicroscopeFOV_deg"]         = MicroscopeFOV_deg;
+    UpstreamQuery["VisibleComponentsList"]     = VisibleComponentsList;
 
 
     std::string UpstreamResponseStr = "";
@@ -94,8 +95,9 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Build Response And Send
     nlohmann::json Response;
     Response["StatusCode"] = 0;
+
     
-    std::cout<<"VSDA EM SetupMicroscope Called With Sim ID: "<<SimID<<std::endl;
+    std::cout<<"VSDA Calcium CreateIndicator Called With Sim ID: "<<SimID<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

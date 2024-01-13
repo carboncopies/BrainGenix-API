@@ -606,16 +606,16 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 *Required Params*:  
 
 - (bgSimulationID) `SimulationID=` ID of simulation to setup calcium imaging for.  
-- (float) `PixelResolution_nm=` Number of nanometers of resolution for each pixel.  
+- (float) `PixelResolution_um=` Number of micrometers of resolution for each pixel.  
 - (int) `ImageWidth_px=` Set the width of the image in pixels.  
 - (int) `ImageHeight_px=` Set the height of the image in pixels.  
-- (float) `SliceThickness_nm=` Set the thickness of each slice in nanometers.  
+- (float) `SliceThickness_um=` Set the thickness of each slice in micrometers.  
 - (float) `ScanRegionOverlap_percent=` Set the overlap for the resulting image stacks.  
 - (float) `MicroscopeFOV_deg=` Sets the FOV of the microscope in degrees. This does not have an affect on the overall scan size, as that is accounted for with automatic positioning.  
 - (int) `NumPixelsPerVoxel_px=` Sets the size that voxels are shown in images in pixels. (same as voxspace_side_px)  
 
 - (str list) `FlourescingNeuronTags=` List of tags for neurons which will flouresce.  
-- (str) `CalciumIndicatorID=` ID of a calcium indicator that you've defined.  
+- (int) `CalciumIndicatorID=` ID of a calcium indicator that you've defined.  
 - (float) `ImagingInterval_ms=` How many milliseconds between captures.  
 
 **Response**:  
@@ -700,3 +700,38 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
 - (base64String) `ImageData=` Base 64 encoded string containing the bytes of the file.  
+
+## RecordingElectrode
+
+### RecordingElectrode - Initialize **NEW**
+
+**URI** `/NES/Simulator/Structs/RecordingElectrode/Initialize?` 
+**Request**: 
+*Required Params*:
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the electrode for. 
+
+*Optional Params*:
+
+- (vec3) `TipPosition_um=` Coordinates of the tip of the electrode in micrometers.
+- (vec3) `EndPosition_um=` Coordinates of the tip of the electrode in micrometers.
+- (vec3) `TipPosition_um=` Coordinates of the tip of the electrode in micrometers.
+- (list[vec3]) `Sites=` Coordinates of all sites within the region from where data is being acquired.
+- (float) `NoiseLevel=` Intensity of the synthetic noise.
+
+**Response**:
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+
+
+### RecordingElectrode - AddNoise   **NEW**
+
+**URI** `/NES/Simulator/Structs/RecordingElectrode/AddNoise?`
+**Request**:
+*Required Params*:
+
+- None
+
+**Response**:
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.

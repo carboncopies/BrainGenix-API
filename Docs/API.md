@@ -623,7 +623,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
 
 
-### VSDA - Calcium - DefineScanRegion
+### VSDA - Calcium - DefineScanRegion *NEW*
 
 **URI** `/NES/VSDA/Calcium/DefineScanRegion?`  
 **Request**:  
@@ -639,7 +639,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgScanRegionID) `CalciumScanRegionID=` ID of the resulting scan region. Can be used to later get the image stack once generated.  
 
 
-### VSDA - Calcium - QueueRenderOperation
+### VSDA - Calcium - QueueRenderOperation *NEW*
 
 **URI** `/NES/VSDA/Calcium/QueueRenderOperation?`  
 **Request**:  
@@ -653,7 +653,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
 
 
-### VSDA - Calcium - GetRenderStatus
+### VSDA - Calcium - GetRenderStatus *NEW*
 
 **URI** `/NES/VSDA/Calcium/GetRenderStatus?`  
 **Request**:  
@@ -672,7 +672,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (int) `TotalSliceImages=` Int representing the total images on this slice.
 
 
-### VSDA - Calcium - GetImageStack
+### VSDA - Calcium - GetImageStack *NEW*
 
 **URI** `/NES/VSDA/Calcium/GetImageStack?`  
 **Request**:  
@@ -687,7 +687,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (list) `RenderedImages=` List of file paths that can be given to the VSDA EM GetImage Function one at a time to retrieve images.  
 
 
-### VSDA - Calcium - GetImage
+### VSDA - Calcium - GetImage *NEW*
 
 **URI** `/NES/VSDA/Calcium/GetImage?`  
 **Request**:  

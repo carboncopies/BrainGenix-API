@@ -224,7 +224,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (bgConnectionID) `ReceptorID=` ID of the resulting receptor connection created here (if status indicates success, otherwise this is -1).
 
 
-### Neuron - Create **NEW**
+### Neuron - Create
 
 **URI** `/NES/Neuron/BSNeuron/Create?`  
 **Request**:  
@@ -244,6 +244,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 *Optional Params*:  
 
 - (string) `Name=` Optional name of the neuron.
+- (str) `NeuronTag=` String which can be used to group this neuron along with others. ** NEW **  
 
 **Response**:  
 
@@ -561,6 +562,134 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 ### VSDA - EM - GetImage
 
 **URI** `/NES/VSDA/EM/GetImage?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (string) `ImageHandle=` String containing the image handle that needs to be grabbed from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (base64String) `ImageData=` Base 64 encoded string containing the bytes of the file.  
+
+
+
+
+
+
+
+### VSDA - Calcium - CreateIndicator
+
+**URI** `/NES/VSDA/Calcium/CreateIndicator?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup calcium imaging for.  
+- (str) `CalciumIndicatorName=` Name of type of indicator to be used, example: 'jGCaMP8'  
+- (float) `IndicatorRiseTime_ms=` Rise time of the indicator in milliseconds.  
+- (float) `IndicatorDecayTime_ms=` Decay time of the indicator in milliseconds.  
+- (float) `IndicatorInterval_ms=` Interval time of the indicator in milliseconds.  
+- (str list) `VisibleComponentsList=` List of what components are shown by this indicator, valid options are ['soma', 'axon', 'synapse']
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgStatus) `CalciumIndicatorID=` ID of the calcium indicator that you created.  
+
+
+
+### VSDA - Calcium - Setup
+
+**URI** `/NES/VSDA/Calcium/Setup?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup calcium imaging for.  
+- (float) `PixelResolution_nm=` Number of nanometers of resolution for each pixel.  
+- (int) `ImageWidth_px=` Set the width of the image in pixels.  
+- (int) `ImageHeight_px=` Set the height of the image in pixels.  
+- (float) `SliceThickness_nm=` Set the thickness of each slice in nanometers.  
+- (float) `ScanRegionOverlap_percent=` Set the overlap for the resulting image stacks.  
+- (float) `MicroscopeFOV_deg=` Sets the FOV of the microscope in degrees. This does not have an affect on the overall scan size, as that is accounted for with automatic positioning.  
+- (int) `NumPixelsPerVoxel_px=` Sets the size that voxels are shown in images in pixels. (same as voxspace_side_px)  
+
+- (str list) `FlourescingNeuronTags=` List of tags for neurons which will flouresce.  
+- (str) `CalciumIndicatorID=` ID of a calcium indicator that you've defined.  
+- (float) `ImagingInterval_ms=` How many milliseconds between captures.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+### VSDA - Calcium - DefineScanRegion
+
+**URI** `/NES/VSDA/Calcium/DefineScanRegion?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the calcium imaging for.  
+- (vec3) `Point1_um=` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
+- (vec3) `Point2_um=` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgScanRegionID) `CalciumScanRegionID=` ID of the resulting scan region. Can be used to later get the image stack once generated.  
+
+
+### VSDA - Calcium - QueueRenderOperation
+
+**URI** `/NES/VSDA/Calcium/QueueRenderOperation?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to render.  Note: this simulation must have already been simulated otherwise we cannot render it - (no data for functional recordings).
+- (bgScanRegionID) `CalciumScanRegionID=` ID of the scan region to be rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+### VSDA - Calcium - GetRenderStatus
+
+**URI** `/NES/VSDA/Calcium/GetRenderStatus?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `CalciumScanRegionID=` ID of the scan region to have it's status checked.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgRenderStatus) `RenderStatus=` Enum indicating status of the renderer.  
+- (int) `CurrentSlice=` Int representing the current slice that the virtual microscope is on.
+- (int) `TotalSlices=` Int representing the total number of slices.
+- (int) `CurrentSliceImage=` Int representing the current image of this slice.
+- (int) `TotalSliceImages=` Int representing the total images on this slice.
+
+
+### VSDA - Calcium - GetImageStack
+
+**URI** `/NES/VSDA/Calcium/GetImageStack?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `CalciumScanRegionID=` ID of the scan region to get the image stack for. Note: The stack must have finished being rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (list) `RenderedImages=` List of file paths that can be given to the VSDA EM GetImage Function one at a time to retrieve images.  
+
+
+### VSDA - Calcium - GetImage
+
+**URI** `/NES/VSDA/Calcium/GetImage?`  
 **Request**:  
 *Required Params*:  
 

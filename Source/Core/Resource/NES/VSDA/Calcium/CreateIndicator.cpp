@@ -64,8 +64,6 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     float IndicatorRiseTime_ms = Request->get_query_parameter("IndicatorRiseTime_ms", -1.);
     float IndicatorDecayTime_ms = Request->get_query_parameter("IndicatorDecayTime_ms", -1.);
     float IndicatorInterval_ms = Request->get_query_parameter("IndicatorInterval_ms", -1.);
-    float ScanRegionOverlap_percent = Request->get_query_parameter("ScanRegionOverlap_percent", -1.0);
-    float MicroscopeFOV_deg = Request->get_query_parameter("MicroscopeFOV_deg", -1.0);
     std::string VisibleComponentsListStr = Request->get_query_parameter("VisibleComponentsList", "");
     std::vector<std::string> VisibleComponentsList = nlohmann::json(VisibleComponentsListStr).get<std::vector<std::string>>();
 
@@ -77,13 +75,11 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["IndicatorRiseTime_ms"]      = IndicatorRiseTime_ms;
     UpstreamQuery["IndicatorDecayTime_ms"]     = IndicatorDecayTime_ms;
     UpstreamQuery["IndicatorInterval_ms"]      = IndicatorInterval_ms;
-    UpstreamQuery["ScanRegionOverlap_percent"] = ScanRegionOverlap_percent;
-    UpstreamQuery["MicroscopeFOV_deg"]         = MicroscopeFOV_deg;
     UpstreamQuery["VisibleComponentsList"]     = VisibleComponentsList;
 
 
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "VSDA/EM/SetupMicroscope", UpstreamQuery.dump(), &UpstreamResponseStr);
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "VSDA/Calcium/CreateIndicator", UpstreamQuery.dump(), &UpstreamResponseStr);
     if (!UpstreamStatus) {
       Util::SendCode(_Session.get(), 3);
       return;
@@ -91,15 +87,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
 
 
+    // Send Response
+    UpstreamResponse["StatusCode"] = 0;
 
-    // Build Response And Send
-    nlohmann::json Response;
-    Response["StatusCode"] = 0;
-
-    
     std::cout<<"VSDA Calcium CreateIndicator Called With Sim ID: "<<SimID<<std::endl;
 
-    Util::SendJSON(_Session.get(), &Response);
+    Util::SendJSON(_Session.get(), &UpstreamResponse);
 }
 
 }; // Close Namespace

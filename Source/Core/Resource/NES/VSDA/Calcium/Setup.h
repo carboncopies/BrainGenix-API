@@ -36,7 +36,7 @@ namespace Resource {
 namespace NES {
 namespace VSDA {
 namespace Calcium {
-namespace CreateIndicator {
+namespace Setup {
 
 
 /**

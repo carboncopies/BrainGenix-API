@@ -31,10 +31,6 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - `2` Rendering
  - `3` Not Yet Rendered
 
-
-
-
-
 # Routes  
 
 ## Diagnostic  
@@ -723,7 +719,6 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
-
 ### RecordingElectrode - AddNoise   **NEW**
 
 **URI** `/NES/Simulator/Structs/RecordingElectrode/AddNoise?`
@@ -735,3 +730,30 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Response**:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+
+## RecordingElectrode - GetRecording **NEW**
+
+**URI** `/NES/Simulator/Structs/RecordingElectrode/GetRecording?`
+**Request**:
+*Required Params*:
+
+- None
+
+**Response**:
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (dict) `RecordingDict=` Dict/Hashmap containing the data collected by the recording electrode.
+
+## RecordingElectrode - SetElectricFieldPotential **NEW**
+
+**URI** `/NES/Simulator/Structs/RecordingElectrode/SetElectricFieldPotential?`
+**Request**:
+*Required Params*:
+
+- (int) `SiteIdx=` Integer index of the recording electrode site.
+
+**Response**:
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (dict) `RecordingDict=` Dict/Hashmap containing the data collected by the recording electrode.
+

@@ -222,7 +222,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 ### Neuron - Create
 
-**URI** `/NES/Neuron/BSNeuron/Create?`  
+**URI** `/NES/Neuron/BSNeuron/Create?` 
 **Request**:  
 *Required Params*:  
 
@@ -265,7 +265,22 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
     Cfg.PostsynapticPotentialAmplitude_mV = PostsynapticPotentialAmplitude_mV
     neuron = Simulation.Sim.AddBSNeuron(Cfg)
 ```
+### NeuralCircuit - Create      **NEW**
 
+**URI** `/NES/NeuralCircuit/BSAlignedNC/Create?`    
+**Request**:  
+
+*Required Params*: 
+
+- (int) `GeometryCollectionID?=` Number of cells in the neural circuit.
+
+*Optional Params*:  
+
+- (int) `NumCells=` Number of cells in the neural circuit.
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
 ## Tools
 

@@ -65,6 +65,9 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     NES_VSDA_EM_GetImageStack_        = std::make_shared<Resource::NES::VSDA::EM::GetImageStack::Route>(&_Server, _Service);
     NES_VSDA_EM_GetImage_             = std::make_shared<Resource::NES::VSDA::EM::GetImage::Route>(&_Server, _Service);
     NES_VSDA_EM_GetRenderStatus_      = std::make_shared<Resource::NES::VSDA::EM::GetRenderStatus::Route>(&_Server, _Service);
+
+    NES_VSDA_Calcium_CreateIndicator_ = std::make_shared<Resource::NES::VSDA::Calcium::CreateIndicator::Route>(&_Server, _Service);
+    NES_VSDA_Calcium_Setup_           = std::make_shared<Resource::NES::VSDA::Calcium::Setup::Route>(&_Server, _Service);
     
 }
 

@@ -65,6 +65,9 @@
 #include <Resource/NES/VSDA/EMGetImage.h>
 #include <Resource/NES/VSDA/EMGetRenderStatus.h>
 
+#include <Resource/NES/VSDA/Calcium/CreateIndicator.h>
+#include <Resource/NES/VSDA/Calcium/Setup.h>
+
 
 
 
@@ -120,6 +123,9 @@ private:
     std::shared_ptr<Resource::NES::VSDA::EM::GetImageStack::Route>          NES_VSDA_EM_GetImageStack_;
     std::shared_ptr<Resource::NES::VSDA::EM::GetImage::Route>               NES_VSDA_EM_GetImage_;
     std::shared_ptr<Resource::NES::VSDA::EM::GetRenderStatus::Route>        NES_VSDA_EM_GetRenderStatus_;
+
+    std::shared_ptr<Resource::NES::VSDA::Calcium::CreateIndicator::Route>   NES_VSDA_Calcium_CreateIndicator_;
+    std::shared_ptr<Resource::NES::VSDA::Calcium::Setup::Route>             NES_VSDA_Calcium_Setup_;
 
 
 public:

@@ -65,15 +65,10 @@
 #include <Resource/NES/VSDA/EMGetImage.h>
 #include <Resource/NES/VSDA/EMGetRenderStatus.h>
 
-<<<<<<< Updated upstream
-
-
-=======
 #include <Resource/NES/VSDA/Calcium/Setup.h>
 #include <Resource/NES/VSDA/Calcium/CreateIndicator.h>
 #include <Resource/NES/VSDA/Calcium/DefineScanRegion.h>
 #include <Resource/NES/VSDA/Calcium/GetRenderStatus.h>
->>>>>>> Stashed changes
 
 namespace BG {
 namespace API {
@@ -128,14 +123,10 @@ private:
     std::shared_ptr<Resource::NES::VSDA::EM::GetImage::Route>               NES_VSDA_EM_GetImage_;
     std::shared_ptr<Resource::NES::VSDA::EM::GetRenderStatus::Route>        NES_VSDA_EM_GetRenderStatus_;
 
-<<<<<<< Updated upstream
-=======
     std::shared_ptr<Resource::NES::VSDA::Calcium::CreateIndicator::Route>   NES_VSDA_Calcium_CreateIndicator_;
     std::shared_ptr<Resource::NES::VSDA::Calcium::Setup::Route>             NES_VSDA_Calcium_Setup_;
     std::shared_ptr<Resource::NES::VSDA::Calcium::DefineScanRegion::Route>  NES_VSDA_Calcium_DefineScanRegion_;
     std::shared_ptr<Resource::NES::VSDA::Calcium::GetRenderStatus::Route>   NES_VSDA_Calcium_GetRenderStatus_;
-
->>>>>>> Stashed changes
 
 public:
 

@@ -84,7 +84,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["CompartmentID"] = UpstreamResponse["CompartmentID"].template get<int>();
 
-    std::cout<<"Creating BallStick Compartment with ID "<<Response["CompartmentID"]<<std::endl;
+    Logger_->Log("Creating BallStick Compartment with ID "+ std::to_string(static_cast<int>(Response["CompartmentID"])) +'\n',1);
 
     Util::SendJSON(_Session.get(), &Response);
 }

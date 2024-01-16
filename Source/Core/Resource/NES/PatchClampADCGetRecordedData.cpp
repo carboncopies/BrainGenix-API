@@ -10,8 +10,9 @@ namespace Tool {
 namespace PatchClampADC {
 namespace GetRecordedData {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger, Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
+  Logger_ = std::move(_Logger);
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
@@ -76,7 +77,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["RecordedData_mV"] = UpstreamResponse["RecordedData_mV"];
     Response["Timestep_ms"] = UpstreamResponse["Timestep_ms"].template get<float>();
 
-    std::cout<<"Getting Recorded PatchClampADC Data On ID "<<Request->get_query_parameter("TargetADC", -1)<<std::endl;
+    Logger_->Log("Getting Recorded PatchClampADC Data On ID " + std::to_string(Request->get_query_parameter("TargetADC", -1))+'\n',1);
 
     Util::SendJSON(_Session.get(), &Response);
 }

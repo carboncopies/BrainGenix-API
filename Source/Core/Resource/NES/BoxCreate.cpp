@@ -11,8 +11,9 @@ namespace Shape {
 namespace Box {
 namespace Create {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
+  Logger_ =std::move(_Logger);
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
@@ -84,7 +85,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["ShapeID"] = UpstreamResponse["ShapeID"].template get<int>();
 
-    std::cout<<"Creating Box with ID "<<Response["ShapeID"]<<std::endl;
+    Logger_->Log("Creating Box with ID " + std::to_string(static_cast<int>(Response["ShapeID"])) + '\n', 1);
 
     Util::SendJSON(_Session.get(), &Response);
 }

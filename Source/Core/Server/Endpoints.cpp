@@ -19,6 +19,8 @@ EndpointManager::~EndpointManager() {
 
 void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
+    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger=std::make_unique<BG::Common::Logger::LoggingSystem>();
+
     // Add Defualt Routes (not found/forbidden, etc.)
     NotFound_ = std::make_shared<Resource::NotFound::Route>(&_Server, _Service);
     Forbidden_ = std::make_shared<Resource::Forbidden::Route>(&_Server, _Service);
@@ -33,9 +35,8 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
     NES_Geometry_Shape_Sphere_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Sphere::Create::Route>(&_Server, _Service);
     NES_Geometry_Shape_Cylinder_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Cylinder::Create::Route>(&_Server, _Service);
-    NES_Geometry_Shape_Box_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Box::Create::Route>(&_Server, _Service);
 
-    NES_Compartment_BS_Create_ = std::make_shared<Resource::NES::Compartment::BS::Create::Route>(&_Server, _Service);
+    NES_Compartment_BS_Create_ = std::make_shared<Resource::NES::Compartment::BS::Create::Route>(move(Logger),&_Server, _Service);
 
     NES_Connection_Staple_Create_ = std::make_shared<Resource::NES::Connection::Staple::Create::Route>(&_Server, _Service);
     NES_Connection_Receptor_Create_ = std::make_shared<Resource::NES::Connection::Receptor::Create::Route>(&_Server, _Service);

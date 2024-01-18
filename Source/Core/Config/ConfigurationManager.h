@@ -51,7 +51,7 @@ public:
      * @param _NumArgs 
      * @param _Args 
      */
-    Manager(int _NumArgs, char** _Args);
+    Manager(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _Args);
 
     /**
      * @brief Destroy the Manager object

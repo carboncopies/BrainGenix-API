@@ -7,10 +7,9 @@ namespace API {
 namespace Config {
 
 
-Manager::Manager(int _NumArgs, char** _Args) {
+Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _Args) {
 
-    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger=std::make_unique<BG::Common::Logger::LoggingSystem>();    // Parse Arguments
-    ArgumentParser ArgParser(std::move(Logger),Config_, _NumArgs, _Args);
+    ArgumentParser ArgParser(_Logger, Config_, _NumArgs, _Args);
     ArgParser.~ArgumentParser();
 
     // Now Load Configuration File

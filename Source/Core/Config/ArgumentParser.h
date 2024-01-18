@@ -47,7 +47,7 @@ namespace Config {
 class ArgumentParser {
 
 private:
-    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger_ = nullptr; /**Pointer to instance of logging system*/
+    BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to instance of logging system*/
 
 public:
 
@@ -60,7 +60,7 @@ public:
      * @param _NumArguments 
      * @param _Args 
      */
-    ArgumentParser(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Config& _Config, int _NumArguments, char** _Args);
+    ArgumentParser(BG::Common::Logger::LoggingSystem* _Logger,Config& _Config, int _NumArguments, char** _Args);
 
     /**
      * @brief Destroy the Argument Parser object

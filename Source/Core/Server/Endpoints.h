@@ -69,6 +69,7 @@
 #include <Resource/NES/VSDA/Calcium/CreateIndicator.h>
 #include <Resource/NES/VSDA/Calcium/DefineScanRegion.h>
 #include <Resource/NES/VSDA/Calcium/GetRenderStatus.h>
+#include <Resource/NES/VSDA/Calcium/GetImageStack.h>
 #include <Resource/NES/VSDA/Calcium/QueueRenderOperation.h>
 
 namespace BG {
@@ -129,6 +130,7 @@ private:
     std::shared_ptr<Resource::NES::VSDA::Calcium::DefineScanRegion::Route>  NES_VSDA_Calcium_DefineScanRegion_;
     std::shared_ptr<Resource::NES::VSDA::Calcium::GetRenderStatus::Route>   NES_VSDA_Calcium_GetRenderStatus_;
     std::shared_ptr<Resource::NES::VSDA::Calcium::QueueRenderOperation::Route>   NES_VSDA_Calcium_QueueRenderOperation_;
+    std::shared_ptr<Resource::NES::VSDA::Calcium::GetImageStack::Route>   NES_VSDA_Calcium_GetImageStack_;
 
 public:
 

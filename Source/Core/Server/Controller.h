@@ -99,6 +99,13 @@ public:
      */
     Server* GetServerStruct();
 
+    
+    /**
+     * @brief Hangs until the system is ready to exit.
+     * 
+     */
+    void HangUntilExit();
+
 };
 
 

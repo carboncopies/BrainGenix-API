@@ -40,6 +40,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
     // Start Server
     ServerController.StartService();
+    ServerController.HangUntilExit();
 
 }
 

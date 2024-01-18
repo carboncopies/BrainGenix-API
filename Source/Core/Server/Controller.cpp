@@ -119,6 +119,10 @@ Server* Controller::GetServerStruct() {
     return &Server_;
 }
 
+void Controller::HangUntilExit() {
+    while (true) {}
+}
+
 
 }; // Close Namespace Server
 }; // Close Namespace API

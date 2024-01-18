@@ -6,19 +6,19 @@ namespace API {
 namespace RPC {
 
 
-Manager::Manager(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Config::Config* _Config, Server::Server* _Server) {
+Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Server::Server* _Server) {
     Config_ = _Config;
     Server_ = _Server;
-    Logger_ = std::move(_Logger);
+    Logger_ = _Logger;
 
 
     // Initialize Thread Signal
     RequestThreadsExit_ = false;
 
     // Connect to nes service, start managing service
-    std::cout<<"Starting NES Client\n";
+    std::cout<<"Starting NES Client";
     ConnectNES();
-    Logger_->Log("Starting NES Client Manager Thread\n",1);
+    Logger_->Log("Starting NES Client Manager Thread",1);
     ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
 
     // Populate Server Struct
@@ -30,11 +30,11 @@ Manager::Manager(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Conf
 Manager::~Manager() {
 
     // Signal to threads to stop
-    Logger_->Log("Requesting manager threads exit\n",1);
+    Logger_->Log("Requesting manager threads exit",1);
     RequestThreadsExit_ = true;
 
     // Join Threads
-    Logger_->Log("Joining NES manager thread\n",1);
+    Logger_->Log("Joining NES manager thread",1);
     ConnectionManagerNES_.join();
 
 
@@ -49,15 +49,15 @@ bool Manager::ConnectNES() {
     int NESPort = Config_->NESPortNumber;
     int NESTimeout_ms = Config_->NESTimeout_ms;
     
-    Logger_->Log("Connecting to NES on port: "+ std::to_string(NESPort)+'n',1);
-    Logger_->Log("Connecting to NES on host: "+ NESHost+'\n',1);
-    Logger_->Log("Connecting to NES with timeout_ms of: "+std::to_string (NESTimeout_ms)+'\n',1);
+    Logger_->Log("Connecting to NES on port: " + std::to_string(NESPort), 1);
+    Logger_->Log("Connecting to NES on host: " + NESHost, 1);
+    Logger_->Log("Connecting to NES with timeout_ms of: " + std::to_string(NESTimeout_ms), 1);
 
 
     try {
         NESClient_ = std::make_unique<::rpc::client>(NESHost.c_str(), NESPort);
     } catch (std::system_error& e) {
-        Logger_->Log("ERR: Cannot find NES host (authoritative)\n",3);
+        Logger_->Log("Cannot find NES host (authoritative)", 9);
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
@@ -78,10 +78,10 @@ bool Manager::RunVersionCheckNES() {
     // Update our internal status of how the connection is doing
     ::rpc::client::connection_state NESStatus = NESClient_->get_connection_state();
     if (NESStatus != ::rpc::client::connection_state::connected) {
-        Logger_->Log("[ERR ] Unable to connect to NES service"+'\n',3);
+        Logger_->Log("Unable to connect to NES service", 3);
         Server_->NESState = SERVICE_FAILED;
     } else {
-        Logger_->Log("[INFO] NES RPC Connection SERVICE_HEALTHY"+'\n',1);
+        Logger_->Log("NES RPC Connection SERVICE_HEALTHY", 1);
         Server_->NESState = SERVICE_HEALTHY;
     }
 
@@ -89,12 +89,12 @@ bool Manager::RunVersionCheckNES() {
     std::string NESVersion = "undefined";
     bool Status = NESQueryJSON("GetAPIVersion", &NESVersion);
     if (!Status) {
-        Logger_->Log("[ERR ] Failed To Get NES API Version String"+'\n',1);
+        Logger_->Log("Failed To Get NES API Version String", 1);
         return false;
     }
 
     if (NESVersion != VERSION) {
-        Logger_->Log("WARNING: NES/API Version Mismatch! This might make stuff break. NES "+NESVersion+" API "+"2023.11.14"+'\n',2);
+        Logger_->Log("NES/API Version Mismatch! This might make stuff break. NES " + NESVersion + " API " + VERSION, 9);
         Server_->NESState = SERVICE_VERSION_MISMATCH;
         return false;
     }
@@ -107,15 +107,15 @@ bool Manager::NESQueryJSON(std::string _Route, std::string* _Result) {
     try {
         (*_Result) = NESClient_->call(_Route.c_str()).as<std::string>();
     } catch (::rpc::timeout& e) {
-        Logger_->Log("ERR: NES Connection timed out!\n",3);
+        Logger_->Log("NES Connection timed out!",3);
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (::rpc::rpc_error& e) {
-        Logger_->Log("ERR: NES remote returned RPC error\n",3);
+        Logger_->Log("NES remote returned RPC error",3);
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (std::system_error& e) {
-        Logger_->Log("ERR: Cannot talk to NES host\n",3);
+        Logger_->Log("Cannot talk to NES host",3);
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
@@ -126,15 +126,15 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
     try {
         (*_Result) = NESClient_->call(_Route.c_str(), _Query).as<std::string>();
     } catch (::rpc::timeout& e) {
-        Logger_->Log("ERR: NES Connection timed out!\n",3);
+        Logger_->Log("NES Connection timed out!",3);
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (::rpc::rpc_error& e) {
-        Logger_->Log("ERR: NES remote returned RPC error\n",3);
+        Logger_->Log("NES remote returned RPC error",3);
         Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (std::system_error& e) {
-        Logger_->Log("ERR: Cannot talk to NES host\n",3);
+        Logger_->Log("Cannot talk to NES host",3);
         Server_->NESState = SERVICE_CONFIG_ERR;
         return false;
     }
@@ -143,7 +143,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
 
 void Manager::ConnectionManagerNES() {
 
-    Logger_->Log("Started NES Manager Thread\n",3);
+    Logger_->Log("Started NES Manager Thread",3);
 
     // Enter loop
     while (!RequestThreadsExit_) {
@@ -154,14 +154,14 @@ void Manager::ConnectionManagerNES() {
         // If not healthy, re-establish connection, retry stuff... For now, nothing...
         if (!IsHealthy) {
             if (!ConnectNES()) {
-                Logger_->Log("[ERR ] Failed To Reconnect To NES Service!\n",3);            }
+                Logger_->Log("[ERR ] Failed To Reconnect To NES Service!",3);            }
         }
 
         // Wait 1000ms before polling again
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
     }
-    Logger_->Log("Exiting NES Manager Thread\n",1);
+    Logger_->Log("Exiting NES Manager Thread",1);
 }
 
 }; // Close Namespace DB

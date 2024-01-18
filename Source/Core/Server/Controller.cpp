@@ -1,3 +1,5 @@
+#include <thread>
+
 #include <Server/Controller.h>
 
 
@@ -96,6 +98,9 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
     // Set CORS Policy, Must Be Allowed, Otherwise API Status Page Doesn't Work Right
     Settings->set_default_header("Access-Control-Allow-Origin", "*"); // We may want to restirct this later on, but since we don't know who's running this, best to leave it open or add a config option
 
+    // Enable Multiple Threads
+    Settings->set_worker_limit(std::thread::hardware_concurrency());
+
     // Return Configured Settings Object
     return Settings;
 }
@@ -117,6 +122,10 @@ void Controller::StartService() {
 
 Server* Controller::GetServerStruct() {
     return &Server_;
+}
+
+void Controller::HangUntilExit() {
+    while (true) {}
 }
 
 

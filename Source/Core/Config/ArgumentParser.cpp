@@ -5,9 +5,9 @@ namespace BG {
 namespace API {
 namespace Config {
 
-ArgumentParser::ArgumentParser(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Config& _Config, int _NumArguments, char** _Args) {
+ArgumentParser::ArgumentParser(BG::Common::Logger::LoggingSystem* _Logger, Config& _Config, int _NumArguments, char** _Args) {
 
-    Logger_ = std::move(_Logger);
+    Logger_ = _Logger;
     // Declare Command Line Options
     boost::program_options::options_description Generic("CLI Options");
     Generic.add_options()

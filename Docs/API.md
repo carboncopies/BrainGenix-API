@@ -596,7 +596,6 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
-- (bgStatus) `CalciumIndicatorID=` ID of the calcium indicator that you created.  
 
 ### VSDA - Calcium - Setup
 
@@ -631,6 +630,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgSimulationID) `SimulationID=` ID of simulation to setup the calcium imaging for.  
 - (vec3) `Point1_um=` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
 - (vec3) `Point2_um=` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+- (bgStatus) `CalciumIndicatorID=` ID of the calcium indicator that you created.  
 
 **Response**:  
 

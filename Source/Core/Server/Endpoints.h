@@ -55,13 +55,13 @@
 #include <Resource/NES/SimulationReset.h>
 #include <Resource/NES/SimulationRunFor.h>
 
-#include <Resource/NES/VSDA/EMDefineScanRegion.h>
-#include <Resource/NES/VSDA/EMGetImage.h>
-#include <Resource/NES/VSDA/EMGetImageStack.h>
-#include <Resource/NES/VSDA/EMGetRenderStatus.h>
-#include <Resource/NES/VSDA/EMInitialize.h>
-#include <Resource/NES/VSDA/EMQueueRenderOperation.h>
-#include <Resource/NES/VSDA/EMSetupMicroscope.h>
+#include <Resource/NES/VSDA/EM/DefineScanRegion.h>
+#include <Resource/NES/VSDA/EM/GetImage.h>
+#include <Resource/NES/VSDA/EM/GetImageStack.h>
+#include <Resource/NES/VSDA/EM/GetRenderStatus.h>
+#include <Resource/NES/VSDA/EM/Initialize.h>
+#include <Resource/NES/VSDA/EM/QueueRenderOperation.h>
+#include <Resource/NES/VSDA/EM/SetupMicroscope.h>
 
 #include <Resource/NES/VSDA/Calcium/CreateIndicator.h>
 #include <Resource/NES/VSDA/Calcium/DefineScanRegion.h>

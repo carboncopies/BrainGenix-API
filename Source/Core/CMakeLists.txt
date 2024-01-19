@@ -88,21 +88,21 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.h
 
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/Initialize.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/Initialize.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/SetupMicroscope.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/SetupMicroscope.h
 
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMDefineScanRegion.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMDefineScanRegion.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImage.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImage.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/DefineScanRegion.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/DefineScanRegion.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/QueueRenderOperation.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/QueueRenderOperation.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetImageStack.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetImageStack.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetImage.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetImage.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetRenderStatus.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetRenderStatus.cpp
   
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/QueueRenderOperation.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/QueueRenderOperation.cpp

@@ -222,7 +222,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 
 ### Neuron - Create
 
-**URI** `/NES/Neuron/BSNeuron/Create?`  
+**URI** `/NES/Neuron/BSNeuron/Create?` 
 **Request**:  
 *Required Params*:  
 
@@ -266,6 +266,22 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
     neuron = Simulation.Sim.AddBSNeuron(Cfg)
 ```
 
+### NeuralCircuit - Create      **NEW**
+
+**URI** `/NES/NeuralCircuit/BSAlignedNC/Create?`    
+**Request**:  
+
+*Required Params*: 
+
+- (int) `GeometryCollectionID?=` Number of cells in the neural circuit.
+
+*Optional Params*:  
+
+- (int) `NumCells=` Number of cells in the neural circuit.
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
 ## Tools
 
@@ -301,7 +317,6 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-
 
 ### ADC - Create
 
@@ -349,8 +364,6 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (float list) `RecordedData_mV=` JSON formatted list of voltages recorded by the ADC.
 - (float) `Timestep_ms=` Gets the sample timestep rate for the ADC in milliseconds. 
-
-
 
 ## Simulation
 
@@ -453,8 +466,6 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
-
-
 
 ## VSDA
 
@@ -569,12 +580,6 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
 - (base64String) `ImageData=` Base 64 encoded string containing the bytes of the file.  
 
-
-
-
-
-
-
 ### VSDA - Calcium - CreateIndicator
 
 **URI** `/NES/VSDA/Calcium/CreateIndicator?`  
@@ -591,9 +596,6 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
-- (bgStatus) `CalciumIndicatorID=` ID of the calcium indicator that you created.  
-
-
 
 ### VSDA - Calcium - Setup
 
@@ -628,6 +630,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgSimulationID) `SimulationID=` ID of simulation to setup the calcium imaging for.  
 - (vec3) `Point1_um=` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
 - (vec3) `Point2_um=` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+- (bgStatus) `CalciumIndicatorID=` ID of the calcium indicator that you created.  
 
 **Response**:  
 
@@ -697,9 +700,9 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
 - (base64String) `ImageData=` Base 64 encoded string containing the bytes of the file.  
 
-## RecordingElectrode
+## RecordingElectrode **NEW**
 
-### RecordingElectrode - Initialize **NEW**
+### RecordingElectrode - Initialize     **NEW**
 
 **URI** `/NES/Simulator/Structs/RecordingElectrode/Initialize?` 
 **Request**: 
@@ -718,6 +721,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Response**:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (int) `RecordingElectrodeID=` ID of the new RecordingElectrode.
 
 ### RecordingElectrode - AddNoise   **NEW**
 
@@ -725,35 +729,40 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Request**:
 *Required Params*:
 
-- None
+- (int) `simulationID=` ID of the simulation.
+- (int) `recordingElectrodeID=` ID of the recording electrode.
 
 **Response**:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 
-## RecordingElectrode - GetRecording **NEW**
+## RecordingElectrode - GetRecording    *NEW**
 
 **URI** `/NES/Simulator/Structs/RecordingElectrode/GetRecording?`
 **Request**:
 *Required Params*:
 
-- None
+- (int) `simulationID=` ID of the simulation.
+- (int) `recordingElectrodeID=` ID of the recording electrode.
 
 **Response**:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (dict) `RecordingDict=` Dict/Hashmap containing the data collected by the recording electrode.
 
-## RecordingElectrode - SetElectricFieldPotential **NEW**
+## RecordingElectrode - SetElectricFieldPotential   **NEW**
 
 **URI** `/NES/Simulator/Structs/RecordingElectrode/SetElectricFieldPotential?`
 **Request**:
 *Required Params*:
 
+- (int) `simulationID=` ID of the simulation.
+- (int) `recordingElectrodeID=` ID of the recording electrode.
 - (int) `SiteIdx=` Integer index of the recording electrode site.
 
 **Response**:
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
 - (dict) `RecordingDict=` Dict/Hashmap containing the data collected by the recording electrode.
+
 

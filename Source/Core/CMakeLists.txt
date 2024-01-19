@@ -104,8 +104,16 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.cpp
   
-  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/CreateIndicator.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/QueueRenderOperation.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/QueueRenderOperation.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetRenderStatus.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetRenderStatus.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/DefineScanRegion.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/DefineScanRegion.cpp
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/CreateIndicator.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/CreateIndicator.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImageStack.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImageStack.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/Setup.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/Setup.cpp
 

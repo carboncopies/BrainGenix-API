@@ -246,8 +246,6 @@ Each route will be described in this format:
 - (bgShapeID) `ShapeID` ID of the resulting shape created here (-1 on fail).    
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 
-
-
 ## Compartments
 
 
@@ -269,6 +267,69 @@ Each route will be described in this format:
 - (bgCompartmentID) `CompartmentID` ID of the resulting compartment created here (-1 on fail).   
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
 
+
+### Neuron - Create
+
+**URI** `/NES/Neuron/BSNeuron/Create` 
+**Request**:  
+*Required Params*:  
+
+- (bgShapeID) `SomaID` ID of the shape object for the soma of the neuron (e.g. a sphere).
+- (bgShapeID) `AxonID` ID of the shape object for the axon of the neuron (e.g. a cylinder).
+- (float) `MembranePotential_mV` Membrane potential set at time of construction.
+- (float) `RestingPotential_mV` Membrane potential at rest.
+- (float) `SpikeThreshold_mV` Membrane potential at which the neuron will fire an action potential.
+- (float) `DecayTime_ms` Time constant for the decay of the after-hyperpolarization of the neuron.
+- (float) `AfterHyperpolarizationAmplitude_mV` Amplitude of the after-hyperpolarization of the neuron.
+- (float) `PostsynapticPotentialRiseTime_ms` Time constant of the rise-time of a post-synaptic potential arriving at the neuron.
+- (float) `PostsynapticPotentialDecayTime_ms` Time constant of the decay-time of a post-synaptic potential arriving at the neuron.
+- (float) `PostsynapticPotentialAmplitude_mV` Amplitude of a post-synaptic potential arriving at the neuron.
+
+*Optional Params*:  
+
+- (string) `Name` Optional name of the neuron.
+- (str) `NeuronTag` String which can be used to group this neuron along with others. ** NEW **  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+- (bgNeuronID) `NeuronID` ID of the resulting neuron (if status indicates success, otherwise this is -1).
+
+
+Proposed Python client example (as shown in Python prototype code `BG_API.py`):
+
+```
+    Cfg = NES.Models.Neurons.BSNeuron.Configuration()
+    Cfg.Name = name
+    Cfg.SomaID = SomaID,
+    Cfg.AxonID = AxonID
+    Cfg.MembranePotential_mV = MembranePotential_mV
+    Cfg.RestingPotential_mV = RestingPotential_mV
+    Cfg.SpikeThreshold_mV = SpikeThreshold_mV
+    Cfg.DecayTime_ms = DecayTime_ms
+    Cfg.AfterHyperpolarizationAmplitude_mV = AfterHyperpolarizationAmplitude_mV
+    Cfg.PostsynapticPotentialRiseTime_ms = PostsynapticPotentialRiseTime_ms
+    Cfg.PostsynapticPotentialDecayTime_ms = PostsynapticPotentialDecayTime_ms
+    Cfg.PostsynapticPotentialAmplitude_mV = PostsynapticPotentialAmplitude_mV
+    neuron = Simulation.Sim.AddBSNeuron(Cfg)
+```
+
+### NeuralCircuit - Create      **NEW**
+
+**URI** `/NES/NeuralCircuit/BSAlignedNC/Create`    
+**Request**:  
+
+*Required Params*: 
+
+- (int) `GeometryCollectionID` Number of cells in the neural circuit.
+
+*Optional Params*:  
+
+- (int) `NumCells` Number of cells in the neural circuit.
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
 
 
 ## Connections
@@ -507,7 +568,7 @@ Each route will be described in this format:
 
 ### VSDA - EM - GetImage
 
-**URI** `/NES/VSDA/EM/GetImage?`  
+**URI** `/NES/VSDA/EM/GetImage`  
 **Request**:  
 *Required Params*:  
 
@@ -519,3 +580,141 @@ Each route will be described in this format:
 - (bgStatus) `StatusCode` Enum indicating the status of this API call.  
 - (base64String) `ImageData` Base 64 encoded string containing the bytes of the file.  
 
+
+### VSDA - Calcium - DefineScanRegion *NEW*
+
+**URI** `/NES/VSDA/Calcium/DefineScanRegion`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the calcium imaging for.  
+- (vec3) `Point1_um` (X,Y,Z) World space location of one corner of the rectangular prism enclosing the target scan region.  
+- (vec3) `Point2_um` (X,Y,Z) World space location of the other corner of the rectangular prism enclosing the target scan region.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (bgScanRegionID) `CalciumScanRegionID` ID of the resulting scan region. Can be used to later get the image stack once generated.  
+
+
+### VSDA - Calcium - QueueRenderOperation *NEW*
+
+**URI** `/NES/VSDA/Calcium/QueueRenderOperation`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to render.  Note: this simulation must have already been simulated otherwise we cannot render it - (no data for functional recordings).
+- (bgScanRegionID) `CalciumScanRegionID` ID of the scan region to be rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+
+
+### VSDA - Calcium - GetRenderStatus *NEW*
+
+**URI** `/NES/VSDA/Calcium/GetRenderStatus`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `CalciumScanRegionID` ID of the scan region to have it's status checked.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (bgRenderStatus) `RenderStatus` Enum indicating status of the renderer.  
+- (int) `CurrentSlice` Int representing the current slice that the virtual microscope is on.
+- (int) `TotalSlices` Int representing the total number of slices.
+- (int) `CurrentSliceImage` Int representing the current image of this slice.
+- (int) `TotalSliceImages` Int representing the total images on this slice.
+
+
+### VSDA - Calcium - GetImageStack *NEW*
+
+**URI** `/NES/VSDA/Calcium/GetImageStack`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (bgScanRegionID) `CalciumScanRegionID` ID of the scan region to get the image stack for. Note: The stack must have finished being rendered.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (list) `RenderedImages` List of file paths that can be given to the VSDA EM GetImage Function one at a time to retrieve images.  
+
+
+### VSDA - Calcium - GetImage *NEW*
+
+**URI** `/NES/VSDA/Calcium/GetImage`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the microscope for.  
+- (string) `ImageHandle` String containing the image handle that needs to be grabbed from.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.  
+- (base64String) `ImageData` Base 64 encoded string containing the bytes of the file.  
+
+## RecordingElectrode
+
+### RecordingElectrode - Initialize **NEW**
+
+**URI** `/NES/Simulator/Structs/RecordingElectrode/Initialize` 
+**Request**: 
+*Required Params*:
+
+- (bgSimulationID) `SimulationID` ID of simulation to setup the electrode for. 
+
+*Optional Params*:
+
+- (vec3) `TipPosition_um` Coordinates of the tip of the electrode in micrometers.
+- (vec3) `EndPosition_um` Coordinates of the tip of the electrode in micrometers.
+- (vec3) `TipPosition_um` Coordinates of the tip of the electrode in micrometers.
+- (list[vec3]) `Sites` Coordinates of all sites within the region from where data is being acquired.
+- (float) `NoiseLevel` Intensity of the synthetic noise.
+
+**Response**:
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+
+### RecordingElectrode - AddNoise   **NEW**
+
+**URI** `/NES/Simulator/Structs/RecordingElectrode/AddNoise`
+**Request**:
+*Required Params*:
+
+- None
+
+**Response**:
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+
+## RecordingElectrode - GetRecording **NEW**
+
+**URI** `/NES/Simulator/Structs/RecordingElectrode/GetRecording?`
+**Request**:
+*Required Params*:
+
+- None
+
+**Response**:
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+- (dict) `RecordingDict` Dict/Hashmap containing the data collected by the recording electrode.
+
+## RecordingElectrode - SetElectricFieldPotential **NEW**
+
+**URI** `/NES/Simulator/Structs/RecordingElectrode/SetElectricFieldPotential?`
+**Request**:
+*Required Params*:
+
+- (int) `SiteIdx` Integer index of the recording electrode site.
+
+**Response**:
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+- (dict) `RecordingDict` Dict/Hashmap containing the data collected by the recording electrode.

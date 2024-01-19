@@ -65,11 +65,12 @@
 #include <Resource/NES/VSDA/EMGetImage.h>
 #include <Resource/NES/VSDA/EMGetRenderStatus.h>
 
-#include <Resource/NES/VSDA/Calcium/CreateIndicator.h>
 #include <Resource/NES/VSDA/Calcium/Setup.h>
-
-
-
+#include <Resource/NES/VSDA/Calcium/CreateIndicator.h>
+#include <Resource/NES/VSDA/Calcium/DefineScanRegion.h>
+#include <Resource/NES/VSDA/Calcium/GetRenderStatus.h>
+#include <Resource/NES/VSDA/Calcium/GetImageStack.h>
+#include <Resource/NES/VSDA/Calcium/QueueRenderOperation.h>
 
 namespace BG {
 namespace API {
@@ -126,7 +127,10 @@ private:
 
     std::shared_ptr<Resource::NES::VSDA::Calcium::CreateIndicator::Route>   NES_VSDA_Calcium_CreateIndicator_;
     std::shared_ptr<Resource::NES::VSDA::Calcium::Setup::Route>             NES_VSDA_Calcium_Setup_;
-
+    std::shared_ptr<Resource::NES::VSDA::Calcium::DefineScanRegion::Route>  NES_VSDA_Calcium_DefineScanRegion_;
+    std::shared_ptr<Resource::NES::VSDA::Calcium::GetRenderStatus::Route>   NES_VSDA_Calcium_GetRenderStatus_;
+    std::shared_ptr<Resource::NES::VSDA::Calcium::QueueRenderOperation::Route>   NES_VSDA_Calcium_QueueRenderOperation_;
+    std::shared_ptr<Resource::NES::VSDA::Calcium::GetImageStack::Route>   NES_VSDA_Calcium_GetImageStack_;
 
 public:
 
@@ -150,7 +154,6 @@ public:
      * @param _Server 
      */
     void AddRoutes(restbed::Service &_Service, Server &_Server);
-
 
 };
 

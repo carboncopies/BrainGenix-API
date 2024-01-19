@@ -60,6 +60,7 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     NES_VSDA_Calcium_DefineScanRegion_ = std::make_shared<Resource::NES::VSDA::Calcium::DefineScanRegion::Route>(&_Server, _Service);
     NES_VSDA_Calcium_QueueRenderOperation_ = std::make_shared<Resource::NES::VSDA::Calcium::QueueRenderOperation::Route>(&_Server, _Service);
     NES_VSDA_Calcium_GetImageStack_ = std::make_shared<Resource::NES::VSDA::Calcium::GetImageStack::Route>(&_Server, _Service);
+    NES_VSDA_Calcium_GetImage_ = std::make_shared<Resource::NES::VSDA::Calcium::GetImage::Route>(&_Server, _Service);
     NES_VSDA_Calcium_GetRenderStatus_ = std::make_shared<Resource::NES::VSDA::Calcium::GetRenderStatus::Route>(&_Server, _Service);
     NES_VSDA_Calcium_CreateIndicator_ = std::make_shared<Resource::NES::VSDA::Calcium::CreateIndicator::Route>(&_Server, _Service);
     NES_VSDA_Calcium_Setup_ = std::make_shared<Resource::NES::VSDA::Calcium::Setup::Route>(&_Server, _Service);

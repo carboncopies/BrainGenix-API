@@ -114,6 +114,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/CreateIndicator.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImageStack.cpp
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImageStack.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImage.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImage.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/Setup.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/Setup.cpp
 

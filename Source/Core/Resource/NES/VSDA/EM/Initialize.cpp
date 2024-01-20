@@ -58,13 +58,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     }
     nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
 
-    // Build Response And Send
-    nlohmann::json Response;
-    Response["StatusCode"] = 0;
+    // Send response
+    UpstreamResponse["StatusCode"] = 0;
 
     std::cout << "VSDA EM Initialize Called With Sim ID: " << SimID << std::endl;
 
-    Util::SendJSON(_Session.get(), &Response);
+    Util::SendJSON(_Session.get(), &UpstreamResponse);
 }
 
 }; // namespace Initialize

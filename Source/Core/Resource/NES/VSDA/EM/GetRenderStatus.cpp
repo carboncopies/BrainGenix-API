@@ -58,18 +58,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     }
     nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
 
-    // Build Response And Send
-    nlohmann::json Response;
-    Response["StatusCode"] = 0;
-    Response["RenderStatus"] = UpstreamResponse["RenderStatus"].get<int>();
-    Response["CurrentSlice"] = UpstreamResponse["CurrentSlice"].get<int>();
-    Response["TotalSlices"] = UpstreamResponse["TotalSlices"].get<int>();
-    Response["CurrentSliceImage"] = UpstreamResponse["CurrentSliceImage"].get<int>();
-    Response["TotalSliceImages"] = UpstreamResponse["TotalSliceImages"].get<int>();
+    // Send response
+    UpstreamResponse["StatusCode"] = 0;
 
     std::cout << "VSDA EM GetRenderStatus Called With Sim ID: " << SimID << std::endl;
 
-    Util::SendJSON(_Session.get(), &Response);
+    Util::SendJSON(_Session.get(), &UpstreamResponse);
 }
 
 }; // namespace GetRenderStatus

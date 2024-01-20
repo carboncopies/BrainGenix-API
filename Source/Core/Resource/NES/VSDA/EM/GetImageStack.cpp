@@ -61,14 +61,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     }
     nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
 
-    // Build Response And Send
-    nlohmann::json Response = UpstreamResponse;
-    // Response["StatusCode"] = 0;
-    // Response["ImageData"]= "default_base64_value";
+    // Send response
+    UpstreamResponse["StatusCode"] = 0;
 
     std::cout << "VSDA EM GetImageStack Called With Sim ID: " << SimID << std::endl;
 
-    Util::SendJSON(_Session.get(), &Response);
+    Util::SendJSON(_Session.get(), &UpstreamResponse);
 }
 
 }; // namespace GetImageStack

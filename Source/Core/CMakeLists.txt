@@ -50,6 +50,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/CylinderCreate.h
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/SphereCreate.h
+  ${SRC_DIR}/Core/Resource/NES/BulkSphereCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/BulkSphereCreate.h
 
   ${SRC_DIR}/Core/Resource/NES/BSCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/BSCreate.h

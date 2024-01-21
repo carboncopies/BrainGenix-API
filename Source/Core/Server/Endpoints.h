@@ -34,6 +34,7 @@
 #include <Resource/NES/BoxCreate.h>
 #include <Resource/NES/CylinderCreate.h>
 #include <Resource/NES/SphereCreate.h>
+#include <Resource/NES/BulkSphereCreate.h>
 
 #include <Resource/NES/BSCreate.h>
 
@@ -92,6 +93,7 @@ private:
     std::shared_ptr<Resource::Auth::GetToken::Route> Auth_GetToken_;
 
     std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::Create::Route> NES_Geometry_Shape_Sphere_Create_;
+    std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::BulkCreate::Route> NES_Geometry_Shape_Sphere_BulkCreate_;
     std::shared_ptr<Resource::NES::Geometry::Shape::Cylinder::Create::Route> NES_Geometry_Shape_Cylinder_Create_;
     std::shared_ptr<Resource::NES::Geometry::Shape::Box::Create::Route> NES_Geometry_Shape_Box_Create_;
 

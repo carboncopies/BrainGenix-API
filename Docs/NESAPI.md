@@ -206,6 +206,24 @@ Each route will be described in this format:
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
 
 
+### Sphere - BulkCreate
+
+**URI**: `/NES/Geometry/Shape/Sphere/BulkCreate`  
+**Request**:  
+*Required Params*:  
+
+- (float list) `RadiusList_um` List of radiuses of the spheres.  
+- (float list) `CenterXList_um` List of center X coordinates.  
+- (float list) `CenterYList_um` List of center Y coordinates.  
+- (float list) `CenterZList_um` List of center Z coordinates.  
+- (string list) `NameList` List of names of the spheres.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+- (bgShapeID list) `ShapeIDs` List of returned shape IDs, will be empty on failure.
+
+
 ### Cylinder - Create
 **Route**: `Geometry/Shape/Cylinder/Create`  
 **Request**:  
@@ -224,6 +242,28 @@ Each route will be described in this format:
 **Response**:  
 - (bgShapeID) `ShapeID` ID of the resulting shape created here (-1 on fail).  
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.
+
+
+### Cylinder - BulkCreate
+
+**URI**: `/NES/Geometry/Shape/Cylinder/BulkCreate`  
+**Request**:  
+*Required Params*:  
+
+- (float list) `Point1RadiusList_um` List of radiuses at the first point.  
+- (float list) `Point2RadiusList_um` List of radiuses at the first point.  
+- (float list) `Point1XList_um` List of point 1 X coordinates.  
+- (float list) `Point1YList_um` List of point 1 Y coordinates.  
+- (float list) `Point1ZList_um` List of point 1 Z coordinates.  
+- (float list) `Point2XList_um` List of point 2 X coordinates.  
+- (float list) `Point2YList_um` List of point 2 Y coordinates.  
+- (float list) `Point2ZList_um` List of point 2 Z coordinates.  
+- (string list) `NameList` List of names of the cylinders.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+- (bgShapeID list) `ShapeIDs` List of returned shape IDs, will be empty on failure.
 
 
 ### Box - Create
@@ -249,6 +289,29 @@ Each route will be described in this format:
 ## Compartments
 
 
+### Box - BulkCreate
+
+**URI**: `/NES/Geometry/Shape/Box/BulkCreate`  
+**Request**:  
+*Required Params*:  
+
+- (float list) `Center1XList_um` List of center X coordinates.  
+- (float list) `Center1YList_um` List of center Y coordinates.  
+- (float list) `Center1ZList_um` List of center Z coordinates.  
+- (float list) `Dimensions2XList_um` List of X dimensions for the boxes.  
+- (float list) `Dimensions2YList_um` List of Y dimensions for the boxes.  
+- (float list) `Dimensions2ZList_um` List of Z dimensions for the boxes.  
+- (float list) `RotationX_rad` List of X rotations in radians.  
+- (float list) `RotationY_rad` List of Y rotations in radians.  
+- (float list) `RotationZ_rad` List of Z rotations in radians.  
+- (string list) `NameList` List of names of the boxes.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+- (bgShapeID list) `ShapeIDs` List of returned shape IDs, will be empty on failure.
+
+
 ### BS - Create
 **Route**: `Compartment/BS/Create`  
 **Request**:  
@@ -266,6 +329,27 @@ Each route will be described in this format:
 **Response**:   
 - (bgCompartmentID) `CompartmentID` ID of the resulting compartment created here (-1 on fail).   
 - (bgStatus) `StatusCode` Numeric status code, helping the gateway determine what went wrong.  
+
+
+### BS - BulkCreate
+
+**URI**: `/NES/Compartment/BS/BulkCreate`  
+**Request**:  
+*Required Params*:  
+
+- (bgShapeID list) `ShapeIDList` List of ID of an NES Shapes.   
+- (float list) `MembranePotentialList_mV` List of Membrane potential of the compartment in millivolts.  
+- (float list) `SpikeThresholdList_mV` List of Action potential spike threshold of the compartment in millivolts.  
+- (float list) `DecayTimeList_ms` List of (tau_ahp) After hyperpolarization time constant in milliseconds.  
+- (float list) `RestingPotentialList_mV` To be documented.  
+- (float list) `AfterHyperpolarizationAmplitudeList_mV` to be documented.  
+- (string list) `NameList` List of names of the boxes.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+- (bgShapeID list) `ShapeIDs` List of returned shape IDs, will be empty on failure.
+
 
 
 ### Neuron - Create
@@ -679,7 +763,7 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 
 **Response**:
 
-- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
 
 ### RecordingElectrode - AddNoise   **NEW**
 

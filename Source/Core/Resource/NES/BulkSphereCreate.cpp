@@ -61,7 +61,6 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     int SimulationID = Request->get_query_parameter("SimulationID", -1);
 
-    // std::cout<<Request->get_query_parameter("NameList", "[]")<<std::endl;
 
     // Upstream Query
     nlohmann::json UpstreamQuery;

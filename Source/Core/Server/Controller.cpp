@@ -100,7 +100,6 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
 
     // Enable Multiple Threads
     Settings->set_worker_limit(std::thread::hardware_concurrency());
-
     // Return Configured Settings Object
     return Settings;
 }

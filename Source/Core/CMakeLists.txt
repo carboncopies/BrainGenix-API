@@ -59,6 +59,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Resource/NES/BSCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/BSCreate.h
+  ${SRC_DIR}/Core/Resource/NES/BulkBSCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/BulkBSCreate.h
 
   ${SRC_DIR}/Core/Resource/NES/StapleCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/StapleCreate.h

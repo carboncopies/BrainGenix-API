@@ -31,11 +31,14 @@
 #include <Resource/Auth/GetToken.h>
 
 #include <Resource/NES/Geometry/Shape/BoxCreate.h>
+#include <Resource/NES/Geometry/Shape/BulkBoxCreate.h>
 #include <Resource/NES/Geometry/Shape/CylinderCreate.h>
+#include <Resource/NES/Geometry/Shape/BulkCylinderCreate.h>
 #include <Resource/NES/Geometry/Shape/SphereCreate.h>
 #include <Resource/NES/Geometry/Shape/BulkSphereCreate.h>
 
 #include <Resource/NES/BSCreate.h>
+#include <Resource/NES/BulkBSCreate.h>
 
 #include <Resource/NES/ReceptorCreate.h>
 #include <Resource/NES/StapleCreate.h>
@@ -93,9 +96,12 @@ class EndpointManager {
     std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::Create::Route> NES_Geometry_Shape_Sphere_Create_;
     std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::BulkCreate::Route> NES_Geometry_Shape_Sphere_BulkCreate_;
     std::shared_ptr<Resource::NES::Geometry::Shape::Cylinder::Create::Route> NES_Geometry_Shape_Cylinder_Create_;
+    std::shared_ptr<Resource::NES::Geometry::Shape::Cylinder::BulkCreate::Route> NES_Geometry_Shape_Cylinder_BulkCreate_;
     std::shared_ptr<Resource::NES::Geometry::Shape::Box::Create::Route> NES_Geometry_Shape_Box_Create_;
+    std::shared_ptr<Resource::NES::Geometry::Shape::Box::BulkCreate::Route> NES_Geometry_Shape_Box_BulkCreate_;
 
     std::shared_ptr<Resource::NES::Compartment::BS::Create::Route> NES_Compartment_BS_Create_;
+    std::shared_ptr<Resource::NES::Compartment::BS::BulkCreate::Route> NES_Compartment_BS_BulkCreate_;
 
     std::shared_ptr<Resource::NES::Connection::Staple::Create::Route> NES_Connection_Staple_Create_;
     std::shared_ptr<Resource::NES::Connection::Receptor::Create::Route> NES_Connection_Receptor_Create_;

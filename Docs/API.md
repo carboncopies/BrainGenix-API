@@ -198,12 +198,12 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Request**:  
 *Required Params*:  
 
-- (float list) `Center1XList_um=` List of center X coordinates.  
-- (float list) `Center1YList_um=` List of center Y coordinates.  
-- (float list) `Center1ZList_um=` List of center Z coordinates.  
-- (float list) `Dimensions2XList_um=` List of X dimensions for the boxes.  
-- (float list) `Dimensions2YList_um=` List of Y dimensions for the boxes.  
-- (float list) `Dimensions2ZList_um=` List of Z dimensions for the boxes.  
+- (float list) `CenterXList_um=` List of center X coordinates.  
+- (float list) `CenterYList_um=` List of center Y coordinates.  
+- (float list) `CenterZList_um=` List of center Z coordinates.  
+- (float list) `DimensionsXList_um=` List of X dimensions for the boxes.  
+- (float list) `DimensionsYList_um=` List of Y dimensions for the boxes.  
+- (float list) `DimensionsZList_um=` List of Z dimensions for the boxes.  
 - (float list) `RotationX_rad=` List of X rotations in radians.  
 - (float list) `RotationY_rad=` List of Y rotations in radians.  
 - (float list) `RotationZ_rad=` List of Z rotations in radians.  

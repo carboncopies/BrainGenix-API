@@ -16,15 +16,14 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("CenterXList_um");
-  RequiredParams_.push_back("CenterYList_um");
-  RequiredParams_.push_back("CenterZList_um");
-  RequiredParams_.push_back("DimensionsXList_um");
-  RequiredParams_.push_back("DimensionsYList_um");
-  RequiredParams_.push_back("DimensionsZList_um");
-  RequiredParams_.push_back("RotationX_rad");
-  RequiredParams_.push_back("RotationY_rad");
-  RequiredParams_.push_back("RotationZ_rad");
+  RequiredParams_.push_back("Point1RadiusList_um");
+  RequiredParams_.push_back("Point2RadiusList_um");
+  RequiredParams_.push_back("Point1XList_um");
+  RequiredParams_.push_back("Point1YList_um");
+  RequiredParams_.push_back("Point1ZList_um");
+  RequiredParams_.push_back("Point2XList_um");
+  RequiredParams_.push_back("Point2YList_um");
+  RequiredParams_.push_back("Point2ZList_um");
   RequiredParams_.push_back("NameList");
 
 
@@ -69,16 +68,14 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Upstream Query
     nlohmann::json UpstreamQuery;
-    UpstreamQuery["RadiusList_um"] = nlohmann::json::parse(Request->get_query_parameter("RadiusList_um", "[]"));
-    UpstreamQuery["CenterXList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterXList_um", "[]"));
-    UpstreamQuery["CenterYList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterYList_um", "[]"));
-    UpstreamQuery["CenterZList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterZList_um", "[]"));
-    UpstreamQuery["DimensionsXList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsXList_um", "[]"));
-    UpstreamQuery["DimensionsYList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsYList_um", "[]"));
-    UpstreamQuery["DimensionsZList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsZList_um", "[]"));
-    UpstreamQuery["RotationXList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationXList_rad", "[]"));
-    UpstreamQuery["RotationYList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationYList_rad", "[]"));
-    UpstreamQuery["RotationZList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationZList_rad", "[]"));
+    UpstreamQuery["Point1RadiusList_um"] = nlohmann::json::parse(Request->get_query_parameter("Point1RadiusList_um", "[]"));
+    UpstreamQuery["Point2RadiusList_um"] = nlohmann::json::parse(Request->get_query_parameter("Point2RadiusList_um", "[]"));
+    UpstreamQuery["Point1XList_um"] = nlohmann::json::parse(Request->get_query_parameter("Point1XList_um", "[]"));
+    UpstreamQuery["Point1YList_um"] = nlohmann::json::parse(Request->get_query_parameter("Point1YList_um", "[]"));
+    UpstreamQuery["Point1ZList_um"] = nlohmann::json::parse(Request->get_query_parameter("Point1ZList_um", "[]"));
+    UpstreamQuery["Point2XList_um"] = nlohmann::json::parse(Request->get_query_parameter("Point2XList_um", "[]"));
+    UpstreamQuery["Point2YList_um"] = nlohmann::json::parse(Request->get_query_parameter("Point2YList_um", "[]"));
+    UpstreamQuery["Point2ZList_um"] = nlohmann::json::parse(Request->get_query_parameter("Point2ZList_um", "[]"));
     UpstreamQuery["NameList"] = nlohmann::json::parse(Request->get_query_parameter("NameList", "[]"));
     UpstreamQuery["SimulationID"] = SimulationID;
 

@@ -61,13 +61,13 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Get Params, Build Upstream Query
     nlohmann::json UpstreamQuery;
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", -1);
-    UpstreamQuery["NameList"] = Request->get_query_parameter("NameList", "[]");
-    UpstreamQuery["AfterHyperpolarizationAmplitudeList_mV"] = Request->get_query_parameter("AfterHyperpolarizationAmplitudeList_mV", "[]");
-    UpstreamQuery["RestingPotentialList_mV"] = Request->get_query_parameter("RestingPotentialList_mV", "[]");
-    UpstreamQuery["DecayTimeList_ms"] = Request->get_query_parameter("DecayTimeList_ms", "[]");
-    UpstreamQuery["SpikeThresholdList_mV"] = Request->get_query_parameter("SpikeThresholdList_mV", "[]");
-    UpstreamQuery["MembranePotentialList_mV"] = Request->get_query_parameter("MembranePotentialList_mV", "[]");
-    UpstreamQuery["ShapeIDList"] = Request->get_query_parameter("ShapeIDList", "[]");
+    UpstreamQuery["NameList"] = nlohmann::json::parse(Request->get_query_parameter("NameList", "[]"));
+    UpstreamQuery["AfterHyperpolarizationAmplitudeList_mV"] = nlohmann::json::parse(Request->get_query_parameter("AfterHyperpolarizationAmplitudeList_mV", "[]"));
+    UpstreamQuery["RestingPotentialList_mV"] = nlohmann::json::parse(Request->get_query_parameter("RestingPotentialList_mV", "[]"));
+    UpstreamQuery["DecayTimeList_ms"] = nlohmann::json::parse(Request->get_query_parameter("DecayTimeList_ms", "[]"));
+    UpstreamQuery["SpikeThresholdList_mV"] = nlohmann::json::parse(Request->get_query_parameter("SpikeThresholdList_mV", "[]"));
+    UpstreamQuery["MembranePotentialList_mV"] = nlohmann::json::parse(Request->get_query_parameter("MembranePotentialList_mV", "[]"));
+    UpstreamQuery["ShapeIDList"] = nlohmann::json::parse(Request->get_query_parameter("ShapeIDList", "[]"));
 
 
     std::string UpstreamResponseStr = "";
@@ -82,12 +82,11 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 0;
-    Response["CompartmentIDs"] = UpstreamResponse["CompartmentIDs"].template get<int>();
+    UpstreamResponse["StatusCode"] = 0;
 
-    std::cout<<"Creating BallStick Compartments with IDs "<<Response["CompartmentIDs"]<<std::endl;
+    std::cout<<"Creating BallStick Compartments with IDs "<<UpstreamResponse["CompartmentIDs"]<<std::endl;
 
-    Util::SendJSON(_Session.get(), &Response);
+    Util::SendJSON(_Session.get(), &UpstreamResponse);
 }
 
 }; // Close Namespace

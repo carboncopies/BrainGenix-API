@@ -5,7 +5,7 @@
 /*
     Description: This file provides code used in the API routes.
     Additional Notes: None
-    Date Created: 2023-11-09
+    Date Created: 2024-01-14
 */
 
 #pragma once
@@ -35,8 +35,8 @@ namespace Resource {
 
 namespace NES {
 namespace VSDA {
-namespace EM {
-namespace Initialize {
+namespace Calcium {
+namespace DefineScanRegion {
 
 
 /**
@@ -80,7 +80,7 @@ public:
 
 };
 
-}; // Close Namespace Initialize
+}; // Close Namespace SetupMicroscope
 }; // Close Namespace EM
 }; // Close Namespace VSDA
 }; // Close Namespace NES

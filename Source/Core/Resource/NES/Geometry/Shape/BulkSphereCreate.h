@@ -5,7 +5,7 @@
 /*
     Description: This file provides code used in the API routes.
     Additional Notes: None
-    Date Created: 2023-11-09
+    Date Created: 2023-06-23
 */
 
 #pragma once
@@ -28,15 +28,15 @@
 #include <Util/RPCHelpers.h>
 
 
-
 namespace BG {
 namespace API {
 namespace Resource {
 
 namespace NES {
-namespace VSDA {
-namespace EM {
-namespace QueueRenderOperation {
+namespace Geometry {
+namespace Shape {
+namespace Sphere {
+namespace BulkCreate {
 
 
 /**
@@ -80,10 +80,12 @@ public:
 
 };
 
-}; // Close Namespace QueueRenderOperation
-}; // Close Namespace EM
-}; // Close Namespace VSDA
-}; // Close Namespace NES
+
+}; // Close Namespace
+}; // Close Namespace
+}; // Close Namespace
+}; // Close Namespace
+}; // Close Namespace
 
 }; // Close Namespace Resource
 }; // Close Namespace API

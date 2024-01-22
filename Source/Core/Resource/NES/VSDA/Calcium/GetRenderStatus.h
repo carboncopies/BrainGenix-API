@@ -5,7 +5,7 @@
 /*
     Description: This file provides code used in the API routes.
     Additional Notes: None
-    Date Created: 2023-11-09
+    Date Created: 2024-01-14
 */
 
 #pragma once
@@ -35,8 +35,8 @@ namespace Resource {
 
 namespace NES {
 namespace VSDA {
-namespace EM {
-namespace SetupMicroscope {
+namespace Calcium {
+namespace GetRenderStatus {
 
 
 /**
@@ -80,10 +80,10 @@ public:
 
 };
 
-}; // Close Namespace SetupMicroscope
-}; // Close Namespace EM
-}; // Close Namespace VSDA
-}; // Close Namespace NES
+}; // Close Namespace 
+}; // Close Namespace 
+}; // Close Namespace 
+}; // Close Namespace 
 
 }; // Close Namespace Resource
 }; // Close Namespace API

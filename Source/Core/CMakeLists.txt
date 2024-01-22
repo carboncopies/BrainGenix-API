@@ -44,20 +44,31 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/Auth/GetToken.cpp
   ${SRC_DIR}/Core/Resource/Auth/GetToken.h
 
-  ${SRC_DIR}/Core/Resource/NES/BoxCreate.cpp
-  ${SRC_DIR}/Core/Resource/NES/BoxCreate.h
-  ${SRC_DIR}/Core/Resource/NES/CylinderCreate.cpp
-  ${SRC_DIR}/Core/Resource/NES/CylinderCreate.h
-  ${SRC_DIR}/Core/Resource/NES/SphereCreate.cpp
-  ${SRC_DIR}/Core/Resource/NES/SphereCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BoxCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BoxCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkBoxCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkBoxCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/CylinderCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/CylinderCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkCylinderCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkCylinderCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/SphereCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/SphereCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkSphereCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkSphereCreate.h
 
   ${SRC_DIR}/Core/Resource/NES/BSCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/BSCreate.h
+  ${SRC_DIR}/Core/Resource/NES/BulkBSCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/BulkBSCreate.h
 
   ${SRC_DIR}/Core/Resource/NES/StapleCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/StapleCreate.h
   ${SRC_DIR}/Core/Resource/NES/ReceptorCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/ReceptorCreate.h
+
+  ${SRC_DIR}/Core/Resource/NES/NeuronCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/NeuronCreate.h
 
   ${SRC_DIR}/Core/Resource/NES/PatchClampDACCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/PatchClampDACCreate.h
@@ -85,22 +96,37 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.cpp
   ${SRC_DIR}/Core/Resource/NES/SimulationBuildMesh.h
 
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMInitialize.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMSetupMicroscope.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/Initialize.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/Initialize.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/SetupMicroscope.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/SetupMicroscope.h
 
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMDefineScanRegion.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMDefineScanRegion.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMQueueRenderOperation.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImageStack.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImage.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetImage.cpp
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.h
-  ${SRC_DIR}/Core/Resource/NES/VSDA/EMGetRenderStatus.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/DefineScanRegion.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/DefineScanRegion.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/QueueRenderOperation.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/QueueRenderOperation.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetImageStack.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetImageStack.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetImage.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetImage.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetRenderStatus.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/EM/GetRenderStatus.cpp
   
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/QueueRenderOperation.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/QueueRenderOperation.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetRenderStatus.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetRenderStatus.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/DefineScanRegion.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/DefineScanRegion.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/CreateIndicator.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/CreateIndicator.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImageStack.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImageStack.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImage.cpp
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/GetImage.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/Setup.h
+  ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/Setup.cpp
+
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h
 

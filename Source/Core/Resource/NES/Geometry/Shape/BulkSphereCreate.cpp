@@ -1,4 +1,4 @@
-#include <Resource/NES/SphereCreate.h>
+#include <Resource/NES/Geometry/Shape/BulkSphereCreate.h>
 
 
 namespace BG {
@@ -9,17 +9,18 @@ namespace NES {
 namespace Geometry {
 namespace Shape {
 namespace Sphere {
-namespace Create {
+namespace BulkCreate {
 
 Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("Radius_um");
-  RequiredParams_.push_back("Center_um");
-  
-  OptionalParams_.push_back("Name");
+  RequiredParams_.push_back("RadiusList_um");
+  RequiredParams_.push_back("CenterXList_um");
+  RequiredParams_.push_back("CenterYList_um");
+  RequiredParams_.push_back("CenterZList_um");
+  RequiredParams_.push_back("NameList");
 
 
   // Setup Callback
@@ -27,7 +28,7 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Register This Route With Server
   std::shared_ptr<restbed::Resource> RouteResource = std::make_shared<restbed::Resource>();
-  RouteResource->set_path("/NES/Geometry/Shape/Sphere/Create");
+  RouteResource->set_path("/NES/Geometry/Shape/Sphere/BulkCreate");
   RouteResource->set_method_handler("GET", Callback);
   _Service.publish(RouteResource);
 
@@ -58,28 +59,20 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     
 
 
-    // Get Params
-    float Radius_um = Request->get_query_parameter("Radius_um", -1.0);
-    std::cout << "Sphere Radius_um: " << Radius_um << '\n';
-    nlohmann::json Center_um = nlohmann::json::parse(Request->get_query_parameter("Center_um", "[0, 0, 0]"));
-    float CenterPosX_um = Center_um[0].template get<float>();
-    float CenterPosY_um = Center_um[1].template get<float>();
-    float CenterPosZ_um = Center_um[2].template get<float>();
     int SimulationID = Request->get_query_parameter("SimulationID", -1);
-    std::string Name = Request->get_query_parameter("Name", "undefined");
 
 
     // Upstream Query
     nlohmann::json UpstreamQuery;
-    UpstreamQuery["Radius_um"] = Radius_um;
-    UpstreamQuery["CenterPosX_um"] = CenterPosX_um;
-    UpstreamQuery["CenterPosY_um"] = CenterPosY_um;
-    UpstreamQuery["CenterPosZ_um"] = CenterPosZ_um;
-    UpstreamQuery["Name"] = Name;
+    UpstreamQuery["RadiusList_um"] = nlohmann::json::parse(Request->get_query_parameter("RadiusList_um", "[]"));;
+    UpstreamQuery["CenterXList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterXList_um", "[]"));;
+    UpstreamQuery["CenterYList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterYList_um", "[]"));;
+    UpstreamQuery["CenterZList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterZList_um", "[]"));;
+    UpstreamQuery["NameList"] = nlohmann::json::parse(Request->get_query_parameter("NameList", "[]"));
     UpstreamQuery["SimulationID"] = SimulationID;
 
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Sphere/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Sphere/BulkCreate", UpstreamQuery.dump(), &UpstreamResponseStr);
     if (!UpstreamStatus) {
       Util::SendCode(_Session.get(), 3);
       return;
@@ -90,13 +83,11 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
 
     // Build Response And Send
-    nlohmann::json Response;
-    Response["StatusCode"] = 0;
-    Response["ShapeID"] = UpstreamResponse["ShapeID"].template get<int>();
+    UpstreamResponse["StatusCode"] = 0;
 
-    std::cout<<"Creating Sphere with ID "<<Response["ShapeID"]<<std::endl;
+    std::cout<<"Creating Bulk Spheres"<<std::endl;
 
-    Util::SendJSON(_Session.get(), &Response);
+    Util::SendJSON(_Session.get(), &UpstreamResponse);
 }
 
 }; // Close Namespace

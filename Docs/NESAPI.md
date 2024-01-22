@@ -348,7 +348,7 @@ Each route will be described in this format:
 **Response**:  
 
 - (bgStatus) `StatusCode` Enum indicating the status of this API call.
-- (bgShapeID list) `ShapeIDs` List of returned shape IDs, will be empty on failure.
+- (bgCompartmentID list) `CompartmentIDs` List of returned compartment IDs, will be empty on failure.
 
 
 

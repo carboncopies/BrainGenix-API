@@ -255,7 +255,7 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 **Response**:  
 
 - (bgStatus) `StatusCode=` Enum indicating the status of this API call.
-- (bgShapeID list) `ShapeIDs=` List of returned shape IDs, will be empty on failure.
+- (bgCompartmentID list) `CompartmentIDs=` List of returned compartment IDs, will be empty on failure.
 
 
 ## Connections

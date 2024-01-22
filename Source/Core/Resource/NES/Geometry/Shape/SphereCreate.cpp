@@ -1,4 +1,4 @@
-#include <Resource/NES/SphereCreate.h>
+#include <Resource/NES/Geometry/Shape/SphereCreate.h>
 
 
 namespace BG {

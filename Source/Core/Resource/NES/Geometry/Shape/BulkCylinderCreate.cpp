@@ -1,4 +1,4 @@
-#include <Resource/NES/BulkSphereCreate.h>
+#include <Resource/NES/Geometry/Shape/BulkCylinderCreate.h>
 
 
 namespace BG {
@@ -8,7 +8,7 @@ namespace Resource {
 namespace NES {
 namespace Geometry {
 namespace Shape {
-namespace Sphere {
+namespace Cylinder {
 namespace BulkCreate {
 
 Route::Route(Server::Server *_Server, restbed::Service &_Service) {
@@ -16,10 +16,15 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("RadiusList_um");
   RequiredParams_.push_back("CenterXList_um");
   RequiredParams_.push_back("CenterYList_um");
   RequiredParams_.push_back("CenterZList_um");
+  RequiredParams_.push_back("DimensionsXList_um");
+  RequiredParams_.push_back("DimensionsYList_um");
+  RequiredParams_.push_back("DimensionsZList_um");
+  RequiredParams_.push_back("RotationX_rad");
+  RequiredParams_.push_back("RotationY_rad");
+  RequiredParams_.push_back("RotationZ_rad");
   RequiredParams_.push_back("NameList");
 
 
@@ -28,7 +33,7 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Register This Route With Server
   std::shared_ptr<restbed::Resource> RouteResource = std::make_shared<restbed::Resource>();
-  RouteResource->set_path("/NES/Geometry/Shape/Sphere/BulkCreate");
+  RouteResource->set_path("/NES/Geometry/Shape/Cylinder/BulkCreate");
   RouteResource->set_method_handler("GET", Callback);
   _Service.publish(RouteResource);
 
@@ -64,15 +69,21 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Upstream Query
     nlohmann::json UpstreamQuery;
-    UpstreamQuery["RadiusList_um"] = nlohmann::json::parse(Request->get_query_parameter("RadiusList_um", "[]"));;
-    UpstreamQuery["CenterXList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterXList_um", "[]"));;
-    UpstreamQuery["CenterYList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterYList_um", "[]"));;
-    UpstreamQuery["CenterZList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterZList_um", "[]"));;
+    UpstreamQuery["RadiusList_um"] = nlohmann::json::parse(Request->get_query_parameter("RadiusList_um", "[]"));
+    UpstreamQuery["CenterXList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterXList_um", "[]"));
+    UpstreamQuery["CenterYList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterYList_um", "[]"));
+    UpstreamQuery["CenterZList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterZList_um", "[]"));
+    UpstreamQuery["DimensionsXList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsXList_um", "[]"));
+    UpstreamQuery["DimensionsYList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsYList_um", "[]"));
+    UpstreamQuery["DimensionsZList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsZList_um", "[]"));
+    UpstreamQuery["RotationXList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationXList_rad", "[]"));
+    UpstreamQuery["RotationYList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationYList_rad", "[]"));
+    UpstreamQuery["RotationZList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationZList_rad", "[]"));
     UpstreamQuery["NameList"] = nlohmann::json::parse(Request->get_query_parameter("NameList", "[]"));
     UpstreamQuery["SimulationID"] = SimulationID;
 
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Sphere/BulkCreate", UpstreamQuery.dump(), &UpstreamResponseStr);
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Cylinder/BulkCreate", UpstreamQuery.dump(), &UpstreamResponseStr);
     if (!UpstreamStatus) {
       Util::SendCode(_Session.get(), 3);
       return;
@@ -85,7 +96,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Build Response And Send
     UpstreamResponse["StatusCode"] = 0;
 
-    std::cout<<"Creating Bulk Spheres"<<std::endl;
+    std::cout<<"Creating Bulk Cylinders"<<std::endl;
 
     Util::SendJSON(_Session.get(), &UpstreamResponse);
 }

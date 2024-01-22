@@ -44,14 +44,18 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/Auth/GetToken.cpp
   ${SRC_DIR}/Core/Resource/Auth/GetToken.h
 
-  ${SRC_DIR}/Core/Resource/NES/BoxCreate.cpp
-  ${SRC_DIR}/Core/Resource/NES/BoxCreate.h
-  ${SRC_DIR}/Core/Resource/NES/CylinderCreate.cpp
-  ${SRC_DIR}/Core/Resource/NES/CylinderCreate.h
-  ${SRC_DIR}/Core/Resource/NES/SphereCreate.cpp
-  ${SRC_DIR}/Core/Resource/NES/SphereCreate.h
-  ${SRC_DIR}/Core/Resource/NES/BulkSphereCreate.cpp
-  ${SRC_DIR}/Core/Resource/NES/BulkSphereCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BoxCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BoxCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkBoxCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkBoxCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/CylinderCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/CylinderCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkCylinderCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkCylinderCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/SphereCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/SphereCreate.h
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkSphereCreate.cpp
+  ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkSphereCreate.h
 
   ${SRC_DIR}/Core/Resource/NES/BSCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/BSCreate.h

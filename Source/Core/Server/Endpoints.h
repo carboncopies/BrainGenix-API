@@ -30,10 +30,10 @@
 
 #include <Resource/Auth/GetToken.h>
 
-#include <Resource/NES/BoxCreate.h>
-#include <Resource/NES/CylinderCreate.h>
-#include <Resource/NES/SphereCreate.h>
-#include <Resource/NES/BulkSphereCreate.h>
+#include <Resource/NES/Geometry/Shape/BoxCreate.h>
+#include <Resource/NES/Geometry/Shape/CylinderCreate.h>
+#include <Resource/NES/Geometry/Shape/SphereCreate.h>
+#include <Resource/NES/Geometry/Shape/BulkSphereCreate.h>
 
 #include <Resource/NES/BSCreate.h>
 

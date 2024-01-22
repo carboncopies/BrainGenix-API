@@ -1,4 +1,4 @@
-#include <Resource/NES/BoxCreate.h>
+#include <Resource/NES/Geometry/Shape/CylinderCreate.h>
 
 
 namespace BG {
@@ -8,7 +8,7 @@ namespace Resource {
 namespace NES {
 namespace Geometry {
 namespace Shape {
-namespace Box {
+namespace Cylinder {
 namespace Create {
 
 Route::Route(Server::Server *_Server, restbed::Service &_Service) {
@@ -16,9 +16,10 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("CenterPosition_um");
-  RequiredParams_.push_back("Dimensions_um");
-  RequiredParams_.push_back("Rotation_rad");
+  RequiredParams_.push_back("Point1Radius_um");
+  RequiredParams_.push_back("Point1Position_um");
+  RequiredParams_.push_back("Point2Radius_um");
+  RequiredParams_.push_back("Point2Position_um");
 
   OptionalParams_.push_back("Name");
 
@@ -28,7 +29,7 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
 
   // Register This Route With Server
   std::shared_ptr<restbed::Resource> RouteResource = std::make_shared<restbed::Resource>();
-  RouteResource->set_path("/NES/Geometry/Shape/Box/Create");
+  RouteResource->set_path("/NES/Geometry/Shape/Cylinder/Create");
   RouteResource->set_method_handler("GET", Callback);
   _Service.publish(RouteResource);
 
@@ -61,16 +62,27 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Get Params, Build Upstream Query
     nlohmann::json UpstreamQuery;
     
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CenterPosition_um", "[0, 0, 0]"), "CenterPos");
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Dimensions_um", "[0, 0, 0]"), "Scale");
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Rotation_rad", "[0, 0, 0]"), "Rotation", "rad");
+    nlohmann::json Point1Position_um = nlohmann::json::parse(Request->get_query_parameter("Point1Position_um", "[0, 0, 0]"));
+    nlohmann::json Point2Position_um = nlohmann::json::parse(Request->get_query_parameter("Point2Position_um", "[0, 0, 0]"));
 
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
+    float Point1Radius_um = Request->get_query_parameter("Point1Radius_um", -1.0);
+    float Point2Radius_um = Request->get_query_parameter("Point2Radius_um", -1.0);
+    std::cout << "Point1Radius_um: " << Point1Radius_um << '\n';
+    std::cout << "Point2Radius_um: " << Point2Radius_um << '\n';
+    UpstreamQuery["Point1Radius_um"] = Point1Radius_um;
+    UpstreamQuery["Point2Radius_um"] = Point2Radius_um;
+    UpstreamQuery["Point1PosX_um"] = Point1Position_um[0].template get<float>();
+    UpstreamQuery["Point1PosY_um"] = Point1Position_um[1].template get<float>();
+    UpstreamQuery["Point1PosZ_um"] = Point1Position_um[2].template get<float>();
+    UpstreamQuery["Point2PosX_um"] = Point2Position_um[0].template get<float>();
+    UpstreamQuery["Point2PosY_um"] = Point2Position_um[1].template get<float>();
+    UpstreamQuery["Point2PosZ_um"] = Point2Position_um[2].template get<float>();
 
 
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Box/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Cylinder/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
     if (!UpstreamStatus) {
       Util::SendCode(_Session.get(), 3);
       return;
@@ -84,7 +96,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["ShapeID"] = UpstreamResponse["ShapeID"].template get<int>();
 
-    std::cout<<"Creating Box with ID "<<Response["ShapeID"]<<std::endl;
+    std::cout<<"Creating Cylinder with ID "<<Response["ShapeID"]<<std::endl;
 
     Util::SendJSON(_Session.get(), &Response);
 }

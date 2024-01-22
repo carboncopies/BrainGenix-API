@@ -69,16 +69,15 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Upstream Query
     nlohmann::json UpstreamQuery;
-    UpstreamQuery["RadiusList_um"] = nlohmann::json::parse(Request->get_query_parameter("RadiusList_um", "[]"));
     UpstreamQuery["CenterXList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterXList_um", "[]"));
     UpstreamQuery["CenterYList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterYList_um", "[]"));
     UpstreamQuery["CenterZList_um"] = nlohmann::json::parse(Request->get_query_parameter("CenterZList_um", "[]"));
     UpstreamQuery["DimensionsXList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsXList_um", "[]"));
     UpstreamQuery["DimensionsYList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsYList_um", "[]"));
     UpstreamQuery["DimensionsZList_um"] = nlohmann::json::parse(Request->get_query_parameter("DimensionsZList_um", "[]"));
-    UpstreamQuery["RotationXList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationXList_rad", "[]"));
-    UpstreamQuery["RotationYList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationYList_rad", "[]"));
-    UpstreamQuery["RotationZList_um"] = nlohmann::json::parse(Request->get_query_parameter("RotationZList_rad", "[]"));
+    UpstreamQuery["RotationXList_rad"] = nlohmann::json::parse(Request->get_query_parameter("RotationXList_rad", "[]"));
+    UpstreamQuery["RotationYList_rad"] = nlohmann::json::parse(Request->get_query_parameter("RotationYList_rad", "[]"));
+    UpstreamQuery["RotationZList_rad"] = nlohmann::json::parse(Request->get_query_parameter("RotationZList_rad", "[]"));
     UpstreamQuery["NameList"] = nlohmann::json::parse(Request->get_query_parameter("NameList", "[]"));
     UpstreamQuery["SimulationID"] = SimulationID;
 

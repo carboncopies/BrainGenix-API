@@ -22,9 +22,9 @@ Route::Route(Server::Server *_Server, restbed::Service &_Service) {
   RequiredParams_.push_back("DimensionsXList_um");
   RequiredParams_.push_back("DimensionsYList_um");
   RequiredParams_.push_back("DimensionsZList_um");
-  RequiredParams_.push_back("RotationX_rad");
-  RequiredParams_.push_back("RotationY_rad");
-  RequiredParams_.push_back("RotationZ_rad");
+  RequiredParams_.push_back("RotationXList_rad");
+  RequiredParams_.push_back("RotationYList_rad");
+  RequiredParams_.push_back("RotationZList_rad");
   RequiredParams_.push_back("NameList");
 
 

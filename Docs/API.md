@@ -204,9 +204,9 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
 - (float list) `DimensionsXList_um=` List of X dimensions for the boxes.  
 - (float list) `DimensionsYList_um=` List of Y dimensions for the boxes.  
 - (float list) `DimensionsZList_um=` List of Z dimensions for the boxes.  
-- (float list) `RotationX_rad=` List of X rotations in radians.  
-- (float list) `RotationY_rad=` List of Y rotations in radians.  
-- (float list) `RotationZ_rad=` List of Z rotations in radians.  
+- (float list) `RotationXList_rad=` List of X rotations in radians.  
+- (float list) `RotationYList_rad=` List of Y rotations in radians.  
+- (float list) `RotationZList_rad=` List of Z rotations in radians.  
 - (string list) `NameList=` List of names of the boxes.  
 
 **Response**:  

@@ -48,7 +48,7 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     NES_Simulation_RunFor_       = std::make_shared<Resource::NES::Simulation::RunFor::Route>(&_Server, _Service);
     NES_Simulation_RecordAll_    = std::make_shared<Resource::NES::Simulation::RecordAll::Route>(&_Server, _Service);
     NES_Simulation_GetRecording_ = std::make_shared<Resource::NES::Simulation::GetRecording::Route>(&_Server, _Service);
-    NES_Simulation_BuildMesh_ = std::make_shared<Resource::NES::Simulation::BuildMesh::Route>(&_Server, _Service);
+    NES_Simulation_BuildMesh_    = std::make_shared<Resource::NES::Simulation::BuildMesh::Route>(&_Server, _Service);
 
     NES_VSDA_EM_Initialize_ = std::make_shared<Resource::NES::VSDA::EM::Initialize::Route>(&_Server, _Service);
     NES_VSDA_EM_SetupMicroscope_ = std::make_shared<Resource::NES::VSDA::EM::SetupMicroscope::Route>(&_Server, _Service);

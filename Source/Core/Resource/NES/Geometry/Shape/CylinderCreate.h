@@ -51,7 +51,7 @@ class Route {
 private:
 
     Server::Server *Server_; /**Copy of the server struct*/
-    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger_ = nullptr; /**Pointer to instance of logging system*/
+    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger_; /**Pointer to instance of logging system*/
     std::vector<std::string> OptionalParams_; /**List of optional parameters*/
     std::vector<std::string> RequiredParams_; /**List of required parameters*/
 

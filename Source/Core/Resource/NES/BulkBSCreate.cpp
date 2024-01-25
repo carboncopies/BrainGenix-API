@@ -10,8 +10,9 @@ namespace Compartment {
 namespace BS {
 namespace BulkCreate {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
+  Logger_ = std::move(_Logger);
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
@@ -84,7 +85,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     nlohmann::json Response;
     UpstreamResponse["StatusCode"] = 0;
 
-    std::cout<<"Creating BallStick Compartments with IDs "<<UpstreamResponse["CompartmentIDs"]<<std::endl;
+    Logger_->Log("Creating BallStick Compartments with IDs "+ std::to_string(static_cast<int>(UpstreamResponse["CompartmentIDs"]))+'\n',1);
 
     Util::SendJSON(_Session.get(), &UpstreamResponse);
 }

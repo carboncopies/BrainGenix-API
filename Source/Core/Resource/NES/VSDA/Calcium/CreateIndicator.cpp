@@ -11,8 +11,9 @@ namespace Calcium {
 namespace CreateIndicator {
 
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
+  Logger_= std::move(_Logger);
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
@@ -90,7 +91,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Send Response
     UpstreamResponse["StatusCode"] = 0;
 
-    std::cout<<"VSDA Calcium CreateIndicator Called With Sim ID: "<<SimID<<std::endl;
+    Logger_->Log("VSDA Calcium CreateIndicator Called With Sim ID: "+std::to_string(SimID)+'\n',1);
+
 
     Util::SendJSON(_Session.get(), &UpstreamResponse);
 }

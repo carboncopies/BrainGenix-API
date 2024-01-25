@@ -31,24 +31,24 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     NES_Compartment_BS_Create_ = std::make_shared<Resource::NES::Compartment::BS::Create::Route>(move(Logger),&_Server, _Service);
 
     NES_Connection_Staple_Create_ = std::make_shared<Resource::NES::Connection::Staple::Create::Route>(&_Server, _Service);
-    NES_Connection_Receptor_Create_ = std::make_shared<Resource::NES::Connection::Receptor::Create::Route>(&_Server, _Service);
+    NES_Connection_Receptor_Create_ = std::make_shared<Resource::NES::Connection::Receptor::Create::Route>(std::move(Logger),&_Server, _Service);
 
-    NES_Neuron_BSNeuron_Create = std::make_shared<Resource::NES::Neuron::BSNeuron::Create::Route>(&_Server, _Service);
+    NES_Neuron_BSNeuron_Create = std::make_shared<Resource::NES::Neuron::BSNeuron::Create::Route>(std::move(Logger),&_Server, _Service);
 
-    NES_Tool_PatchClampDAC_Create_ = std::make_shared<Resource::NES::Tool::PatchClampDAC::Create::Route>(&_Server, _Service);
-    NES_Tool_PatchClampDAC_SetOutputList_ = std::make_shared<Resource::NES::Tool::PatchClampDAC::SetOutputList::Route>(&_Server, _Service);
+    NES_Tool_PatchClampDAC_Create_ = std::make_shared<Resource::NES::Tool::PatchClampDAC::Create::Route>(std::move(Logger),&_Server, _Service);
+    NES_Tool_PatchClampDAC_SetOutputList_ = std::make_shared<Resource::NES::Tool::PatchClampDAC::SetOutputList::Route>(std::move(Logger),&_Server, _Service);
 
     NES_Tool_PatchClampADC_Create_ = std::make_shared<Resource::NES::Tool::PatchClampADC::Create::Route>(move(Logger),&_Server, _Service);
-    NES_Tool_PatchClampADC_SetSampleRate_ = std::make_shared<Resource::NES::Tool::PatchClampADC::SetSampleRate::Route>(&_Server, _Service);
-    NES_Tool_PatchClampADC_GetRecordedData_ = std::make_shared<Resource::NES::Tool::PatchClampADC::GetRecordedData::Route>(move(Logger),&_Server, _Service);
+    NES_Tool_PatchClampADC_SetSampleRate_ = std::make_shared<Resource::NES::Tool::PatchClampADC::SetSampleRate::Route>(std::move(Logger),&_Server, _Service);
+    NES_Tool_PatchClampADC_GetRecordedData_ = std::make_shared<Resource::NES::Tool::PatchClampADC::GetRecordedData::Route>(std::move(Logger),&_Server, _Service);
     
-    NES_Simulation_Create_       = std::make_shared<Resource::NES::Simulation::Create::Route>(&_Server, _Service);
+    NES_Simulation_Create_       = std::make_shared<Resource::NES::Simulation::Create::Route>(std::move(Logger),&_Server, _Service);
     NES_Simulation_Reset_        = std::make_shared<Resource::NES::Simulation::Reset::Route>(&_Server, _Service);
     NES_Simulation_GetStatus_    = std::make_shared<Resource::NES::Simulation::GetStatus::Route>(&_Server, _Service);
     NES_Simulation_RunFor_       = std::make_shared<Resource::NES::Simulation::RunFor::Route>(&_Server, _Service);
     NES_Simulation_RecordAll_    = std::make_shared<Resource::NES::Simulation::RecordAll::Route>(&_Server, _Service);
-    NES_Simulation_GetRecording_ = std::make_shared<Resource::NES::Simulation::GetRecording::Route>(&_Server, _Service);
-    NES_Simulation_BuildMesh_    = std::make_shared<Resource::NES::Simulation::BuildMesh::Route>(&_Server, _Service);
+    NES_Simulation_GetRecording_ = std::make_shared<Resource::NES::Simulation::GetRecording::Route>(std::move(Logger),&_Server, _Service);
+    NES_Simulation_BuildMesh_    = std::make_shared<Resource::NES::Simulation::BuildMesh::Route>(std::move(Logger),&_Server, _Service);
 
     NES_VSDA_EM_Initialize_ = std::make_shared<Resource::NES::VSDA::EM::Initialize::Route>(&_Server, _Service);
     NES_VSDA_EM_SetupMicroscope_ = std::make_shared<Resource::NES::VSDA::EM::SetupMicroscope::Route>(&_Server, _Service);
@@ -64,7 +64,7 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     NES_VSDA_Calcium_GetImageStack_ = std::make_shared<Resource::NES::VSDA::Calcium::GetImageStack::Route>(&_Server, _Service);
     NES_VSDA_Calcium_GetImage_ = std::make_shared<Resource::NES::VSDA::Calcium::GetImage::Route>(&_Server, _Service);
     NES_VSDA_Calcium_GetRenderStatus_ = std::make_shared<Resource::NES::VSDA::Calcium::GetRenderStatus::Route>(&_Server, _Service);
-    NES_VSDA_Calcium_CreateIndicator_ = std::make_shared<Resource::NES::VSDA::Calcium::CreateIndicator::Route>(&_Server, _Service);
+    NES_VSDA_Calcium_CreateIndicator_ = std::make_shared<Resource::NES::VSDA::Calcium::CreateIndicator::Route>(std::move(Logger),&_Server, _Service);
     NES_VSDA_Calcium_Setup_ = std::make_shared<Resource::NES::VSDA::Calcium::Setup::Route>(&_Server, _Service);
 }
 

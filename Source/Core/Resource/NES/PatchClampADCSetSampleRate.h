@@ -22,7 +22,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Server/Server.h>
-
+#include <BG/Common/Logger/Logger.h>
 #include <Util/ParamCheck.h>
 #include <Util/RestbedHelpers.h>
 #include <Util/RPCHelpers.h>
@@ -49,7 +49,7 @@ class Route {
 private:
 
     Server::Server *Server_; /**Copy of the server struct*/
-
+    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger_; /**Pointer to instance of logging system*/
     std::vector<std::string> OptionalParams_; /**List of optional parameters*/
     std::vector<std::string> RequiredParams_; /**List of required parameters*/
 
@@ -62,7 +62,7 @@ public:
      * @param _Server 
      * @param _Session 
      */
-    Route(Server::Server *_Server, restbed::Service &_Service);
+    Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service);
 
     /**
      * @brief Destroy the Route object

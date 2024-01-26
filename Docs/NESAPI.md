@@ -708,10 +708,12 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 
 - (bgStatus) `StatusCode` Enum indicating the status of this API call.  
 - (bgRenderStatus) `RenderStatus` Enum indicating status of the renderer.  
-- (int) `CurrentSlice` Int representing the current slice that the virtual microscope is on.
-- (int) `TotalSlices` Int representing the total number of slices.
-- (int) `CurrentRegion` Int representing the current subregion being rendered.
-- (int) `TotalRegions` Int representing the total subregions to render.
+- (int) `CurrentSlice` Int representing the current slice that the virtual microscope is on.  
+- (int) `TotalSlices` Int representing the total number of slices.  
+- (int) `CurrentSliceImage` Int representing the current image of this slice.  
+- (int) `TotalSliceImages` Int representing the total images on this slice.  
+- (int) `CurrentRegion` Int representing the current subregion being rendered.  
+- (int) `TotalRegions` Int representing the total subregions to render.  
 
 ### VSDA - Calcium - GetImageStack *NEW*
 

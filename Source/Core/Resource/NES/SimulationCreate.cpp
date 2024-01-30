@@ -9,8 +9,9 @@ namespace NES {
 namespace Simulation {
 namespace Create {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route( std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
+  Logger_ = std::move(_Logger);
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationName");
@@ -74,8 +75,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["SimulationID"] = UpstreamResponse["SimulationID"].template get<int>();
     
-    std::cout<<"Creating Simulation with ID "<<Response["SimulationID"]<<std::endl;
-
+    Logger_->Log("Creating Simulation with ID "+std::to_string(static_cast<int>(Response["SimulationID"]))+'\n',1);
     Util::SendJSON(_Session.get(), &Response);
 }
 

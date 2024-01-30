@@ -9,8 +9,9 @@ namespace NES {
 namespace Simulation {
 namespace BuildMesh {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
+  Logger_ = std::move(_Logger);
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
@@ -73,7 +74,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     nlohmann::json Response;
     Response["StatusCode"] = 0;
     
-    std::cout<<"Building Simulation Mesh For Sim With ID "<<SimID<<std::endl;
+    Logger_->Log("Building Simulation Mesh For Sim With ID "+ std::to_string(SimID)+'\n',1);
 
     Util::SendJSON(_Session.get(), &Response);
 }

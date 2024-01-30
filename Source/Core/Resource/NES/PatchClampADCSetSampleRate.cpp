@@ -10,8 +10,9 @@ namespace Tool {
 namespace PatchClampADC {
 namespace SetSampleRate {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
+  Logger_ = std::move(_Logger);
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
@@ -77,7 +78,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     nlohmann::json Response;
     Response["StatusCode"] = 0;
 
-    std::cout<<"Setting PatchClampADC Sample Rate On PatchClampADC With ID "<<Request->get_query_parameter("TargetADC", 0)<<std::endl;
+    Logger_->Log("Setting PatchClampADC Sample Rate On PatchClampADC With ID "+ std::to_string(static_cast<int>(Request->get_query_parameter("TargetADC", 0)))+'\n',1);
 
     Util::SendJSON(_Session.get(), &Response);
 }

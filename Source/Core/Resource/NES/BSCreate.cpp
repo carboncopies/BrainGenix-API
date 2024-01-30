@@ -10,9 +10,9 @@ namespace Compartment {
 namespace BS {
 namespace Create {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
-
+  Logger_ = std::move(_Logger);
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
   RequiredParams_.push_back("ShapeID");
@@ -88,7 +88,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["CompartmentID"] = UpstreamResponse["CompartmentID"].template get<int>();
 
-    std::cout<<"Creating BallStick Compartment with ID "<<Response["CompartmentID"]<<std::endl;
+    Logger_->Log("Creating BallStick Compartment with ID "+ std::to_string(static_cast<int>(Response["CompartmentID"])) +'\n',1);
 
     Util::SendJSON(_Session.get(), &Response);
 }

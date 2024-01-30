@@ -9,9 +9,9 @@ namespace NES {
 namespace Simulation {
 namespace GetRecording {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger, Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
-
+  Logger_ = std::move(_Logger);
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
   
@@ -71,7 +71,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["Recording"] = UpstreamResponse["Recording"];
 
-    std::cout<<"Getting RecordAll Data For Simulation With ID "<<Request->get_query_parameter("SimulationID", -1)<<std::endl;
+    Logger_->Log("Getting RecordAll Data For Simulation With ID "+std::to_string(static_cast<int>(Request->get_query_parameter("SimulationID", -1)))+'\n',1);
 
     Util::SendJSON(_Session.get(), &Response);
 }

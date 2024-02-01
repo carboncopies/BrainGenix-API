@@ -11,8 +11,10 @@ namespace Shape {
 namespace Cylinder {
 namespace Create {
 
-Route::Route(Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
+  Logger_ =std::move(_Logger);
+
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
@@ -69,8 +71,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
     float Point1Radius_um = Request->get_query_parameter("Point1Radius_um", -1.0);
     float Point2Radius_um = Request->get_query_parameter("Point2Radius_um", -1.0);
-    std::cout << "Point1Radius_um: " << Point1Radius_um << '\n';
-    std::cout << "Point2Radius_um: " << Point2Radius_um << '\n';
+    Logger_->Log("Point1Radius_um: "+ std::to_string(Point1Radius_um)+'\n',1);
+    Logger_->Log("Point1Radius_um: "+ std::to_string(Point2Radius_um)+'\n',1);
     UpstreamQuery["Point1Radius_um"] = Point1Radius_um;
     UpstreamQuery["Point2Radius_um"] = Point2Radius_um;
     UpstreamQuery["Point1PosX_um"] = Point1Position_um[0].template get<float>();
@@ -96,7 +98,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["ShapeID"] = UpstreamResponse["ShapeID"].template get<int>();
 
-    std::cout<<"Creating Cylinder with ID "<<Response["ShapeID"]<<std::endl;
+    Logger_->Log("Creating Cylinder with ID "+ std::to_string(static_cast<int>((Response["ShapeID"])))+'\n',1);
 
     Util::SendJSON(_Session.get(), &Response);
 }

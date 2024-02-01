@@ -11,6 +11,8 @@ namespace BS {
 namespace BulkCreate {
 
 Route::Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server, restbed::Service &_Service) {
+  assert(Logger != nullptr);
+  assert(_Server != nullptr);
   Server_ = _Server;
   Logger_ = _Logger;
 
@@ -82,10 +84,9 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
 
     // Build Response And Send
-    nlohmann::json Response;
     UpstreamResponse["StatusCode"] = 0;
 
-    Logger_->Log("Creating BallStick Compartments with IDs "+ std::to_string(static_cast<int>(UpstreamResponse["CompartmentIDs"]))+'\n',1);
+    Logger_->Log("Creating BallStick Compartments with IDs " + UpstreamResponse["CompartmentIDs"].dump(), 1);
 
     Util::SendJSON(_Session.get(), &UpstreamResponse);
 }

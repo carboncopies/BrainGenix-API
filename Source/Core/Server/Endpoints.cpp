@@ -28,10 +28,15 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     Auth_GetToken_ = std::make_shared<Resource::Auth::GetToken::Route>(&_Server, _Service);
 
     NES_Geometry_Shape_Sphere_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Sphere::Create::Route>(&_Server, _Service);
-    NES_Geometry_Shape_Cylinder_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Cylinder::Create::Route>(Logger_, &_Server, _Service);
-    NES_Geometry_Shape_Box_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Box::Create::Route>(Logger_, &_Server, _Service);
+    NES_Geometry_Shape_Sphere_BulkCreate_ = std::make_shared<Resource::NES::Geometry::Shape::Sphere::BulkCreate::Route>(&_Server, _Service);
+    NES_Geometry_Shape_Cylinder_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Cylinder::Create::Route>(&_Server, _Service);
+    NES_Geometry_Shape_Cylinder_BulkCreate_ = std::make_shared<Resource::NES::Geometry::Shape::Cylinder::BulkCreate::Route>(&_Server, _Service);
+    NES_Geometry_Shape_Box_Create_ = std::make_shared<Resource::NES::Geometry::Shape::Box::Create::Route>(&_Server, _Service);
+    NES_Geometry_Shape_Box_BulkCreate_ = std::make_shared<Resource::NES::Geometry::Shape::Box::BulkCreate::Route>(&_Server, _Service);
 
-    NES_Compartment_BS_Create_ = std::make_shared<Resource::NES::Compartment::BS::Create::Route>(Logger_, &_Server, _Service);
+    NES_Compartment_BS_Create_ = std::make_shared<Resource::NES::Compartment::BS::Create::Route>(&_Server, _Service);
+    NES_Compartment_BS_BulkCreate_ = std::make_shared<Resource::NES::Compartment::BS::BulkCreate::Route>(&_Server, _Service);
+
 
     NES_Connection_Staple_Create_ = std::make_shared<Resource::NES::Connection::Staple::Create::Route>(&_Server, _Service);
     NES_Connection_Receptor_Create_ = std::make_shared<Resource::NES::Connection::Receptor::Create::Route>(Logger_, &_Server, _Service);

@@ -10,9 +10,11 @@ namespace Compartment {
 namespace BS {
 namespace Create {
 
-Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server, restbed::Service &_Service) {
+  assert(_Logger != nullptr);
+  assert(_Server != nullptr);
   Server_ = _Server;
-  Logger_ = std::move(_Logger);
+  Logger_ = _Logger;
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
   RequiredParams_.push_back("ShapeID");

@@ -38,22 +38,21 @@ void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
 }
 
 
-Controller::Controller(Config::Config &_Config) {
+Controller::Controller(Config::Config &_Config, BG::Common::Logger::LoggingSystem* _Logger) {
     
     // Configure Settings Object
     Settings_ = ConfigureServer(_Config);
 
 
     // Add Routes
-    EndpointManager_ = EndpointManager();
-    EndpointManager_.AddRoutes(Service_, Server_);
+    EndpointManager_ = std::make_unique<EndpointManager>(_Logger);
+    EndpointManager_->AddRoutes(Service_, Server_);
 
 }
 
 Controller::~Controller() {
-
+    
 }
-
 
 
 std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _Config) {

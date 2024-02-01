@@ -10,9 +10,9 @@ namespace Tool {
 namespace PatchClampADC {
 namespace GetRecordedData {
 
-Route::Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger, Server::Server *_Server, restbed::Service &_Service) {
+Route::Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
-  Logger_ = std::move(_Logger);
+  Logger_ = _Logger;
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");

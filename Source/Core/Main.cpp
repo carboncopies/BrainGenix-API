@@ -24,7 +24,7 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Config::Config& SystemConfiguration = ConfigManager.GetConfig();
 
     // Setup Server
-    BG::API::Server::Controller ServerController(SystemConfiguration);
+    BG::API::Server::Controller ServerController(SystemConfiguration, &Logger);
     BG::API::Server::Server* Server = ServerController.GetServerStruct();
 
     // Setup Upstream API Connection Handler

@@ -48,7 +48,7 @@ class Route {
 private:
 
     Server::Server *Server_; /**Copy of the server struct*/
-    std::unique_ptr<BG::Common::Logger::LoggingSystem> Logger_;/**Point to instance of Logging System*/
+    BG::Common::Logger::LoggingSystem* Logger_;/**Point to instance of Logging System*/
     std::vector<std::string> OptionalParams_; /**List of optional parameters*/
     std::vector<std::string> RequiredParams_; /**List of required parameters*/
 
@@ -61,7 +61,7 @@ public:
      * @param _Server 
      * @param _Session 
      */
-    Route(std::unique_ptr<BG::Common::Logger::LoggingSystem> _Logger,Server::Server *_Server, restbed::Service &_Service);
+    Route(BG::Common::Logger::LoggingSystem* _Logger,Server::Server *_Server, restbed::Service &_Service);
 
     /**
      * @brief Destroy the Route object

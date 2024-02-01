@@ -28,6 +28,8 @@
 
 #include <Server/Endpoints.h>
 
+#include <BG/Common/Logger/Logger.h>
+
 
 
 namespace BG {
@@ -53,7 +55,7 @@ private:
     Server Server_; /**Instance of the server struct, used to pass data to callbacks for restbed*/
     // std::string foo_ = "foo";
 
-    EndpointManager EndpointManager_; /**Class that manages the endpoint resources (Creating them, destroying, etc.)*/
+    std::unique_ptr<EndpointManager> EndpointManager_; /**Class that manages the endpoint resources (Creating them, destroying, etc.)*/
 
     /**
      * @brief Creates a restbed settings object from the user configuration struct.
@@ -76,7 +78,7 @@ public:
      * @param _Config 
      * @param _Manager RPC Manager instance ptr
      */
-    Controller(Config::Config& _Config);
+    Controller(Config::Config& _Config, BG::Common::Logger::LoggingSystem* _Logger);
 
 
     /**

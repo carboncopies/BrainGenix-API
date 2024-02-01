@@ -11,7 +11,7 @@ namespace BS {
 namespace BulkCreate {
 
 Route::Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server, restbed::Service &_Service) {
-  assert(Logger != nullptr);
+  assert(_Logger != nullptr);
   assert(_Server != nullptr);
   Server_ = _Server;
   Logger_ = _Logger;

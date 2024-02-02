@@ -77,7 +77,7 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
 
 
-    NES_Visualizer_RenderImage_ = std::make_shared<Resource::NES::Visualizer::RenderImage>(Logger_, &_Server, _Service);
+    NES_Visualizer_RenderImage_ = std::make_shared<Resource::NES::Visualizer::RenderImage::Route>(Logger_, &_Server, _Service);
 
 
 }

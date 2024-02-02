@@ -1,4 +1,4 @@
-#include <Resource/NES/Geometry/Shape/BoxCreate.h>
+#include <Resource/NES/Visualizer/RenderImage.h>
 
 
 namespace BG {
@@ -8,6 +8,7 @@ namespace Resource {
 namespace NES {
 namespace Visualizer {
 namespace RenderImage {
+
 
 Route::Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
@@ -58,8 +59,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Get Params, Build Upstream Query
     nlohmann::json UpstreamQuery;
     
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CameraPosition_um", "[0, 0, 0]"));
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CameraLookAtPosition_um", "[0, 0, 0]"));
+    UpstreamQuery["CameraPosition_um"] = nlohmann::json::parse(Request->get_query_parameter("CameraPosition_um", "[]"));;
+    UpstreamQuery["CameraLookAtPosition_um"] = nlohmann::json::parse(Request->get_query_parameter("CameraLookAtPosition_um", "[]"));;
 
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
     UpstreamQuery["CameraFOV_deg"] = Request->get_query_parameter("CameraFOV_deg", -1.);

@@ -146,7 +146,7 @@
       std::shared_ptr<Resource::NES::VSDA::Calcium::GetImage::Route> NES_VSDA_Calcium_GetImage_;
 
 
-      std::shared_ptr<Resource::NES::Visualizer::RenderImage> NES_Visualizer_RenderImage_;
+      std::shared_ptr<Resource::NES::Visualizer::RenderImage::Route> NES_Visualizer_RenderImage_;
 
 
 

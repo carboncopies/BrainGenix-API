@@ -802,3 +802,23 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 
 - (bgStatus) `StatusCode` Enum indicating the status of this API call.
 - (dict) `RecordingDict` Dict/Hashmap containing the data collected by the recording electrode.
+
+
+
+## Visualizer
+
+## Visualizer - RenderImage
+
+**URI** `Visualizer/RenderImage`
+**Request**:
+*Required Params*:
+
+- (int) `SimulationID` ID of the simulation.  
+- (vec3) `CameraPosition_um` (X,Y,Z) location of the camera's position in microns from world origin.    
+- (vec3) `CameraLookAtPosition_um` (X,Y,Z) Location where the camera is looking at in microns from world origin.  
+- (float) `CameraFOV_deg` FOV of the camera in degrees.  
+
+**Response**:
+
+- (bgStatus) `StatusCode` Enum indicating the status of this API call.
+- (base64String) `ImageData` Base 64 encoded string containing the bytes of the image.  

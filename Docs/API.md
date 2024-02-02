@@ -3,7 +3,8 @@
 Note: Every API call below, except the Simulation/Create call, must also receive
 the parameters:
 
-- (bgSimulationID) `SimulationID=` Simulation ID number.
+- (bgSimulationID
+) `SimulationID=` Simulation ID number.
 - (AuthKey) `AuthKey=` Authorization key.
 
 Note: On a nonsuccess status code, other parameters are *not* guarenteed to be provided. Always check the status code first.
@@ -852,8 +853,8 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Request**:
 *Required Params*:
 
-- (int) `simulationID=` ID of the simulation.
-- (int) `recordingElectrodeID=` ID of the recording electrode.
+- (int) `SimulationID=` ID of the simulation.
+- (int) `RecordingElectrodeID=` ID of the recording electrode.
 
 **Response**:
 
@@ -865,8 +866,8 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Request**:
 *Required Params*:
 
-- (int) `simulationID=` ID of the simulation.
-- (int) `recordingElectrodeID=` ID of the recording electrode.
+- (int) `SimulationID=` ID of the simulation.
+- (int) `RecordingElectrodeID=` ID of the recording electrode.
 
 **Response**:
 
@@ -879,9 +880,9 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 **Request**:
 *Required Params*:
 
-- (int) `simulationID=` ID of the simulation.
-- (int) `recordingElectrodeID=` ID of the recording electrode.
-- (int) `SiteIdx=` Integer index of the recording electrode site.
+- (int) `SimulationID=` ID of the simulation.
+- (int) `RecordingElectrodeID=` ID of the recording electrode.
+- (int) `SiteId=` Integer index of the recording electrode site.
 
 **Response**:
 
@@ -889,3 +890,21 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (dict) `RecordingDict=` Dict/Hashmap containing the data collected by the recording electrode.
 
 
+
+## Visualizer
+
+## Visualizer - RenderImage
+
+**URI** `/NES/Visualizer/RenderImage?`
+**Request**:
+*Required Params*:
+
+- (int) `SimulationID=` ID of the simulation.  
+- (vec3) `CameraPosition_um=` (X,Y,Z) location of the camera's position in microns from world origin.    
+- (vec3) `CameraLookAtPosition_um=` (X,Y,Z) Location where the camera is looking at in microns from world origin.  
+- (float) `CameraFOV_deg=` FOV of the camera in degrees.  
+
+**Response**:
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.
+- (base64String) `ImageData=` Base 64 encoded string containing the bytes of the image.  

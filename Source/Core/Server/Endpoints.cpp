@@ -74,6 +74,12 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
     NES_VSDA_Calcium_GetRenderStatus_ = std::make_shared<Resource::NES::VSDA::Calcium::GetRenderStatus::Route>(&_Server, _Service);
     NES_VSDA_Calcium_CreateIndicator_ = std::make_shared<Resource::NES::VSDA::Calcium::CreateIndicator::Route>(Logger_, &_Server, _Service);
     NES_VSDA_Calcium_Setup_ = std::make_shared<Resource::NES::VSDA::Calcium::Setup::Route>(&_Server, _Service);
+
+
+
+    NES_Visualizer_RenderImage_ = std::make_shared<Resource::NES::Visualizer::RenderImage>(Logger_, &_Server, _Service);
+
+
 }
 
 }; // namespace Server

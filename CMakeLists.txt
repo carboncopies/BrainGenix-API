@@ -30,7 +30,7 @@ set(CMAKE_TOOLCHAIN_FILE ${LIB_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake CACHE
 
 project(
     "BrainGenix-API"
-    VERSION "2024.02.01"
+    VERSION "2024.02.02"
     LANGUAGES CXX
 )
 

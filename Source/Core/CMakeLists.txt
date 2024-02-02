@@ -127,6 +127,15 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/Setup.h
   ${SRC_DIR}/Core/Resource/NES/VSDA/Calcium/Setup.cpp
 
+
+
+
+  ${SRC_DIR}/Core/Resource/NES/Visualizer/RenderImage.h
+  ${SRC_DIR}/Core/Resource/NES/Visualizer/RenderImage.cpp
+
+
+
+
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h
 

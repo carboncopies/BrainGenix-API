@@ -6,10 +6,8 @@ namespace API {
 namespace Resource {
 
 namespace NES {
-namespace Geometry {
-namespace Shape {
-namespace Box {
-namespace Create {
+namespace Visualizer {
+namespace RenderImage {
 
 Route::Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server, restbed::Service &_Service) {
   Server_ = _Server;
@@ -17,11 +15,9 @@ Route::Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server
 
   // Setup List Of Params
   RequiredParams_.push_back("SimulationID");
-  RequiredParams_.push_back("CenterPosition_um");
-  RequiredParams_.push_back("Dimensions_um");
-  RequiredParams_.push_back("Rotation_rad");
-
-  OptionalParams_.push_back("Name");
+  RequiredParams_.push_back("CameraPosition_um");
+  RequiredParams_.push_back("CameraLookAtPosition_um");
+  RequiredParams_.push_back("CameraFOV_deg");
 
 
   // Setup Callback
@@ -29,7 +25,7 @@ Route::Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server
 
   // Register This Route With Server
   std::shared_ptr<restbed::Resource> RouteResource = std::make_shared<restbed::Resource>();
-  RouteResource->set_path("/NES/Geometry/Shape/Box/Create");
+  RouteResource->set_path("/NES/Visualizer/RenderImage");
   RouteResource->set_method_handler("GET", Callback);
   _Service.publish(RouteResource);
 
@@ -62,16 +58,15 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Get Params, Build Upstream Query
     nlohmann::json UpstreamQuery;
     
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CenterPosition_um", "[0, 0, 0]"), "CenterPos");
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Dimensions_um", "[0, 0, 0]"), "Scale");
-    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("Rotation_rad", "[0, 0, 0]"), "Rotation", "rad");
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CameraPosition_um", "[0, 0, 0]"));
+    Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("CameraLookAtPosition_um", "[0, 0, 0]"));
 
     UpstreamQuery["SimulationID"] = Request->get_query_parameter("SimulationID", 0);
-    UpstreamQuery["Name"] = Request->get_query_parameter("Name", "undefined");
+    UpstreamQuery["CameraFOV_deg"] = Request->get_query_parameter("CameraFOV_deg", -1.);
 
 
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Geometry/Shape/Box/Create", UpstreamQuery.dump(), &UpstreamResponseStr);
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "Visualizer/RenderImage", UpstreamQuery.dump(), &UpstreamResponseStr);
     if (!UpstreamStatus) {
       Util::SendCode(_Session.get(), 3);
       return;
@@ -85,13 +80,11 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Response["StatusCode"] = 0;
     Response["ShapeID"] = UpstreamResponse["ShapeID"].template get<int>();
 
-    Logger_->Log("Creating Box with ID " + std::to_string(static_cast<int>(Response["ShapeID"])) + '\n', 1);
+    Logger_->Log("Rendered Image On Simulation " + std::to_string(Request->get_query_parameter("SimulationID", 0)), 1);
 
     Util::SendJSON(_Session.get(), &Response);
 }
 
-}; // Close Namespace
-}; // Close Namespace
 }; // Close Namespace
 }; // Close Namespace
 }; // Close Namespace

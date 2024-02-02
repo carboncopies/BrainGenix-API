@@ -5,7 +5,7 @@
 /*
     Description: This file provides code used in the API routes.
     Additional Notes: None
-    Date Created: 2023-06-23
+    Date Created: 2024-02-02
 */
 
 #pragma once
@@ -33,10 +33,8 @@ namespace API {
 namespace Resource {
 
 namespace NES {
-namespace Geometry {
-namespace Shape {
-namespace Box {
-namespace Create {
+namespace Visualizer {
+namespace RenderImage {
 
 
 /**
@@ -81,8 +79,6 @@ public:
 };
 
 
-}; // Close Namespace
-}; // Close Namespace
 }; // Close Namespace
 }; // Close Namespace
 }; // Close Namespace

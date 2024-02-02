@@ -75,6 +75,8 @@
   #include <Resource/NES/VSDA/Calcium/QueueRenderOperation.h>
   #include <Resource/NES/VSDA/Calcium/Setup.h>
 
+  #include <Resource/NES/Visualizer/RenderImage.h>
+
 
   #include <BG/Common/Logger/Logger.h>
 
@@ -142,6 +144,11 @@
       std::shared_ptr<Resource::NES::VSDA::Calcium::QueueRenderOperation::Route> NES_VSDA_Calcium_QueueRenderOperation_;
       std::shared_ptr<Resource::NES::VSDA::Calcium::GetImageStack::Route> NES_VSDA_Calcium_GetImageStack_;
       std::shared_ptr<Resource::NES::VSDA::Calcium::GetImage::Route> NES_VSDA_Calcium_GetImage_;
+
+
+      std::shared_ptr<Resource::NES::Visualizer::RenderImage> NES_Visualizer_RenderImage_;
+
+
 
       BG::Common::Logger::LoggingSystem* Logger_;
 

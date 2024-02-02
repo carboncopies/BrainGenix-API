@@ -462,6 +462,48 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgSimulationID) `SimulationID=` ID of the simulation created. Returns -1 on fail.
 
 
+### Simulation - Save **NEW**
+
+**URI** `/NES/Simulation/Save?`  
+**Request**:  
+*Required Params*:  
+
+- (bgSimulationID) `SimulationID=` ID of the simulation to save.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (int) `SaveID=` Integer representing the save index. Use this to then load it later.  
+
+
+### Simulation - Load **NEW**
+
+**URI** `/NES/Simulation/Load?`  
+**Request**:  
+*Required Params*:  
+
+- (int) `SaveID=` Integer representing the save index to load.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+- (bgSimulationID) `SimulationID=` ID of the simulation loaded.  
+
+
+### Simulation - SaveErase **NEW**
+
+**URI** `/NES/Simulation/SaveErase?`  
+**Request**:  
+*Required Params*:  
+
+- (int) `SaveID=` Integer representing the save index to remove.  
+
+**Response**:  
+
+- (bgStatus) `StatusCode=` Enum indicating the status of this API call.  
+
+
+
 ### Simulation - Reset
 
 **URI** `/NES/Simulation/Reset?`  

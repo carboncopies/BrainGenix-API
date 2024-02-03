@@ -129,6 +129,10 @@ set(MAIN_SOURCES
 
 
 
+  ${SRC_DIR}/Core/Resource/NES/NES.h
+  ${SRC_DIR}/Core/Resource/NES/NES.cpp
+
+
 
   ${SRC_DIR}/Core/Resource/NES/Visualizer/RenderImage.h
   ${SRC_DIR}/Core/Resource/NES/Visualizer/RenderImage.cpp

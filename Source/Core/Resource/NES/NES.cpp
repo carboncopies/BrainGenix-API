@@ -60,12 +60,10 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
         Util::SendCode(_Session.get(), 3);
         return;
     }
-    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
-
 
 
     // Build Response And Send
-    nlohmann::json UpstreamResponse;
+    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
     UpstreamResponse["StatusCode"] = 0;
 
     Logger_->Log("Called NES Upstream Query", 1);

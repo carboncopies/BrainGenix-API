@@ -68,7 +68,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     Logger_->Log("Called NES Upstream Query", 1);
 
-    Util::SendJSON(_Session.get(), &ResponsUpstreamResponsee);
+    Util::SendJSON(_Session.get(), &UpstreamResponse);
 
 
 

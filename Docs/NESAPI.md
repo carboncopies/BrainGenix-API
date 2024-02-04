@@ -441,7 +441,8 @@ Proposed Python client example (as shown in Python prototype code `BG_API.py`):
 - (bgCompartmentID) `SourceCompartmentID` ID of the compartment whos data will be copied to the destination.  
 - (bgCompartmentID) `DestinationCompartmentID` ID of the compartment whos data will be overwritten with the source.  
 - (float) `Conductance_nS` Conductance from source to destination in nanoSiemens.  
-- (float) `TimeConstant_ms` Postsynaptic potential time constant in milliseconds.   
+- (float) `TimeConstantRise_ms` Postsynaptic potential rise time constant in milliseconds.
+- (float) `TimeConstantDecay_ms` Postsynaptic potential decay time constant in milliseconds.
 - (float) `ReceptorPosX_um` X world space coordinate in micrometers.  
 - (float) `ReceptorPosY_um` Y world space coordinate in micrometers.   
 - (float) `ReceptorPosZ_um` Z world space coordinate in micrometers.  

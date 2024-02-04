@@ -19,9 +19,9 @@ Route::Route(BG::Common::Logger::LoggingSystem* _Logger,Server::Server *_Server,
   RequiredParams_.push_back("SourceCompartmentID");
   RequiredParams_.push_back("DestinationCompartmentID");
   RequiredParams_.push_back("Conductance_nS");
-  RequiredParams_.push_back("TimeConstant_ms");
+  RequiredParams_.push_back("TimeConstantRise_ms");
+  RequiredParams_.push_back("TimeConstantDecay_ms");
   RequiredParams_.push_back("ReceptorLocation_um");
-
 
   OptionalParams_.push_back("Name");
 
@@ -69,7 +69,8 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["SourceCompartmentID"] = Request->get_query_parameter("SourceCompartmentID", -1);
     UpstreamQuery["DestinationCompartmentID"] = Request->get_query_parameter("DestinationCompartmentID", -1);
     UpstreamQuery["Conductance_nS"] = Request->get_query_parameter("Conductance_nS", 0.0f);
-    UpstreamQuery["TimeConstant_ms"] = Request->get_query_parameter("TimeConstant_ms", 0.0f);
+    UpstreamQuery["TimeConstantRise_ms"] = Request->get_query_parameter("TimeConstantRise_ms", 0.0f);
+    UpstreamQuery["TimeConstantDecay_ms"] = Request->get_query_parameter("TimeConstantDecay_ms", 0.0f);
     Util::SetVec3(&UpstreamQuery, Request->get_query_parameter("ReceptorLocation_um", "[0, 0, 0]"), "ReceptorPos");
 
 

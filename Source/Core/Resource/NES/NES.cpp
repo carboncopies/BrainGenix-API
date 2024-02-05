@@ -52,6 +52,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     // Get The NES JSON Query String
     std::string JSONQueryString = restbed::String::to_string(Request.get()->get_body());
 
+    Logger_->Log("Received NES request: "+JSONQueryString, 1); // For DEBUGGING
 
     // Make the upstream query to NES
     std::string UpstreamResponseStr = "";
@@ -61,16 +62,11 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
         return;
     }
 
-
-    // Build Response And Send
-    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
-    UpstreamResponse["StatusCode"] = 0;
-
     Logger_->Log("Called NES Upstream Query", 1);
 
-    Util::SendJSON(_Session.get(), &UpstreamResponse);
-
-
+    // Forward the Response And Send
+    
+    Util::SendStringifiedJSON(_Session.get(), UpstreamResponseStr);
 
 }
 

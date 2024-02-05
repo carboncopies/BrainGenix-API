@@ -50,6 +50,14 @@ void SendCode(restbed::Session* _Session, int _Code);
  */
 void SendJSON(restbed::Session* _Session, nlohmann::json* _Response);
 
+/**
+ * @brief Used to send already-stringified JSON back to the client. Pass in the session ptr as well as a pointer to your json data.
+ * Remember to set your StatusCode!
+ * 
+ * @param _Session 
+ * @param _Response 
+ */
+void SendStringifiedJSON(restbed::Session* _Session, const std::string & _Response);
 
 /**
  * @brief Simple auth check, need to fix this later to use the database or something...

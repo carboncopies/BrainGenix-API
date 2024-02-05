@@ -28,6 +28,16 @@ void SendJSON(restbed::Session* _Session, nlohmann::json* _Response) {
     );
 }
 
+void SendStringifiedJSON(restbed::Session* _Session, const std::string & _Response) {
+    // Return Response that was already stringified JSON
+    _Session->close(restbed::OK, _Response,
+      {
+        {"Content-Length", std::to_string(_Response.size())},
+        {"Content-Type", "application/json"}
+      }
+    );
+}
+
 bool IsAuthorized(const restbed::Request* _Request) {
 
   // Check that the AuthKey is present

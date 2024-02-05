@@ -66,17 +66,20 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
       Util::SendCode(_Session.get(), 1);
       return;
     }
-    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+    //nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
 
 
 
     // Build Response And Send
     nlohmann::json Response;
-    Response["StatusCode"] = 0;
-    Response["SimulationID"] = UpstreamResponse["SimulationID"].template get<int>();
+    // Response["StatusCode"] = 0;
+    // Response["SimulationID"] = UpstreamResponse["SimulationID"].template get<int>();
     
-    Logger_->Log("Creating Simulation with ID "+std::to_string(static_cast<int>(Response["SimulationID"]))+'\n',1);
-    Util::SendJSON(_Session.get(), &Response);
+    //Logger_->Log("Creating Simulation with ID "+std::to_string(static_cast<int>(Response["SimulationID"]))+'\n',1);
+    //Util::SendJSON(_Session.get(), &Response);
+
+    Logger_->Log("Creating Simulation: "+UpstreamResponseStr+'\n',1);
+    Util::SendStringifiedJSON(_Session.get(), UpstreamResponseStr);
 }
 
 }; // Close Namespace

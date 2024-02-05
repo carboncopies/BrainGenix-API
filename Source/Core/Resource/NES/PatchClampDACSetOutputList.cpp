@@ -72,17 +72,20 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
       Util::SendCode(_Session.get(), 3);
       return;
     }
-    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+    //nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
 
 
 
     // Build Response And Send
-    nlohmann::json Response;
-    Response["StatusCode"] = 0;
+    // nlohmann::json Response;
+    // Response["StatusCode"] = 0;
 
-    Logger_->Log("Setting PatchClampDAC Output List On DAC "+ std::to_string(static_cast<int>(Request->get_query_parameter("TargetDAC", -1)))+'\n',1);
+    //Logger_->Log("Setting PatchClampDAC Output List On DAC "+ std::to_string(static_cast<int>(Request->get_query_parameter("TargetDAC", -1)))+'\n',1);
 
-    Util::SendJSON(_Session.get(), &Response);
+    //Util::SendJSON(_Session.get(), &Response);
+
+    Logger_->Log("Setting PatchClampDAC Output List On DAC: "+ UpstreamResponseStr+'\n',1);
+    Util::SendStringifiedJSON(_Session.get(), UpstreamResponseStr);
 }
 
 }; // Close Namespace

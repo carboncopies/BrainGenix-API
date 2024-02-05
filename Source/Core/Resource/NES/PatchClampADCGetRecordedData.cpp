@@ -67,19 +67,21 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
       Util::SendCode(_Session.get(), 3);
       return;
     }
-    nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
+    //nlohmann::json UpstreamResponse = nlohmann::json::parse(UpstreamResponseStr);
 
 
 
     // Build Response And Send
-    nlohmann::json Response;
-    Response["StatusCode"] = 0;
-    Response["RecordedData_mV"] = UpstreamResponse["RecordedData_mV"];
-    Response["Timestep_ms"] = UpstreamResponse["Timestep_ms"].template get<float>();
+    // nlohmann::json Response;
+    // Response["StatusCode"] = 0;
+    // Response["RecordedData_mV"] = UpstreamResponse["RecordedData_mV"];
+    // Response["Timestep_ms"] = UpstreamResponse["Timestep_ms"].template get<float>();
 
     Logger_->Log("Getting Recorded PatchClampADC Data On ID " + std::to_string(Request->get_query_parameter("TargetADC", -1))+'\n',1);
 
-    Util::SendJSON(_Session.get(), &Response);
+    //Util::SendJSON(_Session.get(), &Response);
+    Logger_->Log("Getting Recorded PatchClampADC Data: " + UpstreamResponseStr+'\n',1);
+    Util::SendStringifiedJSON(_Session.get(), UpstreamResponseStr);
 }
 
 }; // Close Namespace

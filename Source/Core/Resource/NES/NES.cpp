@@ -38,7 +38,7 @@ void Route::PostHandler(const std::shared_ptr<restbed::Session> _Session, const 
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
     std::string JSONQueryString = restbed::String::to_string(Request.get()->get_body());
 
-    Logger_->Log("Received NES request: "+JSONQueryString, 1); // For DEBUGGING
+    Logger_->Log("Received NES request: " + JSONQueryString, 1); // For DEBUGGING
 
     // Make the upstream query to NES
     std::string UpstreamResponseStr = "";

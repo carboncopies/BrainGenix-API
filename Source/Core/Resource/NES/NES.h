@@ -48,6 +48,9 @@ private:
     Server::Server *Server_; /**Copy of the server struct*/
     BG::Common::Logger::LoggingSystem* Logger_; /*Pointer to instance of Logging System*/
 
+
+    void PostHandler(const std::shared_ptr<restbed::Session> _Session, const restbed::Bytes& _Line);
+
 public:
 
     /**

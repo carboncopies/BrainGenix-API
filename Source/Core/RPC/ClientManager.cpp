@@ -42,6 +42,7 @@ Manager::~Manager() {
 
 
 bool Manager::ConnectNES() {
+    IsClientHealthy_ = false;
     NESClient_ = nullptr;
 
     // Extract NES Client Parameters, Connect, Configure
@@ -64,7 +65,11 @@ bool Manager::ConnectNES() {
     NESClient_->set_timeout(NESTimeout_ms);
 
     // Call GetVersion On Remote - allows us to check that versions match, but also ensures the connection is ready
-    return RunVersionCheckNES();
+    bool Status = RunVersionCheckNES();
+    if (Status) {
+        IsClientHealthy_ = true;
+    }
+    return Status;
 
 }
 
@@ -87,7 +92,7 @@ bool Manager::RunVersionCheckNES() {
 
     // Check Version again (used as a heartbeat 'isAlive' check)
     std::string NESVersion = "undefined";
-    bool Status = NESQueryJSON("GetAPIVersion", &NESVersion);
+    bool Status = NESQueryJSON("GetAPIVersion", &NESVersion, true);
     if (!Status) {
         Logger_->Log("Failed To Get NES API Version String", 1);
         return false;
@@ -103,7 +108,10 @@ bool Manager::RunVersionCheckNES() {
 
 }
 
-bool Manager::NESQueryJSON(std::string _Route, std::string* _Result) {
+bool Manager::NESQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
+    if (!_ForceQuery && !IsClientHealthy_) {
+        return false;
+    }
     try {
         (*_Result) = NESClient_->call(_Route.c_str()).as<std::string>();
     } catch (::rpc::timeout& e) {
@@ -122,7 +130,10 @@ bool Manager::NESQueryJSON(std::string _Route, std::string* _Result) {
     return true;
 }
 
-bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result) {
+bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
+    if (!_ForceQuery && !IsClientHealthy_) {
+        return false;
+    }
     try {
         (*_Result) = NESClient_->call(_Route.c_str(), _Query).as<std::string>();
     } catch (::rpc::timeout& e) {
@@ -154,7 +165,7 @@ void Manager::ConnectionManagerNES() {
         // If not healthy, re-establish connection, retry stuff... For now, nothing...
         if (!IsHealthy) {
             if (!ConnectNES()) {
-                Logger_->Log("[ERR ] Failed To Reconnect To NES Service!",3);            }
+                Logger_->Log("Failed To Reconnect To NES Service",3);            }
         }
 
         // Wait 1000ms before polling again

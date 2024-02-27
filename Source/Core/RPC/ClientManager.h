@@ -16,6 +16,7 @@
 #include <iostream>
 #include <memory>
 #include <thread>
+#include <atomic>
 #include <chrono>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
@@ -52,6 +53,7 @@ private:
     std::thread ConnectionManagerNES_; /**Thread running the NES connection manager*/
 
     std::unique_ptr<::rpc::client> NESClient_; /**Client to upstream NES Service*/
+    std::atomic_bool IsClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
 
     /**
      * @brief Attempts to connect to the NES client. On failure, returns false.
@@ -108,8 +110,8 @@ public:
      * @return true 
      * @return false 
      */
-    bool NESQueryJSON(std::string _Route, std::string* _Result);
-    bool NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result);
+    bool NESQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery = false);
+    bool NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery = false);
 
 };
 

@@ -6,6 +6,9 @@ namespace API {
 namespace Util {
 
 bool NESQueryJSON(::rpc::client* _Client, std::string _Route, std::string _Query, std::string* _Result) {
+    if (!_Client) {
+        return false;
+    }
     try {
         (*_Result) = _Client->call(_Route.c_str(), _Query).as<std::string>();
     } catch (::rpc::timeout& e) {

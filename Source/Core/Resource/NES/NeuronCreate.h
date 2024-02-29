@@ -62,7 +62,7 @@ public:
      * @param _Server 
      * @param _Session 
      */
-    Route(BG::Common::Logger::LoggingSystem* _Logger,Server::Server *_Server, restbed::Service &_Service);
+    Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server, restbed::Service &_Service);
 
     /**
      * @brief Destroy the Route object

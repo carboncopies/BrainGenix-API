@@ -38,7 +38,7 @@ struct Config {
     std::string Host = CONFIG_DEFAULT_HOST;                     /**Sets the host that the service binds to*/
 
     int RPCCallbackPort = 7999;
-    std::string RPCCallbackHost = "0.0.0";
+    std::string RPCCallbackHost = "localhost";
 
     bool UseHTTPS = CONFIG_DEFAULT_USE_HTTPS;                   /**Configure if we do or do not use SSL/HTTPS. Using it requires having a server key and crt file specified*/
     std::string KeyFilePath;                                    /**Path to the key file*/

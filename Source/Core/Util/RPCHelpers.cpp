@@ -5,7 +5,10 @@ namespace BG {
 namespace API {
 namespace Util {
 
-bool NESQueryJSON(::rpc::client* _Client, std::string _Route, std::string _Query, std::string* _Result) {
+bool NESQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsNESClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
+    if (!(*_IsNESClientHealthy)) {
+        return false;
+    }
     if (!_Client) {
         return false;
     }
@@ -19,6 +22,28 @@ bool NESQueryJSON(::rpc::client* _Client, std::string _Route, std::string _Query
         return false;
     } catch (std::system_error& e) {
         std::cout<<"ERR: Cannot talk to NES host\n";
+        return false;
+    }
+    return true;
+}
+
+bool EVMQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsEVMClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
+    if (!(*_IsEVMClientHealthy)) {
+        return false;
+    }
+    if (!_Client) {
+        return false;
+    }
+    try {
+        (*_Result) = _Client->call(_Route.c_str(), _Query).as<std::string>();
+    } catch (::rpc::timeout& e) {
+        std::cout<<"ERR: EVM Connection timed out!\n";
+        return false;
+    } catch (::rpc::rpc_error& e) {
+        std::cout<<"ERR: EVM remote returned RPC error\n";
+        return false;
+    } catch (std::system_error& e) {
+        std::cout<<"ERR: Cannot talk to EVM host\n";
         return false;
     }
     return true;

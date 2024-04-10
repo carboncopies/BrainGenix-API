@@ -40,7 +40,8 @@ namespace Util {
  * @return true 
  * @return false 
  */
-bool NESQueryJSON(::rpc::client* _Client, std::string _Route, std::string _Query, std::string* _Result);
+bool NESQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsEVMClientHealthy,std::string _Route, std::string _Query, std::string* _Result);
+bool EVMQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsEVMClientHealthy,std::string _Route, std::string _Query, std::string* _Result);
 
 
 }; // Close Namespace Util

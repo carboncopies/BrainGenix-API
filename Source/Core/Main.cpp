@@ -29,6 +29,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
     // Setup Upstream API Connection Handler
     BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server);
+    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger);
 
     // Start Server
     ServerController.StartService();

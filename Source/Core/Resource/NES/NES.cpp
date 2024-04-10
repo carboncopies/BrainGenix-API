@@ -42,7 +42,7 @@ void Route::PostHandler(const std::shared_ptr<restbed::Session> _Session, const 
 
     // Make the upstream query to NES
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "NES", JSONQueryString, &UpstreamResponseStr);
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", JSONQueryString, &UpstreamResponseStr);
     if (!UpstreamStatus) {
         Util::SendCode(_Session.get(), 3);
         return;

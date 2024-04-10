@@ -21,6 +21,7 @@
 #include <Server/Controller.h>
 
 #include <RPC/ClientManager.h>
+#include <RPC/RPCManager.h>
 
 
 

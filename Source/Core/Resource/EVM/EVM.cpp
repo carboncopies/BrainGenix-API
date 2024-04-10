@@ -42,7 +42,7 @@ void Route::PostHandler(const std::shared_ptr<restbed::Session> _Session, const 
 
     // Make the upstream query to EVM
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::EVMQueryJSON(Server_->EVMClient, "EVM", JSONQueryString, &UpstreamResponseStr);
+    bool UpstreamStatus = Util::EVMQueryJSON(Server_->EVMClient, Server_->IsEVMClientHealthy_, "EVM", JSONQueryString, &UpstreamResponseStr);
     if (!UpstreamStatus) {
         Util::SendCode(_Session.get(), 3);
         return;

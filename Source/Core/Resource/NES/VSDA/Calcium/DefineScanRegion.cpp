@@ -69,7 +69,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     UpstreamQuery["CalciumIndicatorID"] = CalciumIndicatorID;
 
     std::string UpstreamResponseStr = "";
-    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, "VSDA/Calcium/DefineScanRegion", UpstreamQuery.dump(), &UpstreamResponseStr);
+    bool UpstreamStatus = Util::NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "VSDA/Calcium/DefineScanRegion", UpstreamQuery.dump(), &UpstreamResponseStr);
     if (!UpstreamStatus) {
         Util::SendCode(_Session.get(), 3);
         return;

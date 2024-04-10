@@ -16,14 +16,25 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     RequestThreadsExit_ = false;
 
     // Connect to nes service, start managing service
-    std::cout<<"Starting NES Client";
+    Logger_->Log("Starting NES Client", 1);
     ConnectNES();
     Logger_->Log("Starting NES Client Manager Thread",1);
     ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
 
     // Populate Server Struct
     Server_->NESClient = NESClient_.get();
+    Server_->IsNESClientHealthy_ = &IsNESClientHealthy_;
 
+
+    // Connect to EVM service, start managing service
+    Logger_->Log("Starting EVM Client", 1);
+    ConnectEVM();
+    Logger_->Log("Starting EVM Client Manager Thread",1);
+    ConnectionManagerEVM_ = std::thread(&Manager::ConnectionManagerEVM, this);
+
+    // Populate Server Struct
+    Server_->EVMClient = EVMClient_.get();
+    Server_->IsEVMClientHealthy_ = &IsEVMClientHealthy_;
 
 }
 
@@ -37,12 +48,14 @@ Manager::~Manager() {
     Logger_->Log("Joining NES manager thread",1);
     ConnectionManagerNES_.join();
 
+    Logger_->Log("Joining EVM manager thread",1);
+    ConnectionManagerEVM_.join();
 
 }
 
 
 bool Manager::ConnectNES() {
-    IsClientHealthy_ = false;
+    IsNESClientHealthy_ = false;
     NESClient_ = nullptr;
 
     // Extract NES Client Parameters, Connect, Configure
@@ -67,11 +80,45 @@ bool Manager::ConnectNES() {
     // Call GetVersion On Remote - allows us to check that versions match, but also ensures the connection is ready
     bool Status = RunVersionCheckNES();
     if (Status) {
-        IsClientHealthy_ = true;
+        IsNESClientHealthy_ = true;
     }
     return Status;
 
 }
+
+bool Manager::ConnectEVM() {
+    IsEVMClientHealthy_ = false;
+    EVMClient_ = nullptr;
+
+    // Extract EVM Client Parameters, Connect, Configure
+    std::string EVMHost = Config_->EVMHost;
+    int EVMPort = Config_->EVMPortNumber;
+    int EVMTimeout_ms = Config_->EVMTimeout_ms;
+    
+    Logger_->Log("Connecting to EVM on port: " + std::to_string(EVMPort), 1);
+    Logger_->Log("Connecting to EVM on host: " + EVMHost, 1);
+    Logger_->Log("Connecting to EVM with timeout_ms of: " + std::to_string(EVMTimeout_ms), 1);
+
+
+    try {
+        EVMClient_ = std::make_unique<::rpc::client>(EVMHost.c_str(), EVMPort);
+    } catch (std::system_error& e) {
+        Logger_->Log("Cannot find EVM host (authoritative)", 9);
+        Server_->EVMState = SERVICE_CONFIG_ERR;
+        return false;
+    }
+    EVMClient_->set_timeout(EVMTimeout_ms);
+
+    // Call GetVersion On Remote - allows us to check that versions match, but also ensures the connection is ready
+    bool Status = RunVersionCheckEVM();
+    if (Status) {
+        IsEVMClientHealthy_ = true;
+    }
+    return Status;
+
+}
+
+
 
 bool Manager::RunVersionCheckNES() {
 
@@ -108,8 +155,43 @@ bool Manager::RunVersionCheckNES() {
 
 }
 
+bool Manager::RunVersionCheckEVM() {
+
+    // Run a query to force it to connect (or fail)
+    std::string Temp;
+    EVMQueryJSON("GetAPIVersion", &Temp);
+    
+
+    // Update our internal status of how the connection is doing
+    ::rpc::client::connection_state EVMStatus = EVMClient_->get_connection_state();
+    if (EVMStatus != ::rpc::client::connection_state::connected) {
+        Logger_->Log("Unable to connect to EVM service", 3);
+        Server_->EVMState = SERVICE_FAILED;
+    } else {
+        Logger_->Log("EVM RPC Connection SERVICE_HEALTHY", 1);
+        Server_->EVMState = SERVICE_HEALTHY;
+    }
+
+    // Check Version again (used as a heartbeat 'isAlive' check)
+    std::string EVMVersion = "undefined";
+    bool Status = EVMQueryJSON("GetAPIVersion", &EVMVersion, true);
+    if (!Status) {
+        Logger_->Log("Failed To Get EVM API Version String", 1);
+        return false;
+    }
+
+    if (EVMVersion != VERSION) {
+        Logger_->Log("EVM/API Version Mismatch! This might make stuff break. EVM " + EVMVersion + " API " + VERSION, 9);
+        Server_->EVMState = SERVICE_VERSION_MISMATCH;
+        return false;
+    }
+    return true;
+
+
+}
+
 bool Manager::NESQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
-    if (!_ForceQuery && !IsClientHealthy_) {
+    if (!_ForceQuery && !IsNESClientHealthy_) {
         return false;
     }
     try {
@@ -131,7 +213,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string* _Result, bool _Force
 }
 
 bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
-    if (!_ForceQuery && !IsClientHealthy_) {
+    if (!_ForceQuery && !IsNESClientHealthy_) {
         return false;
     }
     try {
@@ -151,6 +233,52 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
     }
     return true;
 }
+
+
+bool Manager::EVMQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
+    if (!_ForceQuery && !IsEVMClientHealthy_) {
+        return false;
+    }
+    try {
+        (*_Result) = EVMClient_->call(_Route.c_str()).as<std::string>();
+    } catch (::rpc::timeout& e) {
+        Logger_->Log("EVM Connection timed out!",3);
+        Server_->EVMState = SERVICE_FAILED;
+        return false;
+    } catch (::rpc::rpc_error& e) {
+        Logger_->Log("EVM remote returned RPC error",3);
+        Server_->EVMState = SERVICE_FAILED;
+        return false;
+    } catch (std::system_error& e) {
+        Logger_->Log("Cannot talk to EVM host",3);
+        Server_->EVMState = SERVICE_CONFIG_ERR;
+        return false;
+    }
+    return true;
+}
+
+bool Manager::EVMQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
+    if (!_ForceQuery && !IsEVMClientHealthy_) {
+        return false;
+    }
+    try {
+        (*_Result) = EVMClient_->call(_Route.c_str(), _Query).as<std::string>();
+    } catch (::rpc::timeout& e) {
+        Logger_->Log("EVM Connection timed out!",3);
+        Server_->EVMState = SERVICE_FAILED;
+        return false;
+    } catch (::rpc::rpc_error& e) {
+        Logger_->Log("EVM remote returned RPC error",3);
+        Server_->EVMState = SERVICE_FAILED;
+        return false;
+    } catch (std::system_error& e) {
+        Logger_->Log("Cannot talk to EVM host",3);
+        Server_->EVMState = SERVICE_CONFIG_ERR;
+        return false;
+    }
+    return true;
+}
+
 
 void Manager::ConnectionManagerNES() {
 
@@ -173,6 +301,29 @@ void Manager::ConnectionManagerNES() {
 
     }
     Logger_->Log("Exiting NES Manager Thread",1);
+}
+
+void Manager::ConnectionManagerEVM() {
+
+    Logger_->Log("Started EVM Manager Thread",3);
+
+    // Enter loop
+    while (!RequestThreadsExit_) {
+
+        // Check Version
+        bool IsHealthy = RunVersionCheckEVM();
+
+        // If not healthy, re-establish connection, retry stuff... For now, nothing...
+        if (!IsHealthy) {
+            if (!ConnectEVM()) {
+                Logger_->Log("Failed To Reconnect To EVM Service",3);            }
+        }
+
+        // Wait 1000ms before polling again
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+    }
+    Logger_->Log("Exiting EVM Manager Thread",1);
 }
 
 }; // Close Namespace DB

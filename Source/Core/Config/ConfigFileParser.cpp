@@ -16,12 +16,17 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     FileOptions.add_options()
         ("Network.Service.Port", boost::program_options::value<int>(&LocalCfg.PortNumber)->default_value(CONFIG_DEFAULT_PORT_NUMBER), "Port Number Of The Service")
         ("Network.Service.Host", boost::program_options::value<std::string>(&LocalCfg.Host)->default_value(CONFIG_DEFAULT_HOST), "Host That The Service Binds To")
+        ("Network.RPCCallback.Port", boost::program_options::value<int>(&_Config.RPCCallbackPort)->default_value(7999), "Port Number Of The RPC Service")
+        ("Network.RPCCallback.Host", boost::program_options::value<std::string>(&_Config.RPCCallbackHost)->default_value("0.0.0.0"), "Host That The RPC Service Binds To")
         ("Network.NES.Port", boost::program_options::value<int>(&LocalCfg.NESPortNumber)->default_value(CONFIG_DEFAULT_NES_PORT_NUMBER), "NES Service Port Number")
         ("Network.NES.Host", boost::program_options::value<std::string>(&LocalCfg.NESHost)->default_value(CONFIG_DEFAULT_NES_HOST), "NES Host To Connect To")
         ("Network.NES.Timeout_ms", boost::program_options::value<int>(&LocalCfg.NESTimeout_ms)->default_value(CONFIG_DEFAULT_NES_TIMEOUT_MS), "NES Host To Connect To")        
         ("Network.Service.UseHTTPS", boost::program_options::value<bool>(&LocalCfg.UseHTTPS)->default_value(CONFIG_DEFAULT_USE_HTTPS), "Enable or Disable HTTPS Support")
         ("Network.Service.KeyFilePath", boost::program_options::value<std::string>(&LocalCfg.KeyFilePath)->default_value(""), "Optional Keyfile Path, Required When Using HTTPS")
         ("Network.Service.CrtFilePath", boost::program_options::value<std::string>(&LocalCfg.CrtFilePath)->default_value(""), "Optional Certfile Path, Required When Using HTTPS")
+        ("Network.EVM.Port", boost::program_options::value<int>(&_Config.EVMPortNumber)->default_value(8002), "EVM Port Number")
+        ("Network.EVM.Host", boost::program_options::value<std::string>(&_Config.EVMHost)->default_value("localhost"), "EVM Host")
+        ("Network.EVM.Timeout_ms", boost::program_options::value<int>(&_Config.EVMTimeout_ms)->default_value(5000), "EVM Timeout")
         ;
     
     boost::program_options::options_description ConfigFileOptions;

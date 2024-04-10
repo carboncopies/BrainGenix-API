@@ -51,9 +51,12 @@ private:
 
     bool RequestThreadsExit_; /**Used to signal to threads that they should exit*/
     std::thread ConnectionManagerNES_; /**Thread running the NES connection manager*/
+    std::thread ConnectionManagerEVM_; /**Thread running the NES connection manager*/
 
     std::unique_ptr<::rpc::client> NESClient_; /**Client to upstream NES Service*/
-    std::atomic_bool IsClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
+    std::unique_ptr<::rpc::client> EVMClient_; /**Client to upstream NES Service*/
+    std::atomic_bool IsNESClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
+    std::atomic_bool IsEVMClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
 
     /**
      * @brief Attempts to connect to the NES client. On failure, returns false.
@@ -64,12 +67,14 @@ private:
      * @return false 
      */
     bool ConnectNES();
+    bool ConnectEVM();
 
     /**
      * @brief This function is run in another thread and checks/reconnects/updates info/connection data about the NES client.
      * 
      */
     void ConnectionManagerNES();
+    void ConnectionManagerEVM();
 
     /**
      * @brief Uses the client to run a version check, updates the server status afterwards.
@@ -79,6 +84,7 @@ private:
      * @return false 
      */
     bool RunVersionCheckNES();
+    bool RunVersionCheckEVM();
 
 public:
 
@@ -111,7 +117,9 @@ public:
      * @return false 
      */
     bool NESQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery = false);
+    bool EVMQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery = false);
     bool NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery = false);
+    bool EVMQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery = false);
 
 };
 

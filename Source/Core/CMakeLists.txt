@@ -131,7 +131,8 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Resource/NES/NES.h
   ${SRC_DIR}/Core/Resource/NES/NES.cpp
-
+  ${SRC_DIR}/Core/Resource/EVM/EVM.h
+  ${SRC_DIR}/Core/Resource/EVM/EVM.cpp
 
 
   ${SRC_DIR}/Core/Resource/NES/Visualizer/RenderImage.h
@@ -145,6 +146,18 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/RPC/ClientManager.cpp
   ${SRC_DIR}/Core/RPC/ClientManager.h
+  ${SRC_DIR}/Core/RPC/RPCManager.cpp
+  ${SRC_DIR}/Core/RPC/RPCManager.h
+  ${SRC_DIR}/Core/RPC/StaticRoutes.cpp
+  ${SRC_DIR}/Core/RPC/StaticRoutes.h
+  ${SRC_DIR}/Core/RPC/ManagerTaskData.cpp
+  ${SRC_DIR}/Core/RPC/ManagerTaskData.h
+  ${SRC_DIR}/Core/RPC/RouteAndHandler.cpp
+  ${SRC_DIR}/Core/RPC/RouteAndHandler.h
+  ${SRC_DIR}/Core/RPC/APIStatusCode.cpp
+  ${SRC_DIR}/Core/RPC/APIStatusCode.h
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.cpp
+  ${SRC_DIR}/Core/RPC/RPCHandlerHelper.h
 
   ${SRC_DIR}/Core/Util/Types.cpp
   ${SRC_DIR}/Core/Util/Types.h

@@ -41,8 +41,14 @@ struct Server {
     std::atomic<int> TotalQueries = 0; /**Test attribute that keeps track of total number of hits the api gets*/
     std::atomic<bgServiceStatus> APIState = SERVICE_HEALTHY; /**Enum showing the overall system status*/
     std::atomic<bgServiceStatus> NESState = SERVICE_CONFIG_ERR; /**Enum showing the NES system status*/
+    std::atomic<bgServiceStatus> EVMState = SERVICE_CONFIG_ERR; /**Enum showing the EVM system status*/
 
     ::rpc::client* NESClient; /**Pointer to RPC client service for nes*/
+    ::rpc::client* EVMClient; /**Pointer to RPC client service for nes*/
+
+    std::atomic_bool* IsNESClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
+    std::atomic_bool* IsEVMClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
+
 
 };
 

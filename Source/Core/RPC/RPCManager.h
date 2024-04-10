@@ -25,7 +25,10 @@
 
 #include <BG/Common/Logger/Logger.h>
 
+#include <Server/Server.h>
+
 #include <Config/Config.h>
+#include <Util/RPCHelpers.h>
 
 
 
@@ -46,6 +49,7 @@ private:
     Config::Config* Config_; /**Pointer to configuration struct owned by rest of system*/
     std::unique_ptr<rpc::server> RPCServer_; /**Instance of RPC Server from rpclib*/
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
+    Server::Server* Server_;
 
 
 
@@ -72,7 +76,7 @@ public:
      * @param _Config 
      * @param _Logger
      */
-    RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger);
+    RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server::Server* _Server);
 
 
     /**
@@ -83,8 +87,7 @@ public:
 
 
 
- 
-    /**
+    /*
      * @brief Adds a route to the API RPC Handler.
      * 
      * @param _RouteHandle 
@@ -93,13 +96,10 @@ public:
     void AddRoute(std::string _RouteHandle, std::function<std::string(std::string _JSONRequest)> _Function);
 
     
-    /**
-     * @brief Called by the API service shortly after initialization, and allows the system to talk back to the API and request other calls.
-    */
-    void SetupCallback(std::string _RouteHandle);
 
 
-    std::string APIRequest(std::string _JSONRequest, int _SimulationIDOverride = -1); // Generic JSON-based API requests.
+    std::string NESRequest(std::string _JSONRequest, int _SimulationIDOverride = -1); // Generic JSON-based API requests.
+    std::string EVMRequest(std::string _JSONRequest, int _SimulationIDOverride = -1); // Generic JSON-based API requests.
 
 
     /**

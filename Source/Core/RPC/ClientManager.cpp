@@ -1,3 +1,5 @@
+#include <nlohmann/json.hpp>
+
 #include <RPC/ClientManager.h>
 
 
@@ -53,6 +55,18 @@ Manager::~Manager() {
 
 }
 
+
+void Manager::SetEVMCallbackInfo() {
+    nlohmann::json Query;
+    Query["CallbackHost"] = Config_->RPCCallbackHost;
+    Query["CallbackPort"] = Config_->RPCCallbackPort;
+    std::string QueryStr = Query.dump();
+
+    std::string Result;
+    EVMQueryJSON("SetCallback", QueryStr, &Result);
+
+    Logger_->Log("Set EVM RPC Callback", 3);
+}
 
 bool Manager::ConnectNES() {
     IsNESClientHealthy_ = false;
@@ -114,6 +128,10 @@ bool Manager::ConnectEVM() {
     if (Status) {
         IsEVMClientHealthy_ = true;
     }
+
+    Logger_->Log("Setting EVM RPC Callback", 3);
+    SetEVMCallbackInfo();
+    
     return Status;
 
 }

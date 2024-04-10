@@ -86,6 +86,8 @@ private:
     bool RunVersionCheckNES();
     bool RunVersionCheckEVM();
 
+    void SetEVMCallbackInfo();
+
 public:
 
 

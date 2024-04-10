@@ -76,6 +76,7 @@
   #include <Resource/NES/VSDA/Calcium/Setup.h>
 
   #include <Resource/NES/NES.h>
+  #include <Resource/EVM/EVM.h>
 
   #include <Resource/NES/Visualizer/RenderImage.h>
 
@@ -151,6 +152,7 @@
       std::shared_ptr<Resource::NES::Visualizer::RenderImage::Route> NES_Visualizer_RenderImage_;
 
       std::shared_ptr<Resource::NES::Route> NES_;
+      std::shared_ptr<Resource::EVM::Route> EVM_;
 
 
 

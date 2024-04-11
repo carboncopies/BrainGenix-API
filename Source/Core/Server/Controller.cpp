@@ -113,7 +113,6 @@ void Controller::StartService() {
     Service_.publish(Resource);
 
 
-    std::cout<<"Started Main Service\n";
     Service_.start(Settings_);
 
 }

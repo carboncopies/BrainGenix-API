@@ -25,10 +25,8 @@ Route::~Route() {
 
 }
 
-
 void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Server_->TotalQueries++;
-
     std::string Body = "Welcome to the BrainGenix API. For usage, please see our documentation at https://gitlab.braingenix.org/carboncopies/BrainGenix-API";
     _Session->close( restbed::OK, Body, { { "Content-Length", std::to_string( Body.size( ) ) } } );
 }

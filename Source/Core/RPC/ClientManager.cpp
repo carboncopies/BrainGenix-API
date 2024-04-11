@@ -150,6 +150,7 @@ bool Manager::RunVersionCheckNES() {
     if (NESStatus != ::rpc::client::connection_state::connected) {
         Logger_->Log("Unable to connect to NES service", 3);
         Server_->NESState = SERVICE_FAILED;
+        IsNESClientHealthy_ = false;
     } else {
         Logger_->Log("NES RPC Connection SERVICE_HEALTHY", 1);
         Server_->NESState = SERVICE_HEALTHY;
@@ -185,6 +186,7 @@ bool Manager::RunVersionCheckEVM() {
     if (EVMStatus != ::rpc::client::connection_state::connected) {
         Logger_->Log("Unable to connect to EVM service", 3);
         Server_->EVMState = SERVICE_FAILED;
+        IsEVMClientHealthy_ = false;
     } else {
         Logger_->Log("EVM RPC Connection SERVICE_HEALTHY", 1);
         Server_->EVMState = SERVICE_HEALTHY;

@@ -9,7 +9,7 @@ bool NESQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsNESClientHealthy,
     if (!(*_IsNESClientHealthy)) {
         return false;
     }
-    if (!_Client) {
+    if (!_Client || _Client->get_connection_state() != rpc::client::connection_state::connected) {
         return false;
     }
     try {
@@ -31,7 +31,7 @@ bool EVMQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsEVMClientHealthy,
     if (!(*_IsEVMClientHealthy)) {
         return false;
     }
-    if (!_Client) {
+    if (!_Client || _Client->get_connection_state() != rpc::client::connection_state::connected) {
         return false;
     }
     try {

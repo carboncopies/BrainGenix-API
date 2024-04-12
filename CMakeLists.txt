@@ -65,7 +65,9 @@ find_package(spdlog CONFIG REQUIRED)
 message(STATUS "Finding libmariadb Package")
 find_package(unofficial-libmariadb CONFIG REQUIRED)
 
-
+message(STATUS "Finding Pybind11 Package")
+find_package(pybind11 CONFIG REQUIRED)
+target_link_libraries(main PRIVATE pybind11::lto pybind11::embed pybind11::module pybind11::headers)
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)

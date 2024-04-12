@@ -15,6 +15,7 @@
     "rpclib",
     "spdlog",
     "libmariadb",
-    "bg-common-logger"
+    "bg-common-logger",
+    "pybind11"
   ]
 }

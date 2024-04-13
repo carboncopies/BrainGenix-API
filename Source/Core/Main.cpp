@@ -27,6 +27,8 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Server::Controller ServerController(SystemConfiguration, &Logger);
     BG::API::Server::Server* Server = ServerController.GetServerStruct();
 
+    BG::API::NeuroglancerWrapper NeuroWrapper(SystemConfiguration, &Logger);
+
     // Setup Upstream API Connection Handler
     BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server);
     BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);

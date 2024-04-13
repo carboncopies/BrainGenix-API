@@ -18,6 +18,7 @@
 #include <regex>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
+#include <pybind11/pybind11.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/Config.h>

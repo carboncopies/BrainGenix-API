@@ -27,6 +27,7 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
         ("Network.EVM.Port", boost::program_options::value<int>(&_Config.EVMPortNumber)->default_value(8002), "EVM Port Number")
         ("Network.EVM.Host", boost::program_options::value<std::string>(&_Config.EVMHost)->default_value("localhost"), "EVM Host")
         ("Network.EVM.Timeout_ms", boost::program_options::value<int>(&_Config.EVMTimeout_ms)->default_value(5000), "EVM Timeout")
+        ("Network.Neuroglancer.Port", boost::program_options::value<int>(&_Config.NeuroglancerPort)->default_value(5000), "Port to use for neuroglancer")
         ;
     
     boost::program_options::options_description ConfigFileOptions;

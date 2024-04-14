@@ -186,7 +186,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     rpclib::rpc
     spdlog::spdlog
     unofficial::libmariadb
-    pybind11::lto pybind11::embed pybind11::module pybind11::headers
+
+    # pybind11::lto
+    pybind11::embed
+    # pybind11::module
+    # pybind11::headers
 
     bg-common-logger
 

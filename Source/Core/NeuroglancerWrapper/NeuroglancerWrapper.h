@@ -19,6 +19,8 @@
 
 // Third-Party Libraries (BG convention: use <> instead of "")
 #include <pybind11/pybind11.h>
+#include <pybind11/embed.h>
+
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/Config.h>
@@ -42,7 +44,8 @@ class NeuroglancerWrapper {
 
 private:
 
-
+    std::unique_ptr<pybind11::scoped_interpreter> Guard_; /**Scoped interpreter used to embed the python interpreter into this service*/
+    // std::unique_ptr<pybind11::object> Scope_; /**Instance of this python interpreter's scope*/
 
 public:
 

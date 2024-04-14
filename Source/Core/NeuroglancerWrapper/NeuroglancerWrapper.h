@@ -14,6 +14,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <thread>
 #include <chrono>
 #include <regex>
 
@@ -44,8 +45,15 @@ class NeuroglancerWrapper {
 
 private:
 
+    BG::Common::Logger::LoggingSystem* Logger_; /**Pointer to logger instance*/
+
     std::unique_ptr<pybind11::scoped_interpreter> Guard_; /**Scoped interpreter used to embed the python interpreter into this service*/
     // std::unique_ptr<pybind11::object> Scope_; /**Instance of this python interpreter's scope*/
+
+    std::unique_ptr<std::thread> ThisThread_; /**Thread that keeps the background python neuroglancer service running*/
+    std::atomic_bool ThreadRun_; /**Tells the thread if it should still run or not*/
+
+    void KeepAliveThread(); /**Method that serves as the thread's main entry point*/
 
 public:
 
@@ -65,7 +73,7 @@ public:
     ~NeuroglancerWrapper();
 
 
-    
+    void test();
 
 };
 

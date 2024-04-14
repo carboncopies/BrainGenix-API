@@ -65,6 +65,9 @@ find_package(spdlog CONFIG REQUIRED)
 message(STATUS "Finding libmariadb Package")
 find_package(unofficial-libmariadb CONFIG REQUIRED)
 
+message(STATUS "Finding Python3 Package")
+find_package(Python COMPONENTS Interpreter Development)
+
 message(STATUS "Finding Pybind11 Package")
 find_package(pybind11 CONFIG REQUIRED)
 

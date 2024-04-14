@@ -30,11 +30,14 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::NeuroglancerWrapper NeuroWrapper(SystemConfiguration, &Logger);
 
     // Setup Upstream API Connection Handler
-    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server);
-    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);
+    // BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server);
+    // BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);
 
     // Start Server
     ServerController.StartService();
+    while (true) {
+        NeuroWrapper.test();
+    }
     ServerController.HangUntilExit();
 
 }

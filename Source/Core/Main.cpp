@@ -30,14 +30,29 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::NeuroglancerWrapper NeuroWrapper(SystemConfiguration, &Logger);
 
     // Setup Upstream API Connection Handler
-    // BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server);
-    // BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);
+    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server);
+    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);
+
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset1")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset2")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset3")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset4")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset5")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset6")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset7")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset8")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset9")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset0")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset-")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataseta")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDatasetas")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDatasets")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDatasetd")<<std::endl;
+    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDatasetf")<<std::endl;
 
     // Start Server
     ServerController.StartService();
-    while (true) {
-        NeuroWrapper.test();
-    }
     ServerController.HangUntilExit();
 
 }

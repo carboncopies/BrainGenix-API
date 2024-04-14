@@ -34,6 +34,14 @@ namespace BG {
 namespace API {
 
 
+struct WorkOrder {
+
+    bool IsComplete_ = false; /**Defaults to work is not yet done*/
+    std::string DatasetURI_; /**URI to tell neuroglancer to load*/
+    std::string GeneratedURL_; /**URL that has been generated (only once the system is done)*/
+
+};
+
 /**
  * @brief This class manages the server code. It will initialize restbed with the given config and setup the routes.
  * 
@@ -47,6 +55,9 @@ private:
 
     BG::Common::Logger::LoggingSystem* Logger_; /**Pointer to logger instance*/
 
+    
+    std::vector<WorkOrder> WorkOrders_; /**List of work orders for the neuroglancer thread to generate URIs for*/
+    std::mutex WorkOrderLock_; /**Mutex to keep the vector thread safe*/
     std::unique_ptr<pybind11::scoped_interpreter> Guard_; /**Scoped interpreter used to embed the python interpreter into this service*/
     // std::unique_ptr<pybind11::object> Scope_; /**Instance of this python interpreter's scope*/
 
@@ -73,7 +84,13 @@ public:
     ~NeuroglancerWrapper();
 
 
-    void test();
+    /**
+     * @brief Generates a neuroglancer URL for the target dataset.
+     * 
+     * @param _DatasetURI 
+     * @return std::string 
+     */
+    std::string GetNeuroglancerURL(std::string _DatasetURI="http://localhost:9000/Example");
 
 };
 

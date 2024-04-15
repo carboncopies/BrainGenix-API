@@ -78,6 +78,7 @@
   #include <Resource/NES/NES.h>
   #include <Resource/EVM/EVM.h>
 
+
   #include <Resource/NES/Visualizer/RenderImage.h>
 
 
@@ -101,6 +102,7 @@
       std::shared_ptr<Resource::Diagnostic::Status::Route> Diagnostic_Status_;
 
       std::shared_ptr<Resource::Auth::GetToken::Route> Auth_GetToken_;
+
 
       std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::Create::Route> NES_Geometry_Shape_Sphere_Create_;
       std::shared_ptr<Resource::NES::Geometry::Shape::Sphere::BulkCreate::Route> NES_Geometry_Shape_Sphere_BulkCreate_;

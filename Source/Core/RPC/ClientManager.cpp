@@ -56,6 +56,18 @@ Manager::~Manager() {
 }
 
 
+void Manager::SetNESCallbackInfo() {
+    nlohmann::json Query;
+    Query["CallbackHost"] = Config_->RPCCallbackHost;
+    Query["CallbackPort"] = Config_->RPCCallbackPort;
+    std::string QueryStr = Query.dump();
+
+    std::string Result;
+    NESQueryJSON("SetCallback", QueryStr, &Result);
+
+    Logger_->Log("Set NES RPC Callback", 3);
+}
+
 void Manager::SetEVMCallbackInfo() {
     nlohmann::json Query;
     Query["CallbackHost"] = Config_->RPCCallbackHost;
@@ -96,6 +108,11 @@ bool Manager::ConnectNES() {
     if (Status) {
         IsNESClientHealthy_ = true;
     }
+
+    Logger_->Log("Setting NES RPC Callback", 3);
+    SetNESCallbackInfo();
+    
+
     return Status;
 
 }

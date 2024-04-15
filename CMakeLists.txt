@@ -65,7 +65,13 @@ find_package(spdlog CONFIG REQUIRED)
 message(STATUS "Finding libmariadb Package")
 find_package(unofficial-libmariadb CONFIG REQUIRED)
 
+message(STATUS "Finding Python3 Package")
+find_package(Python COMPONENTS Interpreter Development)
 
+message(STATUS "Finding Pybind11 Package")
+find_package(pybind11 CONFIG REQUIRED)
+
+find_path(CPP_BASE64_INCLUDE_DIRS "cpp-base64/base64.cpp")
 
 # Include Util CMake Scripts
 include(${CMAKE_UTIL_DIR}/ColorizeMessages.cmake)

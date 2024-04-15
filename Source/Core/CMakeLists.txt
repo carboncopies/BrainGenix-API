@@ -44,6 +44,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/Auth/GetToken.cpp
   ${SRC_DIR}/Core/Resource/Auth/GetToken.h
 
+  ${SRC_DIR}/Core/Resource/Dataset/Dataset.cpp
+  ${SRC_DIR}/Core/Resource/Dataset/Dataset.h
+
   ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BoxCreate.cpp
   ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BoxCreate.h
   ${SRC_DIR}/Core/Resource/NES/Geometry/Shape/BulkBoxCreate.cpp
@@ -139,6 +142,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/NES/Visualizer/RenderImage.cpp
 
 
+  ${SRC_DIR}/Core/NeuroglancerWrapper/NeuroglancerWrapper.h
+  ${SRC_DIR}/Core/NeuroglancerWrapper/NeuroglancerWrapper.cpp
 
 
   ${SRC_DIR}/Core/Database/DBManager.cpp
@@ -185,6 +190,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     spdlog::spdlog
     unofficial::libmariadb
 
+    # pybind11::lto
+    pybind11::embed
+    # pybind11::module
+    # pybind11::headers
+
     bg-common-logger
 
     VersioningSystem
@@ -193,3 +203,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     )
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Shared)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})

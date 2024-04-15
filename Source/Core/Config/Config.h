@@ -53,6 +53,10 @@ struct Config {
     std::string EVMHost = "localhost";
     int EVMTimeout_ms = 10000;
 
+    int NeuroglancerPort = 7998; /**Set the port number to be used by the internal neuroglancer port*/
+
+    std::string PublicHostDomain = "api.braingenix.org"; /**Set the name users will use to connect to your public facing instance (if public)*/
+
 };
 
 

@@ -71,7 +71,7 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
         
         // Setup SSL Settings
         SSLSettings = std::make_shared<restbed::SSLSettings>();
-        SSLSettings->set_http_disabled(true);
+        SSLSettings->set_http_disabled(falase);
         SSLSettings->set_certificate_chain(restbed::Uri(CertificateURI));
         SSLSettings->set_private_key(restbed::Uri(PrivateKeyURI));
         SSLSettings->set_port(_Config.PortNumber);

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "[INFO] Installing neuroglancer"
+pip3 install neuroglancer
+
 # Setup Unit Service
 echo "[INFO] Setting Up Systemd Service For BrainGenix-API"
 systemctl daemon-reload

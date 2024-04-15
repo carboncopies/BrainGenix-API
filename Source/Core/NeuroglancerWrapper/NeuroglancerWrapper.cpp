@@ -47,7 +47,7 @@ NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Lo
 
 
     pybind11::module::import("neuroglancer");
-    std::string NeuroglancerInitializationProgram = "";
+    std::string NeuroglancerInitializationProgram = "import neuroglancer\n";
     NeuroglancerInitializationProgram += "IP='" + _Config.Host + "'\n";
     NeuroglancerInitializationProgram += "Port=" + std::to_string(_Config.NeuroglancerPort) + "\n";
     NeuroglancerInitializationProgram += "neuroglancer.set_server_bind_address(bind_address=IP, bind_port=Port)\n";

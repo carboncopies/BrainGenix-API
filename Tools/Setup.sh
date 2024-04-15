@@ -26,9 +26,12 @@ if [ "$(uname)" != "Darwin" ]; then
     VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
 
     # Install Everything
-    INSTALL_COMMAND="$APT_COMMAND_PREFIX apt install $VCPKG_DEPS $BACKWARD_DEPS $COMPILER_DEPS -y"
+    INSTALL_COMMAND="$APT_COMMAND_PREFIX apt install $VCPKG_DEPS $BACKWARD_DEPS $COMPILER_DEPS python3-pip -y"
     echo "Running Install Command: $INSTALL_COMMAND"
     $INSTALL_COMMAND || exit 1
+
+    PYTHON_INSTALL_COMMAND="pip3 install neuroglancer"
+    $PYTHON_INSTALL_COMMAND || exit 1
 fi
 
 # Update Submodules

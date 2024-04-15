@@ -69,7 +69,8 @@ message(STATUS "Finding Python3 Package")
 find_package(Python COMPONENTS Interpreter Development)
 
 message(STATUS "Finding Pybind11 Package")
-find_package(pybind11 CONFIG REQUIRED)
+# find_package(pybind11 CONFIG REQUIRED)
+add_subdirectory(${LIB_DIR}/NonSuperBuild/pybind11)
 
 find_path(CPP_BASE64_INCLUDE_DIRS "cpp-base64/base64.cpp")
 
@@ -121,5 +122,6 @@ install(FILES "${SRC_DIR}/Data/BrainGenix-API.service"
 SET(CPACK_GENERATOR "DEB")
 SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Carboncopies Foundation")
 set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA "${SRC_DIR}/Data/prerm;${SRC_DIR}/Data/postrm;${SRC_DIR}/Data/postinst;${SRC_DIR}/Data/conffiles")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "python3-pip")
 SET(CPACK_OUTPUT_FILE_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/Artifacts)
 INCLUDE(CPack)

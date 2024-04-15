@@ -16,8 +16,14 @@ void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     std::string Filename = "/" + Request->get_path_parameter("filename");
     
     // Strip Potentially Dangerous '..'
-    std::regex ParentDirPattern("..");
-    Filename = std::regex_replace(Filename, ParentDirPattern, "");
+    std::string Pattern = "..";
+    std::string::size_type i = Filename.find(Pattern);
+    while (i != std::string::npos) {
+        std::cout<<"Detected '..' In Filename, It's Possible That Someone Is Trying To Do Something Nasty\n";
+        Filename.erase(i, Pattern.length());
+        i = Filename.find(Pattern, i);
+    }
+
 
     std::string FinalFilename = "/.well-known/acme-challenge" + Filename;
     std::cout<<"[INFO] User Requested File From "<<FinalFilename<<std::endl;

@@ -3,6 +3,8 @@
 
 #include <pybind11/eval.h>
 
+#include <nlohmann/json.hpp>
+
 #include <NeuroglancerWrapper/NeuroglancerWrapper.h>
 
 
@@ -25,6 +27,7 @@ void signalHandler( int signum ) {
 
 NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Logger::LoggingSystem* _Logger) {
     Logger_ = _Logger;
+    Config_ = &_Config;
 
     _Logger->Log("Initializing Python Bindings For Neuroglancer", 5);
 
@@ -179,6 +182,29 @@ std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI) {
 
 }
 
+std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
+
+    // Read query parameters to build the dataset URL
+    nlohmann::json Query = nlohmann::json::parse(_Request);
+    std::string DatasetHandle = Query["NeuroglancerDataset"];
+    Logger_->Log("Creating Complete Neuroglancer Environment For Dataset " + DatasetHandle, 4);
+
+    std::string DatasetURL = "http";
+    if (Config_->UseHTTPS) {
+        DatasetURL += "s";
+    }
+    DatasetURL += "://" + Config_->PublicHostDomain + ":" + std::to_string(Config_->PortNumber) + "/Dataset/" + DatasetHandle;
+
+
+    // Now, create the neuroglancer URL
+    std::string NeuroglancerURL = GetNeuroglancerURL(DatasetURL);
+
+    nlohmann::json Response;
+    Response["StatusCode"] = 0;
+    Response["NeuroglancerURL"] = NeuroglancerURL;
+
+    return Response.dump();
+}
 
 
 }; // Close Namespace API

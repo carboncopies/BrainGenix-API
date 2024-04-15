@@ -49,7 +49,6 @@ class Controller {
 private:
 
     std::shared_ptr<restbed::Settings> Settings_; /**Shared pointer to settings object, used when starting server. Populated in constructor*/
-    restbed::Service Service_; /**Service created by constructor, then started with StartService method*/
     restbed::Service HTTPService_; /**Service optionally created when https is on, allows certbot to verify your domain with this*/
 
     Server Server_; /**Instance of the server struct, used to pass data to callbacks for restbed*/
@@ -70,6 +69,9 @@ private:
     void TestHandler(const std::shared_ptr<restbed::Session> session);
 
 public:
+
+    restbed::Service Service_; /**Service created by constructor, then started with StartService method*/
+
 
     /**
      * @brief Construct a new Controller object

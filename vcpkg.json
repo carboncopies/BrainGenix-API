@@ -16,6 +16,7 @@
     "spdlog",
     "libmariadb",
     "bg-common-logger",
-    "pybind11"
+    "pybind11",
+    "cpp-base64"
   ]
 }

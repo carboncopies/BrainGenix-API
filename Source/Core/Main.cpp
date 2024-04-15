@@ -9,6 +9,9 @@
 */
 
 
+#include <Resource/Dataset/Dataset.h>
+
+
 #include <Main.h>
 
 
@@ -33,7 +36,14 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server);
     BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);
 
-    std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset")<<std::endl;
+
+    BG::API::Resource::Dataset::Route Dataset(Server, &RPCManager, ServerController.Service_);
+
+
+    // Register Callbacks For Routes
+    RPCServer.AddRoute("API/GenerateNeuroglancerLink", &Logger, [&NeuroWrapper](std::string RequestJSON){ return NeuroWrapper.GetVisualizerLink(RequestJSON);});
+
+    // std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset")<<std::endl;
 
     // Start Server
     ServerController.StartService();

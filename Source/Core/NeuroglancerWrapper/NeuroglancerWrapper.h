@@ -55,7 +55,7 @@ private:
 
     BG::Common::Logger::LoggingSystem* Logger_; /**Pointer to logger instance*/
 
-    
+    Config::Config* Config_; /**Instance of config pointer*/
     std::vector<WorkOrder> WorkOrders_; /**List of work orders for the neuroglancer thread to generate URIs for*/
     std::mutex WorkOrderLock_; /**Mutex to keep the vector thread safe*/
     std::unique_ptr<pybind11::scoped_interpreter> Guard_; /**Scoped interpreter used to embed the python interpreter into this service*/
@@ -91,6 +91,14 @@ public:
      * @return std::string 
      */
     std::string GetNeuroglancerURL(std::string _DatasetURI="http://localhost:9000/Example");
+
+    /**
+     * @brief Helper function that generates the full link for both the dataset, and then the neuroglancer link, sending it back to the user.
+     * 
+     * @param _Request 
+     * @return std::string 
+     */
+    std::string GetVisualizerLink(std::string _Request);
 
 };
 

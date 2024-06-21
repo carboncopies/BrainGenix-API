@@ -71,13 +71,13 @@ void RPCManager::AddRoute(std::string _RouteHandle, std::function<std::string(st
 
 std::string RPCManager::NESRequest(std::string _JSONRequest, int _SimulationIDOverride) { // Generic JSON-based API requests.
 
-    Logger_->Log("Received NES Request: " + _JSONRequest, 0); // For DEBUGGING
+    // Logger_->Log("Received NES Request: " + _JSONRequest, 0); // For DEBUGGING
 
 
     std::string UpstreamResponseStr = "";
     bool Status = Util::NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", _JSONRequest, &UpstreamResponseStr); 
 
-    Logger_->Log("Responding: " + UpstreamResponseStr, 0); // For DEBUGGING
+    // Logger_->Log("Responding: " + UpstreamResponseStr, 0); // For DEBUGGING
 
 
     return UpstreamResponseStr;
@@ -86,13 +86,13 @@ std::string RPCManager::NESRequest(std::string _JSONRequest, int _SimulationIDOv
 
 std::string RPCManager::EVMRequest(std::string _JSONRequest, int _SimulationIDOverride) { // Generic JSON-based API requests.
 
-    Logger_->Log("Received EVM Request: " + _JSONRequest, 0); // For DEBUGGING
+    // Logger_->Log("Received EVM Request: " + _JSONRequest, 0); // For DEBUGGING
 
 
     std::string UpstreamResponseStr = "";
     bool Status = Util::EVMQueryJSON(Server_->EVMClient, Server_->IsEVMClientHealthy_, "EVM", _JSONRequest, &UpstreamResponseStr); 
 
-    Logger_->Log("Responding: " + UpstreamResponseStr, 0); // For DEBUGGING
+    // Logger_->Log("Responding: " + UpstreamResponseStr, 0); // For DEBUGGING
 
 
     return UpstreamResponseStr;

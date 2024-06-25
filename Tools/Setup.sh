@@ -30,7 +30,7 @@ if [ "$(uname)" != "Darwin" ]; then
     echo "Running Install Command: $INSTALL_COMMAND"
     $INSTALL_COMMAND || exit 1
 
-    PYTHON_INSTALL_COMMAND="pip3 install neuroglancer --break-system-packages"
+    PYTHON_INSTALL_COMMAND="pip3 install neuroglancer"
     $PYTHON_INSTALL_COMMAND || exit 1
 fi
 

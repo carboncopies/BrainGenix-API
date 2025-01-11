@@ -32,7 +32,7 @@ Route::Route(Server::Server *_Server, BG::API::RPC::Manager* _Manager, restbed::
 
   std::set<std::string> Values = {
     "/Dataset/{Path: .*}/{File: .*}",
-    "/Dataset/{Path: .*}/Data/{File: .*}",
+    "/Dataset/{Path: .*}/{Level: .*}/{File: .*}",
   };
 
   RouteResource->set_paths(Values);
@@ -84,6 +84,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     const auto request = _Session->get_request();
     const std::string Path = request->get_path_parameter("Path");
     const std::string File = request->get_path_parameter("File");
+    const std::string Level = request->get_path_parameter("Level");
 
     
     // Get File
@@ -93,7 +94,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     } else if (File == "provenance") {
         FullPath += "/" + File;
     } else {
-        FullPath += "/Data/" + File;
+        FullPath += "/" + Level + "/" + File;
     }
 
 

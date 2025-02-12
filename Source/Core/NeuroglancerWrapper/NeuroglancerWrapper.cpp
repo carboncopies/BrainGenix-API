@@ -122,6 +122,9 @@ void NeuroglancerWrapper::KeepAliveThread() {
                     ExecutionString += "Viewer = neuroglancer.Viewer()\n";
                     ExecutionString += "with Viewer.txn() as s:\n";
                     ExecutionString += "    s.layers['image'] = neuroglancer.ImageLayer(source=f'precomputed://" + Order->DatasetURI_ + "')\n";
+                    if (Order->DatasetSegmentationURI_ != "") {
+                        ExecutionString += "    s.layers['segmentation'] = neuroglancer.SegmentationLayer(source=f'precomputed://" + Order->DatasetSegmentationURI_ + "')\n";
+                    }
                     ExecutionString += "OutputURL = str(Viewer)\n";
 
                     Module.attr("OutputURL") = "ToBeCreated";
@@ -157,9 +160,10 @@ void NeuroglancerWrapper::KeepAliveThread() {
 }
 
 
-std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI) {
+std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI, std::string _DatasetSegURI) {
 
     Logger_->Log("Generating Neuroglancer URL For Dataset At " + _DatasetURI, 4);
+    Logger_->Log("Generating Neuroglancer Segmentation URL For Dataset At " + _DatasetSegURI, 4);
 
 
     // Aquire Lock to put item in
@@ -167,6 +171,7 @@ std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI) {
 
     WorkOrder Order;
     Order.DatasetURI_ = _DatasetURI;
+    Order.DatasetSegmentationURI_ = _DatasetSegURI;
     WorkOrders_.push_back(Order);
     int Index = WorkOrders_.size() - 1;
 
@@ -189,17 +194,28 @@ std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
     // Read query parameters to build the dataset URL
     nlohmann::json Query = nlohmann::json::parse(_Request);
     std::string DatasetHandle = Query["NeuroglancerDataset"];
+    // std::string DatasetSegmentationHandle = Query["NeuroglancerSegmentationDataset"];
     Logger_->Log("Creating Complete Neuroglancer Environment For Dataset " + DatasetHandle, 4);
 
     std::string DatasetURL = "http";
+    // std::string DatasetSegmentationURL = "http";
     if (Config_->UseHTTPS) {
         DatasetURL += "s";
     }
     DatasetURL += "://" + Config_->PublicHostDomain + ":" + std::to_string(Config_->PortNumber) + "/Dataset/" + DatasetHandle;
 
+    // // If segmentation is enabled, we'll process it
+    // if (DatasetSegmentationHandle != "") {
+    //     if (Config_->UseHTTPS) {
+    //         DatasetSegmentationURL += "s";
+    //     }
+    //     DatasetSegmentationURL += "://" + Config_->PublicHostDomain + ":" + std::to_string(Config_->PortNumber) + "/Dataset/" + DatasetHandle;
+
+    // }
+
 
     // Now, create the neuroglancer URL
-    std::string NeuroglancerURL = GetNeuroglancerURL(DatasetURL);
+    std::string NeuroglancerURL = GetNeuroglancerURL(DatasetURL + "/Data", DatasetURL + "/Segmentation");
 
     nlohmann::json Response;
     Response["StatusCode"] = 0;

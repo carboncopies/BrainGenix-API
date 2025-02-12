@@ -31,8 +31,8 @@ Route::Route(Server::Server *_Server, BG::API::RPC::Manager* _Manager, restbed::
   std::shared_ptr<restbed::Resource> RouteResource = std::make_shared<restbed::Resource>();
 
   std::set<std::string> Values = {
-    "/Dataset/{Path: .*}/{File: .*}",
     "/Dataset/{Path: .*}/{Level: .*}/{File: .*}",
+    "/Dataset/{Path: .*}/{Level: .*}/{Level2: .*}/{File: .*}",
   };
 
   RouteResource->set_paths(Values);
@@ -85,16 +85,18 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     const std::string Path = request->get_path_parameter("Path");
     const std::string File = request->get_path_parameter("File");
     const std::string Level = request->get_path_parameter("Level");
+    const std::string Level2 = request->get_path_parameter("Level2");
 
     
     // Get File
     std::string FullPath = "NeuroglancerDatasets/" + Path;
-    if (File == "info") {
-        FullPath += "/" + File;
-    } else if (File == "provenance") {
-        FullPath += "/" + File;
+    // std::cout<<FullPath<<"|"<<Level<<"|"<<Level2<<"|"<<File<<std::endl;
+    if (Level == "info") {
+        FullPath += "/" + Level;
+    } else if (Level == "provenance") {
+        FullPath += "/" + Level;
     } else {
-        FullPath += "/" + Level + "/" + File;
+        FullPath += "/" + Level + "/" + Level2 + "/" + File;
     }
 
 

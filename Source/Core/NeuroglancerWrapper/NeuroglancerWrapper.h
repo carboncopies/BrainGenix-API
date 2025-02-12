@@ -38,6 +38,7 @@ struct WorkOrder {
 
     bool IsComplete_ = false; /**Defaults to work is not yet done*/
     std::string DatasetURI_; /**URI to tell neuroglancer to load*/
+    std::string DatasetSegmentationURI_; /**Optional URI to tell neuroglancer to load*/
     std::string GeneratedURL_; /**URL that has been generated (only once the system is done)*/
 
 };
@@ -90,7 +91,7 @@ public:
      * @param _DatasetURI 
      * @return std::string 
      */
-    std::string GetNeuroglancerURL(std::string _DatasetURI="http://localhost:9000/Example");
+    std::string GetNeuroglancerURL(std::string _DatasetURI="http://localhost:9000/Example", std::string _DatasetSegURI="");
 
     /**
      * @brief Helper function that generates the full link for both the dataset, and then the neuroglancer link, sending it back to the user.

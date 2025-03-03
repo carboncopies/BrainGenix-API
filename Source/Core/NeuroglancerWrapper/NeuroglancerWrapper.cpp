@@ -116,8 +116,24 @@ NeuroglancerWrapper::~NeuroglancerWrapper() {
 
 void NeuroglancerWrapper::KeepAliveThread() {
 
-    // Setup System
-    pybind11::module Module = pybind11::module::import("NeuroglancerService");
+    // Acquire GIL for Python version check
+    {
+        pybind11::gil_scoped_acquire acquire;
+        try {
+            pybind11::module sys = pybind11::module::import("sys");
+            std::string version = pybind11::str(sys.attr("version"));
+            Logger_->Log("KeepAliveThread Reporting Python Version: " + version, 3);
+        } catch (const pybind11::error_already_set& e) {
+            Logger_->Log("Error getting KeepAliveThread Python version: " + std::string(e.what()), 10);
+        }
+    }
+
+    // Acquire GIL for module import
+    pybind11::module Module;
+    {
+        pybind11::gil_scoped_acquire acquire;
+        Module = pybind11::module::import("NeuroglancerService");
+    }
 
 
     Logger_->Log("Started Neuroglancer Service Thread", 1);

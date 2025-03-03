@@ -12,7 +12,7 @@
 
 // define module for use later
 PYBIND11_EMBEDDED_MODULE(NeuroglancerService, m) {
-    m.doc() = "";
+    m.doc() = "a = 5";
 }
 
 
@@ -43,10 +43,18 @@ NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Lo
     Guard_ = std::make_unique<pybind11::scoped_interpreter>();
 
 
+    // Print Python Version
+    try {
+        pybind11::module sys = pybind11::module::import("sys");
+        std::string version = pybind11::str(sys.attr("version"));
+        _Logger->Log("Python Version: " + version, 3);
+    } catch (const pybind11::error_already_set& e) {
+        _Logger->Log("Error getting Python version: " + std::string(e.what()), 10);
+    }
+
+
     // Setup Neuroglancer
     _Logger->Log("Starting Neuroglancer Service", 2);
-
-
     std::string PyVenvDir = "venv/lib/python" + std::to_string(PYTHON_MAJOR_VERSION) + "." + std::to_string(PYTHON_MINOR_VERSION) + "/site-packages";
     _Logger->Log("Attempting to load python from '" + PyVenvDir + "'", 2);
 
@@ -77,6 +85,16 @@ NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Lo
     _Logger->Log("Started Neuroglancer Service On Port " + std::to_string(_Config.NeuroglancerPort), 2);
 
 
+
+    // Get Neuroglancer version
+    try {
+        pybind11::module importlib_metadata = pybind11::module::import("importlib.metadata");
+        pybind11::object neuroglancer_version = importlib_metadata.attr("version")("neuroglancer");
+        std::string neuroglancer_version_str = pybind11::cast<std::string>(neuroglancer_version);
+        _Logger->Log("Neuroglancer Version: " + neuroglancer_version_str, 3);
+    } catch (const pybind11::error_already_set& e) {
+        _Logger->Log("Error getting Neuroglancer version: " + std::string(e.what()), 10);
+    }
 
     // while (true) {
     //     pybind11::exec("pass\n");

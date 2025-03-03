@@ -173,6 +173,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/RPCHelpers.cpp
   ${SRC_DIR}/Core/Util/RPCHelpers.h
 
+  ${CMAKE_BINARY_DIR}/PythonVersion.h
+
   ${BACKWARD_ENABLE}
   )
 

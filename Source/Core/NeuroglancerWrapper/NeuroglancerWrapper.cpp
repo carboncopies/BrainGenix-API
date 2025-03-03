@@ -3,6 +3,8 @@
 
 #include <pybind11/eval.h>
 
+#include "PythonVersion.h"
+
 #include <nlohmann/json.hpp>
 
 #include <NeuroglancerWrapper/NeuroglancerWrapper.h>
@@ -36,7 +38,6 @@ NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Lo
     _Logger->Log("Hooking Custom SigHandler", 4);
     signal(SIGINT, signalHandler);
 
-
     // Initialize
     _Logger->Log("Initializing Python Interpreter", 3);
     Guard_ = std::make_unique<pybind11::scoped_interpreter>();
@@ -44,6 +45,14 @@ NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Lo
 
     // Setup Neuroglancer
     _Logger->Log("Starting Neuroglancer Service", 2);
+
+
+    std::string PyVenvDir = "venv/lib/python" + std::to_string(PYTHON_MAJOR_VERSION) + "." + std::to_string(PYTHON_MINOR_VERSION) + "/site-packages";
+    _Logger->Log("Attempting to load python from '" + PyVenvDir + "'", 2);
+
+    // Add the virtual environment's site-packages to the Python path
+    pybind11::module sys = pybind11::module::import("sys");
+    sys.attr("path").attr("append")(pybind11::str(PyVenvDir));
 
 
     pybind11::module::import("neuroglancer");

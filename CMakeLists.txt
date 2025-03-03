@@ -1,6 +1,35 @@
 # Set CMAKE Version, Define Project
 cmake_minimum_required (VERSION 3.1...3.21)
 
+# ========================================================
+# Detect Python version and paths in the virtual environment
+# ========================================================
+execute_process(
+    COMMAND ${CMAKE_SOURCE_DIR}/venv/bin/python -c "import sys; print(sys.version_info.major, sys.version_info.minor, sys.executable, sys.prefix)"
+    OUTPUT_VARIABLE PYTHON_INFO
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+# Split the output into components
+string(REPLACE " " ";" PYTHON_INFO_LIST ${PYTHON_INFO})
+list(GET PYTHON_INFO_LIST 0 PYTHON_MAJOR_VERSION)
+list(GET PYTHON_INFO_LIST 1 PYTHON_MINOR_VERSION)
+list(GET PYTHON_INFO_LIST 2 PYTHON_EXECUTABLE)
+list(GET PYTHON_INFO_LIST 3 PYTHON_PREFIX)
+
+# Set Python paths based on the detected version
+set(Python_EXECUTABLE ${PYTHON_EXECUTABLE})
+set(Python_LIBRARIES "${PYTHON_PREFIX}/lib/libpython${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}.so")
+set(Python_INCLUDE_DIRS "${PYTHON_PREFIX}/include/python${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}")
+
+# Print detected Python information for debugging
+message(STATUS "Detected Python executable: ${Python_EXECUTABLE}")
+message(STATUS "Detected Python libraries: ${Python_LIBRARIES}")
+message(STATUS "Detected Python include directories: ${Python_INCLUDE_DIRS}")
+
+
+
+
 
 # Set Configuration Options
 option(ENABLE_BACKWARD "Build BG With Backward to provide some stack trace information or not" ON)
@@ -22,6 +51,37 @@ set(CMAKE_UTILS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/CMake")
 set(CMAKE_ASSETS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/EditorAssets")
 set(PROJECT_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR})
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+
+
+# ========================================================
+# Ensure the Binaries directory exists
+# ========================================================
+file(MAKE_DIRECTORY ${BIN_DIR}/)
+
+
+# ========================================================
+# Generate a header file with the Python version
+# ========================================================
+configure_file(
+    ${CMAKE_SOURCE_DIR}/CMake/PythonVersion.h.in
+    ${CMAKE_BINARY_DIR}/PythonVersion.h
+    @ONLY
+)
+
+# Include the generated header file in your build
+include_directories(${CMAKE_BINARY_DIR})
+
+
+# ========================================================
+# Copy the venv directory to the Binaries directory
+# ========================================================
+message(STATUS "Source venv path: ${CMAKE_SOURCE_DIR}/venv")
+message(STATUS "Destination Binaries path: ${BIN_DIR}/")
+
+# Copy venv
+file(COPY ${CMAKE_SOURCE_DIR}/venv
+     DESTINATION ${BIN_DIR}/
+)
 
 
 # Setup vcpkg script with CMake (note: should be placed before project() call)
@@ -66,7 +126,18 @@ message(STATUS "Finding libmariadb Package")
 find_package(unofficial-libmariadb CONFIG REQUIRED)
 
 message(STATUS "Finding Python3 Package")
-find_package(Python COMPONENTS Interpreter Development)
+# Explicitly set the Python interpreter and libraries from the virtual environment
+set(Python_EXECUTABLE "${CMAKE_SOURCE_DIR}/venv/bin/python")
+set(Python_LIBRARIES "${CMAKE_SOURCE_DIR}/venv/lib/libpython3.10.so")  # Update this path
+set(Python_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/venv/include/python3.10")  # Update this path
+
+# Ensure CMake uses the correct Python interpreter and libraries
+find_package(Python REQUIRED COMPONENTS Interpreter Development)
+
+# Add Python include directories
+include_directories(${Python_INCLUDE_DIRS})
+
+#find_package(Python COMPONENTS Interpreter Development)
 
 message(STATUS "Finding Pybind11 Package")
 # find_package(pybind11 CONFIG REQUIRED)
@@ -86,6 +157,9 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 
 
 add_subdirectory(${SRC_DIR}/Core)
+
+# Link the Python library
+target_link_libraries(${PROJECT_NAME} PRIVATE ${Python_LIBRARIES})
 
 
 # Set Install Targets

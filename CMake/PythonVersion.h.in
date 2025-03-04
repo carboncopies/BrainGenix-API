@@ -1,0 +1,8 @@
+#ifndef PYTHON_VERSION_H
+#define PYTHON_VERSION_H
+
+// Python version detected by CMake
+#define PYTHON_MAJOR_VERSION @PYTHON_MAJOR_VERSION@
+#define PYTHON_MINOR_VERSION @PYTHON_MINOR_VERSION@
+
+#endif // PYTHON_VERSION_H

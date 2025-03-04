@@ -7,6 +7,7 @@
 /Artifacts/
 /.vs/
 /.vscode/
+/venv/
 .DS_Store
 Binaries.tar.gz
 

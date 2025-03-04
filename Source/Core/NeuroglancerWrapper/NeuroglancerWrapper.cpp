@@ -3,6 +3,8 @@
 
 #include <pybind11/eval.h>
 
+#include "PythonVersion.h"
+
 #include <nlohmann/json.hpp>
 
 #include <NeuroglancerWrapper/NeuroglancerWrapper.h>
@@ -10,7 +12,7 @@
 
 // define module for use later
 PYBIND11_EMBEDDED_MODULE(NeuroglancerService, m) {
-    m.doc() = "";
+    m.doc() = "a = 5";
 }
 
 
@@ -32,43 +34,7 @@ NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Lo
     _Logger->Log("Initializing Python Bindings For Neuroglancer", 5);
 
 
-    // Hook custom signal handler
-    _Logger->Log("Hooking Custom SigHandler", 4);
-    signal(SIGINT, signalHandler);
-
-
-    // Initialize
-    _Logger->Log("Initializing Python Interpreter", 3);
-    Guard_ = std::make_unique<pybind11::scoped_interpreter>();
-
-
-    // Setup Neuroglancer
-    _Logger->Log("Starting Neuroglancer Service", 2);
-
-
-    pybind11::module::import("neuroglancer");
-    std::string NeuroglancerInitializationProgram = "import neuroglancer\n";
-    NeuroglancerInitializationProgram += "IP='" + _Config.Host + "'\n";
-    NeuroglancerInitializationProgram += "Port=" + std::to_string(_Config.NeuroglancerPort) + "\n";
-    NeuroglancerInitializationProgram += "neuroglancer.set_server_bind_address(bind_address=IP, bind_port=Port)\n";
-
-    try {
-        pybind11::exec(NeuroglancerInitializationProgram.c_str(), pybind11::globals());
-    } catch (pybind11::error_already_set) {
-
-        pybind11::module sys = pybind11::module::import("sys");
-	    pybind11::print(sys.attr("path"));
-
-        // pybind11::get_error();
-        std::cout<<NeuroglancerInitializationProgram<<std::endl;
-
-        _Logger->Log("Error during python initialization of neuroglancer, please see above code for errors.\n", 10);
-        exit(99);
-    }
-    _Logger->Log("Started Neuroglancer Service On Port " + std::to_string(_Config.NeuroglancerPort), 2);
-
-
-
+   
     // while (true) {
     //     pybind11::exec("pass\n");
 
@@ -89,8 +55,88 @@ NeuroglancerWrapper::~NeuroglancerWrapper() {
 
 void NeuroglancerWrapper::KeepAliveThread() {
 
-    // Setup System
-    pybind11::module Module = pybind11::module::import("NeuroglancerService");
+
+    // Hook custom signal handler
+    Logger_->Log("Hooking Custom SigHandler", 4);
+    signal(SIGINT, signalHandler);
+
+    // Initialize
+    Logger_->Log("Initializing Python Interpreter", 3);
+    Guard_ = std::make_unique<pybind11::scoped_interpreter>();
+
+
+    // Print Python Version
+    try {
+        pybind11::module sys = pybind11::module::import("sys");
+        std::string version = pybind11::str(sys.attr("version"));
+        Logger_->Log("Python Version: " + version, 3);
+    } catch (const pybind11::error_already_set& e) {
+        Logger_->Log("Error getting Python version: " + std::string(e.what()), 10);
+    }
+
+
+    // Setup Neuroglancer
+    Logger_->Log("Starting Neuroglancer Service", 2);
+    std::string PyVenvDir = "venv/lib/python" + std::to_string(PYTHON_MAJOR_VERSION) + "." + std::to_string(PYTHON_MINOR_VERSION) + "/site-packages";
+    Logger_->Log("Attempting to load python from '" + PyVenvDir + "'", 2);
+
+    // Add the virtual environment's site-packages to the Python path
+    pybind11::module sys = pybind11::module::import("sys");
+    sys.attr("path").attr("append")(pybind11::str(PyVenvDir));
+
+
+    pybind11::module::import("neuroglancer");
+    std::string NeuroglancerInitializationProgram = "import neuroglancer\n";
+    NeuroglancerInitializationProgram += "IP='" + Config_->Host + "'\n";
+    NeuroglancerInitializationProgram += "Port=" + std::to_string(Config_->NeuroglancerPort) + "\n";
+    NeuroglancerInitializationProgram += "neuroglancer.set_server_bind_address(bind_address=IP, bind_port=Port)\n";
+
+    try {
+        pybind11::exec(NeuroglancerInitializationProgram.c_str(), pybind11::globals());
+    } catch (pybind11::error_already_set) {
+
+        pybind11::module sys = pybind11::module::import("sys");
+        pybind11::print(sys.attr("path"));
+
+        // pybind11::get_error();
+        std::cout<<NeuroglancerInitializationProgram<<std::endl;
+
+        Logger_->Log("Error during python initialization of neuroglancer, please see above code for errors.\n", 10);
+        exit(99);
+    }
+    Logger_->Log("Started Neuroglancer Service On Port " + std::to_string(Config_->NeuroglancerPort), 2);
+
+
+
+    // Get Neuroglancer version
+    try {
+        pybind11::module importlib_metadata = pybind11::module::import("importlib.metadata");
+        pybind11::object neuroglancer_version = importlib_metadata.attr("version")("neuroglancer");
+        std::string neuroglancer_version_str = pybind11::cast<std::string>(neuroglancer_version);
+        Logger_->Log("Neuroglancer Version: " + neuroglancer_version_str, 3);
+    } catch (const pybind11::error_already_set& e) {
+        Logger_->Log("Error getting Neuroglancer version: " + std::string(e.what()), 10);
+    }
+
+
+    // Acquire GIL for Python version check
+    {
+        // pybind11::gil_scoped_acquire acquire;
+        try {
+            pybind11::module sys = pybind11::module::import("sys");
+            std::string version = pybind11::str(sys.attr("version"));
+            Logger_->Log("KeepAliveThread Reporting Python Version: " + version, 2);
+        } catch (const pybind11::error_already_set& e) {
+            Logger_->Log("Error getting KeepAliveThread Python version: " + std::string(e.what()), 10);
+        }
+    }
+
+    // Acquire GIL for module import
+    pybind11::module Module;
+    {
+        // pybind11::gil_scoped_acquire acquire;
+        Module = pybind11::module::import("NeuroglancerService");
+    }
 
 
     Logger_->Log("Started Neuroglancer Service Thread", 1);
@@ -122,6 +168,9 @@ void NeuroglancerWrapper::KeepAliveThread() {
                     ExecutionString += "Viewer = neuroglancer.Viewer()\n";
                     ExecutionString += "with Viewer.txn() as s:\n";
                     ExecutionString += "    s.layers['image'] = neuroglancer.ImageLayer(source=f'precomputed://" + Order->DatasetURI_ + "')\n";
+                    if (Order->DatasetSegmentationURI_ != "") {
+                        ExecutionString += "    s.layers['segmentation'] = neuroglancer.SegmentationLayer(source=f'precomputed://" + Order->DatasetSegmentationURI_ + "')\n";
+                    }
                     ExecutionString += "OutputURL = str(Viewer)\n";
 
                     Module.attr("OutputURL") = "ToBeCreated";
@@ -132,6 +181,8 @@ void NeuroglancerWrapper::KeepAliveThread() {
                     // now, get the result out of python and put it into the return object
                     pybind11::object Result = Module.attr("OutputURL");
                     Order->GeneratedURL_ = pybind11::cast<std::string>(Result);
+
+                    Logger_->Log("Generated Neuroglancer URL: " + Order->GeneratedURL_, 3);
 
 
                     // mark the work order as complete, move on to the next item to work on
@@ -157,9 +208,10 @@ void NeuroglancerWrapper::KeepAliveThread() {
 }
 
 
-std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI) {
+std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI, std::string _DatasetSegURI) {
 
     Logger_->Log("Generating Neuroglancer URL For Dataset At " + _DatasetURI, 4);
+    Logger_->Log("Generating Neuroglancer Segmentation URL For Dataset At " + _DatasetSegURI, 4);
 
 
     // Aquire Lock to put item in
@@ -167,6 +219,7 @@ std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI) {
 
     WorkOrder Order;
     Order.DatasetURI_ = _DatasetURI;
+    Order.DatasetSegmentationURI_ = _DatasetSegURI;
     WorkOrders_.push_back(Order);
     int Index = WorkOrders_.size() - 1;
 
@@ -189,21 +242,33 @@ std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
     // Read query parameters to build the dataset URL
     nlohmann::json Query = nlohmann::json::parse(_Request);
     std::string DatasetHandle = Query["NeuroglancerDataset"];
+    // std::string DatasetSegmentationHandle = Query["NeuroglancerSegmentationDataset"];
     Logger_->Log("Creating Complete Neuroglancer Environment For Dataset " + DatasetHandle, 4);
 
     std::string DatasetURL = "http";
+    // std::string DatasetSegmentationURL = "http";
     if (Config_->UseHTTPS) {
         DatasetURL += "s";
     }
     DatasetURL += "://" + Config_->PublicHostDomain + ":" + std::to_string(Config_->PortNumber) + "/Dataset/" + DatasetHandle;
 
+    // // If segmentation is enabled, we'll process it
+    // if (DatasetSegmentationHandle != "") {
+    //     if (Config_->UseHTTPS) {
+    //         DatasetSegmentationURL += "s";
+    //     }
+    //     DatasetSegmentationURL += "://" + Config_->PublicHostDomain + ":" + std::to_string(Config_->PortNumber) + "/Dataset/" + DatasetHandle;
+
+    // }
+
 
     // Now, create the neuroglancer URL
-    std::string NeuroglancerURL = GetNeuroglancerURL(DatasetURL);
-
+    std::string NeuroglancerURL = GetNeuroglancerURL(DatasetURL + "/Data", DatasetURL + "/Segmentation");
     nlohmann::json Response;
     Response["StatusCode"] = 0;
     Response["NeuroglancerURL"] = NeuroglancerURL;
+
+    // std::cout<<Response.dump()<<std::endl;
 
     return Response.dump();
 }

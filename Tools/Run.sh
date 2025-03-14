@@ -2,7 +2,7 @@
 
 # Navigate to the project root (one level up from Tools)
 echo "Navigating to the project root"
-cd ~/Documents/BrainGenix-API || { echo "Failed to navigate to the project root"; exit 1; }
+cd .. || { echo "Failed to navigate to the project root"; exit 1; }
 
 # Activate the virtual environment
 echo "Activating virtual environment"

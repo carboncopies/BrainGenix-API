@@ -167,10 +167,14 @@ void NeuroglancerWrapper::KeepAliveThread() {
                     std::string ExecutionString = "";
                     ExecutionString += "Viewer = neuroglancer.Viewer()\n";
                     ExecutionString += "with Viewer.txn() as s:\n";
-                    ExecutionString += "    s.layers['image'] = neuroglancer.ImageLayer(source=f'precomputed://" + Order->DatasetURI_ + "')\n";
                     if (Order->DatasetSegmentationURI_ != "") {
                         ExecutionString += "    s.layers['segmentation'] = neuroglancer.SegmentationLayer(source=f'precomputed://" + Order->DatasetSegmentationURI_ + "')\n";
                     }
+                    if (true) { 
+                        ExecutionString += "    s.layers['mesh'] = neuroglancer.SingleMeshLayer(source=f'precomputed://" + Order->DatasetSegmentationURI_ + "')\n";
+
+                    }
+                    ExecutionString += "    s.layers['image'] = neuroglancer.ImageLayer(source=f'precomputed://" + Order->DatasetURI_ + "')\n";
                     ExecutionString += "OutputURL = str(Viewer)\n";
 
                     Module.attr("OutputURL") = "ToBeCreated";

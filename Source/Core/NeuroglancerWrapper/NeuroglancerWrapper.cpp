@@ -214,6 +214,25 @@ void NeuroglancerWrapper::KeepAliveThread() {
 
 }
 
+// Function to URL-encode a string
+std::string urlEncode(const std::string &value) {
+    std::ostringstream escaped;
+    escaped.fill('0');
+    escaped << std::hex;
+
+    for (char c : value) {
+        // Keep alphanumeric characters as is
+        if (isalnum(c)) {
+            escaped << c;
+        }
+        // Any other characters are percent-encoded
+        else {
+            escaped << '%' << std::setw(2) << int((unsigned char)c);
+        }
+    }
+
+    return escaped.str();
+}
 
 std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI, std::string _DatasetSegURI) {
 
@@ -221,26 +240,44 @@ std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI, std
     Logger_->Log("Generating Neuroglancer Segmentation URL For Dataset At " + _DatasetSegURI, 4);
 
 
-    // Aquire Lock to put item in
-    WorkOrderLock_.lock();  
+    std::stringstream ss;
+    ss << "{"
+       << "\"dimensions\":{\"x\":[1e-7,\"m\"],\"y\":[1e-7,\"m\"],\"z\":[2e-7,\"m\"]},"
+       << "\"position\":[0.0,0.0,0.0],"
+       << "\"crossSectionScale\":1,"
+       << "\"projectionOrientation\":[0.09116003662347794,0.28062376379966736,-0.19248539209365845,0.935889720916748],"
+       << "\"projectionScale\":2048,"
+       << "\"layers\":[{\"type\":\"image\",\"source\":\"precomputed://" << _DatasetURI << "\",\"tab\":\"source\",\"segments\":[\"34\"],\"name\":\"Rendered EM Data\"}],"
+       << "\"layers\":[{\"type\":\"segmentation\",\"source\":\"precomputed://" << _DatasetSegURI << "\",\"tab\":\"source\",\"segments\":[\"34\"],\"name\":\"Rendered Segmentation Data\"}],"
+       << "\"selectedLayer\":{\"visible\":true,\"layer\":\"Rendered Segmentation Data\"},"
+       << "\"layout\":\"4panel\""
+       << "}";
 
-    WorkOrder Order;
-    Order.DatasetURI_ = _DatasetURI;
-    Order.DatasetSegmentationURI_ = _DatasetSegURI;
-    WorkOrders_.push_back(Order);
-    int Index = WorkOrders_.size() - 1;
+    std::string config = "https://neuroglancer-demo.appspot.com/#!" + urlEncode(ss.str());
+    std::cout<<config<<std::endl;
+    return config;
 
-    WorkOrderLock_.unlock();
+
+    // // Aquire Lock to put item in
+    // WorkOrderLock_.lock();  
+
+    // WorkOrder Order;
+    // Order.DatasetURI_ = _DatasetURI;
+    // Order.DatasetSegmentationURI_ = _DatasetSegURI;
+    // WorkOrders_.push_back(Order);
+    // int Index = WorkOrders_.size() - 1;
+
+    // WorkOrderLock_.unlock();
 
     
-    // Now wait until it's been processed
-    while (!WorkOrders_[Index].IsComplete_) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(5));
-    }
+    // // Now wait until it's been processed
+    // while (!WorkOrders_[Index].IsComplete_) {
+    //     std::this_thread::sleep_for(std::chrono::milliseconds(5));
+    // }
 
     // Once done, return result
-    Logger_->Log("Created Neuroglancer URL " + WorkOrders_[Index].GeneratedURL_, 3);
-    return WorkOrders_[Index].GeneratedURL_;
+    // Logger_->Log("Created Neuroglancer URL " + WorkOrders_[Index].GeneratedURL_, 3);
+    // return WorkOrders_[Index].GeneratedURL_;
 
 }
 

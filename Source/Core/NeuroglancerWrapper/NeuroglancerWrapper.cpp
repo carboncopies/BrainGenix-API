@@ -1,6 +1,9 @@
 #include <thread>
 #include <csignal>
 
+#include <iomanip>
+#include <sstream>
+
 #include <pybind11/eval.h>
 
 #include "PythonVersion.h"
@@ -241,6 +244,20 @@ std::string NeuroglancerWrapper::GetNeuroglancerURL(std::string _DatasetURI, std
 
 }
 
+std::string NGurlEncode(const std::string& value) {
+    std::ostringstream encoded;
+    encoded << std::hex;
+    
+    for (unsigned char c : value) {
+        if (isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~') {
+            encoded << c;
+        } else {
+            encoded << '%' << std::uppercase << std::setw(2) << std::setfill('0') << (int)c;
+        }
+    }
+    return encoded.str();
+}
+
 std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
 
     // Read query parameters to build the dataset URL
@@ -249,12 +266,15 @@ std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
     // std::string DatasetSegmentationHandle = Query["NeuroglancerSegmentationDataset"];
     Logger_->Log("Creating Complete Neuroglancer Environment For Dataset " + DatasetHandle, 4);
 
+    /* DISABLED to use appspot JS Neuroglancer instead & view from remote browser:
     std::string DatasetURL = "http";
     // std::string DatasetSegmentationURL = "http";
     if (Config_->UseHTTPS) {
         DatasetURL += "s";
     }
     DatasetURL += "://" + Config_->PublicHostDomain + ":" + std::to_string(Config_->PortNumber) + "/Dataset/" + DatasetHandle;
+    */
+   std::string DatasetURL = "http://pve.braingenix.org:8000/Dataset/" + DatasetHandle + "/Segmentation";
 
     // // If segmentation is enabled, we'll process it
     // if (DatasetSegmentationHandle != "") {
@@ -265,9 +285,22 @@ std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
 
     // }
 
+    std::string neuroglancerappsource = "https://neuroglancer-demo.appspot.com/#!";
+    std::string ngargumentsjson = "{"
+        R"("dimensions":{"x":[100,"nm"],"y":[100,"nm"],"z":[200,"nm"]},)"
+        R"("position":[0.0,0.0,0.0],)"
+        //R"("crossSectionScale":1,)"
+        R"("projectionOrientation":[0.09116003662347794,0.28062376379966736,-0.19248539209365845,0.935889720916748],)"
+        //R"("projectionScale":4096,)"
+        R"("layers":[{"type":"segmentation","source":"precomputed://)" + DatasetURL + R"(","tab":"source","name":"igneous"}],)" // "segments":["34"]
+        R"("selectedLayer":{"visible":true,"layer":"igneous"},)"
+        R"("layout":"4panel")"
+        "}";
+    std::string ngargumentsURIencoded = NGurlEncode(ngargumentsjson);
+    std::string NeuroglancerURL = neuroglancerappsource + ngargumentsURIencoded;
 
     // Now, create the neuroglancer URL
-    std::string NeuroglancerURL = GetNeuroglancerURL(DatasetURL + "/Data", DatasetURL + "/Segmentation");
+    // DISABLED to use appspot JS Neuroglancer instead: std::string NeuroglancerURL = GetNeuroglancerURL(DatasetURL + "/Data", DatasetURL + "/Segmentation");
     nlohmann::json Response;
     Response["StatusCode"] = 0;
     Response["NeuroglancerURL"] = NeuroglancerURL;

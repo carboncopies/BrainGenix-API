@@ -109,7 +109,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     
     const std::multimap< std::string, std::string > headers {
-        { "Content-Type", "image/jpeg" },
+        { "Content-Type", "application/octet-stream" },
         { "Content-Length", std::to_string( DecodedString.length( ) ) }
     };
     

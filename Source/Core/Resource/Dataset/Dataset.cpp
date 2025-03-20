@@ -4,6 +4,7 @@
 #include <fstream>
 #include <restbed>
 #include <streambuf>
+#include <sstream> // Add this include for hex conversion
 
 
 #include <cpp-base64/base64.cpp>
@@ -75,9 +76,8 @@ std::string Route::GetFile(std::string _Handle) {
 
 }
 
-
-
-
+/* TEMPORARILY DEACTIVATED THIS CODE AS WE TRY PERPLEXITY'S SUGGESTION
+   FOR Transfer-Encoding: chunked
 void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     Server_->TotalQueries++;
 
@@ -115,6 +115,91 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     
     _Session->close( restbed::OK, DecodedString, headers );
   
+}
+*/
+
+// Add hex conversion helper function inside Route class
+std::string to_hex(size_t number) {
+    std::stringstream ss;
+    ss << std::hex << number;
+    return ss.str();
+}
+
+void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
+    Server_->TotalQueries++;
+
+    const auto request = _Session->get_request();
+    const std::string Path = request->get_path_parameter("Path");
+    const std::string File = request->get_path_parameter("File");
+    const std::string Level = request->get_path_parameter("Level");
+    const std::string Level2 = request->get_path_parameter("Level2");
+
+    std::string FullPath = "NeuroglancerDatasets/" + Path;
+    if (Level == "info") {
+        FullPath += "/" + Level;
+    } else if (Level == "provenance") {
+        FullPath += "/" + Level;
+    } else {
+        FullPath += "/" + Level + "/" + Level2 + "/" + File;
+    }
+
+    std::string Result = GetFile(FullPath);
+    if (Result.empty()) {
+        _Session->close(restbed::NOT_FOUND);
+        return;
+    }
+    
+    auto DecodedString = base64_decode(Result, false);
+    const size_t MAX_CHUNK_SIZE = 4096; // Adjust this value as needed
+
+    // Set chunked transfer encoding headers
+    const std::multimap<std::string, std::string> headers {
+        { "Content-Type", "application/octet-stream" },
+        { "Transfer-Encoding", "chunked" }
+    };
+
+    // Send response headers
+    _Session->yield(restbed::OK, headers, 
+        [DecodedString, MAX_CHUNK_SIZE](const std::shared_ptr<restbed::Session> session) {
+            size_t offset = 0;
+            const auto& data = DecodedString;
+            
+            // Lambda for recursive chunk sending
+            std::function<void(size_t)> send_chunk = [&, session](size_t offset) {
+                if (offset >= data.size()) {
+                    // Send final chunk and close
+                    const std::string final_chunk = "0\r\n\r\n";
+                    session->yield(restbed::Bytes(final_chunk.begin(), final_chunk.end()), 
+                        [session](const std::shared_ptr<restbed::Session>) {
+                            session->close();
+                        });
+                    return;
+                }
+
+                // Calculate chunk size
+                const size_t chunk_size = std::min(MAX_CHUNK_SIZE, data.size() - offset);
+                
+                // Format chunk header
+                const std::string chunk_header = to_hex(chunk_size) + "\r\n";
+                
+                // Create full chunk with header and data
+                std::string full_chunk = chunk_header + 
+                                       data.substr(offset, chunk_size) + 
+                                       "\r\n";
+                                       
+                // Convert to Bytes
+                restbed::Bytes chunk_bytes(full_chunk.begin(), full_chunk.end());
+
+                // Send current chunk and schedule next
+                session->yield(chunk_bytes, 
+                    [offset, chunk_size, &send_chunk](const std::shared_ptr<restbed::Session> session) {
+                        send_chunk(offset + chunk_size);
+                    });
+            };
+
+            // Start sending chunks
+            send_chunk(0);
+        });
 }
 
 }; // Close Namespace

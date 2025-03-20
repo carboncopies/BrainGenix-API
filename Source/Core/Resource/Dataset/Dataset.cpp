@@ -150,6 +150,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     }
     
     auto DecodedString = base64_decode(Result, false);
+
+    if (DecodedString.empty()) {
+        _Session->close(restbed::NOT_FOUND);
+        return;
+    }
+
     const size_t MAX_CHUNK_SIZE = 4096; // Adjust this value as needed
 
     // Set chunked transfer encoding headers
@@ -199,24 +205,51 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
             std::function<void(size_t)> send_chunk = [&, session](size_t offset) {
                 if (offset >= data.size()) {
+                    // Send the final chunk ("0\r\n\r\n") to indicate the end of transmission
                     const std::string final_chunk = "0\r\n\r\n";
                     auto final_ptr = std::make_shared<std::string>(final_chunk);
-                    session->yield(restbed::Bytes(final_ptr->begin(), final_ptr->end()), 
-                        [final_ptr, session](...) { session->close(); });
+                    
+                    session->yield(restbed::Bytes(final_ptr->begin(), final_ptr->end()),
+                        [final_ptr, session](const std::shared_ptr<restbed::Session>) {
+                            session->close(); // Close the session after sending the final chunk
+                        });
                     return;
                 }
             
+                // Calculate chunk size and prepare data
                 const size_t chunk_size = std::min(MAX_CHUNK_SIZE, data.size() - offset);
                 const std::string chunk_header = to_hex(chunk_size) + "\r\n";
                 auto chunk_ptr = std::make_shared<std::string>(
                     chunk_header + data.substr(offset, chunk_size) + "\r\n"
                 );
             
-                session->yield(restbed::Bytes(chunk_ptr->begin(), chunk_ptr->end()), 
-                    [chunk_ptr, offset, chunk_size, &send_chunk](...) {
-                        send_chunk(offset + chunk_size);
+                // Send current chunk and schedule next
+                session->yield(restbed::Bytes(chunk_ptr->begin(), chunk_ptr->end()),
+                    [chunk_ptr, offset, chunk_size, &send_chunk](const std::shared_ptr<restbed::Session> session) {
+                        send_chunk(offset + chunk_size); // Send the next chunk
                     });
             };
+
+            // std::function<void(size_t)> send_chunk = [&, session](size_t offset) {
+            //     if (offset >= data.size()) {
+            //         const std::string final_chunk = "0\r\n\r\n";
+            //         auto final_ptr = std::make_shared<std::string>(final_chunk);
+            //         session->yield(restbed::Bytes(final_ptr->begin(), final_ptr->end()), 
+            //             [final_ptr, session](...) { session->close(); });
+            //         return;
+            //     }
+            
+            //     const size_t chunk_size = std::min(MAX_CHUNK_SIZE, data.size() - offset);
+            //     const std::string chunk_header = to_hex(chunk_size) + "\r\n";
+            //     auto chunk_ptr = std::make_shared<std::string>(
+            //         chunk_header + data.substr(offset, chunk_size) + "\r\n"
+            //     );
+            
+            //     session->yield(restbed::Bytes(chunk_ptr->begin(), chunk_ptr->end()), 
+            //         [chunk_ptr, offset, chunk_size, &send_chunk](...) {
+            //             send_chunk(offset + chunk_size);
+            //         });
+            // };
 
             // Start sending chunks
             send_chunk(0);

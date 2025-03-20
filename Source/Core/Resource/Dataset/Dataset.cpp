@@ -150,8 +150,21 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
         { "Transfer-Encoding", "chunked" }
     };
 
-    // Send the response in chunks
+    // Send the headers first
     _Session->yield(restbed::OK, headers, [DecodedString](const std::shared_ptr<restbed::Session> session) {
+        // Function to send a single chunk
+        auto send_chunk = [session](const std::string& chunk_data) {
+            if (!chunk_data.empty()) {
+                // Convert chunk size to hexadecimal
+                std::stringstream chunk_header;
+                chunk_header << std::hex << chunk_data.size() << "\r\n";
+                // Send the chunk size header
+                session->yield(chunk_header.str());
+                // Send the chunk data followed by \r\n
+                session->yield(chunk_data + "\r\n");
+            }
+        };
+
         // Send the data in chunks
         const size_t chunk_size = 1024; // Define your chunk size
         size_t offset = 0;
@@ -159,9 +172,12 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
         while (offset < DecodedString.length()) {
             size_t length = std::min(chunk_size, DecodedString.length() - offset);
             std::string chunk = DecodedString.substr(offset, length);
-            session->yield(chunk);
+            send_chunk(chunk);
             offset += length;
         }
+
+        // Send the final chunk (0\r\n\r\n to signal the end)
+        session->yield("0\r\n\r\n");
 
         // Close the session after sending all chunks
         session->close();

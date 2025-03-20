@@ -146,7 +146,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
 
     // Ensure the data length is a multiple of 4
     size_t padding_length = (4 - (DecodedString.length() % 4)) % 4;
-    DecodedString.append(padding_length, '\0'); // Pad with null bytes
+    DecodedString.append(padding_length, ' '); // Pad with null bytes
 
     // Set headers for chunked transfer encoding
     const std::multimap<std::string, std::string> headers {

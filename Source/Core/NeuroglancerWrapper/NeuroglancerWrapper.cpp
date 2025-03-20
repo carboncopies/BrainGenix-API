@@ -311,7 +311,11 @@ std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
     }
     DatasetURL += "://" + Config_->PublicHostDomain + ":" + std::to_string(Config_->PortNumber) + "/Dataset/" + DatasetHandle;
     */
-   std::string DatasetURL = "http://pve.braingenix.org:8000/Dataset/" + DatasetHandle + "/Segmentation";
+
+    std::string URLBase = "http://pve.braingenix.org:8000"; // CHANGE THIS LATER TO A MACRO MAYBE "{URL_BASE_STRING}" OR SOMETHING, HAVE PYTHON CLIENT SUB IT IN!
+
+    std::string ImgDatasetURL = URLBase + "/Dataset/" + DatasetHandle + "/Data";
+    std::string SegDatasetURL = URLBase + "/Dataset/" + DatasetHandle + "/Segmentation";
 
     // // If segmentation is enabled, we'll process it
     // if (DatasetSegmentationHandle != "") {
@@ -329,9 +333,12 @@ std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
         //R"("crossSectionScale":1,)"
         R"("projectionOrientation":[0.09116003662347794,0.28062376379966736,-0.19248539209365845,0.935889720916748],)"
         //R"("projectionScale":4096,)"
-        R"("layers":[{"type":"segmentation","source":"precomputed://)" + DatasetURL + R"(","tab":"source","name":"igneous"}],)" // "segments":["34"]
-        R"("selectedLayer":{"visible":true,"layer":"igneous"},)"
-        R"("layout":"4panel")"
+        R"("layers":[)"
+        R"({"type":"image","source":"precomputed://)" + ImgDatasetURL + R"(","tab":"source","name":"Microscopy Data"},)"
+        R"({"type":"segmentation","source":"precomputed://)" + SegDatasetURL + R"(","tab":"source","name":"Ground Truth Segmentation"})"
+        R"(],)"
+        R"("selectedLayer":{"visible":true,"layer":"Ground Truth Segmentation"},)"
+        R"("layout":"xy-3d")"
         "}";
     std::string ngargumentsURIencoded = NGurlEncode(ngargumentsjson);
     std::string NeuroglancerURL = neuroglancerappsource + ngargumentsURIencoded;

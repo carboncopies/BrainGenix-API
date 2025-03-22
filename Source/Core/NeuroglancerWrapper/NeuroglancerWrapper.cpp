@@ -326,7 +326,7 @@ std::string NeuroglancerWrapper::GetVisualizerLink(std::string _Request) {
 
     // }
 
-    std::string neuroglancerappsource = "https://neuroglancer-demo.appspot.com/#!";
+    std::string neuroglancerappsource = "http://neuroglancer-demo.appspot.com/#!";
     std::string ngargumentsjson = "{"
         R"("dimensions":{"x":[100,"nm"],"y":[100,"nm"],"z":[200,"nm"]},)"
         R"("position":[0.0,0.0,0.0],)"

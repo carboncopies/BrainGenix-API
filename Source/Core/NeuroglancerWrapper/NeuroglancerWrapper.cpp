@@ -34,7 +34,7 @@ NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Lo
     Logger_ = _Logger;
     Config_ = &_Config;
 
-    _Logger->Log("Initializing Python Bindings For Neuroglancer", 5);
+    // _Logger->Log("Initializing Python Bindings For Neuroglancer", 5);
 
 
    
@@ -42,16 +42,16 @@ NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Lo
     //     pybind11::exec("pass\n");
 
     // }
-    ThreadRun_ = true;
-    ThisThread_ = std::make_unique<std::thread>(&NeuroglancerWrapper::KeepAliveThread, this);
+    // ThreadRun_ = true;
+    // ThisThread_ = std::make_unique<std::thread>(&NeuroglancerWrapper::KeepAliveThread, this);
 
 }
 
 NeuroglancerWrapper::~NeuroglancerWrapper() {
     
     // Exit Thread, Join
-    ThreadRun_ = false;
-    ThisThread_->join();
+    // ThreadRun_ = false;
+    // ThisThread_->join();
 
 }
 

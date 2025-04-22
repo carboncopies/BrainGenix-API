@@ -53,8 +53,8 @@ private:
     std::thread ConnectionManagerNES_; /**Thread running the NES connection manager*/
     std::thread ConnectionManagerEVM_; /**Thread running the NES connection manager*/
 
-    std::unique_ptr<::rpc::client> NESClient_; /**Client to upstream NES Service*/
-    std::unique_ptr<::rpc::client> EVMClient_; /**Client to upstream NES Service*/
+    std::shared_ptr<::rpc::client> NESClient_; /**Client to upstream NES Service*/
+    std::shared_ptr<::rpc::client> EVMClient_; /**Client to upstream NES Service*/
     std::atomic_bool IsNESClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
     std::atomic_bool IsEVMClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
 

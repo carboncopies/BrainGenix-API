@@ -43,8 +43,8 @@ struct Server {
     std::atomic<bgServiceStatus> NESState = SERVICE_CONFIG_ERR; /**Enum showing the NES system status*/
     std::atomic<bgServiceStatus> EVMState = SERVICE_CONFIG_ERR; /**Enum showing the EVM system status*/
 
-    ::rpc::client* NESClient; /**Pointer to RPC client service for nes*/
-    ::rpc::client* EVMClient; /**Pointer to RPC client service for nes*/
+    std::shared_ptr<::rpc::client> NESClient; /**Pointer to RPC client service for nes*/
+    std::shared_ptr<::rpc::client> EVMClient; /**Pointer to RPC client service for nes*/
 
     std::atomic_bool* IsNESClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
     std::atomic_bool* IsEVMClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/

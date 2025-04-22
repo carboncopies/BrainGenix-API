@@ -5,11 +5,11 @@ namespace BG {
 namespace API {
 namespace Util {
 
-bool NESQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsNESClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
+bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsNESClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
     if (!(*_IsNESClientHealthy)) {
         return false;
     }
-    if (!_Client || _Client->get_connection_state() != rpc::client::connection_state::connected) {
+    if (!_Client ||_Client->get_connection_state() != rpc::client::connection_state::connected) {
         return false;
     }
     try {
@@ -27,7 +27,7 @@ bool NESQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsNESClientHealthy,
     return true;
 }
 
-bool EVMQueryJSON(::rpc::client* _Client, std::atomic_bool* _IsEVMClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
+bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsEVMClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
     if (!(*_IsEVMClientHealthy)) {
         return false;
     }

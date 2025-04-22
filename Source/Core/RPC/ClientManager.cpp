@@ -24,7 +24,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
 
     // Populate Server Struct
-    Server_->NESClient = NESClient_.get();
+    Server_->NESClient = NESClient_;
     Server_->IsNESClientHealthy_ = &IsNESClientHealthy_;
 
 
@@ -35,7 +35,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     ConnectionManagerEVM_ = std::thread(&Manager::ConnectionManagerEVM, this);
 
     // Populate Server Struct
-    Server_->EVMClient = EVMClient_.get();
+    Server_->EVMClient = EVMClient_;
     Server_->IsEVMClientHealthy_ = &IsEVMClientHealthy_;
 
 }
@@ -63,7 +63,7 @@ void Manager::SetNESCallbackInfo() {
     std::string QueryStr = Query.dump();
 
     std::string Result;
-    NESQueryJSON("SetCallback", QueryStr, &Result);
+    NESQueryJSON("SetCallback", QueryStr, &Result, true);
 
     Logger_->Log("Set NES RPC Callback", 3);
 }
@@ -75,13 +75,13 @@ void Manager::SetEVMCallbackInfo() {
     std::string QueryStr = Query.dump();
 
     std::string Result;
-    EVMQueryJSON("SetCallback", QueryStr, &Result);
+    EVMQueryJSON("SetCallback", QueryStr, &Result, true);
 
     Logger_->Log("Set EVM RPC Callback", 3);
 }
 
 bool Manager::ConnectNES() {
-    IsNESClientHealthy_ = false;
+    IsNESClientHealthy_.store(false);
     NESClient_ = nullptr;
 
     // Extract NES Client Parameters, Connect, Configure
@@ -95,7 +95,8 @@ bool Manager::ConnectNES() {
 
 
     try {
-        NESClient_ = std::make_unique<::rpc::client>(NESHost.c_str(), NESPort);
+        NESClient_ = std::make_shared<::rpc::client>(NESHost.c_str(), NESPort);
+        Server_->NESClient = NESClient_; // Update Server's client pointer
     } catch (std::system_error& e) {
         Logger_->Log("Cannot find NES host (authoritative)", 9);
         Server_->NESState = SERVICE_CONFIG_ERR;
@@ -106,7 +107,7 @@ bool Manager::ConnectNES() {
     // Call GetVersion On Remote - allows us to check that versions match, but also ensures the connection is ready
     bool Status = RunVersionCheckNES();
     if (Status) {
-        IsNESClientHealthy_ = true;
+        IsNESClientHealthy_.store(true);
     }
 
     Logger_->Log("Setting NES RPC Callback", 3);
@@ -118,7 +119,7 @@ bool Manager::ConnectNES() {
 }
 
 bool Manager::ConnectEVM() {
-    IsEVMClientHealthy_ = false;
+    IsEVMClientHealthy_.store(false);
     EVMClient_ = nullptr;
 
     // Extract EVM Client Parameters, Connect, Configure
@@ -132,7 +133,8 @@ bool Manager::ConnectEVM() {
 
 
     try {
-        EVMClient_ = std::make_unique<::rpc::client>(EVMHost.c_str(), EVMPort);
+        EVMClient_ = std::make_shared<::rpc::client>(EVMHost.c_str(), EVMPort);
+        Server_->EVMClient = EVMClient_; // Update Server's client pointer
     } catch (std::system_error& e) {
         Logger_->Log("Cannot find EVM host (authoritative)", 9);
         Server_->EVMState = SERVICE_CONFIG_ERR;
@@ -143,7 +145,7 @@ bool Manager::ConnectEVM() {
     // Call GetVersion On Remote - allows us to check that versions match, but also ensures the connection is ready
     bool Status = RunVersionCheckEVM();
     if (Status) {
-        IsEVMClientHealthy_ = true;
+        IsEVMClientHealthy_.store(true);
     }
 
     Logger_->Log("Setting EVM RPC Callback", 3);
@@ -167,7 +169,7 @@ bool Manager::RunVersionCheckNES() {
     if (NESStatus != ::rpc::client::connection_state::connected) {
         Logger_->Log("Unable to connect to NES service", 3);
         Server_->NESState = SERVICE_FAILED;
-        IsNESClientHealthy_ = false;
+        IsNESClientHealthy_.store(false);
     } else {
         Logger_->Log("NES RPC Connection SERVICE_HEALTHY", 1);
         Server_->NESState = SERVICE_HEALTHY;
@@ -203,7 +205,7 @@ bool Manager::RunVersionCheckEVM() {
     if (EVMStatus != ::rpc::client::connection_state::connected) {
         Logger_->Log("Unable to connect to EVM service", 3);
         Server_->EVMState = SERVICE_FAILED;
-        IsEVMClientHealthy_ = false;
+        IsEVMClientHealthy_.store(false);
     } else {
         Logger_->Log("EVM RPC Connection SERVICE_HEALTHY", 1);
         Server_->EVMState = SERVICE_HEALTHY;
@@ -228,7 +230,7 @@ bool Manager::RunVersionCheckEVM() {
 }
 
 bool Manager::NESQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
-    if (!_ForceQuery && !IsNESClientHealthy_) {
+    if (!_ForceQuery && !IsNESClientHealthy_.load()) {
         return false;
     }
     try {
@@ -250,7 +252,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string* _Result, bool _Force
 }
 
 bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
-    if (!_ForceQuery && !IsNESClientHealthy_) {
+    if (!_ForceQuery && !IsNESClientHealthy_.load()) {
         return false;
     }
     try {
@@ -273,7 +275,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
 
 
 bool Manager::EVMQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
-    if (!_ForceQuery && !IsEVMClientHealthy_) {
+    if (!_ForceQuery && !IsEVMClientHealthy_.load()) {
         return false;
     }
     try {
@@ -295,7 +297,7 @@ bool Manager::EVMQueryJSON(std::string _Route, std::string* _Result, bool _Force
 }
 
 bool Manager::EVMQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
-    if (!_ForceQuery && !IsEVMClientHealthy_) {
+    if (!_ForceQuery && !IsEVMClientHealthy_.load()) {
         return false;
     }
     try {

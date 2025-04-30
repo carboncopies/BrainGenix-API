@@ -91,7 +91,7 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/RPCHelpers.cpp
   ${SRC_DIR}/Core/Util/RPCHelpers.h
 
-  ${CMAKE_BINARY_DIR}/PythonVersion.h
+  # ${CMAKE_BINARY_DIR}/PythonVersion.h
 
   ${BACKWARD_ENABLE}
   )
@@ -111,7 +111,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     unofficial::libmariadb
 
     # pybind11::lto
-    pybind11::embed
+    # pybind11::embed
     # pybind11::module
     # pybind11::headers
 

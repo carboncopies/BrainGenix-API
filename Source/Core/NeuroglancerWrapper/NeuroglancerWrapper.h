@@ -19,8 +19,8 @@
 #include <regex>
 
 // Third-Party Libraries (BG convention: use <> instead of "")
-#include <pybind11/pybind11.h>
-#include <pybind11/embed.h>
+// #include <pybind11/pybind11.h>
+// #include <pybind11/embed.h>
 
 
 // Internal Libraries (BG convention: use <> instead of "")
@@ -57,13 +57,13 @@ private:
     BG::Common::Logger::LoggingSystem* Logger_; /**Pointer to logger instance*/
 
     Config::Config* Config_; /**Instance of config pointer*/
-    std::vector<WorkOrder> WorkOrders_; /**List of work orders for the neuroglancer thread to generate URIs for*/
-    std::mutex WorkOrderLock_; /**Mutex to keep the vector thread safe*/
-    std::unique_ptr<pybind11::scoped_interpreter> Guard_; /**Scoped interpreter used to embed the python interpreter into this service*/
+    // std::vector<WorkOrder> WorkOrders_; /**List of work orders for the neuroglancer thread to generate URIs for*/
+    // std::mutex WorkOrderLock_; /**Mutex to keep the vector thread safe*/
+    // std::unique_ptr<pybind11::scoped_interpreter> Guard_; /**Scoped interpreter used to embed the python interpreter into this service*/
     // std::unique_ptr<pybind11::object> Scope_; /**Instance of this python interpreter's scope*/
 
-    std::unique_ptr<std::thread> ThisThread_; /**Thread that keeps the background python neuroglancer service running*/
-    std::atomic_bool ThreadRun_; /**Tells the thread if it should still run or not*/
+    // std::unique_ptr<std::thread> ThisThread_; /**Thread that keeps the background python neuroglancer service running*/
+    // std::atomic_bool ThreadRun_; /**Tells the thread if it should still run or not*/
 
     void KeepAliveThread(); /**Method that serves as the thread's main entry point*/
 

@@ -125,23 +125,23 @@ find_package(spdlog CONFIG REQUIRED)
 message(STATUS "Finding libmariadb Package")
 find_package(unofficial-libmariadb CONFIG REQUIRED)
 
-message(STATUS "Finding Python3 Package")
+# message(STATUS "Finding Python3 Package")
 # Explicitly set the Python interpreter and libraries from the virtual environment
-set(Python_EXECUTABLE "${CMAKE_SOURCE_DIR}/venv/bin/python")
-set(Python_LIBRARIES "${CMAKE_SOURCE_DIR}/venv/lib/libpython3.10.so")  # Update this path
-set(Python_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/venv/include/python3.10")  # Update this path
+# set(Python_EXECUTABLE "${CMAKE_SOURCE_DIR}/venv/bin/python")
+# set(Python_LIBRARIES "${CMAKE_SOURCE_DIR}/venv/lib/libpython3.10.so")  # Update this path
+# set(Python_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/venv/include/python3.10")  # Update this path
 
 # Ensure CMake uses the correct Python interpreter and libraries
-find_package(Python REQUIRED COMPONENTS Interpreter Development)
+# find_package(Python REQUIRED COMPONENTS Interpreter Development)
 
 # Add Python include directories
-include_directories(${Python_INCLUDE_DIRS})
+# include_directories(${Python_INCLUDE_DIRS})
 
 #find_package(Python COMPONENTS Interpreter Development)
 
-message(STATUS "Finding Pybind11 Package")
+# message(STATUS "Finding Pybind11 Package")
 # find_package(pybind11 CONFIG REQUIRED)
-add_subdirectory(${LIB_DIR}/NonSuperBuild/pybind11)
+# add_subdirectory(${LIB_DIR}/NonSuperBuild/pybind11)
 
 find_path(CPP_BASE64_INCLUDE_DIRS "cpp-base64/base64.cpp")
 
@@ -159,7 +159,7 @@ include(${CMAKE_SCRIPTS_DIR}/CompileTimeStamp/CompileTimeStamp.cmake)
 add_subdirectory(${SRC_DIR}/Core)
 
 # Link the Python library
-target_link_libraries(${PROJECT_NAME} PRIVATE ${Python_LIBRARIES})
+# target_link_libraries(${PROJECT_NAME} PRIVATE ${Python_LIBRARIES})
 
 
 # Set Install Targets

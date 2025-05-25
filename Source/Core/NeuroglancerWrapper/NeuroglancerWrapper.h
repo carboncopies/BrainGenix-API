@@ -33,14 +33,36 @@
 namespace BG {
 namespace API {
 
-
+/**
+ * @struct WorkOrder
+ * @brief Represents a work order for generating a Neuroglancer visualization.
+ *
+ * This struct contains information about the dataset and its segmentation, as well as
+ * the generated URL for visualization. It also tracks whether the work order is complete.
+ */
 struct WorkOrder {
 
-    bool IsComplete_ = false; /**Defaults to work is not yet done*/
-    std::string DatasetURI_; /**URI to tell neuroglancer to load*/
-    std::string DatasetSegmentationURI_; /**Optional URI to tell neuroglancer to load*/
-    std::string GeneratedURL_; /**URL that has been generated (only once the system is done)*/
+    /**
+     * @brief Indicates whether the work order is complete.
+     * 
+     * Defaults to `false`, meaning the work is not yet done.
+     */
+    bool IsComplete_ = false;
 
+    /**
+     * @brief URI to tell Neuroglancer to load the dataset.
+     */
+    std::string DatasetURI_;
+
+    /**
+     * @brief Optional URI to tell Neuroglancer to load the dataset segmentation.
+     */
+    std::string DatasetSegmentationURI_;
+
+    /**
+     * @brief URL that has been generated (only once the system is done).
+     */
+    std::string GeneratedURL_;
 };
 
 /**
@@ -50,32 +72,15 @@ struct WorkOrder {
  * There will be a database connector class that will handle user authentication checks. Additionally, there will be a
  * route manager class that adds the routes as well as generating the json payload responses.
  */
-class NeuroglancerWrapper {
-
-private:
-
-    BG::Common::Logger::LoggingSystem* Logger_; /**Pointer to logger instance*/
-
-    Config::Config* Config_; /**Instance of config pointer*/
-    // std::vector<WorkOrder> WorkOrders_; /**List of work orders for the neuroglancer thread to generate URIs for*/
-    // std::mutex WorkOrderLock_; /**Mutex to keep the vector thread safe*/
-    // std::unique_ptr<pybind11::scoped_interpreter> Guard_; /**Scoped interpreter used to embed the python interpreter into this service*/
-    // std::unique_ptr<pybind11::object> Scope_; /**Instance of this python interpreter's scope*/
-
-    // std::unique_ptr<std::thread> ThisThread_; /**Thread that keeps the background python neuroglancer service running*/
-    // std::atomic_bool ThreadRun_; /**Tells the thread if it should still run or not*/
-
-    void KeepAliveThread(); /**Method that serves as the thread's main entry point*/
-
-public:
-
-    /**
-     * @brief Construct a new Controller object
-     * The controller will setup the server based on the provided config pointer's data.
-     * 
-     * @param _Config 
-     */
-    NeuroglancerWrapper(Config::Config& _Config, BG::Common::Logger::LoggingSystem* _Logger);
+/**
+ * @brief Construct a new NeuroglancerWrapper object.
+ * 
+ * The constructor initializes the NeuroglancerWrapper with the provided configuration and logger instances.
+ * 
+ * @param _Config Reference to a Config object containing configuration data for the NeuroglancerWrapper.
+ * @param _Logger Pointer to a LoggingSystem instance used for logging within the NeuroglancerWrapper.
+ */
+NeuroglancerWrapper(Config::Config& _Config, BG::Common::Logger::LoggingSystem* _Logger);
 
 
     /**
@@ -86,10 +91,11 @@ public:
 
 
     /**
-     * @brief Generates a neuroglancer URL for the target dataset.
+     * @brief Generates a Neuroglancer URL for the target dataset.
      * 
-     * @param _DatasetURI 
-     * @return std::string 
+     * @param _DatasetURI The URI of the dataset to be visualized. Defaults to "http://localhost:9000/Example".
+     * @param _DatasetSegURI The URI of the dataset segmentation, if applicable. Defaults to an empty string.
+     * @return std::string The generated Neuroglancer URL.
      */
     std::string GetNeuroglancerURL(std::string _DatasetURI="http://localhost:9000/Example", std::string _DatasetSegURI="");
 

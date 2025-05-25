@@ -58,13 +58,15 @@ private:
 public:
 
     /**
-     * @brief Construct a new route object
-     * This function registers the routecallback method as a route for the path specified in the descriptor for this class.
+     * @brief Construct a new Route object.
      * 
-     * @param _Server 
-     * @param _Session 
+     * This function registers the `RouteCallback` method as a route for the path specified in the descriptor for this class.
+     * 
+     * @param _Logger Pointer to the logging system instance.
+     * @param _Server Pointer to the server instance.
+     * @param _Service Reference to the restbed service instance.
      */
-    Route(BG::Common::Logger::LoggingSystem* _Logger,Server::Server *_Server, restbed::Service &_Service);
+    Route(BG::Common::Logger::LoggingSystem* _Logger, Server::Server *_Server, restbed::Service &_Service);
 
     /**
      * @brief Destroy the Route object

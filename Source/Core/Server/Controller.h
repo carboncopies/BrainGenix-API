@@ -57,56 +57,55 @@ private:
     std::unique_ptr<EndpointManager> EndpointManager_; /**Class that manages the endpoint resources (Creating them, destroying, etc.)*/
 
     /**
-     * @brief Creates a restbed settings object from the user configuration struct.
+     * @brief Creates a Restbed settings object from the user configuration struct.
      * 
-     * @param _Config 
-     * @return std::shared_ptr<restbed::Settings> 
+     * @param _Config Reference to the configuration object containing server settings.
+     * @return std::shared_ptr<restbed::Settings> Shared pointer to the configured Restbed settings object.
      */
     std::shared_ptr<restbed::Settings> ConfigureServer(Config::Config &_Config);
 
-    
-
+    /**
+     * @brief Test handler for handling test requests.
+     * 
+     * @param session Shared pointer to the Restbed session object representing the current client session.
+     */
     void TestHandler(const std::shared_ptr<restbed::Session> session);
 
 public:
 
-    restbed::Service Service_; /**Service created by constructor, then started with StartService method*/
-
+    restbed::Service Service_; /**< Service created by the constructor, then started with the StartService method. */
 
     /**
-     * @brief Construct a new Controller object
-     * The controller will setup the server based on the provided config pointer's data.
+     * @brief Construct a new Controller object.
      * 
-     * @param _Config 
-     * @param _Manager RPC Manager instance ptr
+     * The controller will set up the server based on the provided configuration data.
+     * 
+     * @param _Config Reference to the configuration object containing server settings.
+     * @param _Logger Pointer to the logging system instance for logging server events.
      */
     Controller(Config::Config& _Config, BG::Common::Logger::LoggingSystem* _Logger);
 
-
     /**
-     * @brief Destroy the Controller object
-     * 
+     * @brief Destroy the Controller object.
      */
     ~Controller();
 
-
     /**
-     * @brief Starts the server. Blocks until server stops. (assume forever).
+     * @brief Starts the server and blocks until the server stops.
      * 
+     * This method assumes the server will run indefinitely unless explicitly stopped.
      */
     void StartService();
 
     /**
-     * @brief Get the Server Struct object
+     * @brief Get the Server struct object.
      * 
-     * @return Server* 
+     * @return Server* Pointer to the server struct instance.
      */
     Server* GetServerStruct();
 
-    
     /**
-     * @brief Hangs until the system is ready to exit.
-     * 
+     * @brief Hangs the thread until the system is ready to exit.
      */
     void HangUntilExit();
 

@@ -45,24 +45,25 @@ private:
 public:
 
     /**
-     * @brief Construct a new Manager object
-     * You need to pass this class the command line data so it can parse the arguments.
+     * @brief Construct a new Manager object.
      * 
-     * @param _NumArgs 
-     * @param _Args 
+     * Initializes the Manager with a logger instance and command-line arguments for parsing.
+     * 
+     * @param _Logger Pointer to the logging system instance.
+     * @param _NumArgs The number of command-line arguments.
+     * @param _Args The array of command-line arguments.
      */
     Manager(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _Args);
 
     /**
-     * @brief Destroy the Manager object
-     * 
+     * @brief Destroy the Manager object.
      */
     ~Manager();
 
     /**
      * @brief Returns a reference to the configuration struct.
      * 
-     * @return Config& 
+     * @return Config& A reference to the configuration struct.
      */
     Config& GetConfig();
 

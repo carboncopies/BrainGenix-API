@@ -1,4 +1,5 @@
-# BrainGenix API Endpoint Repo
+/*!
+\mainpage BrainGenix API Endpoint Repo
 
 This repository is for the BG API endpoint. The API endpoint executable provides a gateway between users and the raw BG systems (NES/BG/STS).
 

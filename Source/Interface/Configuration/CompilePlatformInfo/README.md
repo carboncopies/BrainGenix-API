@@ -1,8 +1,9 @@
 /*!
-\page CompilePlatformInfo Compile Platform Info
-
-This document provides details about the platform-specific compilation configurations.
-*/
+ * \page CompilePlatformInfo Compile Platform Info
+ * 
+ * This section documents the Compile Platform Info module, which provides platform-specific
+ * configuration details during the build process.
+ */
 
 # About
 

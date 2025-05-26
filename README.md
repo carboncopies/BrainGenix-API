@@ -1,10 +1,14 @@
 /*!
-\mainpage BrainGenix API Endpoint Repo
-
-This repository is for the BG API endpoint. The API endpoint executable provides a gateway between users and the raw BG systems (NES/BG/STS).
-
-API specification is located in Docs.
-
+ * \mainpage BrainGenix-API Documentation
+ * 
+ * Welcome to the BrainGenix-API documentation. This project provides a unified API endpoint for managing
+ * various services and configurations.
+ * 
+ * - \ref Configuration
+ * - \ref CompilePlatformInfo
+ * - \ref CompileTimeStamp
+ * - \ref VersioningSystem
+ */
 
 # Building
 We use vcpkg for this project, so it's super easy.

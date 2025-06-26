@@ -5,6 +5,8 @@ namespace BG {
 namespace API {
 namespace Util {
 
+
+// Common RPC interface - used both for internal requests between services (NES<->EVM), and external requests to the HTTP POST API    
 bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsNESClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
     if (!(*_IsNESClientHealthy)) {
         return false;
@@ -27,6 +29,7 @@ bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsN
     return true;
 }
 
+// Common RPC interface - used both for internal requests between services (NES<->EVM), and external requests to the HTTP POST API    
 bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsEVMClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
     if (!(*_IsEVMClientHealthy)) {
         return false;

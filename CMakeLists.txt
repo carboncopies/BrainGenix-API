@@ -62,11 +62,11 @@ file(MAKE_DIRECTORY ${BIN_DIR}/)
 # ========================================================
 # Generate a header file with the Python version
 # ========================================================
-configure_file(
-    ${CMAKE_SOURCE_DIR}/CMake/PythonVersion.h.in
-    ${CMAKE_BINARY_DIR}/PythonVersion.h
-    @ONLY
-)
+# configure_file(
+#     ${CMAKE_SOURCE_DIR}/CMake/PythonVersion.h.in
+#     ${CMAKE_BINARY_DIR}/PythonVersion.h
+#     @ONLY
+# )
 
 # Include the generated header file in your build
 include_directories(${CMAKE_BINARY_DIR})

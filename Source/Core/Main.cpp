@@ -33,17 +33,12 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::NeuroglancerWrapper NeuroWrapper(SystemConfiguration, &Logger);
 
     // Setup Upstream API Connection Handler
-    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server);
-    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);
+    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server); // This is what actually serves to the user, and does not handle internal routing
+    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server); // The manager is for internal RPC calls (i.e. NES->EVM, or EVM->NES, NOT to the user)
 
 
     BG::API::Resource::Dataset::Route Dataset(Server, &RPCManager, ServerController.Service_);
 
-
-    // Register Callbacks For Routes
-    RPCServer.AddRoute("API/GenerateNeuroglancerLink", &Logger, [&NeuroWrapper](std::string RequestJSON){ return NeuroWrapper.GetVisualizerLink(RequestJSON);});
-
-    // std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset")<<std::endl;
 
     // Start Server
     ServerController.StartService();

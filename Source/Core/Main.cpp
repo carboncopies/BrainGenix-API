@@ -26,15 +26,22 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Config::Manager ConfigManager(&Logger, NumArguments, ArgumentValues);
     BG::API::Config::Config& SystemConfiguration = ConfigManager.GetConfig();
 
-    // Setup Server
-    BG::API::Server::Controller ServerController(SystemConfiguration, &Logger);
+    // -- Setup HTTP Server --
+    // The server controller initializes restbed and sets up SSL certs, etc. Handles HTTP/POST requests
+    BG::API::Server::Controller ServerController(SystemConfiguration, &Logger); 
     BG::API::Server::Server* Server = ServerController.GetServerStruct();
 
-    // Setup Upstream API Connection Handler
-    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server); // This is what actually serves to the user, and does not handle internal routing
-    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server); // The manager is for internal RPC calls (i.e. NES->EVM, or EVM->NES, NOT to the user)
+
+    // The RPC Manager registers the restbed callbacks for NES and EVM routes to the user via post
+    // This is what actually serves to the user, and does not handle internal routing
+    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server); 
 
 
+    // The manager is for internal RPC calls (i.e. NES->EVM, or EVM->NES, NOT to the user)
+    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);
+
+
+    // This route provides the HTTP routes that allow the user to download images from EM/CA datasets from NES
     BG::API::Resource::Dataset::Route Dataset(Server, &RPCManager, ServerController.Service_);
 
 

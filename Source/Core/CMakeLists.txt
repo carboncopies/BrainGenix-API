@@ -56,12 +56,6 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Resource/EVM/EVM.cpp
 
 
-  ${SRC_DIR}/Core/Resource/NES/Visualizer/RenderImage.h
-  ${SRC_DIR}/Core/Resource/NES/Visualizer/RenderImage.cpp
-
-
-  ${SRC_DIR}/Core/NeuroglancerWrapper/NeuroglancerWrapper.h
-  ${SRC_DIR}/Core/NeuroglancerWrapper/NeuroglancerWrapper.cpp
 
 
   ${SRC_DIR}/Core/Database/DBManager.cpp

@@ -38,8 +38,7 @@ namespace RPC {
 
 
 /**
- * @brief Manager class for the database - will take a config struct (need to make this), and then connect to the db from that struct.
- * Then, methods here can be added to call sql commands as needed.
+ *
  * 
  */
 class Manager {

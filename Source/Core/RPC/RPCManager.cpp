@@ -28,7 +28,7 @@ RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSyste
 
     // Initialize Server
     std::string ServerHost = _Config->RPCCallbackHost;
-    int ServerPort = _Config->RPCCallbackPort;
+    int ServerPort = _Config->RPCCallbackHost;
 
     // Create a unique pointer to the RPC server and initialize it with the provided port number
     RPCServer_ = std::make_unique<rpc::server>(ServerPort);

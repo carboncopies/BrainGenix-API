@@ -41,7 +41,9 @@ int main(int NumArguments, char** ArgumentValues) {
 
 
     // Register Callbacks For Routes
-    RPCServer.AddRoute("API/GenerateNeuroglancerLink", &Logger, [&NeuroWrapper](std::string RequestJSON){ return NeuroWrapper.GetVisualizerLink(RequestJSON);});
+    RPCServer.AddRoute("API/GenerateNeuroglancerLink", &Logger, [&NeuroWrapper](std::string RequestJSON) { 
+        return NeuroWrapper.GetVisualizerLink(RequestJSON); 
+    });
 
     // std::cout<<NeuroWrapper.GetNeuroglancerURL("http://localhost:9000/NeuroglancerDataset")<<std::endl;
 

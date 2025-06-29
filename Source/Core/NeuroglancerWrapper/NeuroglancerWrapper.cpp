@@ -30,29 +30,13 @@ void signalHandler( int signum ) {
 
 
 
-NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Logger::LoggingSystem* _Logger) {
-    Logger_ = _Logger;
-    Config_ = &_Config;
-
-    // _Logger->Log("Initializing Python Bindings For Neuroglancer", 5);
-
-
-   
-    // while (true) {
-    //     pybind11::exec("pass\n");
-
-    // }
-    // ThreadRun_ = true;
-    // ThisThread_ = std::make_unique<std::thread>(&NeuroglancerWrapper::KeepAliveThread, this);
-
+NeuroglancerWrapper::NeuroglancerWrapper(Config::Config &_Config, BG::Common::Logger::LoggingSystem* _Logger) 
+    : Logger_(_Logger) {
+    // Constructor implementation
 }
 
 NeuroglancerWrapper::~NeuroglancerWrapper() {
-    
-    // Exit Thread, Join
-    // ThreadRun_ = false;
-    // ThisThread_->join();
-
+    // Destructor implementation
 }
 
 

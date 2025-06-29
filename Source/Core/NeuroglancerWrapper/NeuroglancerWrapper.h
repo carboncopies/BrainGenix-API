@@ -72,16 +72,17 @@ struct WorkOrder {
  * There will be a database connector class that will handle user authentication checks. Additionally, there will be a
  * route manager class that adds the routes as well as generating the json payload responses.
  */
-/**
- * @brief Construct a new NeuroglancerWrapper object.
- * 
- * The constructor initializes the NeuroglancerWrapper with the provided configuration and logger instances.
- * 
- * @param _Config Reference to a Config object containing configuration data for the NeuroglancerWrapper.
- * @param _Logger Pointer to a LoggingSystem instance used for logging within the NeuroglancerWrapper.
- */
-NeuroglancerWrapper(Config::Config& _Config, BG::Common::Logger::LoggingSystem* _Logger);
-
+class NeuroglancerWrapper {
+public:
+    /**
+     * @brief Construct a new NeuroglancerWrapper object.
+     * 
+     * The constructor initializes the NeuroglancerWrapper with the provided configuration and logger instances.
+     * 
+     * @param _Config Reference to a Config object containing configuration data for the NeuroglancerWrapper.
+     * @param _Logger Pointer to a LoggingSystem instance used for logging within the NeuroglancerWrapper.
+     */
+    NeuroglancerWrapper(Config::Config& _Config, BG::Common::Logger::LoggingSystem* _Logger);
 
     /**
      * @brief Destroy the Controller object
@@ -106,7 +107,8 @@ NeuroglancerWrapper(Config::Config& _Config, BG::Common::Logger::LoggingSystem* 
      * @return std::string 
      */
     std::string GetVisualizerLink(std::string _Request);
-
+private:
+    BG::Common::Logger::LoggingSystem* Logger_;
 };
 
 

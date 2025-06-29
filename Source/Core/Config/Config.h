@@ -53,6 +53,10 @@ struct Config {
     std::string RPCCallbackHost = "localhost";
 
     /**
+     * @brief The port for RPC callbacks.
+     */
+    int RPCCallbackPort = 7999;
+    /**
      * @brief Configures whether SSL/HTTPS is used.
      * 
      * Using HTTPS requires specifying a server key and certificate file.

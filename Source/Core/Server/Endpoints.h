@@ -34,7 +34,6 @@
   #include <Resource/EVM/EVM.h>
 
 
-  #include <Resource/NES/Visualizer/RenderImage.h>
 
 
   #include <BG/Common/Logger/Logger.h>
@@ -67,8 +66,6 @@
 
       std::shared_ptr<Resource::Auth::GetToken::Route> Auth_GetToken_;
 
-
-      std::shared_ptr<Resource::NES::Visualizer::RenderImage::Route> NES_Visualizer_RenderImage_;
 
       std::shared_ptr<Resource::NES::Route> NES_;
       std::shared_ptr<Resource::EVM::Route> EVM_;

@@ -37,7 +37,7 @@ namespace API {
 namespace RPC {
 
 /**
- * @brief Manager class for the RPC client.
+ *
  * 
  * This class manages the RPC client connections to upstream services.
  * It provides methods to query the NES and EVM servers and handles

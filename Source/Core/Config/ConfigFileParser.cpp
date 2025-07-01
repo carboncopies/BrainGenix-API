@@ -17,7 +17,7 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
         ("Network.Service.Port", boost::program_options::value<int>(&LocalCfg.PortNumber)->default_value(CONFIG_DEFAULT_PORT_NUMBER), "Port Number Of The Service")
         ("Network.Service.Host", boost::program_options::value<std::string>(&LocalCfg.Host)->default_value(CONFIG_DEFAULT_HOST), "Host That The Service Binds To")
         ("Network.RPCCallback.Port", boost::program_options::value<int>(&_Config.RPCCallbackPort)->default_value(7999), "Port Number Of The RPC Service")
-        ("Network.RPCCallback.Host", boost::program_options::value<std::string>(&_Config.RPCCallbackHost)->default_value("0.0.0.0"), "Host That The RPC Service Binds To")
+        ("Network.RPCCallback.Host", boost::program_options::value<std::string>(&_Config.RPCCallbackHost)->default_value("0.0.0.0"), "Host of the RPC Service")
         ("Network.NES.Port", boost::program_options::value<int>(&LocalCfg.NESPortNumber)->default_value(CONFIG_DEFAULT_NES_PORT_NUMBER), "NES Service Port Number")
         ("Network.NES.Host", boost::program_options::value<std::string>(&LocalCfg.NESHost)->default_value(CONFIG_DEFAULT_NES_HOST), "NES Host To Connect To")
         ("Network.NES.Timeout_ms", boost::program_options::value<int>(&LocalCfg.NESTimeout_ms)->default_value(CONFIG_DEFAULT_NES_TIMEOUT_MS), "NES Host To Connect To")        

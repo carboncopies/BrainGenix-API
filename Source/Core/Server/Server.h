@@ -31,24 +31,22 @@ namespace Server {
 
 /**
  * @brief This struct is passed into the callback for each of the resource handlers,
- * and provides access to shared resources (like the db connector).
+ * and provides access to shared resources (like the database connector).
  * 
- * @details This object must be thread safe, as multiple server threads may access this at any time!
- * 
+ * @details This object must be thread-safe, as multiple server threads may access it at any time.
  */
 struct Server {
 
-    std::atomic<int> TotalQueries = 0; /**Test attribute that keeps track of total number of hits the api gets*/
-    std::atomic<bgServiceStatus> APIState = SERVICE_HEALTHY; /**Enum showing the overall system status*/
-    std::atomic<bgServiceStatus> NESState = SERVICE_CONFIG_ERR; /**Enum showing the NES system status*/
-    std::atomic<bgServiceStatus> EVMState = SERVICE_CONFIG_ERR; /**Enum showing the EVM system status*/
+    std::atomic<int> TotalQueries = 0; /**< Tracks the total number of API queries received. */
+    std::atomic<bgServiceStatus> APIState = SERVICE_HEALTHY; /**< Enum indicating the overall system status. */
+    std::atomic<bgServiceStatus> NESState = SERVICE_CONFIG_ERR; /**< Enum indicating the NES system status. */
+    std::atomic<bgServiceStatus> EVMState = SERVICE_CONFIG_ERR; /**< Enum indicating the EVM system status. */
 
-    std::shared_ptr<::rpc::client> NESClient; /**Pointer to RPC client service for nes*/
-    std::shared_ptr<::rpc::client> EVMClient; /**Pointer to RPC client service for nes*/
+    std::shared_ptr<::rpc::client> NESClient; /**< Shared pointer to the RPC client service for NES. */
+    std::shared_ptr<::rpc::client> EVMClient; /**< Shared pointer to the RPC client service for EVM. */
 
-    std::atomic_bool* IsNESClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
-    std::atomic_bool* IsEVMClientHealthy_; /**Indicates if the upstream service is ready to handle queries. DO NOT QUERY NESCLIENT IF THIS IS FALSE!!!*/
-
+    std::atomic_bool* IsNESClientHealthy_; /**< Indicates if the NES client is ready to handle queries. */
+    std::atomic_bool* IsEVMClientHealthy_; /**< Indicates if the EVM client is ready to handle queries. */
 
 };
 

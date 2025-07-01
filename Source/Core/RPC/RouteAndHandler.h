@@ -37,12 +37,26 @@ namespace API {
 
 // typedef std::string APIRequest_func_t(const nlohmann::json&);
 
+/**
+ * @struct RouteAndHandler
+ * @brief A structure that associates a route with its corresponding handler function.
+ *
+ * This structure is used to map a specific route (endpoint) to a handler function
+ * that processes requests for that route.
+ */
 struct RouteAndHandler {
+    /**
+     * @brief The route (endpoint) as a string.
+     */
     std::string Route_;
+
+    /**
+     * @brief A reference to the handler function for the route.
+     *
+     * The handler function takes a JSON object as input and returns a string response.
+     */
     std::function<std::string>& Handler_;
 };
-
-
 
 
 }; // Close Namespace API

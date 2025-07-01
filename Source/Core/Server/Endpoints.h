@@ -1,4 +1,4 @@
-  //==============================================================//
+//==============================================================//
   // This file is part of the BrainGenix-API Unified API Endpoint //
   //==============================================================//
 
@@ -43,6 +43,15 @@
   namespace API {
   namespace Server {
 
+  /**
+   * @class EndpointManager
+   * @brief Manages the API endpoints for the BrainGenix server.
+   *
+   * This class is responsible for maintaining a list of API routes and adding them
+   * to the service. It ensures that all routes are properly initialized and linked
+   * to the server. The EndpointManager also keeps the resources in scope to prevent
+   * premature destruction.
+   */
   class EndpointManager {
 
     private:
@@ -73,16 +82,17 @@
       EndpointManager(BG::Common::Logger::LoggingSystem* _Logger);
 
       /**
-       * @brief Destroy the Endpoint Manager object
-       *
+       * @brief Destroy the EndpointManager object.
        */
       ~EndpointManager();
 
       /**
-       * @brief This function is where all routes are added to the service.
-       * They're included in this file from the Route directory and then added in the AddRoutes function body.
-       *
-       * @param _Server
+       * @brief Adds all API routes to the Restbed service.
+       * 
+       * This function initializes and links all routes to the provided Restbed service and server instance.
+       * 
+       * @param _Service Reference to the Restbed service where routes will be added.
+       * @param _Server Reference to the server instance used for route callbacks.
        */
       void AddRoutes(restbed::Service &_Service, Server &_Server);
   };

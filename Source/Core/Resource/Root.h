@@ -32,36 +32,35 @@ namespace Root {
 /**
  * @brief Provides the code to handle the / route for the API.
  * 
- * @param _Server 
- * @param _Session 
+ * @param _Session The session object representing the current client session.
  */
 class Route {
     
 private:
 
-    Server::Server *Server_; /**Copy of the server struct*/
+    Server::Server *Server_; /**< Pointer to the server instance. */
 
 public:
 
     /**
-     * @brief Construct a new route object
-     * This function registers the routecallback method as a route for the path specified in the descriptor for this class.
+     * @brief Construct a new Route object.
      * 
-     * @param _Server 
-     * @param _Session 
+     * This function registers the RouteCallback method as a route for the path specified in the descriptor for this class.
+     * 
+     * @param _Server Pointer to the server instance.
+     * @param _Service Reference to the Restbed service instance.
      */
     Route(Server::Server *_Server, restbed::Service &_Service);
 
     /**
-     * @brief Destroy the Route object
-     * 
+     * @brief Destroy the Route object.
      */
     ~Route();
 
-
     /**
-     * @brief This is the route callback used.
+     * @brief Callback function for handling the route.
      * 
+     * @param _Session Shared pointer to the Restbed session object.
      */
     void RouteCallback(const std::shared_ptr<restbed::Session> _Session);
 

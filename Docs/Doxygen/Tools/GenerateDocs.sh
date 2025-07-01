@@ -8,4 +8,4 @@ mkdir -p Generated
 # Generate Docs
 echo "Generating Documentation For BrainGenix-ERS"
 cd Source
-doxygen Doxyfile
+doxygen Doxyfile 

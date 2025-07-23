@@ -44,6 +44,7 @@ namespace Util {
 bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsEVMClientHealthy,std::string _Route, std::string _Query, std::string* _Result);
 bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsEVMClientHealthy,std::string _Route, std::string _Query, std::string* _Result);
 
+std::string GetFile(const std::string& _Handle);
 
 }; // Close Namespace Util
 }; // Close Namespace API

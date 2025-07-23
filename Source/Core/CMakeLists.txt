@@ -99,6 +99,8 @@ include(${CMAKE_SCRIPTS_DIR}/LinuxBundle/LinuxBundle.cmake)
 target_link_libraries(${PROJECT_NAME} PRIVATE 
     nlohmann_json::nlohmann_json
     unofficial::restbed::restbed
+    oatpp::oatpp
+    oatpp::oatpp-openssl
     Boost::program_options
     rpclib::rpc
     spdlog::spdlog

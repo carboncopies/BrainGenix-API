@@ -201,3 +201,5 @@ public:
 }; // Close Namespace RPC
 }; // Close Namespace API
 }; // Close Namespace BG
+
+inline BG::API::RPC::Manager* g_Manager;

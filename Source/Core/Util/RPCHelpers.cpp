@@ -1,5 +1,5 @@
 #include <Util/RPCHelpers.h>
-
+#include <RPC/ClientManager.h>
 
 namespace BG {
 namespace API {
@@ -51,6 +51,29 @@ bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsE
     }
     return true;
 }
+
+std::string GetFile(const std::string& _Handle) {
+  nlohmann::json GetImageQuery;
+  GetImageQuery["ImageHandle"] = _Handle;
+ 
+  nlohmann::json QueryItem;
+  QueryItem["ReqID"] = 0;
+  QueryItem["VSDA/GetImage"] = GetImageQuery;
+
+  std::vector<nlohmann::json> Queries{QueryItem};
+  nlohmann::json FinalQuery = Queries;
+
+  std::string Result;
+  bool Status = g_Manager->NESQueryJSON("NES", FinalQuery.dump(), &Result);
+  if (!Status) {
+      return "";
+  }
+
+  nlohmann::json ResultJSON = nlohmann::json::parse(Result)[0];
+
+  return ResultJSON["ImageData"];
+}
+
 
 }; // Close Namespace Util
 }; // Close Namespace API

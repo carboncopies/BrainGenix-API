@@ -109,6 +109,12 @@ find_package(yaml-cpp CONFIG REQUIRED)
 message(STATUS "Finding restbed Package")
 find_package(unofficial-restbed CONFIG REQUIRED)
 
+message(STATUS "Finding oatpp Package")
+find_package(oatpp CONFIG REQUIRED)
+
+message(STATUS "Finding oatpp-openssl Package")
+find_package(oatpp-openssl CONFIG REQUIRED)
+
 message(STATUS "Finding nlohmann_json Package")
 find_package(nlohmann_json CONFIG REQUIRED)
 

@@ -8,47 +8,57 @@
     Date Created: 2021-11-01
 */
 
-
 #include <Resource/Dataset/Dataset.h>
-
-
+#include <Resource/AppComponents.h>
+#include <Resource/Controller.h>
+#include <oatpp/network/Server.hpp>
+#include <oatpp-openssl/server/ConnectionProvider.hpp>
+#include <oatpp-openssl/Config.hpp>
 #include <Main.h>
 
-
-
 int main(int NumArguments, char** ArgumentValues) {
-
-
-    // Setup Logger Here
     BG::Common::Logger::LoggingSystem Logger;
 
     // Startup With Config Manager, Will Read Args And Config File, Then Parse Into Config Struct
     BG::API::Config::Manager ConfigManager(&Logger, NumArguments, ArgumentValues);
     BG::API::Config::Config& SystemConfiguration = ConfigManager.GetConfig();
 
-    // -- Setup HTTP Server --
-    // The server controller initializes restbed and sets up SSL certs, etc. Handles HTTP/POST requests
-    BG::API::Server::Controller ServerController(SystemConfiguration, &Logger); 
-    BG::API::Server::Server* Server = ServerController.GetServerStruct();
+    // init global server struct
+    BG::API::Server::Server Server{};
+    g_Server = &Server; // NOTE: we can't pass the server pointer into oatpp's endpoints, so we need a global var
 
+    oatpp::base::Environment::init();
+    
+    // init oatpp's components
+    AppComponent components;
 
-    // The RPC Manager registers the restbed callbacks for NES and EVM routes to the user via post
-    // This is what actually serves to the user, and does not handle internal routing
-    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, Server); 
+    // get router component
+    OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
 
+    router->addController(std::make_shared<BrainGenixAPIController>());
+
+    /* Get connection handler component */
+    OATPP_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>, connectionHandler);
+
+    /* Get connection provider component */
+    OATPP_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, connectionProvider);
+
+    /* Create server which takes provided TCP connections and passes them to HTTP connection handler */
+    oatpp::network::Server server(connectionProvider, connectionHandler);
+
+    /* Priny info about server port */
+    OATPP_LOGI("BrainGenix-API", "Server running on port %s", connectionProvider->getProperty("port").getData());
+
+    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, &Server); 
+    g_Manager = &RPCManager;
 
     // The manager is for internal RPC calls (i.e. NES->EVM, or EVM->NES, NOT to the user)
-    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, Server);
+    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, &Server);
 
+    /* Run server */
+    server.run();
 
-    // This route provides the HTTP routes that allow the user to download images from EM/CA datasets from NES
-    BG::API::Resource::Dataset::Route Dataset(Server, &RPCManager, ServerController.Service_);
-
-
-    // Start Server
-    ServerController.StartService();
-    ServerController.HangUntilExit();
-
+    oatpp::base::Environment::destroy();
 }
 
 

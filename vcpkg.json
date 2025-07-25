@@ -16,6 +16,8 @@
     "spdlog",
     "libmariadb",
     "bg-common-logger",
-    "cpp-base64"
+    "cpp-base64",
+    "oatpp",
+    "oatpp-openssl"
   ]
 }

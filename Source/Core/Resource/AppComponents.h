@@ -1,13 +1,17 @@
 #pragma once
 
-#include "Forbidden.h" // Include your custom error handler
-
 #include <oatpp/web/server/HttpConnectionHandler.hpp>
 #include <oatpp/web/server/HttpRouter.hpp>
 #include <oatpp/network/tcp/server/ConnectionProvider.hpp>
+#include <oatpp/network/monitor/ConnectionMonitor.hpp>
+#include <oatpp/network/monitor/ConnectionMaxAgeChecker.hpp>
 #include <oatpp/parser/json/mapping/ObjectMapper.hpp>
 #include <oatpp/core/macro/component.hpp>
 #include <oatpp/web/server/interceptor/RequestInterceptor.hpp>
+#include <oatpp-openssl/server/ConnectionProvider.hpp>
+#include <oatpp-openssl/Config.hpp>
+#include <Config/Config.h>
+#include <chrono>
 
 /**
  * @class AppComponent
@@ -18,12 +22,36 @@
  */
 class AppComponent {
 public:
+  AppComponent(BG::API::Config::Config* _Config) : Config_(_Config) {}
+  
+  BG::API::Config::Config* Config_;
 
   /**
    *  Create ConnectionProvider component which listens on the port
    */
-  OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, serverConnectionProvider)([] {
-    return oatpp::network::tcp::server::ConnectionProvider::createShared({"0.0.0.0", 8000, oatpp::network::Address::IP_4});
+  OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, serverConnectionProvider)([this] {
+      auto tcpProvider = oatpp::network::tcp::server::ConnectionProvider::createShared({ Config_->Host, static_cast<unsigned short>(Config_->PortNumber), oatpp::network::Address::IP_4 });
+
+      auto monitor = std::make_shared<oatpp::network::monitor::ConnectionMonitor>(tcpProvider);
+      monitor->addMetricsChecker(std::make_shared<oatpp::network::monitor::ConnectionMaxAgeChecker>(
+        std::chrono::hours(1)
+      ));
+
+      if (Config_->UseHTTPS) {
+        std::string keyURI = "file://" + Config_->KeyFilePath,
+          certURI = "file://" + Config_->CrtFilePath;
+
+        std::cout << "Loading Private Key From: " << keyURI << std::endl << "Loading Certificate From: " << certURI << std::endl;
+      
+        auto config = oatpp::openssl::Config::createDefaultServerConfigShared(certURI, keyURI);
+
+        // have to cast because even though both monitor and this ssl connection provider are 
+        // ServerConnectionProvider types, we can't return 2 explicitly different shared_ptrs
+        return std::static_pointer_cast<oatpp::network::ServerConnectionProvider>(
+          oatpp::openssl::server::ConnectionProvider::createShared(config, monitor));
+      }
+
+      return std::static_pointer_cast<oatpp::network::ServerConnectionProvider>(monitor);
   }());
 
   /**

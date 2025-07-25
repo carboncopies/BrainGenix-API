@@ -54,5 +54,3 @@ struct Server {
 }; // Close Namespace Server
 }; // Close Namespace API
 }; // Close Namespace BG
-
-inline BG::API::Server::Server* g_Server;

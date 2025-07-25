@@ -5,17 +5,19 @@
 #include <oatpp/core/macro/codegen.hpp>
 #include <oatpp/core/macro/component.hpp>
 #include <oatpp/web/protocol/http/outgoing/BufferBody.hpp>
-#include <Server/Server.h>
+#include <RPC/ClientManager.h>
 #include <Util/RPCHelpers.h>
 #include <cpp-base64/base64.h>
 #include <nlohmann/json.hpp>
 
 #include OATPP_CODEGEN_BEGIN(ApiController)
-
+  
 class BrainGenixAPIController : public oatpp::web::server::api::ApiController {
+  BG::API::Server::Server* Server_;
+  BG::API::RPC::Manager* Manager_;
 public:
-  BrainGenixAPIController(OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
-    : oatpp::web::server::api::ApiController(objectMapper)
+  BrainGenixAPIController(BG::API::Server::Server* _Server, BG::API::RPC::Manager* _Manager, OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
+    : Server_(_Server), Manager_(_Manager), oatpp::web::server::api::ApiController(objectMapper)
   {}
 public:
   ENDPOINT("GET", "/", root) {
@@ -43,20 +45,19 @@ public:
   }
   
   ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
-      printf("starting response return\n");
-      std::string UpstreamResponseStr = "";
-      std::string body = request->readBodyToString();
-      bool UpstreamStatus = BG::API::Util::NESQueryJSON(g_Server->NESClient, g_Server->IsNESClientHealthy_, "NES", body, &UpstreamResponseStr);
-      if (!UpstreamStatus) {
-        printf("Upstream status fail\n");  
-        return createResponse(Status::CODE_204, "Upstream status fail");
-      }
+    std::string UpstreamResponseStr = "";
+    std::string body = request->readBodyToString();
+    bool UpstreamStatus = BG::API::Util::NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", body, &UpstreamResponseStr);
+    if (!UpstreamStatus) {
+      printf("Upstream status fail\n");  
+      return createResponse(Status::CODE_204, "Upstream status fail");
+    }
 
-      //printf("%s\n%s\n\n", body.c_str(), UpstreamResponseStr.c_str());
+    //printf("%s\n%s\n\n", body.c_str(), UpstreamResponseStr.c_str());
 
-      auto response = createResponse(Status::CODE_200, UpstreamResponseStr);
-      response->putHeader("Content-Type", "application/json"); // not sure if this is needed
-      return response;
+    auto response = createResponse(Status::CODE_200, UpstreamResponseStr);
+    response->putHeader("Content-Type", "application/json"); // not sure if this is needed
+    return response;
   }
 
   ENDPOINT("GET", "/Dataset/*", dataset, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
@@ -94,7 +95,7 @@ public:
 
     std::string Result;
     try {
-      Result = BG::API::Util::GetFile(FullPath);
+      Result = BG::API::Util::GetFile(Manager_, FullPath);
 
       if (Result.empty()) {
         return createResponse(Status::CODE_404, "No file found. Path: " + FullPath);
@@ -125,10 +126,10 @@ public:
     // Setup Response
     std::string OverallState = "";
     int SystemState = 3;
-    if (g_Server->APIState == BG::SERVICE_HEALTHY){
+    if (Server_->APIState == BG::SERVICE_HEALTHY){
       OverallState = "Healthy";
       SystemState = 0;
-    } else if (g_Server->APIState == BG::SERVICE_FAILED) {
+    } else if (Server_->APIState == BG::SERVICE_FAILED) {
       OverallState = "Failed";
       SystemState = 2;
     } else {
@@ -140,7 +141,7 @@ public:
     nlohmann::json Response;
     Response["StatusCode"] = 0;
     Response["SystemState"] = OverallState;
-    Response["ServiceStateNES"] = (int)g_Server->NESState;
+    Response["ServiceStateNES"] = (int)Server_->NESState;
     Response["ServiceStateAPI"] = SystemState;
     Response["ServiceStateAPIDB"] = 3; // not yet configured
     Response["ServiceStateERS"] = 3; // not yet configured
@@ -153,6 +154,37 @@ public:
     response->putHeader("Content-Type", "application/json");
     response->putHeader("Access-Control-Allow-Origin", "*");
     return response;
+  }
+
+  // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from
+  ENDPOINT("GET", "/.well-known/acme-challenge/*",  // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
+     acme, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
+    std::string Filename = "/" + request->getPathTail();
+    
+    // Strip Potentially Dangerous '..'
+    std::string Pattern = "..";
+    std::string::size_type i = Filename.find(Pattern);
+    while (i != std::string::npos) {
+      std::cout << "Detected '..' In Filename, It's Possible That Someone Is Trying To Do Something Nasty\n";
+      Filename.erase(i, Pattern.length());
+      i = Filename.find(Pattern, i);
+    }
+
+    std::string FinalFilename = "/.well-known/acme-challenge" + Filename;
+    std::cout << "[INFO] User Requested File From " << FinalFilename << std::endl;
+    std::ifstream Filestream(FinalFilename, std::ifstream::in);
+    
+    if (Filestream.is_open()) {
+      std::string Body = std::string(std::istreambuf_iterator<char>(Filestream), std::istreambuf_iterator<char>());
+      
+      auto response = createResponse(Status::CODE_200, Body);
+      response->putHeader("Content-Type", "text/plain");
+      response->putHeader("Content-Length", std::to_string(Body.length())); // don't know if we need to set this manually
+      response->putHeader("Access-Control-Allow-Origin", "*");
+      return response;
+    } else {
+      return createResponse(Status::CODE_404, "Not found");;
+    }
   }
 };
 

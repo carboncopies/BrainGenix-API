@@ -11,7 +11,6 @@
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <jwt-cpp/jwt.h>
-#include <jwt-cpp/traits/nlohmann-json/traits.h>
 #include <Util/JWTUtil.hpp>
 
 #include OATPP_CODEGEN_BEGIN(ApiController)
@@ -132,7 +131,6 @@ public:
 
   ENDPOINT("GET", "/Dataset/*", dataset, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
 
-    std::string userRole;
     
     // 2. Use the macro to validate JWT and extract role
     CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
@@ -209,10 +207,9 @@ public:
 
   ENDPOINT("GET", "/Diagnostic/Status", status, 
          REQUEST(std::shared_ptr<IncomingRequest>, request)) {
-    // 1. Declare userRole variable
-    std::string userRole;
     
-    // 2. Validate JWT and extract role
+    
+    // 1. Validate JWT and extract role
     CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
 
     // 3. Role-based authorization check
@@ -286,6 +283,25 @@ public:
       return createResponse(Status::CODE_404, "Not found");;
     }
   }
+
+
+  //DEV only End Point :
+  ENDPOINT("GET", "/Auth/Decode", decodeJWT, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
+    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+    
+    auto token = request->getHeader("Authorization")->c_str();
+    std::string tokenStr = std::string(token).substr(7); // remove "Bearer "
+
+    auto decoded = JWTUtil::verifyToken(tokenStr);
+
+    nlohmann::json info;
+    info["username"] = JWTUtil::getUsername(decoded);
+    info["role"] = JWTUtil::getRole(decoded);
+    info["exp"] = decoded.get_expires_at().time_since_epoch().count();
+
+    return createResponse(Status::CODE_200, info.dump(2));
+}
+
 };
 
 #include OATPP_CODEGEN_END(ApiController) ///< End Codegen

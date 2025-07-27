@@ -28,5 +28,12 @@ class TokenDTO : public oatpp::DTO {
 
 /* TODO - Add more DTOs here */
 
+class LoginDTO : public oatpp::DTO{
+  DTO_INIT(LoginDTO, DTO)
+
+  DTO_FIELD(String, username);
+  DTO_FIELD(String, password);
+}
+
 /* End DTO code-generation */
 #include OATPP_CODEGEN_END(DTO)

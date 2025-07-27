@@ -11,6 +11,23 @@
 #include <nlohmann/json.hpp>
 
 #include OATPP_CODEGEN_BEGIN(ApiController)
+
+
+
+// JWT TOKEN verification MACRO
+#define CHECK_JWT_OR_UNAUTHORIZED(request, roleOut) \
+  const auto& authHeader = request->getHeader("Authorization"); \
+  if (authHeader.length() < 8 || authHeader.substr(0, 7) != "Bearer ") { \
+    return createResponse(oatpp::web::protocol::http::Status::CODE_401, "Missing or malformed token"); \
+  } \
+  std::string token = authHeader.substr(7); \
+  jwt::decoded_jwt<> decoded; \
+  try { decoded = JWTUtil::verifyToken(token); } \
+  catch (const std::exception& e) { \
+    return createResponse(oatpp::web::protocol::http::Status::CODE_403, "Invalid token: " + std::string(e.what())); \
+  } \
+  std::string roleOut = JWTUtil::getRole(decoded)
+
   
 class BrainGenixAPIController : public oatpp::web::server::api::ApiController {
   BG::API::Server::Server* Server_;
@@ -37,6 +54,27 @@ public:
   }
 
   ENDPOINT("GET", "/Auth/GetToken", token) {
+
+    //Token Logic 
+    std::ifstream file("Config/users.json");
+    if(!file.is_open()){
+      return createResponse(status::CODE_500 , "unable to open the user information");
+    }
+
+    nlohmann::json users;
+    file >> users;
+
+    std::string username  = loginDto->username;
+    std::string password = loginDto->password ; 
+
+    if (!users.contains(username) || users[username]["password"] != password) {
+        return createResponse(Status::CODE_401, "Invalid credentials");
+    }
+
+    std::string role = users[username]["role"];
+    std::string token = JWTUtil::generateToken(username, role);
+
+
     auto dto = TokenDTO::createShared();
     dto->StatusCode = 0;
     dto->AuthKey = "MyVerySecureToken";
@@ -45,6 +83,13 @@ public:
   }
   
   ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
+
+    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+
+    if (userRole != "admin") {
+        return createResponse(Status::CODE_403, "Unauthorized: Admin access only");
+    }
+
     std::string UpstreamResponseStr = "";
     std::string body = request->readBodyToString();
     bool UpstreamStatus = BG::API::Util::NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", body, &UpstreamResponseStr);
@@ -61,6 +106,15 @@ public:
   }
 
   ENDPOINT("GET", "/Dataset/*", dataset, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
+
+    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+
+    
+    if (userRole != "admin") {
+        return createResponse(Status::CODE_403, "Unauthorized: Admin access only");
+    }
+
+
     auto tail = request->getPathTail(); // everything after /Dataset/
 
     // parse path in tail
@@ -124,6 +178,15 @@ public:
 
   ENDPOINT("GET", "/Diagnostic/Status", status) {
     // Setup Response
+
+    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+
+    
+    if (userRole != "admin") {
+        return createResponse(Status::CODE_403, "Unauthorized: Admin access only");
+    }
+
+
     std::string OverallState = "";
     int SystemState = 3;
     if (Server_->APIState == BG::SERVICE_HEALTHY){

@@ -1,0 +1,10 @@
+{
+  "rahul": {
+    "password": "secret123",
+    "role": "admin"
+  },
+  "Admonishing" : {
+    "password" : "Instruction",
+    "role" : "admin"
+  }
+}

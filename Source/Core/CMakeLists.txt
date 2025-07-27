@@ -120,3 +120,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Shared)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+target_include_directories((${PROJECT_NAME} PRIVATE ${LIB_DIR}/jwt-cpp/include))

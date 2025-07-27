@@ -1,0 +1,9 @@
+Package: oatpp
+Version: 1.3.0
+Port-Version: 2
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-linux
+Multi-Arch: same
+Abi: 1fa7ff9157cb81fdd4c652b0177e1d40303805182a3118ea53bf3671144711fb
+Description: Modern web framework.
+Status: install ok half-installed

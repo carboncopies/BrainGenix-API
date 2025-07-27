@@ -11,25 +11,35 @@
 #include <nlohmann/json.hpp>
 #include <fstream>
 #include <jwt-cpp/jwt.h>
+#include <jwt-cpp/traits/nlohmann-json/traits.h>
 #include <Util/JWTUtil.hpp>
 
 #include OATPP_CODEGEN_BEGIN(ApiController)
 
 
+std::string userRole;
 
-// JWT TOKEN verification MACRO
 #define CHECK_JWT_OR_UNAUTHORIZED(request, roleOut) \
-  const auto& authHeader = request->getHeader("Authorization"); \
-  if (authHeader.length() < 8 || authHeader.substr(0, 7) != "Bearer ") { \
-    return createResponse(oatpp::web::protocol::http::Status::CODE_401, "Missing or malformed token"); \
-  } \
-  std::string token = authHeader.substr(7); \
-  jwt::decoded_jwt<> decoded; \
-  try { decoded = JWTUtil::verifyToken(token); } \
-  catch (const std::exception& e) { \
-    return createResponse(oatpp::web::protocol::http::Status::CODE_403, "Invalid token: " + std::string(e.what())); \
-  } \
-  std::string roleOut = JWTUtil::getRole(decoded)
+    do { \
+        const auto& __authHeader = (request)->getHeader("Authorization"); \
+        std::string __authStr = __authHeader->c_str(); \
+        if (__authStr.length() < 8 || __authStr.substr(0, 7) != "Bearer ") { \
+            return createResponse( \
+                oatpp::web::protocol::http::Status::CODE_401, \
+                "Missing or malformed token" \
+            ); \
+        } \
+        std::string __token = __authStr.substr(7); \
+        try { \
+            auto __decoded = JWTUtil::verifyToken(__token); \
+            (roleOut) = JWTUtil::getRole(__decoded); \
+        } catch (const std::exception& e) { \
+            return createResponse( \
+                oatpp::web::protocol::http::Status::CODE_403, \
+                "Invalid token: " + std::string(e.what()) \
+            ); \
+        } \
+    } while (false)
 
   
 class BrainGenixAPIController : public oatpp::web::server::api::ApiController {
@@ -56,34 +66,46 @@ public:
     return createDtoResponse(Status::CODE_200, dto);
   }
 
-  ENDPOINT("GET", "/Auth/GetToken", token) {
+  ENDPOINT("POST", "/Auth/GetToken", token,
+         BODY_DTO(Object<LoginDTO>, loginDTO)) {
+    
+          try {
+        std::ifstream file("Config/users.json");
+        if (!file.is_open()) {
+            return createResponse(oatpp::web::protocol::http::Status::CODE_500, 
+                               "Unable to open user information");
+        }
 
-    //Token Logic 
-    std::ifstream file("Config/users.json");
-    if(!file.is_open()){
-      return createResponse(status::CODE_500 , "unable to open the user information");
+        nlohmann::json users;
+        file >> users;
+
+        std::string username = loginDTO->username->c_str();
+        std::string password = loginDTO->password->c_str();
+
+        if (!users.contains(username)) {
+            return createResponse(oatpp::web::protocol::http::Status::CODE_401, 
+                               "Invalid credentials");
+        }
+
+        if (users[username]["password"] != password) {
+            return createResponse(oatpp::web::protocol::http::Status::CODE_401, 
+                               "Invalid credentials");
+        }
+
+        std::string role = users[username]["role"];
+        std::string jwtToken = JWTUtil::generateToken(username, role);
+
+        auto dto = TokenDTO::createShared();
+        dto->StatusCode = 0;
+        dto->AuthKey = jwtToken.c_str();
+
+        return createDtoResponse(oatpp::web::protocol::http::Status::CODE_200, dto);
+    } catch (const std::exception& e) {
+        return createResponse(oatpp::web::protocol::http::Status::CODE_500, 
+                           "Internal server error");
     }
-
-    nlohmann::json users;
-    file >> users;
-
-    std::string username  = LoginDTO->username;
-    std::string password = LoginDTO->password ; 
-
-    if (!users.contains(username) || users[username]["password"] != password) {
-        return createResponse(Status::CODE_401, "Invalid credentials");
-    }
-
-    std::string role = users[username]["role"];
-    std::string token = JWTUtil::generateToken(username, role);
-
-
-    auto dto = TokenDTO::createShared();
-    dto->StatusCode = 0;
-    dto->AuthKey = "MyVerySecureToken";
-
-    return createDtoResponse(Status::CODE_200, dto);
-  }
+        
+}
   
   ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
 
@@ -110,11 +132,17 @@ public:
 
   ENDPOINT("GET", "/Dataset/*", dataset, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
 
+    std::string userRole;
+    
+    // 2. Use the macro to validate JWT and extract role
     CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
 
-    
+    // 3. Role-based authorization check
     if (userRole != "admin") {
-        return createResponse(Status::CODE_403, "Unauthorized: Admin access only");
+        return createResponse(
+            oatpp::web::protocol::http::Status::CODE_403, 
+            "Unauthorized: Admin access required"
+        );
     }
 
 
@@ -179,14 +207,20 @@ public:
     return response;
   }
 
-  ENDPOINT("GET", "/Diagnostic/Status", status) {
-    // Setup Response
-
+  ENDPOINT("GET", "/Diagnostic/Status", status, 
+         REQUEST(std::shared_ptr<IncomingRequest>, request)) {
+    // 1. Declare userRole variable
+    std::string userRole;
+    
+    // 2. Validate JWT and extract role
     CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
 
-    
+    // 3. Role-based authorization check
     if (userRole != "admin") {
-        return createResponse(Status::CODE_403, "Unauthorized: Admin access only");
+        return createResponse(
+            oatpp::web::protocol::http::Status::CODE_403, 
+            "Unauthorized: Admin access required"
+        );
     }
 
 

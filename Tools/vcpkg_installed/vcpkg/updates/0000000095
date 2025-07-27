@@ -1,0 +1,7 @@
+Package: cpp-base64
+Version: V2.rc.08
+Architecture: x64-linux
+Multi-Arch: same
+Abi: fc4270b0a3ff53956827e2183cd792ec3a99d17acda74a1f18e054728e508922
+Description: Base64 encoding and decoding with c++.
+Status: install ok installed

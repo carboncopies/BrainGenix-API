@@ -1,0 +1,8 @@
+Package: boost-predef
+Version: 1.84.0
+Depends: boost-config, boost-vcpkg-helpers
+Architecture: x64-linux
+Multi-Arch: same
+Abi: 760c4630148836e3f73dc1a377381541d54460baec275bcf979f1bd79ce7df64
+Description: Boost predef module
+Status: install ok half-installed

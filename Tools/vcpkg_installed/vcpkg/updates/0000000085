@@ -1,0 +1,8 @@
+Package: boost-container
+Version: 1.84.0
+Depends: boost-assert, boost-build, boost-config, boost-intrusive, boost-modular-build-helper, boost-move, boost-static-assert, boost-vcpkg-helpers, vcpkg-cmake
+Architecture: x64-linux
+Multi-Arch: same
+Abi: e4bab48556ed8fed7524514213686f7a9a91bf210d573f53559b1c8e6ee2fb70
+Description: Boost container module
+Status: install ok installed

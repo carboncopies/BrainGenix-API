@@ -1,0 +1,9 @@
+Package: restbed
+Version: 4.8
+Port-Version: 3
+Depends: asio, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-linux
+Multi-Arch: same
+Abi: bc80b4035313a286d7a5998b04086e72c4c85cfbc136a2b30f261e38199d1f3a
+Description: Corvusoft's Restbed framework brings asynchronous RESTful functionality to C++14 applications.
+Status: install ok installed

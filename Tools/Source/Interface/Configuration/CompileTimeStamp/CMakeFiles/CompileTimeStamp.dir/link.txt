@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/rjoshi/BrainGenix/BrainGenix-API/Binaries/lib/libCompileTimeStamp.a CMakeFiles/CompileTimeStamp.dir/CompileTimeStamp.cpp.o
+/usr/bin/ranlib /home/rjoshi/BrainGenix/BrainGenix-API/Binaries/lib/libCompileTimeStamp.a

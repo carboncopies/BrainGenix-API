@@ -1,0 +1,10 @@
+x64-linux/
+x64-linux/include/
+x64-linux/include/cpp-base64/
+x64-linux/include/cpp-base64/base64.cpp
+x64-linux/include/cpp-base64/base64.h
+x64-linux/share/
+x64-linux/share/cpp-base64/
+x64-linux/share/cpp-base64/copyright
+x64-linux/share/cpp-base64/vcpkg.spdx.json
+x64-linux/share/cpp-base64/vcpkg_abi_info.txt

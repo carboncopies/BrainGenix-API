@@ -1,0 +1,8 @@
+Package: boost-function
+Version: 1.84.0
+Depends: boost-assert, boost-bind, boost-config, boost-core, boost-preprocessor, boost-throw-exception, boost-type-traits, boost-vcpkg-helpers
+Architecture: x64-linux
+Multi-Arch: same
+Abi: e7c2048a5de87a3cb37c72d459b5702d9bfaa8e9f927495c882e82994957dbd4
+Description: Boost function module
+Status: install ok half-installed

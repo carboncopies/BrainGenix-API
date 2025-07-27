@@ -9,6 +9,9 @@
 #include <Util/RPCHelpers.h>
 #include <cpp-base64/base64.h>
 #include <nlohmann/json.hpp>
+#include <fstream>
+#include <jwt-cpp/jwt.h>
+#include <Util/JWTUtil.hpp>
 
 #include OATPP_CODEGEN_BEGIN(ApiController)
 
@@ -64,8 +67,8 @@ public:
     nlohmann::json users;
     file >> users;
 
-    std::string username  = loginDto->username;
-    std::string password = loginDto->password ; 
+    std::string username  = LoginDTO->username;
+    std::string password = LoginDTO->password ; 
 
     if (!users.contains(username) || users[username]["password"] != password) {
         return createResponse(Status::CODE_401, "Invalid credentials");

@@ -33,7 +33,7 @@ class LoginDTO : public oatpp::DTO{
 
   DTO_FIELD(String, username);
   DTO_FIELD(String, password);
-}
+};
 
 /* End DTO code-generation */
 #include OATPP_CODEGEN_END(DTO)

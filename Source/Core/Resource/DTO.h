@@ -31,8 +31,8 @@ class TokenDTO : public oatpp::DTO {
 class LoginDTO : public oatpp::DTO{
   DTO_INIT(LoginDTO, DTO)
 
-  DTO_FIELD(String, username);
-  DTO_FIELD(String, password);
+  DTO_FIELD(String, Username);
+  DTO_FIELD(String, Password);
 };
 
 /* End DTO code-generation */

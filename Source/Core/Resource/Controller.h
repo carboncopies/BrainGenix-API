@@ -16,16 +16,29 @@
 #include OATPP_CODEGEN_BEGIN(ApiController)
 
 
+
 std::string userRole;
+
+
+#define CONFIG_PATH "../Source/Core/Config/users.json"
 
 #define CHECK_JWT_OR_UNAUTHORIZED(request, roleOut) \
     do { \
         const auto& __authHeader = (request)->getHeader("Authorization"); \
-        std::string __authStr = __authHeader->c_str(); \
-        if (__authStr.length() < 8 || __authStr.substr(0, 7) != "Bearer ") { \
+        if (!__authHeader) { \
+            OATPP_LOGE("Auth", "No Authorization header"); \
             return createResponse( \
                 oatpp::web::protocol::http::Status::CODE_401, \
-                "Missing or malformed token" \
+                "Missing Authorization header" \
+            ); \
+        } \
+        std::string __authStr = __authHeader->c_str(); \
+        OATPP_LOGD("Auth", "Raw Auth Header: %s", __authStr.c_str()); \
+        if (__authStr.length() < 8 || __authStr.substr(0, 7) != "Bearer ") { \
+            OATPP_LOGE("Auth", "Malformed Bearer token"); \
+            return createResponse( \
+                oatpp::web::protocol::http::Status::CODE_401, \
+                "Malformed token (Bearer missing)" \
             ); \
         } \
         std::string __token = __authStr.substr(7); \
@@ -33,6 +46,7 @@ std::string userRole;
             auto __decoded = JWTUtil::verifyToken(__token); \
             (roleOut) = JWTUtil::getRole(__decoded); \
         } catch (const std::exception& e) { \
+            OATPP_LOGE("Auth", "Token verification failed: %s", e.what()); \
             return createResponse( \
                 oatpp::web::protocol::http::Status::CODE_403, \
                 "Invalid token: " + std::string(e.what()) \
@@ -69,17 +83,19 @@ public:
          BODY_DTO(Object<LoginDTO>, loginDTO)) {
     try {
         // 1. Validate input
-        std::cout<<"I'm here"<<std::endl;
-        if (loginDTO->username->empty() || loginDTO->password->empty()) {
+        if (!loginDTO->Username || loginDTO->Username == "" || !loginDTO->Password || loginDTO->Password == "") {
+            std::cout<<"/Auth/GetToken Body validation failed"<<std::endl;
+            OATPP_LOGE("Auth", "Empty credentials detected");
             return createResponse(
                 oatpp::web::protocol::http::Status::CODE_400,
                 "Username and password are required"
             );
         }
-
         // 2. Load user database
-        std::ifstream file("Config/users.json");
-        if (!file.is_open()) {
+  
+        std::ifstream file(CONFIG_PATH);
+        if (!file) {
+            std::cout<<"/Auth/GetToken unable to open file "<<CONFIG_PATH<<std::endl;
             OATPP_LOGE("Auth", "Failed to open users.json");
             return createResponse(
                 oatpp::web::protocol::http::Status::CODE_500,
@@ -100,8 +116,8 @@ public:
         }
 
         // 4. Authenticate
-        std::string username = loginDTO->username->c_str();
-        std::string password = loginDTO->password->c_str();
+        std::string username = loginDTO->Username->c_str();
+        std::string password = loginDTO->Password->c_str();
 
         if (!users.contains(username)) {
             OATPP_LOGI("Auth", "Failed login attempt for user '%s'", username.c_str());
@@ -114,7 +130,8 @@ public:
         // 5. Generate token
         std::string role = users[username].value("role", "user");
         std::string jwtToken = JWTUtil::generateToken(username, role);
-
+        //std::cout<<"Token generated successfully :: "<<jwtToken<<std::endl;
+        
         // 6. Prepare response
         auto response = TokenDTO::createShared();
         response->StatusCode = 0;
@@ -125,8 +142,8 @@ public:
             oatpp::web::protocol::http::Status::CODE_200,
             response
         );
-        httpResponse->putHeader("Authorization", "Bearer " + jwtToken);
-
+        // httpResponse->putHeader("Authorization", "Bearer " + jwtToken);
+        httpResponse->putHeader("AuthKey", jwtToken);
         return httpResponse;
 
     } catch (const std::exception& e) {
@@ -138,9 +155,19 @@ public:
     }
 }
   
-  ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
+ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
+      
+     auto headers = request->getHeaders();
 
+    for (const auto& pair : headers.getAll()) {
+        OATPP_LOGD("Header", "%s: %s", pair.first.std_str().c_str(), pair.second.std_str().c_str());
+    }
+
+    std::cout<<"headers printing done"<<std::endl;
+    
     CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+
+
 
     if (userRole != "admin") {
         return createResponse(Status::CODE_403, "Unauthorized: Admin access only");

@@ -157,21 +157,27 @@ public:
   
 ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
       
-     auto headers = request->getHeaders();
-
-    for (const auto& pair : headers.getAll()) {
-        OATPP_LOGD("Header", "%s: %s", pair.first.std_str().c_str(), pair.second.std_str().c_str());
+    std::cout<<"In NES endpoint"<<std::endl;
+    auto authKeyHeader = request->getHeader("AuthKey");
+    if (!authKeyHeader) {
+        std::cout<<"No AuthKey header found"<<std::endl;
+      return createResponse(Status::CODE_401, "Unauthorized: Missing AuthKey header");
     }
 
-    std::cout<<"headers printing done"<<std::endl;
+    std::string token = authKeyHeader->c_str();
     
-    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
-
-
-
-    if (userRole != "admin") {
-        return createResponse(Status::CODE_403, "Unauthorized: Admin access only");
+    try{
+        auto decoded = JWTUtil::verifyToken(token);
+        userRole = JWTUtil::getRole(decoded);
+    } catch (const std::exception& e) {
+       std::cout<<"Token verification failed: "<<e.what()<<std::endl;
+        return createResponse(Status::CODE_403, "Unauthorized: Invalid AuthKey"); 
     }
+
+    if(userRole != "admin") {
+      std::cout<<"User role is not admin: "<<userRole<<std::endl;
+      return createResponse(Status::CODE_403, "Unauthorized: Admin access required");
+    } 
 
     std::string UpstreamResponseStr = "";
     std::string body = request->readBodyToString();

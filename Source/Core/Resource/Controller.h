@@ -24,24 +24,23 @@ std::string userRole;
 
 #define CHECK_JWT_OR_UNAUTHORIZED(request, roleOut) \
     do { \
-        const auto& __authHeader = (request)->getHeader("Authorization"); \
-        if (!__authHeader) { \
-            OATPP_LOGE("Auth", "No Authorization header"); \
+        auto __queryParams = (request)->getQueryParameters(); \
+        auto __authKeyParam = __queryParams.get("AuthKey"); \
+        auto __authKeyHeader = (request)->getHeader("AuthKey"); \
+        std::string __token; \
+        if (__authKeyParam) { \
+            __token = __authKeyParam->c_str(); \
+            OATPP_LOGD("Auth", "Using token from query parameters"); \
+        } else if (__authKeyHeader) { \
+            __token = __authKeyHeader->c_str(); \
+            OATPP_LOGD("Auth", "Using token from header"); \
+        } else { \
+            OATPP_LOGE("Auth", "No AuthKey found"); \
             return createResponse( \
                 oatpp::web::protocol::http::Status::CODE_401, \
-                "Missing Authorization header" \
+                "Missing AuthKey (add ?AuthKey= to URL or AuthKey header)" \
             ); \
         } \
-        std::string __authStr = __authHeader->c_str(); \
-        OATPP_LOGD("Auth", "Raw Auth Header: %s", __authStr.c_str()); \
-        if (__authStr.length() < 8 || __authStr.substr(0, 7) != "Bearer ") { \
-            OATPP_LOGE("Auth", "Malformed Bearer token"); \
-            return createResponse( \
-                oatpp::web::protocol::http::Status::CODE_401, \
-                "Malformed token (Bearer missing)" \
-            ); \
-        } \
-        std::string __token = __authStr.substr(7); \
         try { \
             auto __decoded = JWTUtil::verifyToken(__token); \
             (roleOut) = JWTUtil::getRole(__decoded); \
@@ -49,10 +48,10 @@ std::string userRole;
             OATPP_LOGE("Auth", "Token verification failed: %s", e.what()); \
             return createResponse( \
                 oatpp::web::protocol::http::Status::CODE_403, \
-                "Invalid token: " + std::string(e.what()) \
+                "Invalid/expired token" \
             ); \
         } \
-    } while (false)
+    } while(false)
 
   
 class BrainGenixAPIController : public oatpp::web::server::api::ApiController {
@@ -157,27 +156,14 @@ public:
   
 ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
       
-    std::cout<<"In NES endpoint"<<std::endl;
-    auto authKeyHeader = request->getHeader("AuthKey");
-    if (!authKeyHeader) {
-        std::cout<<"No AuthKey header found"<<std::endl;
-      return createResponse(Status::CODE_401, "Unauthorized: Missing AuthKey header");
-    }
-
-    std::string token = authKeyHeader->c_str();
+    std::string userRole;
+    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
     
-    try{
-        auto decoded = JWTUtil::verifyToken(token);
-        userRole = JWTUtil::getRole(decoded);
-    } catch (const std::exception& e) {
-       std::cout<<"Token verification failed: "<<e.what()<<std::endl;
-        return createResponse(Status::CODE_403, "Unauthorized: Invalid AuthKey"); 
+    if (userRole != "admin") {
+        OATPP_LOGE("NES", "User role '%s' is not admin", userRole.c_str());
+        return createResponse(Status::CODE_403, "Admin access required");
     }
 
-    if(userRole != "admin") {
-      std::cout<<"User role is not admin: "<<userRole<<std::endl;
-      return createResponse(Status::CODE_403, "Unauthorized: Admin access required");
-    } 
 
     std::string UpstreamResponseStr = "";
     std::string body = request->readBodyToString();
@@ -195,17 +181,11 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
   }
 
   ENDPOINT("GET", "/Dataset/*", dataset, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
-
-    
-    // 2. Use the macro to validate JWT and extract role
+       
     CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
-
-    // 3. Role-based authorization check
+    
     if (userRole != "admin") {
-        return createResponse(
-            oatpp::web::protocol::http::Status::CODE_403, 
-            "Unauthorized: Admin access required"
-        );
+        return createResponse(Status::CODE_403, "Admin access required");
     }
 
 
@@ -348,24 +328,6 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
       return createResponse(Status::CODE_404, "Not found");;
     }
   }
-
-
-  //DEV only End Point :
-  ENDPOINT("GET", "/Auth/Decode", decodeJWT, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
-    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
-    
-    auto token = request->getHeader("Authorization")->c_str();
-    std::string tokenStr = std::string(token).substr(7); // remove "Bearer "
-
-    auto decoded = JWTUtil::verifyToken(tokenStr);
-
-    nlohmann::json info;
-    info["username"] = JWTUtil::getUsername(decoded);
-    info["role"] = JWTUtil::getRole(decoded);
-    info["exp"] = decoded.get_expires_at().time_since_epoch().count();
-
-    return createResponse(Status::CODE_200, info.dump(2));
-}
 
 };
 

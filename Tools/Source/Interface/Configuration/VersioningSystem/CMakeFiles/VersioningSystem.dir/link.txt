@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/rjoshi/BrainGenix/BrainGenix-API/Binaries/lib/libVersioningSystem.a CMakeFiles/VersioningSystem.dir/Version.cpp.o
+/usr/bin/ranlib /home/rjoshi/BrainGenix/BrainGenix-API/Binaries/lib/libVersioningSystem.a

@@ -1,0 +1,9 @@
+Package: rpclib
+Version: 2.3.0
+Port-Version: 2
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-linux
+Multi-Arch: same
+Abi: 93e880702e010ce75232e70d83080d785b8c531f6cf5faf7d08a31943e985b61
+Description: a RPC library for C++, providing both a client and server implementation. It is built using modern C++14.
+Status: install ok half-installed

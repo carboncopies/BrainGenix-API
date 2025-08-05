@@ -237,7 +237,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string* _Result, bool _Force
         (*_Result) = NESClient_->call(_Route.c_str()).as<std::string>();
     } catch (::rpc::timeout& e) {
         Logger_->Log("NES Connection timed out!",3);
-        Server_->NESState = SERVICE_FAILED;
+        // Server_->NESState = SERVICE_FAILED;
         return false;
     } catch (::rpc::rpc_error& e) {
         Logger_->Log("NES remote returned RPC error",3);

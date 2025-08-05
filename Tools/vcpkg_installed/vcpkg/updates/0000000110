@@ -1,0 +1,8 @@
+Package: oatpp-openssl
+Version: 1.3.0
+Depends: oatpp, openssl, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-linux
+Multi-Arch: same
+Abi: b31be2317f6e4f1226390ba995754a59fe56920c7c7cb57f453f12669e1e219c
+Description: Oat++ openssl module providing secure server and client connection providers.
+Status: install ok half-installed

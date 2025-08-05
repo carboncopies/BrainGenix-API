@@ -1,0 +1,8 @@
+Package: boost-config
+Version: 1.84.0
+Depends: boost-vcpkg-helpers
+Architecture: x64-linux
+Multi-Arch: same
+Abi: ff3dd3b4f81f4c0d98a99f946c1b4ba07013f146f12b254a5d4405dc168263b8
+Description: Boost config module
+Status: install ok half-installed

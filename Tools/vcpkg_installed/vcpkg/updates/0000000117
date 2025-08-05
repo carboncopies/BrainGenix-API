@@ -1,0 +1,7 @@
+Package: restbed
+Feature: openssl
+Depends: asio, openssl
+Architecture: x64-linux
+Multi-Arch: same
+Description: Secure over the wire communication allowing you to transmit private data online.
+Status: install ok half-installed

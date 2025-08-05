@@ -21,42 +21,10 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Config/ConfigDefaults.h
   
 
-  ${SRC_DIR}/Core/Server/Controller.cpp
-  ${SRC_DIR}/Core/Server/Controller.h
   ${SRC_DIR}/Core/Server/Server.cpp
   ${SRC_DIR}/Core/Server/Server.h
-  ${SRC_DIR}/Core/Server/Endpoints.cpp
-  ${SRC_DIR}/Core/Server/Endpoints.h
 
-  ${SRC_DIR}/Core/Resource/Root.cpp
-  ${SRC_DIR}/Core/Resource/Root.h
-  ${SRC_DIR}/Core/Resource/Hello.cpp
-  ${SRC_DIR}/Core/Resource/Hello.h
-  ${SRC_DIR}/Core/Resource/Version.cpp
-  ${SRC_DIR}/Core/Resource/Version.h
-  ${SRC_DIR}/Core/Resource/Status.cpp
-  ${SRC_DIR}/Core/Resource/Status.h
-  ${SRC_DIR}/Core/Resource/NotFound.cpp
-  ${SRC_DIR}/Core/Resource/NotFound.h
-  ${SRC_DIR}/Core/Resource/Forbidden.cpp
-  ${SRC_DIR}/Core/Resource/Forbidden.h
-
-  ${SRC_DIR}/Core/Resource/Auth/GetToken.cpp
-  ${SRC_DIR}/Core/Resource/Auth/GetToken.h
-
-  ${SRC_DIR}/Core/Resource/Dataset/Dataset.cpp
-  ${SRC_DIR}/Core/Resource/Dataset/Dataset.h
-
-
-
-
-  ${SRC_DIR}/Core/Resource/NES/NES.h
-  ${SRC_DIR}/Core/Resource/NES/NES.cpp
-  ${SRC_DIR}/Core/Resource/EVM/EVM.h
-  ${SRC_DIR}/Core/Resource/EVM/EVM.cpp
-
-
-
+  
 
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h
@@ -88,6 +56,8 @@ set(MAIN_SOURCES
   # ${CMAKE_BINARY_DIR}/PythonVersion.h
 
   ${BACKWARD_ENABLE}
+
+  
   )
 
 
@@ -120,3 +90,5 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Core)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Shared)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
+target_include_directories(${PROJECT_NAME} PRIVATE ${LIB_DIR}/jwt-cpp/include)
+

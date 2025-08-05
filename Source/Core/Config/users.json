@@ -1,0 +1,14 @@
+{
+  "Admonishing": {
+    "password": "Instruction",
+    "role": "admin"
+  },
+  "rahul": {
+    "password": "password123", 
+    "role": "admin"
+  },
+  "thomas": {
+    "password": "securepass",
+    "role": "admin"
+  }
+}

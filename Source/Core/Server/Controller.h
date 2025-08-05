@@ -26,7 +26,6 @@
 #include <Config/Config.h>
 #include <Server/Server.h>
 
-#include <Server/Endpoints.h>
 
 #include <BG/Common/Logger/Logger.h>
 

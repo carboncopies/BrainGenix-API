@@ -1,0 +1,2 @@
+/usr/bin/ar qc /home/rjoshi/BrainGenix/BrainGenix-API/Binaries/lib/libCompilePlatformInfo.a CMakeFiles/CompilePlatformInfo.dir/CompilePlatformInfo.cpp.o
+/usr/bin/ranlib /home/rjoshi/BrainGenix/BrainGenix-API/Binaries/lib/libCompilePlatformInfo.a

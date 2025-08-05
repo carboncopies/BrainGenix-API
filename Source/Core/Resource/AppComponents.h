@@ -13,6 +13,9 @@
 #include <Config/Config.h>
 #include <chrono>
 
+
+#include <iostream>
+
 /**
  * @class AppComponent
  * @brief Manages the creation and wiring of application components using oatpp's dependency injection.

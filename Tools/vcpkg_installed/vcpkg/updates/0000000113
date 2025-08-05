@@ -1,7 +1,0 @@
-Package: asio
-Feature: openssl
-Depends: openssl
-Architecture: x64-linux
-Multi-Arch: same
-Description: OpenSSL (optional) if you use Asio's SSL support.
-Status: install ok half-installed

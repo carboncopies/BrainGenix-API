@@ -1,8 +1,0 @@
-Package: bg-common-logger
-Version: 0.0.1
-Depends: gtest, vcpkg-cmake, yaml-cpp
-Architecture: x64-linux
-Multi-Arch: same
-Abi: 307e3b0f19de2e8f0634805a3056b0051fe55ea7920ece1e0a71f6b2386fdce2
-Description: Shared logging system for use with BrainGenix software.
-Status: install ok half-installed

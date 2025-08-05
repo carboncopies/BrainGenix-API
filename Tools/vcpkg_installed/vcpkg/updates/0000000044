@@ -1,8 +1,0 @@
-Package: boost-typeof
-Version: 1.84.0
-Depends: boost-config, boost-vcpkg-helpers
-Architecture: x64-linux
-Multi-Arch: same
-Abi: d763e8cbe3504c118ab102339e15649893fa8ed0cdd0c064e305103a3fd4a0e3
-Description: Boost typeof module
-Status: install ok half-installed

@@ -1,8 +1,0 @@
-Package: boost-build
-Version: 1.84.0
-Depends: boost-uninstall
-Architecture: x64-linux
-Multi-Arch: same
-Abi: 95f2675b2f71b1cf1289fc62bbbcc8a124ba187c075151e9aee3d6ffae383de8
-Description: Boost.Build
-Status: install ok half-installed

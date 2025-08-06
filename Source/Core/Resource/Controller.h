@@ -30,12 +30,9 @@ std::string userRole;
         std::string __token; \
         if (__authKeyParam) { \
             __token = __authKeyParam->c_str(); \
-            
         } else if (__authKeyHeader) { \
             __token = __authKeyHeader->c_str(); \
-            
         } else { \
-            
             return createResponse( \
                 oatpp::web::protocol::http::Status::CODE_401, \
                 "Missing AuthKey (add ?AuthKey= to URL or AuthKey header)" \

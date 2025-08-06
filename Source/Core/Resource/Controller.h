@@ -91,7 +91,6 @@ public:
     try {
         // 1. Validate input
         if (!loginDTO->Username || loginDTO->Username == "" || !loginDTO->Password || loginDTO->Password == "") {
-            std::cout<<"/Auth/GetToken Body validation failed"<<std::endl;
             OATPP_LOGE("Auth", "Empty credentials detected");
             return createResponse(
                 oatpp::web::protocol::http::Status::CODE_400,
@@ -102,7 +101,6 @@ public:
         // 2. Load user database
         std::ifstream file(CONFIG_PATH);
         if (!file) {
-            std::cout<<"/Auth/GetToken unable to open file "<<CONFIG_PATH<<std::endl;
             OATPP_LOGE("Auth", "Failed to open users.json");
             return createResponse(
                 oatpp::web::protocol::http::Status::CODE_500,

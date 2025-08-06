@@ -61,6 +61,14 @@ public:
   BrainGenixAPIController(BG::API::Server::Server* _Server, BG::API::RPC::Manager* _Manager, OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
     : Server_(_Server), Manager_(_Manager), oatpp::web::server::api::ApiController(objectMapper)
   {}
+
+  // Helper to add CORS headers to responses
+  std::shared_ptr<OutgoingResponse> addCORSHeaders(std::shared_ptr<OutgoingResponse> response) {
+    response->putHeader("Access-Control-Allow-Origin", "*");
+    response->putHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    response->putHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, AuthKey");
+    return response;
+  }
 public:
   ENDPOINT("GET", "/", root) {
     auto dto = MessageDto::createShared();
@@ -90,8 +98,8 @@ public:
                 "Username and password are required"
             );
         }
+
         // 2. Load user database
-  
         std::ifstream file(CONFIG_PATH);
         if (!file) {
             std::cout<<"/Auth/GetToken unable to open file "<<CONFIG_PATH<<std::endl;
@@ -182,11 +190,11 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
 
   ENDPOINT("GET", "/Dataset/*", dataset, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
        
-    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+    // CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
     
-    if (userRole != "admin") {
-        return createResponse(Status::CODE_403, "Admin access required");
-    }
+    // if (userRole != "admin") {
+    //     return createResponse(Status::CODE_403, "Admin access required");
+    // }
 
 
     auto tail = request->getPathTail(); // everything after /Dataset/
@@ -220,34 +228,25 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
       default:
         return createResponse(Status::CODE_404, "Invalid path");
     }
-
     std::string Result;
     try {
       Result = BG::API::Util::GetFile(Manager_, FullPath);
 
       if (Result.empty()) {
-        return createResponse(Status::CODE_404, "No file found. Path: " + FullPath);
+        return addCORSHeaders(createResponse(Status::CODE_404, "No file found. Path: " + FullPath));
       }
     } catch(std::exception& e) {
       std::cout << e.what() << '\n';
-      return createResponse(Status::CODE_404, "Invalid path");
+      return addCORSHeaders(createResponse(Status::CODE_404, "Invalid path"));
     }
-
     auto DecodedString = base64_decode(Result, false);
     auto response = createResponse(Status::CODE_200, DecodedString);
 
     // not sure if we need to do all of this manually
     response->putHeader("Content-Type", "application/octet-stream");
     response->putHeader("Content-Length", std::to_string(DecodedString.length()));
-    
-    //printf("%s\n%s\n\n", FullPath.c_str(), DecodedString.c_str());
 
-    // not sure why default response doesn't allow this, but we need this for neuroglancer requests because it will get blocked otherwise
-    response->putHeader("Access-Control-Allow-Origin", "*"); // legacy code says that this should be done for every endpoint, but this seems to be working fine. need to find out how oatpp handles default headers
-    response->putHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    response->putHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-
-    return response;
+    return addCORSHeaders(response);
   }
 
   ENDPOINT("GET", "/Diagnostic/Status", status, 

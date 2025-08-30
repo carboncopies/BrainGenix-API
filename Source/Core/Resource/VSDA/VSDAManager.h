@@ -115,6 +115,9 @@ private:
      */
     void InitiateElection();
 
+
+    void LeaderHeartbeatToFollowers();
+
 public:
     /**
      * @brief Constructs a VSDA manager
@@ -264,6 +267,10 @@ public:
      * @return size_t Number of active nodes
      */
     size_t CountNodes() const;
+
+
+
+    void LogClusterStatus();
 };
 
 }; // namespace VSDA

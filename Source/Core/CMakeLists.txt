@@ -26,6 +26,10 @@ set(MAIN_SOURCES
 
   ${SRC_DIR}/Core/Resource/VSDA/VSDAManager.cpp
   ${SRC_DIR}/Core/Resource/VSDA/VSDAManager.h
+  ${SRC_DIR}/Core/Resource/VSDA/ClusterRPC.cpp
+  ${SRC_DIR}/Core/Resource/VSDA/ClusterRPC.h
+  ${SRC_DIR}/Core/Resource/VSDA/IPDetector.cpp
+  ${SRC_DIR}/Core/Resource/VSDA/IPDetector.h
 
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h

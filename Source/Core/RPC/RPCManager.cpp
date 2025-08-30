@@ -15,6 +15,8 @@
 #include <RPC/RPCHandlerHelper.h>
 #include <RPC/APIStatusCode.h>
 
+#include <Resource/VSDA/IPDetector.h>
+
 
 namespace BG {
 namespace API {
@@ -86,129 +88,47 @@ std::string RPCManager::EVMRequest(std::string _JSONRequest, int _SimulationIDOv
 }
 
 
-void RPCManager::BindVSDAEndpoints(BG::API::VSDA::Manager* VSDAManager) {
-    if (!VSDAManager) return;
-    
-    // Bind VSDA RPC endpoints
-    RPCServer_.get()->bind("VSDA_CheckIn", [VSDAManager](const std::string& checkInData) {
-        try {
-            nlohmann::json data = nlohmann::json::parse(checkInData);
-            auto response = VSDAManager->CheckIn(
-                data["node_id"].get<std::string>(),
-                data["node_host"].get<std::string>(),
-                data["node_port"].get<int>(),
-                data.value("is_leader", false)
-            );
-            return response.dump();
-        } catch (const std::exception& e) {
-            nlohmann::json error;
-            error["error"] = std::string("CheckIn failed: ") + e.what();
-            return error.dump();
+// In your RPC binding section, add these endpoints:
+void RPCManager::BindVSDAEndpoints(BG::API::VSDA::Manager* vsdaManager) {
+    // Register node endpoint
+    RPCServer_->bind("RegisterNode", [vsdaManager](const std::string& j) {
+        auto obj = nlohmann::json::parse(j);
+        std::string nodeId = obj["id"];
+        std::string host = obj["host"];
+        int port = obj["port"];
+        
+        // If host is localhost, use the client's IP
+        if (host == "127.0.0.1" || host == "localhost") {
+            // try {
+                // Get client IP from current session
+                // h/ost = rpc::this_session().get_raw_ip();
+            // } catch (...) {
+                host = IPUtils::GetPrimaryIP();
+            // }
         }
+        
+        return vsdaManager->RegisterNode(nodeId, host, port).dump();
     });
     
-    // Bind all other VSDA methods similarly...
-    RPCServer_.get()->bind("VSDA_ElectLeader", [VSDAManager](const std::string& electionData) {
-        try {
-            nlohmann::json data = nlohmann::json::parse(electionData);
-            auto response = VSDAManager->ElectLeader(
-                data["node_id"].get<std::string>(),
-                data["node_host"].get<std::string>(),
-                data["node_port"].get<int>()
-            );
-            return response.dump();
-        } catch (const std::exception& e) {
-            nlohmann::json error;
-            error["error"] = std::string("ElectLeader failed: ") + e.what();
-            return error.dump();
-        }
+    // Heartbeat endpoint
+    RPCServer_->bind("Heartbeat", [vsdaManager](const std::string& id) {
+        return vsdaManager->CheckIn(id, "", 0, false).dump();
     });
     
-    RPCServer_.get()->bind("VSDA_LeaderHeartbeat", [VSDAManager](const std::string& heartbeatData) {
-        try {
-            nlohmann::json data = nlohmann::json::parse(heartbeatData);
-            bool success = VSDAManager->LeaderHeartbeat(
-                data["leader_id"].get<std::string>(),
-                data["leader_host"].get<std::string>(),
-                data["leader_port"].get<int>()
-            );
-            nlohmann::json response;
-            response["success"] = success;
-            return response.dump();
-        } catch (const std::exception& e) {
-            nlohmann::json error;
-            error["error"] = std::string("LeaderHeartbeat failed: ") + e.what();
-            return error.dump();
-        }
+    // Leader heartbeat endpoint
+    RPCServer_->bind("LeaderHeartbeat", [vsdaManager](const std::string& leaderId, 
+                                                  const std::string& host, 
+                                                  int port) {
+        return vsdaManager->LeaderHeartbeat(leaderId, host, port);
     });
     
-    RPCServer_.get()->bind("VSDA_GetFollowers", [VSDAManager]() {
-        return VSDAManager->GetFollowers().dump();
+    // Cluster status endpoint
+    RPCServer_->bind("GetClusterStatus", [vsdaManager]() { 
+        return vsdaManager->GetClusterStatus().dump(); 
     });
     
-    RPCServer_.get()->bind("VSDA_GetNodes", [VSDAManager]() {
-        return VSDAManager->GetNodes().dump();
-    });
-    
-    RPCServer_.get()->bind("VSDA_ClusterStatus", [VSDAManager](const std::string& statusData) {
-        try {
-            nlohmann::json data = nlohmann::json::parse(statusData);
-            bool success = VSDAManager->ClusterStatus(data);
-            nlohmann::json response;
-            response["success"] = success;
-            return response.dump();
-        } catch (const std::exception& e) {
-            nlohmann::json error;
-            error["error"] = std::string("ClusterStatus failed: ") + e.what();
-            return error.dump();
-        }
-    });
-    
-    RPCServer_.get()->bind("VSDA_LeaderPromoted", [VSDAManager](const std::string& promotionData) {
-        try {
-            nlohmann::json data = nlohmann::json::parse(promotionData);
-            bool success = VSDAManager->LeaderPromoted(
-                data["node_id"].get<std::string>(),
-                data["node_host"].get<std::string>(),
-                data["node_port"].get<int>()
-            );
-            nlohmann::json response;
-            response["success"] = success;
-            return response.dump();
-        } catch (const std::exception& e) {
-            nlohmann::json error;
-            error["error"] = std::string("LeaderPromoted failed: ") + e.what();
-            return error.dump();
-        }
-    });
-    
-    RPCServer_.get()->bind("VSDA_LeaderDemoted", [VSDAManager](const std::string& demotionData) {
-        try {
-            nlohmann::json data = nlohmann::json::parse(demotionData);
-            bool success = VSDAManager->LeaderDemoted(data["node_id"].get<std::string>());
-            nlohmann::json response;
-            response["success"] = success;
-            return response.dump();
-        } catch (const std::exception& e) {
-            nlohmann::json error;
-            error["error"] = std::string("LeaderDemoted failed: ") + e.what();
-            return error.dump();
-        }
-    });
-    
-    RPCServer_.get()->bind("VSDA_NodeHealth", [VSDAManager](const std::string& healthData) {
-        try {
-            nlohmann::json data = nlohmann::json::parse(healthData);
-            bool success = VSDAManager->NodeHealth(data);
-            nlohmann::json response;
-            response["success"] = success;
-            return response.dump();
-        } catch (const std::exception& e) {
-            nlohmann::json error;
-            error["error"] = std::string("NodeHealth failed: ") + e.what();
-            return error.dump();
-        }
-    });
+    // Ping endpoint
+    RPCServer_->bind("Ping", []() { return "PONG"; });
 }
 
 

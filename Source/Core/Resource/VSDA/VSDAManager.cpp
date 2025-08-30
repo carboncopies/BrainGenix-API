@@ -205,10 +205,25 @@ nlohmann::json Manager::RegisterNode(const std::string& nodeId, const std::strin
     // If this node claims to be leader, verify and update
     if (isLeader) {
         std::lock_guard<std::mutex> leaderLock(LeaderMutex_);
-        CurrentLeaderId_ = nodeId;
-        Logger_->Log("Node registered as leader: " + nodeId, 2);
+        if (CurrentLeaderId_.empty()) {
+            CurrentLeaderId_ = nodeId;
+            Logger_->Log("Node registered as leader: " + nodeId, 2);
+        } else {
+            // Demote unauthorized leader claims
+            isLeader = false;
+            Logger_->Log("Node attempted to register as leader but leader already exists: " + nodeId, 3);
+        }
     }
     
+    // After registration, log the complete cluster status
+    Logger_->Log("Node registration complete. Current cluster status:", 2);
+    Logger_->Log("  Total nodes: " + std::to_string(CountNodes()), 2);
+    Logger_->Log("  Has leader: " + std::string(HasLeader() ? "Yes" : "No"), 2);
+    if (HasLeader()) {
+        auto leader = GetLeader();
+        Logger_->Log("  Leader: " + leader.id + " (" + leader.host + ":" + std::to_string(leader.port) + ")", 2);
+    }
+
     // Prepare response
     nlohmann::json response;
     response["status"] = "registered";
@@ -245,6 +260,16 @@ nlohmann::json Manager::CheckIn(const std::string& nodeId, const std::string& ho
         Logger_->Log("Node check-in as leader: " + nodeId, 3);
     }
     
+    // After processing, log the status
+    Logger_->Log("Check-in processed. Cluster status:", 3);
+    Logger_->Log("  Total nodes: " + std::to_string(CountNodes()), 3);
+    Logger_->Log("  Has leader: " + std::string(HasLeader() ? "Yes" : "No"), 3);
+    if (HasLeader()) {
+        auto leader = GetLeader();
+        Logger_->Log("  Leader: " + leader.id + " (" + leader.host + ":" + std::to_string(leader.port) + ")", 3);
+    }
+
+
     // Prepare response
     nlohmann::json response;
     response["status"] = "checked_in";
@@ -310,31 +335,57 @@ nlohmann::json Manager::ElectLeader(const std::string& nodeId, const std::string
     return response;
 }
 
+// Add this method to the Manager class implementation
 bool Manager::LeaderHeartbeat(const std::string& leaderId, const std::string& host, int port) {
-    Logger_->Log("Leader heartbeat: " + leaderId, 4);
+    Logger_->Log("Leader heartbeat received from: " + leaderId, 4);
     
     // Verify this is indeed the current leader
-    if (HasLeader() && CurrentLeaderId_ == leaderId) {
-        // Update node information
-        CheckIn(leaderId, host, port, true);
+    if (!HasLeader() || CurrentLeaderId_ != leaderId) {
+        Logger_->Log("Unauthorized leader heartbeat: " + leaderId, 3);
+        return false;
+    }
+    
+    // Update the leader's last seen time
+    std::lock_guard<std::mutex> nodesLock(NodesMutex_);
+    auto it = Nodes_.find(leaderId);
+    if (it != Nodes_.end()) {
+        it->second.last_seen = time(nullptr);
+        it->second.host = host;
+        it->second.port = port;
         return true;
     }
     
-    // This node claims to be leader but we don't recognize it as such
-    Logger_->Log("Unauthorized leader heartbeat: " + leaderId, 3);
+    Logger_->Log("Unknown leader heartbeat: " + leaderId, 3);
     return false;
 }
 
+// Add leader heartbeat method
+void Manager::LeaderHeartbeatToFollowers() {
+    std::lock_guard<std::mutex> nodesLock(NodesMutex_);
+    if (!HasLeader()) return;
+
+    auto leader = GetLeader();
+    for (const auto& pair : Nodes_) {
+        if (pair.first != CurrentLeaderId_) {
+            try {
+                ::rpc::client followerClient(pair.second.host, pair.second.port);
+                followerClient.set_timeout(1000);
+                followerClient.call("LeaderHeartbeat", leader.ToJSON().dump());
+            } catch (const std::exception& e) {
+                Logger_->Log("Failed to send heartbeat to follower: " + pair.first, 4);
+            }
+        }
+    }
+}
+
+// Modify GetFollowers to include leader
 nlohmann::json Manager::GetFollowers() {
     std::lock_guard<std::mutex> nodesLock(NodesMutex_);
     
     nlohmann::json followers = nlohmann::json::array();
     
     for (const auto& pair : Nodes_) {
-        const auto& node = pair.second;
-        if (!node.is_leader && node.id != CurrentLeaderId_) {
-            followers.push_back(node.ToJSON());
-        }
+        followers.push_back(pair.second.ToJSON());
     }
     
     return followers;
@@ -490,6 +541,28 @@ size_t Manager::CountNodes() const {
     std::lock_guard<std::mutex> lock(const_cast<std::mutex&>(NodesMutex_));
     return Nodes_.size();
 }
+
+
+void Manager::LogClusterStatus() {
+    std::lock_guard<std::mutex> nodesLock(NodesMutex_);
+    std::lock_guard<std::mutex> leaderLock(LeaderMutex_);
+    
+    Logger_->Log("=== CLUSTER STATUS ===", 2);
+    Logger_->Log("Current leader: " + (CurrentLeaderId_.empty() ? "None" : CurrentLeaderId_), 2);
+    Logger_->Log("Total nodes: " + std::to_string(Nodes_.size()), 2);
+    
+    for (const auto& pair : Nodes_) {
+        const auto& node = pair.second;
+        std::string status = "Node: " + node.id + " (" + node.host + ":" + 
+                           std::to_string(node.port) + ") - " +
+                           (node.is_leader ? "Leader" : "Follower") +
+                           " - Last seen: " + std::to_string(time(nullptr) - node.last_seen) + "s ago";
+        Logger_->Log(status, 2);
+    }
+    Logger_->Log("=====================", 2);
+}
+
+
 }; // namespace VSDA
 }; // namespace API
 }; // namespace BG

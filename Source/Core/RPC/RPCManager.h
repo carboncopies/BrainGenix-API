@@ -30,6 +30,7 @@
 #include <Config/Config.h>
 #include <Util/RPCHelpers.h>
 
+#include <Resource/VSDA/VSDAManager.h>
 
 
 namespace BG {
@@ -130,6 +131,8 @@ public:
         _Logger->Log(LogMsg, 0);
         RPCServer_->bind(_RouteName.c_str(), _CallbackFunction);
     }
+
+    void BindVSDAEndpoints(BG::API::VSDA::Manager* VSDAManager);
 
 };
 

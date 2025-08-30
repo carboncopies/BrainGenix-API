@@ -18,14 +18,9 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Config/ConfigurationManager.h>
-
-
-
-
 #include <RPC/ClientManager.h>
 #include <RPC/RPCManager.h>
-
-
+#include <Resource/VSDA/VSDAManager.h>
 
 /**
  * Main function.

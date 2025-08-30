@@ -24,7 +24,8 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Server/Server.cpp
   ${SRC_DIR}/Core/Server/Server.h
 
-  
+  ${SRC_DIR}/Core/Resource/VSDA/VSDAManager.cpp
+  ${SRC_DIR}/Core/Resource/VSDA/VSDAManager.h
 
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h

@@ -48,7 +48,7 @@ std::string VSDAConnectionManager::RegisterVSDANode(const std::string& jsonReque
         
         // Create a bidirectional RPC connection to the VSDA node
         if (!leaderRpc_) {
-            leaderRpc_ = std::make_unique<BidirectionalRpc>(0, true, logger_, 5000, "VSDALeader");
+            leaderRpc_ = std::make_unique<BidirectionalRpc>(8003, true, logger_, 5000, "VSDALeader");
             leaderRpc_->SetAdvertisedHost("localhost");
             leaderRpc_->Start();
             logger_->Log("[VSDAConnectionManager] Created bidirectional RPC client", 4);

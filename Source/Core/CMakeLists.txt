@@ -27,6 +27,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Cluster/VSDA/VSDAConnectionManager.cpp
   ${SRC_DIR}/Core/Cluster/VSDA/VSDAConnectionManager.h
 
+  ${SRC_DIR}/Core/Cluster/BidirectionalRPC.cpp
+  ${SRC_DIR}/Core/Cluster/BidirectionalRPC.h
+
   ${SRC_DIR}/Core/Database/DBManager.cpp
   ${SRC_DIR}/Core/Database/DBManager.h
 

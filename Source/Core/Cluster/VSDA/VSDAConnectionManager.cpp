@@ -1,5 +1,4 @@
 #include "VSDAConnectionManager.h"
-#include <rpc/client.h>
 #include <stdexcept>
 
 namespace BG {
@@ -12,7 +11,9 @@ VSDAConnectionManager::VSDAConnectionManager(BG::Common::Logger::LoggingSystem* 
 
 VSDAConnectionManager::~VSDAConnectionManager() {
     std::lock_guard<std::mutex> lock(mutex_);
-    vsdaNodes_.clear();
+    if (leaderRpc_) {
+        leaderRpc_->Stop();
+    }
 }
 
 void VSDAConnectionManager::Initialize() {
@@ -37,82 +38,64 @@ void VSDAConnectionManager::RegisterVSDANode(const std::string& nodeId,
     std::lock_guard<std::mutex> lock(mutex_);
     
     try {
-        // Create a client connection back to the VSDA node
-        auto client = std::make_shared<rpc::client>(host, port);
-        client->set_timeout(5000);
+        logger_->Log("[VSDAConnectionManager] Received registration from VSDA node: " + 
+                    nodeId + " at " + host + ":" + std::to_string(port), 4);
         
-        // Test the connection with a simple health check
-        client->call("HealthCheck");
-        
-        vsdaNodes_[nodeId] = {host, port, client};
-        
-        logger_->Log("[VSDAConnectionManager] Registered VSDA node: " + nodeId + 
-                    " at " + host + ":" + std::to_string(port), 4);
-    } catch (const std::exception& e) {
-        logger_->Log("[VSDAConnectionManager] Failed to register VSDA node " + 
-                    nodeId + ": " + e.what(), 8);
-        throw;
-    }
-}
-
-void VSDAConnectionManager::UnregisterVSDANode(const std::string& nodeId) {
-    std::lock_guard<std::mutex> lock(mutex_);
-    
-    if (vsdaNodes_.find(nodeId) != vsdaNodes_.end()) {
-        vsdaNodes_.erase(nodeId);
-        
-        // If the unregistered node was the leader, clear the leader reference
-        if (vsdaLeaderNodeId_ == nodeId) {
-            vsdaLeaderNodeId_.clear();
-            logger_->Log("[VSDAConnectionManager] VSDA leader disconnected: " + nodeId, 5);
+        // Create a bidirectional RPC connection to the VSDA node
+        if (!leaderRpc_) {
+            leaderRpc_ = std::make_unique<BidirectionalRpc>(0, true, logger_, 5000);
+            leaderRpc_->SetAdvertisedHost("localhost");  // API server's hostname
+            leaderRpc_->Start();
+            logger_->Log("[VSDAConnectionManager] Created bidirectional RPC client", 4);
         }
         
-        logger_->Log("[VSDAConnectionManager] Unregistered VSDA node: " + nodeId, 4);
+        // Update the connection to point to the VSDA node
+        leaderRpc_->UpdatePeer(host, port);
+        logger_->Log("[VSDAConnectionManager] Updated peer to: " + host + ":" + std::to_string(port), 4);
+        
+        // Test the connection
+        bool healthCheck = leaderRpc_->Call<bool>("HealthCheck");
+        if (!healthCheck) {
+            throw std::runtime_error("Health check failed");
+        }
+        
+        logger_->Log("[VSDAConnectionManager] Successfully connected to VSDA node: " + 
+                    nodeId, 4);
+        
+    } catch (const std::exception& e) {
+        logger_->Log("[VSDAConnectionManager] Failed to connect to VSDA node " + 
+                    nodeId + ": " + e.what(), 8);
+        if (leaderRpc_) {
+            leaderRpc_->Stop();
+            leaderRpc_.reset();
+        }
+        throw;
     }
 }
 
 void VSDAConnectionManager::SetVSDALeader(const std::string& nodeId) {
     std::lock_guard<std::mutex> lock(mutex_);
     
-    if (vsdaNodes_.find(nodeId) == vsdaNodes_.end()) {
-        logger_->Log("[VSDAConnectionManager] Attempt to set unknown node as VSDA leader: " + 
-                    nodeId, 8);
-        throw std::runtime_error("Unknown VSDA node: " + nodeId);
-    }
-    
-    vsdaLeaderNodeId_ = nodeId;
     logger_->Log("[VSDAConnectionManager] Set VSDA leader: " + nodeId, 4);
+    // For now, just log it - we might want to do more validation later
 }
 
 std::string VSDAConnectionManager::CallVSDALeader(const std::string& method, 
                                                 const std::string& params) {
     std::lock_guard<std::mutex> lock(mutex_);
     
-    if (vsdaLeaderNodeId_.empty()) {
-        throw std::runtime_error("No VSDA leader available");
-    }
-    
-    return CallVSDANode(vsdaLeaderNodeId_, method, params);
-}
-
-std::string VSDAConnectionManager::CallVSDANode(const std::string& nodeId, 
-                                              const std::string& method, 
-                                              const std::string& params) {
-    std::lock_guard<std::mutex> lock(mutex_);
-    
-    if (vsdaNodes_.find(nodeId) == vsdaNodes_.end()) {
-        throw std::runtime_error("VSDA node not connected: " + nodeId);
+    if (!leaderRpc_) {
+        throw std::runtime_error("No VSDA leader configured");
     }
     
     try {
-        auto& node = vsdaNodes_[nodeId];
         if (params.empty()) {
-            return node.client->call(method).as<std::string>();
+            return leaderRpc_->Call<std::string>(method);
         } else {
-            return node.client->call(method, params).as<std::string>();
+            return leaderRpc_->Call<std::string>(method, params);
         }
     } catch (const std::exception& e) {
-        logger_->Log("[VSDAConnectionManager] RPC call to VSDA node " + nodeId + " failed: " + 
+        logger_->Log("[VSDAConnectionManager] RPC call to VSDA leader failed: " + 
                     std::string(e.what()), 8);
         throw;
     }
@@ -120,7 +103,7 @@ std::string VSDAConnectionManager::CallVSDANode(const std::string& nodeId,
 
 bool VSDAConnectionManager::HasVSDALeader() const {
     std::lock_guard<std::mutex> lock(mutex_);
-    return !vsdaLeaderNodeId_.empty() && vsdaNodes_.find(vsdaLeaderNodeId_) != vsdaNodes_.end();
+    return leaderRpc_ && leaderRpc_->IsConnected();
 }
 
 } // namespace API

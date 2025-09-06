@@ -15,6 +15,8 @@
 #include <oatpp/network/Server.hpp>
 #include <Main.h>
 
+#include <Cluster/VSDA/VSDAConnectionManager.h>
+
 int main(int NumArguments, char** ArgumentValues) {
     BG::Common::Logger::LoggingSystem Logger;
 
@@ -29,12 +31,19 @@ int main(int NumArguments, char** ArgumentValues) {
     // The manager is for internal RPC calls (i.e. NES->EVM, or EVM->NES, NOT to the user)
     BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, &ServerData);
 
+
+    // Create and initialize the VSDA connection manager
+    BG::API::API::VSDAConnectionManager VSDAManager(&Logger, &RPCServer);
+    VSDAManager.Initialize();
+    
+
     oatpp::base::Environment::init();
     
     // init oatpp's components
     AppComponent components(&SystemConfiguration);
 
     OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
+    
     router->addController(std::make_shared<BrainGenixAPIController>(&ServerData, &RPCManager));
 
     OATPP_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>, connectionHandler);

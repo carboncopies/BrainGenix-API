@@ -25,7 +25,6 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Version.h>
-
 #include <Config/Config.h>
 #include <Server/Server.h>
 #include <Util/Types.h>

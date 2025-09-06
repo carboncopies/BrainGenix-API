@@ -1,9 +1,6 @@
 #include <Config/ArgumentParser.h>
 
 
-namespace BG {
-namespace API {
-namespace Config {
 
 ArgumentParser::ArgumentParser(BG::Common::Logger::LoggingSystem* _Logger, Config& _Config, int _NumArguments, char** _Args) {
 
@@ -63,6 +60,3 @@ ArgumentParser::~ArgumentParser() {
 }
 
 
-}; // Close Namespace Config
-}; // Close Namespace API
-}; // Close Namespace BG

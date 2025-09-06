@@ -1,10 +1,6 @@
 #include <Util/RPCHelpers.h>
 #include <nlohmann/json.hpp>
 
-namespace BG {
-namespace API {
-namespace Util {
-
 
 // Common RPC interface - used both for internal requests between services (NES<->EVM), and external requests to the HTTP POST API    
 bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsNESClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
@@ -52,7 +48,7 @@ bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsE
     return true;
 }
 
-std::string GetFile(BG::API::RPC::Manager* _Manager, const std::string& _Handle) {
+std::string GetFile(RPCClientManager* _Manager, const std::string& _Handle) {
   nlohmann::json GetImageQuery;
   GetImageQuery["ImageHandle"] = _Handle;
  
@@ -74,6 +70,3 @@ std::string GetFile(BG::API::RPC::Manager* _Manager, const std::string& _Handle)
   return ResultJSON["ImageData"];
 }
 
-}; // Close Namespace Util
-}; // Close Namespace API
-}; // Close Namespace BG

@@ -1,9 +1,6 @@
 #include <Util/RestbedHelpers.h>
 
 
-namespace BG {
-namespace API {
-namespace Util {
 
 
 void SendCode(restbed::Session* _Session, int _Code) {
@@ -71,6 +68,3 @@ void SetVec3(float* _Vector, std::string _Input) {
 }
 
 
-}; // Close Namespace Util
-}; // Close Namespace API
-}; // Close Namespace BG

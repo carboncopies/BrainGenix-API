@@ -23,9 +23,6 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 
-namespace BG {
-namespace API {
-namespace API {
 
 
 enum ManagerTaskStatus {
@@ -103,7 +100,3 @@ struct ManagerTaskData {
 };
 
 
-
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

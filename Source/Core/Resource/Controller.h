@@ -52,10 +52,10 @@ std::string userRole;
 
   
 class BrainGenixAPIController : public oatpp::web::server::api::ApiController {
-  BG::API::Server::Server* Server_;
-  BG::API::RPC::Manager* Manager_;
+  Server* Server_;
+  RPCClientManager* Manager_;
 public:
-  BrainGenixAPIController(BG::API::Server::Server* _Server, BG::API::RPC::Manager* _Manager, OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
+  BrainGenixAPIController(Server* _Server, RPCClientManager* _Manager, OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
     : Server_(_Server), Manager_(_Manager), oatpp::web::server::api::ApiController(objectMapper)
   {}
 
@@ -170,7 +170,7 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
 
     std::string UpstreamResponseStr = "";
     std::string body = request->readBodyToString();
-    bool UpstreamStatus = BG::API::Util::NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", body, &UpstreamResponseStr);
+    bool UpstreamStatus = NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", body, &UpstreamResponseStr);
     if (!UpstreamStatus) {
       printf("Upstream status fail\n");  
       return createResponse(Status::CODE_204, "Upstream status fail");
@@ -225,7 +225,7 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
     }
     std::string Result;
     try {
-      Result = BG::API::Util::GetFile(Manager_, FullPath);
+      Result = GetFile(Manager_, FullPath);
 
       if (Result.empty()) {
         return addCORSHeaders(createResponse(Status::CODE_404, "No file found. Path: " + FullPath));
@@ -262,10 +262,10 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
 
     std::string OverallState = "";
     int SystemState = 3;
-    if (Server_->APIState == BG::SERVICE_HEALTHY){
+    if (Server_->APIState == SERVICE_HEALTHY){
       OverallState = "Healthy";
       SystemState = 0;
-    } else if (Server_->APIState == BG::SERVICE_FAILED) {
+    } else if (Server_->APIState == SERVICE_FAILED) {
       OverallState = "Failed";
       SystemState = 2;
     } else {

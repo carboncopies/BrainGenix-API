@@ -31,9 +31,6 @@
 
 
 
-namespace BG {
-namespace API {
-namespace Server {
 
 
 /**
@@ -111,7 +108,3 @@ public:
 };
 
 
-
-}; // Close Namespace Server
-}; // Close Namespace API
-}; // Close Namespace BG

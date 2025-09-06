@@ -20,9 +20,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 
-namespace BG {
-namespace API {
-namespace Util {
+
 
 /**
  * @brief Handy little helper function to check if the request has a set list of required parameters.
@@ -35,6 +33,3 @@ namespace Util {
 bool HasRequiredParams(const restbed::Request* _Request, std::vector<std::string>* _RequiredParams);
 
 
-}; // Close Namespace Util
-}; // Close Namespace API
-}; // Close Namespace BG

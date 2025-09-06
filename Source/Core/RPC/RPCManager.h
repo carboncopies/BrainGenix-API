@@ -32,9 +32,7 @@
 
 
 
-namespace BG {
-namespace API {
-namespace API {
+
 
 /**
  * @brief Manages the API remote procedure call (RPC) host.
@@ -46,10 +44,10 @@ class RPCManager {
 
 private:
 
-    Config::Config* Config_; /**Pointer to configuration struct owned by rest of system*/
+    Config* Config_; /**Pointer to configuration struct owned by rest of system*/
     std::unique_ptr<rpc::server> RPCServer_; /**Instance of RPC Server from rpclib*/
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
-    Server::Server* Server_;
+    Server* Server_;
 
 
 
@@ -77,7 +75,7 @@ public:
      * @param _Logger Pointer to the logging system instance.
      * @param _Server Pointer to the server instance.
      */
-    RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server::Server* _Server);
+    RPCManager(Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server* _Server);
 
     /**
      * @brief Destroy the RPCManager object.
@@ -133,6 +131,3 @@ public:
 
 };
 
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

@@ -21,20 +21,21 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::Common::Logger::LoggingSystem Logger;
 
     // Startup With Config Manager, Will Read Args And Config File, Then Parse Into Config Struct
-    BG::API::Config::Manager ConfigManager(&Logger, NumArguments, ArgumentValues);
-    BG::API::Config::Config& SystemConfiguration = ConfigManager.GetConfig();
+    ConfigManager ConfigManager(&Logger, NumArguments, ArgumentValues);
+    Config& SystemConfiguration = ConfigManager.GetConfig();
 
-    BG::API::Server::Server ServerData{};
+    Server ServerData{};
 
-    BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, &ServerData); 
+    RPCClientManager RPCClientManager(&Logger, &SystemConfiguration, &ServerData); 
 
     // The manager is for internal RPC calls (i.e. NES->EVM, or EVM->NES, NOT to the user)
-    BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, &ServerData);
+    RPCManager RPCServer(&SystemConfiguration, &Logger, &ServerData);
 
 
     // Create and initialize the VSDA connection manager
-    BG::API::API::VSDAConnectionManager VSDAManager(&Logger, &RPCServer);
+    VSDAConnectionManager VSDAManager(&Logger, &RPCServer);
     VSDAManager.Initialize();
+    // ServerData.Manager_ = &VSDAManager;
     
 
     oatpp::base::Environment::init();
@@ -44,7 +45,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
     OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
     
-    router->addController(std::make_shared<BrainGenixAPIController>(&ServerData, &RPCManager));
+    router->addController(std::make_shared<BrainGenixAPIController>(&ServerData, &RPCClientManager));
 
     OATPP_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>, connectionHandler);
     OATPP_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, connectionProvider);

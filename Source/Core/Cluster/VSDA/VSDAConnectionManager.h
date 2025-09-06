@@ -8,9 +8,7 @@
 #include <string>
 #include <nlohmann/json.hpp>
 
-namespace BG {
-namespace API {
-namespace API {
+
 
 class VSDAConnectionManager {
 public:
@@ -32,6 +30,3 @@ private:
     std::string currentLeaderNodeId_;
 };
 
-} // namespace API
-} // namespace API
-} // namespace BG

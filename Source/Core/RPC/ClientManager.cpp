@@ -1,11 +1,9 @@
 #include <nlohmann/json.hpp>
 #include <RPC/ClientManager.h>
 
-namespace BG {
-namespace API {
-namespace RPC {
 
-Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Server::Server* _Server) {
+
+RPCClientManager::RPCClientManager(BG::Common::Logger::LoggingSystem* _Logger, Config* _Config, Server* _Server) {
     Config_ = _Config;
     Server_ = _Server;
     Logger_ = _Logger;
@@ -17,7 +15,7 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     Logger_->Log("Starting NES Client", 1);
     ConnectNES();
     Logger_->Log("Starting NES Client Manager Thread", 1);
-    ConnectionManagerNES_ = std::thread(&Manager::ConnectionManagerNES, this);
+    ConnectionManagerNES_ = std::thread(&RPCClientManager::ConnectionManagerNES, this);
 
     // Populate Server Struct
     Server_->NESClient = NESClient_;
@@ -27,14 +25,14 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Co
     Logger_->Log("Starting EVM Client", 1);
     ConnectEVM();
     Logger_->Log("Starting EVM Client Manager Thread", 1);
-    ConnectionManagerEVM_ = std::thread(&Manager::ConnectionManagerEVM, this);
+    ConnectionManagerEVM_ = std::thread(&RPCClientManager::ConnectionManagerEVM, this);
 
     // Populate Server Struct
     Server_->EVMClient = EVMClient_;
     Server_->IsEVMClientHealthy_ = &IsEVMClientHealthy_;
 }
 
-Manager::~Manager() {
+RPCClientManager::~RPCClientManager() {
     Logger_->Log("Requesting manager threads exit", 1);
     RequestThreadsExit_ = true;
 
@@ -47,7 +45,7 @@ Manager::~Manager() {
     }
 }
 
-void Manager::SetEVMCallbackInfo() {
+void RPCClientManager::SetEVMCallbackInfo() {
     // Only attempt if client exists and is healthy
     if (!EVMClient_ || !IsEVMClientHealthy_.load()) return;
 
@@ -60,7 +58,7 @@ void Manager::SetEVMCallbackInfo() {
     EVMQueryJSON("SetCallback", QueryStr, &Result, true); // Fail silently
 }
 
-void Manager::SetNESCallbackInfo() {
+void RPCClientManager::SetNESCallbackInfo() {
     // Only attempt if client exists and is healthy
     if (!NESClient_ || !IsNESClientHealthy_.load()) return;
 
@@ -73,7 +71,7 @@ void Manager::SetNESCallbackInfo() {
     NESQueryJSON("SetCallback", QueryStr, &Result, true); // Fail silently
 }
 
-bool Manager::ConnectEVM() {
+bool RPCClientManager::ConnectEVM() {
     IsEVMClientHealthy_.store(false);
     EVMClient_ = nullptr;
 
@@ -104,7 +102,7 @@ bool Manager::ConnectEVM() {
     return status;
 }
 
-bool Manager::ConnectNES() {
+bool RPCClientManager::ConnectNES() {
     IsNESClientHealthy_.store(false);
     NESClient_ = nullptr;
 
@@ -135,7 +133,7 @@ bool Manager::ConnectNES() {
     return status;
 }
 
-bool Manager::RunVersionCheckEVM() {
+bool RPCClientManager::RunVersionCheckEVM() {
     std::string EVMVersion = "undefined";
     bool status = EVMQueryJSON("GetAPIVersion", &EVMVersion, true);
 
@@ -157,7 +155,7 @@ bool Manager::RunVersionCheckEVM() {
     return true;
 }
 
-bool Manager::RunVersionCheckNES() {
+bool RPCClientManager::RunVersionCheckNES() {
     std::string NESVersion = "undefined";
     bool status = NESQueryJSON("GetAPIVersion", &NESVersion, true);
 
@@ -183,7 +181,7 @@ bool Manager::RunVersionCheckNES() {
 // RPC Query Functions (Silent on Failure)
 // -----------------------------
 
-bool Manager::EVMQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
+bool RPCClientManager::EVMQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
     if (!_ForceQuery && (!IsEVMClientHealthy_.load() || !EVMClient_)) {
         return false;
     }
@@ -195,7 +193,7 @@ bool Manager::EVMQueryJSON(std::string _Route, std::string* _Result, bool _Force
     }
 }
 
-bool Manager::EVMQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
+bool RPCClientManager::EVMQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
     if (!_ForceQuery && (!IsEVMClientHealthy_.load() || !EVMClient_)) {
         return false;
     }
@@ -207,7 +205,7 @@ bool Manager::EVMQueryJSON(std::string _Route, std::string _Query, std::string* 
     }
 }
 
-bool Manager::NESQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
+bool RPCClientManager::NESQueryJSON(std::string _Route, std::string* _Result, bool _ForceQuery) {
     if (!_ForceQuery && (!IsNESClientHealthy_.load() || !NESClient_)) {
         return false;
     }
@@ -219,7 +217,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string* _Result, bool _Force
     }
 }
 
-bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
+bool RPCClientManager::NESQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery) {
     if (!_ForceQuery && (!IsNESClientHealthy_.load() || !NESClient_)) {
         return false;
     }
@@ -235,7 +233,7 @@ bool Manager::NESQueryJSON(std::string _Route, std::string _Query, std::string* 
 // Connection Manager Threads
 // -----------------------------
 
-void Manager::ConnectionManagerEVM() {
+void RPCClientManager::ConnectionManagerEVM() {
     Logger_->Log("Started EVM Manager Thread", 3);
     int lastState = -1;
 
@@ -279,7 +277,7 @@ void Manager::ConnectionManagerEVM() {
     Logger_->Log("Exiting EVM Manager Thread", 1);
 }
 
-void Manager::ConnectionManagerNES() {
+void RPCClientManager::ConnectionManagerNES() {
     Logger_->Log("Started NES Manager Thread", 3);
     int lastState = -1;
 
@@ -323,6 +321,3 @@ void Manager::ConnectionManagerNES() {
     Logger_->Log("Exiting NES Manager Thread", 1);
 }
 
-}; // namespace RPC
-}; // namespace API
-}; // namespace BG

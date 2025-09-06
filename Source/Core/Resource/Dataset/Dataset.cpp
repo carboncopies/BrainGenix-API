@@ -20,7 +20,7 @@ namespace Resource {
 
 namespace Dataset {
 
-Route::Route(Server::Server *_Server, BG::API::RPC::Manager* _Manager, restbed::Service &_Service) {
+Route::Route(Server::Server *_Server, RPCClientManager* _Manager, restbed::Service &_Service) {
   Server_ = _Server;
   Manager_ = _Manager;
 

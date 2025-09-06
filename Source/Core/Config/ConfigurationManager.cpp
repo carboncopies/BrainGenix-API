@@ -2,12 +2,7 @@
 
 
 
-namespace BG {
-namespace API {
-namespace Config {
-
-
-Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _Args) {
+ConfigManager::ConfigManager(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _Args) {
 
     ArgumentParser ArgParser(_Logger, Config_, _NumArgs, _Args);
     ArgParser.~ArgumentParser();
@@ -18,17 +13,14 @@ Manager::Manager(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char*
 
 }
 
-Manager::~Manager() {
+ConfigManager::~ConfigManager() {
 
 }
 
 
 
-Config& Manager::GetConfig() {
+Config& ConfigManager::GetConfig() {
     return Config_;
 }
 
 
-}; // Close Namespace Config
-}; // Close Namespace API
-}; // Close Namespace BG

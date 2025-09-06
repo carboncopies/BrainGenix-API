@@ -2,9 +2,7 @@
 #include <stdexcept>
 #include <nlohmann/json.hpp>
 
-namespace BG {
-namespace API {
-namespace API {
+
 
 using json = nlohmann::json;
 
@@ -140,6 +138,3 @@ bool VSDAConnectionManager::HasVSDALeader() const {
     return leaderRpc_ && leaderRpc_->IsConnected();
 }
 
-} // namespace API
-} // namespace API
-} // namespace BG

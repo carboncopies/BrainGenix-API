@@ -16,9 +16,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 
-namespace BG {
-namespace API {
-namespace API {
+
 
 enum BGStatusCode {
     BGStatusSuccess = 0,
@@ -30,6 +28,3 @@ enum BGStatusCode {
     NUMBGStatusCode
 };
 
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

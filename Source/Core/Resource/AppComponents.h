@@ -25,9 +25,9 @@
  */
 class AppComponent {
 public:
-  AppComponent(BG::API::Config::Config* _Config) : Config_(_Config) {}
+  AppComponent(Config* _Config) : Config_(_Config) {}
   
-  BG::API::Config::Config* Config_;
+  Config* Config_;
 
   /**
    *  Create ConnectionProvider component which listens on the port

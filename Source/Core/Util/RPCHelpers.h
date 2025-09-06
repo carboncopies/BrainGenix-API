@@ -23,9 +23,7 @@
 // Internal Libraries (BG convention: use <> instead of "")
 #include <RPC/ClientManager.h>
 
-namespace BG {
-namespace API {
-namespace Util {
+
 
 
 /**
@@ -43,8 +41,5 @@ namespace Util {
 bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsEVMClientHealthy,std::string _Route, std::string _Query, std::string* _Result);
 bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsEVMClientHealthy,std::string _Route, std::string _Query, std::string* _Result);
 
-std::string GetFile(BG::API::RPC::Manager* _Manager, const std::string& _Handle);
+std::string GetFile(RPCClientManager* _Manager, const std::string& _Handle);
 
-}; // Close Namespace Util
-}; // Close Namespace API
-}; // Close Namespace BG

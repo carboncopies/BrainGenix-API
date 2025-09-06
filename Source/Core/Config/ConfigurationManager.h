@@ -26,9 +26,6 @@
 
 
 
-namespace BG {
-namespace API {
-namespace Config {
 
 /**
  * @brief Configuration Manager Class - Provides program configuration capabillities to the API server.
@@ -36,7 +33,7 @@ namespace Config {
  * @details This class manages the argument and config file parsers, which each generate a config struct 
  * which is given to the rest of the system. This class manages creating and owning that config struct.
  */
-class Manager {
+class ConfigManager {
 
 private:
 
@@ -53,12 +50,12 @@ public:
      * @param _NumArgs The number of command-line arguments.
      * @param _Args The array of command-line arguments.
      */
-    Manager(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _Args);
+    ConfigManager(BG::Common::Logger::LoggingSystem* _Logger, int _NumArgs, char** _Args);
 
     /**
-     * @brief Destroy the Manager object.
+     * @brief Destroy the ConfigManager object.
      */
-    ~Manager();
+    ~ConfigManager();
 
     /**
      * @brief Returns a reference to the configuration struct.
@@ -68,7 +65,3 @@ public:
     Config& GetConfig();
 
 };
-
-}; // Close Namespace Config
-}; // Close Namespace API
-}; // Close Namespace BG

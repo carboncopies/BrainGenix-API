@@ -21,26 +21,23 @@
 
 
 
-namespace BG {
 
-    //- General BG Types -//
-    /**
-     * @brief Enum showing system state codes.
-     * 
-     */
-    enum bgServiceStatus {
-        SERVICE_HEALTHY,
-        SERVICE_DEGRADED,
-        SERVICE_FAILED,
-        SERVICE_CONFIG_ERR,
-        SERVICE_VERSION_MISMATCH
-    };
-
-
-    //- NES Specific Types -//
-    namespace NES {
-        typedef int64_t bgSimulationID;
-    };
-
-
+//- General BG Types -//
+/**
+ * @brief Enum showing system state codes.
+ * 
+ */
+enum bgServiceStatus {
+    SERVICE_HEALTHY,
+    SERVICE_DEGRADED,
+    SERVICE_FAILED,
+    SERVICE_CONFIG_ERR,
+    SERVICE_VERSION_MISMATCH
 };
+
+
+//- NES Specific Types -//
+namespace NES {
+    typedef int64_t bgSimulationID;
+};
+

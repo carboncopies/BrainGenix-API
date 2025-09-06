@@ -20,9 +20,6 @@
 #include <Config/ConfigDefaults.h>
 
 
-namespace BG {
-namespace API {
-namespace Config {
 
 /**
  * @struct Config
@@ -102,7 +99,3 @@ struct Config {
 };
 
 
-
-}; // Close Namespace Config
-}; // Close Namespace API
-}; // Close Namespace BG

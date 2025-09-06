@@ -1,9 +1,7 @@
 #include <Util/ParamCheck.h>
 
 
-namespace BG {
-namespace API {
-namespace Util {
+
 
 bool HasRequiredParams(const restbed::Request* _Request, std::vector<std::string>* _RequiredParams) {
     for (unsigned int i = 0; i < _RequiredParams->size(); i++) {
@@ -16,6 +14,3 @@ bool HasRequiredParams(const restbed::Request* _Request, std::vector<std::string
 }
 
 
-}; // Close Namespace Util
-}; // Close Namespace API
-}; // Close Namespace BG

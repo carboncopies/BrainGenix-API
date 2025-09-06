@@ -7,34 +7,34 @@
 #include <oatpp/network/Server.hpp>
 #include <Main.h>
 #include <Resource/VSDA/VSDAManager.h>   // VSDA manager already in tree
-#include <rpc/server.h>                  // boost::asio based rpc
+// #include <rpc/server.h>                  // boost::asio based rpc
 
-static std::unique_ptr<::rpc::server> gClusterRPC;
-static std::unique_ptr<BG::API::VSDA::Manager> gClusterMgr;
+// static std::unique_ptr<::rpc::server> gClusterRPC;
+// static std::unique_ptr<BG::API::VSDA::Manager> gClusterMgr;
 
-void StartClusterRPC(BG::Common::Logger::LoggingSystem* L,
-                     BG::API::Config::Config* C,
-                     BG::API::Server::Server* S)
-{
-    int port = 7998;//C->GetInt("Network.RPCCallback.Port", 7999);
-    gClusterMgr = std::make_unique<BG::API::VSDA::Manager>(L, C, S);
+// void StartClusterRPC(BG::Common::Logger::LoggingSystem* L,
+//                      BG::API::Config::Config* C,
+//                      BG::API::Server::Server* S)
+// {
+//     int port = 7998;//C->GetInt("Network.RPCCallback.Port", 7999);
+//     gClusterMgr = std::make_unique<BG::API::VSDA::Manager>(L, C, S);
 
-    gClusterRPC = std::make_unique<::rpc::server>(port);
-    gClusterRPC->bind("RegisterNode",
-        [](const std::string& jsonStr){
-            auto obj = nlohmann::json::parse(jsonStr);
-            return gClusterMgr->RegisterNode(obj["id"], obj["host"], obj["port"]).dump();
-        });
-    gClusterRPC->bind("Heartbeat",
-        [](const std::string& id){
-            return gClusterMgr->CheckIn(id, "", 0, false).dump();
-        });
-    gClusterRPC->bind("GetClusterStatus",
-        [](){ return gClusterMgr->GetClusterStatus().dump(); });
-    gClusterRPC->bind("Ping", [](){ return "PONG"; });
-    gClusterRPC->async_run(4);
-    L->Log("Cluster RPC ready on port " + std::to_string(port), 1);
-}
+//     gClusterRPC = std::make_unique<::rpc::server>(port);
+//     gClusterRPC->bind("RegisterNode",
+//         [](const std::string& jsonStr){
+//             auto obj = nlohmann::json::parse(jsonStr);
+//             return gClusterMgr->RegisterNode(obj["id"], obj["host"], obj["port"]).dump();
+//         });
+//     gClusterRPC->bind("Heartbeat",
+//         [](const std::string& id){
+//             return gClusterMgr->CheckIn(id, "", 0, false).dump();
+//         });
+//     gClusterRPC->bind("GetClusterStatus",
+//         [](){ return gClusterMgr->GetClusterStatus().dump(); });
+//     gClusterRPC->bind("Ping", [](){ return "PONG"; });
+//     gClusterRPC->async_run(4);
+//     L->Log("Cluster RPC ready on port " + std::to_string(port), 1);
+// }
 
 int main(int NumArguments, char** ArgumentValues) {
     BG::Common::Logger::LoggingSystem Logger;
@@ -46,14 +46,15 @@ int main(int NumArguments, char** ArgumentValues) {
     BG::API::Server::Server ServerData{};
 
     // 1) Start VSDA cluster RPC (port 7999)
-    StartClusterRPC(&Logger, &SystemConfiguration, &ServerData);
+    // StartClusterRPC(&Logger, &SystemConfiguration, &ServerData);
+
+    std::unique_ptr<BG::API::VSDA::Manager> gClusterMgr(&Logger, &SystemConfiguration, &);
 
     // 2) Keep existing managers
     BG::API::RPC::Manager RPCManager(&Logger, &SystemConfiguration, &ServerData);
     BG::API::API::RPCManager RPCServer(&SystemConfiguration, &Logger, &ServerData);
 
-    // Bind VSDA RPC endpoints (HTTP side)
-    RPCServer.BindVSDAEndpoints(nullptr); // we expose cluster via RPC, not HTTP
+    RPCServer.BindVSDAEndpoints(nullptr);
 
     oatpp::base::Environment::init();
     AppComponent components(&SystemConfiguration);

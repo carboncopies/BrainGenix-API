@@ -1,9 +1,12 @@
 #include "VSDAConnectionManager.h"
 #include <stdexcept>
+#include <nlohmann/json.hpp>
 
 namespace BG {
 namespace API {
 namespace API {
+
+using json = nlohmann::json;
 
 VSDAConnectionManager::VSDAConnectionManager(BG::Common::Logger::LoggingSystem* logger, 
                                            RPCManager* rpcManager)
@@ -19,32 +22,34 @@ VSDAConnectionManager::~VSDAConnectionManager() {
 void VSDAConnectionManager::Initialize() {
     // Register the endpoints that VSDA nodes will call to register themselves
     rpcManager_->AddRoute("RegisterVSDANode", logger_, 
-        [this](const std::string& nodeId, const std::string& host, int port) {
-            this->RegisterVSDANode(nodeId, host, port);
-            return true;
+        [this](const std::string& jsonRequest) {
+            return this->RegisterVSDANode(jsonRequest);
         });
     
     rpcManager_->AddRoute("SetVSDALeader", logger_, 
-        [this](const std::string& nodeId) {
-            this->SetVSDALeader(nodeId);
-            return true;
+        [this](const std::string& jsonRequest) {
+            return this->SetVSDALeader(jsonRequest);
         });
     
     logger_->Log("[VSDAConnectionManager] Initialized VSDA RPC endpoints", 4);
 }
 
-void VSDAConnectionManager::RegisterVSDANode(const std::string& nodeId, 
-                                           const std::string& host, int port) {
+std::string VSDAConnectionManager::RegisterVSDANode(const std::string& jsonRequest) {
     std::lock_guard<std::mutex> lock(mutex_);
     
     try {
+        json request = json::parse(jsonRequest);
+        std::string nodeId = request["nodeId"];
+        std::string host = request["host"];
+        int port = request["port"];
+        
         logger_->Log("[VSDAConnectionManager] Received registration from VSDA node: " + 
                     nodeId + " at " + host + ":" + std::to_string(port), 4);
         
         // Create a bidirectional RPC connection to the VSDA node
         if (!leaderRpc_) {
-            leaderRpc_ = std::make_unique<BidirectionalRpc>(0, true, logger_, 5000);
-            leaderRpc_->SetAdvertisedHost("localhost");  // API server's hostname
+            leaderRpc_ = std::make_unique<BidirectionalRpc>(0, true, logger_, 5000, "VSDALeader");
+            leaderRpc_->SetAdvertisedHost("localhost");
             leaderRpc_->Start();
             logger_->Log("[VSDAConnectionManager] Created bidirectional RPC client", 4);
         }
@@ -59,25 +64,54 @@ void VSDAConnectionManager::RegisterVSDANode(const std::string& nodeId,
             throw std::runtime_error("Health check failed");
         }
         
-        logger_->Log("[VSDAConnectionManager] Successfully connected to VSDA node: " + 
-                    nodeId, 4);
+        logger_->Log("[VSDAConnectionManager] Successfully connected to VSDA node: " + nodeId, 4);
+        
+        // Return success response
+        json response;
+        response["success"] = true;
+        response["message"] = "Node registered successfully";
+        return response.dump();
         
     } catch (const std::exception& e) {
-        logger_->Log("[VSDAConnectionManager] Failed to connect to VSDA node " + 
-                    nodeId + ": " + e.what(), 8);
+        logger_->Log("[VSDAConnectionManager] Failed to register VSDA node: " + std::string(e.what()), 8);
         if (leaderRpc_) {
             leaderRpc_->Stop();
             leaderRpc_.reset();
         }
-        throw;
+        
+        // Return error response
+        json response;
+        response["success"] = false;
+        response["error"] = e.what();
+        return response.dump();
     }
 }
 
-void VSDAConnectionManager::SetVSDALeader(const std::string& nodeId) {
+std::string VSDAConnectionManager::SetVSDALeader(const std::string& jsonRequest) {
     std::lock_guard<std::mutex> lock(mutex_);
     
-    logger_->Log("[VSDAConnectionManager] Set VSDA leader: " + nodeId, 4);
-    // For now, just log it - we might want to do more validation later
+    try {
+        json request = json::parse(jsonRequest);
+        std::string nodeId = request["nodeId"];
+        
+        logger_->Log("[VSDAConnectionManager] Set VSDA leader: " + nodeId, 4);
+        currentLeaderNodeId_ = nodeId;
+        
+        // Return success response
+        json response;
+        response["success"] = true;
+        response["message"] = "Leader set successfully";
+        return response.dump();
+        
+    } catch (const std::exception& e) {
+        logger_->Log("[VSDAConnectionManager] Failed to set VSDA leader: " + std::string(e.what()), 8);
+        
+        // Return error response
+        json response;
+        response["success"] = false;
+        response["error"] = e.what();
+        return response.dump();
+    }
 }
 
 std::string VSDAConnectionManager::CallVSDALeader(const std::string& method, 

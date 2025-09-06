@@ -9,7 +9,8 @@
 BidirectionalRpc::BidirectionalRpc(int  serverPort,
                                    bool callBackConnect,
                                    BG::Common::Logger::LoggingSystem* logger,
-                                   int timeoutMs)
+                                   int timeoutMs,
+                                   std::string Label)
     : m_serverPort(serverPort),
       m_callBackConnect(callBackConnect),
       m_peerHost(""),
@@ -17,7 +18,8 @@ BidirectionalRpc::BidirectionalRpc(int  serverPort,
       m_server(serverPort),
       m_reconnectAttempts(0),
       m_timeoutMs(timeoutMs),
-      Logger(logger) {
+      Logger(logger),
+      Label(Label) {
 
     m_server.bind("HealthCheck", []() { return true; });
 
@@ -29,7 +31,7 @@ BidirectionalRpc::BidirectionalRpc(int  serverPort,
     }
 
     if (Logger) {
-        Logger->Log("[BidirectionalRpc] Listening on port " +
+        Logger->Log("[BiDirRpc] [" + Label + "] Listening on port " +
                     std::to_string(serverPort) + ", callback-mode = " +
                     (m_callBackConnect ? "true" : "false"), 0);
     }
@@ -49,7 +51,7 @@ void BidirectionalRpc::Start() {
     m_serverThread     = std::thread(&BidirectionalRpc::RunServer, this);
     m_healthCheckThread = std::thread(&BidirectionalRpc::HealthCheckLoop, this);
 
-    if (Logger) Logger->Log("[BidirectionalRpc] Started", 0);
+    if (Logger) Logger->Log("[BiDirRpc] [" + Label + "] Started", 0);
 }
 
 void BidirectionalRpc::Stop() {
@@ -66,7 +68,7 @@ void BidirectionalRpc::Stop() {
     if (m_serverThread.joinable())     m_serverThread.join();
     if (m_healthCheckThread.joinable()) m_healthCheckThread.join();
 
-    if (Logger) Logger->Log("[BidirectionalRpc] Stopped", 0);
+    if (Logger) Logger->Log("[BiDirRpc] [" + Label + "] Stopped", 0);
 }
 
 void BidirectionalRpc::UpdatePeer(const std::string& host, int port) {
@@ -77,7 +79,7 @@ void BidirectionalRpc::UpdatePeer(const std::string& host, int port) {
     m_client.reset();
 
     if (Logger) {
-        Logger->Log("[BidirectionalRpc] Peer updated to " + host + ":" +
+        Logger->Log("[BiDirRpc] [" + Label + "] Peer updated to " + host + ":" +
                     std::to_string(port), 0);
     }
 }
@@ -91,7 +93,7 @@ bool BidirectionalRpc::IsConnected() {
 // Private helpers
 // -----------------------------------------------------------------------------
 void BidirectionalRpc::RunServer() {
-    if (Logger) Logger->Log("[BidirectionalRpc] Server thread running", 0);
+    if (Logger) Logger->Log("[BiDirRpc] [" + Label + "] Server thread running", 0);
     m_server.run();
 }
 
@@ -104,7 +106,7 @@ void BidirectionalRpc::HealthCheckLoop() {
         std::lock_guard<std::mutex> lock(m_clientMutex);
 
         if (!m_client) {
-            if (Logger) Logger->Log("[HealthCheck] No client, attempting reconnect", 0);
+            if (Logger) Logger->Log("[BiDirRpc] [Health] [" + Label + "] No client, attempting reconnect", 0);
             Reconnect();
         } else {
             try {
@@ -119,9 +121,9 @@ void BidirectionalRpc::HealthCheckLoop() {
                 
                 future.get(); // Check for exceptions
                 m_reconnectAttempts = 0;
-                if (Logger) Logger->Log("[HealthCheck] OK For Host '" + m_peerHost + ":" + std::to_string(m_peerPort) + "'", 0);
+                if (Logger) Logger->Log("[BiDirRpc] [Health] [" + Label + "] OK For Host '" + m_peerHost + ":" + std::to_string(m_peerPort) + "'", 0);
             } catch (const std::exception& e) {
-                if (Logger) Logger->Log("[HealthCheck] Failed: " + std::string(e.what()), 1);
+                if (Logger) Logger->Log("[BiDirRpc] [Health] [" + Label + "] Failed: " + std::string(e.what()), 1);
                 m_client.reset();
                 Reconnect();
             }
@@ -145,7 +147,7 @@ bool BidirectionalRpc::TestConnection() {
 bool BidirectionalRpc::Reconnect() {
     if (m_reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
         if (Logger) {
-            Logger->Log("[Reconnect] Max attempts reached, giving up", 1);
+            Logger->Log("[BiDirRpc] [Reconnect] [" + Label + "] Max attempts reached, giving up", 1);
         }
         return false;
     }
@@ -172,21 +174,21 @@ bool BidirectionalRpc::Reconnect() {
             });
             
             if (hookbackFuture.wait_for(std::chrono::milliseconds(m_timeoutMs)) != std::future_status::ready) {
-                if (Logger) Logger->Log("[Reconnect] Hookback call timeout", 1);
+                if (Logger) Logger->Log("[BiDirRpc] [Reconnect] [" + Label + "] Hookback call timeout", 1);
             } else {
                 hookbackFuture.get();
-                if (Logger) Logger->Log("[Reconnect] Sent __hookbackConnect to peer", 0);
+                if (Logger) Logger->Log("[BiDirRpc] [Reconnect] [" + Label + "] Sent __hookbackConnect to peer", 0);
             }
         }
 
         m_reconnectAttempts = 0;
-        if (Logger) Logger->Log("[Reconnect] Success", 0);
+        if (Logger) Logger->Log("[BiDirRpc] [Reconnect] [" + Label + "] Success", 0);
         return true;
     } catch (const std::exception& e) {
         m_client.reset();
         ++m_reconnectAttempts;
         if (Logger) {
-            Logger->Log("[Reconnect] Failed (" + std::string(e.what()) + ")", 1);
+            Logger->Log("[BiDirRpc] [Reconnect] [" + Label + "] Failed (" + std::string(e.what()) + ")", 1);
         }
         return false;
     }
@@ -201,7 +203,7 @@ void BidirectionalRpc::SetAdvertisedHost(std::string _Host) {
 // -----------------------------------------------------------------------------
 void BidirectionalRpc::HookbackConnect(const std::string& host, int port) {
     if (Logger) {
-        Logger->Log("[__hookbackConnect] Peer asked us to connect to " +
+        Logger->Log("[BiDirRpc] [__hookbackConnect] [" + Label + "] Peer asked us to connect to " +
                     host + ":" + std::to_string(port), 0);
     }
     UpdatePeer(host, port);

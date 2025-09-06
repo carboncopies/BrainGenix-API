@@ -36,7 +36,8 @@ public:
     explicit BidirectionalRpc(int serverPort,
                               bool callBackConnect = true,
                               BG::Common::Logger::LoggingSystem* logger = nullptr,
-                              int timeoutMs = 5000);
+                              int timeoutMs = 5000,
+                              std::string Label = "Generic");
 
     ~BidirectionalRpc();
 
@@ -129,6 +130,8 @@ private:
     // ------------------------------------------------------------------
     const int  m_serverPort;
     bool       m_callBackConnect;
+
+    std::string Label;
 
     std::string m_peerHost;
     int         m_peerPort;

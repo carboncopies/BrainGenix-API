@@ -6,6 +6,7 @@
 #include <memory>
 #include <mutex>
 #include <string>
+#include <nlohmann/json.hpp>
 
 namespace BG {
 namespace API {
@@ -18,8 +19,8 @@ public:
     ~VSDAConnectionManager();
 
     void Initialize();
-    void RegisterVSDANode(const std::string& nodeId, const std::string& host, int port);
-    void SetVSDALeader(const std::string& nodeId);
+    std::string RegisterVSDANode(const std::string& jsonRequest);
+    std::string SetVSDALeader(const std::string& jsonRequest);
     std::string CallVSDALeader(const std::string& method, const std::string& params = "");
     bool HasVSDALeader() const;
 
@@ -28,6 +29,7 @@ private:
     RPCManager* rpcManager_;
     std::unique_ptr<BidirectionalRpc> leaderRpc_;
     mutable std::mutex mutex_;
+    std::string currentLeaderNodeId_;
 };
 
 } // namespace API

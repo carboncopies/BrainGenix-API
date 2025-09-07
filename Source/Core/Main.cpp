@@ -45,8 +45,8 @@ int main(int NumArguments, char** ArgumentValues) {
 
     OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
     
-    router->addController(std::make_shared<BrainGenixAPIController>(&ServerData, &RPCClientManager));
-
+    router->addController(std::make_shared<BrainGenixAPIController>(&ServerData, &RPCClientManager, &VSDAManager));
+    
     OATPP_COMPONENT(std::shared_ptr<oatpp::network::ConnectionHandler>, connectionHandler);
     OATPP_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, connectionProvider);
 

@@ -26,6 +26,7 @@
 
 class RPCClientManager;
 class Server;
+class VSDAConnectionManager;
 
 
 /**
@@ -42,6 +43,8 @@ class Server;
  */
 bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsEVMClientHealthy,std::string _Route, std::string _Query, std::string* _Result);
 bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsEVMClientHealthy,std::string _Route, std::string _Query, std::string* _Result);
+
+bool VSDAQueryJSON(VSDAConnectionManager* _VSDAManager, std::string _Method, std::string _Params, std::string* _Result);
 
 std::string GetFile(RPCClientManager* _Manager, const std::string& _Handle);
 

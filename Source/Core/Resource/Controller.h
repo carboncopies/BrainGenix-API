@@ -13,6 +13,9 @@
 #include <jwt-cpp/jwt.h>
 #include <Util/JWTUtil.hpp>
 
+#include <Cluster/VSDA/VSDAConnectionManager.h>
+
+
 #include OATPP_CODEGEN_BEGIN(ApiController)
 
 
@@ -54,9 +57,10 @@ std::string userRole;
 class BrainGenixAPIController : public oatpp::web::server::api::ApiController {
   Server* Server_;
   RPCClientManager* Manager_;
+  VSDAConnectionManager* VSDAManager_;
 public:
-  BrainGenixAPIController(Server* _Server, RPCClientManager* _Manager, OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
-    : Server_(_Server), Manager_(_Manager), oatpp::web::server::api::ApiController(objectMapper)
+  BrainGenixAPIController(Server* _Server, RPCClientManager* _Manager, VSDAConnectionManager* _VSDAManager, OATPP_COMPONENT(std::shared_ptr<ObjectMapper>, objectMapper))
+  : Server_(_Server), Manager_(_Manager), VSDAManager_(_VSDAManager), oatpp::web::server::api::ApiController(objectMapper)
   {}
 
   // Helper to add CORS headers to responses
@@ -156,7 +160,55 @@ public:
         );
     }
 }
+ 
+ENDPOINT("POST", "/VSDA", vsda, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
+    
+  std::string userRole;
+  CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
   
+  if (userRole != "admin") {
+      OATPP_LOGE("VSDA", "User role '%s' is not admin", userRole.c_str());
+      return createResponse(Status::CODE_403, "Admin access required");
+  }
+
+  // Read the JSON request body
+  std::string body = request->readBodyToString();
+  
+  try {
+      // Parse the JSON to extract method and parameters
+      nlohmann::json requestJson = nlohmann::json::parse(body);
+      
+      std::string method = requestJson.value("method", "");
+      std::string params = requestJson.value("params", "");
+      
+      if (method.empty()) {
+          return createResponse(Status::CODE_400, "Method parameter is required");
+      }
+      
+      // Check if we have a VSDA leader configured
+      if (!VSDAManager_->HasVSDALeader()) {
+          return createResponse(Status::CODE_503, "No VSDA leader available");
+      }
+      
+      // Call the VSDA leader
+      std::string result;
+      if (params.empty()) {
+          result = VSDAManager_->CallVSDALeader(method);
+      } else {
+          result = VSDAManager_->CallVSDALeader(method, params);
+      }
+      
+      // Return the result
+      auto response = createResponse(Status::CODE_200, result);
+      response->putHeader("Content-Type", "application/json");
+      return response;
+      
+  } catch (const std::exception& e) {
+      OATPP_LOGE("VSDA", "VSDA request failed: %s", e.what());
+      return createResponse(Status::CODE_500, std::string("VSDA request failed: ") + e.what());
+  }
+}
+
 ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
       
     std::string userRole;

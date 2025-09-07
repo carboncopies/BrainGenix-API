@@ -49,6 +49,8 @@ bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsE
 }
 
 bool VSDAQueryJSON(VSDAConnectionManager* _VSDAManager, std::string _Method, std::string _Params, std::string* _Result) {
+
+    std::cout<<"Making query: "<<_Method<<_Params<<std::endl;
     if (!_VSDAManager || !_VSDAManager->HasVSDALeader()) {
         return false;
     }

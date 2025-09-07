@@ -171,42 +171,22 @@ ENDPOINT("POST", "/VSDA", vsda, REQUEST(std::shared_ptr<IncomingRequest>, reques
       return createResponse(Status::CODE_403, "Admin access required");
   }
 
-  // Read the JSON request body
+  // Read the JSON request body - pass it through as-is like NES does
   std::string body = request->readBodyToString();
   
-  try {
-      // Parse the JSON to extract method and parameters
-      nlohmann::json requestJson = nlohmann::json::parse(body);
-      
-      std::string method = requestJson.value("method", "");
-      std::string params = requestJson.value("params", "");
-      
-      if (method.empty()) {
-          return createResponse(Status::CODE_400, "Method parameter is required");
-      }
-      
-      // Check if we have a VSDA leader configured
-      if (!VSDAManager_->HasVSDALeader()) {
-          return createResponse(Status::CODE_503, "No VSDA leader available");
-      }
-      
-      // Call the VSDA leader
-      std::string result;
-      if (params.empty()) {
-          result = VSDAManager_->CallVSDALeader(method);
-      } else {
-          result = VSDAManager_->CallVSDALeader(method, params);
-      }
-      
-      // Return the result
-      auto response = createResponse(Status::CODE_200, result);
-      response->putHeader("Content-Type", "application/json");
-      return response;
-      
-  } catch (const std::exception& e) {
-      OATPP_LOGE("VSDA", "VSDA request failed: %s", e.what());
-      return createResponse(Status::CODE_500, std::string("VSDA request failed: ") + e.what());
+  std::string UpstreamResponseStr = "";
+  
+  // Use the helper function similar to NES
+  bool UpstreamStatus = VSDAQueryJSON(VSDAManager_, "VSDA", body, &UpstreamResponseStr);
+  
+  if (!UpstreamStatus) {
+      OATPP_LOGE("VSDA", "VSDA upstream status fail");
+      return createResponse(Status::CODE_503, "VSDA upstream status fail");
   }
+
+  auto response = createResponse(Status::CODE_200, UpstreamResponseStr);
+  response->putHeader("Content-Type", "application/json");
+  return response;
 }
 
 ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {

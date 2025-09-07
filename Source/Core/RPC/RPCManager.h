@@ -31,7 +31,7 @@
 #include <Util/RPCHelpers.h>
 
 
-
+class Server;
 
 
 /**

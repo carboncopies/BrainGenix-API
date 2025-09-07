@@ -19,9 +19,10 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Util/Types.h>
-// #include <Cluster/VSDA/VSDAConnectionManager.h>
+#include <Cluster/VSDA/VSDAConnectionManager.h>
 
 
+class VSDAConnectionManager;
 
 
 /**
@@ -43,7 +44,7 @@ struct Server {
     std::atomic_bool* IsNESClientHealthy_; /**< Indicates if the NES client is ready to handle queries. */
     std::atomic_bool* IsEVMClientHealthy_; /**< Indicates if the EVM client is ready to handle queries. */
 
-    // BG::API::API::VSDAConnectionManager* Manager_;
+    VSDAConnectionManager* Manager_;
 
 };
 

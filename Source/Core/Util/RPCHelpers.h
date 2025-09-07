@@ -24,6 +24,8 @@
 #include <RPC/ClientManager.h>
 
 
+class RPCClientManager;
+class Server;
 
 
 /**

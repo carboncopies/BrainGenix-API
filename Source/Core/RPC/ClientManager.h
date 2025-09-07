@@ -31,6 +31,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 
+class Server;
 
 
 /**

@@ -9,6 +9,7 @@
 #include <nlohmann/json.hpp>
 
 
+class RPCManager;
 
 class VSDAConnectionManager {
 public:

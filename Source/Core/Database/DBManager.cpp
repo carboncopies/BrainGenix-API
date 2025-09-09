@@ -1,19 +1,13 @@
 #include <Database/DBManager.h>
 
 
-namespace BG {
-namespace API {
-namespace DB {
 
-Manager::Manager() {
+
+DBManager::DBManager() {
 
 }
 
-Manager::~Manager() {
+DBManager::~DBManager() {
     
 }
 
-
-}; // Close Namespace DB
-}; // Close Namespace API
-}; // Close Namespace BG

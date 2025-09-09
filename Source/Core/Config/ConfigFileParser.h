@@ -24,9 +24,6 @@
 
 
 
-namespace BG {
-namespace API {
-namespace Config {
 
 /**
  * @brief The configuration file parser loads and parses all parameters saved in the configuration file.
@@ -58,7 +55,3 @@ public:
     ~ConfigFileParser();
 
 };
-
-}; // Close Namespace Config
-}; // Close Namespace API
-}; // Close Namespace BG

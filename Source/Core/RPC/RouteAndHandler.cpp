@@ -12,14 +12,3 @@
 
 #include <RPC/ManagerTaskData.h>
 
-
-
-namespace BG {
-namespace API {
-namespace API {
-
-
-
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

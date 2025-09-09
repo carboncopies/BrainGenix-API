@@ -25,16 +25,14 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Version.h>
-
 #include <Config/Config.h>
 #include <Server/Server.h>
 #include <Util/Types.h>
 #include <BG/Common/Logger/Logger.h>
 
 
-namespace BG {
-namespace API {
-namespace RPC {
+class Server;
+
 
 /**
  *
@@ -43,11 +41,11 @@ namespace RPC {
  * It provides methods to query the NES and EVM servers and handles
  * connection health checks and reconnections.
  */
-class Manager {
+class RPCClientManager {
 
 private:
-    Config::Config* Config_; /**< Pointer to the configuration instance */
-    Server::Server* Server_; /**< Pointer to server struct, this class updates upstream status info */
+    Config* Config_; /**< Pointer to the configuration instance */
+    Server* Server_; /**< Pointer to server struct, this class updates upstream status info */
     BG::Common::Logger::LoggingSystem* Logger_; /**< Pointer to instance of logging system */
 
     bool RequestThreadsExit_; /**< Used to signal to threads that they should exit */
@@ -132,12 +130,12 @@ public:
      * @param _Config Pointer to the configuration instance.
      * @param _Server Pointer to the server instance.
      */
-    Manager(BG::Common::Logger::LoggingSystem* _Logger, Config::Config* _Config, Server::Server* _Server);
+    RPCClientManager(BG::Common::Logger::LoggingSystem* _Logger, Config* _Config, Server* _Server);
 
     /**
-     * @brief Destroys the Manager object.
+     * @brief Destroys the RPCClientManager object.
      */
-    ~Manager();
+    ~RPCClientManager();
 
     /**
      * @brief Queries the given route on the NES server with the given JSON.
@@ -198,6 +196,3 @@ public:
     bool EVMQueryJSON(std::string _Route, std::string _Query, std::string* _Result, bool _ForceQuery = false);
 };
 
-}; // Close Namespace RPC
-}; // Close Namespace API
-}; // Close Namespace BG

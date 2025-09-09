@@ -22,10 +22,6 @@
 #include <RPC/ManagerTaskData.h>
 
 
-namespace BG {
-namespace API {
-namespace API {
-
 
 
 // *** NOTE: By passing JSON objects/components as strings and then having to
@@ -58,7 +54,3 @@ struct RouteAndHandler {
     std::function<std::string>& Handler_;
 };
 
-
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

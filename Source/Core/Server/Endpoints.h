@@ -39,9 +39,7 @@
   #include <BG/Common/Logger/Logger.h>
 
 
-  namespace BG {
-  namespace API {
-  namespace Server {
+
 
   /**
    * @class EndpointManager
@@ -97,6 +95,3 @@
       void AddRoutes(restbed::Service &_Service, Server &_Server);
   };
 
-  }; // namespace Server
-  }; // namespace API
-  }; // namespace BG

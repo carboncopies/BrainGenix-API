@@ -19,9 +19,6 @@
 #include <Version.h>
 
 
-namespace BG {
-namespace API {
-namespace API {
 
 
 /**
@@ -45,6 +42,3 @@ std::string GetAPIVersion();
 std::string Echo(std::string _Data);
 
 
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

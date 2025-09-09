@@ -1,8 +1,5 @@
 #include <Server/Endpoints.h>
 
-namespace BG {
-namespace API {
-namespace Server {
 
 EndpointManager::EndpointManager(BG::Common::Logger::LoggingSystem* _Logger) {
     Logger_ = _Logger;
@@ -35,6 +32,3 @@ void EndpointManager::AddRoutes(restbed::Service &_Service, Server &_Server) {
 
 }
 
-}; // namespace Server
-}; // namespace API
-}; // namespace BG

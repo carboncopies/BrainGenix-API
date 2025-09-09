@@ -42,7 +42,7 @@ class Route {
 private:
 
     Server::Server *Server_; /**Copy of the server struct*/
-    BG::API::RPC::Manager* Manager_; /**pointer to manager service*/ 
+    RPCClientManager* Manager_; /**pointer to manager service*/ 
 
     std::string GetFile(std::string _Handle);
 
@@ -56,7 +56,7 @@ public:
      * @param _Manager Pointer to the RPC manager service.
      * @param _Service Reference to the Restbed service.
      */
-    Route(Server::Server *_Server, BG::API::RPC::Manager* _Manager, restbed::Service &_Service);
+    Route(Server::Server *_Server, RPCClientManager* _Manager, restbed::Service &_Service);
 
     /**
      * @brief Destroy the Route object

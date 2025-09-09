@@ -16,12 +16,9 @@
 #include <RPC/APIStatusCode.h>
 
 
-namespace BG {
-namespace API {
-namespace API {
 
 
-RPCManager::RPCManager(Config::Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server::Server* _Server) {
+RPCManager::RPCManager(Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server* _Server) {
 
     Logger_ = _Logger;
     Server_ = _Server;
@@ -69,7 +66,7 @@ void RPCManager::AddRoute(std::string _RouteHandle, std::function<std::string(st
 std::string RPCManager::NESRequest(std::string _JSONRequest, int _SimulationIDOverride) { // Generic JSON-based API requests.
 
     std::string UpstreamResponseStr = "";
-    bool Status = Util::NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", _JSONRequest, &UpstreamResponseStr); 
+    bool Status = NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", _JSONRequest, &UpstreamResponseStr); 
 
     return UpstreamResponseStr;
 
@@ -79,13 +76,9 @@ std::string RPCManager::NESRequest(std::string _JSONRequest, int _SimulationIDOv
 std::string RPCManager::EVMRequest(std::string _JSONRequest, int _SimulationIDOverride) { // Generic JSON-based API requests.
 
     std::string UpstreamResponseStr = "";
-    bool Status = Util::EVMQueryJSON(Server_->EVMClient, Server_->IsEVMClientHealthy_, "EVM", _JSONRequest, &UpstreamResponseStr); 
+    bool Status = EVMQueryJSON(Server_->EVMClient, Server_->IsEVMClientHealthy_, "EVM", _JSONRequest, &UpstreamResponseStr); 
 
     return UpstreamResponseStr;
 
 }
 
-
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

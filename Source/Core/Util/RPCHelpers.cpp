@@ -1,10 +1,6 @@
 #include <Util/RPCHelpers.h>
 #include <nlohmann/json.hpp>
 
-namespace BG {
-namespace API {
-namespace Util {
-
 
 // Common RPC interface - used both for internal requests between services (NES<->EVM), and external requests to the HTTP POST API    
 bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsNESClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
@@ -52,7 +48,30 @@ bool EVMQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsE
     return true;
 }
 
-std::string GetFile(BG::API::RPC::Manager* _Manager, const std::string& _Handle) {
+bool VSDAQueryJSON(VSDAConnectionManager* _VSDAManager, std::string _Method, std::string _Params, std::string* _Result) {
+
+    std::cout<<"Making query: "<<_Method<<_Params<<std::endl;
+    if (!_VSDAManager || !_VSDAManager->HasVSDALeader()) {
+        return false;
+    }
+    
+    try {
+        if (_Params.empty()) {
+            (*_Result) = _VSDAManager->CallVSDALeader(_Method);
+        } else {
+            (*_Result) = _VSDAManager->CallVSDALeader(_Method, _Params);
+        }
+        return true;
+    } catch (const std::runtime_error& e) {
+        std::cout << "ERR: VSDA Connection failed: " << e.what() << std::endl;
+        return false;
+    } catch (const std::exception& e) {
+        std::cout << "ERR: VSDA request failed: " << e.what() << std::endl;
+        return false;
+    }
+}
+
+std::string GetFile(RPCClientManager* _Manager, const std::string& _Handle) {
   nlohmann::json GetImageQuery;
   GetImageQuery["ImageHandle"] = _Handle;
  
@@ -74,6 +93,3 @@ std::string GetFile(BG::API::RPC::Manager* _Manager, const std::string& _Handle)
   return ResultJSON["ImageData"];
 }
 
-}; // Close Namespace Util
-}; // Close Namespace API
-}; // Close Namespace BG

@@ -19,14 +19,10 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Util/Types.h>
+#include <Cluster/VSDA/VSDAConnectionManager.h>
 
 
-namespace BG {
-namespace API {
-namespace Server {
-
-
-
+class VSDAConnectionManager;
 
 
 /**
@@ -48,9 +44,8 @@ struct Server {
     std::atomic_bool* IsNESClientHealthy_; /**< Indicates if the NES client is ready to handle queries. */
     std::atomic_bool* IsEVMClientHealthy_; /**< Indicates if the EVM client is ready to handle queries. */
 
+    VSDAConnectionManager* Manager_;
+
 };
 
 
-}; // Close Namespace Server
-}; // Close Namespace API
-}; // Close Namespace BG

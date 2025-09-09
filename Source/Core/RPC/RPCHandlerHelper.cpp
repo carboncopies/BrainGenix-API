@@ -14,10 +14,6 @@
 
 
 
-namespace BG {
-namespace API {
-namespace API {
-
 
 
 // Handy class for standard handler data.
@@ -284,6 +280,3 @@ bool HandlerData::GetParVecFloat(const std::string& ParName, std::vector<float>&
 
 
 
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

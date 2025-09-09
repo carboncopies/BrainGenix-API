@@ -5,11 +5,6 @@
 
 
 
-namespace BG {
-namespace API {
-namespace Server {
-
-
 
 void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
@@ -132,8 +127,3 @@ void Controller::HangUntilExit() {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 }
-
-
-}; // Close Namespace Server
-}; // Close Namespace API
-}; // Close Namespace BG

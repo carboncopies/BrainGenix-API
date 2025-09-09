@@ -22,10 +22,6 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 
-namespace BG {
-namespace API {
-namespace Util {
-
 
 /**
  * @brief General handler for sending back status codes.
@@ -81,6 +77,3 @@ void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, s
 void SetVec3(float* _Vector, std::string _Input);
 
 
-}; // Close Namespace Util
-}; // Close Namespace API
-}; // Close Namespace BG

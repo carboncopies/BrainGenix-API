@@ -12,14 +12,3 @@
 
 #include <RPC/APIStatusCode.h>
 
-
-
-namespace BG {
-namespace API {
-namespace API {
-
-
-
-}; // Close Namespace API
-}; // Close Namespace API
-}; // Close Namespace BG

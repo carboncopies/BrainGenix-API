@@ -20,35 +20,30 @@
 // Internal Libraries (BG convention: use <> instead of "")
 
 
-namespace BG {
-namespace API {
-namespace DB {
+
 
 
 /**
- * @brief Manager class for the database - will take a config struct (need to make this), and then connect to the db from that struct.
+ * @brief DBManager class for the database - will take a config struct (need to make this), and then connect to the db from that struct.
  * Then, methods here can be added to call sql commands as needed.
  * 
  */
-class Manager {
+class DBManager {
 
 public:
 
     /**
-     * @brief Construct a new Manager object
+     * @brief Construct a new DBManager object
      * 
      */
-    Manager();
+    DBManager();
 
     /**
-     * @brief Destroy the Manager object
+     * @brief Destroy the DBManager object
      * 
      */
-    ~Manager();
+    ~DBManager();
 
 };
 
 
-}; // Close Namespace DB
-}; // Close Namespace API
-}; // Close Namespace BG

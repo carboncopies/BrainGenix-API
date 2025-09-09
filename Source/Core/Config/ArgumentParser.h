@@ -29,9 +29,7 @@
 #include <BG/Common/Logger/Logger.h>
 
 
-namespace BG {
-namespace API {
-namespace Config {
+
 
 /**
  * @brief Argument parsing class, does what the name says. Is responsible for editing the config class as needed.
@@ -71,7 +69,3 @@ public:
     ~ArgumentParser();
 
 };
-
-}; // Close Namespace Config
-}; // Close Namespace API
-}; // Close Namespace BG

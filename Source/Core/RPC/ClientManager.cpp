@@ -3,7 +3,7 @@
 
 
 
-RPCClientManager::RPCClientManager(BG::Common::Logger::LoggingSystem* _Logger, Config* _Config, Server* _Server) {
+RPCClientManager::RPCClientManager(BG::Common::Logger::LoggingSystem* _Logger, ConfigParser* _Config, Server* _Server) {
     Config_ = _Config;
     Server_ = _Server;
     Logger_ = _Logger;
@@ -50,8 +50,8 @@ void RPCClientManager::SetEVMCallbackInfo() {
     if (!EVMClient_ || !IsEVMClientHealthy_.load()) return;
 
     nlohmann::json Query;
-    Query["CallbackHost"] = Config_->RPCCallbackHost;
-    Query["CallbackPort"] = Config_->RPCCallbackPort;
+    Query["CallbackHost"] = Config_->GetString("RPCCallbackHost", "localhost");
+    Query["CallbackPort"] = Config_->GetInt("RPCCallbackPort", 7999);
     std::string QueryStr = Query.dump();
 
     std::string Result;
@@ -63,8 +63,8 @@ void RPCClientManager::SetNESCallbackInfo() {
     if (!NESClient_ || !IsNESClientHealthy_.load()) return;
 
     nlohmann::json Query;
-    Query["CallbackHost"] = Config_->RPCCallbackHost;
-    Query["CallbackPort"] = Config_->RPCCallbackPort;
+    Query["CallbackHost"] = Config_->GetString("RPCCallbackHost", "localhost");
+    Query["CallbackPort"] = Config_->GetInt("RPCCallbackPort", 7999);
     std::string QueryStr = Query.dump();
 
     std::string Result;
@@ -75,9 +75,9 @@ bool RPCClientManager::ConnectEVM() {
     IsEVMClientHealthy_.store(false);
     EVMClient_ = nullptr;
 
-    std::string EVMHost = Config_->EVMHost;
-    int EVMPort = Config_->EVMPortNumber;
-    int EVMTimeout_ms = Config_->EVMTimeout_ms;
+    std::string EVMHost = Config_->GetString("EVMHost", "localhost");
+    int EVMPort = Config_->GetInt("EVMPort", 8002);
+    int EVMTimeout_ms = Config_->GetInt("EVMTimeout_ms", 10000);
 
     // Logger_->Log("Connecting to EVM on port: " + std::to_string(EVMPort), 5);
     // Logger_->Log("Connecting to EVM on host: " + EVMHost, 5);
@@ -106,9 +106,9 @@ bool RPCClientManager::ConnectNES() {
     IsNESClientHealthy_.store(false);
     NESClient_ = nullptr;
 
-    std::string NESHost = Config_->NESHost;
-    int NESPort = Config_->NESPortNumber;
-    int NESTimeout_ms = Config_->NESTimeout_ms;
+    std::string NESHost = Config_->GetString("NESHost", "localhost");
+    int NESPort = Config_->GetInt("NESPort", 8001);
+    int NESTimeout_ms = Config_->GetInt("NESTimeout_ms", 10000);
 
     // Logger_->Log("Connecting to NES on port: " + std::to_string(NESPort), 5);
     // Logger_->Log("Connecting to NES on host: " + NESHost, 5);

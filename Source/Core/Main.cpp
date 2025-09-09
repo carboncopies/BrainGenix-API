@@ -20,16 +20,17 @@
 int main(int NumArguments, char** ArgumentValues) {
     BG::Common::Logger::LoggingSystem Logger;
 
-    // Startup With Config Manager, Will Read Args And Config File, Then Parse Into Config Struct
-    ConfigManager ConfigManager(&Logger, NumArguments, ArgumentValues);
-    Config& SystemConfiguration = ConfigManager.GetConfig();
+    // Initialize Config Manager
+    Logger.Log("[MAIN] Loading System Configuration", 5);
+    ConfigParser ConfigManager("Config.yaml", NumArguments, ArgumentValues, &Logger);
+    Logger.Log("[MAIN] System Configuration Loaded", 5);
 
     Server ServerData{};
 
-    RPCClientManager RPCClientManager(&Logger, &SystemConfiguration, &ServerData); 
+    RPCClientManager RPCClientManager(&Logger, &ConfigManager, &ServerData); 
 
     // The manager is for internal RPC calls (i.e. NES->EVM, or EVM->NES, NOT to the user)
-    RPCManager RPCServer(&SystemConfiguration, &Logger, &ServerData);
+    RPCManager RPCServer(&ConfigManager, &Logger, &ServerData);
 
 
     // Create and initialize the VSDA connection manager
@@ -41,7 +42,7 @@ int main(int NumArguments, char** ArgumentValues) {
     oatpp::base::Environment::init();
     
     // init oatpp's components
-    AppComponent components(&SystemConfiguration);
+    AppComponent components(&ConfigManager);
 
     OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
     
@@ -56,5 +57,3 @@ int main(int NumArguments, char** ArgumentValues) {
 
     oatpp::base::Environment::destroy();
 }
-
-

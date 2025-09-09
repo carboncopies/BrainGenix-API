@@ -27,7 +27,7 @@
 
 #include <Server/Server.h>
 
-#include <Config/Config.h>
+#include <Config/ConfigParser.h>
 #include <Util/RPCHelpers.h>
 
 
@@ -44,7 +44,7 @@ class RPCManager {
 
 private:
 
-    Config* Config_; /**Pointer to configuration struct owned by rest of system*/
+    ConfigParser* Config_; /**Pointer to configuration struct owned by rest of system*/
     std::unique_ptr<rpc::server> RPCServer_; /**Instance of RPC Server from rpclib*/
     BG::Common::Logger::LoggingSystem* Logger_ = nullptr; /**Pointer to the instance of the logging system*/
     Server* Server_;
@@ -75,7 +75,7 @@ public:
      * @param _Logger Pointer to the logging system instance.
      * @param _Server Pointer to the server instance.
      */
-    RPCManager(Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server* _Server);
+    RPCManager(ConfigParser* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server* _Server);
 
     /**
      * @brief Destroy the RPCManager object.

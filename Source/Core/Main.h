@@ -17,7 +17,7 @@
 // #include <rpc/client.h>
 
 // Internal Libraries (BG convention: use <> instead of "")
-#include <Config/ConfigurationManager.h>
+#include <Config/ConfigParser.h>
 
 
 

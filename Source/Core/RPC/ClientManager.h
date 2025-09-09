@@ -25,7 +25,7 @@
 
 // Internal Libraries (BG convention: use <> instead of "")
 #include <Version.h>
-#include <Config/Config.h>
+#include <Config/ConfigParser.h>
 #include <Server/Server.h>
 #include <Util/Types.h>
 #include <BG/Common/Logger/Logger.h>
@@ -44,7 +44,7 @@ class Server;
 class RPCClientManager {
 
 private:
-    Config* Config_; /**< Pointer to the configuration instance */
+    ConfigParser* Config_; /**< Pointer to the configuration instance */
     Server* Server_; /**< Pointer to server struct, this class updates upstream status info */
     BG::Common::Logger::LoggingSystem* Logger_; /**< Pointer to instance of logging system */
 
@@ -130,7 +130,7 @@ public:
      * @param _Config Pointer to the configuration instance.
      * @param _Server Pointer to the server instance.
      */
-    RPCClientManager(BG::Common::Logger::LoggingSystem* _Logger, Config* _Config, Server* _Server);
+    RPCClientManager(BG::Common::Logger::LoggingSystem* _Logger, ConfigParser* _Config, Server* _Server);
 
     /**
      * @brief Destroys the RPCClientManager object.

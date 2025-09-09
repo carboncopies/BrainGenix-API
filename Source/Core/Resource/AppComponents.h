@@ -10,7 +10,7 @@
 #include <oatpp/web/server/interceptor/RequestInterceptor.hpp>
 #include <oatpp-openssl/server/ConnectionProvider.hpp>
 #include <oatpp-openssl/Config.hpp>
-#include <Config/Config.h>
+#include <Config/ConfigParser.h>
 #include <chrono>
 
 
@@ -25,24 +25,24 @@
  */
 class AppComponent {
 public:
-  AppComponent(Config* _Config) : Config_(_Config) {}
+  AppComponent(ConfigParser* _Config) : Config_(_Config) {}
   
-  Config* Config_;
+  ConfigParser* Config_;
 
   /**
    *  Create ConnectionProvider component which listens on the port
    */
   OATPP_CREATE_COMPONENT(std::shared_ptr<oatpp::network::ServerConnectionProvider>, serverConnectionProvider)([this] {
-      auto tcpProvider = oatpp::network::tcp::server::ConnectionProvider::createShared({ Config_->Host, static_cast<unsigned short>(Config_->PortNumber), oatpp::network::Address::IP_4 });
+      auto tcpProvider = oatpp::network::tcp::server::ConnectionProvider::createShared({ Config_->GetString("Host", "0.0.0.0"), static_cast<unsigned short>(Config_->GetInt("PortNumber", 8000)), oatpp::network::Address::IP_4 });
 
       auto monitor = std::make_shared<oatpp::network::monitor::ConnectionMonitor>(tcpProvider);
       monitor->addMetricsChecker(std::make_shared<oatpp::network::monitor::ConnectionMaxAgeChecker>(
         std::chrono::hours(1)
       ));
 
-      if (Config_->UseHTTPS) {
-        std::string keyURI = "file://" + Config_->KeyFilePath,
-          certURI = "file://" + Config_->CrtFilePath;
+      if (Config_->GetBool("Https", false)) {
+        std::string keyURI = "file://" + Config_->GetString("KeyFilePath", "SetYourPathHere"),
+          certURI = "file://" + Config_->GetString("CrtFilePath", "SetYourPathHere");
 
         std::cout << "Loading Private Key From: " << keyURI << std::endl << "Loading Certificate From: " << certURI << std::endl;
       

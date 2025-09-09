@@ -18,14 +18,14 @@
 
 
 
-RPCManager::RPCManager(Config* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server* _Server) {
+RPCManager::RPCManager(ConfigParser* _Config, BG::Common::Logger::LoggingSystem* _Logger, Server* _Server) {
 
     Logger_ = _Logger;
     Server_ = _Server;
 
     // Initialize Server
-    std::string ServerHost = _Config->RPCCallbackHost;
-    int ServerPort = _Config->RPCCallbackPort;
+    std::string ServerHost = _Config->GetString("ServerHost", "localhost");
+    int ServerPort = _Config->GetInt("ServerPort", 8000);
 
     // Create a unique pointer to the RPC server and initialize it with the provided port number
     RPCServer_ = std::make_unique<rpc::server>(ServerPort);

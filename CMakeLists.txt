@@ -178,14 +178,14 @@ install(TARGETS ${PROJECT_NAME}
     DESTINATION ${INSTALL_PREFIX}
 )
 
-message(STATUS "Adding Configuration File To ${INSTALL_PREFIX}/API.cfg")
-install(FILES "${SRC_DIR}/Data/API.cfg"
+message(STATUS "Adding Configuration File To ${INSTALL_PREFIX}/API.yaml")
+install(FILES "${SRC_DIR}/Data/API.yaml"
     DESTINATION ${INSTALL_PREFIX}/Default
     COMPONENT Config
 )
 # install(CODE "
-#     if (NOT EXISTS \"${INSTALL_PREFIX}/API.cfg\")
-#         file(INSTALL \"${INSTALL_PREFIX}/API-Default.cfg\" DESTINATION \"${INSTALL_PREFIX}/API.cfg\")
+#     if (NOT EXISTS \"${INSTALL_PREFIX}/API.yaml\")
+#         file(INSTALL \"${INSTALL_PREFIX}/API-Default.cfg\" DESTINATION \"${INSTALL_PREFIX}/API.yaml\")
 #     endif() "
 #     COMPONENT Config
 # )

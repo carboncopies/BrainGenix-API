@@ -22,7 +22,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
     // Initialize Config Manager
     Logger.Log("[MAIN] Loading System Configuration", 5);
-    ConfigParser ConfigManager("Config.yaml", NumArguments, ArgumentValues, &Logger);
+    ConfigParser ConfigManager("API.yaml", NumArguments, ArgumentValues, &Logger);
     Logger.Log("[MAIN] System Configuration Loaded", 5);
 
     Server ServerData{};
@@ -34,7 +34,7 @@ int main(int NumArguments, char** ArgumentValues) {
 
 
     // Create and initialize the VSDA connection manager
-    VSDAConnectionManager VSDAManager(&Logger, &RPCServer);
+    VSDAConnectionManager VSDAManager(&Logger, &RPCServer, &ConfigManager);
     VSDAManager.Initialize();
     // ServerData.Manager_ = &VSDAManager;
     

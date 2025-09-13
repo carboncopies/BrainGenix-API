@@ -1,0 +1,39 @@
+# BrainGenix-API Configuration File
+# This file contains configuration settings for the BrainGenix API server
+
+# Server Configuration (matching API.cfg [Network.Service])
+Host: "0.0.0.0"
+PortNumber: 8000
+Https: false
+KeyFilePath: "SetYourPathHere"
+CrtFilePath: "SetYourPathHere"
+URL: "localhost"
+
+# RPC Configuration (matching API.cfg [Network.RPCCallback])
+ServerHost: "localhost"
+ServerPort: 8004
+
+RPCCallbackHost: "localhost"
+RPCCallbackPort: 7999
+
+# External Service Configuration (matching API.cfg [Network.NES] and [Network.EVM])
+EVMHost: "localhost"
+EVMPort: 8002
+EVMTimeout_ms: 10000
+
+NESHost: "localhost"
+NESPort: 8001
+NESTimeout_ms: 10000
+
+# Neuroglancer Configuration (matching API.cfg [Network.Neuroglancer])
+NeuroglancerPort: 7998
+
+# VSDA Configuration (new addition)
+VSDA:
+  RPCPort: 8003
+  Timeout_ms: 5000
+  AdvertisedHost: "localhost"
+  EnableHealthCheck: true
+  # Additional VSDA settings can be added here as needed
+  # MaxRetries: 3
+  # RetryDelay_ms: 1000

@@ -7,8 +7,9 @@
 using json = nlohmann::json;
 
 VSDAConnectionManager::VSDAConnectionManager(BG::Common::Logger::LoggingSystem* logger, 
-                                           RPCManager* rpcManager)
-    : logger_(logger), rpcManager_(rpcManager) {}
+                                           RPCManager* rpcManager,
+                                           ConfigParser* config)
+    : logger_(logger), rpcManager_(rpcManager), config_(config) {}
 
 VSDAConnectionManager::~VSDAConnectionManager() {
     std::lock_guard<std::mutex> lock(mutex_);
@@ -46,20 +47,28 @@ std::string VSDAConnectionManager::RegisterVSDANode(const std::string& jsonReque
         
         // Create a bidirectional RPC connection to the VSDA node
         if (!leaderRpc_) {
-            leaderRpc_ = std::make_unique<BidirectionalRpc>(8003, true, logger_, 5000, "VSDALeader");
-            leaderRpc_->SetAdvertisedHost("localhost");
+            int rpcPort = config_->GetInt("VSDA.RPCPort", 8003);
+            int timeout = config_->GetInt("VSDA.Timeout_ms", 5000);
+            std::string advertisedHost = config_->GetString("VSDA.AdvertisedHost", "localhost");
+            
+            leaderRpc_ = std::make_unique<BidirectionalRpc>(rpcPort, true, logger_, timeout, "VSDALeader");
+            leaderRpc_->SetAdvertisedHost(advertisedHost);
             leaderRpc_->Start();
-            logger_->Log("[VSDAConnectionManager] Created bidirectional RPC client", 4);
+            logger_->Log("[VSDAConnectionManager] Created bidirectional RPC client on port " + std::to_string(rpcPort), 4);
         }
         
         // Update the connection to point to the VSDA node
         leaderRpc_->UpdatePeer(host, port);
         logger_->Log("[VSDAConnectionManager] Updated peer to: " + host + ":" + std::to_string(port), 4);
         
-        // Test the connection
-        bool healthCheck = leaderRpc_->Call<bool>("HealthCheck");
-        if (!healthCheck) {
-            throw std::runtime_error("Health check failed");
+        // Test the connection if health check is enabled
+        bool enableHealthCheck = config_->GetBool("VSDA.EnableHealthCheck", true);
+        if (enableHealthCheck) {
+            bool healthCheck = leaderRpc_->Call<bool>("HealthCheck");
+            if (!healthCheck) {
+                throw std::runtime_error("Health check failed");
+            }
+            logger_->Log("[VSDAConnectionManager] Health check passed", 4);
         }
         
         logger_->Log("[VSDAConnectionManager] Successfully connected to VSDA node: " + nodeId, 4);

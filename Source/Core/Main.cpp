@@ -16,33 +16,40 @@
 #include <Main.h>
 
 #include <Cluster/VSDA/VSDAConnectionManager.h>
+#include <Config/ConfigManager.h>
 
 int main(int NumArguments, char** ArgumentValues) {
     BG::Common::Logger::LoggingSystem Logger;
 
-    // Initialize Config Manager
+    // Initialize Config Parser
     Logger.Log("[MAIN] Loading System Configuration", 5);
-    ConfigParser ConfigManager("API.yaml", NumArguments, ArgumentValues, &Logger);
+    ConfigParser ConfigParser("API.yaml", NumArguments, ArgumentValues, &Logger);
     Logger.Log("[MAIN] System Configuration Loaded", 5);
 
     Server ServerData{};
 
-    RPCClientManager RPCClientManager(&Logger, &ConfigManager, &ServerData); 
+    RPCClientManager RPCClientManager(&Logger, &ConfigParser, &ServerData); 
 
     // The manager is for internal RPC calls (i.e. NES->EVM, or EVM->NES, NOT to the user)
-    RPCManager RPCServer(&ConfigManager, &Logger, &ServerData);
+    RPCManager RPCServer(&ConfigParser, &Logger, &ServerData);
 
 
     // Create and initialize the VSDA connection manager
-    VSDAConnectionManager VSDAManager(&Logger, &RPCServer, &ConfigManager);
+    VSDAConnectionManager VSDAManager(&Logger, &RPCServer, &ConfigParser);
     VSDAManager.Initialize();
     // ServerData.Manager_ = &VSDAManager;
     
 
+
+    // Create and initialize the ConfigManager (manages logger, config parser, and API hook)
+    ConfigManager ConfigMgr(&Logger, &ConfigParser, &VSDAManager);
+    ConfigMgr.Initialize();
+
+
     oatpp::base::Environment::init();
     
     // init oatpp's components
-    AppComponent components(&ConfigManager);
+    AppComponent components(&ConfigParser);
 
     OATPP_COMPONENT(std::shared_ptr<oatpp::web::server::HttpRouter>, router);
     

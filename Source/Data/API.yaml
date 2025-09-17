@@ -3,7 +3,8 @@
 
 # Server Configuration (matching API.cfg [Network.Service])
 Host: "0.0.0.0"
-PortNumber: 8000
+# PortNumber: 8000
+PortNumber: 9000
 Https: false
 KeyFilePath: "SetYourPathHere"
 CrtFilePath: "SetYourPathHere"
@@ -14,7 +15,8 @@ ServerHost: "localhost"
 ServerPort: 8004
 
 RPCCallbackHost: "localhost"
-RPCCallbackPort: 7999
+# RPCCallbackPort: 7999
+RPCCallbackPort: 8009
 
 # External Service Configuration (matching API.cfg [Network.NES] and [Network.EVM])
 EVMHost: "localhost"
@@ -29,11 +31,12 @@ NESTimeout_ms: 10000
 NeuroglancerPort: 7998
 
 # VSDA Configuration (new addition)
-VSDA:
+VSDAConfigCommunication:
   RPCPort: 8003
   Timeout_ms: 5000
   AdvertisedHost: "localhost"
   EnableHealthCheck: true
+  exampleThing: 3
   # Additional VSDA settings can be added here as needed
   # MaxRetries: 3
   # RetryDelay_ms: 1000

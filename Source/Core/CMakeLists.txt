@@ -11,6 +11,8 @@ set(MAIN_SOURCES
   
   ${SRC_DIR}/Core/Config/ConfigParser.cpp
   ${SRC_DIR}/Core/Config/ConfigParser.h
+  ${SRC_DIR}/Core/Config/ConfigManager.cpp
+  ${SRC_DIR}/Core/Config/ConfigManager.h
 
   ${SRC_DIR}/Core/Server/Server.cpp
   ${SRC_DIR}/Core/Server/Server.h

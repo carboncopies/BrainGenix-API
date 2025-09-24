@@ -37,6 +37,11 @@ VSDAConfigCommunication:
   AdvertisedHost: "localhost"
   EnableHealthCheck: true
   exampleThing: 3
+
+# S3 Host thingy (example, do not use)
+S3Settings:
+  S3Host: "https://s3thingy.com"
+
   # Additional VSDA settings can be added here as needed
   # MaxRetries: 3
   # RetryDelay_ms: 1000

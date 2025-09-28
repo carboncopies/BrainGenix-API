@@ -28,12 +28,10 @@ void ExampleUsage() {
     
     // Full configuration request:
     std::string fullConfig = ConfigManagerInstance.GetConfigurationCallback("");
-    std::cout << "Full Configuration:\n" << fullConfig << std::endl;
     
     // Specific configuration request:
     std::string specificRequest = R"({"include": ["advanced"]})";
     std::string advancedConfig = ConfigManagerInstance.GetConfigurationCallback(specificRequest);
-    std::cout << "Advanced Configuration:\n" << advancedConfig << std::endl;
     
     // Access individual components through ConfigManager
     BG::Common::Logger::LoggingSystem* logger = ConfigManagerInstance.GetLogger();

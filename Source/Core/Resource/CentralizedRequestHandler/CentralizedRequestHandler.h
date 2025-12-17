@@ -18,6 +18,18 @@
 #include <BG/Common/Logger/Logger.h>
 
 class CentralizedRequestHandler {
+    public:
+        /**
+         * @brief Converts a string to lowercase
+         * 
+         * This is a utility function that converts all characters in a string to lowercase.
+         * Useful for case-insensitive string comparisons.
+         * 
+         * @param _Input The input string to convert to lowercase
+         * @return std::string The input string converted to lowercase
+         */
+        static std::string ToLower(const std::string& _Input); 
+
     private:
         /**
             * @brief Routes a request from one backend service to another through the API.
@@ -60,5 +72,5 @@ class CentralizedRequestHandler {
             * @param _QueryContent The JSON query content which will be processed and then sent back
             */
         std::string handleRequestEVM(std::string _QueryContent);
-}
+};
 

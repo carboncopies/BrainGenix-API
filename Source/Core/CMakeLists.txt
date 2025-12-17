@@ -50,6 +50,9 @@ set(MAIN_SOURCES
   ${SRC_DIR}/Core/Util/RPCHelpers.cpp
   ${SRC_DIR}/Core/Util/RPCHelpers.h
 
+  ${SRC_DIR}/Core/Resource/CentralizedRequestHandler/CentralizedRequestHandler.cpp
+  ${SRC_DIR}/Core/Resource/CentralizedRequestHandler/CentralizedRequestHandler.h
+
   # ${CMAKE_BINARY_DIR}/PythonVersion.h
 
   ${BACKWARD_ENABLE}
@@ -89,3 +92,90 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR}/Shared)
 target_include_directories(${PROJECT_NAME} PRIVATE ${CPP_BASE64_INCLUDE_DIRS})
 target_include_directories(${PROJECT_NAME} PRIVATE ${LIB_DIR}/jwt-cpp/include)
 
+
+# ========================================================
+# Test Configuration
+# ========================================================
+option(BUILD_TESTING "Build the testing tree" ON)
+
+if(BUILD_TESTING)
+    # Find GTest
+    find_package(GTest CONFIG QUIET)
+    
+    if(NOT GTest_FOUND)
+        # If GTest is not found via vcpkg, try to use FetchContent
+        include(FetchContent)
+        FetchContent_Declare(
+            googletest
+            URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+        )
+        set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+        FetchContent_MakeAvailable(googletest)
+    endif()
+
+    enable_testing()
+
+    # Test executable for CentralizedRequestHandler
+    add_executable(CentralizedRequestHandlerTest
+        ${SRC_DIR}/Core/Resource/CentralizedRequestHandler/CentralizedRequestHandler.test.cpp
+        ${SRC_DIR}/Core/Resource/CentralizedRequestHandler/CentralizedRequestHandler.cpp
+    )
+
+    # Link test executable with GTest and required libraries
+    if(TARGET GTest::gtest_main)
+        target_link_libraries(CentralizedRequestHandlerTest PRIVATE
+            GTest::gtest_main
+            GTest::gtest
+            VersioningSystem
+        )
+    else()
+        target_link_libraries(CentralizedRequestHandlerTest PRIVATE
+            gtest_main
+            gtest
+            VersioningSystem
+        )
+    endif()
+
+    # Include directories
+    target_include_directories(CentralizedRequestHandlerTest PRIVATE
+        ${SRC_DIR}/Core
+        ${SRC_DIR}/Shared
+        ${SRC_DIR}/Interface/Configuration/VersioningSystem
+    )
+
+    # Add test to CTest
+    add_test(NAME CentralizedRequestHandlerTest COMMAND CentralizedRequestHandlerTest)
+    
+    # Also add ConfigParser test if it exists
+    if(EXISTS ${SRC_DIR}/Core/Config/ConfigParser.test.cpp)
+        add_executable(ConfigParserTest
+            ${SRC_DIR}/Core/Config/ConfigParser.test.cpp
+            ${SRC_DIR}/Core/Config/ConfigParser.cpp
+        )
+        
+        if(TARGET GTest::gtest_main)
+            target_link_libraries(ConfigParserTest PRIVATE
+                GTest::gtest_main
+                GTest::gtest
+            )
+        else()
+            target_link_libraries(ConfigParserTest PRIVATE
+                gtest_main
+                gtest
+            )
+        endif()
+        
+        target_include_directories(ConfigParserTest PRIVATE
+            ${SRC_DIR}/Core
+            ${SRC_DIR}/Shared
+        )
+        
+        # Link with required libraries for ConfigParser
+        target_link_libraries(ConfigParserTest PRIVATE
+            yaml-cpp::yaml-cpp
+            bg-common-logger
+        )
+        
+        add_test(NAME ConfigParserTest COMMAND ConfigParserTest)
+    endif()
+endif()

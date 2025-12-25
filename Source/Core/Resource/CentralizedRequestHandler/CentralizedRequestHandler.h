@@ -28,9 +28,17 @@ class CentralizedRequestHandler {
          * @param _Input The input string to convert to lowercase
          * @return std::string The input string converted to lowercase
          */
-        static std::string ToLower(const std::string& _Input); 
+        static std::string ToLower(const std::string& _Input);
 
-    private:
+        /**
+         * @brief Logs that CentralizedRequestHandler is available
+         * 
+         * Call this during startup to confirm the handler is initialized.
+         * 
+         * @param _Logger Pointer to the logging system instance
+         */
+        static void LogInitialization(BG::Common::Logger::LoggingSystem* _Logger);
+
         /**
             * @brief Routes a request from one backend service to another through the API.
             *
@@ -46,7 +54,9 @@ class CentralizedRequestHandler {
             * @param _QueryContent JSON query content to be sent to the API.
             * @return std::string JSON response string from the target service, or error JSON if routing fails.
             */
-        std::string RouteToBackendService(Server* _Server, BG::Common::Logger::LoggingSystem* _Logger, std::string _TargetService, std::string _RPCQuery, std::string _QueryContent);
+        static std::string RouteToBackendService(Server* _Server, BG::Common::Logger::LoggingSystem* _Logger, std::string _TargetService, std::string _RPCQuery, std::string _QueryContent);
+
+    private:
 
         /**
             * @brief This function handles the intended functionality of a Request coming from NES
@@ -55,8 +65,9 @@ class CentralizedRequestHandler {
             *
             * @param _QueryContent The JSON query content which will be processed and then sent back
             * @param _RPCQuery The specific RPC Call that will be made inside that specific service
+            * @param _Logger Pointer to the logging system instance
             */
-        std::string handleRequestNES(std::string _QueryContent, std::string _RPCQuery);
+        static std::string handleRequestNES(std::string _QueryContent, std::string _RPCQuery, BG::Common::Logger::LoggingSystem* _Logger);
 
         /**
             * @brief This function handles the intended functionality of a Request coming from VSDA
@@ -64,8 +75,9 @@ class CentralizedRequestHandler {
             *
             * @param _QueryContent The JSON query content which will be processed and then sent back
             * @param _RPCQuery The specific RPC Call that will be made inside that specific service
+            * @param _Logger Pointer to the logging system instance
             */
-        std::string handleRequestVSDA(std::string _QueryContent, std::string _RPCQuery);
+        static std::string handleRequestVSDA(std::string _QueryContent, std::string _RPCQuery, BG::Common::Logger::LoggingSystem* _Logger);
 
         /**
             * @brief This function handles the intended functionality of a Request coming from EVM
@@ -73,7 +85,8 @@ class CentralizedRequestHandler {
             *
             * @param _QueryContent The JSON query content which will be processed and then sent back
             * @param _RPCQuery The specific RPC Call that will be made inside that specific service
+            * @param _Logger Pointer to the logging system instance
             */
-        std::string handleRequestEVM(std::string _QueryContent, std::string _RPCQuery);
+        static std::string handleRequestEVM(std::string _QueryContent, std::string _RPCQuery, BG::Common::Logger::LoggingSystem* _Logger);
 };
 

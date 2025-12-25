@@ -14,6 +14,8 @@
 
 #include <RPC/RPCHandlerHelper.h>
 #include <RPC/APIStatusCode.h>
+#include <Resource/CentralizedRequestHandler/CentralizedRequestHandler.h>
+#include <nlohmann/json.hpp>
 
 
 
@@ -36,6 +38,34 @@ RPCManager::RPCManager(ConfigParser* _Config, BG::Common::Logger::LoggingSystem*
     AddRoute("Echo", _Logger, &Echo);
     AddRoute("NES", Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
     AddRoute("EVM", Logger_, [this](std::string RequestJSON){ return EVMRequest(RequestJSON);});
+    
+    // Register QueryBackendService route for centralized request handling
+    AddRoute("QueryBackendService", Logger_, [this](std::string RequestJSON) {
+        try {
+            nlohmann::json request = nlohmann::json::parse(RequestJSON);
+            
+            // Extract required fields from JSON
+            std::string targetService = request.value("TargetService", "");
+            std::string rpcQuery = request.value("RPCQuery", "");
+            std::string queryContent = request.value("QueryContent", "");
+            
+            // Call the centralized request handler
+            return CentralizedRequestHandler::RouteToBackendService(
+                Server_, 
+                Logger_, 
+                targetService, 
+                rpcQuery, 
+                queryContent
+            );
+        } catch (const std::exception& e) {
+            if(Logger_) {
+                Logger_->Log("[RPCManager] Error parsing QueryBackendService request: " + std::string(e.what()), 7);
+            }
+            nlohmann::json errorResponse;
+            errorResponse["error"] = "Invalid request format: " + std::string(e.what());
+            return errorResponse.dump();
+        }
+    });
 
     int ThreadCount = std::thread::hardware_concurrency();
     _Logger->Log("Starting RPC Server With '" + std::to_string(ThreadCount) + "' Threads", 5);

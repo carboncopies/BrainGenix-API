@@ -17,6 +17,7 @@
 
 #include <Cluster/VSDA/VSDAConnectionManager.h>
 #include <Config/ConfigManager.h>
+#include <Resource/CentralizedRequestHandler/CentralizedRequestHandler.h>
 
 int main(int NumArguments, char** ArgumentValues) {
     BG::Common::Logger::LoggingSystem Logger;
@@ -45,6 +46,8 @@ int main(int NumArguments, char** ArgumentValues) {
     ConfigManager ConfigMgr(&Logger, &ConfigParser, &VSDAManager);
     ConfigMgr.Initialize();
 
+    // Log that CentralizedRequestHandler is available
+    CentralizedRequestHandler::LogInitialization(&Logger);
 
     oatpp::base::Environment::init();
     

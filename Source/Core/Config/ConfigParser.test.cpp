@@ -154,8 +154,13 @@ TEST(ConfigParserTest, OverrideYamlWithCommandLine) {
     };
     int argc = 3;
 
-    ConfigParser parser("", argc, argv, nullptr);
+    // Create parser without command line args first
+    char* empty_argv[] = { (char*)"program" };
+    ConfigParser parser("", 1, empty_argv, nullptr);
+    // Load YAML first
     ASSERT_TRUE(parser.LoadConfigFromString(yamlContent));
+    // Then parse command line to override YAML values
+    parser.ParseCommandLineArguments(argc, argv);
 
     // Command line should override
     EXPECT_EQ(parser.GetInt("server.port"), 8080);

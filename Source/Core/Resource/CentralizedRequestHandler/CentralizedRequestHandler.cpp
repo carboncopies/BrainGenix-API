@@ -48,13 +48,13 @@ std::string CentralizedRequestHandler::RouteToBackendService(
     std::string targetServiceLower = CentralizedRequestHandler::ToLower(_TargetService);
 
     if(targetServiceLower == "nes") {
-        handleRequestNES(_QueryContent, _RPCQuery);
+        UpstreamResponseStr = handleRequestNES(_QueryContent, _RPCQuery);
     }
     else if(targetServiceLower == "evm") {
-        handleRequestEVM(_QueryContent, _RPCQuery);
+        UpstreamResponseStr = handleRequestEVM(_QueryContent, _RPCQuery);
     }
     else if(targetServiceLower == "vsda") {
-        handleRequestVSDA(_QueryContent, _RPCQuery);
+        UpstreamResponseStr = handleRequestVSDA(_QueryContent, _RPCQuery);
     }   
     else {
         // Log error for invalid target service

@@ -94,16 +94,16 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${LIB_DIR}/jwt-cpp/include)
 
 
 # ========================================================
-# Test Configuration
+# Test Configuration - Auto-detect test files
 # ========================================================
 option(BUILD_TESTING "Build the testing tree" ON)
 
 if(BUILD_TESTING)
-    # Find GTest
-    find_package(GTest CONFIG QUIET)
+    # Find GTest - try REQUIRED first to get the GoogleTest module
+    find_package(GTest QUIET)
     
     if(NOT GTest_FOUND)
-        # If GTest is not found via vcpkg, try to use FetchContent
+        # If GTest is not found, use FetchContent
         include(FetchContent)
         FetchContent_Declare(
             googletest
@@ -113,69 +113,94 @@ if(BUILD_TESTING)
         FetchContent_MakeAvailable(googletest)
     endif()
 
+    # Include GoogleTest module for gtest_discover_tests
+    include(GoogleTest)
+
     enable_testing()
 
-    # Test executable for CentralizedRequestHandler
-    add_executable(CentralizedRequestHandlerTest
-        ${SRC_DIR}/Core/Resource/CentralizedRequestHandler/CentralizedRequestHandler.test.cpp
-        ${SRC_DIR}/Core/Resource/CentralizedRequestHandler/CentralizedRequestHandler.cpp
+    # Automatically glob all test files
+    file(GLOB_RECURSE TEST_SOURCES
+        "${SRC_DIR}/Core/*.test.cpp"
+        "${SRC_DIR}/Core/Tests/*.cpp"
+        "${SRC_DIR}/Core/Tests/*.h"
     )
 
-    # Link test executable with GTest and required libraries
-    if(TARGET GTest::gtest_main)
-        target_link_libraries(CentralizedRequestHandlerTest PRIVATE
-            GTest::gtest_main
-            GTest::gtest
-            VersioningSystem
-        )
-    else()
-        target_link_libraries(CentralizedRequestHandlerTest PRIVATE
-            gtest_main
-            gtest
-            VersioningSystem
-        )
-    endif()
+    # Create test executable if test sources exist
+    if(TEST_SOURCES)
+        message(STATUS "Found test sources: ${TEST_SOURCES}")
 
-    # Include directories
-    target_include_directories(CentralizedRequestHandlerTest PRIVATE
-        ${SRC_DIR}/Core
-        ${SRC_DIR}/Shared
-        ${SRC_DIR}/Interface/Configuration/VersioningSystem
-    )
+        # Get all source files needed for tests (exclude Main.cpp and Main.h)
+        set(TEST_NEEDED_SOURCES ${MAIN_SOURCES})
+        list(FILTER TEST_NEEDED_SOURCES EXCLUDE REGEX ".*Main\\.(cpp|h)$")
 
-    # Add test to CTest
-    add_test(NAME CentralizedRequestHandlerTest COMMAND CentralizedRequestHandlerTest)
-    
-    # Also add ConfigParser test if it exists
-    if(EXISTS ${SRC_DIR}/Core/Config/ConfigParser.test.cpp)
-        add_executable(ConfigParserTest
-            ${SRC_DIR}/Core/Config/ConfigParser.test.cpp
-            ${SRC_DIR}/Core/Config/ConfigParser.cpp
-        )
-        
-        if(TARGET GTest::gtest_main)
-            target_link_libraries(ConfigParserTest PRIVATE
-                GTest::gtest_main
-                GTest::gtest
-            )
-        else()
-            target_link_libraries(ConfigParserTest PRIVATE
-                gtest_main
-                gtest
-            )
-        endif()
-        
-        target_include_directories(ConfigParserTest PRIVATE
+        # Create combined test executable
+        add_executable(${PROJECT_NAME}-Test ${TEST_SOURCES} ${TEST_NEEDED_SOURCES})
+        target_compile_features(${PROJECT_NAME}-Test PRIVATE cxx_std_17)
+
+        # Include directories
+        target_include_directories(${PROJECT_NAME}-Test PRIVATE
             ${SRC_DIR}/Core
             ${SRC_DIR}/Shared
+            ${SRC_DIR}/Interface/Configuration/VersioningSystem
         )
-        
-        # Link with required libraries for ConfigParser
-        target_link_libraries(ConfigParserTest PRIVATE
-            yaml-cpp::yaml-cpp
-            bg-common-logger
+
+        # Link test executable with GTest and all required libraries
+        if(TARGET GTest::gtest_main)
+            target_link_libraries(${PROJECT_NAME}-Test PRIVATE
+                GTest::gtest_main
+                GTest::gtest
+                GTest::gmock
+                GTest::gmock_main
+                nlohmann_json::nlohmann_json
+                unofficial::restbed::restbed
+                oatpp::oatpp
+                oatpp::oatpp-openssl
+                Boost::program_options
+                rpclib::rpc
+                spdlog::spdlog
+                unofficial::libmariadb
+                bg-common-logger
+                VersioningSystem
+                CompileTimeStamp
+                CompilePlatformInfo
+                yaml-cpp::yaml-cpp
+            )
+        else()
+            target_link_libraries(${PROJECT_NAME}-Test PRIVATE
+                gtest_main
+                gtest
+                gmock
+                gmock_main
+                nlohmann_json::nlohmann_json
+                unofficial::restbed::restbed
+                oatpp::oatpp
+                oatpp::oatpp-openssl
+                Boost::program_options
+                rpclib::rpc
+                spdlog::spdlog
+                unofficial::libmariadb
+                bg-common-logger
+                VersioningSystem
+                CompileTimeStamp
+                CompilePlatformInfo
+                yaml-cpp::yaml-cpp
+            )
+        endif()
+
+        # Discover and register tests automatically
+        gtest_discover_tests(${PROJECT_NAME}-Test
+            EXTRA_ARGS "--gtest_output=xml:${BIN_DIR}/test_results/"
         )
-        
-        add_test(NAME ConfigParserTest COMMAND ConfigParserTest)
+
+        # Set test output directory to main binaries directory
+        set_target_properties(${PROJECT_NAME}-Test PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+            RUNTIME_OUTPUT_DIRECTORY_DEBUG ${BIN_DIR}
+            RUNTIME_OUTPUT_DIRECTORY_RELEASE ${BIN_DIR}
+        )
+
+        message(STATUS "Test executable ${PROJECT_NAME}-Test will be built with all discovered tests")
+    else()
+        message(STATUS "No test sources found")
     endif()
 endif()

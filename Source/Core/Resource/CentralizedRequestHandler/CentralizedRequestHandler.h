@@ -54,23 +54,26 @@ class CentralizedRequestHandler {
             * This method indicates how to handle requests that are coming from NES, how they should be processed etc.
             *
             * @param _QueryContent The JSON query content which will be processed and then sent back
+            * @param _RPCQuery The specific RPC Call that will be made inside that specific service
             */
-        std::string handleRequestNES(std::string _QueryContent);
+        std::string handleRequestNES(std::string _QueryContent, std::string _RPCQuery);
 
         /**
             * @brief This function handles the intended functionality of a Request coming from VSDA
             * This method indicates how to handle requests that are coming from VSDA, how they should be processed etc.
             *
             * @param _QueryContent The JSON query content which will be processed and then sent back
+            * @param _RPCQuery The specific RPC Call that will be made inside that specific service
             */
-        std::string handleRequestVSDA(std::string _QueryContent);
+        std::string handleRequestVSDA(std::string _QueryContent, std::string _RPCQuery);
 
         /**
             * @brief This function handles the intended functionality of a Request coming from EVM
             * This method indicates how to handle requests that are coming from EVM, how they should be processed etc.
             *
             * @param _QueryContent The JSON query content which will be processed and then sent back
+            * @param _RPCQuery The specific RPC Call that will be made inside that specific service
             */
-        std::string handleRequestEVM(std::string _QueryContent);
+        std::string handleRequestEVM(std::string _QueryContent, std::string _RPCQuery);
 };
 

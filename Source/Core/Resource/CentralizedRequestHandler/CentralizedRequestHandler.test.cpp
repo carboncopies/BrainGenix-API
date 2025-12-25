@@ -16,4 +16,5 @@ TEST(CentralizedRequestHandlerTest, ToLower_BasicUppercase) {
     std::string expected = "hello";
     std::string result = CentralizedRequestHandler::ToLower(input);
     EXPECT_EQ(result, expected);
+    return;
 }

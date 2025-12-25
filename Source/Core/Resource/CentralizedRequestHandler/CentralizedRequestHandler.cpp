@@ -46,24 +46,42 @@ std::string CentralizedRequestHandler::RouteToBackendService(
     bool Status = false;
     
     std::string targetServiceLower = CentralizedRequestHandler::ToLower(_TargetService);
-    std::cout << targetServiceLower;
-    
-    // TODO: Implement routing logic
+
+    if(targetServiceLower == "nes") {
+        handleRequestNES(_QueryContent, _RPCQuery);
+    }
+    else if(targetServiceLower == "evm") {
+        handleRequestEVM(_QueryContent, _RPCQuery);
+    }
+    else if(targetServiceLower == "vsda") {
+        handleRequestVSDA(_QueryContent, _RPCQuery);
+    }   
+    else {
+        // Log error for invalid target service
+        if(_Logger) {
+            _Logger->Log("[CentralizedRequestHandler] Invalid target service: '" + _TargetService + "' (normalized: '" + targetServiceLower + "'). Supported services: NES, EVM, VSDA", 7);
+        }
+    }
+
     return UpstreamResponseStr;
 }
 
-std::string CentralizedRequestHandler::handleRequestNES(std::string _QueryContent) {
+std::string CentralizedRequestHandler::handleRequestNES(std::string _QueryContent, std::string _RPCQuery) {
     // TODO: Implement NES-specific request handling logic
     // This could include validation, transformation, etc.
-    return _QueryContent;
+
+    // For testing purposes we are returning a ping response
+    std::string pingResponse = "PING PING";
+
+    return pingResponse;
 }
 
-std::string CentralizedRequestHandler::handleRequestVSDA(std::string _QueryContent) {
+std::string CentralizedRequestHandler::handleRequestVSDA(std::string _QueryContent, std::string _RPCQuery) {
     // TODO: Implement VSDA-specific request handling logic
     return _QueryContent;
 }
 
-std::string CentralizedRequestHandler::handleRequestEVM(std::string _QueryContent) {
+std::string CentralizedRequestHandler::handleRequestEVM(std::string _QueryContent, std::string _RPCQuery) {
     // TODO: Implement EVM-specific request handling logic
     return _QueryContent;
 }

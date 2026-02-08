@@ -271,7 +271,7 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
 
     // not sure if we need to do all of this manually
     response->putHeader("Content-Type", "application/octet-stream");
-    response->putHeader("Content-Length", std::to_string(DecodedString.length()));
+
 
     return addCORSHeaders(response);
   }
@@ -347,7 +347,7 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
       
       auto response = createResponse(Status::CODE_200, Body);
       response->putHeader("Content-Type", "text/plain");
-      response->putHeader("Content-Length", std::to_string(Body.length())); // don't know if we need to set this manually
+
       response->putHeader("Access-Control-Allow-Origin", "*");
       return response;
     } else {

@@ -19,7 +19,11 @@ list(GET PYTHON_INFO_LIST 3 PYTHON_PREFIX)
 
 # Set Python paths based on the detected version
 set(Python_EXECUTABLE ${PYTHON_EXECUTABLE})
-set(Python_LIBRARIES "${PYTHON_PREFIX}/lib/libpython${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}.so")
+if(APPLE)
+    set(Python_LIBRARIES "${PYTHON_PREFIX}/lib/libpython${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}.dylib")
+else()
+    set(Python_LIBRARIES "${PYTHON_PREFIX}/lib/libpython${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}.so")
+endif()
 set(Python_INCLUDE_DIRS "${PYTHON_PREFIX}/include/python${PYTHON_MAJOR_VERSION}.${PYTHON_MINOR_VERSION}")
 
 # Print detected Python information for debugging

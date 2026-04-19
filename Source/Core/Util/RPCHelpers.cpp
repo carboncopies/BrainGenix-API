@@ -13,7 +13,11 @@ bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsN
     try {
         (*_Result) = _Client->call(_Route.c_str(), _Query).as<std::string>();
     } catch (::rpc::timeout& e) {
-        std::cout<<"ERR: NES Connection timed out!\n  Route: "+_Route+'\n';
+        if (_Query.size() > 80) {
+            std::cout<<"ERR: NES Connection timed out!\n  Route: "+_Route+"\n  Query: "+_Query.substr(0, 80)+'\n';
+        } else {
+            std::cout<<"ERR: NES Connection timed out!\n  Route: "+_Route+"\n  Query: "+_Query+'\n';
+        }
         return false;
     } catch (::rpc::rpc_error& e) {
         std::cout<<"ERR: NES remote returned RPC error\n";

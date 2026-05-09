@@ -49,7 +49,6 @@ else
         exit 1
     fi
     brew install cmake git wget pkg-config openssl python@3 ninja
-
     # Create a virtual environment in the project root if it doesn't exist
     if [ ! -d "../venv" ]; then
         echo "Creating a virtual environment in the project root"

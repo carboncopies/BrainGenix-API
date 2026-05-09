@@ -78,6 +78,7 @@ else
     # Make Only BrainGenix-API
     echo "[BG BUILD HELPER] - Configuring Build Files"
     if [ "$(uname)" = "Darwin" ]; then
+        # Resolve paths
         NINJA_PATH=$(which ninja)
         if [ -z "$NINJA_PATH" ]; then
             echo "[BG BUILD HELPER] - Error: ninja not found in PATH"

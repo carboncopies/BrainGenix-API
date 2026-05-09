@@ -44,8 +44,12 @@ if [ "$(uname)" != "Darwin" ]; then
 else
     # Install dependencies on macOS
     echo "Detected macOS, installing dependencies via Homebrew"
+    if ! command -v brew >/dev/null 2>&1; then
+        echo "Homebrew is required on macOS. Install it from https://brew.sh/ and rerun this script."
+        exit 1
+    fi
     brew install cmake git wget pkg-config openssl python@3 ninja
-    
+
     # Create a virtual environment in the project root if it doesn't exist
     if [ ! -d "../venv" ]; then
         echo "Creating a virtual environment in the project root"

@@ -31,7 +31,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 if [ -z "$JOBS" ]; then
-    JOBS=$(sysctl -n hw.ncpu 2>/dev/null || echo 4)
+    if [ "$(uname)" = "Darwin" ]; then
+        JOBS=$(sysctl -n hw.ncpu 2>/dev/null || echo 4)
+    else
+        JOBS=$(nproc 2>/dev/null || echo 4)
+    fi
 fi
 
 echo "[BG BUILD HELPER] - Building in $BuildType mode with $JOBS jobs."
@@ -71,27 +75,30 @@ else
     echo "[BG BUILD HELPER] - Entering Build Directory"
     cd Build
 
-    # Resolve paths
-    NINJA_PATH=$(which ninja)
-    if [ -z "$NINJA_PATH" ]; then
-        echo "[BG BUILD HELPER] - Error: ninja not found in PATH"
-        exit 1
-    fi
-    CXX_PATH=$(which clang++)
-    SDK_PATH=$(xcrun --show-sdk-path)
-    
-    # Policy and vcpkg fixes
-    export CMAKE_POLICY_VERSION_MINIMUM=3.5
-    export VCPKG_KEEP_ENV_VARS=CMAKE_POLICY_VERSION_MINIMUM
-    
     # Make Only BrainGenix-API
     echo "[BG BUILD HELPER] - Configuring Build Files"
-    cmake .. -G "Ninja" \
-        -DCMAKE_MAKE_PROGRAM="$NINJA_PATH" \
-        -DCMAKE_CXX_COMPILER="$CXX_PATH" \
-        -DCMAKE_OSX_SYSROOT="$SDK_PATH" \
-        -DCMAKE_BUILD_TYPE="$BuildType" \
-        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    if [ "$(uname)" = "Darwin" ]; then
+        NINJA_PATH=$(which ninja)
+        if [ -z "$NINJA_PATH" ]; then
+            echo "[BG BUILD HELPER] - Error: ninja not found in PATH"
+            exit 1
+        fi
+        CXX_PATH=$(which clang++)
+        SDK_PATH=$(xcrun --show-sdk-path)
+
+        # Keep old vcpkg ports buildable with newer CMake on macOS.
+        export CMAKE_POLICY_VERSION_MINIMUM=3.5
+        export VCPKG_KEEP_ENV_VARS=CMAKE_POLICY_VERSION_MINIMUM
+
+        cmake .. -G "Ninja" \
+            -DCMAKE_MAKE_PROGRAM="$NINJA_PATH" \
+            -DCMAKE_CXX_COMPILER="$CXX_PATH" \
+            -DCMAKE_OSX_SYSROOT="$SDK_PATH" \
+            -DCMAKE_BUILD_TYPE="$BuildType" \
+            -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    else
+        cmake .. -D CMAKE_BUILD_TYPE="$BuildType"
+    fi
 
     # Set Config Var
     echo "[BG BUILD HELPER] - Saving Build Type Configuration Of $BuildType"

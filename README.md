@@ -15,6 +15,19 @@ We use vcpkg for this project, so it's super easy.
 
 All you need to do is cd into the Tools directory, then run `./Install.sh` first to setup 
 
+## Apple Silicon macOS
+
+Apple Silicon macOS is supported through the same setup and build commands used on Linux:
+
+```bash
+cd Tools
+./Setup.sh
+./Build.sh 6 Release
+./Run.sh
+```
+
+See [Docs/MacOS.md](Docs/MacOS.md) for prerequisites and troubleshooting.
+
 
 # Using With Let's Encrypt/Certbot
 To enable HTTPS/SSL Support, it's pretty easy. All you'll need to do, is first set this up in HTTP mode, not yet enabling HTTPS. We reccomend using a packaged (.deb) version, which you can create by first Building (Tools/Build.sh), and then packaging (Tools/Package.sh), which will create a debian package in the Artifacts directory. After installing this, edit the config file in /etc/BrainGenix/API/API.cfg to your needs (port wise, DO NOT YET ENABLE HTTPS).

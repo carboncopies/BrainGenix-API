@@ -40,6 +40,26 @@ if [ "$(uname)" != "Darwin" ]; then
     source venv/bin/activate || exit 1
     pip install neuroglancer || exit 1
     deactivate
+    cd Tools || exit 1
+else
+    # Install dependencies on macOS
+    echo "Detected macOS, installing dependencies via Homebrew"
+    if ! command -v brew >/dev/null 2>&1; then
+        echo "Homebrew is required on macOS. Install it from https://brew.sh/ and rerun this script."
+        exit 1
+    fi
+    brew install cmake git wget pkg-config openssl python@3 ninja
+    # Create a virtual environment in the project root if it doesn't exist
+    if [ ! -d "../venv" ]; then
+        echo "Creating a virtual environment in the project root"
+        python3 -m venv ../venv || exit 1
+    fi
+
+    # Activate the virtual environment and install neuroglancer
+    echo "Installing neuroglancer in the virtual environment"
+    source ../venv/bin/activate || exit 1
+    pip install neuroglancer || exit 1
+    deactivate
 fi
 
 # Update Submodules

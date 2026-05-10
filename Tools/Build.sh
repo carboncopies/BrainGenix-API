@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Get Into Root Repo Dir
 echo "[BG BUILD HELPER] - Entering Root Repo Directory"
@@ -59,6 +60,12 @@ else
     rm -rf Build/
 fi
 
+if [ -d "Build" ] && [ ! -f "Build/build.ninja" ] && [ ! -f "Build/Makefile" ]
+then
+    echo "[BG BUILD HELPER] - Build Directory Is Incomplete, Cleaning First"
+    rm -rf Build/
+fi
+
 
 # Check If Configuration Needs To Be Run
 echo "[BG BUILD HELPER] - Checking If Build Directory Already Exists"
@@ -79,20 +86,35 @@ else
     echo "[BG BUILD HELPER] - Configuring Build Files"
     if [ "$(uname)" = "Darwin" ]; then
         # Resolve paths
-        NINJA_PATH=$(which ninja)
+        NINJA_PATH=$(command -v ninja || true)
         if [ -z "$NINJA_PATH" ]; then
             echo "[BG BUILD HELPER] - Error: ninja not found in PATH"
             exit 1
         fi
-        CXX_PATH=$(which clang++)
+        C_PATH=$(command -v clang || true)
+        if [ -z "$C_PATH" ]; then
+            echo "[BG BUILD HELPER] - Error: clang not found in PATH"
+            exit 1
+        fi
+        CXX_PATH=$(command -v clang++ || true)
+        if [ -z "$CXX_PATH" ]; then
+            echo "[BG BUILD HELPER] - Error: clang++ not found in PATH"
+            exit 1
+        fi
         SDK_PATH=$(xcrun --show-sdk-path)
+        if [ -z "$SDK_PATH" ] || [ ! -d "$SDK_PATH" ]; then
+            echo "[BG BUILD HELPER] - Error: macOS SDK not found. Install or select Xcode Command Line Tools."
+            exit 1
+        fi
 
         # Keep old vcpkg ports buildable with newer CMake on macOS.
+        export SDKROOT="$SDK_PATH"
         export CMAKE_POLICY_VERSION_MINIMUM=3.5
-        export VCPKG_KEEP_ENV_VARS=CMAKE_POLICY_VERSION_MINIMUM
+        export VCPKG_KEEP_ENV_VARS="CMAKE_POLICY_VERSION_MINIMUM;SDKROOT"
 
         cmake .. -G "Ninja" \
             -DCMAKE_MAKE_PROGRAM="$NINJA_PATH" \
+            -DCMAKE_C_COMPILER="$C_PATH" \
             -DCMAKE_CXX_COMPILER="$CXX_PATH" \
             -DCMAKE_OSX_SYSROOT="$SDK_PATH" \
             -DCMAKE_BUILD_TYPE="$BuildType" \

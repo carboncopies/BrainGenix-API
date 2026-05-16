@@ -9,6 +9,8 @@
 #include <Util/RPCHelpers.h>
 #include <cpp-base64/base64.cpp>
 #include <nlohmann/json.hpp>
+#include <algorithm>
+#include <cctype>
 #include <fstream>
 #include <jwt-cpp/jwt.h>
 #include <Util/JWTUtil.hpp>
@@ -325,20 +327,23 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
   }
 
   // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from
-  ENDPOINT("GET", "/.well-known/acme-challenge/*",  // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
+  ENDPOINT("GET", "/.well-known/acme-challenge/*",
      acme, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
-    std::string Filename = "/" + request->getPathTail();
-    
-    // Strip Potentially Dangerous '..'
-    std::string Pattern = "..";
-    std::string::size_type i = Filename.find(Pattern);
-    while (i != std::string::npos) {
-      std::cout << "Detected '..' In Filename, It's Possible That Someone Is Trying To Do Something Nasty\n";
-      Filename.erase(i, Pattern.length());
-      i = Filename.find(Pattern, i);
+    std::string ChallengeToken = request->getPathTail();
+
+    auto IsValidChallengeCharacter = [](unsigned char Character) {
+      return std::isalnum(Character) || Character == '-' || Character == '_';
+    };
+
+    if (
+      ChallengeToken.empty() ||
+      !std::all_of(ChallengeToken.begin(), ChallengeToken.end(), IsValidChallengeCharacter)
+    ) {
+      OATPP_LOGE("ACME", "Rejected invalid challenge token path '%s'", ChallengeToken.c_str());
+      return createResponse(Status::CODE_400, "Invalid challenge token");
     }
 
-    std::string FinalFilename = "/.well-known/acme-challenge" + Filename;
+    std::string FinalFilename = "/.well-known/acme-challenge/" + ChallengeToken;
     std::cout << "[INFO] User Requested File From " << FinalFilename << std::endl;
     std::ifstream Filestream(FinalFilename, std::ifstream::in);
     

@@ -99,7 +99,11 @@ std::shared_ptr<restbed::Settings> Controller::ConfigureServer(Config::Config& _
     Settings->set_default_header("Access-Control-Allow-Origin", "*"); // We may want to restirct this later on, but since we don't know who's running this, best to leave it open or add a config option
 
     // Enable Multiple Threads
-    Settings->set_worker_limit(std::thread::hardware_concurrency());
+    unsigned int ThreadCount = std::thread::hardware_concurrency();
+    if (ThreadCount == 0) {
+        ThreadCount = 1;
+    }
+    Settings->set_worker_limit(ThreadCount);
     // Return Configured Settings Object
     return Settings;
 }

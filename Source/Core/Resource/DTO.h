@@ -26,8 +26,6 @@ class TokenDTO : public oatpp::DTO {
   DTO_FIELD(String, AuthKey);     // Message field
 };
 
-/* TODO - Add more DTOs here */
-
 class LoginDTO : public oatpp::DTO{
   DTO_INIT(LoginDTO, DTO)
 

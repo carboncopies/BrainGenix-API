@@ -37,7 +37,10 @@ RPCManager::RPCManager(Config* _Config, BG::Common::Logger::LoggingSystem* _Logg
     AddRoute("NES", Logger_, [this](std::string RequestJSON){ return NESRequest(RequestJSON);});
     AddRoute("EVM", Logger_, [this](std::string RequestJSON){ return EVMRequest(RequestJSON);});
 
-    int ThreadCount = std::thread::hardware_concurrency();
+    unsigned int ThreadCount = std::thread::hardware_concurrency();
+    if (ThreadCount == 0) {
+        ThreadCount = 1;
+    }
     _Logger->Log("Starting RPC Server With '" + std::to_string(ThreadCount) + "' Threads", 5);
     _Logger->Log("RPC Server On Host '" + ServerHost + "'", 4);
     _Logger->Log("RPC Server On Port '" + std::to_string(ServerPort) + "'", 4);
@@ -81,4 +84,3 @@ std::string RPCManager::EVMRequest(std::string _JSONRequest, int _SimulationIDOv
     return UpstreamResponseStr;
 
 }
-

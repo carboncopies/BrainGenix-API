@@ -204,8 +204,8 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
     std::string body = request->readBodyToString();
     bool UpstreamStatus = NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", body, &UpstreamResponseStr);
     if (!UpstreamStatus) {
-      printf("Upstream status fail\n");  
-      return createResponse(Status::CODE_204, "Upstream status fail");
+      OATPP_LOGE("NES", "NES upstream status fail");
+      return createResponse(Status::CODE_503, "NES upstream status fail");
     }
 
     //printf("%s\n%s\n\n", body.c_str(), UpstreamResponseStr.c_str());

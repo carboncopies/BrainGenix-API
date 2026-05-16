@@ -29,5 +29,6 @@ private:
     std::unique_ptr<BidirectionalRpc> leaderRpc_;
     mutable std::mutex mutex_;
     std::string currentLeaderNodeId_;
+    std::string currentLeaderHost_;
+    int currentLeaderPort_ = 0;
 };
-

@@ -73,7 +73,6 @@ bool IsAuthorized(const restbed::Request* _Request);
  * @return true 
  * @return false 
  */
-void SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, std::string _Units="um");
-void SetVec3(float* _Vector, std::string _Input);
-
+bool SetVec3(nlohmann::json* _Target, std::string _Input, std::string _Prefix, std::string _Units="um");
+bool SetVec3(float* _Vector, std::string _Input);
 

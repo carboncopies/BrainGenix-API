@@ -24,7 +24,15 @@ HandlerData::HandlerData(const std::string& _JSONRequest, BG::Common::Logger::Lo
     Logger_ = _Logger;
     RoutePath_ = _RoutePath;
 
-    RequestJSON = nlohmann::json::parse(_JSONRequest);
+    try {
+        RequestJSON = nlohmann::json::parse(_JSONRequest);
+    } catch (const nlohmann::json::parse_error& Error) {
+        if (Logger_ != nullptr) {
+            Logger_->Log("Error Parsing " + RoutePath_ + " JSON Request: " + std::string(Error.what()), 7);
+        }
+        Status = BGStatusCode::BGStatusInvalidParametersPassed;
+        return;
+    }
 
     // bool isloadingsim = (ManTaskData != nullptr); // Man.IsLoadingSim();
     // if (isloadingsim && (_Source == "SimulationLoad")) { // *** PERHAPS WE CAN ALLOW THIS (AS WE USE LOCAL PARAMS NOW)?

@@ -4,6 +4,7 @@ import random
 import argparse
 import time
 import base64
+from pathlib import PurePosixPath
 
 
 # Handle Arguments for Host, Port, etc
@@ -246,9 +247,12 @@ def scan_EM_2(SimID:int):
         r = requests.get(f"{BaseURI}NES/VSDA/EM/GetImage?AuthKey=MyVerySecureToken&SimulationID={SimID}&ImageHandle={ImageHandle}", timeout=999)
         print("Sim/VSDA/EM/GetImage (JSON omitted due to size)")
         ImageData = bytes(r.json()["ImageData"], 'utf-8')
-        print(f"Saving Image As: '{ImageHandle.split('/')[1]}'")
+        ImageFilename = PurePosixPath(ImageHandle).name
+        if not ImageFilename:
+            raise ValueError(f"Invalid image handle: {ImageHandle!r}")
+        print(f"Saving Image As: '{ImageFilename}'")
 
-        with open(ImageHandle.split("/")[1],"wb") as FileHandler:
+        with open(ImageFilename,"wb") as FileHandler:
             FileHandler.write(base64.decodebytes(ImageData))
 
 

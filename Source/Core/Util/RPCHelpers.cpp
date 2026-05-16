@@ -1,6 +1,31 @@
 #include <Util/RPCHelpers.h>
 #include <nlohmann/json.hpp>
 
+namespace {
+
+std::string ExtractImageData(const std::string& _Result) {
+  try {
+    nlohmann::json ResultJSON = nlohmann::json::parse(_Result);
+    if (!ResultJSON.is_array() || ResultJSON.empty() || !ResultJSON[0].is_object()) {
+      std::cout<<"ERR: VSDA image response did not contain a result object\n";
+      return "";
+    }
+
+    auto ImageData = ResultJSON[0].find("ImageData");
+    if (ImageData == ResultJSON[0].end() || !ImageData->is_string()) {
+      std::cout<<"ERR: VSDA image response did not contain string ImageData\n";
+      return "";
+    }
+
+    return ImageData->get<std::string>();
+  } catch (const nlohmann::json::exception& e) {
+    std::cout<<"ERR: Unable to parse VSDA image response: "<<e.what()<<std::endl;
+    return "";
+  }
+}
+
+} // namespace
+
 
 // Common RPC interface - used both for internal requests between services (NES<->EVM), and external requests to the HTTP POST API    
 bool NESQueryJSON(std::shared_ptr<::rpc::client> _Client, std::atomic_bool* _IsNESClientHealthy, std::string _Route, std::string _Query, std::string* _Result) {
@@ -92,8 +117,5 @@ std::string GetFile(RPCClientManager* _Manager, const std::string& _Handle) {
     return "";
   }
 
-  nlohmann::json ResultJSON = nlohmann::json::parse(Result)[0];
-
-  return ResultJSON["ImageData"];
+  return ExtractImageData(Result);
 }
-

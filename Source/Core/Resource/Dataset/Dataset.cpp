@@ -20,6 +20,31 @@ namespace Resource {
 
 namespace Dataset {
 
+namespace {
+
+std::string ExtractImageData(const std::string& _Result) {
+    try {
+        nlohmann::json ResultJSON = nlohmann::json::parse(_Result);
+        if (!ResultJSON.is_array() || ResultJSON.empty() || !ResultJSON[0].is_object()) {
+            std::cout<<"ERR: VSDA image response did not contain a result object\n";
+            return "";
+        }
+
+        auto ImageData = ResultJSON[0].find("ImageData");
+        if (ImageData == ResultJSON[0].end() || !ImageData->is_string()) {
+            std::cout<<"ERR: VSDA image response did not contain string ImageData\n";
+            return "";
+        }
+
+        return ImageData->get<std::string>();
+    } catch (const nlohmann::json::exception& e) {
+        std::cout<<"ERR: Unable to parse VSDA image response: "<<e.what()<<std::endl;
+        return "";
+    }
+}
+
+} // namespace
+
 Route::Route(Server::Server *_Server, RPCClientManager* _Manager, restbed::Service &_Service) {
   Server_ = _Server;
   Manager_ = _Manager;
@@ -69,9 +94,7 @@ std::string Route::GetFile(std::string _Handle) {
     if (!Status) {
         return "";
     }
-    nlohmann::json ResultJSON = nlohmann::json::parse(Result)[0];
-
-    return ResultJSON["ImageData"];
+    return ExtractImageData(Result);
 
 }
 

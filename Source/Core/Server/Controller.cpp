@@ -1,3 +1,5 @@
+#include <algorithm>
+#include <cctype>
 #include <thread>
 
 #include <Server/Controller.h>
@@ -8,19 +10,22 @@
 
 void TextServerHandler(const std::shared_ptr<restbed::Session> _Session) {
     const std::shared_ptr<const restbed::Request> Request = _Session->get_request();
-    std::string Filename = "/" + Request->get_path_parameter("filename");
-    
-    // Strip Potentially Dangerous '..'
-    std::string Pattern = "..";
-    std::string::size_type i = Filename.find(Pattern);
-    while (i != std::string::npos) {
-        std::cout<<"Detected '..' In Filename, It's Possible That Someone Is Trying To Do Something Nasty\n";
-        Filename.erase(i, Pattern.length());
-        i = Filename.find(Pattern, i);
+    std::string ChallengeToken = Request->get_path_parameter("filename");
+
+    auto IsValidChallengeCharacter = [](unsigned char Character) {
+        return std::isalnum(Character) || Character == '-' || Character == '_';
+    };
+
+    if (
+        ChallengeToken.empty() ||
+        !std::all_of(ChallengeToken.begin(), ChallengeToken.end(), IsValidChallengeCharacter)
+    ) {
+        std::cout << "[WARN] Rejected Invalid ACME Challenge Token Path '" << ChallengeToken << "'" << std::endl;
+        _Session->close(restbed::BAD_REQUEST, "Invalid challenge token");
+        return;
     }
 
-
-    std::string FinalFilename = "/.well-known/acme-challenge" + Filename;
+    std::string FinalFilename = "/.well-known/acme-challenge/" + ChallengeToken;
     std::cout<<"[INFO] User Requested File From "<<FinalFilename<<std::endl;
     std::ifstream Filestream(FinalFilename, std::ifstream::in);
     
@@ -109,7 +114,7 @@ void Controller::StartService() {
 
     // Also Expose "/.well-known/acme-challenge" for Let's Encrypt to verify from
     std::shared_ptr<restbed::Resource> Resource = std::make_shared<restbed::Resource>();
-    Resource->set_path("/.well-known/acme-challenge/{filename: .*}"); // THIS IS BAD, WE DONT STRIP THINGS, CAUSE IM LAZY!!! FIXME!-This still might be bad - we do strip out '..' but still could be bad.
+    Resource->set_path("/.well-known/acme-challenge/{filename: .*}");
     Resource->set_method_handler( "GET", TextServerHandler);
     Service_.publish(Resource);
 

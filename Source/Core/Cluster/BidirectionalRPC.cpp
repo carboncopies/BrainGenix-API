@@ -202,9 +202,13 @@ void BidirectionalRpc::SetAdvertisedHost(std::string _Host) {
 // Hook executed when the remote asks *us* to connect back
 // -----------------------------------------------------------------------------
 void BidirectionalRpc::HookbackConnect(const std::string& host, int port) {
-    std::lock_guard<std::mutex> lock(m_clientMutex);
+    bool AlreadyConnected = false;
+    {
+        std::lock_guard<std::mutex> lock(m_clientMutex);
+        AlreadyConnected = m_peerHost == host && m_peerPort == port && m_client && TestConnection();
+    }
 
-    if (m_peerHost == host && m_peerPort == port && m_client && TestConnection()) {
+    if (AlreadyConnected) {
         if (Logger) {
             Logger->Log("[BiDirRpc] [__hookbackConnect] [" + Label + "] Already connected to " +
                         host + ":" + std::to_string(port) + ", ignoring.", 0);

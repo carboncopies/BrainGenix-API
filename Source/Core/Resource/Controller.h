@@ -133,6 +133,14 @@ public:
             );
         }
 
+        if (users[username].value("password", "") != password) {
+            OATPP_LOGI("Auth", "Failed login attempt for user '%s'", username.c_str());
+            return createResponse(
+                oatpp::web::protocol::http::Status::CODE_401,
+                "Invalid credentials"
+            );
+        }
+
         // 5. Generate token
         std::string role = users[username].value("role", "user");
         std::string jwtToken = JWTUtil::generateToken(username, role);

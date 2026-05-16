@@ -31,18 +31,20 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
     boost::program_options::options_description ConfigFileOptions;
     ConfigFileOptions.add(FileOptions);
 
-    boost::program_options::variables_map Cfg;
-
-
     // Open Configuration File, Parse
     bool HasConfigFile = false;
     for (unsigned int i = 0; i < _Config.ConfigFilePaths.size(); i++) {
         std::ifstream ConfigFileStream(_Config.ConfigFilePaths[i].c_str());
         if (ConfigFileStream) {
-            store(parse_config_file(ConfigFileStream, ConfigFileOptions), Cfg);
-            notify(Cfg);
-            HasConfigFile = true;
-            break;
+            try {
+                boost::program_options::variables_map CandidateCfg;
+                store(parse_config_file(ConfigFileStream, ConfigFileOptions), CandidateCfg);
+                notify(CandidateCfg);
+                HasConfigFile = true;
+                break;
+            } catch(const boost::program_options::error& e) {
+                std::cerr<<"[WARN] Parser Exception Occured When Reading File At "<<_Config.ConfigFilePaths[i]<<": "<<e.what()<<std::endl;
+            }
         }
     }
     if (!HasConfigFile) {
@@ -82,5 +84,3 @@ ConfigFileParser::ConfigFileParser(Config &_Config) {
 ConfigFileParser::~ConfigFileParser() {
 
 }
-
-

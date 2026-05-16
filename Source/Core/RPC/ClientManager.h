@@ -48,7 +48,7 @@ private:
     Server* Server_; /**< Pointer to server struct, this class updates upstream status info */
     BG::Common::Logger::LoggingSystem* Logger_; /**< Pointer to instance of logging system */
 
-    bool RequestThreadsExit_; /**< Used to signal to threads that they should exit */
+    std::atomic_bool RequestThreadsExit_; /**< Used to signal to threads that they should exit */
     std::thread ConnectionManagerNES_; /**< Thread running the NES connection manager */
     std::thread ConnectionManagerEVM_; /**< Thread running the EVM connection manager */
 

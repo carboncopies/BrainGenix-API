@@ -9,7 +9,7 @@ RPCClientManager::RPCClientManager(BG::Common::Logger::LoggingSystem* _Logger, C
     Logger_ = _Logger;
 
     // Initialize Thread Signal
-    RequestThreadsExit_ = false;
+    RequestThreadsExit_.store(false);
 
     // Start NES Client
     Logger_->Log("Starting NES Client", 1);
@@ -34,7 +34,7 @@ RPCClientManager::RPCClientManager(BG::Common::Logger::LoggingSystem* _Logger, C
 
 RPCClientManager::~RPCClientManager() {
     Logger_->Log("Requesting manager threads exit", 1);
-    RequestThreadsExit_ = true;
+    RequestThreadsExit_.store(true);
 
     if (ConnectionManagerNES_.joinable()) {
         ConnectionManagerNES_.join();
@@ -237,7 +237,7 @@ void RPCClientManager::ConnectionManagerEVM() {
     Logger_->Log("Started EVM Manager Thread", 3);
     int lastState = -1;
 
-    while (!RequestThreadsExit_) {
+    while (!RequestThreadsExit_.load()) {
         // Update state via health check or assume failed if no client
         if (EVMClient_) {
             RunVersionCheckEVM();
@@ -281,7 +281,7 @@ void RPCClientManager::ConnectionManagerNES() {
     Logger_->Log("Started NES Manager Thread", 3);
     int lastState = -1;
 
-    while (!RequestThreadsExit_) {
+    while (!RequestThreadsExit_.load()) {
         // Update state via health check or assume failed if no client
         if (NESClient_) {
             RunVersionCheckNES();

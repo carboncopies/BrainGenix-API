@@ -53,6 +53,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     }
     if (Password != "Instruction") {
       Util::SendCode(_Session.get(), 4);
+      return;
     }
 
 

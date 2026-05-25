@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "source_interface_configuration_compiletimestamp_ers_compiletimestamp_h",
+      "label": "ERS_CompileTimeStamp.h",
+      "file_type": "code",
+      "source_file": "Source/Interface/Configuration/CompileTimeStamp/ERS_CompileTimeStamp.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

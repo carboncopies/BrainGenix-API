@@ -1,0 +1,316 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_config_configfileparser_cpp",
+      "label": "ConfigFileParser.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "config_configfileparser_configfileparser",
+      "label": "ConfigFileParser()",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_config_configfileparser_cpp",
+      "target": "configfileparser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configfileparser_cpp",
+      "target": "config_configfileparser_configfileparser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configfileparser_cpp",
+      "target": "config_configfileparser_configfileparser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L82",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "add_options",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L13"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<bool>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "add",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "store",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "parse_config_file",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "notify",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L43"
+    },
+    {
+      "caller_nid": "config_configfileparser_configfileparser",
+      "callee": "exit",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ConfigFileParser.cpp",
+      "source_location": "L50"
+    }
+  ]
+}

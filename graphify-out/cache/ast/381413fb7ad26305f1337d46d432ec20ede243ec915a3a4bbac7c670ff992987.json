@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "tools_package_debian_install_sh",
+      "label": "Debian-Install.sh",
+      "file_type": "code",
+      "source_file": "Tools/Package/Debian-Install.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "tools_package_debian_install_sh__entry",
+      "label": "Debian-Install.sh script",
+      "file_type": "code",
+      "source_file": "Tools/Package/Debian-Install.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "tools_package_debian_install_sh",
+      "target": "tools_package_debian_install_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Tools/Package/Debian-Install.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ]
+}

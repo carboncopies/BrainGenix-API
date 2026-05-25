@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_include_jwt_cpp_traits_nlohmann_json_traits_h",
+      "label": "traits.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "nlohmann_json_traits_jwt",
+      "label": "jwt()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h",
+      "source_location": "L7"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_traits_nlohmann_json_traits_h",
+      "target": "jwt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_traits_nlohmann_json_traits_h",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_traits_nlohmann_json_traits_h",
+      "target": "nlohmann_json_traits_jwt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h",
+      "source_location": "L7",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

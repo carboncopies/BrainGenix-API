@@ -1,0 +1,399 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_resource_controller_h",
+      "label": "Controller.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "resource_controller_apicontroller",
+      "label": "ApiController()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L57"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "dto",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "apicontroller",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "codegen",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "component",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "bufferbody",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "clientmanager",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "rpchelpers",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "base64",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "fstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "jwt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "jwtutil",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "vsdaconnectionmanager",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_controller_h",
+      "target": "resource_controller_apicontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L57",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "BrainGenixAPIController",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "OATPP_COMPONENT",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L62"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "Server_",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "Manager_",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "VSDAManager_",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "addCORSHeaders",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L67"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "putHeader",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L68"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "putHeader",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L69"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "putHeader",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "ENDPOINT",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L74"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "createDtoResponse",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L79"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "ENDPOINT",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L82"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "createDtoResponse",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L87"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "ENDPOINT",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "BODY_DTO",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "OATPP_LOGE",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "createResponse",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L96"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "OATPP_LOGE",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L105"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "createResponse",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "OATPP_LOGE",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "what",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "createResponse",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L118"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L126"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "contains",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "OATPP_LOGI",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "createResponse",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L137"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "generateToken",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L138"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L144"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "putHeader",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L152"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "OATPP_LOGE",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L156"
+    },
+    {
+      "caller_nid": "resource_controller_apicontroller",
+      "callee": "what",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Controller.h",
+      "source_location": "L156"
+    }
+  ]
+}

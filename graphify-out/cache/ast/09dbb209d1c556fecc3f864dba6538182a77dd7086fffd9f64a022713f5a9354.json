@@ -1,0 +1,249 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_resource_nes_nes_cpp",
+      "label": "NES.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "nes_nes_route",
+      "label": "Route()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L14"
+    },
+    {
+      "id": "nes_nes_posthandler",
+      "label": "PostHandler()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L35"
+    },
+    {
+      "id": "nes_nes_routecallback",
+      "label": "RouteCallback()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L59"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_resource_nes_nes_cpp",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_nes_nes_cpp",
+      "target": "nes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_nes_nes_cpp",
+      "target": "nes_nes_route",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_nes_nes_cpp",
+      "target": "nes_nes_route",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_nes_nes_cpp",
+      "target": "nes_nes_posthandler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_nes_nes_cpp",
+      "target": "nes_nes_routecallback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "nes_nes_routecallback",
+      "target": "nes_nes_posthandler",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L71",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "nes_nes_route",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "nes_nes_route",
+      "callee": "make_shared<restbed::Resource>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "nes_nes_route",
+      "callee": "set_path",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "nes_nes_route",
+      "callee": "set_method_handler",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "nes_nes_route",
+      "callee": "publish",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "get_request",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "String::to_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "get_body",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "NESQueryJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L45"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "SendCode",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "SendStringifiedJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "nes_nes_posthandler",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "nes_nes_routecallback",
+      "callee": "get_request",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L60"
+    },
+    {
+      "caller_nid": "nes_nes_routecallback",
+      "callee": "IsAuthorized",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "nes_nes_routecallback",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "nes_nes_routecallback",
+      "callee": "SendCode",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "nes_nes_routecallback",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "nes_nes_routecallback",
+      "callee": "get_header",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "nes_nes_routecallback",
+      "callee": "fetch",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/NES/NES.cpp",
+      "source_location": "L71"
+    }
+  ]
+}

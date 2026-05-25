@@ -1,0 +1,55 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_util_paramcheck_cpp",
+      "label": "ParamCheck.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/ParamCheck.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "util_paramcheck_hasrequiredparams",
+      "label": "HasRequiredParams()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/ParamCheck.cpp",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_util_paramcheck_cpp",
+      "target": "paramcheck",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/ParamCheck.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_paramcheck_cpp",
+      "target": "util_paramcheck_hasrequiredparams",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/ParamCheck.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "util_paramcheck_hasrequiredparams",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/ParamCheck.cpp",
+      "source_location": "L7"
+    },
+    {
+      "caller_nid": "util_paramcheck_hasrequiredparams",
+      "callee": "has_query_parameter",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/ParamCheck.cpp",
+      "source_location": "L9"
+    }
+  ]
+}

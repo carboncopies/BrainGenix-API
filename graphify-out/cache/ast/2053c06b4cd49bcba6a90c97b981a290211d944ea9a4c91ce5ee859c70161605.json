@@ -1,0 +1,3058 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "label": "OpenSSLErrorTest.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_opensslerrortest_bio_new",
+      "label": "BIO_new()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L84"
+    },
+    {
+      "id": "tests_opensslerrortest_pem_read_bio_x509",
+      "label": "PEM_read_bio_X509()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L95"
+    },
+    {
+      "id": "tests_opensslerrortest_x509_get_pubkey",
+      "label": "X509_get_pubkey()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L106"
+    },
+    {
+      "id": "tests_opensslerrortest_pem_write_bio_pubkey",
+      "label": "PEM_write_bio_PUBKEY()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L123"
+    },
+    {
+      "id": "tests_opensslerrortest_pem_write_bio_x509",
+      "label": "PEM_write_bio_X509()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L134"
+    },
+    {
+      "id": "tests_opensslerrortest_bio_ctrl",
+      "label": "BIO_ctrl()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L145"
+    },
+    {
+      "id": "tests_opensslerrortest_bio_write",
+      "label": "BIO_write()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L156"
+    },
+    {
+      "id": "tests_opensslerrortest_pem_read_bio_pubkey",
+      "label": "PEM_read_bio_PUBKEY()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L167"
+    },
+    {
+      "id": "tests_opensslerrortest_pem_read_bio_privatekey",
+      "label": "PEM_read_bio_PrivateKey()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L178"
+    },
+    {
+      "id": "tests_opensslerrortest_hmac",
+      "label": "HMAC()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L192"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_md_ctx_new",
+      "label": "EVP_MD_CTX_new()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L206"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestsignfinal",
+      "label": "EVP_DigestSignFinal()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L217"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestinit",
+      "label": "EVP_DigestInit()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L228"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestupdate",
+      "label": "EVP_DigestUpdate()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L239"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestfinal",
+      "label": "EVP_DigestFinal()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L250"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_signfinal",
+      "label": "EVP_SignFinal()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L261"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_verifyfinal",
+      "label": "EVP_VerifyFinal()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L272"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_pkey_public_check",
+      "label": "EVP_PKEY_public_check()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L285"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_pkey_private_check",
+      "label": "EVP_PKEY_private_check()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L297"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_pkey_ctx_new_from_pkey",
+      "label": "EVP_PKEY_CTX_new_from_pkey()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L309"
+    },
+    {
+      "id": "tests_opensslerrortest_ec_key_check_key",
+      "label": "EC_KEY_check_key()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L322"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_pkey_get1_ec_key",
+      "label": "EVP_PKEY_get1_EC_KEY()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L333"
+    },
+    {
+      "id": "tests_opensslerrortest_ecdsa_sig_new",
+      "label": "ECDSA_SIG_new()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L345"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestsigninit",
+      "label": "EVP_DigestSignInit()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L356"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestsign",
+      "label": "EVP_DigestSign()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L368"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestverifyinit",
+      "label": "EVP_DigestVerifyInit()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L380"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestverify",
+      "label": "EVP_DigestVerify()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L392"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_digestverifyfinal",
+      "label": "EVP_DigestVerifyFinal()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L404"
+    },
+    {
+      "id": "tests_opensslerrortest_i2d_ecdsa_sig",
+      "label": "i2d_ECDSA_SIG()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L416"
+    },
+    {
+      "id": "tests_opensslerrortest_d2i_ecdsa_sig",
+      "label": "d2i_ECDSA_SIG()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L427"
+    },
+    {
+      "id": "tests_opensslerrortest_ossl_param_bld_new",
+      "label": "OSSL_PARAM_BLD_new()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L439"
+    },
+    {
+      "id": "tests_opensslerrortest_ossl_param_bld_push_bn",
+      "label": "OSSL_PARAM_BLD_push_BN()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L450"
+    },
+    {
+      "id": "tests_opensslerrortest_ossl_param_bld_push_utf8_string",
+      "label": "OSSL_PARAM_BLD_push_utf8_string()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L462"
+    },
+    {
+      "id": "tests_opensslerrortest_ossl_param_bld_push_octet_string",
+      "label": "OSSL_PARAM_BLD_push_octet_string()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L474"
+    },
+    {
+      "id": "tests_opensslerrortest_ossl_param_bld_to_param",
+      "label": "OSSL_PARAM_BLD_to_param()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L486"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_pkey_ctx_new_from_name",
+      "label": "EVP_PKEY_CTX_new_from_name()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L498"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_pkey_fromdata_init",
+      "label": "EVP_PKEY_fromdata_init()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L510"
+    },
+    {
+      "id": "tests_opensslerrortest_evp_pkey_fromdata",
+      "label": "EVP_PKEY_fromdata()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L522"
+    },
+    {
+      "id": "tests_opensslerrortest_pem_write_bio_rsa_pubkey",
+      "label": "PEM_write_bio_RSA_PUBKEY()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L533"
+    },
+    {
+      "id": "tests_opensslerrortest_rsa_set0_key",
+      "label": "RSA_set0_key()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L545"
+    },
+    {
+      "id": "tests_opensslerrortest_pem_write_bio_ec_pubkey",
+      "label": "PEM_write_bio_EC_PUBKEY()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L556"
+    },
+    {
+      "id": "tests_opensslerrortest_ec_group_new_by_curve_name",
+      "label": "EC_GROUP_new_by_curve_name()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L568"
+    },
+    {
+      "id": "tests_opensslerrortest_ec_point_new",
+      "label": "EC_POINT_new()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L580"
+    },
+    {
+      "id": "tests_opensslerrortest_ec_point_set_affine_coordinates_gfp",
+      "label": "EC_POINT_set_affine_coordinates_GFp()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L591"
+    },
+    {
+      "id": "tests_opensslerrortest_ec_key_new",
+      "label": "EC_KEY_new()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L605"
+    },
+    {
+      "id": "tests_opensslerrortest_ec_key_set_group",
+      "label": "EC_KEY_set_group()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L617"
+    },
+    {
+      "id": "tests_opensslerrortest_ec_key_set_public_key",
+      "label": "EC_KEY_set_public_key()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L629"
+    },
+    {
+      "id": "tests_opensslerrortest_test",
+      "label": "TEST()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L676"
+    },
+    {
+      "id": "tests_opensslerrortest_multitest_entry",
+      "label": "multitest_entry",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L705"
+    },
+    {
+      "id": "tests_opensslerrortest_multitest_entry_fail_mask_ptr",
+      "label": "fail_mask_ptr",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L706"
+    },
+    {
+      "id": "tests_opensslerrortest_multitest_entry_fail_bitmask",
+      "label": "fail_bitmask",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L707"
+    },
+    {
+      "id": "tests_opensslerrortest_multitest_entry_expected_ec",
+      "label": "expected_ec",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L708"
+    },
+    {
+      "id": "tests_opensslerrortest_run_multitest",
+      "label": "run_multitest()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L712"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "jwt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "gtest",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "dlfcn",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_bio_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_pem_read_bio_x509",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_x509_get_pubkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_pem_write_bio_pubkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_pem_write_bio_x509",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_bio_ctrl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_bio_write",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L156",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_pem_read_bio_pubkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L167",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_pem_read_bio_privatekey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_hmac",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_md_ctx_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestsignfinal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestinit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L228",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestupdate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L239",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestfinal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L250",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_signfinal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L261",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_verifyfinal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L272",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_pkey_public_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_pkey_private_check",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L297",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_pkey_ctx_new_from_pkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L309",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ec_key_check_key",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L322",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_pkey_get1_ec_key",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L333",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ecdsa_sig_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L345",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestsigninit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L356",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestsign",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L368",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestverifyinit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L380",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestverify",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L392",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_digestverifyfinal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L404",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_i2d_ecdsa_sig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L416",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_d2i_ecdsa_sig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L427",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ossl_param_bld_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L439",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ossl_param_bld_push_bn",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L450",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ossl_param_bld_push_utf8_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L462",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ossl_param_bld_push_octet_string",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L474",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ossl_param_bld_to_param",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L486",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_pkey_ctx_new_from_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L498",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_pkey_fromdata_init",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L510",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_evp_pkey_fromdata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L522",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_pem_write_bio_rsa_pubkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L533",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_rsa_set0_key",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L545",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_pem_write_bio_ec_pubkey",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L556",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ec_group_new_by_curve_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L568",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ec_point_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L580",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ec_point_set_affine_coordinates_gfp",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L591",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ec_key_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L605",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ec_key_set_group",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L617",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_ec_key_set_public_key",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L629",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L676",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L686",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L696",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_multitest_entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L705",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_opensslerrortest_multitest_entry",
+      "target": "tests_opensslerrortest_multitest_entry_fail_mask_ptr",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L706",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "tests_opensslerrortest_multitest_entry",
+      "target": "tests_opensslerrortest_multitest_entry_fail_bitmask",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L707",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "tests_opensslerrortest_multitest_entry",
+      "target": "tests_opensslerrortest_multitest_entry_expected_ec",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L708",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_run_multitest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L712",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L727",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L745",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L761",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L795",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L826",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L864",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L900",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L916",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L935",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L949",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L954",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L959",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L964",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L977",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L990",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1001",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1006",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1032",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1056",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1061",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1074",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1086",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1099",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1114",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1128",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1144",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1166",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1219",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1229",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1250",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1267",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1277",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1293",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1313",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1333",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1353",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1366",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_tests_opensslerrortest_cpp",
+      "target": "tests_opensslerrortest_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1379",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_opensslerrortest_test",
+      "target": "tests_opensslerrortest_run_multitest",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L737",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "tests_opensslerrortest_bio_new",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_bio_new",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L86"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_bio_new",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L92"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_x509",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_x509",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L97"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_x509",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_x509_get_pubkey",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_x509_get_pubkey",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_x509_get_pubkey",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L114"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_pubkey",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_pubkey",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L125"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_pubkey",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_x509",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_x509",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L136"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_x509",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L142"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_bio_ctrl",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_bio_ctrl",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L147"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_bio_ctrl",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L153"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_bio_write",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L158"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_bio_write",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L158"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_bio_write",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L164"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_pubkey",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_pubkey",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L169"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_pubkey",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L175"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_privatekey",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L181"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_privatekey",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L181"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_read_bio_privatekey",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L187"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_hmac",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L196"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_hmac",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L196"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_hmac",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L202"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_md_ctx_new",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_md_ctx_new",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L208"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_md_ctx_new",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L214"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsignfinal",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsignfinal",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L219"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsignfinal",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L225"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestinit",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L230"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestinit",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L230"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestinit",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L236"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestupdate",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L241"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestupdate",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L241"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestupdate",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L247"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestfinal",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L252"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestfinal",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L252"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestfinal",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L258"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_signfinal",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L263"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_signfinal",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L263"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_signfinal",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L269"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_verifyfinal",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L275"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_verifyfinal",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L275"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_verifyfinal",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L281"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_public_check",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L288"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_public_check",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L288"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_public_check",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L294"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_private_check",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L300"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_private_check",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L300"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_private_check",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L306"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_ctx_new_from_pkey",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L312"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_ctx_new_from_pkey",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L312"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_ctx_new_from_pkey",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L318"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_check_key",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L324"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_check_key",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L324"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_check_key",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L330"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_get1_ec_key",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L335"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_get1_ec_key",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L335"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_get1_ec_key",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L341"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ecdsa_sig_new",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L347"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ecdsa_sig_new",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L347"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ecdsa_sig_new",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L353"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsigninit",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L359"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsigninit",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L359"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsigninit",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L365"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsign",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsign",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L371"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestsign",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L377"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverifyinit",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L383"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverifyinit",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L383"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverifyinit",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L389"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverify",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L395"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverify",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L395"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverify",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L401"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverifyfinal",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L407"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverifyfinal",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L407"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_digestverifyfinal",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L413"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_i2d_ecdsa_sig",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L418"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_i2d_ecdsa_sig",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L418"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_i2d_ecdsa_sig",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L424"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_d2i_ecdsa_sig",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L429"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_d2i_ecdsa_sig",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L429"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_d2i_ecdsa_sig",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L435"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_new",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L441"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_new",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L441"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_new",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L447"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_bn",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L453"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_bn",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L453"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_bn",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L459"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_utf8_string",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L465"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_utf8_string",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L465"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_utf8_string",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L471"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_octet_string",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L477"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_octet_string",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L477"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_push_octet_string",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L483"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_to_param",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L489"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_to_param",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L489"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ossl_param_bld_to_param",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L495"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_ctx_new_from_name",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L501"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_ctx_new_from_name",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L501"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_ctx_new_from_name",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L507"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_fromdata_init",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L513"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_fromdata_init",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L513"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_fromdata_init",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L519"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_fromdata",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L524"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_fromdata",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L524"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_evp_pkey_fromdata",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L530"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_rsa_pubkey",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L536"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_rsa_pubkey",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L536"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_rsa_pubkey",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L542"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_rsa_set0_key",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L547"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_rsa_set0_key",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L547"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_rsa_set0_key",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L553"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_ec_pubkey",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L559"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_ec_pubkey",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L559"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_pem_write_bio_ec_pubkey",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L565"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_group_new_by_curve_name",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L571"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_group_new_by_curve_name",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L571"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_group_new_by_curve_name",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L577"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_point_new",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L582"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_point_new",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L582"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_point_new",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L588"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_point_set_affine_coordinates_gfp",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L596"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_point_set_affine_coordinates_gfp",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L596"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_point_set_affine_coordinates_gfp",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L602"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_new",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L607"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_new",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L607"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_new",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L613"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_set_group",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L619"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_set_group",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L619"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_set_group",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L625"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_set_public_key",
+      "callee": "dlsym",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L632"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_set_public_key",
+      "callee": "SYMBOL_NAME",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L632"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_ec_key_set_public_key",
+      "callee": "origMethod",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L638"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::extract_pubkey_from_cert",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L678"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L679"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L680"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L681"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L681"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::convert_base64_der_to_pem",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L688"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L689"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L690"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L691"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L691"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::convert_base64_der_to_pem",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L698"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L699"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L700"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L701"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L701"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_run_multitest",
+      "callee": "fn",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L717"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_run_multitest",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L723"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::extract_pubkey_from_cert",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L739"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L740"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L741"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::extract_pubkey_from_cert",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L756"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L757"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::create_public_key_from_rsa_components",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L783"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L790"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L791"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::create_public_key_from_rsa_components",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L816"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L822"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::convert_base64_der_to_pem",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L910"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L911"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L912"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::convert_base64_der_to_pem",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L929"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L930"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L931"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::convert_base64_der_to_pem",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L944"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L945"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L950"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_TRUE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L951"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L955"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_TRUE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L956"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string<jwt::error::ecdsa_error>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L960"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_TRUE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L961"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L971"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L972"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L973"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string<jwt::error::ecdsa_error>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L984"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L985"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L986"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L996"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L997"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1002"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_TRUE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1003"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "defined",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1014"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1026"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1027"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1028"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "defined",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1040"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_public_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1051"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1052"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_private_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1057"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_TRUE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1058"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_private_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1068"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1069"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1070"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "helper::load_private_key_from_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1080"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1081"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "with_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1090"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "allow_algorithm",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1090"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1090"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "decode",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1092"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1095"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1102"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1103"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "base::encode<jwt::alphabet::base64>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1103"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1108"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1110"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1111"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1123"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1124"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "base::decode<jwt::alphabet::base64>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1130"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1141"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1161"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1162"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1183"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1184"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1222"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1223"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1225"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1226"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "defined",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1237"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1245"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1246"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "base::decode<jwt::alphabet::base64>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1252"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1264"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1270"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1271"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1273"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1274"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1288"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1289"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "base::decode<jwt::alphabet::base64>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1301"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1309"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1328"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1329"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "FAIL",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1348"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "code",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1349"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_THROW",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1355"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "algorithm::ed25519",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1355"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1359"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1360"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1362"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_FALSE",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1363"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1374"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "ASSERT_EQ",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1375"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "base::decode<jwt::alphabet::base64>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1381"
+    },
+    {
+      "caller_nid": "tests_opensslerrortest_test",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp",
+      "source_location": "L1388"
+    }
+  ]
+}

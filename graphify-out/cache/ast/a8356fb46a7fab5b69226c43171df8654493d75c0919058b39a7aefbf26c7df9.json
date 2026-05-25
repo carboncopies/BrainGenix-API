@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "tools_setup_sh",
+      "label": "Setup.sh",
+      "file_type": "code",
+      "source_file": "Tools/Setup.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "file"
+      }
+    },
+    {
+      "id": "tools_setup_sh__entry",
+      "label": "Setup.sh script",
+      "file_type": "code",
+      "source_file": "Tools/Setup.sh",
+      "source_location": "L1",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "tools_setup_sh",
+      "target": "tools_setup_sh__entry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Tools/Setup.sh",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "tools_setup_sh",
+      "target": "venv_bin_activate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "Tools/Setup.sh",
+      "source_location": "L40",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "tools_setup_sh",
+      "target": "venv_bin_activate",
+      "relation": "imports_from",
+      "confidence": "EXTRACTED",
+      "source_file": "Tools/Setup.sh",
+      "source_location": "L60",
+      "weight": 1.0,
+      "context": "import"
+    }
+  ]
+}

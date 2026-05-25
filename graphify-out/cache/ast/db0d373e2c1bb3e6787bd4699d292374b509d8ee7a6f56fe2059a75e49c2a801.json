@@ -1,0 +1,206 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_resource_auth_gettoken_cpp",
+      "label": "GetToken.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "auth_gettoken_route",
+      "label": "Route()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L11"
+    },
+    {
+      "id": "auth_gettoken_routecallback",
+      "label": "RouteCallback()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L34"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_resource_auth_gettoken_cpp",
+      "target": "gettoken",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_cpp",
+      "target": "auth_gettoken_route",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_cpp",
+      "target": "auth_gettoken_route",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_cpp",
+      "target": "auth_gettoken_routecallback",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L34",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "auth_gettoken_route",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "auth_gettoken_route",
+      "callee": "push_back",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "auth_gettoken_route",
+      "callee": "bind",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "auth_gettoken_route",
+      "callee": "make_shared<restbed::Resource>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "auth_gettoken_route",
+      "callee": "set_path",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "auth_gettoken_route",
+      "callee": "set_method_handler",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "auth_gettoken_route",
+      "callee": "publish",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "get_request",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "HasRequiredParams",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "SendCode",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "get_query_parameter",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "get_query_parameter",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "SendCode",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "SendCode",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "SendJSON",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L65"
+    },
+    {
+      "caller_nid": "auth_gettoken_routecallback",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/Auth/GetToken.cpp",
+      "source_location": "L65"
+    }
+  ]
+}

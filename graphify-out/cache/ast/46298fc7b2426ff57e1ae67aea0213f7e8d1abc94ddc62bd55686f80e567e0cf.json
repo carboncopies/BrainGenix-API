@@ -1,0 +1,235 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_util_rpchelpers_cpp",
+      "label": "RPCHelpers.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "util_rpchelpers_nesqueryjson",
+      "label": "NESQueryJSON()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L6"
+    },
+    {
+      "id": "util_rpchelpers_evmqueryjson",
+      "label": "EVMQueryJSON()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L33"
+    },
+    {
+      "id": "util_rpchelpers_vsdaqueryjson",
+      "label": "VSDAQueryJSON()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L55"
+    },
+    {
+      "id": "util_rpchelpers_getfile",
+      "label": "GetFile()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L78"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_util_rpchelpers_cpp",
+      "target": "rpchelpers",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_rpchelpers_cpp",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_rpchelpers_cpp",
+      "target": "util_rpchelpers_nesqueryjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_rpchelpers_cpp",
+      "target": "util_rpchelpers_evmqueryjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_rpchelpers_cpp",
+      "target": "util_rpchelpers_vsdaqueryjson",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_rpchelpers_cpp",
+      "target": "util_rpchelpers_getfile",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "util_rpchelpers_getfile",
+      "target": "util_rpchelpers_nesqueryjson",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L90",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "util_rpchelpers_nesqueryjson",
+      "callee": "get_connection_state",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "util_rpchelpers_nesqueryjson",
+      "callee": "as<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_rpchelpers_nesqueryjson",
+      "callee": "call",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_rpchelpers_nesqueryjson",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_rpchelpers_nesqueryjson",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "util_rpchelpers_nesqueryjson",
+      "callee": "substr",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "util_rpchelpers_evmqueryjson",
+      "callee": "get_connection_state",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "util_rpchelpers_evmqueryjson",
+      "callee": "as<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "util_rpchelpers_evmqueryjson",
+      "callee": "call",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "util_rpchelpers_evmqueryjson",
+      "callee": "c_str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "util_rpchelpers_vsdaqueryjson",
+      "callee": "HasVSDALeader",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L58"
+    },
+    {
+      "caller_nid": "util_rpchelpers_vsdaqueryjson",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L63"
+    },
+    {
+      "caller_nid": "util_rpchelpers_vsdaqueryjson",
+      "callee": "CallVSDALeader",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L64"
+    },
+    {
+      "caller_nid": "util_rpchelpers_vsdaqueryjson",
+      "callee": "CallVSDALeader",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L66"
+    },
+    {
+      "caller_nid": "util_rpchelpers_vsdaqueryjson",
+      "callee": "what",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L70"
+    },
+    {
+      "caller_nid": "util_rpchelpers_vsdaqueryjson",
+      "callee": "what",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L73"
+    },
+    {
+      "caller_nid": "util_rpchelpers_getfile",
+      "callee": "dump",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L90"
+    },
+    {
+      "caller_nid": "util_rpchelpers_getfile",
+      "callee": "json::parse",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/RPCHelpers.cpp",
+      "source_location": "L95"
+    }
+  ]
+}

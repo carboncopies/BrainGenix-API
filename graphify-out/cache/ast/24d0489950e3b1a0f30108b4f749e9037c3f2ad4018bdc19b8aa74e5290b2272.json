@@ -1,0 +1,129 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_server_endpoints_cpp",
+      "label": "Endpoints.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_endpoints_endpointmanager",
+      "label": "EndpointManager()",
+      "file_type": "code",
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L4"
+    },
+    {
+      "id": "server_endpoints_addroutes",
+      "label": "AddRoutes()",
+      "file_type": "code",
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_server_endpoints_cpp",
+      "target": "endpoints",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_cpp",
+      "target": "server_endpoints_endpointmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_cpp",
+      "target": "server_endpoints_endpointmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_cpp",
+      "target": "server_endpoints_addroutes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L12",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::NotFound::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::Forbidden::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::Root::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::Hello::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::Diagnostic::Version::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::Diagnostic::Status::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L23"
+    },
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::Auth::GetToken::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::NES::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "server_endpoints_addroutes",
+      "callee": "make_shared<Resource::EVM::Route>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Server/Endpoints.cpp",
+      "source_location": "L28"
+    }
+  ]
+}

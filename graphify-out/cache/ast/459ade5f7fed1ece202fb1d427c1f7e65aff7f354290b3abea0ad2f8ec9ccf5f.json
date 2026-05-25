@@ -1,0 +1,161 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_cmakepresets_json",
+      "label": "CMakePresets.json",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L1"
+    },
+    {
+      "id": "jwt_cpp_cmakepresets_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L2"
+    },
+    {
+      "id": "jwt_cpp_cmakepresets_cmakeminimumrequired",
+      "label": "cmakeMinimumRequired",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L3"
+    },
+    {
+      "id": "jwt_cpp_cmakepresets_cmakeminimumrequired_major",
+      "label": "major",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L4"
+    },
+    {
+      "id": "jwt_cpp_cmakepresets_cmakeminimumrequired_minor",
+      "label": "minor",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L5"
+    },
+    {
+      "id": "jwt_cpp_cmakepresets_cmakeminimumrequired_patch",
+      "label": "patch",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "jwt_cpp_cmakepresets_include",
+      "label": "include",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "jwt_cpp_cmakepresets_configurepresets",
+      "label": "configurePresets",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "jwt_cpp_cmakepresets_buildpresets",
+      "label": "buildPresets",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L26"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_cmakepresets_json",
+      "target": "jwt_cpp_cmakepresets_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_cmakepresets_json",
+      "target": "jwt_cpp_cmakepresets_cmakeminimumrequired",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "jwt_cpp_cmakepresets_cmakeminimumrequired",
+      "target": "jwt_cpp_cmakepresets_cmakeminimumrequired_major",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "jwt_cpp_cmakepresets_cmakeminimumrequired",
+      "target": "jwt_cpp_cmakepresets_cmakeminimumrequired_minor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "jwt_cpp_cmakepresets_cmakeminimumrequired",
+      "target": "jwt_cpp_cmakepresets_cmakeminimumrequired_patch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_cmakepresets_json",
+      "target": "jwt_cpp_cmakepresets_include",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "jwt_cpp_cmakepresets_include",
+      "target": "ref_example_cmakepresets_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "jwt_cpp_cmakepresets_include",
+      "target": "ref_tests_cmakepresets_json",
+      "relation": "extends",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "thirdparty_jwt_cpp_cmakepresets_json",
+      "target": "jwt_cpp_cmakepresets_configurepresets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_cmakepresets_json",
+      "target": "jwt_cpp_cmakepresets_buildpresets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/CMakePresets.json",
+      "source_location": "L26",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_resource_dataset_dataset_h",
+      "label": "Dataset.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "dataset_dataset_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L27"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_resource_dataset_dataset_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_dataset_dataset_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_dataset_dataset_h",
+      "target": "functional",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_dataset_dataset_h",
+      "target": "restbed",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_dataset_dataset_h",
+      "target": "server",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_dataset_dataset_h",
+      "target": "clientmanager",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_dataset_dataset_h",
+      "target": "dataset_dataset_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Dataset/Dataset.h",
+      "source_location": "L27",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

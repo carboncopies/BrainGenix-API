@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_nonsuperbuild_backward_backward_cpp",
+      "label": "backward.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/backward.cpp",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_nonsuperbuild_backward_backward_cpp",
+      "target": "thirdparty_nonsuperbuild_backward_backward_hpp",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/backward.cpp",
+      "source_location": "L36",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

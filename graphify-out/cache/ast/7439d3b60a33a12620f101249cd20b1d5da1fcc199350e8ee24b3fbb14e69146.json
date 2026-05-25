@@ -1,0 +1,95 @@
+{
+  "nodes": [
+    {
+      "id": "readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "braingenix_api_readme_building",
+      "label": "Building",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "braingenix_api_readme_apple_silicon_macos",
+      "label": "Apple Silicon macOS",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L18"
+    },
+    {
+      "id": "braingenix_api_readme_codeblock_1",
+      "label": "code:bash (cd Tools)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "braingenix_api_readme_using_with_let_s_encrypt_certbot",
+      "label": "Using With Let's Encrypt/Certbot",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "braingenix_api_readme_running_locally_e_g_to_debug_nes",
+      "label": "Running locally (e.g. to debug NES)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L43"
+    }
+  ],
+  "edges": [
+    {
+      "source": "readme_md",
+      "target": "braingenix_api_readme_building",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "braingenix_api_readme_building",
+      "target": "braingenix_api_readme_apple_silicon_macos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "braingenix_api_readme_apple_silicon_macos",
+      "target": "braingenix_api_readme_codeblock_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_md",
+      "target": "braingenix_api_readme_using_with_let_s_encrypt_certbot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_md",
+      "target": "braingenix_api_readme_running_locally_e_g_to_debug_nes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L43",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

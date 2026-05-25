@@ -1,0 +1,274 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_config_argumentparser_cpp",
+      "label": "ArgumentParser.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "config_argumentparser_argumentparser",
+      "label": "ArgumentParser()",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_config_argumentparser_cpp",
+      "target": "argumentparser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_cpp",
+      "target": "config_argumentparser_argumentparser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_cpp",
+      "target": "config_argumentparser_argumentparser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L58",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "add_options",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L10"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "program_options::value<int>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L15"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L16"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "default_value",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "program_options::value<std::string>",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "add",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "store",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "run",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "options",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "program_options::command_line_parser",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "notify",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L26"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "count",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "exit",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "count",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "exit",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "count",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "exit",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L42"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "count",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L46"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L47"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L48"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L49"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L50"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L51"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "Log",
+      "is_member_call": true,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L52"
+    },
+    {
+      "caller_nid": "config_argumentparser_argumentparser",
+      "callee": "exit",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ArgumentParser.cpp",
+      "source_location": "L53"
+    }
+  ]
+}

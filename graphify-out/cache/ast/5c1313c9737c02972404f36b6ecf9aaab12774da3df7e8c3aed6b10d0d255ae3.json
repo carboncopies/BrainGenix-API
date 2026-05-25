@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "label": "suicide.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_suicide_badass_function",
+      "label": "badass_function()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L35"
+    },
+    {
+      "id": "test_suicide_test_segfault",
+      "label": "TEST_SEGFAULT()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L40"
+    },
+    {
+      "id": "test_suicide_you_shall_not_pass",
+      "label": "you_shall_not_pass()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L42"
+    },
+    {
+      "id": "test_suicide_abort_abort_i_repeat_abort_abort",
+      "label": "abort_abort_I_repeat_abort_abort()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L53"
+    },
+    {
+      "id": "test_suicide_test_abort",
+      "label": "TEST_ABORT()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L58"
+    },
+    {
+      "id": "test_suicide_divide_by_zero",
+      "label": "divide_by_zero()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L64"
+    },
+    {
+      "id": "test_suicide_test_divzero",
+      "label": "TEST_DIVZERO()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L70"
+    },
+    {
+      "id": "test_suicide_bye_bye_stack",
+      "label": "bye_bye_stack()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L78"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "backward",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "cstdio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "resource",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_badass_function",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_test_segfault",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_you_shall_not_pass",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_test_segfault",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_abort_abort_i_repeat_abort_abort",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_test_abort",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_divide_by_zero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_test_divzero",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_bye_bye_stack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_suicide_cpp",
+      "target": "test_suicide_test_segfault",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "test_suicide_test_segfault",
+      "target": "test_suicide_badass_function",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "test_suicide_test_segfault",
+      "target": "test_suicide_you_shall_not_pass",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "test_suicide_test_abort",
+      "target": "test_suicide_abort_abort_i_repeat_abort_abort",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "test_suicide_test_divzero",
+      "target": "test_suicide_divide_by_zero",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "test_suicide_test_segfault",
+      "target": "test_suicide_bye_bye_stack",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L86",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "test_suicide_abort_abort_i_repeat_abort_abort",
+      "callee": "abort",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L55"
+    },
+    {
+      "caller_nid": "test_suicide_test_segfault",
+      "callee": "setrlimit",
+      "is_member_call": false,
+      "source_file": "ThirdParty/NonSuperBuild/backward/test/suicide.cpp",
+      "source_location": "L84"
+    }
+  ]
+}

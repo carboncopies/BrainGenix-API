@@ -1,0 +1,292 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_example_traits_kazuho_picojson_cpp",
+      "label": "kazuho-picojson.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "traits_kazuho_picojson_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_kazuho_picojson_cpp",
+      "target": "traits",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_kazuho_picojson_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_kazuho_picojson_cpp",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_kazuho_picojson_cpp",
+      "target": "traits_kazuho_picojson_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "date::clock::now",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_expires_at",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_not_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_issued_at",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_audience",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "set_type",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "create<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "claim",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "claim",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "begin",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "decode<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "get",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "to_json",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "get_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "with_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "with_audience",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "with_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "allow_algorithm",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_kazuho_picojson_main",
+      "callee": "verify<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp",
+      "source_location": "L39"
+    }
+  ]
+}

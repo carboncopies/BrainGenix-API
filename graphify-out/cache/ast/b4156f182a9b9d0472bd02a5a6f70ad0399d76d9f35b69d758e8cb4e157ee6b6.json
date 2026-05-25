@@ -1,0 +1,292 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_util_jwtutil_hpp",
+      "label": "JWTUtil.hpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "util_jwtutil_jwtutil",
+      "label": "JWTUtil",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L7"
+    },
+    {
+      "id": "util_jwtutil_jwtutil_secret_key",
+      "label": "SECRET_KEY",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L9"
+    },
+    {
+      "id": "util_jwtutil_jwtutil_issuer",
+      "label": "ISSUER",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L10"
+    },
+    {
+      "id": "util_jwtutil_jwtutil_generatetoken",
+      "label": ".generateToken()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L13"
+    },
+    {
+      "id": "util_jwtutil_jwtutil_verifytoken",
+      "label": ".verifyToken()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L23"
+    },
+    {
+      "id": "util_jwtutil_jwtutil_getrole",
+      "label": ".getRole()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L32"
+    },
+    {
+      "id": "util_jwtutil_jwtutil_getusername",
+      "label": ".getUsername()",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L36"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_util_jwtutil_hpp",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_jwtutil_hpp",
+      "target": "jwt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_jwtutil_hpp",
+      "target": "traits",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_jwtutil_hpp",
+      "target": "util_jwtutil_jwtutil",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "util_jwtutil_jwtutil",
+      "target": "util_jwtutil_jwtutil_secret_key",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L9",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "util_jwtutil_jwtutil",
+      "target": "util_jwtutil_jwtutil_issuer",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L10",
+      "weight": 1.0,
+      "context": "field"
+    },
+    {
+      "source": "util_jwtutil_jwtutil",
+      "target": "util_jwtutil_jwtutil_generatetoken",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "util_jwtutil_jwtutil",
+      "target": "util_jwtutil_jwtutil_verifytoken",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "util_jwtutil_jwtutil",
+      "target": "util_jwtutil_jwtutil_getrole",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "util_jwtutil_jwtutil",
+      "target": "util_jwtutil_jwtutil_getusername",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L36",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "set_expires_at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "set_issued_at",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "set_subject",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "set_issuer",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "create",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "claim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L17"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "chrono::system_clock::now",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "chrono::system_clock::now",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_generatetoken",
+      "callee": "chrono::hours",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_verifytoken",
+      "callee": "decode",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_verifytoken",
+      "callee": "with_issuer",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_verifytoken",
+      "callee": "allow_algorithm",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_verifytoken",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_verifytoken",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L28"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_getrole",
+      "callee": "as_string",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_getrole",
+      "callee": "get_payload_claim",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "util_jwtutil_jwtutil_getusername",
+      "callee": "get_subject",
+      "is_member_call": true,
+      "source_file": "Source/Core/Util/JWTUtil.hpp",
+      "source_location": "L37"
+    }
+  ]
+}

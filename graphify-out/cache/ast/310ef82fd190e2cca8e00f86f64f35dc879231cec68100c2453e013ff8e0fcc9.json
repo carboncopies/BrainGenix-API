@@ -1,0 +1,118 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_config_configurationmanager_h",
+      "label": "ConfigurationManager.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "config_configurationmanager_configmanager",
+      "label": "ConfigManager()",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L36"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "fstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "iterator",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "utility",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "program_options",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "argumentparser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "configfileparser",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "config",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_configurationmanager_h",
+      "target": "config_configurationmanager_configmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L36",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "config_configurationmanager_configmanager",
+      "callee": "GetConfig",
+      "is_member_call": false,
+      "source_file": "Source/Core/Config/ConfigurationManager.h",
+      "source_location": "L65"
+    }
+  ]
+}

@@ -1,0 +1,1087 @@
+{
+  "nodes": [
+    {
+      "id": "docs_api_md",
+      "label": "API.md",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_api_api_design_spec",
+      "label": "API Design Spec",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_api_enums",
+      "label": "Enums",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "docs_api_bgstatus",
+      "label": "bgStatus",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L15"
+    },
+    {
+      "id": "docs_api_bgservicestatus",
+      "label": "bgServiceStatus",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L23"
+    },
+    {
+      "id": "docs_api_bgrenderstatus",
+      "label": "bgRenderStatus",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "docs_api_routes",
+      "label": "Routes",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L35"
+    },
+    {
+      "id": "docs_api_diagnostic",
+      "label": "Diagnostic",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L37"
+    },
+    {
+      "id": "docs_api_hello",
+      "label": "Hello",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L39"
+    },
+    {
+      "id": "docs_api_version",
+      "label": "Version",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L49"
+    },
+    {
+      "id": "docs_api_status",
+      "label": "Status",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L60"
+    },
+    {
+      "id": "docs_api_authentication",
+      "label": "Authentication",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "docs_api_gettoken",
+      "label": "GetToken",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L80"
+    },
+    {
+      "id": "docs_api_shapes",
+      "label": "Shapes",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L94"
+    },
+    {
+      "id": "docs_api_sphere_create",
+      "label": "Sphere - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L96"
+    },
+    {
+      "id": "docs_api_sphere_bulkcreate",
+      "label": "Sphere - BulkCreate",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L115"
+    },
+    {
+      "id": "docs_api_cylinder_create",
+      "label": "Cylinder - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L133"
+    },
+    {
+      "id": "docs_api_cylinder_bulkcreate",
+      "label": "Cylinder - BulkCreate",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L154"
+    },
+    {
+      "id": "docs_api_box_create",
+      "label": "Box - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L176"
+    },
+    {
+      "id": "docs_api_box_bulkcreate",
+      "label": "Box - BulkCreate",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L196"
+    },
+    {
+      "id": "docs_api_compartments",
+      "label": "Compartments",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L219"
+    },
+    {
+      "id": "docs_api_bs_create",
+      "label": "BS - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L221"
+    },
+    {
+      "id": "docs_api_bs_bulkcreate",
+      "label": "BS - BulkCreate",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L242"
+    },
+    {
+      "id": "docs_api_connections",
+      "label": "Connections",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L262"
+    },
+    {
+      "id": "docs_api_staple_create",
+      "label": "Staple - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L264"
+    },
+    {
+      "id": "docs_api_receptor_create",
+      "label": "Receptor - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L283"
+    },
+    {
+      "id": "docs_api_neuron_create",
+      "label": "Neuron - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L306"
+    },
+    {
+      "id": "docs_api_codeblock_1",
+      "label": "code:block1 (Cfg = NES.Models.Neurons.BSNeuron.Configuration())",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L336"
+    },
+    {
+      "id": "docs_api_neuralcircuit_create_new",
+      "label": "NeuralCircuit - Create      **NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L352"
+    },
+    {
+      "id": "docs_api_tools",
+      "label": "Tools",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L369"
+    },
+    {
+      "id": "docs_api_dac_create",
+      "label": "DAC - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L371"
+    },
+    {
+      "id": "docs_api_dac_set_output_list",
+      "label": "DAC - Set Output List",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L390"
+    },
+    {
+      "id": "docs_api_adc_create",
+      "label": "ADC - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L404"
+    },
+    {
+      "id": "docs_api_adc_set_sample_rate",
+      "label": "ADC - Set Sample Rate",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L423"
+    },
+    {
+      "id": "docs_api_adc_get_recorded_data",
+      "label": "ADC - Get Recorded Data",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L437"
+    },
+    {
+      "id": "docs_api_simulation",
+      "label": "Simulation",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L451"
+    },
+    {
+      "id": "docs_api_simulation_create",
+      "label": "Simulation - Create",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L453"
+    },
+    {
+      "id": "docs_api_simulation_save_new",
+      "label": "Simulation - Save **NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L467"
+    },
+    {
+      "id": "docs_api_simulation_load_new",
+      "label": "Simulation - Load **NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L481"
+    },
+    {
+      "id": "docs_api_simulation_saveerase_new",
+      "label": "Simulation - SaveErase **NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L495"
+    },
+    {
+      "id": "docs_api_simulation_reset",
+      "label": "Simulation - Reset",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L509"
+    },
+    {
+      "id": "docs_api_simulation_run_for",
+      "label": "Simulation - Run For",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L522"
+    },
+    {
+      "id": "docs_api_simulation_record_all",
+      "label": "Simulation - Record All",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L536"
+    },
+    {
+      "id": "docs_api_simulation_get_recording",
+      "label": "Simulation - Get Recording",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L550"
+    },
+    {
+      "id": "docs_api_simulation_get_status",
+      "label": "Simulation - Get Status",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L564"
+    },
+    {
+      "id": "docs_api_simulation_buildmesh",
+      "label": "Simulation - BuildMesh",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L583"
+    },
+    {
+      "id": "docs_api_vsda",
+      "label": "VSDA",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L595"
+    },
+    {
+      "id": "docs_api_vsda_em_initialize",
+      "label": "VSDA - EM - Initialize",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L597"
+    },
+    {
+      "id": "docs_api_vsda_em_setupmicroscope",
+      "label": "VSDA - EM - SetupMicroscope",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L610"
+    },
+    {
+      "id": "docs_api_vsda_em_definescanregion",
+      "label": "VSDA - EM - DefineScanRegion",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L630"
+    },
+    {
+      "id": "docs_api_vsda_em_queuerenderoperation",
+      "label": "VSDA - EM - QueueRenderOperation",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L646"
+    },
+    {
+      "id": "docs_api_vsda_em_getrenderstatus",
+      "label": "VSDA - EM - GetRenderStatus",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L660"
+    },
+    {
+      "id": "docs_api_vsda_em_getimagestack",
+      "label": "VSDA - EM - GetImageStack",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L679"
+    },
+    {
+      "id": "docs_api_vsda_em_getimage",
+      "label": "VSDA - EM - GetImage",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L694"
+    },
+    {
+      "id": "docs_api_vsda_calcium_createindicator",
+      "label": "VSDA - Calcium - CreateIndicator",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L708"
+    },
+    {
+      "id": "docs_api_vsda_calcium_setup",
+      "label": "VSDA - Calcium - Setup",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L725"
+    },
+    {
+      "id": "docs_api_vsda_calcium_definescanregion_new",
+      "label": "VSDA - Calcium - DefineScanRegion *NEW*",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L749"
+    },
+    {
+      "id": "docs_api_vsda_calcium_queuerenderoperation_new",
+      "label": "VSDA - Calcium - QueueRenderOperation *NEW*",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L766"
+    },
+    {
+      "id": "docs_api_vsda_calcium_getrenderstatus_new",
+      "label": "VSDA - Calcium - GetRenderStatus *NEW*",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L780"
+    },
+    {
+      "id": "docs_api_vsda_calcium_getimagestack_new",
+      "label": "VSDA - Calcium - GetImageStack *NEW*",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L799"
+    },
+    {
+      "id": "docs_api_vsda_calcium_getimage_new",
+      "label": "VSDA - Calcium - GetImage *NEW*",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L814"
+    },
+    {
+      "id": "docs_api_recordingelectrode_new",
+      "label": "RecordingElectrode **NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L828"
+    },
+    {
+      "id": "docs_api_recordingelectrode_initialize_new",
+      "label": "RecordingElectrode - Initialize     **NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L830"
+    },
+    {
+      "id": "docs_api_recordingelectrode_addnoise_new",
+      "label": "RecordingElectrode - AddNoise   **NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L851"
+    },
+    {
+      "id": "docs_api_recordingelectrode_getrecording_new",
+      "label": "RecordingElectrode - GetRecording    *NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L864"
+    },
+    {
+      "id": "docs_api_recordingelectrode_setelectricfieldpotential_new",
+      "label": "RecordingElectrode - SetElectricFieldPotential   **NEW**",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L878"
+    },
+    {
+      "id": "docs_api_visualizer",
+      "label": "Visualizer",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L895"
+    },
+    {
+      "id": "docs_api_visualizer_renderimage",
+      "label": "Visualizer - RenderImage",
+      "file_type": "document",
+      "source_file": "Docs/API.md",
+      "source_location": "L897"
+    }
+  ],
+  "edges": [
+    {
+      "source": "docs_api_md",
+      "target": "docs_api_api_design_spec",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_md",
+      "target": "docs_api_enums",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_enums",
+      "target": "docs_api_bgstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_enums",
+      "target": "docs_api_bgservicestatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_enums",
+      "target": "docs_api_bgrenderstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_md",
+      "target": "docs_api_routes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_diagnostic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_diagnostic",
+      "target": "docs_api_hello",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_diagnostic",
+      "target": "docs_api_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_diagnostic",
+      "target": "docs_api_status",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_authentication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_authentication",
+      "target": "docs_api_gettoken",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_shapes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_shapes",
+      "target": "docs_api_sphere_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_shapes",
+      "target": "docs_api_sphere_bulkcreate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_shapes",
+      "target": "docs_api_cylinder_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_shapes",
+      "target": "docs_api_cylinder_bulkcreate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L154",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_shapes",
+      "target": "docs_api_box_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_shapes",
+      "target": "docs_api_box_bulkcreate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L196",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_compartments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_compartments",
+      "target": "docs_api_bs_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L221",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_compartments",
+      "target": "docs_api_bs_bulkcreate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_connections",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L262",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_connections",
+      "target": "docs_api_staple_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L264",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_connections",
+      "target": "docs_api_receptor_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L283",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_connections",
+      "target": "docs_api_neuron_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L306",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_neuron_create",
+      "target": "docs_api_codeblock_1",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_connections",
+      "target": "docs_api_neuralcircuit_create_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L352",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_tools",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L369",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_tools",
+      "target": "docs_api_dac_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L371",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_tools",
+      "target": "docs_api_dac_set_output_list",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L390",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_tools",
+      "target": "docs_api_adc_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L404",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_tools",
+      "target": "docs_api_adc_set_sample_rate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L423",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_tools",
+      "target": "docs_api_adc_get_recorded_data",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L437",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_simulation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L451",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_create",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L453",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_save_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L467",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_load_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L481",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_saveerase_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L495",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_reset",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L509",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_run_for",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L522",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_record_all",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L536",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_get_recording",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L550",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_get_status",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L564",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_simulation",
+      "target": "docs_api_simulation_buildmesh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L583",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_vsda",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L595",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_em_initialize",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L597",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_em_setupmicroscope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L610",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_em_definescanregion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L630",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_em_queuerenderoperation",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L646",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_em_getrenderstatus",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L660",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_em_getimagestack",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L679",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_em_getimage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L694",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_calcium_createindicator",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L708",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_calcium_setup",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L725",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_calcium_definescanregion_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L749",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_calcium_queuerenderoperation_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L766",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_calcium_getrenderstatus_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L780",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_calcium_getimagestack_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L799",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_vsda",
+      "target": "docs_api_vsda_calcium_getimage_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L814",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_recordingelectrode_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L828",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_recordingelectrode_new",
+      "target": "docs_api_recordingelectrode_initialize_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L830",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_recordingelectrode_new",
+      "target": "docs_api_recordingelectrode_addnoise_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L851",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_recordingelectrode_getrecording_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L864",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_recordingelectrode_setelectricfieldpotential_new",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L878",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_visualizer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L895",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_api_routes",
+      "target": "docs_api_visualizer_renderimage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Docs/API.md",
+      "source_location": "L897",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

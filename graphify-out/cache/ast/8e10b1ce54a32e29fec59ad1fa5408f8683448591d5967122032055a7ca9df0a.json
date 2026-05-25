@@ -1,0 +1,80 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_rpc_rpchandlerhelper_h",
+      "label": "RPCHandlerHelper.h",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "rpc_rpchandlerhelper_handlerdata",
+      "label": "HandlerData()",
+      "file_type": "code",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.h",
+      "source_location": "L54"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_rpc_rpchandlerhelper_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_h",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.h",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_h",
+      "target": "apistatuscode",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.h",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_rpc_rpchandlerhelper_h",
+      "target": "rpc_rpchandlerhelper_handlerdata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/RPC/RPCHandlerHelper.h",
+      "source_location": "L54",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

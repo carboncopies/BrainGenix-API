@@ -1,0 +1,163 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "label": "base.h",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "jwt_cpp_base_jwt",
+      "label": "jwt()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L21"
+    },
+    {
+      "id": "jwt_cpp_base_fill",
+      "label": "fill()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L96"
+    },
+    {
+      "id": "jwt_cpp_base_helper",
+      "label": "helper()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L101"
+    },
+    {
+      "id": "jwt_cpp_base_index",
+      "label": "index()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L140"
+    },
+    {
+      "id": "jwt_cpp_base_base",
+      "label": "base()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L150"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "algorithm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "array",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "cstdint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "stdexcept",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "jwt_cpp_base_jwt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "jwt_cpp_base_fill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L96",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "jwt_cpp_base_helper",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "jwt_cpp_base_fill",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L133",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "jwt_cpp_base_index",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L140",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_include_jwt_cpp_base_h",
+      "target": "jwt_cpp_base_base",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/include/jwt-cpp/base.h",
+      "source_location": "L150",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,170 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_server_endpoints_h",
+      "label": "Endpoints.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "server_endpoints_endpointmanager",
+      "label": "EndpointManager()",
+      "file_type": "code",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L53"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "memory",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "restbed",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "server",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "forbidden",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "notfound",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "hello",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "root",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "status",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "version",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "gettoken",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "nes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "evm",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_server_endpoints_h",
+      "target": "server_endpoints_endpointmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Server/Endpoints.h",
+      "source_location": "L53",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

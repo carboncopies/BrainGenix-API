@@ -1,0 +1,110 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_resource_auth_gettoken_h",
+      "label": "GetToken.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "auth_gettoken_bg",
+      "label": "BG()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L31"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "functional",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "restbed",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "server",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "paramcheck",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "restbedhelpers",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_auth_gettoken_h",
+      "target": "auth_gettoken_bg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/Auth/GetToken.h",
+      "source_location": "L31",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

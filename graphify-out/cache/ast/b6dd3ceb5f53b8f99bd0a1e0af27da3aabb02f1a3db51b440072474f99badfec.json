@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {
+      "id": "source_interface_configuration_compileplatforminfo_ers_compileplatforminfo_h",
+      "label": "ERS_CompilePlatformInfo.h",
+      "file_type": "code",
+      "source_file": "Source/Interface/Configuration/CompilePlatformInfo/ERS_CompilePlatformInfo.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_database_dbmanager_cpp",
+      "label": "DBManager.cpp",
+      "file_type": "code",
+      "source_file": "Source/Core/Database/DBManager.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "database_dbmanager_dbmanager",
+      "label": "DBManager()",
+      "file_type": "code",
+      "source_file": "Source/Core/Database/DBManager.cpp",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_database_dbmanager_cpp",
+      "target": "dbmanager",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Database/DBManager.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_database_dbmanager_cpp",
+      "target": "database_dbmanager_dbmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Database/DBManager.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_database_dbmanager_cpp",
+      "target": "database_dbmanager_dbmanager",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Database/DBManager.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

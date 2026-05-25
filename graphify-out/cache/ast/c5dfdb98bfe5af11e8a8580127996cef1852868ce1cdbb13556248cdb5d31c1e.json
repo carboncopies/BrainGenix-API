@@ -1,0 +1,264 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_example_traits_danielaparker_jsoncons_cpp",
+      "label": "danielaparker-jsoncons.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "traits_danielaparker_jsoncons_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_danielaparker_jsoncons_cpp",
+      "target": "traits",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_danielaparker_jsoncons_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_danielaparker_jsoncons_cpp",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_danielaparker_jsoncons_cpp",
+      "target": "traits_danielaparker_jsoncons_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L6",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "date::clock::now",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_expires_at",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_not_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_issued_at",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_audience",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "set_type",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "create<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "begin",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "decode<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L34"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "as_array",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "to_json",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "get_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L36"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "pretty_print",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "json",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "with_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "with_audience",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "with_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "allow_algorithm",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "traits_danielaparker_jsoncons_main",
+      "callee": "verify<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp",
+      "source_location": "L39"
+    }
+  ]
+}

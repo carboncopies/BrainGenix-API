@@ -1,0 +1,140 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_config_argumentparser_h",
+      "label": "ArgumentParser.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "config_argumentparser_argumentparser",
+      "label": "ArgumentParser()",
+      "file_type": "code",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L45"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "fstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "iterator",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "program_options",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "config",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "configdefaults",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "compileplatforminfo",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "compiletimestamp",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "version",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "logger",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_config_argumentparser_h",
+      "target": "config_argumentparser_argumentparser",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Config/ArgumentParser.h",
+      "source_location": "L45",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

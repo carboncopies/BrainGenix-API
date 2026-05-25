@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_example_traits_readme_md",
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "traits_readme_traits_examples",
+      "label": "Traits Examples",
+      "file_type": "document",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/README.md",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_readme_md",
+      "target": "traits_readme_traits_examples",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/README.md",
+      "source_location": "L1",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

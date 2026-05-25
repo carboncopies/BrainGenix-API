@@ -1,0 +1,44 @@
+{
+  "nodes": [
+    {
+      "id": "source_core_util_paramcheck_h",
+      "label": "ParamCheck.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Util/ParamCheck.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_util_paramcheck_h",
+      "target": "string",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/ParamCheck.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_paramcheck_h",
+      "target": "vector",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/ParamCheck.h",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_util_paramcheck_h",
+      "target": "restbed",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Util/ParamCheck.h",
+      "source_location": "L18",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

@@ -1,0 +1,24 @@
+{
+  "nodes": [
+    {
+      "id": "test_posttest_py",
+      "label": "POSTTest.py",
+      "file_type": "code",
+      "source_file": "Test/POSTTest.py",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [
+    {
+      "source": "test_posttest_py",
+      "target": "requests",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Test/POSTTest.py",
+      "source_location": "L3",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": []
+}

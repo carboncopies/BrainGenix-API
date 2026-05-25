@@ -1,1 +1,369 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_jwks_verify_cpp", "label": "jwks-verify.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L1"}, {"id": "example_jwks_verify_main", "label": "main()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L11"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_jwks_verify_cpp", "target": "iostream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_jwks_verify_cpp", "target": "jwt", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_jwks_verify_cpp", "target": "rand", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L9", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_jwks_verify_cpp", "target": "example_jwks_verify_main", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L11", "weight": 1.0}], "raw_calls": [{"caller_nid": "example_jwks_verify_main", "callee": "RAND_bytes", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L91"}, {"caller_nid": "example_jwks_verify_main", "callee": "base::encode<jwt::alphabet::base64url>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L93"}, {"caller_nid": "example_jwks_verify_main", "callee": "sign", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "set_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "set_expires_at", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "set_issued_at", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "set_subject", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "set_key_id", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "set_id", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "set_type", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "set_issuer", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "create", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L95"}, {"caller_nid": "example_jwks_verify_main", "callee": "chrono::system_clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L101"}, {"caller_nid": "example_jwks_verify_main", "callee": "chrono::system_clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L102"}, {"caller_nid": "example_jwks_verify_main", "callee": "claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L103"}, {"caller_nid": "example_jwks_verify_main", "callee": "algorithm::rs256", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L104"}, {"caller_nid": "example_jwks_verify_main", "callee": "decode", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L106"}, {"caller_nid": "example_jwks_verify_main", "callee": "parse_jwks", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L107"}, {"caller_nid": "example_jwks_verify_main", "callee": "get_jwk", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L108"}, {"caller_nid": "example_jwks_verify_main", "callee": "get_key_id", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L108"}, {"caller_nid": "example_jwks_verify_main", "callee": "get_issuer", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L110"}, {"caller_nid": "example_jwks_verify_main", "callee": "get_x5c_key_value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L111"}, {"caller_nid": "example_jwks_verify_main", "callee": "empty", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L113"}, {"caller_nid": "example_jwks_verify_main", "callee": "empty", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L113"}, {"caller_nid": "example_jwks_verify_main", "callee": "leeway", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L116"}, {"caller_nid": "example_jwks_verify_main", "callee": "with_id", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L116"}, {"caller_nid": "example_jwks_verify_main", "callee": "with_issuer", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L116"}, {"caller_nid": "example_jwks_verify_main", "callee": "allow_algorithm", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L116"}, {"caller_nid": "example_jwks_verify_main", "callee": "verify", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L116"}, {"caller_nid": "example_jwks_verify_main", "callee": "algorithm::rs256", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L117"}, {"caller_nid": "example_jwks_verify_main", "callee": "helper::convert_base64_der_to_pem", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L117"}, {"caller_nid": "example_jwks_verify_main", "callee": "verify", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L122"}, {"caller_nid": "example_jwks_verify_main", "callee": "as_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L127"}, {"caller_nid": "example_jwks_verify_main", "callee": "get_jwk_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L127"}, {"caller_nid": "example_jwks_verify_main", "callee": "as_string", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L128"}, {"caller_nid": "example_jwks_verify_main", "callee": "get_jwk_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L128"}, {"caller_nid": "example_jwks_verify_main", "callee": "leeway", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L129"}, {"caller_nid": "example_jwks_verify_main", "callee": "with_id", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L129"}, {"caller_nid": "example_jwks_verify_main", "callee": "with_issuer", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L129"}, {"caller_nid": "example_jwks_verify_main", "callee": "allow_algorithm", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L129"}, {"caller_nid": "example_jwks_verify_main", "callee": "verify", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L129"}, {"caller_nid": "example_jwks_verify_main", "callee": "algorithm::rs256", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L130"}, {"caller_nid": "example_jwks_verify_main", "callee": "helper::create_public_key_from_rsa_components", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L131"}, {"caller_nid": "example_jwks_verify_main", "callee": "verify", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp", "source_location": "L136"}]}
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_example_jwks_verify_cpp",
+      "label": "jwks-verify.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "example_jwks_verify_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L11"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_example_jwks_verify_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_jwks_verify_cpp",
+      "target": "jwt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_jwks_verify_cpp",
+      "target": "rand",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_jwks_verify_cpp",
+      "target": "example_jwks_verify_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L11",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "RAND_bytes",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L91"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "base::encode<jwt::alphabet::base64url>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L93"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "set_expires_at",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "set_issued_at",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "set_subject",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "set_key_id",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "set_id",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "set_type",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "set_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "create",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L95"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "chrono::system_clock::now",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L101"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "chrono::system_clock::now",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L102"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L103"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "algorithm::rs256",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L104"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "decode",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L106"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "parse_jwks",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L107"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "get_jwk",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "get_key_id",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L108"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "get_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L110"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "get_x5c_key_value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L111"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "empty",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L113"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "leeway",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "with_id",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "with_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "allow_algorithm",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L116"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "algorithm::rs256",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "helper::convert_base64_der_to_pem",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L117"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L122"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "as_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "get_jwk_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L127"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "as_string",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "get_jwk_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L128"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "leeway",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "with_id",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "with_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "allow_algorithm",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L129"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "algorithm::rs256",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L130"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "helper::create_public_key_from_rsa_components",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L131"
+    },
+    {
+      "caller_nid": "example_jwks_verify_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/jwks-verify.cpp",
+      "source_location": "L136"
+    }
+  ]
+}

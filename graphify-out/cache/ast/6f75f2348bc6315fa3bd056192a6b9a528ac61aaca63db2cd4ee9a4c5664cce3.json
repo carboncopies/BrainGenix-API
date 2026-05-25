@@ -1,1 +1,177 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_es256k_cpp", "label": "es256k.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L1"}, {"id": "example_es256k_main", "label": "main()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L5"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_es256k_cpp", "target": "iostream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L2", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_es256k_cpp", "target": "jwt", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L3", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_es256k_cpp", "target": "example_es256k_main", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L5", "weight": 1.0}], "raw_calls": [{"caller_nid": "example_es256k_main", "callee": "sign", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L18"}, {"caller_nid": "example_es256k_main", "callee": "set_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L18"}, {"caller_nid": "example_es256k_main", "callee": "set_expires_in", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L18"}, {"caller_nid": "example_es256k_main", "callee": "set_issued_now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L18"}, {"caller_nid": "example_es256k_main", "callee": "set_id", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L18"}, {"caller_nid": "example_es256k_main", "callee": "set_type", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L18"}, {"caller_nid": "example_es256k_main", "callee": "set_issuer", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L18"}, {"caller_nid": "example_es256k_main", "callee": "create", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L18"}, {"caller_nid": "example_es256k_main", "callee": "claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L24"}, {"caller_nid": "example_es256k_main", "callee": "algorithm::es256k", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L25"}, {"caller_nid": "example_es256k_main", "callee": "with_issuer", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L29"}, {"caller_nid": "example_es256k_main", "callee": "allow_algorithm", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L29"}, {"caller_nid": "example_es256k_main", "callee": "verify", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L29"}, {"caller_nid": "example_es256k_main", "callee": "algorithm::es256k", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L30"}, {"caller_nid": "example_es256k_main", "callee": "decode", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L33"}, {"caller_nid": "example_es256k_main", "callee": "verify", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L35"}, {"caller_nid": "example_es256k_main", "callee": "get_header_json", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L37"}, {"caller_nid": "example_es256k_main", "callee": "get_payload_json", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp", "source_location": "L39"}]}
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_example_es256k_cpp",
+      "label": "es256k.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "example_es256k_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_example_es256k_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_es256k_cpp",
+      "target": "jwt",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_es256k_cpp",
+      "target": "example_es256k_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "set_expires_in",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "set_issued_now",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "set_id",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "set_type",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "set_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "create",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L24"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "algorithm::es256k",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L25"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "with_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "allow_algorithm",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L29"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "algorithm::es256k",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L30"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "decode",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L33"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "get_header_json",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "example_es256k_main",
+      "callee": "get_payload_json",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/es256k.cpp",
+      "source_location": "L39"
+    }
+  ]
+}

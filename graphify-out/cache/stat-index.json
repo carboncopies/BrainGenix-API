@@ -1,1 +1,1172 @@
-{"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/vcpkg.json":{"size":389,"mtime_ns":1779675855245135494,"hash":"5b6c26e208a700d73baf05b571b0cfe4e069a51b9a7f01cd7a648aa1ad974961"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/vcpkg-configuration.json":{"size":55,"mtime_ns":1779675855245061411,"hash":"b6f290a9ea9c86f5819ce516279218c9ef723ae8d274bb424076cf1ecb858e46"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Setup.sh":{"size":2521,"mtime_ns":1779682688671302161,"hash":"a8356fb46a7fab5b69226c43171df8654493d75c0919058b39a7aefbf26c7df9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Tag.sh":{"size":3432,"mtime_ns":1779682963120981827,"hash":"90f5f0cbba1ea3dc25db64939f98921a43b66703b3b0cdf531c3baa05d7f13e1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/DevRun.sh":{"size":395,"mtime_ns":1779675855238486327,"hash":"c14ab6459607b241ffe17547a5df5706a2bd1a991548b2b4b1da92f527c4e753"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Run.sh":{"size":934,"mtime_ns":1779675855238957536,"hash":"4481b1abe1f7cd7e274574a7030a798c2df47faf41b3654cfe433e92491b13da"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Build.sh":{"size":3778,"mtime_ns":1779675855238261577,"hash":"f65d3671b98e5b6766236e21263d9a88391bac4225dcc4230f33e283fcd620fb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Package.sh":{"size":131,"mtime_ns":1779675855238734994,"hash":"f8ad121c0f52af67da2778e3d53e1405b41e20629c70eb5f3d8dd0efb4bd684a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Clean.sh":{"size":331,"mtime_ns":1779675855238325369,"hash":"d3ad12bebbf701c9278a93dec93bcf6d780f7979a4984eb9f5625dea03d07eb7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Test.sh":{"size":86,"mtime_ns":1779675855244774203,"hash":"5c7dc044c81eb12e80abce8f6e87b067f10793c4f90aa29cc22c354e8b4df649"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Deploy/Deploy.sh":{"size":477,"mtime_ns":1779675855238421994,"hash":"273f8363ee9fc0040b45c4fa2613ade5bbd86c0a3075679e6cef90b542bff3cd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Docs/GenerateDrawioDiagrams.sh":{"size":375,"mtime_ns":1779675855238664452,"hash":"a538eac1797370020e865133247ed7d4a73c0d8873be95221e115d819727773c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Docs/GenerateDoxygen.sh":{"size":154,"mtime_ns":1779675855238598036,"hash":"5d5785f0d94828938456de18c2a55b619079ea43d7ca0c9b6b149dce376691e9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Package/Debian-Install.sh":{"size":65,"mtime_ns":1779675855238857744,"hash":"381413fb7ad26305f1337d46d432ec20ede243ec915a3a4bbac7c670ff992987"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/POSTTest.py":{"size":179,"mtime_ns":1779675855224308994,"hash":"fbe4db05231abf1de6f873426e7932a57c995aaf715035bb7e4cf7f7b7e68f04"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/Test.json":{"size":387,"mtime_ns":1779675855224383286,"hash":"27457e1e2604a6b6ad535c981337a3aef9f97ea0cb1270896072ef72a9af9b3a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/Test.py":{"size":5067,"mtime_ns":1779675855224535953,"hash":"8855baaac2badf78253eb703ee9c275dd033ea0c5b31af63f4fcea416bc94dc0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/TestLocal.py":{"size":14333,"mtime_ns":1779675855224654286,"hash":"37f0ac9a81c433129b95be540589c89ce55e4b2a531cae5bd3516bf42e0bb0d0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/HappyHolidays.py":{"size":11826,"mtime_ns":1779675855224232869,"hash":"763d44cecdaad0491a9fe539da940de54a9ef669513f6cc5cf2c50f1d9dd42c0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Overlays/BG-Logger/vcpkg.json":{"size":354,"mtime_ns":1779675855213686911,"hash":"12e1a80479cad00607f2d37bb1269702e9cf044fff41a2299449735c93c9a016"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/CompilePlatformInfo.cpp":{"size":232,"mtime_ns":1779675855222928036,"hash":"7ee5c2e77cf4667d97132f870a52b15559e05e5c52f8f39159e60edca074de9f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/ERS_CompilePlatformInfo.h":{"size":779,"mtime_ns":1779675855223017619,"hash":"b6dd3ceb5f53b8f99bd0a1e0af27da3aabb02f1a3db51b440072474f99badfec"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompileTimeStamp/ERS_CompileTimeStamp.h":{"size":312,"mtime_ns":1779675855223495203,"hash":"ad022eb9e37a596538c81e01e9485de728195ca1601b196a2982b682cb44257c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompileTimeStamp/CompileTimeStamp.cpp":{"size":229,"mtime_ns":1779675855223405536,"hash":"35e1ddbbeb607979549af02b183553af4252fbf40d8520e40e426e0aa6c9be2f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/VersioningSystem/Version.cpp":{"size":220,"mtime_ns":1779675855223984452,"hash":"0d0b46f950307d6dc4d55500fe020cffdd32a83448c33b62b1c26736ac9e6f5e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Main.h":{"size":747,"mtime_ns":1779675855216173036,"hash":"8581fc0aa59e5eeba44165c5f2e6e040f900329a84ebbddad9eeac3ffc08f421"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Main.cpp":{"size":1955,"mtime_ns":1779675855216064827,"hash":"f0ec99e7697ad14f17565ae103420bc9f01bef4cc9c5a5894967b9ab78ca0c1b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Database/DBManager.h":{"size":1034,"mtime_ns":1779675855215949661,"hash":"a94438cf0bcbdbddfa66cc1e0806030ba532df3481763304ffe11c8d740349ce"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Database/DBManager.cpp":{"size":99,"mtime_ns":1779675855215858244,"hash":"3710c49c4aacee9091287d6be27d9c30fff397c596f8a61e6ddc7fe8a237195a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Cluster/BidirectionalRPC.h":{"size":5378,"mtime_ns":1779675855214346786,"hash":"87a1df85b87a4b586336565ff8923bf7ea4ef501f411f78d3fe32b8ee871af51"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Cluster/BidirectionalRPC.cpp":{"size":7783,"mtime_ns":1779675855214200786,"hash":"25883d6e99497bfc479673a31c2b8034ce4e57ced31dbf941afe5a041d595dd0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Cluster/VSDA/VSDAConnectionManager.cpp":{"size":4825,"mtime_ns":1779675855214544452,"hash":"5e96ffb1c842a4baf53a0d170c21d57bea8e303d9d8de7d76724c01a90b90d99"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Cluster/VSDA/VSDAConnectionManager.h":{"size":893,"mtime_ns":1779675855214635744,"hash":"f16041aa6e76b849f93c616b007134540f035641ba7b127033f59b4a3fbfd6b8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/Types.cpp":{"size":25,"mtime_ns":1779675855221744161,"hash":"230732490eaa1b5e60c950536f95d377d22f2a18ef1243f80b6f6fe59cfb862b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/RPCHelpers.cpp":{"size":3537,"mtime_ns":1779675855221160994,"hash":"46298fc7b2426ff57e1ae67aea0213f7e8d1abc94ddc62bd55686f80e567e0cf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/RestbedHelpers.h":{"size":2188,"mtime_ns":1779675855221556786,"hash":"3946daae1399e464672f9e84706786472302234aa9241c6609ca4259daeb5c37"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/Types.h":{"size":890,"mtime_ns":1779675855221841327,"hash":"f7fff658309f0eb7528168681cb5535de265f9290fbbaf0dfacb53961e8464b7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/ParamCheck.h":{"size":907,"mtime_ns":1779675855221083036,"hash":"3ae68104da8f6616339af38ac20fb0bca78336ec3aefa9e1ef8a08aa0d60e7bc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/ParamCheck.cpp":{"size":367,"mtime_ns":1779675855221000619,"hash":"c26deb917d56cb9320bd083e02e7e7931101dc0a8d6a2ddfd212a1d67e3ef8f2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/RestbedHelpers.cpp":{"size":1972,"mtime_ns":1779675855221323702,"hash":"dba12a4f6c1ab4229d5f5f2f34d0d23155a73b50cb329be232fa0b12c7db477c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/JWTUtil.hpp":{"size":1428,"mtime_ns":1779675855220919911,"hash":"b4156f182a9b9d0472bd02a5a6f70ad0399d76d9f35b69d758e8cb4e157ee6b6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/RPCHelpers.h":{"size":1621,"mtime_ns":1779675855221236744,"hash":"a06cace4a2ade90c2d762eedb71d4c1c0ba9ab04cfdc64f2457f621e0f4e8aed"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigDefaults.cpp":{"size":34,"mtime_ns":1779675855215139827,"hash":"23fabf5107c7fb3c4a214c0a74cf725e9099b5b39e75406c27bb4becbed883fd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/Config.h":{"size":3520,"mtime_ns":1779675855215060744,"hash":"444313e9ae0492bf3bc493ea1bf48291e1f16bc129487c96d1d1e7e421bdbe7e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigurationManager.cpp":{"size":469,"mtime_ns":1779675855215560536,"hash":"ab19c99e5206999634d3c16134b2c6b79ba6c8bc98559ce7c4981f392be83575"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigFileParser.cpp":{"size":4457,"mtime_ns":1779675855215374619,"hash":"62f5b85ea6060595eda81636395bcdc4bc1bc541b1be25fe4645928591729956"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ArgumentParser.cpp":{"size":2446,"mtime_ns":1779675855214789952,"hash":"627534138c2067b3b05e34a059a6928f78d5f1eacd653d17fb898ec39b976c6b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/users.json":{"size":216,"mtime_ns":1779675855215732619,"hash":"6ff55e8d862f2ce0c80f5b555248edc821933b70d51c505e389e2b0d44e9688c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigFileParser.h":{"size":1751,"mtime_ns":1779675855215466119,"hash":"cc138907bf8d3da4e1f2bcd194c3ff0df6ba203a4d55643c61e9c2c6126f4a84"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigDefaults.h":{"size":908,"mtime_ns":1779675855215225702,"hash":"a272a2d0d6b1097d562114fc2d0d3f6ecfb9747aae76e283ca7d832b85612483"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/Config.cpp":{"size":26,"mtime_ns":1779675855214969577,"hash":"9d83c00e6fbcb96ae9da18176c128c7bf9412c078a3f1faa753cd13272678c20"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigurationManager.h":{"size":1962,"mtime_ns":1779675855215645119,"hash":"310ef82fd190e2cca8e00f86f64f35dc879231cec68100c2453e013ff8e0fcc9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ArgumentParser.h":{"size":2357,"mtime_ns":1779675855214881661,"hash":"bdd0564037790a568842b5f327de86e0e938193282a48ab4e95820c6227294c1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Controller.h":{"size":3574,"mtime_ns":1779675855220471452,"hash":"c67ec5bb6cc5d6e8f99d044788f20875c80eed178c07cdb573f6d2142f9248ee"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Endpoints.cpp":{"size":1108,"mtime_ns":1779675855220553077,"hash":"24d0489950e3b1a0f30108b4f749e9037c3f2ad4018bdc19b8aa74e5290b2272"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Endpoints.h":{"size":2818,"mtime_ns":1779675855220644036,"hash":"f691cc04d9dcdb14eae4f0d1e4f2c0d6f44a805f943fc254c3e3dc2e2a372b9b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Controller.cpp":{"size":4511,"mtime_ns":1779675855220382869,"hash":"ed9fed63973464955fce6c7ee63492afcee9086fb6e90c072dbe15b6b60afc17"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Server.h":{"size":1881,"mtime_ns":1779675855220804161,"hash":"b84e8284d4d3db916b26a582004f4aa7ef47edf0e338cae6e88aa356460eecf8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Server.cpp":{"size":26,"mtime_ns":1779675855220718369,"hash":"7d9201cb8984c10641b7ab5e2d3daa6294aba20be8f40daa77ba3ecdcc497ac4"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h":{"size":3489,"mtime_ns":1779675855217845161,"hash":"f0cf683a2d30a1b77cfd85e60f4720f8176f83ad538b24b8f61c2ff648f12c44"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/NotFound.cpp":{"size":808,"mtime_ns":1779675855219522327,"hash":"a15a3ff9680d3ddde56e0369ca54ace3ff94622df103c63acbbd1b1837404348"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Version.h":{"size":1739,"mtime_ns":1779675855220193203,"hash":"837cd4e62cdc9d1e60d57cb325e550bcb5be10426d7fbdbb7545109aa861d30d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Status.h":{"size":1717,"mtime_ns":1779675855220000119,"hash":"9d5035d86156375c74c4979781ed9f499d882b713ede38c2885d4293815e6d35"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/DTO.h":{"size":817,"mtime_ns":1779675855218338077,"hash":"a0592e9d4021f2733f06f308f3ce1193dc533a972a4865cfd1241578dc4bd7da"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Version.cpp":{"size":1299,"mtime_ns":1779675855220105411,"hash":"d4eff99d55b3e570ba145bca7b768b022b61f42933178713e3b18db4eefd415e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Status.cpp":{"size":1969,"mtime_ns":1779675855219891536,"hash":"22fef8c1f7d6eb64dacadcb73d1f6a2f644a57fa31d726f851aaabca670b6fd4"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Forbidden.cpp":{"size":800,"mtime_ns":1779675855218877953,"hash":"6a5556d71cd273b32f915c44af62221649d4b470dc53a35b43c81a8e2cb4fb0c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Root.cpp":{"size":1039,"mtime_ns":1779675855219682661,"hash":"a0ee1e3eb22467e302c993add1ba4595ba4740087cf29cf2c42e067552d968fb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Hello.cpp":{"size":981,"mtime_ns":1779675855219078286,"hash":"83058c3e83ead871e54f05a9318ad2d4c977260398834327371a5c183c47a483"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Controller.h":{"size":12648,"mtime_ns":1779675855218234203,"hash":"dbbad37e70b02fbc4bdd42fa9a973458c536446c287fb12722fc238e4382f96e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Forbidden.h":{"size":1675,"mtime_ns":1779675855218972994,"hash":"c0f514a4e594342b49881b7b31a392e871cb32363d3845258a23e7484ed8559b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/NotFound.h":{"size":1685,"mtime_ns":1779675855219600244,"hash":"d28ef7e450a12e876cba9ec25cb94e32fb44c7b1f258321f6339e8c9b4718ccc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Hello.h":{"size":1627,"mtime_ns":1779675855219168994,"hash":"cd5587f05a09dea6c9a5fabde4be8b759858cb0f182304017f69ebeaeb107c79"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Root.h":{"size":1760,"mtime_ns":1779675855219794494,"hash":"f6a1fc8c046dedfdb003dfff20bb9d4b7c3dd7fa7b837a6fb5f04b15eed10375"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/NES/NES.cpp":{"size":2264,"mtime_ns":1779675855219314661,"hash":"09dbb209d1c556fecc3f864dba6538182a77dd7086fffd9f64a022713f5a9354"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/NES/NES.h":{"size":2071,"mtime_ns":1779675855219413453,"hash":"640fc559ec34aa872597742ce111f26dbea4a2206b81adbd8eaf9901bbc4e0f1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Auth/GetToken.h":{"size":1935,"mtime_ns":1779675855218064286,"hash":"02cf70b5b77a735883314d6318df3ac07619289d8af915c687a0af849bb50c03"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Auth/GetToken.cpp":{"size":2098,"mtime_ns":1779675855217976453,"hash":"db0d373e2c1bb3e6787bd4699d292374b509d8ee7a6f56fe2059a75e49c2a801"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Dataset/Dataset.h":{"size":1862,"mtime_ns":1779675855218565369,"hash":"4366a0510115a214aabe394628937f581d4828262a1ae8d0feff1099104e5921"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Dataset/Dataset.cpp":{"size":2934,"mtime_ns":1779675855218482828,"hash":"c92187c84ab3107ffb86189d08b3f57247d146ae13af3a8bdbbd2cc4b2a986ad"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/EVM/EVM.cpp":{"size":2264,"mtime_ns":1779675855218682202,"hash":"84a23c7555cd9f7398759542905d4236e16da892d0552e6a2162499cad6fa6a7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/EVM/EVM.h":{"size":2071,"mtime_ns":1779675855218780494,"hash":"7960b9709b39fdc8a70d94e93c32c35b5861d367384702e08c07b4025a42249e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/ManagerTaskData.h":{"size":2580,"mtime_ns":1779675855216864119,"hash":"8b9a16b88b2efb245fd7c9b17e2f1d907a3cc77d4d981762e6ae41c23e8feace"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/APIStatusCode.cpp":{"size":352,"mtime_ns":1779675855216308494,"hash":"2e437a25f26f294effba02108ad6ea3ae51edc893d708d8aa99e4fbef0b9b43c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RouteAndHandler.cpp":{"size":354,"mtime_ns":1779675855217410994,"hash":"9a8b67cdc5b462103265a96ce286583eeca604cc93ece1a36ae3fb33bd3f4ea9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/APIStatusCode.h":{"size":788,"mtime_ns":1779675855216412286,"hash":"711ecf783a82659c85f2404550f0c6753b2823ae606cb9f013f8f609df54d0b5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RouteAndHandler.h":{"size":1702,"mtime_ns":1779675855217502286,"hash":"b12c1688b43153bc400acb1cc4bb43df94a4f01e60712fa333b133f81d431d3a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RPCManager.cpp":{"size":2906,"mtime_ns":1779675855217165452,"hash":"15468b3e6483dfc0fe2e9f3aa222541d545fae2c9f2d66a3a37e1ccc625c1ec6"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/StaticRoutes.cpp":{"size":196,"mtime_ns":1779675855217604786,"hash":"7bb5b96d005e5bcdf7812c20613610d23af6e4bc8a551aa8513dc218c81219cd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RPCManager.h":{"size":4446,"mtime_ns":1779675855217318161,"hash":"116c485e4c39b4f8c1873944f4501f11047e4be331ba01282dc9c66ca32af1e2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/ManagerTaskData.cpp":{"size":356,"mtime_ns":1779675855216779327,"hash":"a7bf4c6088693c5974d50b080aa60409b7de3adb0c245790d618df76fc53a6db"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/StaticRoutes.h":{"size":1224,"mtime_ns":1779675855217699994,"hash":"a3a2a8eb1ab88734f38513e7b6a66854eca1c56b931deea6cedf0228be015889"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/ClientManager.h":{"size":7296,"mtime_ns":1779675855216699744,"hash":"2af3c43411fdde4c29d501f47ca3657799f3ad5b5ff3835acde08134bbd807b7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RPCHandlerHelper.h":{"size":11310,"mtime_ns":1779675855217067619,"hash":"8e10b1ce54a32e29fec59ad1fa5408f8683448591d5967122032055a7ca9df0a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RPCHandlerHelper.cpp":{"size":10566,"mtime_ns":1779675855216961703,"hash":"9df34fe36517617b7f7d2e6e7dade44742a39697b90cb7730f64886652954e8e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/ClientManager.cpp":{"size":10038,"mtime_ns":1779675855216536786,"hash":"b4bf9db65dacf12ba8108200501d8e0a3bc909aa4692027b78eb232e12a9bfbb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Tools/GenerateDocs.sh":{"size":199,"mtime_ns":1779675855212743578,"hash":"ddfc29e41a3aecaad5c844c835ec8493468396cbb1bac88aee024f8a5c5e573e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp":{"size":1983,"mtime_ns":1779675855212445786,"hash":"33e2d46a8652993b54a36298d2026963523dbe8731b87164994990688a1f4d90"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp":{"size":548,"mtime_ns":1779675855212533952,"hash":"0317dbbb214d5db2d7ee6ec4e62912d27099e6cbcf2315e00156c5fde8c2705e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/backward.cpp":{"size":1094,"mtime_ns":1779675855225712077,"hash":"308f3377221670ec1e50651bbfebca2e42e2bbd4e65d246fc7dd89c08526adfe"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/conanfile.py":{"size":1509,"mtime_ns":1779675855226175911,"hash":"cd927af8ae1688bd9375b4875f341eab01fde4befdb7986b94a3a72b89797524"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/builds.sh":{"size":1359,"mtime_ns":1779675855226086619,"hash":"8bac4fc4993cf93c31c73ab72a75c88b75af1ee5eb3ef59d24dd2c7a9de3a954"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/backward.hpp":{"size":141217,"mtime_ns":1779675855225975119,"hash":"c22e8e3b8ce2a6214f2f2965b735aaef49c7eb38a5b6c40f766356435634eae8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/_test_main.cpp":{"size":6293,"mtime_ns":1779675855227164827,"hash":"c5fc6b79be8960bb78835be7ec53b772ce4f9ab2989fee74c87156b242613974"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/suicide.cpp":{"size":2504,"mtime_ns":1779675855227506786,"hash":"5c1313c9737c02972404f36b6ecf9aaab12774da3df7e8c3aed6b10d0d255ae3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/select_signals.cpp":{"size":1782,"mtime_ns":1779675855227345327,"hash":"bf3357f199e5c166b462916e59ca3c02dfa7d1353543a4cd53cc7891c3d2ddcc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/rectrace.cpp":{"size":2451,"mtime_ns":1779675855227252161,"hash":"30008a97ce9c8c5ba48af12aa92e53e56f08064ec6f914e911d518f39fe64fc5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/test.cpp":{"size":1976,"mtime_ns":1779675855227572952,"hash":"4797e4f7ce4a6e2c6dd19fd2c727fd6975df2fdb113ef0e3d9075552234edded"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/stacktrace.cpp":{"size":1719,"mtime_ns":1779675855227442577,"hash":"12fccb9198c38fc071e9589843adaaad110140f6e456106497e96f59d9a21b91"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/test.hpp":{"size":7226,"mtime_ns":1779675855227714244,"hash":"cdcdfc5af658409c86a95b6436624c499079ae6138ee1d5cb27fbc03ace2dfbb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/conanfile.py":{"size":367,"mtime_ns":1779675855227947744,"hash":"4d169634061516c14c8b00780bcea9eddece97076319b90ba2d8e3c1a834d513"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp":{"size":894,"mtime_ns":1779675855228021661,"hash":"d8e4a4cb4e670017d84df219e59e6b970f7b3d0f9da660f422da6e1fe60b61be"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/CMakePresets.json":{"size":742,"mtime_ns":1779675855228390078,"hash":"459ade5f7fed1ece202fb1d427c1f7e65aff7f354290b3abea0ad2f8ec9ccf5f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/cmake/CMakePresets.json":{"size":1169,"mtime_ns":1779675855228758661,"hash":"44cc119447e5551447cb15508a4ebec18e37445e37ca7c59d455617b2eb38284"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/private-claims.cpp":{"size":1655,"mtime_ns":1779675855230990494,"hash":"18646995e20834ef25140eac1da5277fa9ba20ef300174712758ebc3e3bda453"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/rsa-verify.cpp":{"size":1665,"mtime_ns":1779675855231151661,"hash":"531d5e9c699c4704662e4d5baf3047c73537d964a84d2a38ab7ce1d257f01de9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp":{"size":1503,"mtime_ns":1779675855230645328,"hash":"6f75f2348bc6315fa3bd056192a6b9a528ac61aaca63db2cd4ee9a4c5664cce3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp":{"size":10835,"mtime_ns":1779675855230742286,"hash":"332296c4a0cedd0e9b9aac967130aa6e392f00df45d8c90ca83c04dfbc69adee"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/CMakePresets.json":{"size":694,"mtime_ns":1779675855230561869,"hash":"6a83198817eb10231daab0593be9053b8a3a70e5bfd07bf9c3fe796dde75bb8f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/rsa-create.cpp":{"size":2198,"mtime_ns":1779675855231076203,"hash":"8b80f40fb9cb80ee330c6937ba83a3f63269a640b1f893cc2d418e9031ef5f7b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/partial-claim-verifier.cpp":{"size":4019,"mtime_ns":1779675855230824244,"hash":"7d4ccfcaae144dd59585bd4cf7a6bafe3a9ee48fd54dab412f5afa70ba4cc99d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/print-claims.cpp":{"size":383,"mtime_ns":1779675855230899369,"hash":"17a3ef04d4a73578e389d22327d7b5b82d9aa9d977a5828c3f7bb7824038d8dc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp":{"size":1653,"mtime_ns":1779675855231495328,"hash":"c5dfdb98bfe5af11e8a8580127996cef1852868ce1cdbb13556248cdb5d31c1e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp":{"size":1837,"mtime_ns":1779675855231423119,"hash":"bc55b90ce9022ee03efd290777a8313541618b606aefb779fc58b5057f20fed7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp":{"size":1646,"mtime_ns":1779675855231571327,"hash":"0cf526847e6bd593ada687338f87b98e6f72f1023a5595c09cdede548b43ee91"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/nlohmann-json.cpp":{"size":1592,"mtime_ns":1779675855231647119,"hash":"1277d868af1d835b273da64883e95ad4d470f5b2b1b1f26f88870694908b6d9b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/open-source-parsers-jsoncpp.cpp":{"size":1627,"mtime_ns":1779675855231719411,"hash":"96c41ab7a7e61d7794d646f459bb6bcca08cdf7e9e41d105a9076c1efce6c417"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/picojson/picojson.h":{"size":34027,"mtime_ns":1779675855234034202,"hash":"4ce550446587dc4946ab10148ccb660caecbadd9114ca76ccca026986cbf675c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/jwt.h":{"size":158516,"mtime_ns":1779675855232245702,"hash":"52d97401b0989116153adac0c5af25adb5da940b2b3475956f02045d88fd2bdb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/base.h":{"size":13971,"mtime_ns":1779675855231961869,"hash":"41f0b6bf43622c6ec135f89c4a18e5df8579033367fede40ceed55abce04259f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/kazuho-picojson/traits.h":{"size":2356,"mtime_ns":1779675855233220494,"hash":"3b4f4611e462fbb9e0a6efc3e44d32c3fba4004fde691a7b925f026ef96b4b82"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/kazuho-picojson/defaults.h":{"size":2773,"mtime_ns":1779675855233118328,"hash":"1fa3efe04f98984f25d8aa01175bd26fe96b9a612d7d1a75cf4cd7da54b76816"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h":{"size":2661,"mtime_ns":1779675855233476286,"hash":"b25729d1947736f1d1a84893e4cbc59e24da1097aefc6eeeef10632d68da5563"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/defaults.h":{"size":2810,"mtime_ns":1779675855233371036,"hash":"c8a63fba434ec3205b996f922b77981c16ee7c3796aaf585f1d76af7f0bdfe50"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/danielaparker-jsoncons/traits.h":{"size":7695,"mtime_ns":1779675855232879286,"hash":"35e8071d77c3b37597705675f9aff7b95dc799c046615437b4fc2f89f04f44bd"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/danielaparker-jsoncons/defaults.h":{"size":2979,"mtime_ns":1779675855232733036,"hash":"ccece847f4e1b0d34694fc61bcc7e5526a81651cfe189c54d55884032e22381f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/boost-json/traits.h":{"size":2663,"mtime_ns":1779675855232588286,"hash":"8b036810c0df5ce2646e1f1e526db6570f089f49a73c42b72a85310ffaa73ab5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/boost-json/defaults.h":{"size":2744,"mtime_ns":1779675855232475619,"hash":"59b96cfe0baf2e23578f6d134d1f0337e0e23861b0a0792e5a8f58746f3d5f2c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/open-source-parsers-jsoncpp/traits.h":{"size":4474,"mtime_ns":1779675855233814536,"hash":"6577018eae67aadf129691d53cb096b30be4b1af46208f630e853175b76d9ec9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/open-source-parsers-jsoncpp/defaults.h":{"size":3080,"mtime_ns":1779675855233635119,"hash":"3ef60018294981b9ce607c9503c6c88618f2880606edd65f5d1c2f1271fbb22f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/TokenFormatTest.cpp":{"size":1441,"mtime_ns":1779675855235599536,"hash":"78edb8577a3e1962e0a9a61d14b7b7a5e856225af03773029d615096ae72e303"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/JwksTest.cpp":{"size":16943,"mtime_ns":1779675855235160703,"hash":"07d41053c76cc1c28e96b68ddab65f02ba5820923181b1a910e0c021510fcb0e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/TestMain.cpp":{"size":129,"mtime_ns":1779675855235511577,"hash":"eddcc0bcb82080eabac47f543e2473ca17f2c5af5d7b61267cb4da7f4478d72f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/TokenTest.cpp":{"size":41856,"mtime_ns":1779675855235722328,"hash":"d501403c925aecda65e37d28465db57949110c99d3cff9527886b1893a7b3d41"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/ClaimTest.cpp":{"size":5430,"mtime_ns":1779675855234907411,"hash":"68e9142a7422114de2b9b49f42da61ddd90a0b9e49274a223bcfd8d3b2f0e17a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/CMakePresets.json":{"size":4622,"mtime_ns":1779675855234754577,"hash":"47450b90958d615d755566209bcc110542d9f45fcd8fbec411f209ac0c2bae40"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/BaseTest.cpp":{"size":6719,"mtime_ns":1779675855234498536,"hash":"dc81b532ccb72bff3d080e42d94eb205b8363577cce55bed537ad7e9fb9168c5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/HelperTest.cpp":{"size":13235,"mtime_ns":1779675855235036536,"hash":"4c4f85caf35fc40e16dee318b7741a75b89f9e51f688295aff069422f13d2ea2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/Keys.cpp":{"size":13399,"mtime_ns":1779675855235291702,"hash":"563839bf0300bb91ef2f6ea8391422fd4e4599d0d81fa0fe76a4c9399cb71e32"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp":{"size":56855,"mtime_ns":1779675855235417911,"hash":"2053c06b4cd49bcba6a90c97b981a290211d944ea9a4c91ce5ee859c70161605"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/wolfssl-is-used.cpp":{"size":343,"mtime_ns":1779675855236300702,"hash":"15971c49ec43d416a30f6914cad4de6a19af2bae07f55823f569c277760a7d87"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/libressl-is-used.cpp":{"size":176,"mtime_ns":1779675855236167286,"hash":"3ab2ef024bfe52e42f15542bf6f0e6cde274a23fa2725739a043d387d1c38acc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/defaults-enabled.cpp":{"size":71,"mtime_ns":1779675855236081494,"hash":"01e503163b3fc3f0d823f780cfc7ccfb046a7b8c0217df029154db08ec9c6c6b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/base64-is-disabled.cpp":{"size":167,"mtime_ns":1779675855235988786,"hash":"0cde7ef6b16c17383fd86c88529c09c98138f887d34b665279bc387b21bfb810"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/picojson-is-disabled.cpp":{"size":171,"mtime_ns":1779675855236233786,"hash":"292d1ff3d98c1b0810f4cc5c6a7854845c6e4c0049f47bb2fd7bb29bbac20edb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/traits/NlohmannTest.cpp":{"size":5937,"mtime_ns":1779675855237781703,"hash":"3c83083e34feab0c623ac8d9eecb7312770d32e4572cbde8ece4808f7bdac6de"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/traits/BoostJsonTest.cpp":{"size":6004,"mtime_ns":1779675855237513369,"hash":"ba9f506d60f259357d305ed3cea547f92827c7bda428deefff6c3f5aa86bacc8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/traits/JsonconsTest.cpp":{"size":6280,"mtime_ns":1779675855237643952,"hash":"812e17acb0ebc19879717c0f976185a5f9c3b0270e0470a1165c03b52a9296ea"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/traits/OspJsoncppTest.cpp":{"size":6472,"mtime_ns":1779675855237939744,"hash":"ca690cc7887e94e865006f1ed9075e23bdc740aab5e512dabeeeb605b79f56e7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/fuzz/BaseEncodeFuzz.cpp":{"size":249,"mtime_ns":1779675855236477619,"hash":"d7844d0d2a3fac373de8265c36d0e4a1cd710c773a9a945e63d73b6f20528d58"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/fuzz/TokenDecodeFuzz.cpp":{"size":603,"mtime_ns":1779675855236610327,"hash":"4d98a739ce48bf2e79ca3a2c4bb999e10b765751ed60e54c99b45f47c5cf00ca"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/fuzz/BaseDecodeFuzz.cpp":{"size":376,"mtime_ns":1779675855236407786,"hash":"512dc5a428e05cfb60dd285a830681f0ef5d4717c9fafaa56f879823bbddf194"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CODE_OF_CONDUCT.md":{"size":5229,"mtime_ns":1779675855208134244,"hash":"ea38098f73f369e7a61b50ec0cc0c576a6224fb1dc3c9f5ae66067fcfacb145d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CMakeLists.txt":{"size":7449,"mtime_ns":1779675855207982744,"hash":"c670d14a9690fb1ca5b88023c66d6bba1a637bbdb7e73050b7da7392ccf946e4"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/README.md":{"size":2790,"mtime_ns":1779675855213807953,"hash":"7439d3b60a33a12620f101249cd20b1d5da1fcc199350e8ee24b3fbb14e69146"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/CompilePlatformInfo/CMakeFiles/CompilePlatformInfo.dir/link.txt":{"size":246,"mtime_ns":1779675855241642494,"hash":"c9be20f0b51a9dbb8f0188986ceea5d024f64f8cf8ff4a1e80f777e9cafb75d0"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/CompileTimeStamp/CMakeFiles/CompileTimeStamp.dir/link.txt":{"size":234,"mtime_ns":1779675855243010077,"hash":"1559708dd4d4f97b21a8fb686b3f396f903363ffedfc3136258fa270248d177e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/VersioningSystem/CMakeFiles/VersioningSystem.dir/link.txt":{"size":225,"mtime_ns":1779675855244397827,"hash":"ff5d37fe7da3366994ab9654f224d88ddde5f7820621b0357809324adf7ce802"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Core/CMakeFiles/BrainGenix-API.dir/link.txt":{"size":2991,"mtime_ns":1779675855240131119,"hash":"0253cce76e73cf9a1cb909449f8dffc20ff880711d1679d2ad551fa8c10a8488"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/.gitlab-ci.yml":{"size":1373,"mtime_ns":1779675855201895202,"hash":"ba6fac1a0d717d658685683de0e9bebab431301c4887e84357b667e2cc777df7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Test/Ubuntu2004/CI.yml":{"size":368,"mtime_ns":1779675855205986744,"hash":"95465d570a808a10309fad200de0818538f0d43704c334d6aa15d20cd2d9e4b9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Test/Debian11/CI.yml":{"size":362,"mtime_ns":1779675855205758452,"hash":"9bee003a339e107b679221d4f57639eddc8dc48f8fd097d347304399c14ac5db"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Test/Ubuntu2204/CI.yml":{"size":368,"mtime_ns":1779675855206202869,"hash":"d523842b510a8b79f12c4d020e4dfe869b8c77a9d2faa94cf0204bb41d111812"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Test/Debian12/CI.yml":{"size":363,"mtime_ns":1779675855205874702,"hash":"e4ee2a6f6e35b49c35042831c066c90babcfc1f1a360e827d976f6b2a4c15e64"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Ubuntu2004/CI.yml":{"size":2168,"mtime_ns":1779675855204797869,"hash":"5483395abb5bfc79a58ce846b13511cdf26547af19494ad9225490552cd191a2"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Debian11/CI.yml":{"size":2160,"mtime_ns":1779675855203403744,"hash":"ef80829f6bc8db593de825d7f2db85518425abb802945a726330ac73d84ebe0f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Drawio/CI.yml":{"size":2127,"mtime_ns":1779675855204475203,"hash":"8abafb7dd7422ac2b14324238916fc3c0dd2a6a73e506d71051ded14cc109628"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Ubuntu2204/CI.yml":{"size":2168,"mtime_ns":1779675855204996161,"hash":"cb5e6ed83255befcc0cb97118bb83a01d65e2e9a62f3b0a5f535fcb0552bc689"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Doxygen/CI.yml":{"size":2131,"mtime_ns":1779675855204104369,"hash":"ea804e4bf8c635d90a8986aa149ce6bb893c2a371ddb759cbb29a283a9469766"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Debian12/CI.yml":{"size":2160,"mtime_ns":1779675855203846077,"hash":"6065bc99e3f5f563a81fba9d72e4b85d953e8b6776657c95bca9bf67cd488570"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Deploy/Prod.yml":{"size":527,"mtime_ns":1779675855202798786,"hash":"dc339f24a17143a8d3eb1dc11c8f8ce6f059587e254bd08eeffa049e9af85286"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Docs/Drawio/CI.yml":{"size":332,"mtime_ns":1779675855203230786,"hash":"a36d4615c4d8552ca0f68f7f43c6f471f730ef4cdad78ae7cf4928512e25ccdf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Docs/Doxygen/CI.yml":{"size":322,"mtime_ns":1779675855203111327,"hash":"c2ed4c90c5697d5b594ecfdb1bf030540bf140ac3fd4119432fb9b74d098bcff"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Package/Ubuntu2004/CI.yml":{"size":432,"mtime_ns":1779675855205485744,"hash":"2db1d7030826b000a2f5cee35ae0cfd3b9a876d0b63c93783187a2fbc59af03d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Package/Debian11/CI.yml":{"size":426,"mtime_ns":1779675855205254827,"hash":"e8a738e20f4bef7df0fe7c3525dc56ee07d577b7b2841f1489dd2294bcb5de8d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Package/Ubuntu2204/CI.yml":{"size":432,"mtime_ns":1779675855205598036,"hash":"1c449f4fa1ea96c512176abb5dd57ab8e9e64782a52d8707be5e41a3ed99aef8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Package/Debian12/CI.yml":{"size":426,"mtime_ns":1779675855205371994,"hash":"a2d1a1492f8b4794526f45361c45c0b830aacf73b9d341dc8119b20f9431efa8"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/CMakeLists.txt":{"size":696,"mtime_ns":1779675855222838744,"hash":"4c957c4f0cddb492359f6a11fbb023943809b373ab75cdcde0f6cbe420046d10"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/README.md":{"size":329,"mtime_ns":1779675855223105119,"hash":"cb70a881d6047d8d9e13e4cfc168a5ff96e2fba7b544489e961c0b49f7bca71f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompileTimeStamp/CMakeLists.txt":{"size":678,"mtime_ns":1779675855223326494,"hash":"6f718e2780f8039c8d389db307c4f269ee83376ce151d1a0416a539a6653db21"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompileTimeStamp/README.md":{"size":312,"mtime_ns":1779675855223582661,"hash":"060bcc468fa2c84b66c6e0a7f3a04339a54f7f805fd988c505b352a8ff6b2535"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/VersioningSystem/CMakeLists.txt":{"size":660,"mtime_ns":1779675855223804286,"hash":"76a7943d612d9730c01b5ef8e7a6f5856806911360ee426d18df384027e1462d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/VersioningSystem/README.md":{"size":320,"mtime_ns":1779675855223899661,"hash":"2767754bbc1a603b498307a5c5cb3ac3d5fe4115ed1a1079b7101c5ed8e94c7a"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/CMakeLists.txt":{"size":2623,"mtime_ns":1779675855214013369,"hash":"05b239a4680f941dbdc07fe6700f9b2940a490206b5999b8332d018222d63d75"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/API.md":{"size":31111,"mtime_ns":1779675855208321077,"hash":"7b14e0b586d8c384d40d49f4d05cd02408cd2f16d60884010cd6bc3a0173839c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/README.md":{"size":504,"mtime_ns":1779675855213098494,"hash":"dcca32953067ee5135066d7ce44d207a389b35be428e32f0ca846dc1b4853193"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/MacOS.md":{"size":770,"mtime_ns":1779675855212888327,"hash":"b1767f71f924f4573beda43b64dbc1051330d52a7a4d3910f93df6ee184d0dfa"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/StatusPage.md":{"size":2012,"mtime_ns":1779675855213228828,"hash":"80cd1760cd43f9bd7394c2f66327328a3c0bafe402c0dad930c90a5eae393e8f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/NESAPI.md":{"size":31204,"mtime_ns":1779675855212970661,"hash":"056d54a88eaa129cef2f8935fa9478939c7c832434f8721b81c672652fefdb31"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md":{"size":11752,"mtime_ns":1779675855210157952,"hash":"8d3f6c8f3f1ec6947d0d726236b2c597a0e7ae0203728491616c50f98e825786"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/footer.html":{"size":1198,"mtime_ns":1779675855210556369,"hash":"534da5ed718a3e3f522a6255c10301a0cabb847a36e70afdd6e297281881722d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/header.html":{"size":4600,"mtime_ns":1779675855210716577,"hash":"028bf55f1ed89a158c3616f618a3403134d686aec349fd02923aed197ea8afb5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/.github/workflows/publish.yaml":{"size":931,"mtime_ns":1779675855209812619,"hash":"2acd4e53a54a1ec0a60029069859109352d6eb0bf40d5963ba023f8f063dbc39"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/agent notes/mac-silicon-change-log.md":{"size":2390,"mtime_ns":1779675855244975619,"hash":"714883e4475e5afc36a4ac30942d3630435c7b2dc9500ac762f11050f6487b95"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/agent notes/agent-session-notes-2026-05-09.md":{"size":2632,"mtime_ns":1779675855244897744,"hash":"36f433709e0b25dc9ba2412f7b7e7189c66ee448aa5087469e4d522aaaaed186"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/graphify/README.md":{"size":527,"mtime_ns":1779682688671975244,"hash":"bd5fde8a36e51607d97f8881f8b08ab67445297bedb1a18c4ad1afb68562dc9b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/README.md":{"size":465,"mtime_ns":1779675855228100578,"hash":"42a6b0691538eae6d16ad580f9cbce7db99f8d52152e4080f0b7f7f5e940b4cb"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/CMakeLists.txt":{"size":4450,"mtime_ns":1779675855225355494,"hash":"b838332d1b2bb4f77cd1747f3dbf9f143d69cb9b3c81ab7dd7d1ba5bd5b19b03"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/README.md":{"size":15179,"mtime_ns":1779675855225607327,"hash":"dafb4a5ec7b7ebf5ce40edaf42a9996c37a335f840fe885fce02abc468e170cc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/LICENSE.txt":{"size":1095,"mtime_ns":1779675855225457161,"hash":"1ca5627ddf34efb211849f8624940e37e587a58945b7208be5ce2e349eae23cc"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/.travis.yml":{"size":728,"mtime_ns":1779675855225079786,"hash":"7ab570654c8b3be999d34a38b67034241e4d3ce4d94afc3acf003554b68c1587"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/CMakeLists.txt":{"size":235,"mtime_ns":1779675855227855827,"hash":"e52afac25abe8938ce398c027576fffd12cf9f9514b91986cb21eb528cd9d267"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/CMakeLists.txt":{"size":7384,"mtime_ns":1779675855228297078,"hash":"c3ebfb632b379325f9a54cc8ea70ad46eeb24036fb50998dfe96fd38702716d7"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/README.md":{"size":7998,"mtime_ns":1779675855228626077,"hash":"474798f347d2b63c35e9696151760262034da61b1f9bf6674abe7e57f19b4e81"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/CMakeLists.txt":{"size":1273,"mtime_ns":1779675855230488036,"hash":"5b785906aef47bc6c2f192ed90a901eec013ed00e5207149584b062bbd81c56c"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/CMakeLists.txt":{"size":1193,"mtime_ns":1779675855231266994,"hash":"71e531eedc1d56fd1783bca82c53dad6ef9efc89556aac6cbdc851816cd3100b"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/README.md":{"size":215,"mtime_ns":1779675855231344661,"hash":"815e70d55965ef1ea87b8241e391476f9ea49f5f24bdd80ce6e8f9f4c3d72bc9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/CMakeLists.txt":{"size":3593,"mtime_ns":1779675855234601369,"hash":"46e917460bdc76ba7359cbb09d9afc71a3de4bf80672b1200e4d93fb482c0ed3"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/CMakeLists.txt":{"size":276,"mtime_ns":1779675855235887036,"hash":"daaae609c6091c3c37d0a9ef89b863845744b33ec1eb2c14e781e3ec082fd7ca"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/fuzz/CMakeLists.txt":{"size":1223,"mtime_ns":1779675855236551786,"hash":"524af5d42e5bb39831c2fa5a17d0ad2044ad5fd5f1095a8f2c923016c3c14691"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/traits.md":{"size":5479,"mtime_ns":1779675855230352452,"hash":"ad6d1bc9850e679006b040ce4b9a2f377efa9aaae3e5f8c8dc6242c0c4405f62"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/CMakeLists.txt":{"size":1505,"mtime_ns":1779675855229534911,"hash":"5c3539ea6f187caf48a4de6956fcba87cdf8005f9c8b99c48e47a832ac2db666"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/faqs.md":{"size":3749,"mtime_ns":1779675855229803703,"hash":"d8f920d0fcf92ae77421abcd733918e84911d958393a63d3074da2686d8acd1e"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/install.md":{"size":3017,"mtime_ns":1779675855229903453,"hash":"57c552acd05cba77f3454455f5b595c852c9805e833cadffc734b84e85bf61ce"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/ssl.md":{"size":2533,"mtime_ns":1779675855230194869,"hash":"457141ba09633190e1c829e1c37cd0b3f739267e8e347b5beef507fd6fa9720f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/signing.md":{"size":1202,"mtime_ns":1779675855230095952,"hash":"d72d189ba6e6ac692b7332e9912a256217180fa6e7f47d27e4ab6e69e68e8ddf"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Adding a new VBP to NES route.jpg":{"size":56776,"mtime_ns":1779675855208574702,"hash":"99dcda804db35dd9847205a94824ae706b69d6f6d6b0057ffbe0959c8bf36a20"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Source/Assets/Logos/Logo.png":{"size":7270,"mtime_ns":1779675855208920369,"hash":"32535a2b70368cfed0d7752ca2a2fdcda7c44209415440dcc3b3d89e2fd1c692"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/logo.drawio.svg":{"size":3569,"mtime_ns":1779675855212630619,"hash":"b97864aea14f933c223d8ba808c5d699f0b4270b940f0cb85a6e68c0857c0ba1"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/img/screenshot.png":{"size":222971,"mtime_ns":1779675855212131119,"hash":"f223ad61847f9f20df60a7417c9d680c0b55bd63409f422f648fd83679c9e04d"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/img/theme-variations.drawio.svg":{"size":14707,"mtime_ns":1779675855212280577,"hash":"10ff678df5a434c5b5489cc77f0300d4a6d5a4f030333fc52b28e147a0430be9"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/doc/pretty.png":{"size":105498,"mtime_ns":1779675855226799244,"hash":"1cc546e541b734a62ced5ef05375450f8dd460f2986910d724a7ad431411766f"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/doc/rude.png":{"size":6183,"mtime_ns":1779675855226968328,"hash":"909f8efd75f8c0f74663b21e9e740c0248b5f63289f6ea2388feedadf63d41d5"},"/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/doc/nice.png":{"size":40904,"mtime_ns":1779675855226418328,"hash":"cdfd8580f6e384da35831233398981e49b557386cc4c0ad51bc37be6438adeb4"}}
+{
+  "vcpkg.json": {
+    "size": 389,
+    "mtime_ns": 1779675855245135494,
+    "hash": "5b6c26e208a700d73baf05b571b0cfe4e069a51b9a7f01cd7a648aa1ad974961"
+  },
+  "vcpkg-configuration.json": {
+    "size": 55,
+    "mtime_ns": 1779675855245061411,
+    "hash": "b6f290a9ea9c86f5819ce516279218c9ef723ae8d274bb424076cf1ecb858e46"
+  },
+  "Tools/Setup.sh": {
+    "size": 2521,
+    "mtime_ns": 1779682688671302161,
+    "hash": "a8356fb46a7fab5b69226c43171df8654493d75c0919058b39a7aefbf26c7df9"
+  },
+  "Tools/Tag.sh": {
+    "size": 5118,
+    "mtime_ns": 1779684253546240161,
+    "hash": "6820aa62527c61f873084c4cad0f54a793076472c03c89f0b72e6121e8425f2b"
+  },
+  "Tools/DevRun.sh": {
+    "size": 395,
+    "mtime_ns": 1779675855238486327,
+    "hash": "c14ab6459607b241ffe17547a5df5706a2bd1a991548b2b4b1da92f527c4e753"
+  },
+  "Tools/Run.sh": {
+    "size": 934,
+    "mtime_ns": 1779675855238957536,
+    "hash": "4481b1abe1f7cd7e274574a7030a798c2df47faf41b3654cfe433e92491b13da"
+  },
+  "Tools/Build.sh": {
+    "size": 3778,
+    "mtime_ns": 1779675855238261577,
+    "hash": "f65d3671b98e5b6766236e21263d9a88391bac4225dcc4230f33e283fcd620fb"
+  },
+  "Tools/Package.sh": {
+    "size": 131,
+    "mtime_ns": 1779675855238734994,
+    "hash": "f8ad121c0f52af67da2778e3d53e1405b41e20629c70eb5f3d8dd0efb4bd684a"
+  },
+  "Tools/Clean.sh": {
+    "size": 331,
+    "mtime_ns": 1779675855238325369,
+    "hash": "d3ad12bebbf701c9278a93dec93bcf6d780f7979a4984eb9f5625dea03d07eb7"
+  },
+  "Tools/Test.sh": {
+    "size": 86,
+    "mtime_ns": 1779675855244774203,
+    "hash": "5c7dc044c81eb12e80abce8f6e87b067f10793c4f90aa29cc22c354e8b4df649"
+  },
+  "Tools/Deploy/Deploy.sh": {
+    "size": 477,
+    "mtime_ns": 1779675855238421994,
+    "hash": "273f8363ee9fc0040b45c4fa2613ade5bbd86c0a3075679e6cef90b542bff3cd"
+  },
+  "Tools/Docs/GenerateDrawioDiagrams.sh": {
+    "size": 375,
+    "mtime_ns": 1779675855238664452,
+    "hash": "a538eac1797370020e865133247ed7d4a73c0d8873be95221e115d819727773c"
+  },
+  "Tools/Docs/GenerateDoxygen.sh": {
+    "size": 154,
+    "mtime_ns": 1779675855238598036,
+    "hash": "5d5785f0d94828938456de18c2a55b619079ea43d7ca0c9b6b149dce376691e9"
+  },
+  "Tools/Package/Debian-Install.sh": {
+    "size": 65,
+    "mtime_ns": 1779675855238857744,
+    "hash": "381413fb7ad26305f1337d46d432ec20ede243ec915a3a4bbac7c670ff992987"
+  },
+  "Test/POSTTest.py": {
+    "size": 179,
+    "mtime_ns": 1779675855224308994,
+    "hash": "fbe4db05231abf1de6f873426e7932a57c995aaf715035bb7e4cf7f7b7e68f04"
+  },
+  "Test/Test.json": {
+    "size": 387,
+    "mtime_ns": 1779675855224383286,
+    "hash": "27457e1e2604a6b6ad535c981337a3aef9f97ea0cb1270896072ef72a9af9b3a"
+  },
+  "Test/Test.py": {
+    "size": 5067,
+    "mtime_ns": 1779675855224535953,
+    "hash": "8855baaac2badf78253eb703ee9c275dd033ea0c5b31af63f4fcea416bc94dc0"
+  },
+  "Test/TestLocal.py": {
+    "size": 14333,
+    "mtime_ns": 1779675855224654286,
+    "hash": "37f0ac9a81c433129b95be540589c89ce55e4b2a531cae5bd3516bf42e0bb0d0"
+  },
+  "Test/HappyHolidays.py": {
+    "size": 11826,
+    "mtime_ns": 1779675855224232869,
+    "hash": "763d44cecdaad0491a9fe539da940de54a9ef669513f6cc5cf2c50f1d9dd42c0"
+  },
+  "Overlays/BG-Logger/vcpkg.json": {
+    "size": 354,
+    "mtime_ns": 1779675855213686911,
+    "hash": "12e1a80479cad00607f2d37bb1269702e9cf044fff41a2299449735c93c9a016"
+  },
+  "Source/Interface/Configuration/CompilePlatformInfo/CompilePlatformInfo.cpp": {
+    "size": 232,
+    "mtime_ns": 1779675855222928036,
+    "hash": "7ee5c2e77cf4667d97132f870a52b15559e05e5c52f8f39159e60edca074de9f"
+  },
+  "Source/Interface/Configuration/CompilePlatformInfo/ERS_CompilePlatformInfo.h": {
+    "size": 779,
+    "mtime_ns": 1779675855223017619,
+    "hash": "b6dd3ceb5f53b8f99bd0a1e0af27da3aabb02f1a3db51b440072474f99badfec"
+  },
+  "Source/Interface/Configuration/CompileTimeStamp/ERS_CompileTimeStamp.h": {
+    "size": 312,
+    "mtime_ns": 1779675855223495203,
+    "hash": "ad022eb9e37a596538c81e01e9485de728195ca1601b196a2982b682cb44257c"
+  },
+  "Source/Interface/Configuration/CompileTimeStamp/CompileTimeStamp.cpp": {
+    "size": 229,
+    "mtime_ns": 1779675855223405536,
+    "hash": "35e1ddbbeb607979549af02b183553af4252fbf40d8520e40e426e0aa6c9be2f"
+  },
+  "Source/Interface/Configuration/VersioningSystem/Version.cpp": {
+    "size": 220,
+    "mtime_ns": 1779675855223984452,
+    "hash": "0d0b46f950307d6dc4d55500fe020cffdd32a83448c33b62b1c26736ac9e6f5e"
+  },
+  "Source/Core/Main.h": {
+    "size": 747,
+    "mtime_ns": 1779675855216173036,
+    "hash": "8581fc0aa59e5eeba44165c5f2e6e040f900329a84ebbddad9eeac3ffc08f421"
+  },
+  "Source/Core/Main.cpp": {
+    "size": 1955,
+    "mtime_ns": 1779675855216064827,
+    "hash": "f0ec99e7697ad14f17565ae103420bc9f01bef4cc9c5a5894967b9ab78ca0c1b"
+  },
+  "Source/Core/Database/DBManager.h": {
+    "size": 1034,
+    "mtime_ns": 1779675855215949661,
+    "hash": "a94438cf0bcbdbddfa66cc1e0806030ba532df3481763304ffe11c8d740349ce"
+  },
+  "Source/Core/Database/DBManager.cpp": {
+    "size": 99,
+    "mtime_ns": 1779675855215858244,
+    "hash": "3710c49c4aacee9091287d6be27d9c30fff397c596f8a61e6ddc7fe8a237195a"
+  },
+  "Source/Core/Cluster/BidirectionalRPC.h": {
+    "size": 5378,
+    "mtime_ns": 1779675855214346786,
+    "hash": "87a1df85b87a4b586336565ff8923bf7ea4ef501f411f78d3fe32b8ee871af51"
+  },
+  "Source/Core/Cluster/BidirectionalRPC.cpp": {
+    "size": 7783,
+    "mtime_ns": 1779675855214200786,
+    "hash": "25883d6e99497bfc479673a31c2b8034ce4e57ced31dbf941afe5a041d595dd0"
+  },
+  "Source/Core/Cluster/VSDA/VSDAConnectionManager.cpp": {
+    "size": 4825,
+    "mtime_ns": 1779675855214544452,
+    "hash": "5e96ffb1c842a4baf53a0d170c21d57bea8e303d9d8de7d76724c01a90b90d99"
+  },
+  "Source/Core/Cluster/VSDA/VSDAConnectionManager.h": {
+    "size": 893,
+    "mtime_ns": 1779675855214635744,
+    "hash": "f16041aa6e76b849f93c616b007134540f035641ba7b127033f59b4a3fbfd6b8"
+  },
+  "Source/Core/Util/Types.cpp": {
+    "size": 25,
+    "mtime_ns": 1779675855221744161,
+    "hash": "230732490eaa1b5e60c950536f95d377d22f2a18ef1243f80b6f6fe59cfb862b"
+  },
+  "Source/Core/Util/RPCHelpers.cpp": {
+    "size": 3537,
+    "mtime_ns": 1779675855221160994,
+    "hash": "46298fc7b2426ff57e1ae67aea0213f7e8d1abc94ddc62bd55686f80e567e0cf"
+  },
+  "Source/Core/Util/RestbedHelpers.h": {
+    "size": 2188,
+    "mtime_ns": 1779675855221556786,
+    "hash": "3946daae1399e464672f9e84706786472302234aa9241c6609ca4259daeb5c37"
+  },
+  "Source/Core/Util/Types.h": {
+    "size": 890,
+    "mtime_ns": 1779675855221841327,
+    "hash": "f7fff658309f0eb7528168681cb5535de265f9290fbbaf0dfacb53961e8464b7"
+  },
+  "Source/Core/Util/ParamCheck.h": {
+    "size": 907,
+    "mtime_ns": 1779675855221083036,
+    "hash": "3ae68104da8f6616339af38ac20fb0bca78336ec3aefa9e1ef8a08aa0d60e7bc"
+  },
+  "Source/Core/Util/ParamCheck.cpp": {
+    "size": 367,
+    "mtime_ns": 1779675855221000619,
+    "hash": "c26deb917d56cb9320bd083e02e7e7931101dc0a8d6a2ddfd212a1d67e3ef8f2"
+  },
+  "Source/Core/Util/RestbedHelpers.cpp": {
+    "size": 1972,
+    "mtime_ns": 1779675855221323702,
+    "hash": "dba12a4f6c1ab4229d5f5f2f34d0d23155a73b50cb329be232fa0b12c7db477c"
+  },
+  "Source/Core/Util/JWTUtil.hpp": {
+    "size": 1428,
+    "mtime_ns": 1779675855220919911,
+    "hash": "b4156f182a9b9d0472bd02a5a6f70ad0399d76d9f35b69d758e8cb4e157ee6b6"
+  },
+  "Source/Core/Util/RPCHelpers.h": {
+    "size": 1621,
+    "mtime_ns": 1779675855221236744,
+    "hash": "a06cace4a2ade90c2d762eedb71d4c1c0ba9ab04cfdc64f2457f621e0f4e8aed"
+  },
+  "Source/Core/Config/ConfigDefaults.cpp": {
+    "size": 34,
+    "mtime_ns": 1779675855215139827,
+    "hash": "23fabf5107c7fb3c4a214c0a74cf725e9099b5b39e75406c27bb4becbed883fd"
+  },
+  "Source/Core/Config/Config.h": {
+    "size": 3520,
+    "mtime_ns": 1779675855215060744,
+    "hash": "444313e9ae0492bf3bc493ea1bf48291e1f16bc129487c96d1d1e7e421bdbe7e"
+  },
+  "Source/Core/Config/ConfigurationManager.cpp": {
+    "size": 469,
+    "mtime_ns": 1779675855215560536,
+    "hash": "ab19c99e5206999634d3c16134b2c6b79ba6c8bc98559ce7c4981f392be83575"
+  },
+  "Source/Core/Config/ConfigFileParser.cpp": {
+    "size": 4457,
+    "mtime_ns": 1779675855215374619,
+    "hash": "62f5b85ea6060595eda81636395bcdc4bc1bc541b1be25fe4645928591729956"
+  },
+  "Source/Core/Config/ArgumentParser.cpp": {
+    "size": 2446,
+    "mtime_ns": 1779675855214789952,
+    "hash": "627534138c2067b3b05e34a059a6928f78d5f1eacd653d17fb898ec39b976c6b"
+  },
+  "Source/Core/Config/users.json": {
+    "size": 216,
+    "mtime_ns": 1779675855215732619,
+    "hash": "6ff55e8d862f2ce0c80f5b555248edc821933b70d51c505e389e2b0d44e9688c"
+  },
+  "Source/Core/Config/ConfigFileParser.h": {
+    "size": 1751,
+    "mtime_ns": 1779675855215466119,
+    "hash": "cc138907bf8d3da4e1f2bcd194c3ff0df6ba203a4d55643c61e9c2c6126f4a84"
+  },
+  "Source/Core/Config/ConfigDefaults.h": {
+    "size": 908,
+    "mtime_ns": 1779675855215225702,
+    "hash": "a272a2d0d6b1097d562114fc2d0d3f6ecfb9747aae76e283ca7d832b85612483"
+  },
+  "Source/Core/Config/Config.cpp": {
+    "size": 26,
+    "mtime_ns": 1779675855214969577,
+    "hash": "9d83c00e6fbcb96ae9da18176c128c7bf9412c078a3f1faa753cd13272678c20"
+  },
+  "Source/Core/Config/ConfigurationManager.h": {
+    "size": 1962,
+    "mtime_ns": 1779675855215645119,
+    "hash": "310ef82fd190e2cca8e00f86f64f35dc879231cec68100c2453e013ff8e0fcc9"
+  },
+  "Source/Core/Config/ArgumentParser.h": {
+    "size": 2357,
+    "mtime_ns": 1779675855214881661,
+    "hash": "bdd0564037790a568842b5f327de86e0e938193282a48ab4e95820c6227294c1"
+  },
+  "Source/Core/Server/Controller.h": {
+    "size": 3574,
+    "mtime_ns": 1779675855220471452,
+    "hash": "c67ec5bb6cc5d6e8f99d044788f20875c80eed178c07cdb573f6d2142f9248ee"
+  },
+  "Source/Core/Server/Endpoints.cpp": {
+    "size": 1108,
+    "mtime_ns": 1779675855220553077,
+    "hash": "24d0489950e3b1a0f30108b4f749e9037c3f2ad4018bdc19b8aa74e5290b2272"
+  },
+  "Source/Core/Server/Endpoints.h": {
+    "size": 2818,
+    "mtime_ns": 1779675855220644036,
+    "hash": "f691cc04d9dcdb14eae4f0d1e4f2c0d6f44a805f943fc254c3e3dc2e2a372b9b"
+  },
+  "Source/Core/Server/Controller.cpp": {
+    "size": 4511,
+    "mtime_ns": 1779675855220382869,
+    "hash": "ed9fed63973464955fce6c7ee63492afcee9086fb6e90c072dbe15b6b60afc17"
+  },
+  "Source/Core/Server/Server.h": {
+    "size": 1881,
+    "mtime_ns": 1779675855220804161,
+    "hash": "b84e8284d4d3db916b26a582004f4aa7ef47edf0e338cae6e88aa356460eecf8"
+  },
+  "Source/Core/Server/Server.cpp": {
+    "size": 26,
+    "mtime_ns": 1779675855220718369,
+    "hash": "7d9201cb8984c10641b7ab5e2d3daa6294aba20be8f40daa77ba3ecdcc497ac4"
+  },
+  "Source/Core/Resource/AppComponents.h": {
+    "size": 3489,
+    "mtime_ns": 1779675855217845161,
+    "hash": "f0cf683a2d30a1b77cfd85e60f4720f8176f83ad538b24b8f61c2ff648f12c44"
+  },
+  "Source/Core/Resource/NotFound.cpp": {
+    "size": 808,
+    "mtime_ns": 1779675855219522327,
+    "hash": "a15a3ff9680d3ddde56e0369ca54ace3ff94622df103c63acbbd1b1837404348"
+  },
+  "Source/Core/Resource/Version.h": {
+    "size": 1739,
+    "mtime_ns": 1779675855220193203,
+    "hash": "837cd4e62cdc9d1e60d57cb325e550bcb5be10426d7fbdbb7545109aa861d30d"
+  },
+  "Source/Core/Resource/Status.h": {
+    "size": 1717,
+    "mtime_ns": 1779675855220000119,
+    "hash": "9d5035d86156375c74c4979781ed9f499d882b713ede38c2885d4293815e6d35"
+  },
+  "Source/Core/Resource/DTO.h": {
+    "size": 817,
+    "mtime_ns": 1779675855218338077,
+    "hash": "a0592e9d4021f2733f06f308f3ce1193dc533a972a4865cfd1241578dc4bd7da"
+  },
+  "Source/Core/Resource/Version.cpp": {
+    "size": 1299,
+    "mtime_ns": 1779675855220105411,
+    "hash": "d4eff99d55b3e570ba145bca7b768b022b61f42933178713e3b18db4eefd415e"
+  },
+  "Source/Core/Resource/Status.cpp": {
+    "size": 1969,
+    "mtime_ns": 1779675855219891536,
+    "hash": "22fef8c1f7d6eb64dacadcb73d1f6a2f644a57fa31d726f851aaabca670b6fd4"
+  },
+  "Source/Core/Resource/Forbidden.cpp": {
+    "size": 800,
+    "mtime_ns": 1779675855218877953,
+    "hash": "6a5556d71cd273b32f915c44af62221649d4b470dc53a35b43c81a8e2cb4fb0c"
+  },
+  "Source/Core/Resource/Root.cpp": {
+    "size": 1039,
+    "mtime_ns": 1779675855219682661,
+    "hash": "a0ee1e3eb22467e302c993add1ba4595ba4740087cf29cf2c42e067552d968fb"
+  },
+  "Source/Core/Resource/Hello.cpp": {
+    "size": 981,
+    "mtime_ns": 1779675855219078286,
+    "hash": "83058c3e83ead871e54f05a9318ad2d4c977260398834327371a5c183c47a483"
+  },
+  "Source/Core/Resource/Controller.h": {
+    "size": 12648,
+    "mtime_ns": 1779675855218234203,
+    "hash": "dbbad37e70b02fbc4bdd42fa9a973458c536446c287fb12722fc238e4382f96e"
+  },
+  "Source/Core/Resource/Forbidden.h": {
+    "size": 1675,
+    "mtime_ns": 1779675855218972994,
+    "hash": "c0f514a4e594342b49881b7b31a392e871cb32363d3845258a23e7484ed8559b"
+  },
+  "Source/Core/Resource/NotFound.h": {
+    "size": 1685,
+    "mtime_ns": 1779675855219600244,
+    "hash": "d28ef7e450a12e876cba9ec25cb94e32fb44c7b1f258321f6339e8c9b4718ccc"
+  },
+  "Source/Core/Resource/Hello.h": {
+    "size": 1627,
+    "mtime_ns": 1779675855219168994,
+    "hash": "cd5587f05a09dea6c9a5fabde4be8b759858cb0f182304017f69ebeaeb107c79"
+  },
+  "Source/Core/Resource/Root.h": {
+    "size": 1760,
+    "mtime_ns": 1779675855219794494,
+    "hash": "f6a1fc8c046dedfdb003dfff20bb9d4b7c3dd7fa7b837a6fb5f04b15eed10375"
+  },
+  "Source/Core/Resource/NES/NES.cpp": {
+    "size": 2264,
+    "mtime_ns": 1779675855219314661,
+    "hash": "09dbb209d1c556fecc3f864dba6538182a77dd7086fffd9f64a022713f5a9354"
+  },
+  "Source/Core/Resource/NES/NES.h": {
+    "size": 2071,
+    "mtime_ns": 1779675855219413453,
+    "hash": "640fc559ec34aa872597742ce111f26dbea4a2206b81adbd8eaf9901bbc4e0f1"
+  },
+  "Source/Core/Resource/Auth/GetToken.h": {
+    "size": 1935,
+    "mtime_ns": 1779675855218064286,
+    "hash": "02cf70b5b77a735883314d6318df3ac07619289d8af915c687a0af849bb50c03"
+  },
+  "Source/Core/Resource/Auth/GetToken.cpp": {
+    "size": 2098,
+    "mtime_ns": 1779675855217976453,
+    "hash": "db0d373e2c1bb3e6787bd4699d292374b509d8ee7a6f56fe2059a75e49c2a801"
+  },
+  "Source/Core/Resource/Dataset/Dataset.h": {
+    "size": 1862,
+    "mtime_ns": 1779675855218565369,
+    "hash": "4366a0510115a214aabe394628937f581d4828262a1ae8d0feff1099104e5921"
+  },
+  "Source/Core/Resource/Dataset/Dataset.cpp": {
+    "size": 2934,
+    "mtime_ns": 1779675855218482828,
+    "hash": "c92187c84ab3107ffb86189d08b3f57247d146ae13af3a8bdbbd2cc4b2a986ad"
+  },
+  "Source/Core/Resource/EVM/EVM.cpp": {
+    "size": 2264,
+    "mtime_ns": 1779675855218682202,
+    "hash": "84a23c7555cd9f7398759542905d4236e16da892d0552e6a2162499cad6fa6a7"
+  },
+  "Source/Core/Resource/EVM/EVM.h": {
+    "size": 2071,
+    "mtime_ns": 1779675855218780494,
+    "hash": "7960b9709b39fdc8a70d94e93c32c35b5861d367384702e08c07b4025a42249e"
+  },
+  "Source/Core/RPC/ManagerTaskData.h": {
+    "size": 2580,
+    "mtime_ns": 1779675855216864119,
+    "hash": "8b9a16b88b2efb245fd7c9b17e2f1d907a3cc77d4d981762e6ae41c23e8feace"
+  },
+  "Source/Core/RPC/APIStatusCode.cpp": {
+    "size": 352,
+    "mtime_ns": 1779675855216308494,
+    "hash": "2e437a25f26f294effba02108ad6ea3ae51edc893d708d8aa99e4fbef0b9b43c"
+  },
+  "Source/Core/RPC/RouteAndHandler.cpp": {
+    "size": 354,
+    "mtime_ns": 1779675855217410994,
+    "hash": "9a8b67cdc5b462103265a96ce286583eeca604cc93ece1a36ae3fb33bd3f4ea9"
+  },
+  "Source/Core/RPC/APIStatusCode.h": {
+    "size": 788,
+    "mtime_ns": 1779675855216412286,
+    "hash": "711ecf783a82659c85f2404550f0c6753b2823ae606cb9f013f8f609df54d0b5"
+  },
+  "Source/Core/RPC/RouteAndHandler.h": {
+    "size": 1702,
+    "mtime_ns": 1779675855217502286,
+    "hash": "b12c1688b43153bc400acb1cc4bb43df94a4f01e60712fa333b133f81d431d3a"
+  },
+  "Source/Core/RPC/RPCManager.cpp": {
+    "size": 2906,
+    "mtime_ns": 1779675855217165452,
+    "hash": "15468b3e6483dfc0fe2e9f3aa222541d545fae2c9f2d66a3a37e1ccc625c1ec6"
+  },
+  "Source/Core/RPC/StaticRoutes.cpp": {
+    "size": 196,
+    "mtime_ns": 1779675855217604786,
+    "hash": "7bb5b96d005e5bcdf7812c20613610d23af6e4bc8a551aa8513dc218c81219cd"
+  },
+  "Source/Core/RPC/RPCManager.h": {
+    "size": 4446,
+    "mtime_ns": 1779675855217318161,
+    "hash": "116c485e4c39b4f8c1873944f4501f11047e4be331ba01282dc9c66ca32af1e2"
+  },
+  "Source/Core/RPC/ManagerTaskData.cpp": {
+    "size": 356,
+    "mtime_ns": 1779675855216779327,
+    "hash": "a7bf4c6088693c5974d50b080aa60409b7de3adb0c245790d618df76fc53a6db"
+  },
+  "Source/Core/RPC/StaticRoutes.h": {
+    "size": 1224,
+    "mtime_ns": 1779675855217699994,
+    "hash": "a3a2a8eb1ab88734f38513e7b6a66854eca1c56b931deea6cedf0228be015889"
+  },
+  "Source/Core/RPC/ClientManager.h": {
+    "size": 7296,
+    "mtime_ns": 1779675855216699744,
+    "hash": "2af3c43411fdde4c29d501f47ca3657799f3ad5b5ff3835acde08134bbd807b7"
+  },
+  "Source/Core/RPC/RPCHandlerHelper.h": {
+    "size": 11310,
+    "mtime_ns": 1779675855217067619,
+    "hash": "8e10b1ce54a32e29fec59ad1fa5408f8683448591d5967122032055a7ca9df0a"
+  },
+  "Source/Core/RPC/RPCHandlerHelper.cpp": {
+    "size": 10566,
+    "mtime_ns": 1779675855216961703,
+    "hash": "9df34fe36517617b7f7d2e6e7dade44742a39697b90cb7730f64886652954e8e"
+  },
+  "Source/Core/RPC/ClientManager.cpp": {
+    "size": 10038,
+    "mtime_ns": 1779675855216536786,
+    "hash": "b4bf9db65dacf12ba8108200501d8e0a3bc909aa4692027b78eb232e12a9bfbb"
+  },
+  "Docs/Doxygen/Tools/GenerateDocs.sh": {
+    "size": 199,
+    "mtime_ns": 1779675855212743578,
+    "hash": "ddfc29e41a3aecaad5c844c835ec8493468396cbb1bac88aee024f8a5c5e573e"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp": {
+    "size": 1983,
+    "mtime_ns": 1779675855212445786,
+    "hash": "33e2d46a8652993b54a36298d2026963523dbe8731b87164994990688a1f4d90"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp": {
+    "size": 548,
+    "mtime_ns": 1779675855212533952,
+    "hash": "0317dbbb214d5db2d7ee6ec4e62912d27099e6cbcf2315e00156c5fde8c2705e"
+  },
+  "ThirdParty/NonSuperBuild/backward/backward.cpp": {
+    "size": 1094,
+    "mtime_ns": 1779675855225712077,
+    "hash": "308f3377221670ec1e50651bbfebca2e42e2bbd4e65d246fc7dd89c08526adfe"
+  },
+  "ThirdParty/NonSuperBuild/backward/conanfile.py": {
+    "size": 1509,
+    "mtime_ns": 1779675855226175911,
+    "hash": "cd927af8ae1688bd9375b4875f341eab01fde4befdb7986b94a3a72b89797524"
+  },
+  "ThirdParty/NonSuperBuild/backward/builds.sh": {
+    "size": 1359,
+    "mtime_ns": 1779675855226086619,
+    "hash": "8bac4fc4993cf93c31c73ab72a75c88b75af1ee5eb3ef59d24dd2c7a9de3a954"
+  },
+  "ThirdParty/NonSuperBuild/backward/backward.hpp": {
+    "size": 141217,
+    "mtime_ns": 1779675855225975119,
+    "hash": "c22e8e3b8ce2a6214f2f2965b735aaef49c7eb38a5b6c40f766356435634eae8"
+  },
+  "ThirdParty/NonSuperBuild/backward/test/_test_main.cpp": {
+    "size": 6293,
+    "mtime_ns": 1779675855227164827,
+    "hash": "c5fc6b79be8960bb78835be7ec53b772ce4f9ab2989fee74c87156b242613974"
+  },
+  "ThirdParty/NonSuperBuild/backward/test/suicide.cpp": {
+    "size": 2504,
+    "mtime_ns": 1779675855227506786,
+    "hash": "5c1313c9737c02972404f36b6ecf9aaab12774da3df7e8c3aed6b10d0d255ae3"
+  },
+  "ThirdParty/NonSuperBuild/backward/test/select_signals.cpp": {
+    "size": 1782,
+    "mtime_ns": 1779675855227345327,
+    "hash": "bf3357f199e5c166b462916e59ca3c02dfa7d1353543a4cd53cc7891c3d2ddcc"
+  },
+  "ThirdParty/NonSuperBuild/backward/test/rectrace.cpp": {
+    "size": 2451,
+    "mtime_ns": 1779675855227252161,
+    "hash": "30008a97ce9c8c5ba48af12aa92e53e56f08064ec6f914e911d518f39fe64fc5"
+  },
+  "ThirdParty/NonSuperBuild/backward/test/test.cpp": {
+    "size": 1976,
+    "mtime_ns": 1779675855227572952,
+    "hash": "4797e4f7ce4a6e2c6dd19fd2c727fd6975df2fdb113ef0e3d9075552234edded"
+  },
+  "ThirdParty/NonSuperBuild/backward/test/stacktrace.cpp": {
+    "size": 1719,
+    "mtime_ns": 1779675855227442577,
+    "hash": "12fccb9198c38fc071e9589843adaaad110140f6e456106497e96f59d9a21b91"
+  },
+  "ThirdParty/NonSuperBuild/backward/test/test.hpp": {
+    "size": 7226,
+    "mtime_ns": 1779675855227714244,
+    "hash": "cdcdfc5af658409c86a95b6436624c499079ae6138ee1d5cb27fbc03ace2dfbb"
+  },
+  "ThirdParty/NonSuperBuild/backward/test_package/conanfile.py": {
+    "size": 367,
+    "mtime_ns": 1779675855227947744,
+    "hash": "4d169634061516c14c8b00780bcea9eddece97076319b90ba2d8e3c1a834d513"
+  },
+  "ThirdParty/NonSuperBuild/backward/test_package/main.cpp": {
+    "size": 894,
+    "mtime_ns": 1779675855228021661,
+    "hash": "d8e4a4cb4e670017d84df219e59e6b970f7b3d0f9da660f422da6e1fe60b61be"
+  },
+  "ThirdParty/jwt-cpp/CMakePresets.json": {
+    "size": 742,
+    "mtime_ns": 1779675855228390078,
+    "hash": "459ade5f7fed1ece202fb1d427c1f7e65aff7f354290b3abea0ad2f8ec9ccf5f"
+  },
+  "ThirdParty/jwt-cpp/cmake/CMakePresets.json": {
+    "size": 1169,
+    "mtime_ns": 1779675855228758661,
+    "hash": "44cc119447e5551447cb15508a4ebec18e37445e37ca7c59d455617b2eb38284"
+  },
+  "ThirdParty/jwt-cpp/example/private-claims.cpp": {
+    "size": 1655,
+    "mtime_ns": 1779675855230990494,
+    "hash": "18646995e20834ef25140eac1da5277fa9ba20ef300174712758ebc3e3bda453"
+  },
+  "ThirdParty/jwt-cpp/example/rsa-verify.cpp": {
+    "size": 1665,
+    "mtime_ns": 1779675855231151661,
+    "hash": "531d5e9c699c4704662e4d5baf3047c73537d964a84d2a38ab7ce1d257f01de9"
+  },
+  "ThirdParty/jwt-cpp/example/es256k.cpp": {
+    "size": 1503,
+    "mtime_ns": 1779675855230645328,
+    "hash": "6f75f2348bc6315fa3bd056192a6b9a528ac61aaca63db2cd4ee9a4c5664cce3"
+  },
+  "ThirdParty/jwt-cpp/example/jwks-verify.cpp": {
+    "size": 10835,
+    "mtime_ns": 1779675855230742286,
+    "hash": "332296c4a0cedd0e9b9aac967130aa6e392f00df45d8c90ca83c04dfbc69adee"
+  },
+  "ThirdParty/jwt-cpp/example/CMakePresets.json": {
+    "size": 694,
+    "mtime_ns": 1779675855230561869,
+    "hash": "6a83198817eb10231daab0593be9053b8a3a70e5bfd07bf9c3fe796dde75bb8f"
+  },
+  "ThirdParty/jwt-cpp/example/rsa-create.cpp": {
+    "size": 2198,
+    "mtime_ns": 1779675855231076203,
+    "hash": "8b80f40fb9cb80ee330c6937ba83a3f63269a640b1f893cc2d418e9031ef5f7b"
+  },
+  "ThirdParty/jwt-cpp/example/partial-claim-verifier.cpp": {
+    "size": 4019,
+    "mtime_ns": 1779675855230824244,
+    "hash": "7d4ccfcaae144dd59585bd4cf7a6bafe3a9ee48fd54dab412f5afa70ba4cc99d"
+  },
+  "ThirdParty/jwt-cpp/example/print-claims.cpp": {
+    "size": 383,
+    "mtime_ns": 1779675855230899369,
+    "hash": "17a3ef04d4a73578e389d22327d7b5b82d9aa9d977a5828c3f7bb7824038d8dc"
+  },
+  "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp": {
+    "size": 1653,
+    "mtime_ns": 1779675855231495328,
+    "hash": "c5dfdb98bfe5af11e8a8580127996cef1852868ce1cdbb13556248cdb5d31c1e"
+  },
+  "ThirdParty/jwt-cpp/example/traits/boost-json.cpp": {
+    "size": 1837,
+    "mtime_ns": 1779675855231423119,
+    "hash": "bc55b90ce9022ee03efd290777a8313541618b606aefb779fc58b5057f20fed7"
+  },
+  "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp": {
+    "size": 1646,
+    "mtime_ns": 1779675855231571327,
+    "hash": "0cf526847e6bd593ada687338f87b98e6f72f1023a5595c09cdede548b43ee91"
+  },
+  "ThirdParty/jwt-cpp/example/traits/nlohmann-json.cpp": {
+    "size": 1592,
+    "mtime_ns": 1779675855231647119,
+    "hash": "1277d868af1d835b273da64883e95ad4d470f5b2b1b1f26f88870694908b6d9b"
+  },
+  "ThirdParty/jwt-cpp/example/traits/open-source-parsers-jsoncpp.cpp": {
+    "size": 1627,
+    "mtime_ns": 1779675855231719411,
+    "hash": "96c41ab7a7e61d7794d646f459bb6bcca08cdf7e9e41d105a9076c1efce6c417"
+  },
+  "ThirdParty/jwt-cpp/include/picojson/picojson.h": {
+    "size": 34027,
+    "mtime_ns": 1779675855234034202,
+    "hash": "4ce550446587dc4946ab10148ccb660caecbadd9114ca76ccca026986cbf675c"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/jwt.h": {
+    "size": 158516,
+    "mtime_ns": 1779675855232245702,
+    "hash": "52d97401b0989116153adac0c5af25adb5da940b2b3475956f02045d88fd2bdb"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/base.h": {
+    "size": 13971,
+    "mtime_ns": 1779675855231961869,
+    "hash": "41f0b6bf43622c6ec135f89c4a18e5df8579033367fede40ceed55abce04259f"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/kazuho-picojson/traits.h": {
+    "size": 2356,
+    "mtime_ns": 1779675855233220494,
+    "hash": "3b4f4611e462fbb9e0a6efc3e44d32c3fba4004fde691a7b925f026ef96b4b82"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/kazuho-picojson/defaults.h": {
+    "size": 2773,
+    "mtime_ns": 1779675855233118328,
+    "hash": "1fa3efe04f98984f25d8aa01175bd26fe96b9a612d7d1a75cf4cd7da54b76816"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h": {
+    "size": 2661,
+    "mtime_ns": 1779675855233476286,
+    "hash": "b25729d1947736f1d1a84893e4cbc59e24da1097aefc6eeeef10632d68da5563"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/defaults.h": {
+    "size": 2810,
+    "mtime_ns": 1779675855233371036,
+    "hash": "c8a63fba434ec3205b996f922b77981c16ee7c3796aaf585f1d76af7f0bdfe50"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/danielaparker-jsoncons/traits.h": {
+    "size": 7695,
+    "mtime_ns": 1779675855232879286,
+    "hash": "35e8071d77c3b37597705675f9aff7b95dc799c046615437b4fc2f89f04f44bd"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/danielaparker-jsoncons/defaults.h": {
+    "size": 2979,
+    "mtime_ns": 1779675855232733036,
+    "hash": "ccece847f4e1b0d34694fc61bcc7e5526a81651cfe189c54d55884032e22381f"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/boost-json/traits.h": {
+    "size": 2663,
+    "mtime_ns": 1779675855232588286,
+    "hash": "8b036810c0df5ce2646e1f1e526db6570f089f49a73c42b72a85310ffaa73ab5"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/boost-json/defaults.h": {
+    "size": 2744,
+    "mtime_ns": 1779675855232475619,
+    "hash": "59b96cfe0baf2e23578f6d134d1f0337e0e23861b0a0792e5a8f58746f3d5f2c"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/open-source-parsers-jsoncpp/traits.h": {
+    "size": 4474,
+    "mtime_ns": 1779675855233814536,
+    "hash": "6577018eae67aadf129691d53cb096b30be4b1af46208f630e853175b76d9ec9"
+  },
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/open-source-parsers-jsoncpp/defaults.h": {
+    "size": 3080,
+    "mtime_ns": 1779675855233635119,
+    "hash": "3ef60018294981b9ce607c9503c6c88618f2880606edd65f5d1c2f1271fbb22f"
+  },
+  "ThirdParty/jwt-cpp/tests/TokenFormatTest.cpp": {
+    "size": 1441,
+    "mtime_ns": 1779675855235599536,
+    "hash": "78edb8577a3e1962e0a9a61d14b7b7a5e856225af03773029d615096ae72e303"
+  },
+  "ThirdParty/jwt-cpp/tests/JwksTest.cpp": {
+    "size": 16943,
+    "mtime_ns": 1779675855235160703,
+    "hash": "07d41053c76cc1c28e96b68ddab65f02ba5820923181b1a910e0c021510fcb0e"
+  },
+  "ThirdParty/jwt-cpp/tests/TestMain.cpp": {
+    "size": 129,
+    "mtime_ns": 1779675855235511577,
+    "hash": "eddcc0bcb82080eabac47f543e2473ca17f2c5af5d7b61267cb4da7f4478d72f"
+  },
+  "ThirdParty/jwt-cpp/tests/TokenTest.cpp": {
+    "size": 41856,
+    "mtime_ns": 1779675855235722328,
+    "hash": "d501403c925aecda65e37d28465db57949110c99d3cff9527886b1893a7b3d41"
+  },
+  "ThirdParty/jwt-cpp/tests/ClaimTest.cpp": {
+    "size": 5430,
+    "mtime_ns": 1779675855234907411,
+    "hash": "68e9142a7422114de2b9b49f42da61ddd90a0b9e49274a223bcfd8d3b2f0e17a"
+  },
+  "ThirdParty/jwt-cpp/tests/CMakePresets.json": {
+    "size": 4622,
+    "mtime_ns": 1779675855234754577,
+    "hash": "47450b90958d615d755566209bcc110542d9f45fcd8fbec411f209ac0c2bae40"
+  },
+  "ThirdParty/jwt-cpp/tests/BaseTest.cpp": {
+    "size": 6719,
+    "mtime_ns": 1779675855234498536,
+    "hash": "dc81b532ccb72bff3d080e42d94eb205b8363577cce55bed537ad7e9fb9168c5"
+  },
+  "ThirdParty/jwt-cpp/tests/HelperTest.cpp": {
+    "size": 13235,
+    "mtime_ns": 1779675855235036536,
+    "hash": "4c4f85caf35fc40e16dee318b7741a75b89f9e51f688295aff069422f13d2ea2"
+  },
+  "ThirdParty/jwt-cpp/tests/Keys.cpp": {
+    "size": 13399,
+    "mtime_ns": 1779675855235291702,
+    "hash": "563839bf0300bb91ef2f6ea8391422fd4e4599d0d81fa0fe76a4c9399cb71e32"
+  },
+  "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp": {
+    "size": 56855,
+    "mtime_ns": 1779675855235417911,
+    "hash": "2053c06b4cd49bcba6a90c97b981a290211d944ea9a4c91ce5ee859c70161605"
+  },
+  "ThirdParty/jwt-cpp/tests/cmake/wolfssl-is-used.cpp": {
+    "size": 343,
+    "mtime_ns": 1779675855236300702,
+    "hash": "15971c49ec43d416a30f6914cad4de6a19af2bae07f55823f569c277760a7d87"
+  },
+  "ThirdParty/jwt-cpp/tests/cmake/libressl-is-used.cpp": {
+    "size": 176,
+    "mtime_ns": 1779675855236167286,
+    "hash": "3ab2ef024bfe52e42f15542bf6f0e6cde274a23fa2725739a043d387d1c38acc"
+  },
+  "ThirdParty/jwt-cpp/tests/cmake/defaults-enabled.cpp": {
+    "size": 71,
+    "mtime_ns": 1779675855236081494,
+    "hash": "01e503163b3fc3f0d823f780cfc7ccfb046a7b8c0217df029154db08ec9c6c6b"
+  },
+  "ThirdParty/jwt-cpp/tests/cmake/base64-is-disabled.cpp": {
+    "size": 167,
+    "mtime_ns": 1779675855235988786,
+    "hash": "0cde7ef6b16c17383fd86c88529c09c98138f887d34b665279bc387b21bfb810"
+  },
+  "ThirdParty/jwt-cpp/tests/cmake/picojson-is-disabled.cpp": {
+    "size": 171,
+    "mtime_ns": 1779675855236233786,
+    "hash": "292d1ff3d98c1b0810f4cc5c6a7854845c6e4c0049f47bb2fd7bb29bbac20edb"
+  },
+  "ThirdParty/jwt-cpp/tests/traits/NlohmannTest.cpp": {
+    "size": 5937,
+    "mtime_ns": 1779675855237781703,
+    "hash": "3c83083e34feab0c623ac8d9eecb7312770d32e4572cbde8ece4808f7bdac6de"
+  },
+  "ThirdParty/jwt-cpp/tests/traits/BoostJsonTest.cpp": {
+    "size": 6004,
+    "mtime_ns": 1779675855237513369,
+    "hash": "ba9f506d60f259357d305ed3cea547f92827c7bda428deefff6c3f5aa86bacc8"
+  },
+  "ThirdParty/jwt-cpp/tests/traits/JsonconsTest.cpp": {
+    "size": 6280,
+    "mtime_ns": 1779675855237643952,
+    "hash": "812e17acb0ebc19879717c0f976185a5f9c3b0270e0470a1165c03b52a9296ea"
+  },
+  "ThirdParty/jwt-cpp/tests/traits/OspJsoncppTest.cpp": {
+    "size": 6472,
+    "mtime_ns": 1779675855237939744,
+    "hash": "ca690cc7887e94e865006f1ed9075e23bdc740aab5e512dabeeeb605b79f56e7"
+  },
+  "ThirdParty/jwt-cpp/tests/fuzz/BaseEncodeFuzz.cpp": {
+    "size": 249,
+    "mtime_ns": 1779675855236477619,
+    "hash": "d7844d0d2a3fac373de8265c36d0e4a1cd710c773a9a945e63d73b6f20528d58"
+  },
+  "ThirdParty/jwt-cpp/tests/fuzz/TokenDecodeFuzz.cpp": {
+    "size": 603,
+    "mtime_ns": 1779675855236610327,
+    "hash": "4d98a739ce48bf2e79ca3a2c4bb999e10b765751ed60e54c99b45f47c5cf00ca"
+  },
+  "ThirdParty/jwt-cpp/tests/fuzz/BaseDecodeFuzz.cpp": {
+    "size": 376,
+    "mtime_ns": 1779675855236407786,
+    "hash": "512dc5a428e05cfb60dd285a830681f0ef5d4717c9fafaa56f879823bbddf194"
+  },
+  "CODE_OF_CONDUCT.md": {
+    "size": 5229,
+    "mtime_ns": 1779675855208134244,
+    "hash": "ea38098f73f369e7a61b50ec0cc0c576a6224fb1dc3c9f5ae66067fcfacb145d"
+  },
+  "CMakeLists.txt": {
+    "size": 7449,
+    "mtime_ns": 1779675855207982744,
+    "hash": "c670d14a9690fb1ca5b88023c66d6bba1a637bbdb7e73050b7da7392ccf946e4"
+  },
+  "README.md": {
+    "size": 2790,
+    "mtime_ns": 1779675855213807953,
+    "hash": "7439d3b60a33a12620f101249cd20b1d5da1fcc199350e8ee24b3fbb14e69146"
+  },
+  "Tools/Source/Interface/Configuration/CompilePlatformInfo/CMakeFiles/CompilePlatformInfo.dir/link.txt": {
+    "size": 246,
+    "mtime_ns": 1779675855241642494,
+    "hash": "c9be20f0b51a9dbb8f0188986ceea5d024f64f8cf8ff4a1e80f777e9cafb75d0"
+  },
+  "Tools/Source/Interface/Configuration/CompileTimeStamp/CMakeFiles/CompileTimeStamp.dir/link.txt": {
+    "size": 234,
+    "mtime_ns": 1779675855243010077,
+    "hash": "1559708dd4d4f97b21a8fb686b3f396f903363ffedfc3136258fa270248d177e"
+  },
+  "Tools/Source/Interface/Configuration/VersioningSystem/CMakeFiles/VersioningSystem.dir/link.txt": {
+    "size": 225,
+    "mtime_ns": 1779675855244397827,
+    "hash": "ff5d37fe7da3366994ab9654f224d88ddde5f7820621b0357809324adf7ce802"
+  },
+  "Tools/Source/Core/CMakeFiles/BrainGenix-API.dir/link.txt": {
+    "size": 2991,
+    "mtime_ns": 1779675855240131119,
+    "hash": "0253cce76e73cf9a1cb909449f8dffc20ff880711d1679d2ad551fa8c10a8488"
+  },
+  "CI/.gitlab-ci.yml": {
+    "size": 1373,
+    "mtime_ns": 1779675855201895202,
+    "hash": "ba6fac1a0d717d658685683de0e9bebab431301c4887e84357b667e2cc777df7"
+  },
+  "CI/Test/Ubuntu2004/CI.yml": {
+    "size": 368,
+    "mtime_ns": 1779675855205986744,
+    "hash": "95465d570a808a10309fad200de0818538f0d43704c334d6aa15d20cd2d9e4b9"
+  },
+  "CI/Test/Debian11/CI.yml": {
+    "size": 362,
+    "mtime_ns": 1779675855205758452,
+    "hash": "9bee003a339e107b679221d4f57639eddc8dc48f8fd097d347304399c14ac5db"
+  },
+  "CI/Test/Ubuntu2204/CI.yml": {
+    "size": 368,
+    "mtime_ns": 1779675855206202869,
+    "hash": "d523842b510a8b79f12c4d020e4dfe869b8c77a9d2faa94cf0204bb41d111812"
+  },
+  "CI/Test/Debian12/CI.yml": {
+    "size": 363,
+    "mtime_ns": 1779675855205874702,
+    "hash": "e4ee2a6f6e35b49c35042831c066c90babcfc1f1a360e827d976f6b2a4c15e64"
+  },
+  "CI/Images/Ubuntu2004/CI.yml": {
+    "size": 2168,
+    "mtime_ns": 1779675855204797869,
+    "hash": "5483395abb5bfc79a58ce846b13511cdf26547af19494ad9225490552cd191a2"
+  },
+  "CI/Images/Debian11/CI.yml": {
+    "size": 2160,
+    "mtime_ns": 1779675855203403744,
+    "hash": "ef80829f6bc8db593de825d7f2db85518425abb802945a726330ac73d84ebe0f"
+  },
+  "CI/Images/Drawio/CI.yml": {
+    "size": 2127,
+    "mtime_ns": 1779675855204475203,
+    "hash": "8abafb7dd7422ac2b14324238916fc3c0dd2a6a73e506d71051ded14cc109628"
+  },
+  "CI/Images/Ubuntu2204/CI.yml": {
+    "size": 2168,
+    "mtime_ns": 1779675855204996161,
+    "hash": "cb5e6ed83255befcc0cb97118bb83a01d65e2e9a62f3b0a5f535fcb0552bc689"
+  },
+  "CI/Images/Doxygen/CI.yml": {
+    "size": 2131,
+    "mtime_ns": 1779675855204104369,
+    "hash": "ea804e4bf8c635d90a8986aa149ce6bb893c2a371ddb759cbb29a283a9469766"
+  },
+  "CI/Images/Debian12/CI.yml": {
+    "size": 2160,
+    "mtime_ns": 1779675855203846077,
+    "hash": "6065bc99e3f5f563a81fba9d72e4b85d953e8b6776657c95bca9bf67cd488570"
+  },
+  "CI/Deploy/Prod.yml": {
+    "size": 527,
+    "mtime_ns": 1779675855202798786,
+    "hash": "dc339f24a17143a8d3eb1dc11c8f8ce6f059587e254bd08eeffa049e9af85286"
+  },
+  "CI/Docs/Drawio/CI.yml": {
+    "size": 332,
+    "mtime_ns": 1779675855203230786,
+    "hash": "a36d4615c4d8552ca0f68f7f43c6f471f730ef4cdad78ae7cf4928512e25ccdf"
+  },
+  "CI/Docs/Doxygen/CI.yml": {
+    "size": 322,
+    "mtime_ns": 1779675855203111327,
+    "hash": "c2ed4c90c5697d5b594ecfdb1bf030540bf140ac3fd4119432fb9b74d098bcff"
+  },
+  "CI/Package/Ubuntu2004/CI.yml": {
+    "size": 432,
+    "mtime_ns": 1779675855205485744,
+    "hash": "2db1d7030826b000a2f5cee35ae0cfd3b9a876d0b63c93783187a2fbc59af03d"
+  },
+  "CI/Package/Debian11/CI.yml": {
+    "size": 426,
+    "mtime_ns": 1779675855205254827,
+    "hash": "e8a738e20f4bef7df0fe7c3525dc56ee07d577b7b2841f1489dd2294bcb5de8d"
+  },
+  "CI/Package/Ubuntu2204/CI.yml": {
+    "size": 432,
+    "mtime_ns": 1779675855205598036,
+    "hash": "1c449f4fa1ea96c512176abb5dd57ab8e9e64782a52d8707be5e41a3ed99aef8"
+  },
+  "CI/Package/Debian12/CI.yml": {
+    "size": 426,
+    "mtime_ns": 1779675855205371994,
+    "hash": "a2d1a1492f8b4794526f45361c45c0b830aacf73b9d341dc8119b20f9431efa8"
+  },
+  "Source/Interface/Configuration/CompilePlatformInfo/CMakeLists.txt": {
+    "size": 696,
+    "mtime_ns": 1779675855222838744,
+    "hash": "4c957c4f0cddb492359f6a11fbb023943809b373ab75cdcde0f6cbe420046d10"
+  },
+  "Source/Interface/Configuration/CompilePlatformInfo/README.md": {
+    "size": 329,
+    "mtime_ns": 1779675855223105119,
+    "hash": "cb70a881d6047d8d9e13e4cfc168a5ff96e2fba7b544489e961c0b49f7bca71f"
+  },
+  "Source/Interface/Configuration/CompileTimeStamp/CMakeLists.txt": {
+    "size": 678,
+    "mtime_ns": 1779675855223326494,
+    "hash": "6f718e2780f8039c8d389db307c4f269ee83376ce151d1a0416a539a6653db21"
+  },
+  "Source/Interface/Configuration/CompileTimeStamp/README.md": {
+    "size": 312,
+    "mtime_ns": 1779675855223582661,
+    "hash": "060bcc468fa2c84b66c6e0a7f3a04339a54f7f805fd988c505b352a8ff6b2535"
+  },
+  "Source/Interface/Configuration/VersioningSystem/CMakeLists.txt": {
+    "size": 660,
+    "mtime_ns": 1779675855223804286,
+    "hash": "76a7943d612d9730c01b5ef8e7a6f5856806911360ee426d18df384027e1462d"
+  },
+  "Source/Interface/Configuration/VersioningSystem/README.md": {
+    "size": 320,
+    "mtime_ns": 1779675855223899661,
+    "hash": "2767754bbc1a603b498307a5c5cb3ac3d5fe4115ed1a1079b7101c5ed8e94c7a"
+  },
+  "Source/Core/CMakeLists.txt": {
+    "size": 2623,
+    "mtime_ns": 1779675855214013369,
+    "hash": "05b239a4680f941dbdc07fe6700f9b2940a490206b5999b8332d018222d63d75"
+  },
+  "Docs/API.md": {
+    "size": 31111,
+    "mtime_ns": 1779675855208321077,
+    "hash": "7b14e0b586d8c384d40d49f4d05cd02408cd2f16d60884010cd6bc3a0173839c"
+  },
+  "Docs/README.md": {
+    "size": 504,
+    "mtime_ns": 1779675855213098494,
+    "hash": "dcca32953067ee5135066d7ce44d207a389b35be428e32f0ca846dc1b4853193"
+  },
+  "Docs/MacOS.md": {
+    "size": 770,
+    "mtime_ns": 1779675855212888327,
+    "hash": "b1767f71f924f4573beda43b64dbc1051330d52a7a4d3910f93df6ee184d0dfa"
+  },
+  "Docs/StatusPage.md": {
+    "size": 2012,
+    "mtime_ns": 1779675855213228828,
+    "hash": "80cd1760cd43f9bd7394c2f66327328a3c0bafe402c0dad930c90a5eae393e8f"
+  },
+  "Docs/NESAPI.md": {
+    "size": 31204,
+    "mtime_ns": 1779675855212970661,
+    "hash": "056d54a88eaa129cef2f8935fa9478939c7c832434f8721b81c672652fefdb31"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md": {
+    "size": 11752,
+    "mtime_ns": 1779675855210157952,
+    "hash": "8d3f6c8f3f1ec6947d0d726236b2c597a0e7ae0203728491616c50f98e825786"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/footer.html": {
+    "size": 1198,
+    "mtime_ns": 1779675855210556369,
+    "hash": "534da5ed718a3e3f522a6255c10301a0cabb847a36e70afdd6e297281881722d"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/header.html": {
+    "size": 4600,
+    "mtime_ns": 1779675855210716577,
+    "hash": "028bf55f1ed89a158c3616f618a3403134d686aec349fd02923aed197ea8afb5"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/.github/workflows/publish.yaml": {
+    "size": 931,
+    "mtime_ns": 1779675855209812619,
+    "hash": "2acd4e53a54a1ec0a60029069859109352d6eb0bf40d5963ba023f8f063dbc39"
+  },
+  "agent notes/mac-silicon-change-log.md": {
+    "size": 2390,
+    "mtime_ns": 1779675855244975619,
+    "hash": "714883e4475e5afc36a4ac30942d3630435c7b2dc9500ac762f11050f6487b95"
+  },
+  "agent notes/agent-session-notes-2026-05-09.md": {
+    "size": 2632,
+    "mtime_ns": 1779675855244897744,
+    "hash": "36f433709e0b25dc9ba2412f7b7e7189c66ee448aa5087469e4d522aaaaed186"
+  },
+  "graphify/README.md": {
+    "size": 527,
+    "mtime_ns": 1779682688671975244,
+    "hash": "bd5fde8a36e51607d97f8881f8b08ab67445297bedb1a18c4ad1afb68562dc9b"
+  },
+  "ThirdParty/README.md": {
+    "size": 465,
+    "mtime_ns": 1779675855228100578,
+    "hash": "42a6b0691538eae6d16ad580f9cbce7db99f8d52152e4080f0b7f7f5e940b4cb"
+  },
+  "ThirdParty/NonSuperBuild/backward/CMakeLists.txt": {
+    "size": 4450,
+    "mtime_ns": 1779675855225355494,
+    "hash": "b838332d1b2bb4f77cd1747f3dbf9f143d69cb9b3c81ab7dd7d1ba5bd5b19b03"
+  },
+  "ThirdParty/NonSuperBuild/backward/README.md": {
+    "size": 15179,
+    "mtime_ns": 1779675855225607327,
+    "hash": "dafb4a5ec7b7ebf5ce40edaf42a9996c37a335f840fe885fce02abc468e170cc"
+  },
+  "ThirdParty/NonSuperBuild/backward/LICENSE.txt": {
+    "size": 1095,
+    "mtime_ns": 1779675855225457161,
+    "hash": "1ca5627ddf34efb211849f8624940e37e587a58945b7208be5ce2e349eae23cc"
+  },
+  "ThirdParty/NonSuperBuild/backward/.travis.yml": {
+    "size": 728,
+    "mtime_ns": 1779675855225079786,
+    "hash": "7ab570654c8b3be999d34a38b67034241e4d3ce4d94afc3acf003554b68c1587"
+  },
+  "ThirdParty/NonSuperBuild/backward/test_package/CMakeLists.txt": {
+    "size": 235,
+    "mtime_ns": 1779675855227855827,
+    "hash": "e52afac25abe8938ce398c027576fffd12cf9f9514b91986cb21eb528cd9d267"
+  },
+  "ThirdParty/jwt-cpp/CMakeLists.txt": {
+    "size": 7384,
+    "mtime_ns": 1779675855228297078,
+    "hash": "c3ebfb632b379325f9a54cc8ea70ad46eeb24036fb50998dfe96fd38702716d7"
+  },
+  "ThirdParty/jwt-cpp/README.md": {
+    "size": 7998,
+    "mtime_ns": 1779675855228626077,
+    "hash": "474798f347d2b63c35e9696151760262034da61b1f9bf6674abe7e57f19b4e81"
+  },
+  "ThirdParty/jwt-cpp/example/CMakeLists.txt": {
+    "size": 1273,
+    "mtime_ns": 1779675855230488036,
+    "hash": "5b785906aef47bc6c2f192ed90a901eec013ed00e5207149584b062bbd81c56c"
+  },
+  "ThirdParty/jwt-cpp/example/traits/CMakeLists.txt": {
+    "size": 1193,
+    "mtime_ns": 1779675855231266994,
+    "hash": "71e531eedc1d56fd1783bca82c53dad6ef9efc89556aac6cbdc851816cd3100b"
+  },
+  "ThirdParty/jwt-cpp/example/traits/README.md": {
+    "size": 215,
+    "mtime_ns": 1779675855231344661,
+    "hash": "815e70d55965ef1ea87b8241e391476f9ea49f5f24bdd80ce6e8f9f4c3d72bc9"
+  },
+  "ThirdParty/jwt-cpp/tests/CMakeLists.txt": {
+    "size": 3593,
+    "mtime_ns": 1779675855234601369,
+    "hash": "46e917460bdc76ba7359cbb09d9afc71a3de4bf80672b1200e4d93fb482c0ed3"
+  },
+  "ThirdParty/jwt-cpp/tests/cmake/CMakeLists.txt": {
+    "size": 276,
+    "mtime_ns": 1779675855235887036,
+    "hash": "daaae609c6091c3c37d0a9ef89b863845744b33ec1eb2c14e781e3ec082fd7ca"
+  },
+  "ThirdParty/jwt-cpp/tests/fuzz/CMakeLists.txt": {
+    "size": 1223,
+    "mtime_ns": 1779675855236551786,
+    "hash": "524af5d42e5bb39831c2fa5a17d0ad2044ad5fd5f1095a8f2c923016c3c14691"
+  },
+  "ThirdParty/jwt-cpp/docs/traits.md": {
+    "size": 5479,
+    "mtime_ns": 1779675855230352452,
+    "hash": "ad6d1bc9850e679006b040ce4b9a2f377efa9aaae3e5f8c8dc6242c0c4405f62"
+  },
+  "ThirdParty/jwt-cpp/docs/CMakeLists.txt": {
+    "size": 1505,
+    "mtime_ns": 1779675855229534911,
+    "hash": "5c3539ea6f187caf48a4de6956fcba87cdf8005f9c8b99c48e47a832ac2db666"
+  },
+  "ThirdParty/jwt-cpp/docs/faqs.md": {
+    "size": 3749,
+    "mtime_ns": 1779675855229803703,
+    "hash": "d8f920d0fcf92ae77421abcd733918e84911d958393a63d3074da2686d8acd1e"
+  },
+  "ThirdParty/jwt-cpp/docs/install.md": {
+    "size": 3017,
+    "mtime_ns": 1779675855229903453,
+    "hash": "57c552acd05cba77f3454455f5b595c852c9805e833cadffc734b84e85bf61ce"
+  },
+  "ThirdParty/jwt-cpp/docs/ssl.md": {
+    "size": 2533,
+    "mtime_ns": 1779675855230194869,
+    "hash": "457141ba09633190e1c829e1c37cd0b3f739267e8e347b5beef507fd6fa9720f"
+  },
+  "ThirdParty/jwt-cpp/docs/signing.md": {
+    "size": 1202,
+    "mtime_ns": 1779675855230095952,
+    "hash": "d72d189ba6e6ac692b7332e9912a256217180fa6e7f47d27e4ab6e69e68e8ddf"
+  },
+  "Docs/Adding a new VBP to NES route.jpg": {
+    "size": 56776,
+    "mtime_ns": 1779675855208574702,
+    "hash": "99dcda804db35dd9847205a94824ae706b69d6f6d6b0057ffbe0959c8bf36a20"
+  },
+  "Docs/Doxygen/Source/Assets/Logos/Logo.png": {
+    "size": 7270,
+    "mtime_ns": 1779675855208920369,
+    "hash": "32535a2b70368cfed0d7752ca2a2fdcda7c44209415440dcc3b3d89e2fd1c692"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/logo.drawio.svg": {
+    "size": 3569,
+    "mtime_ns": 1779675855212630619,
+    "hash": "b97864aea14f933c223d8ba808c5d699f0b4270b940f0cb85a6e68c0857c0ba1"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/img/screenshot.png": {
+    "size": 222971,
+    "mtime_ns": 1779675855212131119,
+    "hash": "f223ad61847f9f20df60a7417c9d680c0b55bd63409f422f648fd83679c9e04d"
+  },
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/img/theme-variations.drawio.svg": {
+    "size": 14707,
+    "mtime_ns": 1779675855212280577,
+    "hash": "10ff678df5a434c5b5489cc77f0300d4a6d5a4f030333fc52b28e147a0430be9"
+  },
+  "ThirdParty/NonSuperBuild/backward/doc/pretty.png": {
+    "size": 105498,
+    "mtime_ns": 1779675855226799244,
+    "hash": "1cc546e541b734a62ced5ef05375450f8dd460f2986910d724a7ad431411766f"
+  },
+  "ThirdParty/NonSuperBuild/backward/doc/rude.png": {
+    "size": 6183,
+    "mtime_ns": 1779675855226968328,
+    "hash": "909f8efd75f8c0f74663b21e9e740c0248b5f63289f6ea2388feedadf63d41d5"
+  },
+  "ThirdParty/NonSuperBuild/backward/doc/nice.png": {
+    "size": 40904,
+    "mtime_ns": 1779675855226418328,
+    "hash": "cdfd8580f6e384da35831233398981e49b557386cc4c0ad51bc37be6438adeb4"
+  }
+}

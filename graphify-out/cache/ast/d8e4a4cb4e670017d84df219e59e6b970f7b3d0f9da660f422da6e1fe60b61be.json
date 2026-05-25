@@ -1,1 +1,213 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_nonsuperbuild_backward_test_package_main_cpp", "label": "main.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L1"}, {"id": "test_package_main_tracedexception", "label": "TracedException", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L8"}, {"id": "runtime_error", "label": "runtime_error", "file_type": "code", "source_file": "", "source_location": ""}, {"id": "test_package_main_tracedexception_tracedexception", "label": ".TracedException()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L10"}, {"id": "test_package_main_tracedexception_get_trace", "label": "._get_trace()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L13"}, {"id": "test_package_main_f", "label": "f()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L31"}, {"id": "test_package_main_main", "label": "main()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L40"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_nonsuperbuild_backward_test_package_main_cpp", "target": "backward", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_nonsuperbuild_backward_test_package_main_cpp", "target": "iostream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L2", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_nonsuperbuild_backward_test_package_main_cpp", "target": "sstream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L3", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_nonsuperbuild_backward_test_package_main_cpp", "target": "stdexcept", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L4", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_nonsuperbuild_backward_test_package_main_cpp", "target": "test_package_main_tracedexception", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L8", "weight": 1.0}, {"source": "test_package_main_tracedexception", "target": "runtime_error", "relation": "inherits", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L8", "weight": 1.0}, {"source": "test_package_main_tracedexception", "target": "test_package_main_tracedexception_tracedexception", "relation": "method", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L10", "weight": 1.0}, {"source": "test_package_main_tracedexception", "target": "test_package_main_tracedexception_get_trace", "relation": "method", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L13", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_nonsuperbuild_backward_test_package_main_cpp", "target": "test_package_main_f", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L31", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_nonsuperbuild_backward_test_package_main_cpp", "target": "test_package_main_main", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L40", "weight": 1.0}, {"source": "test_package_main_f", "target": "test_package_main_tracedexception_tracedexception", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L33", "weight": 1.0}, {"source": "test_package_main_main", "target": "test_package_main_f", "relation": "calls", "context": "call", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L42", "weight": 1.0}], "raw_calls": [{"caller_nid": "test_package_main_tracedexception_get_trace", "callee": "load_here", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L18"}, {"caller_nid": "test_package_main_tracedexception_get_trace", "callee": "load_stacktrace", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L19"}, {"caller_nid": "test_package_main_tracedexception_get_trace", "callee": "size", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L21"}, {"caller_nid": "test_package_main_tracedexception_get_trace", "callee": "resolve", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L22"}, {"caller_nid": "test_package_main_tracedexception_get_trace", "callee": "str", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L27"}, {"caller_nid": "test_package_main_main", "callee": "what", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp", "source_location": "L44"}]}
+{
+  "nodes": [
+    {
+      "id": "thirdparty_nonsuperbuild_backward_test_package_main_cpp",
+      "label": "main.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "test_package_main_tracedexception",
+      "label": "TracedException",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L8"
+    },
+    {
+      "id": "runtime_error",
+      "label": "runtime_error",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "test_package_main_tracedexception_tracedexception",
+      "label": ".TracedException()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L10"
+    },
+    {
+      "id": "test_package_main_tracedexception_get_trace",
+      "label": "._get_trace()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L13"
+    },
+    {
+      "id": "test_package_main_f",
+      "label": "f()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L31"
+    },
+    {
+      "id": "test_package_main_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L40"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_package_main_cpp",
+      "target": "backward",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_package_main_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_package_main_cpp",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_package_main_cpp",
+      "target": "stdexcept",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_package_main_cpp",
+      "target": "test_package_main_tracedexception",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_package_main_tracedexception",
+      "target": "runtime_error",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "test_package_main_tracedexception",
+      "target": "test_package_main_tracedexception_tracedexception",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "test_package_main_tracedexception",
+      "target": "test_package_main_tracedexception_get_trace",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_package_main_cpp",
+      "target": "test_package_main_f",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_nonsuperbuild_backward_test_package_main_cpp",
+      "target": "test_package_main_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "test_package_main_f",
+      "target": "test_package_main_tracedexception_tracedexception",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "test_package_main_main",
+      "target": "test_package_main_f",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L42",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "test_package_main_tracedexception_get_trace",
+      "callee": "load_here",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L18"
+    },
+    {
+      "caller_nid": "test_package_main_tracedexception_get_trace",
+      "callee": "load_stacktrace",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L19"
+    },
+    {
+      "caller_nid": "test_package_main_tracedexception_get_trace",
+      "callee": "size",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "test_package_main_tracedexception_get_trace",
+      "callee": "resolve",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L22"
+    },
+    {
+      "caller_nid": "test_package_main_tracedexception_get_trace",
+      "callee": "str",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L27"
+    },
+    {
+      "caller_nid": "test_package_main_main",
+      "callee": "what",
+      "is_member_call": true,
+      "source_file": "ThirdParty/NonSuperBuild/backward/test_package/main.cpp",
+      "source_location": "L44"
+    }
+  ]
+}

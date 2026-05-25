@@ -1,1 +1,189 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "label": "AppComponents.h", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L1"}, {"id": "resource_appcomponents_appcomponent", "label": "AppComponent()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L26"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "httpconnectionhandler", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L3", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "httprouter", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L4", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "connectionprovider", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L5", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "connectionmonitor", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L6", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "connectionmaxagechecker", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L7", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "objectmapper", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L8", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "component", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L9", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "requestinterceptor", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L10", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "connectionprovider", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L11", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "config", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L12", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "config", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L13", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "chrono", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L14", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "iostream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L17", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_core_resource_appcomponents_h", "target": "resource_appcomponents_appcomponent", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L26", "weight": 1.0}], "raw_calls": [{"caller_nid": "resource_appcomponents_appcomponent", "callee": "addMetricsChecker", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L39"}, {"caller_nid": "resource_appcomponents_appcomponent", "callee": "hours", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L40"}, {"caller_nid": "resource_appcomponents_appcomponent", "callee": "createShared", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L54"}, {"caller_nid": "resource_appcomponents_appcomponent", "callee": "createShared", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h", "source_location": "L64"}]}
+{
+  "nodes": [
+    {
+      "id": "source_core_resource_appcomponents_h",
+      "label": "AppComponents.h",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L1"
+    },
+    {
+      "id": "resource_appcomponents_appcomponent",
+      "label": "AppComponent()",
+      "file_type": "code",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L26"
+    }
+  ],
+  "edges": [
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "httpconnectionhandler",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "httprouter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "connectionprovider",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "connectionmonitor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "connectionmaxagechecker",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "objectmapper",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "component",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "requestinterceptor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "connectionprovider",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "config",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "config",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "chrono",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "source_core_resource_appcomponents_h",
+      "target": "resource_appcomponents_appcomponent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L26",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "resource_appcomponents_appcomponent",
+      "callee": "addMetricsChecker",
+      "is_member_call": true,
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L39"
+    },
+    {
+      "caller_nid": "resource_appcomponents_appcomponent",
+      "callee": "hours",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L40"
+    },
+    {
+      "caller_nid": "resource_appcomponents_appcomponent",
+      "callee": "createShared",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L54"
+    },
+    {
+      "caller_nid": "resource_appcomponents_appcomponent",
+      "callee": "createShared",
+      "is_member_call": false,
+      "source_file": "Source/Core/Resource/AppComponents.h",
+      "source_location": "L64"
+    }
+  ]
+}

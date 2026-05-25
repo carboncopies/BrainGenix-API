@@ -1,16 +1,16 @@
 # Graph Report - BrainGenix-API  (2026-05-24)
 
 ## Corpus Check
-- 193 files · ~117,335 words
+- 193 files · ~117,476 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1211 nodes · 1296 edges · 211 communities (181 shown, 30 thin omitted)
+- 1212 nodes · 1298 edges · 212 communities (182 shown, 30 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7692400b`
+- Built from commit: `6858475d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -122,6 +122,7 @@
 - [[_COMMUNITY_Community 177|Community 177]]
 - [[_COMMUNITY_Community 180|Community 180]]
 - [[_COMMUNITY_Community 181|Community 181]]
+- [[_COMMUNITY_Community 211|Community 211]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `SignalHandling` - 17 edges
@@ -143,7 +144,7 @@
 - `SubclassExample` --inherits--> `Example`  [EXTRACTED]
   Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp → Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp
 
-## Communities (211 total, 30 thin omitted)
+## Communities (212 total, 30 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
@@ -151,23 +152,23 @@ Nodes (41): API, As a subdirectory:, code:block1 (add_subdirectory(/path/to/back
 
 ### Community 2 - "Community 2"
 Cohesion: 0.06
-Nodes (6): as_integer(), as_number(), as_object(), get_type(), as_object(), object_type()
+Nodes (7): as_integer(), as_number(), as_object(), get_type(), is(), as_object(), object_type()
 
 ### Community 3 - "Community 3"
 Cohesion: 0.07
 Nodes (13): as_array(), as_string(), get_audience(), get_header_claim(), get_payload_claim(), has_header_claim(), has_payload_claim(), verify() (+5 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.08
-Nodes (25): backtrace_symbol, darwin_tag, default_delete, demangler, demangler_impl, die_call_file(), get_type(), get_type_by_signature() (+17 more)
+Cohesion: 0.09
+Nodes (22): backtrace_symbol, darwin_tag, default_delete, demangler, demangler_impl, hashtable, libbfd, libdw (+14 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.07
 Nodes (28): Browser support, Class Diagrams with Graphviz, code:bash (git submodule add https://github.com/jothepro/doxygen-awesom), code:block10 (HTML_EXTRA_STYLESHEET  = doxygen-awesome-theme/doxygen-aweso), code:css (/* custom.css */), code:block12 (# Doxyfile), code:block13 (# Doxyfile), code:block2 (# Doxyfile) (+20 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.11
-Nodes (19): is(), float, deny_parse_context(), parse_array_start(), parse_array_stop(), parse_object_start(), parse_object_stop(), picojson() (+11 more)
+Cohesion: 0.12
+Nodes (18): float, deny_parse_context(), parse_array_start(), parse_array_stop(), parse_object_start(), parse_object_stop(), picojson(), set_bool() (+10 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.10
@@ -186,16 +187,16 @@ Cohesion: 0.11
 Nodes (17): Base64 Options, code:cpp (#include <jwt-cpp/jwt.h>), code:sh (cmake .), code:cpp (auto verifier = jwt::verify()), code:cpp (auto token = jwt::create()), code:cpp (jwt::basic_claim<my_favorite_json_library_traits> claim(json), Conference Coverage, Configuration Options (+9 more)
 
 ### Community 11 - "Community 11"
-Cohesion: 0.25
-Nodes (11): deep_first_search_by_pc(), die_has_pc(), find_die(), find_fundie_by_pc(), get_referenced_die(), get_referenced_die_name(), get_spec_die(), inliners_search_cb (+3 more)
+Cohesion: 0.44
+Nodes (5): deep_first_search_by_pc(), die_has_pc(), find_die(), find_fundie_by_pc(), get_spec_die()
 
 ### Community 12 - "Community 12"
-Cohesion: 0.15
+Cohesion: 0.14
 Nodes (7): deleter, handle, _empty, _val, SourceFile, _file, split_source_prefixes()
 
 ### Community 13 - "Community 13"
 Cohesion: 0.12
-Nodes (9): TraceResolverLinuxBase, argv0_, exec_path_, TraceResolverLinuxImpl<trace_resolver_tag::backtrace_symbol>, _symbols, TraceResolverLinuxImpl<trace_resolver_tag::libdw>, _dwfl_cb, _dwfl_handle (+1 more)
+Nodes (8): TraceResolverLinuxBase, argv0_, exec_path_, TraceResolverLinuxImpl<trace_resolver_tag::backtrace_symbol>, _symbols, TraceResolverLinuxImpl<trace_resolver_tag::libdwarf>, _dwarf_loaded, _fobj_dwarf_map
 
 ### Community 14 - "Community 14"
 Cohesion: 0.18
@@ -242,7 +243,7 @@ Cohesion: 0.38
 Nodes (11): ConnectEVM(), ConnectionManagerEVM(), ConnectionManagerNES(), ConnectNES(), EVMQueryJSON(), NESQueryJSON(), RunVersionCheckEVM(), RunVersionCheckNES() (+3 more)
 
 ### Community 25 - "Community 25"
-Cohesion: 0.24
+Cohesion: 0.25
 Nodes (3): TraceResolverLinuxImpl<trace_resolver_tag::libbfd>, _bfd_loaded, _fobj_bfd_map
 
 ### Community 26 - "Community 26"
@@ -350,8 +351,8 @@ Cohesion: 0.29
 Nodes (6): type_context_t, has_name, has_type, is_const, is_typedef, text
 
 ### Community 55 - "Community 55"
-Cohesion: 0.38
-Nodes (3): generate_knowledge_graph(), usage(), Tag.sh script
+Cohesion: 0.36
+Nodes (4): generate_knowledge_graph(), normalize_graphify_paths(), usage(), Tag.sh script
 
 ### Community 57 - "Community 57"
 Cohesion: 0.33
@@ -402,8 +403,8 @@ Cohesion: 0.33
 Nodes (3): demangler_impl<system_tag::current_tag>, _demangle_buffer, _demangle_buffer_length
 
 ### Community 73 - "Community 73"
-Cohesion: 0.33
-Nodes (3): TraceResolverLinuxImpl<trace_resolver_tag::libdwarf>, _dwarf_loaded, _fobj_dwarf_map
+Cohesion: 0.24
+Nodes (9): die_call_file(), get_referenced_die(), get_referenced_die_name(), get_type(), get_type_by_signature(), inliners_search_cb, cu_die, set_function_parameters() (+1 more)
 
 ### Community 75 - "Community 75"
 Cohesion: 0.40
@@ -453,6 +454,10 @@ Nodes (3): Connections, Receptor - Create, Staple - Create
 Cohesion: 0.67
 Nodes (3): RecordingElectrode, RecordingElectrode - AddNoise   **NEW**, RecordingElectrode - Initialize **NEW**
 
+### Community 211 - "Community 211"
+Cohesion: 0.29
+Nodes (4): TraceResolverLinuxImpl<trace_resolver_tag::libdw>, _dwfl_cb, _dwfl_handle, _dwfl_handle_initialized
+
 ## Knowledge Gaps
 - **369 isolated node(s):** `name`, `version-string`, `license`, `dependencies`, `overlay-ports` (+364 more)
   These have ≤1 connection - possible missing edges or undocumented components.
@@ -462,11 +467,11 @@ Nodes (3): RecordingElectrode, RecordingElectrode - AddNoise   **NEW**, Recordin
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Printer` connect `Community 7` to `Community 56`, `Community 4`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **Why does `TraceResolverLinuxImpl<trace_resolver_tag::libdw>` connect `Community 211` to `Community 11`, `Community 4`, `Community 13`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Why does `SignalHandling` connect `Community 14` to `Community 43`, `Community 4`, `Community 12`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **Why does `TraceResolverLinuxImpl<trace_resolver_tag::libdw>` connect `Community 13` to `Community 11`, `Community 4`?**
-  _High betweenness centrality (0.004) - this node is a cross-community bridge._
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **What connects `name`, `version-string`, `license` to the rest of the system?**
   _371 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
@@ -474,4 +479,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.047619047619047616 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.05855855855855856 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05689900426742532 - nodes in this community are weakly interconnected._

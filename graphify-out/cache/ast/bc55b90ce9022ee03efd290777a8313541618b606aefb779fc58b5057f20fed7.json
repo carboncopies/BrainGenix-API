@@ -1,1 +1,299 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_traits_boost_json_cpp", "label": "boost-json.cpp", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L1"}, {"id": "traits_boost_json_main", "label": "main()", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L7"}], "edges": [{"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_traits_boost_json_cpp", "target": "traits", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L1", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_traits_boost_json_cpp", "target": "iostream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L4", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_traits_boost_json_cpp", "target": "sstream", "relation": "imports", "context": "import", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L5", "weight": 1.0}, {"source": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_thirdparty_jwt_cpp_example_traits_boost_json_cpp", "target": "traits_boost_json_main", "relation": "contains", "confidence": "EXTRACTED", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L7", "weight": 1.0}], "raw_calls": [{"caller_nid": "traits_boost_json_main", "callee": "parse", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L14"}, {"caller_nid": "traits_boost_json_main", "callee": "date::clock::now", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L20"}, {"caller_nid": "traits_boost_json_main", "callee": "sign", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_expires_at", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_not_before", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_issued_at", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_audience", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_issuer", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "set_type", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "create<traits>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L21"}, {"caller_nid": "traits_boost_json_main", "callee": "claim", "is_member_call": false, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L31"}, {"caller_nid": "traits_boost_json_main", "callee": "begin", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L32"}, {"caller_nid": "traits_boost_json_main", "callee": "end", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L32"}, {"caller_nid": "traits_boost_json_main", "callee": "decode<traits>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L35"}, {"caller_nid": "traits_boost_json_main", "callee": "get_header_json", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L37"}, {"caller_nid": "traits_boost_json_main", "callee": "key", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L38"}, {"caller_nid": "traits_boost_json_main", "callee": "value", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L38"}, {"caller_nid": "traits_boost_json_main", "callee": "as_array", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L41"}, {"caller_nid": "traits_boost_json_main", "callee": "as_object", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L41"}, {"caller_nid": "traits_boost_json_main", "callee": "as_object", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L41"}, {"caller_nid": "traits_boost_json_main", "callee": "to_json", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L41"}, {"caller_nid": "traits_boost_json_main", "callee": "get_payload_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L41"}, {"caller_nid": "traits_boost_json_main", "callee": "verify", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L44"}, {"caller_nid": "traits_boost_json_main", "callee": "with_claim", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L44"}, {"caller_nid": "traits_boost_json_main", "callee": "with_audience", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L44"}, {"caller_nid": "traits_boost_json_main", "callee": "with_issuer", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L44"}, {"caller_nid": "traits_boost_json_main", "callee": "allow_algorithm", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L44"}, {"caller_nid": "traits_boost_json_main", "callee": "verify<traits>", "is_member_call": true, "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp", "source_location": "L44"}]}
+{
+  "nodes": [
+    {
+      "id": "thirdparty_jwt_cpp_example_traits_boost_json_cpp",
+      "label": "boost-json.cpp",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L1"
+    },
+    {
+      "id": "traits_boost_json_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L7"
+    }
+  ],
+  "edges": [
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_boost_json_cpp",
+      "target": "traits",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_boost_json_cpp",
+      "target": "iostream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_boost_json_cpp",
+      "target": "sstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "thirdparty_jwt_cpp_example_traits_boost_json_cpp",
+      "target": "traits_boost_json_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L7",
+      "weight": 1.0
+    }
+  ],
+  "raw_calls": [
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "parse",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L14"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "date::clock::now",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L20"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "sign",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_expires_at",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_not_before",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_issued_at",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_audience",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "set_type",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "create<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L21"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "claim",
+      "is_member_call": false,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L31"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "begin",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "end",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L32"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "decode<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L35"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "get_header_json",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L37"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "key",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "value",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L38"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "as_array",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "as_object",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "as_object",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "to_json",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "get_payload_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L41"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "verify",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "with_claim",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "with_audience",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "with_issuer",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "allow_algorithm",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L44"
+    },
+    {
+      "caller_nid": "traits_boost_json_main",
+      "callee": "verify<traits>",
+      "is_member_call": true,
+      "source_file": "ThirdParty/jwt-cpp/example/traits/boost-json.cpp",
+      "source_location": "L44"
+    }
+  ]
+}

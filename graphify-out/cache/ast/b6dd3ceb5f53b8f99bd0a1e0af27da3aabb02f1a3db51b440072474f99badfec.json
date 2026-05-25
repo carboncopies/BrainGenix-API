@@ -1,1 +1,13 @@
-{"nodes": [{"id": "users_apple_fun_project_mac_silicon_may_modifications_braingenix_api_source_interface_configuration_compileplatforminfo_ers_compileplatforminfo_h", "label": "ERS_CompilePlatformInfo.h", "file_type": "code", "source_file": "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/ERS_CompilePlatformInfo.h", "source_location": "L1"}], "edges": [], "raw_calls": []}
+{
+  "nodes": [
+    {
+      "id": "source_interface_configuration_compileplatforminfo_ers_compileplatforminfo_h",
+      "label": "ERS_CompilePlatformInfo.h",
+      "file_type": "code",
+      "source_file": "Source/Interface/Configuration/CompilePlatformInfo/ERS_CompilePlatformInfo.h",
+      "source_location": "L1"
+    }
+  ],
+  "edges": [],
+  "raw_calls": []
+}

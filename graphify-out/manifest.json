@@ -1,1210 +1,1210 @@
 {
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/vcpkg.json": {
+  "vcpkg.json": {
     "mtime": 1779675855.2451355,
     "ast_hash": "8d9e7953ab4ab90d32489189a2ca2afb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/vcpkg-configuration.json": {
+  "vcpkg-configuration.json": {
     "mtime": 1779675855.2450614,
     "ast_hash": "4a1e5a63fea1809c506e6052ce3db553",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Setup.sh": {
+  "Tools/Setup.sh": {
     "mtime": 1779682688.671302,
     "ast_hash": "bdb5abaf77bd7ce5bdac1608e97a2548",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Tag.sh": {
-    "mtime": 1779682963.120982,
-    "ast_hash": "ce6fc80075ced302da1a1820c2ebd23d",
+  "Tools/Tag.sh": {
+    "mtime": 1779684253.54624,
+    "ast_hash": "842d34928dd8a9370dec038a85bba65a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/DevRun.sh": {
+  "Tools/DevRun.sh": {
     "mtime": 1779675855.2384863,
     "ast_hash": "c3ecbf51f7752b697bb66904cf326b51",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Run.sh": {
+  "Tools/Run.sh": {
     "mtime": 1779675855.2389576,
     "ast_hash": "ebab133c7d43f3b064c72c6a7f6a3fb2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Build.sh": {
+  "Tools/Build.sh": {
     "mtime": 1779675855.2382615,
     "ast_hash": "e63fe08f17bd23197ee65dc34943bfd3",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Package.sh": {
+  "Tools/Package.sh": {
     "mtime": 1779675855.238735,
     "ast_hash": "8e8c5fdb16aa6c00a7a569c60558154e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Clean.sh": {
+  "Tools/Clean.sh": {
     "mtime": 1779675855.2383254,
     "ast_hash": "fbc6ea9cae6754ac033f2254d81dfcce",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Test.sh": {
+  "Tools/Test.sh": {
     "mtime": 1779675855.244774,
     "ast_hash": "26511c957efa49ef9cd95a0830a54645",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Deploy/Deploy.sh": {
+  "Tools/Deploy/Deploy.sh": {
     "mtime": 1779675855.238422,
     "ast_hash": "8ef185f881e3540a9d668df481a9186e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/CompilePlatformInfo/CMakeFiles/CompilePlatformInfo.dir/compiler_depend.ts": {
+  "Tools/Source/Interface/Configuration/CompilePlatformInfo/CMakeFiles/CompilePlatformInfo.dir/compiler_depend.ts": {
     "mtime": 1779675855.2413962,
     "ast_hash": "6d9f07941ef823720f1494db1f24b7fc",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/CompileTimeStamp/CMakeFiles/CompileTimeStamp.dir/compiler_depend.ts": {
+  "Tools/Source/Interface/Configuration/CompileTimeStamp/CMakeFiles/CompileTimeStamp.dir/compiler_depend.ts": {
     "mtime": 1779675855.2427855,
     "ast_hash": "6c2e235e1654b7c6e54828c3f1b25f21",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/VersioningSystem/CMakeFiles/VersioningSystem.dir/compiler_depend.ts": {
+  "Tools/Source/Interface/Configuration/VersioningSystem/CMakeFiles/VersioningSystem.dir/compiler_depend.ts": {
     "mtime": 1779675855.2441201,
     "ast_hash": "fb48e9abe3ce203e2ba4acdc2c890906",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Core/CMakeFiles/BrainGenix-API.dir/compiler_depend.ts": {
+  "Tools/Source/Core/CMakeFiles/BrainGenix-API.dir/compiler_depend.ts": {
     "mtime": 1779675855.2398877,
     "ast_hash": "3f5b77e2de7667fcffd5d05859d8b19b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Docs/GenerateDrawioDiagrams.sh": {
+  "Tools/Docs/GenerateDrawioDiagrams.sh": {
     "mtime": 1779675855.2386644,
     "ast_hash": "02ab70a03567c343dde1b6d2a4f239f8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Docs/GenerateDoxygen.sh": {
+  "Tools/Docs/GenerateDoxygen.sh": {
     "mtime": 1779675855.238598,
     "ast_hash": "35e9de446ea699c5373883fa36379f38",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Package/Debian-Install.sh": {
+  "Tools/Package/Debian-Install.sh": {
     "mtime": 1779675855.2388577,
     "ast_hash": "21e1baca9974710863fb3a01c857b235",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/POSTTest.py": {
+  "Test/POSTTest.py": {
     "mtime": 1779675855.224309,
     "ast_hash": "a46b4f34a836b8e72811a68032d197d7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/Test.json": {
+  "Test/Test.json": {
     "mtime": 1779675855.2243834,
     "ast_hash": "9f9a9bd42a6251c4cc592333bb760510",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/Test.py": {
+  "Test/Test.py": {
     "mtime": 1779675855.224536,
     "ast_hash": "5a36723c79e146b2f938b11b4a76f1c8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/TestLocal.py": {
+  "Test/TestLocal.py": {
     "mtime": 1779675855.2246542,
     "ast_hash": "37f4d85c645075372a680fb4be1d2564",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Test/HappyHolidays.py": {
+  "Test/HappyHolidays.py": {
     "mtime": 1779675855.224233,
     "ast_hash": "3222aff64e9efdc556d44e8f1791aa24",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Overlays/BG-Logger/vcpkg.json": {
+  "Overlays/BG-Logger/vcpkg.json": {
     "mtime": 1779675855.213687,
     "ast_hash": "c7eac124a1d04aa9dd6f4b5be58ddb1f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/CompilePlatformInfo.cpp": {
+  "Source/Interface/Configuration/CompilePlatformInfo/CompilePlatformInfo.cpp": {
     "mtime": 1779675855.222928,
     "ast_hash": "48be752c7d406b8d189d4894b773b63a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/ERS_CompilePlatformInfo.h": {
+  "Source/Interface/Configuration/CompilePlatformInfo/ERS_CompilePlatformInfo.h": {
     "mtime": 1779675855.2230177,
     "ast_hash": "03ffc9600cf8c0b5e908deb51b687f46",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompileTimeStamp/ERS_CompileTimeStamp.h": {
+  "Source/Interface/Configuration/CompileTimeStamp/ERS_CompileTimeStamp.h": {
     "mtime": 1779675855.2234952,
     "ast_hash": "40ced07ed03d3451c5761458f1feb935",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompileTimeStamp/CompileTimeStamp.cpp": {
+  "Source/Interface/Configuration/CompileTimeStamp/CompileTimeStamp.cpp": {
     "mtime": 1779675855.2234056,
     "ast_hash": "a8f8f6ac4b45e691ab1fa9eb8ff01e8d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/VersioningSystem/Version.cpp": {
+  "Source/Interface/Configuration/VersioningSystem/Version.cpp": {
     "mtime": 1779675855.2239845,
     "ast_hash": "18c2a6047fcaaadc8f91c18bfcf215f5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Main.h": {
+  "Source/Core/Main.h": {
     "mtime": 1779675855.216173,
     "ast_hash": "7b028b5c0953e30397af7c7038c23aab",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Main.cpp": {
+  "Source/Core/Main.cpp": {
     "mtime": 1779675855.216065,
     "ast_hash": "9c46604ba9077901c128d434b89b1ea1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Database/DBManager.h": {
+  "Source/Core/Database/DBManager.h": {
     "mtime": 1779675855.2159498,
     "ast_hash": "40396ec362e91c16c10b331d4f28fbe2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Database/DBManager.cpp": {
+  "Source/Core/Database/DBManager.cpp": {
     "mtime": 1779675855.2158582,
     "ast_hash": "38b2ffbd77d2302127d7c890eecf46b5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Cluster/BidirectionalRPC.h": {
+  "Source/Core/Cluster/BidirectionalRPC.h": {
     "mtime": 1779675855.214347,
     "ast_hash": "3292b5845988dacd60dc773b34617100",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Cluster/BidirectionalRPC.cpp": {
+  "Source/Core/Cluster/BidirectionalRPC.cpp": {
     "mtime": 1779675855.2142007,
     "ast_hash": "744ee2885f7591c3c7a94b78088c8fce",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Cluster/VSDA/VSDAConnectionManager.cpp": {
+  "Source/Core/Cluster/VSDA/VSDAConnectionManager.cpp": {
     "mtime": 1779675855.2145445,
     "ast_hash": "5dcbdad6b9a41796d01a9a8fdb34b278",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Cluster/VSDA/VSDAConnectionManager.h": {
+  "Source/Core/Cluster/VSDA/VSDAConnectionManager.h": {
     "mtime": 1779675855.2146358,
     "ast_hash": "afdf8bbab8b35f98fb1f90d17ce4b7fc",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/Types.cpp": {
+  "Source/Core/Util/Types.cpp": {
     "mtime": 1779675855.221744,
     "ast_hash": "ba828bb6266a73cf2c1fd4f2082893bf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/RPCHelpers.cpp": {
+  "Source/Core/Util/RPCHelpers.cpp": {
     "mtime": 1779675855.221161,
     "ast_hash": "1abe90eb2399e94379c8d93b7143179e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/RestbedHelpers.h": {
+  "Source/Core/Util/RestbedHelpers.h": {
     "mtime": 1779675855.221557,
     "ast_hash": "aaf86869ea384ffc8b99c368c1230d16",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/Types.h": {
+  "Source/Core/Util/Types.h": {
     "mtime": 1779675855.2218413,
     "ast_hash": "4fcdfa14c1970b468a49b4bb995f6845",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/ParamCheck.h": {
+  "Source/Core/Util/ParamCheck.h": {
     "mtime": 1779675855.221083,
     "ast_hash": "96f63cac7c6acc999584a6183b92e807",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/ParamCheck.cpp": {
+  "Source/Core/Util/ParamCheck.cpp": {
     "mtime": 1779675855.2210007,
     "ast_hash": "e1e0cb0784accd8a0da73d0d6a33a672",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/RestbedHelpers.cpp": {
+  "Source/Core/Util/RestbedHelpers.cpp": {
     "mtime": 1779675855.2213237,
     "ast_hash": "0fe27c4b896998d440ce037a1dcd3d4f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/JWTUtil.hpp": {
+  "Source/Core/Util/JWTUtil.hpp": {
     "mtime": 1779675855.2209198,
     "ast_hash": "f707f6bae210aa84d0499757e71880c8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Util/RPCHelpers.h": {
+  "Source/Core/Util/RPCHelpers.h": {
     "mtime": 1779675855.2212367,
     "ast_hash": "b848a59082911b8c10486e8047671495",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigDefaults.cpp": {
+  "Source/Core/Config/ConfigDefaults.cpp": {
     "mtime": 1779675855.2151399,
     "ast_hash": "db89ea2253202ff6045eaa32cfc8b49d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/Config.h": {
+  "Source/Core/Config/Config.h": {
     "mtime": 1779675855.2150607,
     "ast_hash": "950ff3638707cfd74beb8e2a974f7039",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigurationManager.cpp": {
+  "Source/Core/Config/ConfigurationManager.cpp": {
     "mtime": 1779675855.2155604,
     "ast_hash": "84d20722c5fe65609eedafe2a7062d28",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigFileParser.cpp": {
+  "Source/Core/Config/ConfigFileParser.cpp": {
     "mtime": 1779675855.2153747,
     "ast_hash": "2fa3d63877d17036b5e6cbc99143fbfa",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ArgumentParser.cpp": {
+  "Source/Core/Config/ArgumentParser.cpp": {
     "mtime": 1779675855.2147899,
     "ast_hash": "26ea2efbecc8b6aeb005b4b401b5a964",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/users.json": {
+  "Source/Core/Config/users.json": {
     "mtime": 1779675855.2157326,
     "ast_hash": "e36ec40c560a4eaec87789a4685094e1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigFileParser.h": {
+  "Source/Core/Config/ConfigFileParser.h": {
     "mtime": 1779675855.215466,
     "ast_hash": "5a297396a9dfe0e87b8df8d98ed69a23",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigDefaults.h": {
+  "Source/Core/Config/ConfigDefaults.h": {
     "mtime": 1779675855.2152257,
     "ast_hash": "9d7f026654380fb5e740250c063c835b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/Config.cpp": {
+  "Source/Core/Config/Config.cpp": {
     "mtime": 1779675855.2149696,
     "ast_hash": "b64296cbab0567a30f2c4888a78d71e5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ConfigurationManager.h": {
+  "Source/Core/Config/ConfigurationManager.h": {
     "mtime": 1779675855.215645,
     "ast_hash": "527f5b8c48c0a79cd0adf3f6c0b4260d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Config/ArgumentParser.h": {
+  "Source/Core/Config/ArgumentParser.h": {
     "mtime": 1779675855.2148817,
     "ast_hash": "4cbdedde6eb37915e1584c36bb9aaf2f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Controller.h": {
+  "Source/Core/Server/Controller.h": {
     "mtime": 1779675855.2204714,
     "ast_hash": "bcda8e40053752278ae91feba8a2a974",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Endpoints.cpp": {
+  "Source/Core/Server/Endpoints.cpp": {
     "mtime": 1779675855.2205532,
     "ast_hash": "3d8e83e54bc4189797883863167b57f7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Endpoints.h": {
+  "Source/Core/Server/Endpoints.h": {
     "mtime": 1779675855.220644,
     "ast_hash": "4d519dde6ac8c1bb24e6abee8b5c303e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Controller.cpp": {
+  "Source/Core/Server/Controller.cpp": {
     "mtime": 1779675855.220383,
     "ast_hash": "51cdb7121f8abec5bd36f86dfbec5115",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Server.h": {
+  "Source/Core/Server/Server.h": {
     "mtime": 1779675855.2208042,
     "ast_hash": "603b0b5ebd24e90419833a1eecb202a8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Server/Server.cpp": {
+  "Source/Core/Server/Server.cpp": {
     "mtime": 1779675855.2207184,
     "ast_hash": "273ae5cd597bdca77828d136c278f371",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/AppComponents.h": {
+  "Source/Core/Resource/AppComponents.h": {
     "mtime": 1779675855.2178452,
     "ast_hash": "99166b47c0b0fff775d502937d5c9a86",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/NotFound.cpp": {
+  "Source/Core/Resource/NotFound.cpp": {
     "mtime": 1779675855.2195222,
     "ast_hash": "58fcad208863f09742795841234a43cc",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Version.h": {
+  "Source/Core/Resource/Version.h": {
     "mtime": 1779675855.2201931,
     "ast_hash": "4904e02d039174f98609849a33851234",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Status.h": {
+  "Source/Core/Resource/Status.h": {
     "mtime": 1779675855.22,
     "ast_hash": "55cdef1e74881150a6f18fd2f5db0b24",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/DTO.h": {
+  "Source/Core/Resource/DTO.h": {
     "mtime": 1779675855.218338,
     "ast_hash": "26835b9258335c9338958d2f116c91e8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Version.cpp": {
+  "Source/Core/Resource/Version.cpp": {
     "mtime": 1779675855.2201054,
     "ast_hash": "4f419aef285a1f43103fb89d941f3223",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Status.cpp": {
+  "Source/Core/Resource/Status.cpp": {
     "mtime": 1779675855.2198915,
     "ast_hash": "d243cc0a966f9d0411ba0d2ea08cfab7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Forbidden.cpp": {
+  "Source/Core/Resource/Forbidden.cpp": {
     "mtime": 1779675855.218878,
     "ast_hash": "6393c48555a9b77de71bf4e1fc2a8dfa",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Root.cpp": {
+  "Source/Core/Resource/Root.cpp": {
     "mtime": 1779675855.2196827,
     "ast_hash": "1f83539ea94bba3238e9cec518e54fd7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Hello.cpp": {
+  "Source/Core/Resource/Hello.cpp": {
     "mtime": 1779675855.2190783,
     "ast_hash": "6b9b785bfddc3f8a5bfeab0f5341924b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Controller.h": {
+  "Source/Core/Resource/Controller.h": {
     "mtime": 1779675855.2182343,
     "ast_hash": "edcfcca2931e7eb4c90a39d505e9db10",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Forbidden.h": {
+  "Source/Core/Resource/Forbidden.h": {
     "mtime": 1779675855.218973,
     "ast_hash": "f96616ab29d6552be03de8cc707c0f90",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/NotFound.h": {
+  "Source/Core/Resource/NotFound.h": {
     "mtime": 1779675855.2196002,
     "ast_hash": "c8e57b7e4815d0149768adcae4d1eb02",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Hello.h": {
+  "Source/Core/Resource/Hello.h": {
     "mtime": 1779675855.219169,
     "ast_hash": "e8efde2b911658966af3ab702053e9f2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Root.h": {
+  "Source/Core/Resource/Root.h": {
     "mtime": 1779675855.2197945,
     "ast_hash": "b3df9ce200c33fe036d656c942b4914e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/NES/NES.cpp": {
+  "Source/Core/Resource/NES/NES.cpp": {
     "mtime": 1779675855.2193146,
     "ast_hash": "e98b68d4c18a4553567e93ed465e65a4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/NES/NES.h": {
+  "Source/Core/Resource/NES/NES.h": {
     "mtime": 1779675855.2194135,
     "ast_hash": "96adba6a62d068199a7d9a425d0265f4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Auth/GetToken.h": {
+  "Source/Core/Resource/Auth/GetToken.h": {
     "mtime": 1779675855.2180643,
     "ast_hash": "2b8774ca717463379ce978846131cbca",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Auth/GetToken.cpp": {
+  "Source/Core/Resource/Auth/GetToken.cpp": {
     "mtime": 1779675855.2179766,
     "ast_hash": "43d668bf438924c73df42d4be1e1f5ff",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Dataset/Dataset.h": {
+  "Source/Core/Resource/Dataset/Dataset.h": {
     "mtime": 1779675855.2185655,
     "ast_hash": "922557784988a3ca82f94b22a858304d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/Dataset/Dataset.cpp": {
+  "Source/Core/Resource/Dataset/Dataset.cpp": {
     "mtime": 1779675855.2184827,
     "ast_hash": "3ac2625e79f475d75397d6d09efab5bb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/EVM/EVM.cpp": {
+  "Source/Core/Resource/EVM/EVM.cpp": {
     "mtime": 1779675855.2186823,
     "ast_hash": "1bd66ab0776bd4d78386b208b07d3302",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/Resource/EVM/EVM.h": {
+  "Source/Core/Resource/EVM/EVM.h": {
     "mtime": 1779675855.2187805,
     "ast_hash": "b588ca2a0a26b55c076c1a781a932da1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/ManagerTaskData.h": {
+  "Source/Core/RPC/ManagerTaskData.h": {
     "mtime": 1779675855.216864,
     "ast_hash": "b622c22d2240983090e408885e7783a0",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/APIStatusCode.cpp": {
+  "Source/Core/RPC/APIStatusCode.cpp": {
     "mtime": 1779675855.2163086,
     "ast_hash": "9092bbda7539eca5c32468e479d8da75",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RouteAndHandler.cpp": {
+  "Source/Core/RPC/RouteAndHandler.cpp": {
     "mtime": 1779675855.217411,
     "ast_hash": "8cf02ba3d203955edda14d15de6b822e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/APIStatusCode.h": {
+  "Source/Core/RPC/APIStatusCode.h": {
     "mtime": 1779675855.2164123,
     "ast_hash": "870ca0fdebe12f5f2879b1798d5740bf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RouteAndHandler.h": {
+  "Source/Core/RPC/RouteAndHandler.h": {
     "mtime": 1779675855.2175024,
     "ast_hash": "3c7015019e6c43fd7c8012600a174325",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RPCManager.cpp": {
+  "Source/Core/RPC/RPCManager.cpp": {
     "mtime": 1779675855.2171655,
     "ast_hash": "396f68d3f5063527d6892af48a85ae59",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/StaticRoutes.cpp": {
+  "Source/Core/RPC/StaticRoutes.cpp": {
     "mtime": 1779675855.2176049,
     "ast_hash": "90b5241e7d8c284319e2797fe0038923",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RPCManager.h": {
+  "Source/Core/RPC/RPCManager.h": {
     "mtime": 1779675855.217318,
     "ast_hash": "6a128ed3264c065d072b180300092911",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/ManagerTaskData.cpp": {
+  "Source/Core/RPC/ManagerTaskData.cpp": {
     "mtime": 1779675855.2167792,
     "ast_hash": "d7389602a00a5d0738205e1b87db4730",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/StaticRoutes.h": {
+  "Source/Core/RPC/StaticRoutes.h": {
     "mtime": 1779675855.2177,
     "ast_hash": "382c4281173d904ef2620858890aca31",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/ClientManager.h": {
+  "Source/Core/RPC/ClientManager.h": {
     "mtime": 1779675855.2166998,
     "ast_hash": "17ad06046661491e43c7b6f55114bddb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RPCHandlerHelper.h": {
+  "Source/Core/RPC/RPCHandlerHelper.h": {
     "mtime": 1779675855.2170677,
     "ast_hash": "8e37c8de9af43e916b654757dceb2a27",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/RPCHandlerHelper.cpp": {
+  "Source/Core/RPC/RPCHandlerHelper.cpp": {
     "mtime": 1779675855.2169616,
     "ast_hash": "100af2025eb1a72705fb56c55e2ce12f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/RPC/ClientManager.cpp": {
+  "Source/Core/RPC/ClientManager.cpp": {
     "mtime": 1779675855.2165368,
     "ast_hash": "8ca531f56374072927d8686ad80ab523",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Data/prerm": {
+  "Source/Data/prerm": {
     "mtime": 1779675855.2224834,
     "ast_hash": "2c831649c80e8668eddb3729d21700db",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Data/postinst": {
+  "Source/Data/postinst": {
     "mtime": 1779675855.2222612,
     "ast_hash": "a9732a2c42ff180129ef8452690dcf8b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Data/postrm": {
+  "Source/Data/postrm": {
     "mtime": 1779675855.2223818,
     "ast_hash": "5e092ac9f832151eb3f5fa8e58fb08a5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Tools/GenerateDocs.sh": {
+  "Docs/Doxygen/Tools/GenerateDocs.sh": {
     "mtime": 1779675855.2127435,
     "ast_hash": "325c07f963b30573228e48346cb6cf08",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js": {
     "mtime": 1779675855.2109575,
     "ast_hash": "64af7ba7a0c1e71628aec9dc7d59dac4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/example.hpp": {
     "mtime": 1779675855.2124457,
     "ast_hash": "30d9925ec4c6a14bf9a22c0162bcb015",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/include/MyLibrary/subclass-example.hpp": {
     "mtime": 1779675855.212534,
     "ast_hash": "b6cfa034eb41369953b3b6a8da8cd969",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/backward.cpp": {
+  "ThirdParty/NonSuperBuild/backward/backward.cpp": {
     "mtime": 1779675855.225712,
     "ast_hash": "2a9d34ae21922d905e54e3f0a9f128eb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/conanfile.py": {
+  "ThirdParty/NonSuperBuild/backward/conanfile.py": {
     "mtime": 1779675855.226176,
     "ast_hash": "f6209a3b943d046d29e27887b3d35b1a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/builds.sh": {
+  "ThirdParty/NonSuperBuild/backward/builds.sh": {
     "mtime": 1779675855.2260866,
     "ast_hash": "e9c51959474766c873b186eb0ae21308",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/backward.hpp": {
+  "ThirdParty/NonSuperBuild/backward/backward.hpp": {
     "mtime": 1779675855.225975,
     "ast_hash": "db04e34cf537b38a4924db5cbc8def18",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/_test_main.cpp": {
+  "ThirdParty/NonSuperBuild/backward/test/_test_main.cpp": {
     "mtime": 1779675855.2271647,
     "ast_hash": "c3869e310a01d7b98ed8c4f69fc66adb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/suicide.cpp": {
+  "ThirdParty/NonSuperBuild/backward/test/suicide.cpp": {
     "mtime": 1779675855.2275069,
     "ast_hash": "056ee07dce56adc804c66c707a34d2aa",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/select_signals.cpp": {
+  "ThirdParty/NonSuperBuild/backward/test/select_signals.cpp": {
     "mtime": 1779675855.2273452,
     "ast_hash": "a61eeb32a815a7e6497db9be0af58083",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/rectrace.cpp": {
+  "ThirdParty/NonSuperBuild/backward/test/rectrace.cpp": {
     "mtime": 1779675855.2272522,
     "ast_hash": "e633bbfd1c29d4c36d2b4e03b77d6c1a",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/test.cpp": {
+  "ThirdParty/NonSuperBuild/backward/test/test.cpp": {
     "mtime": 1779675855.227573,
     "ast_hash": "675861c50dd493bf19c4b6de351d72a5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/stacktrace.cpp": {
+  "ThirdParty/NonSuperBuild/backward/test/stacktrace.cpp": {
     "mtime": 1779675855.2274425,
     "ast_hash": "dbdcaafefaa43b5f745e19a121afcb41",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test/test.hpp": {
+  "ThirdParty/NonSuperBuild/backward/test/test.hpp": {
     "mtime": 1779675855.2277143,
     "ast_hash": "dce7a991d3fd1307e15aec568418aeb7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/conanfile.py": {
+  "ThirdParty/NonSuperBuild/backward/test_package/conanfile.py": {
     "mtime": 1779675855.2279477,
     "ast_hash": "e9007c52c50ca2fcab239b170dda3623",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/main.cpp": {
+  "ThirdParty/NonSuperBuild/backward/test_package/main.cpp": {
     "mtime": 1779675855.2280216,
     "ast_hash": "fdd41da768f35499a7129e896d9542cb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/CMakePresets.json": {
+  "ThirdParty/jwt-cpp/CMakePresets.json": {
     "mtime": 1779675855.22839,
     "ast_hash": "f13dc084101fb528faf884b63bf47cdb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/cmake/CMakePresets.json": {
+  "ThirdParty/jwt-cpp/cmake/CMakePresets.json": {
     "mtime": 1779675855.2287586,
     "ast_hash": "65818f2e45312f9ae668f0c46556be72",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/private-claims.cpp": {
+  "ThirdParty/jwt-cpp/example/private-claims.cpp": {
     "mtime": 1779675855.2309904,
     "ast_hash": "b197becfe38d0c9713bf4446b1d2c0e8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/rsa-verify.cpp": {
+  "ThirdParty/jwt-cpp/example/rsa-verify.cpp": {
     "mtime": 1779675855.2311516,
     "ast_hash": "4ffe4d4a368c8aa19752fe5e677a177e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/es256k.cpp": {
+  "ThirdParty/jwt-cpp/example/es256k.cpp": {
     "mtime": 1779675855.2306454,
     "ast_hash": "975cd3ab0339660d0a14b7308e2ff072",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/jwks-verify.cpp": {
+  "ThirdParty/jwt-cpp/example/jwks-verify.cpp": {
     "mtime": 1779675855.2307422,
     "ast_hash": "92e6bdb5c87f71aeba0bc7ee279ac5bb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/CMakePresets.json": {
+  "ThirdParty/jwt-cpp/example/CMakePresets.json": {
     "mtime": 1779675855.230562,
     "ast_hash": "214baa48dfcd0cc93682281f3e9cc93d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/rsa-create.cpp": {
+  "ThirdParty/jwt-cpp/example/rsa-create.cpp": {
     "mtime": 1779675855.2310762,
     "ast_hash": "1e5b285bd4cd1dcffea726eed517c9b6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/partial-claim-verifier.cpp": {
+  "ThirdParty/jwt-cpp/example/partial-claim-verifier.cpp": {
     "mtime": 1779675855.2308242,
     "ast_hash": "0dcb79948f8c69ded68031fb09571969",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/print-claims.cpp": {
+  "ThirdParty/jwt-cpp/example/print-claims.cpp": {
     "mtime": 1779675855.2308993,
     "ast_hash": "ce309776a03b2c8e3a4ab1b0dcbc79fb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp": {
+  "ThirdParty/jwt-cpp/example/traits/danielaparker-jsoncons.cpp": {
     "mtime": 1779675855.2314954,
     "ast_hash": "ecabd821e93081fbc98408e0434a464b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/boost-json.cpp": {
+  "ThirdParty/jwt-cpp/example/traits/boost-json.cpp": {
     "mtime": 1779675855.2314231,
     "ast_hash": "2522eac2222dbde3e918c50f03a96384",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp": {
+  "ThirdParty/jwt-cpp/example/traits/kazuho-picojson.cpp": {
     "mtime": 1779675855.2315714,
     "ast_hash": "df817392f64d79a84a46a3babb54b578",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/nlohmann-json.cpp": {
+  "ThirdParty/jwt-cpp/example/traits/nlohmann-json.cpp": {
     "mtime": 1779675855.231647,
     "ast_hash": "c62a04f677b835a6678a48614c8314ca",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/open-source-parsers-jsoncpp.cpp": {
+  "ThirdParty/jwt-cpp/example/traits/open-source-parsers-jsoncpp.cpp": {
     "mtime": 1779675855.2317195,
     "ast_hash": "8b3f1573f5e391f919de22048552af0b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/picojson/picojson.h": {
+  "ThirdParty/jwt-cpp/include/picojson/picojson.h": {
     "mtime": 1779675855.2340343,
     "ast_hash": "2a136cfb163e9a9d5be1fdf9451e4f90",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/jwt.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/jwt.h": {
     "mtime": 1779675855.2322457,
     "ast_hash": "e8e9c5bd4c0e350a4f194925ae72dfa2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/base.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/base.h": {
     "mtime": 1779675855.231962,
     "ast_hash": "676c2c4e1738afe111702e80dbb79dfe",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/kazuho-picojson/traits.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/kazuho-picojson/traits.h": {
     "mtime": 1779675855.2332206,
     "ast_hash": "a633dfbe35a0539ddaa2c05db2de897b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/kazuho-picojson/defaults.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/kazuho-picojson/defaults.h": {
     "mtime": 1779675855.2331183,
     "ast_hash": "ff989e58360726d440fba335ec14dd7f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/traits.h": {
     "mtime": 1779675855.2334764,
     "ast_hash": "e38c78eb8dfb36eb0c4bbe80f1e21daf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/defaults.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/nlohmann-json/defaults.h": {
     "mtime": 1779675855.233371,
     "ast_hash": "eb1434d0fc30ce93f0fbc8244e272ecd",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/danielaparker-jsoncons/traits.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/danielaparker-jsoncons/traits.h": {
     "mtime": 1779675855.2328794,
     "ast_hash": "52f6a3cf724645efa40d5c34e314d556",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/danielaparker-jsoncons/defaults.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/danielaparker-jsoncons/defaults.h": {
     "mtime": 1779675855.232733,
     "ast_hash": "e21078491e9f0b00fc3cd67cf25a71b6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/boost-json/traits.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/boost-json/traits.h": {
     "mtime": 1779675855.2325883,
     "ast_hash": "c32af1c53e6271df5f567472e6031d2b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/boost-json/defaults.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/boost-json/defaults.h": {
     "mtime": 1779675855.2324755,
     "ast_hash": "86f772c857cfe2d9b23c4b4b831035f5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/open-source-parsers-jsoncpp/traits.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/open-source-parsers-jsoncpp/traits.h": {
     "mtime": 1779675855.2338145,
     "ast_hash": "dbff1cc93a293bbcc9b26fd0b5e454a4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/include/jwt-cpp/traits/open-source-parsers-jsoncpp/defaults.h": {
+  "ThirdParty/jwt-cpp/include/jwt-cpp/traits/open-source-parsers-jsoncpp/defaults.h": {
     "mtime": 1779675855.2336352,
     "ast_hash": "0cfd05f3f4383b940a824b7ab6847aca",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/TokenFormatTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/TokenFormatTest.cpp": {
     "mtime": 1779675855.2355995,
     "ast_hash": "9679c5b1449dc0f9fc81951ea7399129",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/JwksTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/JwksTest.cpp": {
     "mtime": 1779675855.2351606,
     "ast_hash": "5b670c691b71c46275aa7221c1de6c5b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/TestMain.cpp": {
+  "ThirdParty/jwt-cpp/tests/TestMain.cpp": {
     "mtime": 1779675855.2355115,
     "ast_hash": "dd06f2f0748e2278bc3e5ad7abb3c750",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/TokenTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/TokenTest.cpp": {
     "mtime": 1779675855.2357223,
     "ast_hash": "bafa2d8a17b34952f771063f72252bca",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/ClaimTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/ClaimTest.cpp": {
     "mtime": 1779675855.2349074,
     "ast_hash": "43c230ddd2f345e2aaaf7236e0c8c3cb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/CMakePresets.json": {
+  "ThirdParty/jwt-cpp/tests/CMakePresets.json": {
     "mtime": 1779675855.2347546,
     "ast_hash": "ffbdc151e75260f06d25bbc394db3150",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/BaseTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/BaseTest.cpp": {
     "mtime": 1779675855.2344985,
     "ast_hash": "74ca6f1467d50128e39748a8d0423415",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/HelperTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/HelperTest.cpp": {
     "mtime": 1779675855.2350366,
     "ast_hash": "789449d0b73f931b08a059eabfedce09",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/Keys.cpp": {
+  "ThirdParty/jwt-cpp/tests/Keys.cpp": {
     "mtime": 1779675855.2352917,
     "ast_hash": "ce0bb6bafb27af48ef00a84011f92933",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/OpenSSLErrorTest.cpp": {
     "mtime": 1779675855.2354178,
     "ast_hash": "d3dc1a324b21d6f99c0adb8a7d7f913f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/wolfssl-is-used.cpp": {
+  "ThirdParty/jwt-cpp/tests/cmake/wolfssl-is-used.cpp": {
     "mtime": 1779675855.2363007,
     "ast_hash": "5db17e301f91b5db0c69703ddd6a62c6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/libressl-is-used.cpp": {
+  "ThirdParty/jwt-cpp/tests/cmake/libressl-is-used.cpp": {
     "mtime": 1779675855.2361672,
     "ast_hash": "504e14eb6829fae90b2531eeaf0f5b58",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/defaults-enabled.cpp": {
+  "ThirdParty/jwt-cpp/tests/cmake/defaults-enabled.cpp": {
     "mtime": 1779675855.2360816,
     "ast_hash": "b28ed27fd531624d8db972503309f1e4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/base64-is-disabled.cpp": {
+  "ThirdParty/jwt-cpp/tests/cmake/base64-is-disabled.cpp": {
     "mtime": 1779675855.2359889,
     "ast_hash": "e785c6480d3b6bd6eb0d12d65011056e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/picojson-is-disabled.cpp": {
+  "ThirdParty/jwt-cpp/tests/cmake/picojson-is-disabled.cpp": {
     "mtime": 1779675855.2362337,
     "ast_hash": "577e0aece27a4db943a0fbe1a7af4369",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/traits/NlohmannTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/traits/NlohmannTest.cpp": {
     "mtime": 1779675855.2377818,
     "ast_hash": "a14e2a7c0e1efc35558596db4bb9960d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/traits/BoostJsonTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/traits/BoostJsonTest.cpp": {
     "mtime": 1779675855.2375133,
     "ast_hash": "43fe2d1f768fde94a8b4af74679c0074",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/traits/JsonconsTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/traits/JsonconsTest.cpp": {
     "mtime": 1779675855.237644,
     "ast_hash": "2c1c22acf71924d108a4432e6564e01e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/traits/OspJsoncppTest.cpp": {
+  "ThirdParty/jwt-cpp/tests/traits/OspJsoncppTest.cpp": {
     "mtime": 1779675855.2379398,
     "ast_hash": "992d35b364abaf12dc50ba9c56eb5632",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/fuzz/BaseEncodeFuzz.cpp": {
+  "ThirdParty/jwt-cpp/tests/fuzz/BaseEncodeFuzz.cpp": {
     "mtime": 1779675855.2364776,
     "ast_hash": "98124c0ed15ee15845a02ae15749ed82",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/fuzz/TokenDecodeFuzz.cpp": {
+  "ThirdParty/jwt-cpp/tests/fuzz/TokenDecodeFuzz.cpp": {
     "mtime": 1779675855.2366104,
     "ast_hash": "c19436c1ff274f50f700205990f7b83b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/fuzz/BaseDecodeFuzz.cpp": {
+  "ThirdParty/jwt-cpp/tests/fuzz/BaseDecodeFuzz.cpp": {
     "mtime": 1779675855.2364078,
     "ast_hash": "d9164f3d10fa4dee90fbf39071be224d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CODE_OF_CONDUCT.md": {
+  "CODE_OF_CONDUCT.md": {
     "mtime": 1779675855.2081342,
     "ast_hash": "194523915f5e607985955780e6bce418",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CMakeLists.txt": {
+  "CMakeLists.txt": {
     "mtime": 1779675855.2079828,
     "ast_hash": "962d756a8d08be36a23496508e708e34",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/README.md": {
+  "README.md": {
     "mtime": 1779675855.213808,
     "ast_hash": "1a03ca9b531fe99ad54791c7f4efd418",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/CompilePlatformInfo/CMakeFiles/CompilePlatformInfo.dir/link.txt": {
+  "Tools/Source/Interface/Configuration/CompilePlatformInfo/CMakeFiles/CompilePlatformInfo.dir/link.txt": {
     "mtime": 1779675855.2416425,
     "ast_hash": "e10ba196b9a48400a6269b399362c837",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/CompileTimeStamp/CMakeFiles/CompileTimeStamp.dir/link.txt": {
+  "Tools/Source/Interface/Configuration/CompileTimeStamp/CMakeFiles/CompileTimeStamp.dir/link.txt": {
     "mtime": 1779675855.24301,
     "ast_hash": "f6bd60d21272a69112b3581b9a5883aa",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Interface/Configuration/VersioningSystem/CMakeFiles/VersioningSystem.dir/link.txt": {
+  "Tools/Source/Interface/Configuration/VersioningSystem/CMakeFiles/VersioningSystem.dir/link.txt": {
     "mtime": 1779675855.2443979,
     "ast_hash": "a65e79071b09995937589691577cf9c8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Tools/Source/Core/CMakeFiles/BrainGenix-API.dir/link.txt": {
+  "Tools/Source/Core/CMakeFiles/BrainGenix-API.dir/link.txt": {
     "mtime": 1779675855.2401311,
     "ast_hash": "7f913b1ed1d969440d38455b47b64789",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/.gitlab-ci.yml": {
+  "CI/.gitlab-ci.yml": {
     "mtime": 1779675855.2018952,
     "ast_hash": "4210f3ff2125537612de57420f2bb644",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Test/Ubuntu2004/CI.yml": {
+  "CI/Test/Ubuntu2004/CI.yml": {
     "mtime": 1779675855.2059867,
     "ast_hash": "94f3ed605384c1e4b97fe14df914f87b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Test/Debian11/CI.yml": {
+  "CI/Test/Debian11/CI.yml": {
     "mtime": 1779675855.2057583,
     "ast_hash": "5986a51b3ef57b60ef67cddaaaeddc1c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Test/Ubuntu2204/CI.yml": {
+  "CI/Test/Ubuntu2204/CI.yml": {
     "mtime": 1779675855.206203,
     "ast_hash": "d13cf5d2361d8a8b6c3e26b3caf5206b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Test/Debian12/CI.yml": {
+  "CI/Test/Debian12/CI.yml": {
     "mtime": 1779675855.2058747,
     "ast_hash": "b6b1a0353a955282e2963bba84e3485f",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Ubuntu2004/CI.yml": {
+  "CI/Images/Ubuntu2004/CI.yml": {
     "mtime": 1779675855.204798,
     "ast_hash": "86da4126e8ce3258950a30237dae2841",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Debian11/CI.yml": {
+  "CI/Images/Debian11/CI.yml": {
     "mtime": 1779675855.2034037,
     "ast_hash": "e4bf082297f3e27e351b3d9545678b56",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Drawio/CI.yml": {
+  "CI/Images/Drawio/CI.yml": {
     "mtime": 1779675855.2044752,
     "ast_hash": "ab29a8fc9868e372e3c14b5f21ee3235",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Ubuntu2204/CI.yml": {
+  "CI/Images/Ubuntu2204/CI.yml": {
     "mtime": 1779675855.204996,
     "ast_hash": "81bcf9cf145b94b977f1f334350a7aaf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Doxygen/CI.yml": {
+  "CI/Images/Doxygen/CI.yml": {
     "mtime": 1779675855.2041044,
     "ast_hash": "b687db6bd19b816512ba1170ba28ec99",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Images/Debian12/CI.yml": {
+  "CI/Images/Debian12/CI.yml": {
     "mtime": 1779675855.203846,
     "ast_hash": "77de3a14d4e6860cd3e631e1c4c36706",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Deploy/Prod.yml": {
+  "CI/Deploy/Prod.yml": {
     "mtime": 1779675855.2027988,
     "ast_hash": "a10b2af623b5107d4fa7281eb9576376",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Docs/Drawio/CI.yml": {
+  "CI/Docs/Drawio/CI.yml": {
     "mtime": 1779675855.2032309,
     "ast_hash": "de0a47ccc01f5bfe34b7f4be67648176",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Docs/Doxygen/CI.yml": {
+  "CI/Docs/Doxygen/CI.yml": {
     "mtime": 1779675855.2031114,
     "ast_hash": "f8777399a43b0960f34e0fb698e9a214",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Package/Ubuntu2004/CI.yml": {
+  "CI/Package/Ubuntu2004/CI.yml": {
     "mtime": 1779675855.2054858,
     "ast_hash": "12de26596c2c53db1a9bcef3088d561c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Package/Debian11/CI.yml": {
+  "CI/Package/Debian11/CI.yml": {
     "mtime": 1779675855.2052548,
     "ast_hash": "a2d4e55b53df69628b9b02c485da1907",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Package/Ubuntu2204/CI.yml": {
+  "CI/Package/Ubuntu2204/CI.yml": {
     "mtime": 1779675855.205598,
     "ast_hash": "a2444053a8e58cb52f50916a499c7ce5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/CI/Package/Debian12/CI.yml": {
+  "CI/Package/Debian12/CI.yml": {
     "mtime": 1779675855.205372,
     "ast_hash": "081f69cc77b61e3dd812dc15cd66f719",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/CMakeLists.txt": {
+  "Source/Interface/Configuration/CompilePlatformInfo/CMakeLists.txt": {
     "mtime": 1779675855.2228386,
     "ast_hash": "6feedf577c7673abe4ada4f877270b42",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompilePlatformInfo/README.md": {
+  "Source/Interface/Configuration/CompilePlatformInfo/README.md": {
     "mtime": 1779675855.2231052,
     "ast_hash": "7135ff3d3601f797aa83e6653f37db56",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompileTimeStamp/CMakeLists.txt": {
+  "Source/Interface/Configuration/CompileTimeStamp/CMakeLists.txt": {
     "mtime": 1779675855.2233264,
     "ast_hash": "5ed8147833d5b5061eb2d97cdf2ec1a1",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/CompileTimeStamp/README.md": {
+  "Source/Interface/Configuration/CompileTimeStamp/README.md": {
     "mtime": 1779675855.2235827,
     "ast_hash": "02915b2ba6984b04c89af1272a0c9d9c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/VersioningSystem/CMakeLists.txt": {
+  "Source/Interface/Configuration/VersioningSystem/CMakeLists.txt": {
     "mtime": 1779675855.2238042,
     "ast_hash": "7c5670affce865af0118a993c0e0f17c",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Interface/Configuration/VersioningSystem/README.md": {
+  "Source/Interface/Configuration/VersioningSystem/README.md": {
     "mtime": 1779675855.2238996,
     "ast_hash": "505ac5bd56994e54bfae82110f2a27cc",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Source/Core/CMakeLists.txt": {
+  "Source/Core/CMakeLists.txt": {
     "mtime": 1779675855.2140133,
     "ast_hash": "3a6b28ef1b0c157960694eeca6dc4541",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/API.md": {
+  "Docs/API.md": {
     "mtime": 1779675855.208321,
     "ast_hash": "a64f0c1aebbe5bb856edc209558c3107",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/README.md": {
+  "Docs/README.md": {
     "mtime": 1779675855.2130985,
     "ast_hash": "3fb5e303246eaa6a30d4f2d547be3497",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/MacOS.md": {
+  "Docs/MacOS.md": {
     "mtime": 1779675855.2128882,
     "ast_hash": "a91c56dd59e90d3c69d58904b7acf521",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/StatusPage.md": {
+  "Docs/StatusPage.md": {
     "mtime": 1779675855.213229,
     "ast_hash": "3ec6b800796f2fa37ad23afaa4013004",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/NESAPI.md": {
+  "Docs/NESAPI.md": {
     "mtime": 1779675855.2129707,
     "ast_hash": "1fd9ea9cc657f0096de38ddcd1f83c23",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/README.md": {
     "mtime": 1779675855.2101579,
     "ast_hash": "f24d350948e139dfaf24c2ab1e04b336",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/footer.html": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/footer.html": {
     "mtime": 1779675855.2105563,
     "ast_hash": "6204637f595573cf60ba436b0f9f2ec5",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/header.html": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/docs/doxygen-custom/header.html": {
     "mtime": 1779675855.2107165,
     "ast_hash": "4bc7cdefba127c5f1629c74eb1690be7",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/.github/workflows/publish.yaml": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/.github/workflows/publish.yaml": {
     "mtime": 1779675855.2098126,
     "ast_hash": "67ee255650ba28dc51cad6aa610fe0d0",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/agent notes/mac-silicon-change-log.md": {
+  "agent notes/mac-silicon-change-log.md": {
     "mtime": 1779675855.2449756,
     "ast_hash": "922d6df444bd6101e8d1560effb4d4db",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/agent notes/agent-session-notes-2026-05-09.md": {
+  "agent notes/agent-session-notes-2026-05-09.md": {
     "mtime": 1779675855.2448978,
     "ast_hash": "2321aa7760987e6b69a74993b5fdc2bb",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/graphify/README.md": {
+  "graphify/README.md": {
     "mtime": 1779682688.6719751,
     "ast_hash": "0c4029db503c0a8732671eda3195351d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/README.md": {
+  "ThirdParty/README.md": {
     "mtime": 1779675855.2281005,
     "ast_hash": "f9944807cbfecd5eee13fbdc3a329196",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/CMakeLists.txt": {
+  "ThirdParty/NonSuperBuild/backward/CMakeLists.txt": {
     "mtime": 1779675855.2253554,
     "ast_hash": "7325662cbec3fa9412a2e7d6bd243623",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/README.md": {
+  "ThirdParty/NonSuperBuild/backward/README.md": {
     "mtime": 1779675855.2256074,
     "ast_hash": "2b70469a5456bb963d9a583facf3e3c6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/LICENSE.txt": {
+  "ThirdParty/NonSuperBuild/backward/LICENSE.txt": {
     "mtime": 1779675855.2254572,
     "ast_hash": "74ea9734864a5514a5d672f385e3b382",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/.travis.yml": {
+  "ThirdParty/NonSuperBuild/backward/.travis.yml": {
     "mtime": 1779675855.2250798,
     "ast_hash": "9e849ac348a4c1bf38489d3916bde8ef",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/test_package/CMakeLists.txt": {
+  "ThirdParty/NonSuperBuild/backward/test_package/CMakeLists.txt": {
     "mtime": 1779675855.227856,
     "ast_hash": "fc1d79b5ca0f0b2a153e3aa103a9a7ee",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/CMakeLists.txt": {
+  "ThirdParty/jwt-cpp/CMakeLists.txt": {
     "mtime": 1779675855.228297,
     "ast_hash": "1a76b2aff4589901d979176efc80774d",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/README.md": {
+  "ThirdParty/jwt-cpp/README.md": {
     "mtime": 1779675855.228626,
     "ast_hash": "7663c77f1aa20cc42cbe5417de27d1f2",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/CMakeLists.txt": {
+  "ThirdParty/jwt-cpp/example/CMakeLists.txt": {
     "mtime": 1779675855.230488,
     "ast_hash": "3d125d7de11292987007ef5f3be008e6",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/CMakeLists.txt": {
+  "ThirdParty/jwt-cpp/example/traits/CMakeLists.txt": {
     "mtime": 1779675855.231267,
     "ast_hash": "001de1442753c4f4fefeb227f7dd48f8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/example/traits/README.md": {
+  "ThirdParty/jwt-cpp/example/traits/README.md": {
     "mtime": 1779675855.2313447,
     "ast_hash": "efd24ed26b5ee2a46aae6b1d8c5b192e",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/CMakeLists.txt": {
+  "ThirdParty/jwt-cpp/tests/CMakeLists.txt": {
     "mtime": 1779675855.2346013,
     "ast_hash": "ca4bc54bf1f9e68a39064f7b2a5fae67",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/cmake/CMakeLists.txt": {
+  "ThirdParty/jwt-cpp/tests/cmake/CMakeLists.txt": {
     "mtime": 1779675855.235887,
     "ast_hash": "1e12742a6ecf43cce71014730149bb0b",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/tests/fuzz/CMakeLists.txt": {
+  "ThirdParty/jwt-cpp/tests/fuzz/CMakeLists.txt": {
     "mtime": 1779675855.2365518,
     "ast_hash": "eb339f37d014e84d07cef556e0f678d4",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/traits.md": {
+  "ThirdParty/jwt-cpp/docs/traits.md": {
     "mtime": 1779675855.2303524,
     "ast_hash": "596e5b4c827334f880f734b173ffb902",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/CMakeLists.txt": {
+  "ThirdParty/jwt-cpp/docs/CMakeLists.txt": {
     "mtime": 1779675855.2295349,
     "ast_hash": "28aea84cd6b821c7c4dcd0d8ce774433",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/faqs.md": {
+  "ThirdParty/jwt-cpp/docs/faqs.md": {
     "mtime": 1779675855.2298038,
     "ast_hash": "16d2708c70c37e5e4a90dadaafc112bd",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/install.md": {
+  "ThirdParty/jwt-cpp/docs/install.md": {
     "mtime": 1779675855.2299035,
     "ast_hash": "f4d015b2572d39b72acbd3faf7b70eea",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/ssl.md": {
+  "ThirdParty/jwt-cpp/docs/ssl.md": {
     "mtime": 1779675855.2301948,
     "ast_hash": "3f7f953f40f1bde89ce38c0a1fc85955",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/jwt-cpp/docs/signing.md": {
+  "ThirdParty/jwt-cpp/docs/signing.md": {
     "mtime": 1779675855.2300959,
     "ast_hash": "2865f2a4a967effa283671bc12500caf",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Adding a new VBP to NES route.jpg": {
+  "Docs/Adding a new VBP to NES route.jpg": {
     "mtime": 1779675855.2085748,
     "ast_hash": "b08c8d4c6104689e83ca83bec37d14ed",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Source/Assets/Logos/Logo.png": {
+  "Docs/Doxygen/Source/Assets/Logos/Logo.png": {
     "mtime": 1779675855.2089205,
     "ast_hash": "0ff7c677f3932dfddd527fc0a4dbe1bd",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/logo.drawio.svg": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/logo.drawio.svg": {
     "mtime": 1779675855.2126305,
     "ast_hash": "2017986f954ba4c18de8a4db88effda8",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/img/screenshot.png": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/img/screenshot.png": {
     "mtime": 1779675855.212131,
     "ast_hash": "37a42edbb97f1b4bff5c6f1cb2fcee09",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/Docs/Doxygen/Third-Party/doxygen-awesome-css/img/theme-variations.drawio.svg": {
+  "Docs/Doxygen/Third-Party/doxygen-awesome-css/img/theme-variations.drawio.svg": {
     "mtime": 1779675855.2122805,
     "ast_hash": "5e236a264f3bc47d1377b357794f0655",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/doc/pretty.png": {
+  "ThirdParty/NonSuperBuild/backward/doc/pretty.png": {
     "mtime": 1779675855.2267992,
     "ast_hash": "256954a708a9db5ebe5e40af00e15bcd",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/doc/rude.png": {
+  "ThirdParty/NonSuperBuild/backward/doc/rude.png": {
     "mtime": 1779675855.2269683,
     "ast_hash": "f93b4873d767df559a69e3558ed7e0ea",
     "semantic_hash": ""
   },
-  "/Users/apple/fun_project/mac_silicon/may modifications/BrainGenix-API/ThirdParty/NonSuperBuild/backward/doc/nice.png": {
+  "ThirdParty/NonSuperBuild/backward/doc/nice.png": {
     "mtime": 1779675855.2264183,
     "ast_hash": "d15698d81016205ad5d319f0adeb82c9",
     "semantic_hash": ""

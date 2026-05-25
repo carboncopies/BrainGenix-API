@@ -38,7 +38,7 @@ if [ "$(uname)" != "Darwin" ]; then
     # Activate the virtual environment and install neuroglancer
     echo "Installing neuroglancer in the virtual environment"
     source venv/bin/activate || exit 1
-    pip install neuroglancer || exit 1
+    pip install neuroglancer graphifyy || exit 1
     deactivate
     cd Tools || exit 1
 else
@@ -58,7 +58,7 @@ else
     # Activate the virtual environment and install neuroglancer
     echo "Installing neuroglancer in the virtual environment"
     source ../venv/bin/activate || exit 1
-    pip install neuroglancer || exit 1
+    pip install neuroglancer graphifyy || exit 1
     deactivate
 fi
 

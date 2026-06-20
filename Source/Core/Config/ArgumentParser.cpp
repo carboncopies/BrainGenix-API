@@ -30,15 +30,15 @@ ArgumentParser::ArgumentParser(BG::Common::Logger::LoggingSystem* _Logger, Confi
     if (ArgMap.count("Help")) {
         std::stringstream ss;
         ss << Generic;
-        Logger_->Log(ss.str()+'\n',1);
+        Logger_->Log(ss.str() + '\n',1);
         exit(0);
     }
     if (ArgMap.count("Version")) {
-        Logger_->Log("Version: " VERSION +'\n',1);
+        Logger_->Log(std::string("Version: ") + VERSION + '\n',1);
         exit(0);
     }
     if (ArgMap.count("CompileTimeStamp")) {
-        Logger_->Log("Compile Time Stamp: " COMPILE_TIME_STAMP +'\n',1);
+        Logger_->Log(std::string("Compile Time Stamp: ") + COMPILE_TIME_STAMP + '\n',1);
         exit(0);
     }
     if (ArgMap.count("CompilePlatformInfo")) {
@@ -58,5 +58,4 @@ ArgumentParser::ArgumentParser(BG::Common::Logger::LoggingSystem* _Logger, Confi
 ArgumentParser::~ArgumentParser() {
 
 }
-
 

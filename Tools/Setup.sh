@@ -1,72 +1,103 @@
 #!/bin/bash
 
-# on a Mac OS X platform, skip lines 3-35
-if [ "$(uname)" != "Darwin" ]; then
-    # Detect if running as root
-    APT_COMMAND_PREFIX=""
-    echo "Detecting If Script Running As root"
-    if [ "$EUID" -ne 0 ]; then
-        echo "Detected Install Script Is Not Running As Root, Adding 'sudo' Prefix To Commands"
-        APT_COMMAND_PREFIX="sudo"
-    else
-        echo "Command Running As Root, Running Commands Without 'sudo'"
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+VENV_DIR="$REPO_ROOT/venv"
+
+run_cmd() {
+    echo "Running: $*"
+    "$@"
+}
+
+ensure_sudo() {
+    if [ "${EUID}" -eq 0 ]; then
+        return 0
     fi
 
-    # Setup, update package registry
-    echo "Setting Up Packages Needed For Compilation"
-    $APT_COMMAND_PREFIX apt update || exit 1
+    if command -v sudo >/dev/null 2>&1; then
+        sudo -v
+        return 0
+    fi
 
-    # Install Compiler Tools
-    COMPILER_DEPS="git wget cmake g++"
+    echo "This setup path needs elevated package installation privileges, but sudo is unavailable."
+    echo "Install the listed packages manually and rerun the script."
+    exit 1
+}
 
-    # Backward Deps
-    BACKWARD_DEPS="binutils-dev libunwind-dev libdwarf-dev libdw-dev"
+install_linux_packages() {
+    local distro
+    distro="$(. /etc/os-release && printf '%s' "${ID:-}")"
 
-    # vcpkg Dependencies
-    VCPKG_DEPS="curl zip unzip tar pkg-config autoconf flex bison"
+    ensure_sudo
 
-    # Install Everything
-    INSTALL_COMMAND="$APT_COMMAND_PREFIX apt install $VCPKG_DEPS $BACKWARD_DEPS $COMPILER_DEPS python3-pip python3-venv -y"
-    echo "Running Install Command: $INSTALL_COMMAND"
-    $INSTALL_COMMAND || exit 1
+    case "$distro" in
+        ubuntu|debian)
+            run_cmd sudo apt update
+            run_cmd sudo apt install -y \
+                git wget cmake g++ ninja-build \
+                binutils-dev libunwind-dev libdwarf-dev libdw-dev \
+                curl zip unzip tar pkg-config autoconf flex bison \
+                python3 python3-pip python3-venv
+            ;;
+        fedora)
+            run_cmd sudo dnf install -y \
+                git wget cmake gcc-c++ ninja-build \
+                binutils-devel libunwind-devel elfutils-devel \
+                curl zip unzip tar pkgconf-pkg-config autoconf flex bison \
+                python3 python3-pip
+            ;;
+        arch)
+            run_cmd sudo pacman -Sy --noconfirm \
+                git wget cmake gcc ninja \
+                curl zip unzip tar pkgconf autoconf flex bison \
+                python
+            ;;
+        *)
+            echo "Unsupported Linux distribution: ${distro:-unknown}"
+            echo "Install compiler, Python venv, and vcpkg prerequisite packages manually, then rerun."
+            exit 1
+            ;;
+    esac
+}
 
-    # Create a virtual environment in the project root
-    echo "Creating a virtual environment in the project root"
-    cd .. || exit 1  # Move to the project root
-    python3 -m venv venv || exit 1
-
-    # Activate the virtual environment and install neuroglancer
-    echo "Installing neuroglancer in the virtual environment"
-    source venv/bin/activate || exit 1
-    pip install neuroglancer graphifyy || exit 1
-    deactivate
-    cd Tools || exit 1
-else
-    # Install dependencies on macOS
-    echo "Detected macOS, installing dependencies via Homebrew"
+install_macos_packages() {
     if ! command -v brew >/dev/null 2>&1; then
         echo "Homebrew is required on macOS. Install it from https://brew.sh/ and rerun this script."
         exit 1
     fi
-    brew install cmake git wget pkg-config openssl python@3 ninja
-    # Create a virtual environment in the project root if it doesn't exist
-    if [ ! -d "../venv" ]; then
-        echo "Creating a virtual environment in the project root"
-        python3 -m venv ../venv || exit 1
+
+    run_cmd brew install cmake git wget pkg-config openssl python@3 ninja
+}
+
+setup_venv() {
+    if [ ! -d "$VENV_DIR" ]; then
+        echo "Creating Python virtual environment at $VENV_DIR"
+        run_cmd python3 -m venv "$VENV_DIR"
     fi
 
-    # Activate the virtual environment and install neuroglancer
-    echo "Installing neuroglancer in the virtual environment"
-    source ../venv/bin/activate || exit 1
-    pip install neuroglancer graphifyy || exit 1
-    deactivate
+    run_cmd "$VENV_DIR/bin/python" -m pip install --upgrade pip
+    run_cmd "$VENV_DIR/bin/python" -m pip install neuroglancer graphifyy
+}
+
+echo "Entering repository root: $REPO_ROOT"
+cd "$REPO_ROOT"
+
+if [ "$(uname)" = "Darwin" ]; then
+    echo "Detected macOS, installing dependencies via Homebrew"
+    install_macos_packages
+else
+    echo "Detected Linux, installing dependencies via system package manager"
+    install_linux_packages
 fi
 
-# Update Submodules
-echo "Updating Submodules"
-git submodule update --init
+setup_venv
 
-# Bootstrap vcpkg
-echo "Setting Up vcpkg"
-./../ThirdParty/vcpkg/bootstrap-vcpkg.sh
+echo "Updating submodules"
+run_cmd git submodule update --init --recursive
+
+echo "Bootstrapping vcpkg"
+run_cmd "$REPO_ROOT/ThirdParty/vcpkg/bootstrap-vcpkg.sh" -disableMetrics
+
 echo "Done, you can now run Build.sh"

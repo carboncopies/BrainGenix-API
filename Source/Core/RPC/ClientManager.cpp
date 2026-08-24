@@ -143,8 +143,8 @@ bool RPCClientManager::RunVersionCheckEVM() {
         return false;
     }
 
-    if (EVMVersion != VERSION) {
-        Logger_->Log("EVM/API Version Mismatch! This might make stuff break. EVM " + EVMVersion + " API " + VERSION, 9);
+    if (EVMVersion != NES_API_VERSION) {
+        Logger_->Log("EVM/API Version Mismatch! This might make stuff break. EVM " + EVMVersion + " API " + NES_API_VERSION, 9);
         Server_->EVMState = SERVICE_VERSION_MISMATCH;
         IsEVMClientHealthy_.store(false);
         return false;
@@ -165,8 +165,8 @@ bool RPCClientManager::RunVersionCheckNES() {
         return false;
     }
 
-    if (NESVersion != VERSION) {
-        Logger_->Log("NES/API Version Mismatch! This might make stuff break. NES " + NESVersion + " API " + VERSION, 9);
+    if (NESVersion != NES_API_VERSION) {
+        Logger_->Log("NES/API Version Mismatch! This might make stuff break. NES " + NESVersion + " API " + NES_API_VERSION, 9);
         Server_->NESState = SERVICE_VERSION_MISMATCH;
         IsNESClientHealthy_.store(false);
         return false;
@@ -174,6 +174,14 @@ bool RPCClientManager::RunVersionCheckNES() {
 
     Server_->NESState = SERVICE_HEALTHY;
     IsNESClientHealthy_.store(true);
+
+    std::string checksum, manifest;
+    NESQueryJSON("GetAPIChecksum", &checksum, true);
+    NESQueryJSON("GetAPIManifest", &manifest, true);
+    Server_->NESAPIChecksum = checksum;
+    Server_->NESAPIManifest = manifest;
+    Logger_->Log("NES API Checksum: " + checksum, 1);
+
     return true;
 }
 

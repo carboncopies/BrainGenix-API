@@ -10,6 +10,7 @@
 #include <cpp-base64/base64.cpp>
 #include <nlohmann/json.hpp>
 #include <fstream>
+#include <Version.h>
 #include <jwt-cpp/jwt.h>
 #include <Util/JWTUtil.hpp>
 
@@ -273,6 +274,20 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
     response->putHeader("Content-Type", "application/octet-stream");
 
 
+    return addCORSHeaders(response);
+  }
+
+  ENDPOINT("GET", "/Diagnostic/Version", version) {
+    nlohmann::json Response;
+    Response["StatusCode"] = 0;
+    Response["Version"] = VERSION;
+    Response["NESAPIVersion"] = NES_API_VERSION;
+    Response["APIChecksum"] = Server_->NESAPIChecksum;
+    Response["APIManifest"] = nlohmann::json::parse(
+        Server_->NESAPIManifest.empty() ? "[]" : Server_->NESAPIManifest
+    );
+    auto response = createResponse(Status::CODE_200, Response.dump());
+    response->putHeader("Content-Type", "application/json");
     return addCORSHeaders(response);
   }
 

@@ -25,7 +25,7 @@ std::string userRole;
 
 #define CONFIG_PATH "../Source/Core/Config/users.json"
 
-#define CHECK_JWT_OR_UNAUTHORIZED(request, roleOut) \
+#define CHECK_JWT_OR_UNAUTHORIZED(request, roleOut, usernameOut) \
     do { \
         auto __queryParams = (request)->getQueryParameters(); \
         auto __authKeyParam = __queryParams.get("AuthKey"); \
@@ -44,6 +44,7 @@ std::string userRole;
         try { \
             auto __decoded = JWTUtil::verifyToken(__token); \
             (roleOut) = JWTUtil::getRole(__decoded); \
+            (usernameOut) = JWTUtil::getUsername(__decoded); \
         } catch (const std::exception& e) { \
             OATPP_LOGE("Auth", "Token verification failed: %s", e.what()); \
             return createResponse( \
@@ -52,6 +53,31 @@ std::string userRole;
             ); \
         } \
     } while(false)
+
+static std::string addRequestUsernameToRPCBody(const std::string& body, const std::string& username) {
+    nlohmann::json requests;
+    try {
+        requests = nlohmann::json::parse(body);
+        if (!requests.is_array()) {
+            return body;
+        }
+    } catch (const nlohmann::json::exception&) {
+        return body;
+    }
+
+    for (auto& requestItem : requests) {
+        if (!requestItem.is_object()) {
+            continue;
+        }
+        for (auto& item : requestItem.items()) {
+            if (item.key() != "ReqID" && item.value().is_object()) {
+                item.value()["RequestUsername"] = username;
+            }
+        }
+    }
+
+    return requests.dump();
+}
 
   
 class BrainGenixAPIController : public oatpp::web::server::api::ApiController {
@@ -164,15 +190,16 @@ public:
 ENDPOINT("POST", "/VSDA", vsda, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
     
   std::string userRole;
-  CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+  std::string username;
+  CHECK_JWT_OR_UNAUTHORIZED(request, userRole, username);
   
   if (userRole != "admin") {
       OATPP_LOGE("VSDA", "User role '%s' is not admin", userRole.c_str());
       return createResponse(Status::CODE_403, "Admin access required");
   }
 
-  // Read the JSON request body - pass it through as-is like NES does
-  std::string body = request->readBodyToString();
+  // Inject authenticated username so NES can place outputs under that user root.
+  std::string body = addRequestUsernameToRPCBody(request->readBodyToString(), username);
   
   std::string UpstreamResponseStr = "";
   
@@ -192,7 +219,8 @@ ENDPOINT("POST", "/VSDA", vsda, REQUEST(std::shared_ptr<IncomingRequest>, reques
 ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)) {
       
     std::string userRole;
-    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+    std::string username;
+    CHECK_JWT_OR_UNAUTHORIZED(request, userRole, username);
     
     if (userRole != "admin") {
         OATPP_LOGE("NES", "User role '%s' is not admin", userRole.c_str());
@@ -201,7 +229,7 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
 
 
     std::string UpstreamResponseStr = "";
-    std::string body = request->readBodyToString();
+    std::string body = addRequestUsernameToRPCBody(request->readBodyToString(), username);
     bool UpstreamStatus = NESQueryJSON(Server_->NESClient, Server_->IsNESClientHealthy_, "NES", body, &UpstreamResponseStr);
     if (!UpstreamStatus) {
       printf("Upstream status fail\n");  
@@ -281,7 +309,8 @@ ENDPOINT("POST", "/NES", nes, REQUEST(std::shared_ptr<IncomingRequest>, request)
     
     
     // 1. Validate JWT and extract role
-    CHECK_JWT_OR_UNAUTHORIZED(request, userRole);
+    std::string username;
+    CHECK_JWT_OR_UNAUTHORIZED(request, userRole, username);
 
     // 3. Role-based authorization check
     if (userRole != "admin") {

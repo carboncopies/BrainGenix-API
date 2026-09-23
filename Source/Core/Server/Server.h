@@ -38,6 +38,9 @@ struct Server {
     std::atomic<bgServiceStatus> NESState = SERVICE_CONFIG_ERR; /**< Enum indicating the NES system status. */
     std::atomic<bgServiceStatus> EVMState = SERVICE_CONFIG_ERR; /**< Enum indicating the EVM system status. */
 
+    std::string NESAPIChecksum; /**< Checksum of all NES sub-routes, fetched during handshake. */
+    std::string NESAPIManifest; /**< JSON list of all NES sub-routes, fetched during handshake. */
+
     std::shared_ptr<::rpc::client> NESClient; /**< Shared pointer to the RPC client service for NES. */
     std::shared_ptr<::rpc::client> EVMClient; /**< Shared pointer to the RPC client service for EVM. */
 

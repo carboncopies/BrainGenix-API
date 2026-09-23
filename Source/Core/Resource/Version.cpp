@@ -35,6 +35,7 @@ void Route::RouteCallback(const std::shared_ptr<restbed::Session> _Session) {
     nlohmann::json Response;
     Response["StatusCode"] = 0;
     Response["Version"] = VERSION;
+    Response["NESAPIVersion"] = NES_API_VERSION;
 
 
     // Return Response String As JSON

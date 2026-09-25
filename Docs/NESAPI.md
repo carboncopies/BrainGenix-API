@@ -6,6 +6,8 @@ This API spec dictates how the API gateway internally communicates with the NES 
 
 Since the API gateway will be taking care of many aspects about handling security (such as authentication, input validation, etc.) we can simplify this communication spec much more than what is defined for the public facing API. So, with that said, we use RPC to implement this API.
 
+The gateway injects `RequestUsername` (string) into each RPC method object from the authenticated JWT. NES uses this for per-user filesystem output paths. See [RequestUsername.md](RequestUsername.md).
+
 
 Unless otherwise specified, all requests and responses will be in json.
 

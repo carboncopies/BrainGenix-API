@@ -7,11 +7,13 @@ This directory contains the design specs documenting the different APIs. There a
 
 - [Front-Facing REST API Spec](API.md)
 - [NES Internal RPC API Spec](NESAPI.md)
+- [RequestUsername forwarding](RequestUsername.md)
 */
 
 # About
 
 This directory contains the design specs documenting the different APIs. There are links to the specs below:  
 
-[Front-Facing REST API Spec](API.md)
-[NES Internal RPC API Spec](NESAPI.md)
+[Front-Facing REST API Spec](API.md)  
+[NES Internal RPC API Spec](NESAPI.md)  
+[RequestUsername forwarding](RequestUsername.md)

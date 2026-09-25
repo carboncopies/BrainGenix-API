@@ -90,6 +90,8 @@ Note: On a nonsuccess status code, other parameters are *not* guarenteed to be p
  - (string) `AuthKey=` If your username/password are valid, then the token will be returned.  
 
 
+When forwarding `/NES` and `/VSDA` requests, the gateway injects `RequestUsername` from the JWT into each RPC method object. Clients do not set this field. See [RequestUsername.md](RequestUsername.md).
+
 
 ## Shapes
 

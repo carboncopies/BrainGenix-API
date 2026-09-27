@@ -117,51 +117,57 @@ public:
   ENDPOINT("POST", "/Auth/GetToken", token,
          BODY_DTO(Object<LoginDTO>, loginDTO)) {
     try {
-        // 1. Validate input
-        if (!loginDTO->Username || loginDTO->Username == "" || !loginDTO->Password || loginDTO->Password == "") {
-            OATPP_LOGE("Auth", "Empty credentials detected");
+        // Username only. Password is optional and not checked (lab auth).
+        if (!loginDTO->Username || loginDTO->Username == "") {
+            OATPP_LOGE("Auth", "Empty username detected");
             return createResponse(
                 oatpp::web::protocol::http::Status::CODE_400,
-                "Username and password are required"
+                "Username is required"
             );
         }
 
-        // 2. Load user database
-        std::ifstream file(CONFIG_PATH);
-        if (!file) {
-            OATPP_LOGE("Auth", "Failed to open users.json");
-            return createResponse(
-                oatpp::web::protocol::http::Status::CODE_500,
-                "Service unavailable"
-            );
-        }
-
-        // 3. Parse JSON
-        nlohmann::json users;
-        try {
-            file >> users;
-        } catch (const nlohmann::json::exception& e) {
-            OATPP_LOGE("Auth", "Invalid users.json format: %s", e.what());
-            return createResponse(
-                oatpp::web::protocol::http::Status::CODE_500,
-                "Service configuration error"
-            );
-        }
-
-        // 4. Authenticate
         std::string username = loginDTO->Username->c_str();
-        std::string password = loginDTO->Password->c_str();
 
-        if (!users.contains(username)) {
-            OATPP_LOGI("Auth", "Failed login attempt for user '%s'", username.c_str());
-            return createResponse(
-                oatpp::web::protocol::http::Status::CODE_401,
-                "Invalid credentials"
-            );
+        // Load users.json (create empty DB if missing)
+        nlohmann::json users = nlohmann::json::object();
+        {
+            std::ifstream file(CONFIG_PATH);
+            if (file) {
+                try {
+                    file >> users;
+                    if (!users.is_object()) {
+                        users = nlohmann::json::object();
+                    }
+                } catch (const nlohmann::json::exception& e) {
+                    OATPP_LOGE("Auth", "Invalid users.json format: %s", e.what());
+                    return createResponse(
+                        oatpp::web::protocol::http::Status::CODE_500,
+                        "Service configuration error"
+                    );
+                }
+            }
         }
 
-        // 5. Generate token
-        std::string role = users[username].value("role", "user");
+        // First auth for an unknown username: add them and continue.
+        if (!users.contains(username)) {
+            users[username] = {
+                {"password", ""},
+                {"role", "admin"}
+            };
+            std::ofstream out(CONFIG_PATH);
+            if (!out) {
+                OATPP_LOGE("Auth", "Failed to write users.json for new user '%s'", username.c_str());
+                return createResponse(
+                    oatpp::web::protocol::http::Status::CODE_500,
+                    "Service unavailable"
+                );
+            }
+            out << users.dump(2);
+            OATPP_LOGI("Auth", "Auto-registered user '%s'", username.c_str());
+        }
+
+        // Generate token (password is not verified)
+        std::string role = users[username].value("role", "admin");
         std::string jwtToken = JWTUtil::generateToken(username, role);
         //std::cout<<"Token generated successfully :: "<<jwtToken<<std::endl;
         

@@ -89,6 +89,13 @@ setup_venv() {
 echo "Entering repository root: $REPO_ROOT"
 cd "$REPO_ROOT"
 
+# --venv-only: just (re)create the Python venv the build bundles into
+# Binaries/. Used by CI build jobs, whose fresh checkout has no venv.
+if [ "${1:-}" = "--venv-only" ]; then
+    setup_venv
+    exit 0
+fi
+
 if [ "$(uname)" = "Darwin" ]; then
     echo "Detected macOS, installing dependencies via Homebrew"
     install_macos_packages

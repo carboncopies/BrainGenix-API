@@ -4,6 +4,7 @@ Ubuntu_2204_Package:
    - linux
   stage: Package
   script:
+    - bash Tools/Setup.sh --venv-only
     - cd Tools
     - bash Package.sh
   dependencies: 

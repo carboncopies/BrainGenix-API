@@ -11,6 +11,10 @@ run_cmd() {
     "$@"
 }
 
+# Prefix for privileged commands; stays empty when already root (e.g. CI image
+# builds, where sudo is not installed).
+SUDO=""
+
 ensure_sudo() {
     if [ "${EUID}" -eq 0 ]; then
         return 0
@@ -18,6 +22,7 @@ ensure_sudo() {
 
     if command -v sudo >/dev/null 2>&1; then
         sudo -v
+        SUDO="sudo"
         return 0
     fi
 
@@ -34,22 +39,22 @@ install_linux_packages() {
 
     case "$distro" in
         ubuntu|debian)
-            run_cmd sudo apt update
-            run_cmd sudo apt install -y \
+            run_cmd $SUDO apt update
+            run_cmd $SUDO apt install -y \
                 git wget cmake g++ ninja-build \
                 binutils-dev libunwind-dev libdwarf-dev libdw-dev \
                 curl zip unzip tar pkg-config autoconf flex bison \
                 python3 python3-pip python3-venv
             ;;
         fedora)
-            run_cmd sudo dnf install -y \
+            run_cmd $SUDO dnf install -y \
                 git wget cmake gcc-c++ ninja-build \
                 binutils-devel libunwind-devel elfutils-devel \
                 curl zip unzip tar pkgconf-pkg-config autoconf flex bison \
                 python3 python3-pip
             ;;
         arch)
-            run_cmd sudo pacman -Sy --noconfirm \
+            run_cmd $SUDO pacman -Sy --noconfirm \
                 git wget cmake gcc ninja \
                 curl zip unzip tar pkgconf autoconf flex bison \
                 python
@@ -83,6 +88,13 @@ setup_venv() {
 
 echo "Entering repository root: $REPO_ROOT"
 cd "$REPO_ROOT"
+
+# --venv-only: just (re)create the Python venv the build bundles into
+# Binaries/. Used by CI build jobs, whose fresh checkout has no venv.
+if [ "${1:-}" = "--venv-only" ]; then
+    setup_venv
+    exit 0
+fi
 
 if [ "$(uname)" = "Darwin" ]; then
     echo "Detected macOS, installing dependencies via Homebrew"

@@ -4,6 +4,7 @@ Debian_12_Build:
    - linux
   stage: Build
   script:
+    - bash Tools/Setup.sh --venv-only
     - cd Tools
     - bash Build.sh $NUMBER_THREADS
   artifacts:

@@ -57,6 +57,9 @@ private:
     std::atomic_bool IsNESClientHealthy_; /**< Indicates if the NES service is ready to handle queries */
     std::atomic_bool IsEVMClientHealthy_; /**< Indicates if the EVM service is ready to handle queries */
 
+    static constexpr std::chrono::seconds NESChecksumRefreshInterval_{60}; /**< How often to re-fetch the NES API checksum/manifest while connected */
+    std::chrono::steady_clock::time_point LastNESChecksumFetch_; /**< When the NES API checksum/manifest was last fetched */
+
     /**
      * @brief Attempts to connect to the NES client.
      * 

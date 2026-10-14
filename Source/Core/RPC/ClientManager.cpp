@@ -172,15 +172,21 @@ bool RPCClientManager::RunVersionCheckNES() {
         return false;
     }
 
+    bool WasHealthy = (Server_->NESState == SERVICE_HEALTHY);
     Server_->NESState = SERVICE_HEALTHY;
     IsNESClientHealthy_.store(true);
 
-    std::string checksum, manifest;
-    NESQueryJSON("GetAPIChecksum", &checksum, true);
-    NESQueryJSON("GetAPIManifest", &manifest, true);
-    Server_->NESAPIChecksum = checksum;
-    Server_->NESAPIManifest = manifest;
-    Logger_->Log("NES API Checksum: " + checksum, 1);
+    // Fetch checksum/manifest on (re)connect, otherwise only every NESChecksumRefreshInterval_
+    auto Now = std::chrono::steady_clock::now();
+    if (!WasHealthy || Now - LastNESChecksumFetch_ >= NESChecksumRefreshInterval_) {
+        std::string checksum, manifest;
+        NESQueryJSON("GetAPIChecksum", &checksum, true);
+        NESQueryJSON("GetAPIManifest", &manifest, true);
+        Server_->NESAPIChecksum = checksum;
+        Server_->NESAPIManifest = manifest;
+        LastNESChecksumFetch_ = Now;
+        // Logger_->Log("NES API Checksum: " + checksum, 1);
+    }
 
     return true;
 }
